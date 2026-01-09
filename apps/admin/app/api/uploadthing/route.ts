@@ -3,14 +3,6 @@
 import { createRouteHandler } from "uploadthing/next";
 import { mediaRouter } from "./core";
 
-export const { GET, POST } = createRouteHandler({
-  router: mediaRouter,
-});
-
-/* 
-import { createRouteHandler } from "uploadthing/next";
-import { mediaRouter } from "./core";
-
 const handler = createRouteHandler({
   router: mediaRouter,
 });
@@ -20,4 +12,12 @@ export const POST = handler.POST;
 
 
 export const runtime = "nodejs";
-*/
+
+
+
+/* import { createRouteHandler } from "uploadthing/next";
+import { mediaRouter } from "./core";
+
+export const { GET, POST } = createRouteHandler({
+  router: mediaRouter,
+}); */
