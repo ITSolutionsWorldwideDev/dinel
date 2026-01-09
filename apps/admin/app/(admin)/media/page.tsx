@@ -80,8 +80,8 @@ export default function MediaLibrary() {
                 {/* <h1 className="mb-6 text-2xl font-bold">Media Library</h1> */}
 
                 <div className="mb-4">
-                  <UploadButton<MediaRouter, "productImage">
-                    endpoint="productImage"
+                  <UploadButton<MediaRouter, "imageUploader">
+                    endpoint="imageUploader"
                     className="rounded border border-dashed border-gray-400 px-6 py-3 hover:border-primary "
                     onClientUploadComplete={() => {
                       showToast("success", "Upload complete");

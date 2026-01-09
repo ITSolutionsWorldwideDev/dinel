@@ -12,8 +12,8 @@ export default function FeaturedImageUpload({
 }) {
   const { showToast } = useToast();
   return (
-    <UploadButton<MediaRouter, "productImage">
-      endpoint="productImage"
+    <UploadButton<MediaRouter, "imageUploader">
+      endpoint="imageUploader"
       className="rounded border border-dashed border-gray-400 px-6 py-3 hover:border-primary "
       onClientUploadComplete={(res) => {
         const file = res?.[0];
