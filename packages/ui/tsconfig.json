@@ -1,8 +1,20 @@
+// packages/ui/tsconfig.json
 {
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "composite": true
+  },
+  "references": [
+    { "path": "../types" }
+  ],
+  "include": ["src"]
+}
+/* {
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
     "outDir": "dist"
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
-}
+} */
