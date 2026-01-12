@@ -2,6 +2,24 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "composite": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true
+  },
+  "references": [
+    { "path": "../types" }
+  ],
+  "include": ["src"]
+}
+
+/* {
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
     "jsx": "preserve",
     "composite": true
   },
@@ -9,7 +27,7 @@
     { "path": "../types" }
   ],
   "include": ["src"]
-}
+} */
 /* {
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {

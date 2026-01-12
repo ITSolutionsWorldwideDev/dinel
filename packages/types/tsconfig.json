@@ -1,3 +1,17 @@
+// packages/types/tsconfig.json
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "skipLibCheck": true
+  },
+  "include": ["*.ts"]
+}
+
+
 /* {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
@@ -8,13 +22,3 @@
   },
   "include": ["*.ts"]
 } */
- {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "composite": true,
-    "declaration": true,
-    "emitDeclarationOnly": true
-  },
-  "include": ["*.ts"]
-}
-
