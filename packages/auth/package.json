@@ -1,21 +1,9 @@
 {
   "name": "@repo/auth",
-  "version": "0.0.0",
-  "private": true,
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "1.0.0",
+  "main": "index.ts",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
+    ".": "./index.ts"
   },
-  "scripts": {
-    "build": "tsc -p tsconfig.json"
-  },
-  "dependencies": {
-    "@repo/types": "*",
-    "next-auth": "^4.24.13",
-    "bcryptjs": "^3.0.3"
-  }
+  "types": "./next-auth.d.ts"
 }

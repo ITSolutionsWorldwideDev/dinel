@@ -1,7 +1,7 @@
 // /app/api/blog/route.ts (GET)
 
 import { NextRequest, NextResponse } from "next/server";
-import { pool } from "@repo/db";
+import { pool } from "@acme/db";
 
 import { getServerSession } from "next-auth";
 import { authOptions } from "@repo/auth";

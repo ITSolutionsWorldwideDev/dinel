@@ -30,14 +30,14 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",
     "@headlessui/react": "^2.2.9",
-    "@repo/db": "^0.0.0",
-    "next": "16.1.0",
     "@uploadthing/react": "^7.3.3",
     "admin": "^0.1.0",
     "antd": "^6.1.4",
     "bcryptjs": "^3.0.3",
     "fullcalendar": "^6.1.20",
+    "next": "16.1.0",
     "next-auth": "^4.24.13",
+    "pg": "^8.16.3",
     "react-bootstrap": "^2.10.10",
     "react-feather": "^2.0.10",
     "react-icons": "^5.5.0",
@@ -45,8 +45,5 @@
     "react-simple-wysiwyg": "^3.4.1",
     "slugify": "^1.6.6",
     "uploadthing": "^7.7.4"
-  },
-  "overrides": {
-    "next": "16.1.0"
   }
 }

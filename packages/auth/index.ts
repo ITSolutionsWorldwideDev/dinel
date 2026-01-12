@@ -1,17 +1,16 @@
-// packages/auth/src/auth-options.ts
+// packages/auth/index.ts
+
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { runQuery } from "@repo/db";
+import { runQuery } from "@acme/db";
 import * as bcrypt from "bcryptjs";
 
 export const authOptions: NextAuthOptions = {
-  secret: process.env.NEXTAUTH_SECRET,
-
   providers: [
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: { label: "Email", type: "text" },
+        email: { label: "Email", type: "text", placeholder: "you@example.com" },
         password: { label: "Password", type: "password" },
       },
 
@@ -20,13 +19,10 @@ export const authOptions: NextAuthOptions = {
           throw new Error("Missing email or password");
         }
 
-        const query = `
-          SELECT id, email, password_hash, role
-          FROM users
-          WHERE email = $1
-          LIMIT 1
-        `;
+        // console.log('credentials ==== ',credentials);
 
+        // Fetch user from PostgreSQL
+        const query = `SELECT id, email, password_hash, role FROM users WHERE email = $1 LIMIT 1`;
         const result = await runQuery(query, [credentials.email]);
 
         if (result.rowCount === 0) {
@@ -35,6 +31,7 @@ export const authOptions: NextAuthOptions = {
 
         const user = result.rows[0];
 
+        // Compare hash
         const isValid = await bcrypt.compare(
           credentials.password,
           user.password_hash
@@ -61,15 +58,26 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
-        if ("role" in user) token.role = user.role;
+        if ("role" in user && user.role) {
+          token.role = user.role;
+        }
       }
       return token;
     },
-
     async session({ session, token }) {
-      if (token && session.user) {
-        session.user.id = token.id as string;
-        session.user.role = token.role as string;
+      if (token) {
+        session.user = session.user ?? ({} as any);
+        const user = session.user as {
+          id: string;
+          role?: string;
+          name?: string | null;
+          email?: string | null;
+          image?: string | null;
+        };
+
+        user.id = token.id!;
+        user.role = token.role;
+        session.user = user;
       }
       return session;
     },
@@ -79,3 +87,7 @@ export const authOptions: NextAuthOptions = {
     signIn: "/login",
   },
 };
+
+import { getServerSession } from "next-auth";
+
+export const auth = () => getServerSession(authOptions);

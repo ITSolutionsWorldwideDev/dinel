@@ -1,7 +1,7 @@
 // /app/api/account-details/route.ts (GET)
 
 import { NextRequest, NextResponse } from "next/server";
-import { pool } from "@repo/db";
+import { pool } from "@acme/db";
 
 export async function GET(req: NextRequest,
   context: { params: {} }) {

@@ -3,26 +3,13 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "rootDir": "src",
     "outDir": "dist",
-    "declaration": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true
+    "rootDir": "src"
   },
-  "references": [
-    { "path": "../types" }
-  ],
-  "include": ["src"]
+  "include": ["src", "types/**/*.d.ts", "next-auth.d.ts"],
+  // "include": [
+  //   "src",
+  //   "types/**/*.d.ts"
+  // ]
+  // "include": ["./", "next-auth.d.ts"]
 }
-
-
-/* {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "composite": true
-  },
-  "references": [
-    { "path": "../db" }
-  ],
-  "include": ["src"]
-} */

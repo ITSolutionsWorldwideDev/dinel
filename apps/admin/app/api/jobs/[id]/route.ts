@@ -1,6 +1,6 @@
 // apps/admin/app/api/jobs/[id]/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { pool } from "@repo/db";
+import { pool } from "@acme/db";
 
 export async function GET(
   req: Request,

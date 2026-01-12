@@ -1,14 +1,6 @@
 {
-  "name": "@repo/types",
+  "name": "@acme/types",
   "version": "0.0.1",
   "private": true,
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "scripts": {
-    "build": "tsc -p tsconfig.json"
-  }
+  "types": "index.ts"
 }

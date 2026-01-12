@@ -19,26 +19,25 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@repo/db": ["packages/db/src/index.ts"],
-      "@repo/auth": ["packages/auth/src/index.ts"],
-      "@repo/utils": ["packages/utils"],
-      "@repo/types": ["packages/types"],
-      // "@repo/ui": ["packages/ui"],
-      "@repo/ui": ["packages/ui/src/index.ts"]
+      "@acme/ui": ["../../packages/ui"],
+      "@repo/ui": ["../../packages/ui/src"],
+      "@acme/utils": ["../../packages/utils"],
+      "@acme/db": ["../../packages/db"]
     }
+    // "paths": {
+    //   "@/*": ["./*"]
+    // }
   },
-  "extends": "../../tsconfig.json",
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "types/**/*.d.ts",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "../../packages/auth/types/**/*.d.ts"
   ],
   "exclude": ["node_modules"]
 }
