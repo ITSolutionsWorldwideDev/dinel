@@ -1,6 +1,6 @@
 // apps/admin/app/api/linkedin/publish/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { pool } from "@repo/db";
+import { pool } from "@acme/db";
 
 export async function GET(req: NextRequest) {
   const jobId = Number(req.nextUrl.searchParams.get("jobId"));

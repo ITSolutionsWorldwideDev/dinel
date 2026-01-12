@@ -1,6 +1,6 @@
 // scripts/create-super-admin.ts
 import "dotenv/config";
-import { runQuery } from "@repo/db";
+import { runQuery } from "@acme/db";
 import * as bcrypt from "bcryptjs";
 
 async function createSuperAdmin() {

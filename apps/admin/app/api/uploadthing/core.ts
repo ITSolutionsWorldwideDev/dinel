@@ -3,12 +3,12 @@
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@repo/auth";
-import { pool } from "@repo/db";
+import { pool } from "@acme/db";
 
 const f = createUploadthing();
 
 export const mediaRouter = {
-  productImage: f({
+  imageUploader: f({
     image: {
       maxFileSize: "8MB",
       maxFileCount: 5,

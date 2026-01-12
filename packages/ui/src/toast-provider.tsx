@@ -2,7 +2,7 @@
 "use client";
 
 import * as React from "react";
-import type { ToastPayload, ToastType } from "@repo/types";
+import type { ToastPayload, ToastType } from "@acme/types";
 import { ToastContainer } from "./toast";
 
 interface ToastContextValue {

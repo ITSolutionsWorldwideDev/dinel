@@ -1,5 +1,5 @@
 {
-  "name": "@repo/types",
+  "name": "@acme/types",
   "version": "0.0.1",
   "private": true,
   "types": "index.ts"

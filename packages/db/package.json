@@ -1,17 +1,18 @@
 {
-  "name": "@repo/db",
-  "version": "0.0.0",
-  "private": true,
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "name": "@acme/db",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
   "scripts": {
-    "prisma": "prisma"
+    "build": "tsc -b",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev",
+    "deploy": "prisma migrate deploy"
   },
-  "dependencies": {
-    "@prisma/client": "^5.22.0",
-    "pg": "^8.16.3"
-  },
-  "devDependencies": {
-    "prisma": "^5.22.0"
+  "prisma": {
+    "schema": "prisma/schema.prisma"
   }
 }

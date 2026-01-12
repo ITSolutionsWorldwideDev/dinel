@@ -5,13 +5,23 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@repo/db": ["packages/db/src/index.ts"],
-      "@repo/auth": ["packages/auth/src/index.ts"],
-      "@repo/utils": ["packages/utils"],
-      "@repo/types": ["packages/types"],
-      // "@repo/ui": ["packages/ui"],
+      "@acme/db": ["packages/db/src/index.ts"],
+      "@repo/auth": ["packages/auth/index.ts"],
+      "@acme/utils": ["packages/utils"],
+      "@acme/types": ["packages/types"],
+      "@acme/ui": ["packages/ui"],
       "@repo/ui": ["packages/ui/src/index.ts"]
     }
   },
   "include": ["src", "types/**/*.d.ts", "next-auth.d.ts"]
 }
+
+/* 
+"paths": {
+  "@acme/db": ["packages/db/src/index.ts"],
+  "@repo/auth": ["packages/auth/index.ts"],
+  "@acme/utils": ["packages/utils/index.ts"],
+  "@acme/types": ["packages/types/index.ts"],
+  "@acme/ui": ["packages/ui/index.ts"]
+}
+*/

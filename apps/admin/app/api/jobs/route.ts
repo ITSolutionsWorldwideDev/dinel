@@ -1,7 +1,7 @@
 // apps/admin/app/api/jobs/route.ts
 
 import { NextResponse } from "next/server";
-import { pool } from "@repo/db";
+import { pool } from "@acme/db";
 import slugify from "slugify";
 
 export async function GET(req: Request) {
