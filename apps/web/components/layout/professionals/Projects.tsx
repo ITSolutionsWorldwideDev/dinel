@@ -40,7 +40,7 @@ const projectsData = [
   },
 ];
 
-const Projectss = ({ icon, className }) => {
+/* const Projectss = ({ icon, className }) => {
   switch (icon) {
     case "zap":
       return <Zap className={className} />;
@@ -53,7 +53,7 @@ const Projectss = ({ icon, className }) => {
     default:
       return null;
   }
-};
+}; */
 
 export default function Projects() {
   return (
