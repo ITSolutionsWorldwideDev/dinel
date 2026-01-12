@@ -9,7 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
-     "@repo/ui": "*",
+    "@repo/auth": "*",
+    "@repo/db": "*",
+    "@repo/ui": "*",
+    "@repo/types": "*",
     "@headlessui/react": "^2.2.9",
     "@uploadthing/react": "^7.3.3",
     "antd": "^6.1.4",

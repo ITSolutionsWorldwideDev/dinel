@@ -1,7 +1,21 @@
+// packages/db/tsconfig.json
 {
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "declaration": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}
+
+
+/* {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "composite": true
   },
   "include": ["src"]
-}
+} */

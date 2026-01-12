@@ -1,4 +1,22 @@
+// packages/auth/tsconfig.json
 {
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true
+  },
+  "references": [
+    { "path": "../types" }
+  ],
+  "include": ["src"]
+}
+
+
+/* {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "composite": true
@@ -7,4 +25,4 @@
     { "path": "../db" }
   ],
   "include": ["src"]
-}
+} */
