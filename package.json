@@ -28,14 +28,14 @@
     "packages/*"
   ],
   "dependencies": {
-<<<<<<< HEAD
+
     "@tailwindcss/postcss": "^4.1.18",
     "lucide-react": "^0.562.0",
     "node": "^24.12.0",
     "postcss": "^8.5.6",
-    "react-icons": "^5.5.0",
-    "tailwindcss": "^4.1.18"
-=======
+    
+    "tailwindcss": "^4.1.18",
+
     "@auth/prisma-adapter": "^2.11.1",
     "@headlessui/react": "^2.2.9",
     "@repo/db": "^0.0.0",
@@ -52,6 +52,6 @@
     "react-simple-wysiwyg": "^3.4.1",
     "slugify": "^1.6.6",
     "uploadthing": "^7.7.4"
->>>>>>> 0901596e724f8c056aaa3ed463bfa8c621b78d38
+
   }
 }

@@ -1,3 +1,5 @@
+import { Rocket, TrendingUp, Award, Users } from "lucide-react";
+
 export default function ProfessionalsSection() {
   return (
     <section className="w-full px-4 py-16">
@@ -19,8 +21,8 @@ export default function ProfessionalsSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Item */}
             <div className="flex gap-4">
-              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-blue-100 text-blue-600">
-                🚀
+              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-linear-to-r from-[#2B7FFF] to-[#00B8DB] text-white">
+                <Rocket />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">
@@ -34,8 +36,8 @@ export default function ProfessionalsSection() {
             </div>
 
             <div className="flex gap-4">
-              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-orange-100 text-orange-600">
-                📈
+              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-linear-to-r from-[#FF6900] to-[#FB2C36] text-white">
+                <TrendingUp />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">
@@ -48,8 +50,8 @@ export default function ProfessionalsSection() {
             </div>
 
             <div className="flex gap-4">
-              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-pink-100 text-pink-600">
-                👤
+              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-linear-to-r from-[#AD46FF] to-[#F6339A] text-white">
+                <Users />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">
@@ -62,8 +64,8 @@ export default function ProfessionalsSection() {
             </div>
 
             <div className="flex gap-4">
-              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-green-100 text-green-600">
-                🏅
+              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-linear-to-r from-[#00C950] to-[#00BBA7] text-white">
+                <Award />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">Recognition</h3>
@@ -77,10 +79,10 @@ export default function ProfessionalsSection() {
 
         {/* Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-          <button className="px-6 py-3 rounded-lg bg-orange-500 text-white font-medium hover:bg-orange-600 transition">
+          <button className="px-6 py-3 rounded-lg bg-[#FF6B35] text-white font-medium hover:bg-orange-600 transition">
             Discover Opportunities
           </button>
-          <button className="px-6 py-3 rounded-lg border-2 border-blue-500 text-blue-500 font-medium hover:bg-blue-50 transition">
+          <button className="px-6 py-3 rounded-lg border-2 border-[#0A7CD8] text-[#0A7CD8] font-medium hover:bg-blue-50 transition">
             Become a Dineler
           </button>
         </div>

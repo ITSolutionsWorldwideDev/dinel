@@ -24,7 +24,7 @@ export default function PeopleMakeTechnologyWork() {
     <section className="w-full bg-white py-12 px-4 md:px-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Image Section */}
-        <div className="relative w-full h-65 sm:h-80 md:h-105 rounded-xl overflow-hidden">
+        <div className="relative w-full h-65 sm:h-80 md:h-105 overflow-hidden">
           <Image
             src="/assets/home/fe885545f225e9a9249ac87cf1593d9db57ad143.jpg"
             alt="team working"
@@ -36,9 +36,11 @@ export default function PeopleMakeTechnologyWork() {
 
         {/* Content Section */}
         <div className="space-y-6">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-blue-600 leading-tight">
-            {contentData.title.normal}{" "}
-            <span className="text-orange-500">
+          <h2 className="text-3xl sm:text-4xl md:text-7xl font-semibold text-[#0A7CD8] leading-tight">
+            <span className="bg-linear-to-r from-[#3b8ee6] via-[#4e6cb8] to-[#4d4aa1] bg-clip-text text-transparent ">
+              {contentData.title.normal}
+            </span>
+            <span className="bg-linear-to-r from-[#eb6b39] via-[#d25b4e] to-[#a86c80] bg-clip-text text-transparent block">
               {contentData.title.highlight}
             </span>
           </h2>

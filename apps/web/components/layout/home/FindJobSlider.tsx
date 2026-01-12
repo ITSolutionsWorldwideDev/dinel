@@ -53,14 +53,13 @@ const JobVacanciesSlider = () => {
     <div className="bg-gray-50 py-16 px-4 mt-30">
       <div className="container mx-auto">
         {/* Header */}
+
+        <div>
+          <p className="text-[#FF8026] font-semibold text-sm mb-2">VACANCIES</p>
+        </div>
         <div className="flex justify-between items-start mb-12">
-          <div>
-            <p className="text-[#FF8026] font-semibold text-sm mb-2">
-              VACANCIES
-            </p>
-            <h1 className="text-5xl font-bold text-gray-900">Find Your Job</h1>
-          </div>
-          <button className="text-[#FF8026] font-semibold underline">
+          <h1 className="text-5xl font-bold text-gray-900">Find Your Job</h1>
+          <button className="text-[#FF8026] font-semibold underline decoration-black ">
             VIEW ALL VACANCIES
           </button>
         </div>

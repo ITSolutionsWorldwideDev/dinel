@@ -1,9 +1,10 @@
 export default function Impact() {
   return (
-    <section className="bg-linear-to-r from-orange-500 to-orange-400 px-6 py-20 md:py-24 container mx-auto">
-      <div className=" text-center">
+    <section className="bg-[#FF8026]   container mx-auto relative ">
+      <div className="absolute inset-0 opacity-40  z-1 bg-[url('/assets/home/2ab3e25bb92dd58e32fa83e505bc6ebef6f6ed58(1).jpg')] bg-no-repeat bg-cover " />
+      <div className=" text-center relative z-10  p-8">
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 ">
           Ready to make an impact?
         </h2>
 
@@ -15,12 +16,12 @@ export default function Impact() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-20 ">
+          <button className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full sm:w-auto cursor-pointer">
             Become a Dineler
           </button>
 
-          <button className="bg-transparent text-white font-semibold px-8 py-3 rounded-lg border-2 border-white hover:bg-white hover:text-orange-500 transition-colors duration-200 w-full sm:w-auto">
+          <button className="bg-transparent text-white font-semibold px-8 py-3 rounded-lg border-2 border-white hover:bg-white hover:text-orange-500 transition-colors duration-200 w-full sm:w-auto cursor-pointer">
             View Vacancies
           </button>
         </div>
