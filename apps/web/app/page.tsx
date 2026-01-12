@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import Homei from "@/components/layout/home/Home";
-import Image from "next/image";
-import { ImageProps } from "next/image";
-=======
 import Image, { type ImageProps } from "next/image";
-// import { Button } from "@repo/ui";
 import styles from "./page.module.css";
 
 type Props = Omit<ImageProps, "src"> & {
@@ -22,7 +17,6 @@ const ThemeImage = (props: Props) => {
     </>
   );
 };
->>>>>>> e05e36e681f60ef0f4aeb702f53f4550487cb771
 
 export default function Home() {
   return (
