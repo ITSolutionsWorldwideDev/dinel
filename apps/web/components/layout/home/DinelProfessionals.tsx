@@ -76,7 +76,8 @@ export default function DinelProfessionals() {
               <div className="flex items-end justify-end -mt-10 p-6 z-10">
                 <button className="inline-flex items-center justify-center gap-2 bg-[#FF8026] hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition-colors duration-200 group cursor-pointer">
                   Read more
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                  <ArrowRight  />
+                  {/* className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" */}
                 </button>
               </div>
             </div>

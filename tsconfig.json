@@ -4,6 +4,7 @@
   "references": [{ "path": "packages/db" }, { "path": "packages/auth" }],
   "compilerOptions": {
     "baseUrl": ".",
+    "skipLibCheck": true,
     "paths": {
       "@acme/db": ["packages/db/src/index.ts"],
       "@repo/auth": ["packages/auth/index.ts"],
