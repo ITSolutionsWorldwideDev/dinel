@@ -27,7 +27,8 @@ export default function DinelProfessionals() {
     <div className=" bg-linear-to-br from-gray-50 to-blue-50  ">
       {/* Hero Section */}
       <div className="contianer mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24  relative ">
-        <div className="absolute inset-0 top-1/8 opacity-10  bg-[url('/assets/home/b5119110651a2589afaa1a533594d432fdac1f03.png')] bg-no-repeat bg-right-top z-0 " />
+        <div className="absolute inset-0 top-1/8 opacity-10  bg-[url('/assets/home/b5119110651a2589afaa1a533594d432fdac1f03.png')] bg-no-repeat  z-0 bg-top-right" />
+        {/*  */}
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-orange-500 font-semibold text-sm sm:text-base mb-4 tracking-wide uppercase">
@@ -50,7 +51,7 @@ export default function DinelProfessionals() {
           {sectors.map((sector, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col relative z-10"
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">

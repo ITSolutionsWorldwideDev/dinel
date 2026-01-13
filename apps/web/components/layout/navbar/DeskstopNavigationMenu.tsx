@@ -16,36 +16,37 @@ const DeskstopNavigationMenu = () => {
   ];
   return (
     <header className="">
-      {/* Background with gradient overlay */}
-      {/* <div className="absolute inset-0 bg-linear-to-r   opacity-95" /> */}
-
-      {/* Navigation container */}
       <nav className="relative z-10 container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Desktop Navigation */}
           <div className="hidden xl:flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={`${link.name
-                  .toLowerCase()
-                  .trim()
-                  .replace(/[\s\W-]+/g, "")
-                  .replace(/^-+|-+$/g, "")}`}
-                className="text-white text-sm hover:text-orange-500 transition-colors duration-200 cursor-pointer"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.name.toLocaleLowerCase() === "home" ? (
+                <Link
+                  key={link.name}
+                  href={`/`}
+                  className="text-white text-sm hover:text-orange-500 transition-colors duration-200 cursor-pointer"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <Link
+                  key={link.name}
+                  href={`${link.name
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[\s\W-]+/g, "")
+                    .replace(/^-+|-+$/g, "")}`}
+                  className="text-white text-sm hover:text-orange-500 transition-colors duration-200 cursor-pointer"
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </div>
-
-          {/* <ActionBtns /> */}
         </div>
         <MobileMenuBtn navLinks={navLinks} />
-        {/* Mobile Navigation */}
       </nav>
-
-      {/* Decorative bottom border */}
     </header>
   );
 };

@@ -7,7 +7,7 @@ export default function ProfessinalsHeader() {
     <section className="relative w-full h-screen min-h-125 overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/assets/home/dc3a9870370aac2ce5a74f925281e910465b64aa (1).png" // put image in /public/hero.jpg
+        src="/assets/professionals/67fda7679ab84f6d652e6ab45c424b5bf97582d5.jpg"
         alt="Industry Bridge"
         fill
         priority
@@ -15,7 +15,7 @@ export default function ProfessinalsHeader() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#0A7CD8F2]/80 to-white/9" />
 
       {/* Big faded text */}
 
@@ -39,15 +39,15 @@ export default function ProfessinalsHeader() {
               href="#"
               className="inline-flex items-center gap-2 bg-amber-700 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition"
             >
-              View Vacancies 
+              View Vacancies
             </Link>
 
             <Link
               href="#"
               className="inline-flex items-center gap-2 bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium transition"
             >
-              Become a Dineler 
-              </Link>
+              Become a Dineler
+            </Link>
           </div>
         </div>
       </div>

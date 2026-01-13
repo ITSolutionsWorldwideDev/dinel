@@ -1,38 +1,37 @@
 import Image from "next/image";
+import { IoBulbOutline } from "react-icons/io5";
 
 const Story = () => {
   return (
     <section className="w-full py-16 px-4 md:px-10 bg-white">
       <div className="container  mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* IMAGE SIDE */}
-        <div className="relative">
-          {/* Background tilt */}
-          <div className="absolute -inset-4 bg-linear-to-br from-blue-50 to-orange-50 -rotate-2 rounded-2xl" />
 
-          <div className="relative rounded-2xl overflow-hidden ">
-            <Image
-              src="/assets/aboutus/b65791ecbbe7cd3844d60a9d1bf2011b3997c670.jpg"
-              alt="Dinel story"
-              width={300}
-              height={100}
-              className="h-100 w-500 object-contain"
-              priority
-            />
-          </div>
+        {/* Background tilt */}
+
+        <div className=" flex items-center justify-center bg-linear-to-br from-[#0A7CD81A] to-[#FF6B351A] rotate-2 p-10">
+          <Image
+            src="/assets/aboutus/b65791ecbbe7cd3844d60a9d1bf2011b3997c670.jpg"
+            alt="Dinel story"
+            width={100}
+            height={100}
+            className="h-100 w-[80%] object-cover -rotate-3"
+            priority
+          />
         </div>
 
         {/* CONTENT SIDE */}
         <div>
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 text-sm font-medium text-gray-700 bg-gray-100 rounded-full">
-            💡 The Story Behind Dinel
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 text-sm font-medium text-gray-700 bg-linear-to-br from-[#0A7CD81A] to-[#FF6B351A] rounded-full">
+            <IoBulbOutline className="text-[#FF6B35]" /> The Story Behind Dinel
           </div>
 
           {/* Heading */}
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
             Built by an engineer.
             <br />
-            <span className="text-blue-600">Driven by people.</span>
+            <span className="text-[#0A7CD8]">Driven by people.</span>
           </h2>
 
           {/* Description */}
@@ -50,7 +49,7 @@ const Story = () => {
           </p>
 
           {/* Footer */}
-          <div className="mt-8 flex items-center gap-4 text-sm font-semibold text-blue-600">
+          <div className="mt-8 flex items-center gap-4 text-sm font-bold text-[#0A7CD8]">
             <span>Since 2000</span>
             <span className="w-10 h-px bg-blue-600" />
             <span>25+ Years</span>

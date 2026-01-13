@@ -1,9 +1,17 @@
 export default function NextStep() {
   return (
     <>
-      <div className=" bg-linear-to-br from-orange-50 to-blue-50 flex items-center justify-center p-4 container mx-auto">
-        <div className=" w-full">
-          <div className="bg-linear-to-r from-orange-400 to-orange-500 rounded-2xl shadow-2xl  p-8 md:p-16">
+      <div className="bg-[#FF8026] flex items-center justify-center p-4 container mx-auto relative">
+       <img
+        src="/assets/home/2ab3e25bb92dd58e32fa83e505bc6ebef6f6ed58(1).jpg"
+        className="absolute inset-0 w-full h-full object-cover mix-blend-multiply"
+        alt=""
+      />
+
+      <div className="bg-[#FF8026] absolute inset-0 opacity-30"/>
+
+        <div className="relative z-1 w-full lg:w-[70%]">
+          <div className="  p-8 md:p-16">
             <blockquote className="text-center">
               <p className="text-white text-xl md:text-3xl font-medium leading-relaxed">
                 "We understand what drives technicians and what they are looking

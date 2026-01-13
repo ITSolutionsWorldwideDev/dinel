@@ -1,7 +1,13 @@
 export default function Impact() {
   return (
     <section className="bg-[#FF8026]   container mx-auto relative ">
-      <div className="absolute inset-0 opacity-40  z-1 bg-[url('/assets/home/2ab3e25bb92dd58e32fa83e505bc6ebef6f6ed58(1).jpg')] bg-no-repeat bg-cover " />
+     <img
+        src="/assets/home/2ab3e25bb92dd58e32fa83e505bc6ebef6f6ed58(1).jpg"
+        className="absolute inset-0 w-full h-full object-cover mix-blend-multiply"
+        alt=""
+      />
+
+      <div className="bg-[#FF8026] absolute inset-0 opacity-30"/>
       <div className=" text-center relative z-10  p-8">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 ">

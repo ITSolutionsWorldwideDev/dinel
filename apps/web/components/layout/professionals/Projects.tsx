@@ -7,53 +7,38 @@ const projectsData = [
     title: "Energy and energy transition",
     description:
       "Lead the transition to renewable energy with solar, wind, and sustainable power solutions",
-    icon: "zap",
+    icon: <Zap className="w-6 h-6 text-white" />,
     image: "9ade3046653c3a8ad63668d5e9647af25a20ecd4.jpg",
-    iconBg: "bg-orange-500",
+    iconBg: "bg-linear-to-r from-[#F0B100] to-[#FF6900]",
   },
   {
     id: 2,
     title: "Infrastructure and mobility",
     description:
       "Build the infrastructure of tomorrow with bridges, roads, and smart transportation systems",
-    icon: "building",
+    icon: <Building2 className="w-6 h-6 text-white" />,
     image: "d5c637c6e02ee9e5c67d246227bcb6a689986be7.jpg",
-    iconBg: "bg-cyan-500",
+    iconBg: "bg-linear-to-r from-[#2B7FFF] to-[#00B8DB]",
   },
   {
     id: 3,
     title: "Industry and industrial automation",
     description:
       "Transform manufacturing with cutting-edge automation and intelligent control systems",
-    icon: "factory",
+    icon: <Factory className="w-6 h-6 text-white" />,
     image: "8740528e1dfc1b37695bdf9420b34c03825c16e9.jpg",
-    iconBg: "bg-slate-200",
+    iconBg: "bg-linear-to-r from-[#4A5565] to-[#1E2939]",
   },
   {
     id: 4,
     title: "Sustainable and innovative technology",
     description:
       "Innovate with green technologies and sustainable solutions for a better future",
-    icon: "leaf",
+    icon: <Leaf className="w-6 h-6 text-white" />,
     image: "fba342536d7cc6cb6bed38f67444fb0c273fff61.jpg",
-    iconBg: "bg-emerald-500",
+    iconBg: "bg-linear-to-r from-[#00C950] to-[#009966]",
   },
 ];
-
-const Projectss = ({ icon, className }) => {
-  switch (icon) {
-    case "zap":
-      return <Zap className={className} />;
-    case "building":
-      return <Building2 className={className} />;
-    case "factory":
-      return <Factory className={className} />;
-    case "leaf":
-      return <Leaf className={className} />;
-    default:
-      return null;
-  }
-};
 
 export default function Projects() {
   return (
@@ -86,9 +71,9 @@ export default function Projects() {
 
               {/* Icon Badge */}
               <div
-                className={`absolute top-6 right-6 ${project.iconBg} rounded-full p-3 shadow-lg`}
+                className={`absolute top-6 right-6 ${project.iconBg} rounded-md p-3 shadow-lg`}
               >
-                {/* <IconComponent icon={project.icon} className="w-6 h-6 text-white" /> */}
+                {project.icon}
               </div>
 
               {/* Content */}
@@ -103,8 +88,8 @@ export default function Projects() {
         </div>
 
         {/* Bottom Message */}
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-linear-to-r from-blue-50 via-purple-50 to-pink-50 rounded-2xl p-8 text-center shadow-md">
+        <div className="max-w-2xl mx-auto bg-linear-to-r from-[#0A7CD81A] to-[#FF6B351A]">
+          <div className="  p-8 text-center ">
             <p className="text-gray-700 text-lg">
               These are projects where your work matters today and in the
               future.

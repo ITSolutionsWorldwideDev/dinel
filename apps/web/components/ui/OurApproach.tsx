@@ -29,7 +29,7 @@ const items = [
 
 const OurApproach = () => {
   return (
-    <section className="container mx-auto  bg-linear-to-r from-orange-500 via-orange-400 to-blue-600 py-20 px-6">
+    <section className="container mx-auto  bg-linear-to-r from-[#FF8026] to-[#0A7CD8] py-20 px-6">
       <div className=" text-center text-white">
         {/* Badge */}
         <span className="inline-block bg-white/20 text-sm px-4 py-1 rounded-full mb-4">
