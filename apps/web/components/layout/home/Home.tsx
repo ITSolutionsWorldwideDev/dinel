@@ -8,11 +8,11 @@ import DinelerSection from "./DinelerSection";
 import OurApproach from "../../ui/OurApproach";
 import ProfessionalsSection from "./ProfessionalsSection";
 import DinelProfessionals from "./DinelProfessionals";
-import StatusBanner from "./StatsSection";
 import DinelBanner from "./DinelBanner";
 import WhySecondDinel from "./WhySecondDinel";
 import Impact from "./Impact";
 import DinelGroupBv from "../../ui/DinelGroupBv";
+import StatsSection from "./StatsSection";
 
 const Homei = () => {
   return (
@@ -30,8 +30,12 @@ const Homei = () => {
       <OurApproach />
       <ProfessionalsSection />
       <DinelProfessionals />
-      <StatusBanner />
-      <DinelBanner />
+      <div className="relative  ">
+        <div className="absolute inset-0 top-10 z-0 opacity-10 bg-[url('/assets/home/b5119110651a2589afaa1a533594d432fdac1f03.png')] bg-no-repeat"></div>
+        <StatsSection />
+        <DinelBanner />
+      </div>
+
       <WhySecondDinel />
       <Impact />
       <DinelGroupBv />

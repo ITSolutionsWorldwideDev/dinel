@@ -26,7 +26,7 @@ export default function DinelProfessionals() {
   return (
     <div className=" bg-linear-to-br from-gray-50 to-blue-50  ">
       {/* Hero Section */}
-      <div className="contianer mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24  relative ">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24  relative ">
         <div className="absolute inset-0 top-1/8 opacity-10  bg-[url('/assets/home/b5119110651a2589afaa1a533594d432fdac1f03.png')] bg-no-repeat  z-0 bg-top-right" />
         {/*  */}
         {/* Header */}
@@ -76,7 +76,7 @@ export default function DinelProfessionals() {
               <div className="flex items-end justify-end -mt-10 p-6 z-10">
                 <button className="inline-flex items-center justify-center gap-2 bg-[#FF8026] hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition-colors duration-200 group cursor-pointer">
                   Read more
-                  <ArrowRight  />
+                  <ArrowRight />
                   {/* className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" */}
                 </button>
               </div>

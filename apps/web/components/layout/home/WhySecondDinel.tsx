@@ -20,34 +20,42 @@ export default function WhySecondDinel() {
 
   return (
     <div className=" py-16 px-4">
-      <div className="container mx-auto">
+      <div className="container mx-auto ">
+        {/* bg-[url('/assets/home/b5119110651a2589afaa1a533594d432fdac1f03.png')] bg-no-repeat    bg-right bg-contain */}
         {/* Header */}
         <h1 className="text-5xl font-bold text-center text-gray-900 mb-16">
           Why Second Via Dinel
         </h1>
 
         {/* Main Content */}
-        <div className="bg-white rounded-3xl  overflow-hidden ">
-          <div className="grid lg:grid-cols-2 gap-8 p-8 lg:p-12">
+        <div className="bg-white rounded-3xl  ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-75  overflow-visible">
             {/* Left Side - Image */}
-            <div className="flex items-center justify-center  rounded-2xl bg-[#CEE9FF]">
-              <div className="relative   ">
-               
-                <img
-                  src="/assets/home/a8bde8006ea2da5002a7af3c2b0ee14c077f30e0.png"
-                  alt="Professional with laptop"
-                  className="relative  flex "
-                />
-               
-              </div>
+            <div className=" rounded-2xl relative  ">
+              <div className=" bg-[#CEE9FF] absolute inset-0 left-1/3 w-[60%]" />
+              {/* <div className="  "> */}
+              <img
+                src="/assets/home/a8bde8006ea2da5002a7af3c2b0ee14c077f30e0.png"
+                alt="Professional with laptop"
+                className="absolute h-117 w-auto -top-15 -right-25"
+              />
+              {/* </div> */}
             </div>
 
             {/* Right Side - Features */}
-            <div className="flex flex-col justify-center space-y-6">
+            <div className="relative flex flex-col justify-center space-y-6 ">
+              <Image
+                src="/assets/home/b5119110651a2589afaa1a533594d432fdac1f03.png"
+                alt="Professional with laptop"
+                width={900}
+                height={900}
+                className="absolute w-full h-full opacity-10  -left-1/2"
+              />
+              {/* <div className=" absolute inset-0 opacity-10" /> */}
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="group bg-linear-to-r from-gray-50 to-white  rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100"
+                  className="group bg-linear-to-r from-gray-50 to-white  rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 relative"
                 >
                   <div className="flex items-center justify-centertext-center gap-4">
                     <div className=" p-3 rounded-xl ">
