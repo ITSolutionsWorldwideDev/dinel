@@ -30,7 +30,7 @@ const Homei = () => {
       <OurApproach />
       <ProfessionalsSection />
       <DinelProfessionals />
-      <div className="relative  ">
+      <div className="relative">
         <div className="absolute inset-0 top-10 z-0 opacity-10 bg-[url('/assets/home/b5119110651a2589afaa1a533594d432fdac1f03.png')] bg-no-repeat"></div>
         <StatsSection />
         <DinelBanner />

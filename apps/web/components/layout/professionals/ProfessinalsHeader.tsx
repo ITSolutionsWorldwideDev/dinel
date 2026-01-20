@@ -1,3 +1,4 @@
+import { FaqHeaderSection } from "@/components/ui/FaqHeaderSection";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
@@ -11,7 +12,7 @@ export default function ProfessinalsHeader() {
         alt="Industry Bridge"
         fill
         priority
-        className="object-cover"
+        className="object-cover scale-x-[-1]"
       />
 
       {/* Overlay */}
@@ -51,6 +52,9 @@ export default function ProfessinalsHeader() {
           </div>
         </div>
       </div>
+      {/* <div className=""> */}
+        <FaqHeaderSection />
+      {/* </div> */}
     </section>
   );
 }

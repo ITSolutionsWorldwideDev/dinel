@@ -15,7 +15,7 @@ export default function AboutHeader() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-blue-600/60" />
+      <div className="absolute inset-0 bg-[#0a7cd8]/60" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex  items-center container mx-auto justify-center">
