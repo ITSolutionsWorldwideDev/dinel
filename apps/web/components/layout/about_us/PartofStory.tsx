@@ -1,3 +1,7 @@
+import { FiTarget } from "react-icons/fi";
+import { FaArrowTrendUp } from "react-icons/fa6";
+import { FiUsers } from "react-icons/fi";
+
 export default function PartofStory() {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
@@ -13,21 +17,12 @@ export default function PartofStory() {
         </div>
 
         {/* Features Box */}
-        <div className=" rounded-lg p-8 md:p-12 mb-12 bg-white">
+        <div className=" rounded-lg p-8 md:p-12 mb-12 ">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {/* Feature 1 */}
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
-              <div className="mb-4">
-                <svg
-                  className="w-12 h-12 text-orange-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                  <circle cx="12" cy="12" r="6" strokeWidth="2" />
-                  <circle cx="12" cy="12" r="2" strokeWidth="2" fill="currentColor" />
-                </svg>
+            <div className="flex flex-col items-center md:items-start text-center md:text-left shadow-md bg-white p-5">
+              <div className="mb-4 ">
+                <FiTarget className="text-[#FF6B35] w-8 h-8" />
               </div>
               <p className="text-lg text-gray-900">
                 Choosing meaningful projects
@@ -35,18 +30,9 @@ export default function PartofStory() {
             </div>
 
             {/* Feature 2 */}
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left shadow-md bg-white p-5">
               <div className="mb-4">
-                <svg
-                  className="w-12 h-12 text-orange-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                >
-                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-                  <polyline points="16 7 22 7 22 13" />
-                </svg>
+                <FaArrowTrendUp className="text-[#FF6B35] w-8 h-8" />
               </div>
               <p className="text-lg text-gray-900">
                 Growing through challenge and guidance
@@ -54,20 +40,9 @@ export default function PartofStory() {
             </div>
 
             {/* Feature 3 */}
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left shadow-md bg-white p-5">
               <div className="mb-4">
-                <svg
-                  className="w-12 h-12 text-orange-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                >
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
+                <FiUsers className="text-[#FF6B35] w-8 h-8" />
               </div>
               <p className="text-lg text-gray-900">
                 Belonging to a community that values expertise and people

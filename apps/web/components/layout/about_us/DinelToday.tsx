@@ -1,11 +1,12 @@
 import Image from "next/image";
+import { LuRocket } from "react-icons/lu";
 
 export default function DinelToday() {
   return (
     <section className="w-full py-16 px-4 md:px-8 lg:px-16">
       {/* Header */}
       <div className="max-w-5xl mx-auto text-center mb-12">
-        <span className="inline-block mb-4 rounded-full bg-blue-100 px-4 py-1 text-sm font-medium text-blue-600">
+        <span className="inline-block mb-4 rounded-full bg-linear-to-r from-[#0A7CD81A] to-[#FF6B351A] px-4 py-1 text-sm font-medium text-black">
           Dinel Today
         </span>
 
@@ -32,8 +33,8 @@ export default function DinelToday() {
           <div className="absolute inset-0 bg-black/50" />
 
           <div className="absolute bottom-6 left-6 right-6 text-white">
-            <div className="mb-3 flex items-center justify-center w-12 h-12 rounded-xl bg-blue-500">
-              🚀
+            <div className="mb-3 flex items-center justify-center w-12 h-12 rounded-xl bg-linear-to-r from-[#2B7FFF] to-[#00B8DB]">
+              <LuRocket className="text-white" />
             </div>
             <h3 className="text-xl md:text-2xl font-semibold mb-2">
               Technical Professionals
@@ -56,8 +57,8 @@ export default function DinelToday() {
           <div className="absolute inset-0 bg-black/50" />
 
           <div className="absolute bottom-6 left-6 right-6 text-white">
-            <div className="mb-3 flex items-center justify-center w-12 h-12 rounded-xl bg-pink-500">
-              📄
+            <div className="mb-3 flex items-center justify-center w-12 h-12 rounded-xl bg-linear-to-r from-[#AD46FF] to-[#F6339A]">
+              <img src="/assets/professionals/Icon.png" alt="" />
             </div>
             <h3 className="text-xl md:text-2xl font-semibold mb-2">
               Innovative Organizations
