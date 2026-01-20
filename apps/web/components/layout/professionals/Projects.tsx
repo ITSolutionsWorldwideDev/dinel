@@ -1,5 +1,6 @@
 import React from "react";
 import { Zap, Building2, Factory, Leaf } from "lucide-react";
+import TextWithBorderAndBg from "@/components/ui/TextWithBorderAndBg";
 
 const projectsData = [
   {
@@ -88,14 +89,9 @@ export default function Projects() {
         </div>
 
         {/* Bottom Message */}
-        <div className="max-w-2xl mx-auto bg-linear-to-r from-[#0A7CD81A] to-[#FF6B351A]">
-          <div className="  p-8 text-center ">
-            <p className="text-gray-700 text-lg">
-              These are projects where your work matters today and in the
-              future.
-            </p>
-          </div>
-        </div>
+        <TextWithBorderAndBg
+          text="These are projects where your work matters today and in the future."
+        />
       </div>
     </div>
   );
