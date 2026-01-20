@@ -8406,7 +8406,8 @@ body {
     display: none;
   }
   .sidebar .sidebar-menu > ul > li.submenu-open h6 {
-    color: var(--sidebar-heading) !important;
+    /* color: var(--sidebar-heading) !important; */
+    color: #fff !important;
   }
   .modern-profile {
     display: none;

@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import Table from "@/core/common/pagination/datatable";
 import { Edit, Trash2 } from "react-feather";
 import { TbCirclePlus, TbTrash } from "react-icons/tb";
+import type { JobFilters } from "@/types/job";
 
 /* ------------------------------------
    Types
@@ -28,13 +29,13 @@ type Job = {
 export default function JobsPage() {
   const router = useRouter();
 
-  const [filters, setFilters] = useState({
-    status: "",
-    employment_type: "",
-    workplace_type: "",
-    experience_level: "",
-    sort: "recent",
-  });
+  // const [filters, setFilters] = useState({
+  //   status: "",
+  //   employment_type: "",
+  //   workplace_type: "",
+  //   experience_level: "",
+  //   sort: "recent",
+  // });
 
   const [data, setData] = useState<{
     items: Job[];
@@ -48,13 +49,28 @@ export default function JobsPage() {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
 
+  const [filters, setFilters] = useState<JobFilters>({
+    sort: "recent",
+  });
+
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
-  const handleFilterChange = (key: keyof typeof filters, value: string) => {
+  /* const handleFilterChange = (key: keyof typeof filters, value: string) => {
     setFilters((prev) => ({
       ...prev,
       [key]: value,
+    }));
+    setPage(1);
+  }; */
+
+  const handleFilterChange = <K extends keyof JobFilters>(
+    key: K,
+    value: JobFilters[K]
+  ) => {
+    setFilters((prev) => ({
+      ...prev,
+      [key]: value || undefined,
     }));
     setPage(1);
   };
@@ -88,34 +104,20 @@ export default function JobsPage() {
     }
   };
 
-  /*  const fetchJobs = async () => {
-    try {
-      setLoading(true);
-
-      const res = await fetch(`/api/jobs?page=${page}&limit=10`);
-      const json = await res.json();
-
-      setData({
-        items: json.items || [],
-        meta: {
-          page: json.page,
-          pageSize: json.pageSize,
-          totalPages: json.totalPages,
-          totalResults: json.totalResults,
-        },
-      });
-    } catch (err) {
-      console.error("Failed to fetch jobs", err);
-    } finally {
-      setLoading(false);
-    }
-  }; */
-
   useEffect(() => {
     fetchJobs();
   }, [page, filters]);
 
+  const DEFAULT_FILTERS: JobFilters = {
+    sort: "recent",
+  };
+
   const handleClearFilters = () => {
+    setFilters(DEFAULT_FILTERS);
+    setPage(1);
+  };
+
+  /* const handleClearFilters = () => {
     setFilters({
       status: "",
       employment_type: "",
@@ -124,7 +126,7 @@ export default function JobsPage() {
       sort: "recent",
     });
     setPage(1);
-  };
+  }; */
 
   /* ------------------------------------
        Delete
@@ -202,18 +204,22 @@ export default function JobsPage() {
     },
     {
       title: "Status",
-      render: (_: any, record: Job) => (
-        <span
-          className={
-            record.status === "PUBLISHED"
-              ? "text-green-600 font-medium"
-              : "text-gray-500 font-medium"
-          }
-        >
-          {record.status}
-        </span>
-      ),
+      render: (_: any, r: Job) => <StatusBadge status={r.status} />,
     },
+    // {
+    //   title: "Status",
+    //   render: (_: any, record: Job) => (
+    //     <span
+    //       className={
+    //         record.status === "PUBLISHED"
+    //           ? "text-green-600 font-medium"
+    //           : "text-gray-500 font-medium"
+    //       }
+    //     >
+    //       {record.status}
+    //     </span>
+    //   ),
+    // },
     {
       title: "Action",
       render: (_: any, record: Job) => (
@@ -251,7 +257,7 @@ export default function JobsPage() {
             </div>
             <button
               onClick={() => router.push(`/jobs/create`)}
-              className="flex items-center gap-1 px-4 py-2 bg-blue-600 text-white rounded"
+              className="btn btn-info flex flex-row gap-2"
             >
               <TbCirclePlus size={18} />
               Add Job
@@ -271,11 +277,17 @@ export default function JobsPage() {
               {loading ? (
                 <p className="text-center py-6">Loading...</p>
               ) : (
-                <Table
-                  columns={columns}
-                  dataSource={data?.items || []}
-                  rowKey="id"
-                />
+                <>
+                  <p className="text-sm text-gray-500">
+                    Showing {data?.items.length} of {meta?.totalResults} jobs
+                  </p>
+
+                  <Table
+                    columns={columns}
+                    dataSource={data?.items || []}
+                    rowKey="id"
+                  />
+                </>
               )}
             </div>
 
@@ -308,14 +320,11 @@ export default function JobsPage() {
                   <div className="flex gap-3 justify-center">
                     <button
                       onClick={() => setShowDeleteModal(false)}
-                      className="px-4 py-2 bg-gray-200 rounded"
+                      className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none"
                     >
                       Cancel
                     </button>
-                    <button
-                      onClick={handleDelete}
-                      className="px-4 py-2 bg-red-600 text-white rounded"
-                    >
+                    <button onClick={handleDelete} className="btn btn-danger">
                       Delete
                     </button>
                   </div>
@@ -326,5 +335,17 @@ export default function JobsPage() {
         </div>
       </div>
     </>
+  );
+}
+
+function StatusBadge({ status }: { status: string }) {
+  const map: Record<string, string> = {
+    PUBLISHED: "bg-green-100 text-green-700",
+    DRAFT: "bg-gray-100 text-gray-600",
+    CLOSED: "bg-red-100 text-red-600",
+  };
+
+  return (
+    <span className={`px-2 py-1 rounded text-xs ${map[status]}`}>{status}</span>
   );
 }

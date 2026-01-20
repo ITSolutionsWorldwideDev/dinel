@@ -22,7 +22,7 @@ export const authOptions: NextAuthOptions = {
         // console.log('credentials ==== ',credentials);
 
         // Fetch user from PostgreSQL
-        const query = `SELECT id, email, password_hash, role FROM users WHERE email = $1 LIMIT 1`;
+        const query = `SELECT id, email, password_hash, role, public_id FROM users WHERE email = $1 LIMIT 1`;
         const result = await runQuery(query, [credentials.email]);
 
         if (result.rowCount === 0) {
@@ -44,6 +44,7 @@ export const authOptions: NextAuthOptions = {
         return {
           id: user.id,
           email: user.email,
+          public_id: user.public_id,
           role: user.role,
         };
       },
@@ -58,6 +59,7 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
+        token.public_id = user.public_id;   // public_id
         if ("role" in user && user.role) {
           token.role = user.role;
         }
@@ -73,11 +75,16 @@ export const authOptions: NextAuthOptions = {
           name?: string | null;
           email?: string | null;
           image?: string | null;
+          public_id?: string;
         };
 
         user.id = token.id!;
         user.role = token.role;
+        // user.public_id = token.public_id;
+
+        user.public_id = token.public_id ?? undefined;
         session.user = user;
+        // session.user.public_id = token.public_id;
       }
       return session;
     },

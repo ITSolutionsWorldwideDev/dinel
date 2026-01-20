@@ -208,18 +208,20 @@ export default function CreateBlogForm() {
               </div>
 
               <div className="flex justify-end gap-3">
-                <Link href="/products" className="btn btn-secondary">
+                <Link href="/products" className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none">
                   Cancel
                 </Link>
 
                 <div className="flex gap-3">
                   <Button
                     onClick={() => handleSubmit("draft")}
+                    className="btn btn-purple"
                   >
                     Save Draft
                   </Button>
 
-                  <Button onClick={() => handleSubmit("published")}>
+                  <Button onClick={() => handleSubmit("published")}
+                    className="btn btn-success">
                     Publish
                   </Button>
                 </div>

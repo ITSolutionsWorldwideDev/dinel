@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Import LinkedIn Profile</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2>LinkedIn Import</h2>
+
+    <p class="info">
+      This will import the currently opened LinkedIn profile into your ATS.
+    </p>
+
+    <label class="consent">
+      <input type="checkbox" id="consent" />
+      I confirm I have legal permission to store this profile data.
+    </label>
+
+    <div id="connectionStatus" class="status"></div>
+
+    <button id="importBtn" disabled>Import Profile</button>
+
+    <p id="status"></p>
+
+    <pre id="preview" class="preview-box"></pre>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

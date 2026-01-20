@@ -50,6 +50,12 @@ export const SidebarData = [
         icon: "shield-up",
         showSubRoute: false,
       },
+      {
+        label: "Applications",
+        link: "/applications",
+        icon: "file",
+        showSubRoute: false,
+      },
     ],
   },
 
@@ -76,6 +82,13 @@ export const SidebarData = [
     submenuHdr: "User Management",
     submenuItems: [
       {
+        label: "Candidates",
+        link: "/candidates",
+        icon: "users-group",
+        showSubRoute: false,
+        submenu: false,
+      },
+      {
         label: "Partners",
         link: "/partners",
         icon: "users-group",
@@ -89,7 +102,7 @@ export const SidebarData = [
         showSubRoute: false,
       },
     ],
-  },
+  },// Candidates
   {
     label: "Settings",
     submenu: true,
@@ -97,11 +110,20 @@ export const SidebarData = [
     submenuHdr: "Settings",
     submenuItems: [
       {
+        label: "General Settings",
+        link: "/settings",
+        icon: "settings",
+        showSubRoute: false,
+        submenu: false,
+      },
+      {
         label: "Logout",
-        // link: "/login",
+        // link: "#",
         icon: "logout",
         action: "logout",
+        
         // showSubRoute: false,
+        // submenu: false,
       },
     ],
   },

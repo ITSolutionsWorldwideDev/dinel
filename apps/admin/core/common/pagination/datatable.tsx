@@ -7,9 +7,20 @@ type DatatableProps = {
   columns: any[];
   dataSource: any[];
   rowKey?: string;
+  pagination?: {
+    current: number;
+    pageSize: number;
+    total: number;
+    onChange: (page: number) => void;
+  };
 };
 
-const Datatable = ({ columns, dataSource, rowKey = "id" }: DatatableProps) => {
+const Datatable = ({
+  columns,
+  dataSource,
+  rowKey = "id",
+  pagination,
+}: DatatableProps) => {
   const [searchText, setSearchText] = useState("");
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
   const [filteredDataSource, setFilteredDataSource] = useState<any[]>([]);
@@ -40,7 +51,45 @@ const Datatable = ({ columns, dataSource, rowKey = "id" }: DatatableProps) => {
 
   return (
     <>
-      {/* <div className="search-set table-search-set">
+      <Table
+        className="table datanew dataTable no-footer w-full"
+        rowSelection={rowSelection}
+        columns={columns}
+        dataSource={filteredDataSource}
+        rowKey={rowKey}
+        pagination={
+          pagination
+            ? {
+                current: pagination.current,
+                pageSize: pagination.pageSize,
+                total: pagination.total,
+                onChange: pagination.onChange,
+                showSizeChanger: false,
+              }
+            : {
+                locale: { items_per_page: "" },
+                defaultPageSize: 10,
+                showSizeChanger: true,
+                pageSizeOptions: ["10", "20", "30"],
+              }
+        }
+      />
+    </>
+  );
+};
+
+export default Datatable;
+
+/* 
+pagination={{
+          locale: { items_per_page: "" },
+          defaultPageSize: 10,
+          showSizeChanger: true,
+          pageSizeOptions: ["10", "20", "30"],
+        }}
+*/
+{
+  /* <div className="search-set table-search-set">
         <div className="search-input">
           <div className="dataTables_filter">
             <input
@@ -51,26 +100,8 @@ const Datatable = ({ columns, dataSource, rowKey = "id" }: DatatableProps) => {
             />
           </div>
         </div>
-      </div> */}
-
-      <Table
-        className="table datanew dataTable no-footer w-full"
-        rowSelection={rowSelection}
-        columns={columns}
-        dataSource={filteredDataSource}
-        rowKey={rowKey}
-        pagination={{
-          locale: { items_per_page: "" },
-          defaultPageSize: 10,
-          showSizeChanger: true,
-          pageSizeOptions: ["10", "20", "30"],
-        }}
-      />
-    </>
-  );
-};
-
-export default Datatable;
+      </div> */
+}
 
 /* import React, { useState } from "react";
 import { Table } from "antd";

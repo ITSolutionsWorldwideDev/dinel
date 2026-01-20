@@ -145,7 +145,7 @@ export default function JobForm({
               <button
                 type="button"
                 onClick={() => router.back()}
-                className="px-4 py-2 bg-gray-200 rounded"
+                className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none"
               >
                 Cancel
               </button>
@@ -153,7 +153,7 @@ export default function JobForm({
               <button
                 type="submit"
                 disabled={loading}
-                className="px-4 py-2 bg-blue-600 text-white rounded"
+                className="btn btn-primary fs-13 fw-medium p-2 px-3"
               >
                 {loading ? "Saving..." : "Save Job"}
               </button>
