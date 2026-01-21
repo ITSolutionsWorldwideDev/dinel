@@ -10,6 +10,7 @@
       "@repo/auth": ["packages/auth/index.ts"],
       "@acme/utils": ["packages/utils"],
       "@acme/types": ["packages/types"],
+      "@acme/matching": ["packages/matching/dist"],
       "@acme/ui": ["packages/ui"],
       "@repo/ui": ["packages/ui/src/index.ts"]
     }

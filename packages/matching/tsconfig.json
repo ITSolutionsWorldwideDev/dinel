@@ -1,0 +1,13 @@
+// packages/matching/tsconfig.json
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "module": "ESNext",
+    "target": "ES2020"
+  },
+  "include": ["src"]
+}
