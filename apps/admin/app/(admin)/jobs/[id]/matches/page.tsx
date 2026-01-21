@@ -3,8 +3,9 @@
 
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
+import JobMatchesTable from "@/components/jobs/JobMatchesTable";
 
-type Match = {
+export type Match = {
   id: string;
   full_name: string;
   email: string;

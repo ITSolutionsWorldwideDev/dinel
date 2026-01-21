@@ -4,6 +4,8 @@
 import { useState } from "react";
 import CandidateEditForm from "./CandidateEditForm";
 import CandidateNotes from "./CandidateNotes";
+import MatchScore from "../matching/MatchScore";
+import MatchBreakdown from "../matching/MatchBreakdown";
 
 export default function CandidateProfile({
   candidate,
@@ -63,6 +65,10 @@ export default function CandidateProfile({
                   <ApplicationTimeline
                     stages={candidate.application_stages || []}
                   />
+
+                  <h4 className="font-semibold mb-2">Match Score</h4>
+                  <MatchScore score={candidate.match_score} />
+                  <MatchBreakdown breakdown={candidate.match_breakdown} />
                 </div>
               </div>
             </div>

@@ -79,10 +79,10 @@ export default function RevenueWidgets() {
   const route = all_routes;
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
       {/* Profit */}
       <RevenueCard
-        title="Profit"
+        title="XYZ"
         amount="$8,458,798"
         icon={<HiOutlineCube />}
         iconBg="bg-cyan-100"

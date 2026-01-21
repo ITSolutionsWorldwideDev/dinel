@@ -45274,7 +45274,8 @@ span.flatpickr-weekday {
 /****** Utils ******/
 .welcome-wrap {
   padding: 40px 40px 24px;
-  background: #0A7CD8;
+  background: #fe9f43;
+  /* background: #0A7CD8; */
   border-radius: 5px;
   position: relative;
   z-index: 1;
