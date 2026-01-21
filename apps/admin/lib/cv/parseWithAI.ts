@@ -1,9 +1,9 @@
 // apps/admin/lib/cv/parseWithAI.ts
 import OpenAI from "openai";
 
-const openai = new OpenAI({
-  apiKey: process.env.NEW_OPENAI_API_KEY!,
-});
+// const openai = new OpenAI({
+//   apiKey: process.env.NEW_OPENAI_API_KEY!,
+// });
 
 type ParsedCv = {
   full_name: string | null;
@@ -24,7 +24,20 @@ type ParsedCv = {
   }[];
 };
 
+function getOpenAIClient() {
+  const apiKey = process.env.NEW_OPENAI_API_KEY;
+
+  if (!apiKey) {
+    throw new Error("NEW_OPENAI_API_KEY is not set");
+  }
+
+  return new OpenAI({ apiKey });
+}
+
 export async function parseCvText(text: string): Promise<ParsedCv> {
+
+  const openai = getOpenAIClient();
+  
   const completion = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     temperature: 0,
