@@ -52,7 +52,7 @@ export default function Header() {
   }, [pathname]);
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="header">
       <div className="flex items-center justify-between px-4 py-2">
         {/* Left section: Logo & Sidebar toggle */}
         <div
@@ -96,6 +96,7 @@ export default function Header() {
 
           {/* Profile dropdown */}
           <div className="relative">
+            {/* 
             <button
               onClick={() => setProfileDropdownOpen((prev) => !prev)}
               className="flex items-center rounded-full hover:bg-gray-100 p-1 focus:outline-none"
@@ -108,19 +109,29 @@ export default function Header() {
                 sizes="(max-width: 768px) 180px, 240px"
                 className="h-8 w-8 rounded-full"
               />
-            </button>
+            </button> */}
+
+            <span
+              className="avatar avatar-lg bg-primary"
+              onClick={() => setProfileDropdownOpen((prev) => !prev)}
+            >
+              <span className="avatar-title">SA</span>
+            </span>
 
             {profileDropdownOpen && (
               <div className="absolute right-0 mt-2 w-56 bg-white border rounded-md shadow-lg z-50">
                 <div className="flex items-center p-3 border-b">
-                  <Image
+                  {/* <Image
                     src="/assets/img/profiles/avator1.jpg"
                     alt="Profile"
                     width={240}
                     height={80}
                     sizes="(max-width: 768px) 180px, 240px"
                     className="h-10 w-10 rounded-full mr-2"
-                  />
+                  /> */}
+                  <span className="avatar avatar-md bg-primary  mr-2">
+                    <span className="avatar-title">SA</span>
+                  </span>
 
                   <div>
                     <h6 className="font-medium">Super Admin</h6>

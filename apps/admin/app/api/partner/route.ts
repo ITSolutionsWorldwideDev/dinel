@@ -1,4 +1,4 @@
-// /app/api/partners/route.ts (GET)
+// /app/api/partner/route.ts (GET)
 
 import { NextRequest, NextResponse } from "next/server";
 import { pool } from "@acme/db";

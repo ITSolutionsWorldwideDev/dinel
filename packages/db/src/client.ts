@@ -17,6 +17,7 @@ export const pool =
   globalForPool.pool ??
   new Pool({
     connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: true }, // enforces verify-full
   });
 
 if (process.env.NODE_ENV !== "production") {

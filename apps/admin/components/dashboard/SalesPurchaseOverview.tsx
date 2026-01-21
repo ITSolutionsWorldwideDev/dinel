@@ -74,7 +74,7 @@ export default function SalesPurchaseOverview() {
             </div>
 
             {/* Chart Placeholder */}
-            <div id="sales-daychart" className="w-full h-[240px] bg-gray-50 rounded-md flex items-center justify-center text-gray-400">
+            <div id="sales-daychart" className="w-full h-60 bg-gray-50 rounded-md flex items-center justify-center text-gray-400">
               {/* <SalesDayChart /> */}
               Chart Placeholder
             </div>
@@ -165,7 +165,7 @@ export default function SalesPurchaseOverview() {
 
               {/* Chart */}
               <div className="col-span-5">
-                <div id="customer-chart" className="w-full h-[200px] bg-gray-50 rounded flex items-center justify-center text-gray-400">
+                <div id="customer-chart" className="w-full h-50 bg-gray-50 rounded flex items-center justify-center text-gray-400">
                   {/* <CustomerChart /> */}
                   Chart Placeholder
                 </div>

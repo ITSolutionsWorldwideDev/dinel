@@ -1,8 +1,7 @@
 // apps/admin/components/jobs/FilterBar.tsx
 "use client";
 
-import { Menu } from "@headlessui/react";
-import Link from "next/link";
+import type { JobFilters } from "@/types/job";
 
 type Filters = {
   status?: string;
@@ -10,15 +9,68 @@ type Filters = {
   workplace_type?: string;
   experience_level?: string;
   sort?: string;
+  search?: string;
 };
 
 type Props = {
-  filters: Filters;
-  onChange: (key: keyof Filters, value: string) => void;
+  filters: JobFilters;
+  onChange: <K extends keyof JobFilters>(
+    key: K,
+    value: JobFilters[K]
+  ) => void;
   onClear: () => void;
 };
 
+const OPTIONS = {
+  status: ["DRAFT", "PUBLISHED", "CLOSED"],
+  employment_type: ["FULL_TIME", "PART_TIME", "CONTRACT", "INTERN"],
+  workplace_type: ["ONSITE", "REMOTE", "HYBRID"],
+  experience_level: ["JUNIOR", "MID", "SENIOR", "LEAD"],
+  sort: ["recent", "title_asc", "title_desc"],
+};
+
 export default function FilterBar({ filters, onChange, onClear }: Props) {
+  return (
+    <div className="flex flex-wrap gap-2 items-center">
+      {/* SEARCH */}
+      <input
+        type="text"
+        placeholder="Search job title / location"
+        value={filters.search || ""}
+        onChange={(e) => onChange("search", e.target.value)}
+        className="px-3 py-2 border rounded text-sm w-64"
+      />
+
+      {Object.entries(OPTIONS).map(([key, items]) => (
+        <select
+          key={key}
+          value={filters[key as keyof Filters] || ""}
+          onChange={(e) =>
+            onChange(key as keyof Filters, e.target.value)
+          }
+          className="px-3 py-2 border rounded text-sm"
+        >
+          <option value="">{key.replace("_", " ")}</option>
+          {items.map((item) => (
+            <option key={item} value={item}>
+              {item.replace("_", " ")}
+            </option>
+          ))}
+        </select>
+      ))}
+
+      <button
+        onClick={onClear}
+        className="px-3 py-2 text-sm border rounded bg-gray-100 hover:bg-gray-200"
+      >
+        Clear
+      </button>
+    </div>
+  );
+}
+
+
+/* export default function FilterBar({ filters, onChange, onClear }: Props) {
   const filterItems: Record<string, string[]> = {
     status: ["DRAFT", "PUBLISHED", "CLOSED"],
     employment_type: ["FULL_TIME", "PART_TIME", "CONTRACT", "INTERN"],
@@ -59,7 +111,7 @@ export default function FilterBar({ filters, onChange, onClear }: Props) {
         </Menu>
       ))}
 
-      {/* CLEAR FILTERS */}
+
       {hasActiveFilters && (
         <button
           onClick={onClear}
@@ -68,36 +120,6 @@ export default function FilterBar({ filters, onChange, onClear }: Props) {
           Clear Filters
         </button>
       )}
-    </div>
-  );
-}
-
-/*   return (
-    <div className="flex flex-wrap gap-2 align-items-center">
-      {Object.entries(filterItems).map(([key, items]) => (
-        <Menu key={label} as="div" className="relative inline-block text-right">
-          <Menu.Button className="px-3 py-2 bg-white border rounded-md shadow-sm text-sm hover:bg-gray-50">
-            {label.charAt(0).toUpperCase() + label.slice(1)}
-          </Menu.Button>
-
-          <Menu.Items className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md border focus:outline-none z-50">
-            {items.map((item) => (
-              <Menu.Item key={item}>
-                {({ active }) => (
-                  <Link
-                    href="#"
-                    className={`block px-4 py-2 text-sm rounded-md ${
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700"
-                    }`}
-                  >
-                    {item}
-                  </Link>
-                )}
-              </Menu.Item>
-            ))}
-          </Menu.Items>
-        </Menu>
-      ))}
     </div>
   );
 } */

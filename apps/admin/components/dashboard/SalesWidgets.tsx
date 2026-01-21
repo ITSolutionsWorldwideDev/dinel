@@ -48,9 +48,18 @@ const SaleCard: React.FC<SaleWidgetProps> = ({ title, amount, icon, bgColor, ico
 
 export default function SalesWidgets() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
       <SaleCard
-        title="Total Sales"
+        title="Total XYZ"
+        amount="$18,458,747"
+        icon={<HiOutlineInbox />}
+        bgColor="bg-orange-900"
+        iconColor="text-indigo-600"
+        badgeText="+22%"
+        badgeType="up"
+      />
+      <SaleCard
+        title="Total XYZ"
         amount="$48,988,078"
         icon={<HiOutlineDocumentText />}
         bgColor="bg-blue-600"
@@ -59,31 +68,22 @@ export default function SalesWidgets() {
         badgeType="up"
       />
       <SaleCard
-        title="Total Sales Return"
+        title="Total XYZ"
+        amount="$24,145,789"
+        icon={<HiOutlineGift />}
+        bgColor="bg-teal"
+        iconColor="text-teal-600"
+        badgeText="+22%"
+        badgeType="up"
+      />
+      <SaleCard
+        title="Total XYZ"
         amount="$16,478,145"
         icon={<HiOutlineRefresh />}
         bgColor="bg-gray-600"
         iconColor="text-gray-600"
         badgeText="-22%"
         badgeType="down"
-      />
-      <SaleCard
-        title="Total Purchase"
-        amount="$24,145,789"
-        icon={<HiOutlineGift />}
-        bgColor="bg-teal-600"
-        iconColor="text-teal-600"
-        badgeText="+22%"
-        badgeType="up"
-      />
-      <SaleCard
-        title="Total Purchase Return"
-        amount="$18,458,747"
-        icon={<HiOutlineInbox />}
-        bgColor="bg-indigo-600"
-        iconColor="text-indigo-600"
-        badgeText="+22%"
-        badgeType="up"
       />
     </div>
   );

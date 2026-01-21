@@ -1,0 +1,10 @@
+{
+  "name": "dinel-linkedin-import-extension",
+  "private": true,
+  "version": "0.1.2",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "build:zip": "node packages/extension/scripts/build.js",
+    "build:extension": "cd packages/extension && pnpm build:zip && mv linkedin-import-extension.zip ../../apps/admin/public/extension/"
+  }
+}

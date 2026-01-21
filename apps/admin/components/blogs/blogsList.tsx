@@ -90,10 +90,14 @@ export default function BlogsListComponent() {
               <h4 className="text-lg font-semibold">Blog List</h4>
               <h6 className="text-gray-500">Manage your blogs</h6>
             </div>
-            <Link
+            {/* <Link
               href="/blogs/create"
               className="flex items-center gap-1 px-4 py-2 bg-blue-600 text-white rounded  hover:bg-blue-700"
             >
+              <TbCirclePlus size={18} />
+              Add Blog
+            </Link> */}
+            <Link href="/blogs/create" className="btn btn-info flex flex-row gap-2">
               <TbCirclePlus size={18} />
               Add Blog
             </Link>
@@ -148,14 +152,11 @@ export default function BlogsListComponent() {
             <div className="flex gap-3 justify-center">
               <button
                 onClick={() => setShowDeleteModal(false)}
-                className="px-4 py-2 bg-gray-200 rounded"
+                className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none"
               >
                 Cancel
               </button>
-              <button
-                onClick={handleDelete}
-                className="px-4 py-2 bg-red-600 text-white rounded"
-              >
+              <button onClick={handleDelete} className="btn btn-danger">
                 Delete
               </button>
             </div>

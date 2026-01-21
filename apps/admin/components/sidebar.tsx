@@ -82,7 +82,7 @@ export default function Sidebar() {
           <div className="sidebar-logo">
             <Link href={route.dashboard} className="logo logo-normal">
               <Image
-                src="/assets/img/logo.jpg"
+                src="/assets/img/logo.png"
                 alt="Logo"
                 width={240}
                 height={80}
@@ -91,7 +91,7 @@ export default function Sidebar() {
             </Link>
             <Link href={route.dashboard} className="logo logo-white">
               <Image
-                src="/assets/img/logo.jpg"
+                src="/assets/img/logo.png"
                 alt="Logo"
                 width={240}
                 height={80}
@@ -100,7 +100,7 @@ export default function Sidebar() {
             </Link>
             <Link href={route.dashboard} className="logo-small">
               <Image
-                src="/assets/img/logo.jpg"
+                src="/assets/img/logo.png"
                 alt="Logo"
                 width={240}
                 height={80}
@@ -191,7 +191,7 @@ export default function Sidebar() {
                                 <button
                                   type="button"
                                   onClick={handleLogout}
-                                  className="flex w-full items-center px-3 py-2 text-gray-700 hover:bg-gray-100"
+                                  className="flex w-full items-center rounded-lg subdrop px-3 py-2 hover:text-gray-700 hover:bg-gray-100"
                                 >
                                   <i className={`ti ti-${title.icon} me-2`} />
                                   <span>{title.label}</span>

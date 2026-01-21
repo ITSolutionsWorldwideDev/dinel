@@ -84,7 +84,7 @@ export default function DashboardSideWidgets({ route = all_routes }: Props) {
                 }`}
               >
                 <div className="d-flex align-items-center">
-                  <Link href="#" className="avatar avatar-lg flex-shrink-0">
+                  <Link href="#" className="avatar avatar-lg shrink-0">
                     <Image
                       src={c.img}
                       width={60}

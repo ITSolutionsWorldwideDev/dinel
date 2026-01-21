@@ -199,9 +199,10 @@ export default function BrandListComponent() {
               <h4 className="text-lg font-semibold">Brand List</h4>
               <h6 className="text-gray-500">Manage your brands</h6>
             </div>
+            {/* className="flex items-center gap-1 px-4 py-2 bg-blue-600 text-white rounded" */}
             <button
               onClick={openAddModal}
-              className="flex items-center gap-1 px-4 py-2 bg-blue-600 text-white rounded"
+              className="btn btn-info flex flex-row gap-2"
             >
               <TbCirclePlus size={18} />
               Add Brand
@@ -272,13 +273,13 @@ export default function BrandListComponent() {
             <div className="modal-footer flex justify-end gap-2">
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="px-4 py-2 bg-gray-200 rounded"
+                className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none"
               >
                 Cancel
               </button>
               <button
                 onClick={handleSubmit}
-                className="px-4 py-2 bg-blue-600 text-white rounded"
+                className="btn btn-primary fs-13 fw-medium p-2 px-3"
               >
                 Save
               </button>
@@ -299,14 +300,11 @@ export default function BrandListComponent() {
             <div className="flex gap-3 justify-center">
               <button
                 onClick={() => setShowDeleteModal(false)}
-                className="px-4 py-2 bg-gray-200 rounded"
+                className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none"
               >
                 Cancel
               </button>
-              <button
-                onClick={handleDelete}
-                className="px-4 py-2 bg-red-600 text-white rounded"
-              >
+              <button onClick={handleDelete} className="btn btn-danger">
                 Delete
               </button>
             </div>

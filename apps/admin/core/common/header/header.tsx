@@ -94,7 +94,7 @@ export default function Header() {
             <Link href="/dashboard" className="logo logo-normal">
               {/* src="assets/img/logo.png" */}
               <Image
-                              src="/assets/img/logo.jpg"
+                              src="/assets/img/logo.png"
                               alt="Logo"
                               width={240}
                               height={80}
@@ -105,7 +105,7 @@ export default function Header() {
             <Link href="/dashboard" className="logo logo-white">
               {/* src="assets/img/logo-white.png" */}
               <Image
-                              src="/assets/img/logo.jpg"
+                              src="/assets/img/logo.png"
                               alt="Logo"
                               width={240}
                               height={80}
@@ -114,7 +114,7 @@ export default function Header() {
             </Link>
             <Link href="/dashboard" className="logo-small">
               <Image
-                              src="/assets/img/logo.jpg"
+                              src="/assets/img/logo.png"
                               alt="Logo"
                               width={240}
                               height={80}

@@ -64,10 +64,10 @@ export default function SigninComponent() {
                     <div className="login-userset">
                       <Link href="/login" className="login-logo logo-white">
                         <Image
-                          src="/assets/img/logo.jpg"
+                          src="/assets/img/logo.png"
                           alt="Logo"
-                          width={120}
-                          height={40}
+                          width={150}
+                          height={60}
                           priority
                         />
                       </Link>
