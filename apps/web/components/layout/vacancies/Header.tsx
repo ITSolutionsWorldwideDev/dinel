@@ -5,10 +5,10 @@ const Header = () => {
     <div>
       <div>
         <HeaderWithSideImage
-          heading="Become a Dineler. Make an impact with your expertise."
-          desc="Being a Dineler means more than working on technical projects.It means choosing growth, impact and belonging to a community that values people as much as technology. At Dinel, you dont just work on projects you help build the future."
-          btn1="Join Dinel"
-          btn2="View Vacancies"
+          heading="Find your next challenge as a Dineler"
+          desc="Explore a wide range of exciting technical vacancies in energy, infrastructure, industry, and sustainable technology. Your next project awaits."
+          btn1="View All Vacancies"
+          btn2="Become a Dineler"
           image="/assets/vacancies/Group9395.png"
         />
       </div>
