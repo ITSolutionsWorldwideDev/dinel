@@ -1,5 +1,5 @@
 import React from "react";
-import { LuHeartHandshake } from "react-icons/lu";
+
 
 const ShappingFuture = () => {
   return (

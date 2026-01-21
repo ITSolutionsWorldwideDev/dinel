@@ -3,7 +3,7 @@ import Image from "next/image";
 
 interface header {
   heading1: string;
-  heading2: string;
+  heading2?: string;
   description: string;
   image: string;
 }

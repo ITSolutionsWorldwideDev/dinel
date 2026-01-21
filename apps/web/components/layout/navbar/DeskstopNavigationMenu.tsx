@@ -13,6 +13,7 @@ const DeskstopNavigationMenu = () => {
     { name: "Mission & Vision" },
     { name: "Become a Dineler" },
     { name: "Vacancies" },
+   
   ];
   return (
     <header className="">
