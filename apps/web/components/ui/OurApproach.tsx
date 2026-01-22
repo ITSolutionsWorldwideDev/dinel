@@ -51,7 +51,7 @@ const OurApproach = () => {
               className="bg-white/20 backdrop-blur-md border border-white/30 rounded-lg p-6 text-center hover:bg-white/30 transition"
             >
               <div className="flex items-center justify-center text-center">
-                <div className="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold mb-4">
+                <div className="w-15 h-15 shadow-xl rounded-full bg-[#FF6B35] text-white flex items-center justify-center text-xl font-bold mb-4">
                   {item.letter}
                 </div>
               </div>

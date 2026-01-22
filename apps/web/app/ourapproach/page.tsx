@@ -11,7 +11,7 @@ import React from "react";
 const OurApproach = () => {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <HeaderWithCenterTextandBgImg
         heading1="A clear approach."
         heading2="Built on trust and experience."
@@ -21,8 +21,8 @@ const OurApproach = () => {
 
       <SuccessfulCollaboration />
 
-      <Approach/>
-      <WhyThisWork/>
+      <Approach />
+      <WhyThisWork />
 
       <TextWithTwoBtns
         heading="Let's take the next step together"

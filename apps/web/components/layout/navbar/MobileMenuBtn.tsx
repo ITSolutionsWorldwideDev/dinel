@@ -19,7 +19,7 @@ const MobileMenuBtn = ({ navLinks }: any) => {
         </button>
       </div>
       {mobileMenuOpen && (
-        <div className="xl:hidden mt-4 pb-4 absolute mr-10 top-20 bg-green-500 w-[90vw]  md:w-[50vw]  right-0 px-4 overflow-hidden">
+        <div className="xl:hidden mt-4 pb-4 absolute mr-10 top-20 bg-black/80 w-[90vw]  md:w-[50vw]  right-0 px-4 overflow-hidden">
           <div className="flex flex-col space-y-3">
             {navLinks.map((link: any) => (
               <a

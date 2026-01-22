@@ -7,25 +7,25 @@ const features = [
     description:
       "You work on challenging projects that contribute to the future",
     icon: Target,
-    bg: "bg-blue-500",
+    bg: "bg-[#FF6B35]",
   },
   {
     title: "Continuous Growth",
     description: "You grow professionally and personally",
     icon: TrendingUp,
-    bg: "bg-purple-500",
+    bg: "bg-[#FF6B35]",
   },
   {
     title: "Recognition",
     description: "You are recognized for your expertise and commitment",
     icon: Award,
-    bg: "bg-orange-500",
+    bg: "bg-[#FF6B35]",
   },
   {
     title: "Strong Network",
     description: "You belong to a network of professionals who make an impact",
     icon: Users,
-    bg: "bg-green-500",
+    bg: "bg-[#FF6B35]",
   },
 ];
 
@@ -77,7 +77,7 @@ const DinelerSection = () => {
       </div>
 
       <div>
-        <button className="mt-8 mx-auto block bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-md font-medium transition">
+        <button className="mt-8 mx-auto block bg-[#FF6B35] hover:bg-amber-700 text-white px-6 py-3  font-medium transition">
           Join the Dineler Network
         </button>
       </div>

@@ -11,7 +11,7 @@ import DinelGroupBv from "@/components/ui/DinelGroupBv";
 const Professionals = () => {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <ProfessinalsHeader />
       <WhyDineler />
       <Projects />

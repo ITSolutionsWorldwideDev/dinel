@@ -10,7 +10,7 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <Header />
       <MindSet />
       <WhyDinel />

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Stats from "../layout/client/Stats";
 import { FaqHeaderSection } from "./FaqHeaderSection";
+import NavBar from "./NavBar";
 
 interface props {
   heading: string;
@@ -13,24 +14,15 @@ interface props {
 }
 const HeaderWithSideImage = ({ heading, desc, image, btn1, btn2 }: props) => {
   return (
-    <section className="relative w-full min-h-screen container mx-auto overflow-hidden">
-      {/* Background Image */}
-      {/* <Image
-        src="/assets/professionals/67fda7679ab84f6d652e6ab45c424b5bf97582d5.jpg"
-        alt="Industry Bridge"
-        fill
-        priority
-        className="object-cover scale-x-[-1]"
-      /> */}
-
+    <section className="relative w-full min-h-screen  overflow-hidden">
       {/* Overlay */}
       <div className="absolute inset-0 bg-linear-to-r from-[#000000B2] to-[#106FBC]" />
 
       {/* Big faded text */}
-
+      <NavBar />
       {/* Content */}
       <div className="">
-        <div className="relative z-10 h-full 2xl:flex  items-center mt-30  mx-auto ">
+        <div className="relative z-10 h-full 2xl:flex  items-center  mx-auto ">
           <div className="px-6 ">
             <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight w-1/2">
               {heading}
@@ -57,7 +49,7 @@ const HeaderWithSideImage = ({ heading, desc, image, btn1, btn2 }: props) => {
               </Link>
             </div>
           </div>
-          <div className=" h-screen w-auto absolute top-0 right-0 border-2 hidden 2xl:block">
+          <div className=" h-screen w-auto absolute top-0 right-0  hidden 2xl:block">
             <Image
               src={`${image}`}
               alt="Side Image"
@@ -67,13 +59,17 @@ const HeaderWithSideImage = ({ heading, desc, image, btn1, btn2 }: props) => {
             />
           </div>
 
-          <FaqHeaderSection />
+          {/* <FaqHeaderSection /> */}
         </div>
       </div>
 
       {/* <div className=""> */}
 
       {/* </div> */}
+
+      <div className="absolute top-1/3 lg:top-1/4 right-0">
+        <FaqHeaderSection />
+      </div>
     </section>
   );
 };

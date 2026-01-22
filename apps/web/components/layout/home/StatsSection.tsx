@@ -11,7 +11,7 @@ const StatsSection = () => {
 
   return (
     <div className="w-full p-8 ">
-      <div className="relative  container  mx-auto overflow-hidden rounded-sm  p-5">
+      <div className="relative  container  mx-auto overflow-hidden   p-5">
         <div className="absolute inset-0 z-0 bg-cover bg-center  bg-[url('/assets/home/a440c36d86129b5de6ed4bdc30ecc4087b6122d5.jpg')]" />
         <div className="absolute   inset-0 bg-linear-to-r from-[#FF8026]/70 via-[#008001]/70 to-[#0A7CD8]/70" />
 

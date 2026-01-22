@@ -12,7 +12,7 @@ import HeadingDescAnd2BtnsWithBg from "@/components/ui/HeadingDescAnd2BtnsWithBg
 const page = () => {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <Header />
       <div className="relative flex justify-center items-center ">
         <div className="lg:absolute ">

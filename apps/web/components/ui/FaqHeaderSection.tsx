@@ -5,29 +5,24 @@ export const FaqHeaderSection = () => {
   return (
     <div className="">
       <Link href={"/faq"}>
-        <div
-          className="flex flex-col 
-    w-20 sm:w-24 md:w-28 lg:w-32 
-    h-60 sm:h-72 md:h-80 lg:h-96 
-    shadow-lg"
-        >
+        <div className="flex flex-col  w-10 sm:w-20 md:w-20 lg:w-20  h-25 sm:h-32 md:h-40 lg:h-46 shadow-lg">
           {/* F - Orange Section */}
           <div className="flex-1 bg-orange-500 flex items-center justify-center">
-            <span className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+            <span className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
               F
             </span>
           </div>
 
           {/* A - Blue Section */}
           <div className="flex-1 bg-blue-600 flex items-center justify-center">
-            <span className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+            <span className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
               A
             </span>
           </div>
 
           {/* Q - Green Section */}
           <div className="flex-1 bg-green-700 flex items-center justify-center">
-            <span className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+            <span className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
               Q
             </span>
           </div>

@@ -12,7 +12,7 @@ import DinelGroupBv from '@/components/ui/DinelGroupBv'
 const About = () => {
   return (
     <div>
-        <NavBar />
+        {/* <NavBar /> */}
         <AboutHeader />
         <Story />
         <Believe/>

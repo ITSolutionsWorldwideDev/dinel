@@ -17,7 +17,7 @@ export default function VacanciesSearchBar() {
   };
 
   return (
-    <div className="w-[80vw] bg-linear-to-r from-[#D34A03] to-[#0A7CD8] flex items-center justify-center p-4 border-5 border-white">
+    <div className="w-[80vw] bg-linear-to-r from-[#D34A03] to-[#0A7CD8] flex items-center justify-center p-4 border-5 border-white container mx-auto">
       <div className="w-full max-w-4xl">
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">

@@ -1,33 +1,26 @@
 import React from "react";
 import DeskstopNavigationMenu from "../layout/navbar/DeskstopNavigationMenu";
 import ActionBtns from "../layout/navbar/ActionBtns";
+import Link from "next/link";
 
 export default function NavBar() {
   return (
-    <header className="absolute  w-full">
-      
-
+    <header className="  w-full">
       {/* Navigation container */}
-      <nav className="relative z-100 container mx-auto  py-4">
+      <nav className="relative z-100 container mx-auto  p-10">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <img
-              src="/assets/logo/59319e5239b932c82b4371b85dbaa8aaad4a249d.png"
-              alt="logo"
-              className="w-70 bg-white"
-            />
+            <Link href="/">
+              <img src="/assets/Group 1.png" alt="logo" className="w-[70%] lg:w-full " />
+            </Link>
           </div>
 
-         
-            <DeskstopNavigationMenu />
-       
+          <DeskstopNavigationMenu />
+
           <ActionBtns />
         </div>
-
-       
       </nav>
-
     </header>
   );
 }

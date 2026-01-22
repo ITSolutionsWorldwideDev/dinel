@@ -12,7 +12,7 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <HeaderWithCenterTextandBgImg
         heading1="Driven by people."
         heading2="Powered by technology."

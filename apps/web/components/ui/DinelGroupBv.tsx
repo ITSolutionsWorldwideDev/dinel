@@ -70,51 +70,57 @@ export default function DinelGroupBv() {
             {/* Certification Logos */}
             <div className="grid grid-cols-4 gap-4 mb-8">
               <div className="bg-white rounded-lg  flex items-center justify-center shadow-lg">
+                {/* <div className="text-center"> */}
+                <div className="p-10 mx-auto flex text-center items-center justify-center">
+                  {/* <span className="text-yellow-600 font-bold text-2xl"> */}
+                  <img
+                    src="/assets/dinelgroupbv/0166f4a4ee9b1f3dbe4964cab594052e4f1818ea.png"
+                    alt=""
+                    className="border"
+                  />
+                  {/* </span> */}
+                  {/* </div> */}
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg flex items-center justify-center shadow-lg">
                 <div className="text-center">
-                  <div className=" mx-auto mb-2  flex items-center justify-center">
-                    <span className="text-yellow-600 font-bold text-2xl">
-                      <img
-                        src="/assets/dinelgroupbv/0166f4a4ee9b1f3dbe4964cab594052e4f1818ea.png"
-                        alt=""
-                      />
-                    </span>
+                  <div className="mx-auto flex text-center items-center justify-center p-10">
+                    {/* <span className="text-yellow-600 font-bold text-2xl"> */}
+                    <img
+                      src="/assets/dinelgroupbv/adc952413b1c5d11cbe02ff6645587a593a6bf2f.png"
+                      alt=""
+                      className="border"
+                    />
+                    {/* </span> */}
                   </div>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg  flex items-center justify-center shadow-lg">
                 <div className="text-center">
-                  <div className=" mx-auto mb-2  flex items-center justify-center">
-                    <span className="text-yellow-600 font-bold text-2xl">
-                      <img
-                        src="/assets/dinelgroupbv/adc952413b1c5d11cbe02ff6645587a593a6bf2f.png"
-                        alt=""
-                      />
-                    </span>
+                  <div className="p-10 mx-auto flex text-center items-center justify-center">
+                    {/* <span className="text-yellow-600 font-bold text-2xl"> */}
+                    <img
+                      src="/assets/dinelgroupbv/8fe1360ae39564e1e88e56da8643cc73f30ba948 (1).png"
+                      alt=""
+                      className="border"
+                    />
+                    {/* </span> */}
                   </div>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg  flex items-center justify-center shadow-lg">
                 <div className="text-center">
-                  <div className=" mx-auto mb-2  flex items-center justify-center">
-                    <span className="text-yellow-600 font-bold text-2xl">
-                      <img
-                        src="/assets/dinelgroupbv/8fe1360ae39564e1e88e56da8643cc73f30ba948.png"
-                        alt=""
-                      />
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-lg  flex items-center justify-center shadow-lg">
-                <div className="text-center">
-                  <div className="mx-auto mb-2  flex items-center justify-center shrink">
+                  <div className="p-10 mx-auto flex text-center items-center justify-center">
+                    {/* <span className="text-yellow-600 font-bold text-2xl"> */}
                     <img
                       src="/assets/dinelgroupbv/fdb1e4775500652024b848a4a043c8bef17cdeda.png"
-                      alt="Nc"
+                      alt=""
+                      className="border"
                     />
+                    {/* </span> */}
                   </div>
                 </div>
               </div>

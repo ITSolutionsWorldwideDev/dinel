@@ -51,7 +51,7 @@ const JobVacanciesSlider = () => {
 
   return (
     <div className="bg-gray-50 py-16 px-4 mt-30">
-      <div className="container mx-auto">
+      <div className="container mx-auto overflow-hidden">
         {/* Header */}
 
         <div>
@@ -73,9 +73,9 @@ const JobVacanciesSlider = () => {
                 job.featured
                   ? "bg-orange-500 text-white"
                   : "bg-white text-gray-900"
-              } rounded-lg p-8 shadow-md   animate-slide  shrink-0 w-1/4`}
+              } rounded-lg p-8 shadow-md   animate-slide  shrink-0 w-1/4 overflow-hidden`}
             >
-              <h3 className="text-2xl font-bold mb-8 min-height: 80px">
+              <h3 className="text-2xl font-bold mb-8 min-height: [80px] wrap-break-word">
                 {job.title}
               </h3>
 

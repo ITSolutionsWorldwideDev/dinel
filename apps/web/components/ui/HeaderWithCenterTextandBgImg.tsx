@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import NavBar from "./NavBar";
 
 interface header {
   heading1: string;
@@ -14,21 +15,22 @@ const HeaderWithCenterTextandBgImg = ({
   image,
 }: header) => {
   return (
-    <section className="relative w-full h-screen min-h-125 overflow-hidden">
+    <section className="relative w-full h-auto lg:h-screen min-h-125 overflow-hidden">
       {/* Background Image */}
       <Image
         src={`${image}`} // put image in /public/hero.jpg
         alt="Industry Bridge"
         fill
         priority
-        className="object-cover"
+        className="object-cover absolute inset-0 w-full h-full "
       />
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-blue-600/60" />
+      <NavBar />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex  items-center container mx-auto justify-center">
+      <div className="relative z-10 h-1/2 flex  items-center container mx-auto justify-center">
         <div className="px-6 text-center">
           <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             {heading1}

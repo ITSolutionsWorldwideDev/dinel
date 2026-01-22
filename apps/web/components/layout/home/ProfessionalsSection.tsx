@@ -21,7 +21,7 @@ export default function ProfessionalsSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Item */}
             <div className="flex gap-4">
-              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-linear-to-r from-[#2B7FFF] to-[#00B8DB] text-white">
+              <div className="h-10 w-10 flex items-center justify-center  bg-[#FF6B35] text-white">
                 <Rocket />
               </div>
               <div>
@@ -36,7 +36,7 @@ export default function ProfessionalsSection() {
             </div>
 
             <div className="flex gap-4">
-              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-linear-to-r from-[#FF6900] to-[#FB2C36] text-white">
+              <div className="h-10 w-10 flex items-center justify-center  bg-[#FF6B35] text-white">
                 <TrendingUp />
               </div>
               <div>
@@ -50,7 +50,7 @@ export default function ProfessionalsSection() {
             </div>
 
             <div className="flex gap-4">
-              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-linear-to-r from-[#AD46FF] to-[#F6339A] text-white">
+              <div className="h-10 w-10 flex items-center justify-center   bg-[#FF6B35] text-white">
                 <Users />
               </div>
               <div>
@@ -64,7 +64,7 @@ export default function ProfessionalsSection() {
             </div>
 
             <div className="flex gap-4">
-              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-linear-to-r from-[#00C950] to-[#00BBA7] text-white">
+              <div className="h-10 w-10 flex items-center justify-center  bg-[#FF6B35] text-white">
                 <Award />
               </div>
               <div>
@@ -79,10 +79,10 @@ export default function ProfessionalsSection() {
 
         {/* Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-          <button className="px-6 py-3 rounded-lg bg-[#FF6B35] text-white font-medium hover:bg-orange-600 transition">
+          <button className="px-6 py-3 bg-[#FF6B35] text-white font-medium hover:bg-orange-600 transition">
             Discover Opportunities
           </button>
-          <button className="px-6 py-3 rounded-lg border-2 border-[#0A7CD8] text-[#0A7CD8] font-medium hover:bg-blue-50 transition">
+          <button className="px-6 py-3  border-2 border-[#0A7CD8] text-[#0A7CD8] font-medium hover:bg-blue-50 transition">
             Become a Dineler
           </button>
         </div>

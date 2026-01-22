@@ -17,7 +17,7 @@ import StatsSection from "./StatsSection";
 const Homei = () => {
   return (
     <div className="">
-      <NavBar />
+      {/* <NavBar /> */}
       <Header />
       <div className="relative flex justify-center items-center ">
         <div className="lg:absolute ">

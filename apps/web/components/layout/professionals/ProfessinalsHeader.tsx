@@ -1,27 +1,28 @@
 import { FaqHeaderSection } from "@/components/ui/FaqHeaderSection";
+import NavBar from "@/components/ui/NavBar";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 
 export default function ProfessinalsHeader() {
   return (
-    <section className="relative w-full h-screen min-h-125 overflow-hidden">
+    <section className="relative w-full h-auto lg:h-screen min-h-125 overflow-hidden ">
       {/* Background Image */}
       <Image
         src="/assets/professionals/67fda7679ab84f6d652e6ab45c424b5bf97582d5.jpg"
         alt="Industry Bridge"
         fill
         priority
-        className="object-cover scale-x-[-1]"
+        className="object-cover absolute inset-0 w-full h-full scale-x-[-1] "
       />
-
+      <NavBar />
       {/* Overlay */}
       <div className="absolute inset-0 bg-linear-to-r from-[#0A7CD8F2]/80 to-white/9" />
 
       {/* Big faded text */}
 
       {/* Content */}
-      <div className="relative z-10 h-full flex  items-center container mx-auto ">
+      <div className="relative z-10 h-full flex   container mx-auto p-10">
         <div className="px-6">
           <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight w-1/2">
             Your career deserves more than just another assign
@@ -53,7 +54,10 @@ export default function ProfessinalsHeader() {
         </div>
       </div>
       {/* <div className=""> */}
+
+      <div className="absolute top-1/3 lg:top-1/4 right-0">
         <FaqHeaderSection />
+      </div>
       {/* </div> */}
     </section>
   );

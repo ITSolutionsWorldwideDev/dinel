@@ -26,7 +26,7 @@ const DeskstopNavigationMenu = () => {
                 <Link
                   key={link.name}
                   href={`/`}
-                  className="text-white text-sm hover:text-orange-500 transition-colors duration-200 cursor-pointer"
+                  className="text-white text-md hover:text-orange-500 transition-colors duration-200 cursor-pointer"
                 >
                   {link.name}
                 </Link>

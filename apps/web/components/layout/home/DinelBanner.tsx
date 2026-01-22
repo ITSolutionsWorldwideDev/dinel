@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function DinelBanner() {
   return (
-    <div className="w-full  bg-gray-50   flex items-center justify-center">
-      <div className=" container bg-white rounded-lg shadow-2xl overflow-hidden relative">
+    <div className="w-full mt-20 bg-gray-50   flex items-center justify-center">
+      <div className=" bg-white  shadow-2xl overflow-hidden relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
           {/* Left Content Section */}
           <div className="bg-[#FF8936] p-8 md:p-12 lg:p-16 text-white flex flex-col justify-center">

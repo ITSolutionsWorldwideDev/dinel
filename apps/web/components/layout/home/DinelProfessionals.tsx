@@ -48,11 +48,11 @@ export default function DinelProfessionals() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 container mx-auto ">
           {sectors.map((sector, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col relative z-10"
+              className="bg-white  shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col relative z-10"
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
