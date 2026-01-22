@@ -30,7 +30,7 @@ export default function BlogCard({ blog, onDelete }: Props) {
 
       <div className="p-4">
         <h3 className="font-semibold text-sm line-clamp-2 mb-2">
-          <Link href={`/blogs/${blog.blog_id}`}>{blog.title}</Link>
+          <Link href={`/blogs/${blog.blog_id}/view`}>{blog.title}</Link>
         </h3>
 
         <p className="text-xs text-gray-500 line-clamp-2 mb-3">

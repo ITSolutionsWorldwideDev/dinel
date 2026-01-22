@@ -1,4 +1,4 @@
-// /app/api/blog/route.ts (GET)
+// /app/api/blogs/route.ts (GET)
 
 import { NextRequest, NextResponse } from "next/server";
 import { pool } from "@acme/db";
@@ -36,6 +36,7 @@ export async function GET(req: NextRequest,
             b.published_at,
             b.status,
             b.created_at,
+            b.featured_image_id,
             m.file_url AS featured_image_url
           FROM blogs b
           LEFT JOIN media m ON m.media_id = b.featured_image_id
@@ -81,6 +82,7 @@ export async function GET(req: NextRequest,
             b.published_at,
             b.status,
             b.created_at,
+            b.featured_image_id,
             m.file_url AS featured_image_url
       FROM blogs b
       LEFT JOIN media m ON m.media_id = b.featured_image_id
@@ -219,7 +221,7 @@ export async function PUT(req: Request) {
         excerpt = $3,
         content = $4,
         status = $5::text,
-        featured_image_id = $6,
+        featured_image_id = COALESCE($6, featured_image_id),
         meta_title = $7,
         meta_description = $8,
         updated_at = NOW(),
@@ -279,7 +281,7 @@ export async function DELETE(req: NextRequest) {
 
   try {
     const result = await pool.query(
-      `DELETE FROM blog WHERE blog_id = $1 RETURNING *`,
+      `DELETE FROM blogs WHERE blog_id = $1 RETURNING *`,
       [id]
     );
 

@@ -9,6 +9,7 @@ import FilterBar from "./FilterBar";
 import { Button, useToast } from "@repo/ui";
 import UploadCandidateModal from "./UploadCandidateModal";
 import CvPreviewModal from "./CvPreviewModal";
+import SyncButton from "@/components/common/SyncButton";
 
 /* ------------------------------------
    Types
@@ -223,13 +224,21 @@ export default function CandidatesListComponent({
               <h4 className="text-lg font-semibold">Candidate List</h4>
               <h6 className="text-gray-500">Manage your candidates</h6>
             </div>
-            <button
-              onClick={() => setShowUploadModal(true)}
-              className="btn btn-info flex flex-row gap-2"
-            >
-              <TbCirclePlus size={18} />
-              Add Candidate
-            </button>
+            <div className="flex gap-2">
+              <SyncButton
+                label="Candidates"
+                endpoint="/api/candidate/syncCarerix"
+                onDone={fetchCandidates}
+              />
+
+              <button
+                onClick={() => setShowUploadModal(true)}
+                className="btn btn-info flex flex-row gap-2"
+              >
+                <TbCirclePlus size={18} />
+                Add Candidate
+              </button>
+            </div>
           </div>
 
           <div className="card table-list-card">
