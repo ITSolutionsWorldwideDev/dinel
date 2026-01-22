@@ -9,6 +9,7 @@ import Table from "@/core/common/pagination/datatable";
 import { Edit, Trash2 } from "react-feather";
 import { TbCirclePlus, TbTrash } from "react-icons/tb";
 import type { JobFilters } from "@/types/job";
+import SyncButton from "@/components/common/SyncButton";
 
 /* ------------------------------------
    Types
@@ -255,13 +256,21 @@ export default function JobsPage() {
               <h4 className="text-lg font-semibold">Jobs List</h4>
               <h6 className="text-gray-500">Manage Jobs</h6>
             </div>
-            <button
-              onClick={() => router.push(`/jobs/create`)}
-              className="btn btn-info flex flex-row gap-2"
-            >
-              <TbCirclePlus size={18} />
-              Add Job
-            </button>
+
+            <div className="flex gap-2">
+              <SyncButton
+                label="Jobs"
+                endpoint="/api/jobs/syncCarerix"
+                onDone={fetchJobs}
+              />
+              <button
+                onClick={() => router.push(`/jobs/create`)}
+                className="btn btn-info flex flex-row gap-2"
+              >
+                <TbCirclePlus size={18} />
+                Add Job
+              </button>
+            </div>
           </div>
 
           <div className="card table-list-card">

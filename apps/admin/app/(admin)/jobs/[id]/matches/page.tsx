@@ -12,12 +12,13 @@ export type Match = {
   location: string;
   source: string;
   score: number;
-  breakdown: {
-    skills?: number;
-    experience?: number;
-    location?: number;
-    education?: number;
-  };
+  breakdown: Record<string, number>;
+//   breakdown: {
+//     skills?: number;
+//     experience?: number;
+//     location?: number;
+//     education?: number;
+//   };
 };
 
 export default function JobMatchesPage() {
@@ -68,7 +69,16 @@ export default function JobMatchesPage() {
             {loading ? (
               <p>Loading...</p>
             ) : (
-              <table className="w-full text-sm border">
+                <JobMatchesTable matches={matches} />
+              
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+{/* <table className="w-full text-sm border">
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="p-2">Candidate</th>
@@ -128,11 +138,4 @@ export default function JobMatchesPage() {
                     </tr>
                   ))}
                 </tbody>
-              </table>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+              </table> */}

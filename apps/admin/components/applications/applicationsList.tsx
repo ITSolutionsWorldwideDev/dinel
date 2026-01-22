@@ -8,6 +8,7 @@ import { TbCirclePlus, TbTrash } from "react-icons/tb";
 import FilterBar from "./FilterBar";
 import { Button, useToast } from "@repo/ui";
 import CandidateDrawer from "../candidates/CandidateDrawer";
+import SyncButton from "@/components/common/SyncButton";
 
 /* ------------------------------------
    Types
@@ -31,24 +32,23 @@ type ApiResponse = {
   totalPages: number;
 };
 
+function SourceBadge({ source }: { source: string }) {
+  const map: Record<string, string> = {
+    carerix: "bg-purple-100 text-purple-700",
+    linkedin: "bg-blue-100 text-blue-700",
+    "cv-upload": "bg-gray-100 text-gray-700",
+  };
 
-  function SourceBadge({ source }: { source: string }) {
-    const map: Record<string, string> = {
-      carerix: "bg-purple-100 text-purple-700",
-      linkedin: "bg-blue-100 text-blue-700",
-      "cv-upload": "bg-gray-100 text-gray-700",
-    };
-
-    return (
-      <span
-        className={`px-2 py-1 rounded text-xs font-medium ${
-          map[source] || "bg-gray-100"
-        }`}
-      >
-        {source}
-      </span>
-    );
-  }
+  return (
+    <span
+      className={`px-2 py-1 rounded text-xs font-medium ${
+        map[source] || "bg-gray-100"
+      }`}
+    >
+      {source}
+    </span>
+  );
+}
 
 export default function ApplicationsListComponent({
   tenantId,
@@ -120,7 +120,6 @@ export default function ApplicationsListComponent({
   /* ------------------------------------
      Modals
   ------------------------------------ */
-
 
   // const openAddModal = () => {
   //   setIsEditMode(false);
@@ -264,6 +263,13 @@ export default function ApplicationsListComponent({
               <h6 className="text-gray-500">
                 View candidates who applied for jobs
               </h6>
+            </div>
+            <div className="flex gap-2">
+              <SyncButton
+                label="Applications"
+                endpoint="/api/applications/syncCarerix"
+                onDone={fetchApplications}
+              />
             </div>
           </div>
 

@@ -11,7 +11,7 @@ export default function MatchScore({ score }: { score: number }) {
     <div className="w-32">
       <div className="flex justify-between text-xs mb-1">
         <span>Score</span>
-        <span className="font-medium">{score}%</span>
+        <span className="font-medium">{score>0?score:0}%</span>
       </div>
       <div className="h-2 bg-gray-200 rounded">
         <div

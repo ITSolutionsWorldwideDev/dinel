@@ -6,9 +6,10 @@ import { useRouter } from "next/navigation";
 // import { slugify } from "@/lib/slugify";
 import { Button, useToast } from "@repo/ui";
 import TextEditorNew from "@/core/common/texteditor/texteditor";
-import FeaturedImageUpload from "@/components/media/FeaturedImageUpload";
+// import FeaturedImageUpload from "@/components/media/FeaturedImageUpload";
 import { memo } from "react";
 import Link from "next/link";
+import FeaturedImagePicker from "@/components/media/FeaturedImageUpload";
 
 const MemoTextEditor = memo(TextEditorNew);
 
@@ -162,16 +163,16 @@ export default function CreateBlogForm() {
                     Featured Image
                   </label>
 
-                  {formData.featured_image_url && (
+                  {/* {formData.featured_image_url && (
                     <img
                       src={formData.featured_image_url}
                       className="h-40 rounded mb-2 object-cover"
                       alt="Featured"
                     />
-                  )}
-
-                  <FeaturedImageUpload
-                    onUpload={(id, url) =>
+                  )} */}
+                  <FeaturedImagePicker
+                    imageUrl={formData.featured_image_url}
+                    onChange={(id, url) =>
                       setFormData((p) => ({
                         ...p,
                         featured_image_id: id,
@@ -179,6 +180,16 @@ export default function CreateBlogForm() {
                       }))
                     }
                   />
+
+                  {/* <FeaturedImageUpload
+                    onUpload={(id, url) =>
+                      setFormData((p) => ({
+                        ...p,
+                        featured_image_id: id,
+                        featured_image_url: url,
+                      }))
+                    }
+                  /> */}
                 </div>
 
                 <div>
@@ -203,12 +214,13 @@ export default function CreateBlogForm() {
                     }
                   />
                 </div>
-
-
               </div>
 
               <div className="flex justify-end gap-3">
-                <Link href="/products" className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none">
+                <Link
+                  href="/products"
+                  className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none"
+                >
                   Cancel
                 </Link>
 
@@ -220,8 +232,10 @@ export default function CreateBlogForm() {
                     Save Draft
                   </Button>
 
-                  <Button onClick={() => handleSubmit("published")}
-                    className="btn btn-success">
+                  <Button
+                    onClick={() => handleSubmit("published")}
+                    className="btn btn-success"
+                  >
                     Publish
                   </Button>
                 </div>

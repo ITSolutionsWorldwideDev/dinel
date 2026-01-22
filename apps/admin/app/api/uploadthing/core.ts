@@ -21,6 +21,7 @@ export const mediaRouter = {
       return { userId: session.user.id };
     })
     .onUploadComplete(async ({ file, metadata }) => {
+      console.log("file === ", file);
       const result = await pool.query(
         `INSERT INTO media
           (file_name, file_url, file_type, size, uploaded_by)

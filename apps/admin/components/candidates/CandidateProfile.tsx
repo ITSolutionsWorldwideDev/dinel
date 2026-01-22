@@ -169,7 +169,7 @@ function CandidateSummary({ candidate }: { candidate: any }) {
 
 function ApplicationTimeline({ stages }: { stages: any[] }) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 mb-8 bg-gray-50 p-2">
       <h4 className="font-semibold">Application Timeline</h4>
 
       {stages.map((s, i) => (
