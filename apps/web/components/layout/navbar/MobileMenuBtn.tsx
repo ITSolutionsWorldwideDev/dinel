@@ -4,25 +4,50 @@ import React, { useState } from "react";
 import MobileMenuActionBtn from "./MobileMenuActionBtn";
 import { AiOutlineMenu } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
+import Link from "next/link";
 
-const MobileMenuBtn = ({ navLinks }: any) => {
+interface NavLink {
+  name: string;
+  href?: string;
+}
+
+const MobileMenuBtn = ({ navLinks }: { navLinks: NavLink[] }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <>
-      <div>
-        {" "}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="xl:hidden text-white p-2"
-        >
-          {mobileMenuOpen ? <RxCross1 /> : <AiOutlineMenu />}
-        </button>
-      </div>
+      <button
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        className="xl:hidden text-white p-2"
+      >
+        {mobileMenuOpen ? <RxCross1 /> : <AiOutlineMenu />}
+      </button>
       {mobileMenuOpen && (
         <div className="xl:hidden mt-4 pb-4 absolute mr-10 top-20 bg-black/80 w-[90vw]  md:w-[50vw]  right-0 px-4 overflow-hidden">
           <div className="flex flex-col space-y-3">
-            {navLinks.map((link: any) => (
-              <a
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+               href={(link.href)? link.href:'#'}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-white text-sm hover:text-orange-500 transition-colors duration-200 py-2"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+          <div className="mt-6">
+            <MobileMenuActionBtn />
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default MobileMenuBtn;
+
+{
+  /* <a
                 key={link.name}
                 href={`${link.name
                   .toLowerCase()
@@ -32,14 +57,5 @@ const MobileMenuBtn = ({ navLinks }: any) => {
                 className="text-white text-sm hover:text-orange-500 transition-colors duration-200 py-2"
               >
                 {link.name}
-              </a>
-            ))}
-          </div>
-          <MobileMenuActionBtn />
-        </div>
-      )}
-    </>
-  );
-};
-
-export default MobileMenuBtn;
+              </a> */
+}
