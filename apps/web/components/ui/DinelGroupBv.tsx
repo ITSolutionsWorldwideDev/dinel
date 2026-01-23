@@ -19,19 +19,19 @@ export default function DinelGroupBv() {
         <div className="relative z-10 grid md:grid-cols-2 gap-8">
           {/* Left Section - Contact Info */}
           <div className="space-y-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+            <h1 className="text-4xl md:text-5xl font-bold text-white">
               Dinel Group BV
             </h1>
 
             <div className="space-y-6">
               {/* Address */}
               <div className="flex items-start gap-4">
-                <div className="bg-blue-500 rounded-full p-3 shrink-0">
+                <div className="bg-[#0A7CD8] rounded-full p-3 shrink-0">
                   <Mail className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 text-lg">Address</h3>
-                  <p className="text-gray-800">
+                  <h3 className="font-bold text-white text-lg">Address</h3>
+                  <p className="text-white">
                     daltonstraat 11 3335 Jr zwijndrecht
                     <br />
                     the netherlands
@@ -41,25 +41,23 @@ export default function DinelGroupBv() {
 
               {/* Phone */}
               <div className="flex items-start gap-4">
-                <div className="bg-blue-500 rounded-full p-3 shrink-0">
+                <div className="bg-[#0A7CD8] rounded-full p-3 shrink-0">
                   <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 text-lg">
-                    Phone Number
-                  </h3>
-                  <p className="text-gray-800">010 234 35 73</p>
+                  <h3 className="font-bold text-white text-lg">Phone Number</h3>
+                  <p className="text-white">010 234 35 73</p>
                 </div>
               </div>
 
               {/* Email */}
               <div className="flex items-start gap-4">
-                <div className="bg-blue-500 rounded-full p-3 shrink-0">
+                <div className="bg-[#0A7CD8] rounded-full p-3 shrink-0">
                   <Mail className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 text-lg">Email</h3>
-                  <p className="text-gray-800">info@dinel.nl</p>
+                  <h3 className="font-bold text-white text-lg">Email</h3>
+                  <p className="text-white">info@dinel.nl</p>
                 </div>
               </div>
             </div>
@@ -68,62 +66,57 @@ export default function DinelGroupBv() {
           {/* Right Section - Logos and Social */}
           <div className="flex flex-col justify-between">
             {/* Certification Logos */}
-            <div className="grid grid-cols-4 gap-4 mb-8">
-              <div className="bg-white rounded-lg  flex items-center justify-center shadow-lg">
-                {/* <div className="text-center"> */}
-                <div className="p-10 mx-auto flex text-center items-center justify-center">
-                  {/* <span className="text-yellow-600 font-bold text-2xl"> */}
-                  <img
-                    src="/assets/dinelgroupbv/0166f4a4ee9b1f3dbe4964cab594052e4f1818ea.png"
-                    alt=""
-                    className="border"
-                  />
-                  {/* </span> */}
-                  {/* </div> */}
-                </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+              {/* {[
+                "/assets/dinelgroupbv/0166f4a4ee9b1f3dbe4964cab594052e4f1818ea.png",
+                "/assets/dinelgroupbv/adc952413b1c5d11cbe02ff6645587a593a6bf2f.png",
+                "/assets/dinelgroupbv/8fe1360ae39564e1e88e56da8643cc73f30ba948 (2).png",
+                "/assets/dinelgroupbv/fdb1e4775500652024b848a4a043c8bef17cdeda.png",
+              ].map((src, i) => ( */}
+              <div
+                // key={i}
+                className="bg-white rounded-lg flex items-center justify-center "
+              >
+                <img
+                  src="/assets/dinelgroupbv/0166f4a4ee9b1f3dbe4964cab594052e4f1818ea.png"
+                  alt=""
+                  className="w-24 h-24 object-contain"
+                />
               </div>
 
-              <div className="bg-white rounded-lg flex items-center justify-center shadow-lg">
-                <div className="text-center">
-                  <div className="mx-auto flex text-center items-center justify-center p-10">
-                    {/* <span className="text-yellow-600 font-bold text-2xl"> */}
-                    <img
-                      src="/assets/dinelgroupbv/adc952413b1c5d11cbe02ff6645587a593a6bf2f.png"
-                      alt=""
-                      className="border"
-                    />
-                    {/* </span> */}
-                  </div>
-                </div>
+              <div
+                // key={i}
+                className="bg-white rounded-lg flex items-center justify-center "
+              >
+                <img
+                  src="/assets/dinelgroupbv/adc952413b1c5d11cbe02ff6645587a593a6bf2f.png"
+                  alt=""
+                  className="w-24 h-24 object-contain"
+                />
               </div>
 
-              <div className="bg-white rounded-lg  flex items-center justify-center shadow-lg">
-                <div className="text-center">
-                  <div className="p-10 mx-auto flex text-center items-center justify-center">
-                    {/* <span className="text-yellow-600 font-bold text-2xl"> */}
-                    <img
-                      src="/assets/dinelgroupbv/8fe1360ae39564e1e88e56da8643cc73f30ba948 (1).png"
-                      alt=""
-                      className="border"
-                    />
-                    {/* </span> */}
-                  </div>
-                </div>
+              <div
+                // key={i}
+                className="bg-white rounded-lg flex items-center justify-center  "
+              >
+                <img
+                  src="/assets/dinelgroupbv/8fe1360ae39564e1e88e56da8643cc73f30ba948 (2).png"
+                  alt=""
+                  className="w-24 h-24 object-contain mb-3"
+                />
               </div>
 
-              <div className="bg-white rounded-lg  flex items-center justify-center shadow-lg">
-                <div className="text-center">
-                  <div className="p-10 mx-auto flex text-center items-center justify-center">
-                    {/* <span className="text-yellow-600 font-bold text-2xl"> */}
-                    <img
-                      src="/assets/dinelgroupbv/fdb1e4775500652024b848a4a043c8bef17cdeda.png"
-                      alt=""
-                      className="border"
-                    />
-                    {/* </span> */}
-                  </div>
-                </div>
+              <div
+                // key={i}
+                className="bg-white rounded-lg flex items-center justify-center   "
+              >
+                <img
+                  src="/assets/dinelgroupbv/fdb1e4775500652024b848a4a043c8bef17cdeda.png"
+                  alt=""
+                  className="w-24 h-24 object-contain mb-3"
+                />
               </div>
+              {/* // ))} */}
             </div>
 
             {/* Social Media Icons */}
@@ -136,9 +129,6 @@ export default function DinelGroupBv() {
                 <FaInstagram className="text-[#FF8026] w-full h-6  font-bold" />
               </div>
 
-              <div className="bg-white rounded-full flex items-center w-8 h-8 ">
-                <FaXTwitter className="text-[#FF8026] w-full h-6 " />
-              </div>
 
               <div className="bg-white rounded-full flex items-center w-8 h-8 ">
                 <FaLinkedinIn className="text-[#FF8026] w-full h-6 " />

@@ -1,71 +1,76 @@
-import React from "react";
-import { Trophy, Target, TrendingUp } from "lucide-react";
 import Image from "next/image";
-
-export default function WhySecondDinel() {
+import { Target } from "lucide-react";
+export default function CareerSection() {
   const features = [
     {
-      icon: "f22dd18c6123e1adae4c4c18df7293a6949bc7f9.png",
-      title: "Challenging Jobs And Projects",
+      icon: "/assets/home/Vector (1).png",
+      text: "Challenging Jobs And Projects",
     },
     {
-      icon: "15a1cf333283509698bfe51f633ae3e902ef3eb4.png",
-      title: "Realizing Ambitions",
+      icon: "/assets/home/Vector (2).png",
+      text: "Realizing Ambitions",
     },
     {
-      icon: "f17f77e85323ff3dc5af484e0160d059e48c62cf.png",
-      title: "Focus On Growth And Development",
+      icon: "/assets/home/streamline-flex_decent-work-and-economic-growth.png",
+      text: "Focus On Growth And Development",
     },
   ];
 
   return (
-    <div className="container mx-auto mb-10 relative p-40 overflow-hidden">
-      <h1 className=" text-5xl font-bold text-center text-gray-900 mb-16 ">
-        Why Second Via Dinel
-      </h1>
-
-      <div className="flex justify-between">
+    <section className="container mx-auto  py-22  ">
+      {/* <div className="absolute inset-0">
         <img
           src="/assets/home/b5119110651a2589afaa1a533594d432fdac1f03.png"
-          className="absolute opacity-20 -right-10 top-20 "
+          alt=""
+          className="w-full h-full object-contain opacity-10 "
         />
+      </div> */}
+      <div className="flex items-center p-10 lg:p-20 mb-10 justify-center">
+        <h1 className="font-bold xl:text-7xl lg:text-5xl md:text-4xl sm:text-2xl">
+          Empowering Careers Through Dinel
+        </h1>
+      </div>
 
-        {/* <div className=""> */}
-        <div className=" relative  w-auto ">
-          <div className="w-80 h-90  absolute left-45 bottom-0 bg-[#CEE9FF]" />
+      <div className="py-20 relative ">
+        <div className="absolute right-0 w-auto h-full -z-1 ">
           <img
-            src="/assets/home/a8bde8006ea2da5002a7af3c2b0ee14c077f30e0.png"
-            alt="loading"
-            className="h-120  object-cover relative "
+            src="/assets/home/b5119110651a2589afaa1a533594d432fdac1f03.png"
+            alt=""
+            className="w-full h-full object-cover opacity-10 "
           />
         </div>
-        {/* </div> */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 overflow-visible">
+          {/* LEFT IMAGE */}
 
-        <div className="flex flex-col justify-center  space-y-6 relative">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group bg-linear-to-r from-gray-50 to-white  rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 relative"
-            >
-              <div className="flex items-center justify-centertext-center gap-4">
-                <div className=" p-3 rounded-xl ">
-                  <Image
-                    src={`/assets/home/${feature.icon}`}
-                    alt="icon"
-                    width={100}
-                    height={50}
-                  />
+          <div className="">
+            <Image
+              src="/assets/home/6040b4edeacfbde72a6d1c2b653d02d63ed00b49 (1).jpg"
+              width={800}
+              height={500}
+              alt="Person"
+              className="
+            object-cover w-full"
+            />
+          </div>
+
+          {/* RIGHT GRID CONTENT */}
+          <div className="grid gap-6">
+            {features.map((item, index) => (
+              <div
+                key={index}
+                className="grid grid-cols-[64px_1fr] gap-4 items-center bg-white shadow-md  p-5"
+              >
+                <div className="w-16 h-16 bg-orange-500 flex items-center justify-center ">
+                  <Image src={item.icon} width={30} height={30} alt="icon" />
                 </div>
-                <div className="">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 ml-10">
-                    {feature.title}
-                  </h3>
-                </div>
+                <p className="ml-5 font-bold text-lg text-gray-900">
+                  {item.text}
+                </p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

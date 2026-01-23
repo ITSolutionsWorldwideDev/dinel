@@ -49,11 +49,11 @@ export default function DinelBanner() {
             />
 
             {/* Color accent strip */}
-            <div className="absolute left-0 top-0 bottom-0 w-3 flex flex-col">
+            {/* <div className="absolute left-0 top-0 bottom-0 w-3 flex flex-col">
               <div className="flex-1 bg-[#F87417]"></div>
               <div className="flex-1 bg-[#0A7CD8]"></div>
               <div className="flex-1 bg-[#008001]"></div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

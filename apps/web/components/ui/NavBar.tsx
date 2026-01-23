@@ -12,7 +12,11 @@ export default function NavBar() {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Link href="/">
-              <img src="/assets/Group 1.png" alt="logo" className="w-[70%] lg:w-full " />
+              <img
+                src="/assets/Group 1.png"
+                alt="logo"
+                className="w-[70%] lg:w-full "
+              />
             </Link>
           </div>
 

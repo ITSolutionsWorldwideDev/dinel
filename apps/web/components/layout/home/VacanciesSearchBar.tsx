@@ -29,12 +29,12 @@ export default function VacanciesSearchBar() {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 items-stretch">
+        <div className="flex flex-col sm:flex-row gap-10 items-stretch">
           <div className="flex-1 relative">
-            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
-              <FaSearch size={20} color="black" />
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 p-3">
+              <FaSearch size={20} color="black " />
             </div>
-            <div className="absolute left-11 top-1/4 w-0.5 font-bold h-6 bg-black mr-2" />
+            <div className="absolute left-14 top-1/4 w-0.5 font-bold h-6 bg-black mr-2" />
 
             <input
               type="text"
@@ -42,20 +42,20 @@ export default function VacanciesSearchBar() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               // onKeyPress={handleKeyPress}
-              className="ml-3 bg-white w-full h-12 pl-12 pr-4 rounded border-0 focus:outline-none focus:ring-2  text-gray-700"
+              className="ml-3 bg-white w-full h-12 pl-12 pr-4  border-0 focus:outline-none focus:ring-2  text-gray-700"
             />
           </div>
 
           <button
             onClick={handleSearch}
-            className="h-12 px-8 border-2 border-white  text-white font-medium rounded transition-colors"
+            className="h-12 px-8 border-2 border-white  text-white font-medium  transition-colors"
           >
             To Search
           </button>
 
           <button
             onClick={() => console.log("View all vacancies")}
-            className="h-12 px-8 bg-[#FF8026]  text-white font-medium rounded transition-colors"
+            className="h-12 px-8 bg-[#FF8026]  text-white font-medium  transition-colors"
           >
             All Vacancies
           </button>

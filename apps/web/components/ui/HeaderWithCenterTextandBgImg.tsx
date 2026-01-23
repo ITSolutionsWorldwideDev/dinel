@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import NavBar from "./NavBar";
-
+import {FaqHeaderSection} from "./FaqHeaderSection";
 interface header {
   heading1: string;
   heading2?: string;
@@ -46,6 +46,9 @@ const HeaderWithCenterTextandBgImg = ({
           </p>
         </div>
       </div>
+      <div className="absolute top-1/3 lg:top-1/4 right-0">
+              <FaqHeaderSection />
+            </div>
     </section>
   );
 };

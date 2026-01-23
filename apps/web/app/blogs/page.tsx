@@ -10,7 +10,7 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <HeaderWithCenterTextandBgImg
         heading1="Insights & Stories"
         description="Expert perspectives on technical recruitment, career growth, and industry trends"

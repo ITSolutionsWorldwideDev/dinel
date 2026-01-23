@@ -15,7 +15,7 @@ const page = () => {
       {/* <NavBar /> */}
       <Header />
       <div className="relative flex justify-center items-center ">
-        <div className="lg:absolute ">
+        <div className="lg:absolute z-30">
           <VacanciesSearchBar />
         </div>
       </div>
