@@ -23,17 +23,17 @@ export default function DinelToday() {
       {/* Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
         {/* Card 1 */}
-        <div className="relative h-65 md:h-80 rounded-2xl overflow-hidden">
+        <div className="relative h-65 md:h-80  overflow-hidden">
           <Image
             src="/assets/aboutus/26021d97d3a610878c617e85677411525b96ec15.jpg"
             alt="Technical Professionals"
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-black/50" />
+          {/* <div className="absolute inset-0 bg-black/50" /> */}
 
           <div className="absolute bottom-6 left-6 right-6 text-white">
-            <div className="mb-3 flex items-center justify-center w-12 h-12 rounded-xl bg-linear-to-r from-[#2B7FFF] to-[#00B8DB]">
+            <div className="mb-3 flex items-center justify-center w-12 h-12  bg-[#FF6B35]">
               <LuRocket className="text-white" />
             </div>
             <h3 className="text-xl md:text-2xl font-semibold mb-2">
@@ -47,17 +47,17 @@ export default function DinelToday() {
         </div>
 
         {/* Card 2 */}
-        <div className="relative h-65 md:h-80 rounded-2xl overflow-hidden">
+        <div className="relative h-65 md:h-80  overflow-hidden">
           <Image
             src="/assets/aboutus/202474ed2d5dc72dac5fb5ab1cba9edba8442024.jpg"
             alt="Innovative Organizations"
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-black/50" />
+          {/* <div className="absolute inset-0 bg-black/50" /> */}
 
           <div className="absolute bottom-6 left-6 right-6 text-white">
-            <div className="mb-3 flex items-center justify-center w-12 h-12 rounded-xl bg-linear-to-r from-[#AD46FF] to-[#F6339A]">
+            <div className="mb-3 flex items-center justify-center w-12 h-12  bg-[#FF6B35]">
               <img src="/assets/professionals/Icon.png" alt="" />
             </div>
             <h3 className="text-xl md:text-2xl font-semibold mb-2">

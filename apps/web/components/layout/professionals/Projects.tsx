@@ -10,7 +10,7 @@ const projectsData = [
       "Lead the transition to renewable energy with solar, wind, and sustainable power solutions",
     icon: <Zap className="w-6 h-6 text-white" />,
     image: "9ade3046653c3a8ad63668d5e9647af25a20ecd4.jpg",
-    iconBg: "bg-linear-to-r from-[#F0B100] to-[#FF6900]",
+    iconBg: "bg-[#FF6B35]",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const projectsData = [
       "Build the infrastructure of tomorrow with bridges, roads, and smart transportation systems",
     icon: <Building2 className="w-6 h-6 text-white" />,
     image: "d5c637c6e02ee9e5c67d246227bcb6a689986be7.jpg",
-    iconBg: "bg-linear-to-r from-[#2B7FFF] to-[#00B8DB]",
+    iconBg: "bg-[#FF6B35]",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const projectsData = [
       "Transform manufacturing with cutting-edge automation and intelligent control systems",
     icon: <Factory className="w-6 h-6 text-white" />,
     image: "8740528e1dfc1b37695bdf9420b34c03825c16e9.jpg",
-    iconBg: "bg-linear-to-r from-[#4A5565] to-[#1E2939]",
+    iconBg: "bg-[#FF6B35]",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const projectsData = [
       "Innovate with green technologies and sustainable solutions for a better future",
     icon: <Leaf className="w-6 h-6 text-white" />,
     image: "fba342536d7cc6cb6bed38f67444fb0c273fff61.jpg",
-    iconBg: "bg-linear-to-r from-[#00C950] to-[#009966]",
+    iconBg: "bg-[#FF6B35]",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function Projects() {
           {projectsData.map((project) => (
             <div
               key={project.id}
-              className="group relative h-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+              className="group relative h-80  overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
               style={{
                 background: project.image
                   ? `url(/assets/professionals/${project.image}) center/cover no-repeat`
@@ -72,7 +72,7 @@ export default function Projects() {
 
               {/* Icon Badge */}
               <div
-                className={`absolute top-6 right-6 ${project.iconBg} rounded-md p-3 shadow-lg`}
+                className={`absolute top-6 right-6 ${project.iconBg}  p-3 shadow-lg`}
               >
                 {project.icon}
               </div>
@@ -89,9 +89,7 @@ export default function Projects() {
         </div>
 
         {/* Bottom Message */}
-        <TextWithBorderAndBg
-          text="These are projects where your work matters today and in the future."
-        />
+        <TextWithBorderAndBg text="These are projects where your work matters today and in the future." />
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ export default function AboutHeader() {
       <NavBar />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#0a7cd8]/60" />
+      <div className="absolute inset-0 bg-linear-to-l from-[#0A7CD8]/90 to-[#0A7CD8]/20" />
 
       {/* Content */}
       <div className="relative z-10 h-1/2 flex items-center-safe container mx-auto justify-center">
@@ -33,8 +33,10 @@ export default function AboutHeader() {
           </p>
         </div>
       </div>
-      <div className="absolute top-1/3 lg:top-1/4 right-0">
+      <div className="absolute top-1/3 lg:top-1/4 right-0 z-100">
+        {/* <Link href={`/faq`} className="cursor-pointer"> */}
         <FaqHeaderSection />
+        {/* </Link> */}
       </div>
     </section>
   );

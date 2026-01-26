@@ -11,7 +11,7 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <HeaderWithCenterTextandBgImg
         heading1="Frequently Asked Questions"
         description="Got questions? We've gathered the most common questions from professionals and clients to help you quickly find the answers you need. If you don't see your question here, feel free to contact us directly."

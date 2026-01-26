@@ -2,13 +2,13 @@ export default function NextStep() {
   return (
     <>
       <div className="bg-[#FF8026] flex items-center justify-center p-4 container mx-auto relative">
-       <img
-        src="/assets/home/2ab3e25bb92dd58e32fa83e505bc6ebef6f6ed58(1).jpg"
-        className="absolute inset-0 w-full h-full object-cover mix-blend-multiply"
-        alt=""
-      />
+        <img
+          src="/assets/home/2ab3e25bb92dd58e32fa83e505bc6ebef6f6ed58(1).jpg"
+          className="absolute inset-0 w-full h-full object-cover mix-blend-multiply"
+          alt=""
+        />
 
-      <div className="bg-[#FF8026] absolute inset-0 opacity-30"/>
+        <div className="bg-[#FF8026] absolute inset-0 opacity-30" />
 
         <div className="relative z-1 w-full lg:w-[70%]">
           <div className="  p-8 md:p-16">
@@ -38,11 +38,11 @@ export default function NextStep() {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg w-full sm:w-auto">
+            <button className="bg-[#FF6B35] hover:bg-orange-600 text-white font-semibold px-8 py-3  shadow-md transition-all duration-300 hover:shadow-lg w-full sm:w-auto">
               View Vacancies
             </button>
 
-            <button className="bg-white hover:bg-gray-50 text-blue-600 font-semibold px-8 py-3 rounded-lg border-2 border-blue-600 shadow-md transition-all duration-300 hover:shadow-lg w-full sm:w-auto">
+            <button className="bg-white hover:bg-gray-50 text-[#0A7CD8] font-semibold px-8 py-3  border-2 border-[#0A7CD8] shadow-md transition-all duration-300 hover:shadow-lg w-full sm:w-auto">
               Become a Dineler
             </button>
           </div>

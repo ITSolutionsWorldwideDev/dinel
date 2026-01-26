@@ -3,6 +3,7 @@ import NavBar from "@/components/ui/NavBar";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
+import VacanciesSearchBar from "./VacanciesSearchBar";
 
 export default function Header() {
   return (
@@ -56,6 +57,7 @@ export default function Header() {
             </Link>
           </div>
         </div>
+
         <div className="absolute top-1/3 lg:top-1/4 right-0">
           <FaqHeaderSection />
         </div>

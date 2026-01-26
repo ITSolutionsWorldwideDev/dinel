@@ -3,7 +3,7 @@ import React from "react";
 import Header from "./Header";
 import VacanciesSearchBar from "./VacanciesSearchBar";
 import JobVacanciesSlider from "./FindJobSlider";
-import BlogCard from "@/components/ui/BlogCard";
+import BlogCard from "@/components/layout/home/BlogCard";
 import DinelerSection from "./DinelerSection";
 import OurApproach from "../../ui/OurApproach";
 import ProfessionalsSection from "./ProfessionalsSection";
@@ -13,8 +13,35 @@ import WhySecondDinel from "./WhySecondDinel";
 import Impact from "./Impact";
 import DinelGroupBv from "../../ui/DinelGroupBv";
 import StatsSection from "./StatsSection";
+import IndustryWeWork from "./IndustryWeWork";
 
 const Homei = () => {
+  const items = [
+    {
+      letter: "T",
+      title: "Technology",
+      description:
+        "You work with the latest technologies and innovations within your field.",
+    },
+    {
+      letter: "I",
+      title: "Insight",
+      description:
+        "We understand your ambitions, your experience and what you are really looking for.",
+    },
+    {
+      letter: "E",
+      title: "Experience",
+      description:
+        "With more than 25 years of experience in technology and secondment.",
+    },
+    {
+      letter: "R",
+      title: "Result",
+      description: "You make an impact on projects and grow in your career.",
+    },
+  ];
+
   return (
     <div className="">
       {/* <NavBar /> */}
@@ -24,10 +51,19 @@ const Homei = () => {
           <VacanciesSearchBar />
         </div>
       </div>
-      <JobVacanciesSlider />
+
+      <div className=" mt-20">
+        <JobVacanciesSlider />
+      </div>
+      <IndustryWeWork />
       <BlogCard />
       <DinelerSection />
-      <OurApproach />
+      <OurApproach
+        uppertetxt="Our Philosophy"
+        heading="Our Approach"
+        subtitle="Everything we do is guided by one clear philosophy:"
+        data={items}
+      />
       <ProfessionalsSection />
       <DinelProfessionals />
       <div className="relative">

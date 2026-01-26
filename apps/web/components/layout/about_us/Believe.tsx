@@ -5,19 +5,19 @@ const beliefs = [
     title: "Right People",
     desc: "Technology only works when the right people are behind it",
     icon: <Heart className="w-6 h-6 text-white " />,
-    bg: "bg-linear-to-br from-[#FB2C36] to-[#F6339A]",
+    bg: "bg-[#FF6B35]",
   },
   {
     title: "Long-term Relationships",
     desc: "Sustainable results come from long-term relationships",
     icon: <Handshake className="w-6 h-6 text-white" />,
-    bg: "bg-linear-to-br from-[#2B7FFF] to-[#00B8DB]",
+    bg: "bg-[#FF6B35]",
   },
   {
     title: "Recognized Growth",
     desc: "Sustainable results come from long-term relationships",
-    icon: <Handshake className="w-6 h-6 text-white" />,
-    bg: "bg-linear-to-br from-[#008001] to-[#7BFE7C]",
+    icon: <TrendingUp className="w-6 h-6 text-white" />,
+    bg: "bg-[#FF6B35]",
   },
 ];
 
@@ -42,10 +42,10 @@ export default function Believe() {
           {beliefs.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition text-start"
+              className="bg-white  p-6 shadow-sm hover:shadow-md transition text-start"
             >
               <div
-                className={`w-12 h-12 flex items-center justify-center rounded-xl ${item.bg}`}
+                className={`w-12 h-12 flex items-center justify-center  ${item.bg}`}
               >
                 {item.icon}
               </div>

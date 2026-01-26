@@ -53,10 +53,10 @@ export default function PartofStory() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="px-8 py-4 bg-white text-blue-500 rounded-lg font-semibold text-lg border-2 border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 w-full sm:w-auto">
+          <button className="px-8 py-4 bg-[#FF6B35] text-white  font-semibold text-lg border-2 border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 w-full sm:w-auto">
             Become a Dineler
           </button>
-          <button className="px-8 py-4 bg-white text-orange-500 rounded-lg font-semibold text-lg border-2 border-orange-500 hover:bg-orange-50 transition-all duration-200 w-full sm:w-auto">
+          <button className="px-8 py-4 bg-white  font-semibold text-lg border-2 border-[#0A7CD8] text-[#0A7CD8] hover:bg-orange-50 transition-all duration-200 w-full sm:w-auto">
             Contact Dinel
           </button>
         </div>

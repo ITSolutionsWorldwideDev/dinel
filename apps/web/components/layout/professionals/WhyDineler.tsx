@@ -27,7 +27,7 @@ export default function WhyDineler() {
 
   return (
     <div className="min-h-screen bg-linear-to-b from-gray-50 to-white flex items-center justify-center p-6">
-      <div className="max-w-6xl w-full">
+      <div className=" w-full">
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -47,8 +47,8 @@ export default function WhyDineler() {
               className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               {/* Icon Container */}
-              <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
-                <feature.icon className="w-8 h-8 text-blue-500" />
+              <div className="w-16 h-16 bg-[#FF6B35] rounded-full flex items-center justify-center mb-6">
+                <feature.icon className="w-8 h-8 text-white" />
               </div>
 
               {/* Content */}

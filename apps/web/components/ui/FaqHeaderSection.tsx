@@ -4,7 +4,7 @@ import React from "react";
 export const FaqHeaderSection = () => {
   return (
     <div className="">
-      <Link href={"/faq"}>
+      <Link href={"/faq"} className="cursor-pointer">
         <div className="flex flex-col  w-10 sm:w-20 md:w-20 lg:w-20  h-25 sm:h-32 md:h-40 lg:h-46 shadow-lg">
           {/* F - Orange Section */}
           <div className="flex-1 bg-orange-500 flex items-center justify-center">

@@ -9,7 +9,7 @@ export default function ProfessinalsHeader() {
     <section className="relative w-full h-auto lg:h-screen min-h-125 overflow-hidden ">
       {/* Background Image */}
       <Image
-        src="/assets/professionals/67fda7679ab84f6d652e6ab45c424b5bf97582d5.jpg"
+        src="/assets/professionals/43939db4ff8ef854de7943c03ea4ea0e13036c3e.jpg"
         alt="Industry Bridge"
         fill
         priority
@@ -17,7 +17,7 @@ export default function ProfessinalsHeader() {
       />
       <NavBar />
       {/* Overlay */}
-      <div className="absolute inset-0 bg-linear-to-r from-[#0A7CD8F2]/80 to-white/9" />
+      <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#0A7CD8] to-transparent" />
 
       {/* Big faded text */}
 

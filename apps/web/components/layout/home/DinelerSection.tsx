@@ -32,7 +32,7 @@ const features = [
 const DinelerSection = () => {
   return (
     <section className="relative bg-linear-to-b from-slate-50 to-white py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
@@ -50,10 +50,10 @@ const DinelerSection = () => {
             return (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
+                className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
                 <div
-                  className={`w-12 h-12 flex items-center justify-center rounded-lg ${item.bg}`}
+                  className={`w-12 h-12 flex items-center justify-center ${item.bg}`}
                 >
                   <Icon className="text-white w-6 h-6" />
                 </div>

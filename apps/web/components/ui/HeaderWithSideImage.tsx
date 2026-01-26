@@ -67,7 +67,7 @@ const HeaderWithSideImage = ({ heading, desc, image, btn1, btn2 }: props) => {
 
       {/* </div> */}
 
-      <div className="absolute top-1/3 lg:top-1/4 right-0">
+      <div className="absolute top-1/3 lg:top-1/4 right-0  z-10">
         <FaqHeaderSection />
       </div>
     </section>

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const DeskstopNavigationMenu = () => {
   const navLinks = [
-    { name: "Home", herf: "/" },
+  
     { name: "About Us", href: "/about-us" },
     { name: "Professionals", href: "/professionals" },
     { name: "Clients", href: "/clients" },

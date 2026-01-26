@@ -20,11 +20,15 @@ const MobileMenuBtn = ({ navLinks }: { navLinks: NavLink[] }) => {
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         className="xl:hidden text-white p-2"
       >
-        {mobileMenuOpen ? <RxCross1 /> : <AiOutlineMenu />}
+        {mobileMenuOpen ? (
+          <RxCross1 />
+        ) : (
+          <AiOutlineMenu className="size-[30] font-bold" />
+        )}
       </button>
       {mobileMenuOpen &&
         createPortal(
-          <div className="xl:hidden  p-10 absolute z-100 top-1/5  bg-black/90 container mx-auto w-full h-full inset-0  overflow-hidden">
+          <div className="xl:hidden  p-10 absolute z-100 top-1/9  bg-black/90 container mx-auto w-full h-fit inset-0  overflow-hidden">
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <Link

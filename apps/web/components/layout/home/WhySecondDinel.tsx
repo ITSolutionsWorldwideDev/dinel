@@ -17,7 +17,7 @@ export default function CareerSection() {
   ];
 
   return (
-    <section className="container mx-auto  py-22  ">
+    <section className="container mx-auto  py-22  px-10">
       {/* <div className="absolute inset-0">
         <img
           src="/assets/home/b5119110651a2589afaa1a533594d432fdac1f03.png"
