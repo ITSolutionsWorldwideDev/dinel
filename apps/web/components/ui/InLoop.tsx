@@ -25,7 +25,12 @@ export default function InLoop() {
   };
 
   return (
-    <div className=" bg-[#FF8026]  flex items-center justify-center p-15">
+    <div className=" bg-[#FF8026]  flex items-center justify-center p-15 relative">
+      <img
+        src="/assets/home/2ab3e25bb92dd58e32fa83e505bc6ebef6f6ed58(1).jpg"
+        className="absolute inset-0 w-full h-full object-cover mix-blend-multiply"
+        alt=""
+      />
       <div className="w-full max-w-2xl text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
           Stay in the Loop
@@ -45,12 +50,12 @@ export default function InLoop() {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full sm:w-80 px-6 py-3 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-white bg-white"
+            className="w-full sm:w-80 px-6 py-3  text-gray-700 focus:outline-none focus:ring-2 focus:ring-white bg-white"
           />
 
           <button
             type="submit"
-            className="w-full sm:w-auto px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+            className="w-full sm:w-auto px-8 py-3 bg-white text-[#0A7CD8] font-semibold  hover:bg-gray-100 transition-colors"
           >
             Subscribe
           </button>

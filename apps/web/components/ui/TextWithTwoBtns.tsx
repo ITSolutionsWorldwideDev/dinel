@@ -7,7 +7,7 @@ interface props {
   btn2txt: string;
 }
 
-const TextWithTwoBtns = ({ heading, desc, btn1txt, btn2txt }:props) => {
+const TextWithTwoBtns = ({ heading, desc, btn1txt, btn2txt }: props) => {
   return (
     <>
       <div className="bg-gray-100 py-16 px-4">
@@ -24,11 +24,11 @@ const TextWithTwoBtns = ({ heading, desc, btn1txt, btn2txt }:props) => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg w-full sm:w-auto">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3  shadow-md transition-all duration-300 hover:shadow-lg w-full sm:w-auto">
               {btn1txt}
             </button>
 
-            <button className="bg-white hover:bg-gray-50 text-blue-600 font-semibold px-8 py-3 rounded-lg border-2 border-blue-600 shadow-md transition-all duration-300 hover:shadow-lg w-full sm:w-auto">
+            <button className="bg-white hover:bg-gray-50 text-blue-600 font-semibold px-8 py-3  border-2 border-blue-600 shadow-md transition-all duration-300 hover:shadow-lg w-full sm:w-auto">
               {btn2txt}
             </button>
           </div>

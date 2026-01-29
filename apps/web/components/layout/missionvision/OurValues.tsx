@@ -9,25 +9,25 @@ const OurValues = () => {
   const features = [
     {
       icon: <Heart className="text-white" />,
-      iconBg: "bg-gradient-to-br from-[#2B7FFF] to-[#155DFC]",
+      iconBg: "bg-[#FF6B35]",
       title: "Respect",
       desc: "For people, expertise and ambitions",
     },
     {
       icon: <Shield className="text-white" />,
-      iconBg: "bg-gradient-to-br from-[#AD46FF] to-[#9810FA]",
+      iconBg: "bg-[#FF6B35]",
       title: "Trust",
       desc: "Built through transparency and reliability",
     },
     {
       icon: <Handshake className="text-white" />,
-      iconBg: "bg-gradient-to-br from-[#FF6900] to-[#FB2C36]",
+      iconBg: "bg-[#FF6B35]",
       title: "Commitment",
       desc: "To long-term relationships and quality",
     },
     {
       icon: <Star className="text-white" />,
-      iconBg: "bg-gradient-to-br from-[#00C950] to-[#009966]",
+      iconBg: "bg-[#FF6B35]",
       title: "Integrity",
       desc: "Doing what we promise and standing by our word",
     },

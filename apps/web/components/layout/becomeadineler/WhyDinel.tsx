@@ -10,27 +10,27 @@ const WhyDinel = () => {
   const features = [
     {
       icon: <Target className="text-white" />,
-      iconBg: "bg-[#d34a03]",
+      iconBg: "bg-[#FF6B35]",
       title: "Projects that match",
       desc: "Your experience and ambitions",
     },
     {
       icon: <Users className="text-white" />,
-      iconBg: "bg-[#d34a03]",
+      iconBg: "bg-[#FF6B35]",
       title: "Personal guidance",
       desc: "Throughout your journey",
     },
 
     {
       icon: <TrendingUp className="text-white" />,
-      iconBg: "bg-[#d34a03]",
+      iconBg: "bg-[#FF6B35]",
       title: "Long-term development",
       desc: "Career growth focus",
     },
 
     {
       icon: <Award className="text-white" />,
-      iconBg: "bg-[#d34a03]",
+      iconBg: "bg-[#FF6B35]",
       title: "Honest communication",
       desc: "Clear expectations",
     },
@@ -38,7 +38,7 @@ const WhyDinel = () => {
   return (
     <div>
       <div className="flex items-center justify-center">
-        <Heading icon={<Rocket />} text=" Why Choose Dinel" />
+        <Heading icon={<Rocket className="text-[#0A7CD8]"/>} text=" Why Choose Dinel" />
       </div>
 
       <HeadingAndDesc

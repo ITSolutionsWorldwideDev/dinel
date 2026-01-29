@@ -6,7 +6,12 @@ import HeadingAndDesc from "@/components/ui/HeadingAndDesc";
 const PeopleCapital = () => {
   return (
     <div className="bg-gray-100 p-10">
-      <section className="bg-[#FF8026] py-20 px-4 container mx-auto mt-20">
+      <section className="bg-[#FF8026] py-20 px-4 container mx-auto mt-20 relative">
+        <img
+          src="/assets/becomeadineler/2ab3e25bb92dd58e32fa83e505bc6ebef6f6ed58 (2).jpg"
+          alt=""
+          className="opacity-20 object-cover absolute inset-0 w-full h-full"
+        />
         <div className="max-w-4xl mx-auto text-center text-white">
           {/* Icon */}
           <div className="flex justify-center mb-6">
@@ -38,14 +43,14 @@ const PeopleCapital = () => {
       </div>
       .
       <div className="flex items-center justify-center space-x-3">
-        <button className=" flex items-center justify-center text-[#0A7CD8] hover:bg-blue-700 shadow-xl bg-white px-6 py-3 rounded-md font-medium transition">
+        <button className=" flex items-center justify-center text-white bg-[#FF6B35] hover:bg-blue-700 shadow-xl  px-6 py-3 font-medium transition">
           Join Dinel Now{" "}
           <span>
-            <ArrowRight className="ml-2 text-[#0A7CD8]" />
+            <ArrowRight className="ml-2 text-white" />
           </span>
         </button>
 
-        <button className="  hover:bg-blue-700 text-black border-2 border-black px-6 py-3 rounded-md font-medium transition">
+        <button className="  hover:bg-blue-700 text-[#0A7CD8] border-2 border-[#0A7CD8] px-6 py-3  font-medium transition">
           View Open Positions
         </button>
       </div>

@@ -5,7 +5,7 @@ import { FaqHeaderSection } from "./FaqHeaderSection";
 interface header {
   heading1: string;
   heading2?: string;
-  description: string;
+  description?: string;
   image: string;
 }
 const HeaderWithCenterTextandBgImg = ({
@@ -26,7 +26,7 @@ const HeaderWithCenterTextandBgImg = ({
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-blue-600/60" />
+      <div className="absolute inset-0 bg-linear-to-l from-[#0A7CD8] to-[#0A7CD8]/20 " />
       <NavBar />
 
       {/* Content */}

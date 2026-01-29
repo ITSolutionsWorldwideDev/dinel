@@ -14,28 +14,28 @@ const Experience = () => {
       title: "Energy and energy transition",
       icon: <Zap className="w-6 h-6 text-white" />,
       image: "client/43e0391a2438655203ee058c7a427f2f86234395.jpg",
-      iconBg: "bg-linear-to-r from-[#F0B100] to-[#FF6900]",
+      iconBg: "bg-[#FF6B35]",
     },
     {
       id: 2,
       title: "Infrastructure and mobility",
       icon: <Building2 className="w-6 h-6 text-white" />,
       image: "client/e2ccddbe046bf71b43ad2be7832ac133f3e6ec47.jpg",
-      iconBg: "bg-linear-to-r from-[#2B7FFF] to-[#00B8DB]",
+      iconBg: "bg-[#FF6B35]",
     },
     {
       id: 3,
       title: "Industry and industrial automation",
       icon: <Factory className="w-6 h-6 text-white" />,
       image: "client/68aca5cf526a5529540c7b89d9b48654e4ef1bef.jpg",
-      iconBg: "bg-linear-to-r from-[#4A5565] to-[#1E2939]",
+      iconBg: "bg-[#FF6B35]",
     },
     {
       id: 4,
       title: "Sustainable and innovative technology",
       icon: <Leaf className="w-6 h-6 text-white" />,
       image: "client/970ef23aae953e071a6f02873e28320db60751db.jpg",
-      iconBg: "bg-linear-to-r from-[#00C950] to-[#009966]",
+      iconBg: "bg-[#FF6B35]",
     },
   ];
   return (

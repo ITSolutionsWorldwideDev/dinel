@@ -3,32 +3,38 @@ import { IoBulbOutline } from "react-icons/io5";
 import Heading from "@/components/ui/Heading";
 import Image from "next/image";
 import IconWithTextCard from "@/components/ui/IconWithTextCard";
-import { features } from "process";
+// import { features } from "process";
 
-import { UsersRound, Rocket, Handshake, TrendingUp } from "lucide-react";
+import {
+  UsersRound,
+  Rocket,
+  Handshake,
+  TrendingUp,
+  Shield,
+} from "lucide-react";
 export default function WhyDinel() {
   const features = [
     {
       icon: <UsersRound className="text-white" />,
-      iconBg: "bg-gradient-to-br from-[#2B7FFF] to-[#155DFC]",
+      iconBg: "bg-[#FF6B35]",
       title: "Cultural Fit",
       desc: "Professionals who align with your company values and team dynamics",
     },
     {
       icon: <Rocket className="text-white" />,
-      iconBg: "bg-gradient-to-br from-[#AD46FF] to-[#9810FA]",
+      iconBg: "bg-[#FF6B35]",
       title: "Quick Delivery",
       desc: "Fast deployment without compromising on quality or compatibility",
     },
     {
       icon: <Handshake className="text-white" />,
-      iconBg: "bg-gradient-to-br from-[#FF6900] to-[#FB2C36]",
+      iconBg: "bg-[#FF6B35]",
       title: "Transparency",
       desc: "Clear communication and realistic expectations at every step",
     },
     {
       icon: <TrendingUp className="text-white" />,
-      iconBg: "bg-gradient-to-br from-[#00C950] to-[#00BBA7]",
+      iconBg: "bg-[#FF6B35]",
       title: "Long-term Focus",
       desc: "Building sustainable partnerships, not just filling positions",
     },
@@ -38,7 +44,7 @@ export default function WhyDinel() {
       <div className="container mx-auto px-4  text-center ">
         {/* Tag */}
         <Heading
-          icon={<IoBulbOutline className="text-[#FF6B35]" />}
+          icon={<Shield className="text-[#0A7CD8]" />}
           text="Why Choose Dinel"
         />
 

@@ -52,7 +52,7 @@ const HowToApply = () => {
               </span>
 
               {/* Icon */}
-              <div className="w-12 h-12 flex items-center justify-center bg-[#FF6A00] text-white rounded-lg text-2xl relative z-10">
+              <div className="w-12 h-12 flex items-center justify-center bg-[#FF6B35] text-white rounded-lg text-2xl relative z-10">
                 {item.icon}
               </div>
 

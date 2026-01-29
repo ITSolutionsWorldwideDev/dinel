@@ -18,11 +18,11 @@ const MindSet = () => {
         {/* Left Image */}
         <div className="w-full h-[70%] mx-auto">
           <Image
-            src="/assets/becomeadineler/f328597d52c1b20828004fa699a6d2ff050bc375.jpg" // replace with your image path
+            src="/assets/becomeadineler/63ecd05064f36afc1f3b6ab5f47d7d048d6252d3.jpg" // replace with your image path
             alt="Team meeting"
             width={600}
             height={450}    
-            className="rounded-lg shadow-lg w-full h-full object-cover"
+            className=" shadow-lg w-full h-full object-cover"
           />
         </div>
 
@@ -46,7 +46,7 @@ const MindSet = () => {
             {mindsetPoints.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 bg-white rounded-lg p-4 shadow-sm"
+                className="flex items-center gap-4 bg-white  p-4 shadow-sm"
               >
                 <span className="flex items-center justify-center w-6 h-6 rounded-full border-2 border-blue-500 text-blue-500 text-sm">
                   ✓
@@ -59,7 +59,7 @@ const MindSet = () => {
           </div>
 
           {/* CTA */}
-          <div className="bg-linear-to-r from-blue-600 to-orange-400 text-white px-6 py-4 rounded-lg font-medium">
+          <div className="bg-linear-to-r from-blue-600 to-orange-400 text-white px-6 py-4  font-medium">
             Being a Dineler means working with purpose and pride.
           </div>
         </div>

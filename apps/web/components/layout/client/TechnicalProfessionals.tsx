@@ -27,7 +27,7 @@ const TechnicalProfessionals = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-white text-[#FF8026] px-6 py-3 font-medium rounded shadow hover:bg-gray-100 transition">
+          <button className="bg-white text-[#0A7CD8] px-6 py-3 font-medium rounded shadow hover:bg-gray-100 transition">
             Contact Dinel
           </button>
 

@@ -13,7 +13,7 @@ const ContactDetails = () => {
         <div className="flex flex-col gap-6">
           {/* Phone */}
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#FF6A00] text-white text-xl">
+            <div className="w-12 h-12  flex items-center justify-center bg-[#FF6A00] text-white text-xl">
               <FiPhone />
             </div>
             <div>

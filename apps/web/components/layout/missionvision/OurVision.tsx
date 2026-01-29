@@ -10,20 +10,20 @@ const OurVision = () => {
   const features = [
     {
       icon: <Heart className="text-white" />,
-      iconBg: "bg-gradient-to-br from-[#2B7FFF] to-[#155DFC]",
+      iconBg: "bg-[#FF6B35]",
       title: "Respect",
       desc: "For people, expertise and ambitions",
     },
     {
       icon: <LiaArrowUpSolid className="text-white" />,
-      iconBg: "bg-gradient-to-br from-[#FF6900] to-[#FB2C36",
+      iconBg: "bg-[#FF6B35]",
       title: "Trust",
       desc: "Built through transparency and reliability",
     },
 
     {
       icon: <Star className="text-white" />,
-      iconBg: "bg-gradient-to-br from-[#09B54E] to-[#008001]",
+      iconBg: "bg-[#FF6B35]",
       title: "Integrity",
       desc: "Doing what we promise and standing by our word",
     },

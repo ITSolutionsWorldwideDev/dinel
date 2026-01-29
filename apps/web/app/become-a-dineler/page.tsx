@@ -1,4 +1,5 @@
-import Header from "@/components/layout/becomeadineler/Header";
+import BecomeADinelerHeader from "@/components/layout/becomeadineler/BecomeADinelerHeader";
+import Header from "@/components/layout/becomeadineler/BecomeADinelerHeader";
 import MindSet from "@/components/layout/becomeadineler/MindSet";
 import PeopleCapital from "@/components/layout/becomeadineler/PeopleCapital";
 import ProjectWithImpact from "@/components/layout/becomeadineler/ProjectWithImpact";
@@ -11,7 +12,7 @@ const page = () => {
   return (
     <div>
       {/* <NavBar /> */}
-      <Header />
+      <BecomeADinelerHeader />
       <MindSet />
       <WhyDinel />
       <ProjectWithImpact />

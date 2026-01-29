@@ -10,11 +10,11 @@ export default function ClientHeader() {
     <section className="relative w-full h-auto lg:min-h-screen container mx-auto overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/assets/client/b360af01f2ddfe5859c6cc5cb540d49215dd76e3.jpg"
+        src="/assets/client/b360af01f2ddfe5859c6cc5cb540d49215dd76e3 (1).jpg"
         alt="Industry Bridge"
         fill
         priority
-        className="object-cover scale-x-[-1] absolute inset-0 w-full h-full "
+        className="object-cover  absolute inset-0 w-full h-full "
       />
       <NavBar />
       {/* Overlay */}

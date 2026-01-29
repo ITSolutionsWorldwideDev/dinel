@@ -18,6 +18,7 @@ export interface BlogCardItem {
 }
 
 export default function BlogCards({ blogs }: { blogs: BlogCardItem[] }) {
+  // console.log(blogs)
   if (!blogs || blogs.length === 0) {
     return (
       <div className="text-center py-20 text-gray-500">No blogs found</div>

@@ -12,25 +12,25 @@ const Approach = () => {
       letter: "T",
       title: "Technology",
       desc: "Working with up-to-date expertise and innovation",
-      bg: "bg-linear-to-r from-[#2B7FFF] to-[#155DFC]",
+      bg: "bg-[#FF6B35]",
     },
     {
       letter: "I",
       title: "Insight",
       desc: "Understanding people, ambitions and organizations",
-      bg: "bg-linear-to-r from-[##AD46FF] to-[#9810FA]",
+      bg: "bg-[#FF6B35]",
     },
     {
       letter: "E",
       title: "Experience",
       desc: "Over 25 years of knowledge in technology and secondment",
-      bg: "bg-linear-to-r from-[#FF6900] to-[#FB2C36]",
+      bg: "bg-[#FF6B35]",
     },
     {
       letter: "R",
       title: "Result",
       desc: "Sustainable impact for professionals and organizations",
-      bg: "bg-linear-to-r from-[#00C950] to-[#009966]",
+      bg: "bg-[#FF6B35]",
     },
   ];
 

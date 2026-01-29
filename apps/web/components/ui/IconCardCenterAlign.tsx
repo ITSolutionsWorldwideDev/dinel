@@ -18,11 +18,11 @@ const IconCardCenterAlign: React.FC<CoreValuesProps> = ({ values }) => {
           {values.map((item, index) => (
             <div
               key={index}
-              className="bg-white p-8 text-center rounded-lg shadow-md hover:shadow-lg transition"
+              className="bg-white p-8 text-center  shadow-md hover:shadow-lg transition"
             >
               {/* Icon */}
               <div
-                className={`w-16 h-16 mx-auto mb-6 rounded-xl flex items-center justify-center text-white text-2xl font-bold ${item.bg}`}
+                className={`w-16 h-16 mx-auto mb-6  flex items-center justify-center text-white text-2xl font-bold ${item.bg}`}
               >
                 {item.letter}
               </div>

@@ -8,11 +8,11 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <NavBar />
+      
       <HeaderWithCenterTextandBgImg
         heading1="Get in touch with Dinel"
         description="Whether you're a professional looking for your next challenge or an organization seeking the right expertise, we're here to help. Contact us today. Let's explore how we can work together."
-        image="/assets/contact/979194d0a724928fcf4293d251f622f12ca61d92 (2).jpg"
+        image="/assets/contact/490e8c4493ebeaa9194a0e0cedad85df35c73e4b.jpg"
       />
       <Contact />
 
@@ -22,6 +22,8 @@ const page = () => {
           des="Reach out today and become part of the Dineler community."
           btn1="Join Dinel"
           btn2="View Vacancies"
+          btn1Classes="bg-[#FF6B35] text-white"
+          btn2Classes="bg-white text-[#0A7CD8] border-2 border-[#0A7CD8]"
         />
       </div>
 

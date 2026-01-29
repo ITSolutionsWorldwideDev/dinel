@@ -34,7 +34,7 @@ const ProjectWithImpact = () => {
   return (
     <div className="mt-20 container mx-auto p-5">
       <div className="flex item-center justify-center">
-        <Heading icon={<Warehouse />} text=" Projects with Impact" />
+        <Heading icon={<Warehouse className="text-[#0A7CD8]"/>} text=" Projects with Impact" />
       </div>
 
       <HeadingAndDesc
@@ -58,7 +58,7 @@ const ProjectWithImpact = () => {
         />
 
         {/* Blue Overlay */}
-        <div className="absolute left-0 bottom-0 h-full w-full bg-linear-to-t from-blue-700/70 to-transparent"></div>
+        <div className="absolute left-0 bottom-0 h-full w-full bg-linear-to-t from-[#0A7CD8]/80 to-transparent"></div>
 
         {/* Text Content */}
         <div className="absolute inset-0 flex items-end justify-center p-7 ">

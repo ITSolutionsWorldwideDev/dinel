@@ -18,7 +18,7 @@ const ImagesWithIconDesc = ({ data,classnameforNoOfImages }: prop) => {
       {data.map((project) => (
         <div
           key={project.id}
-          className="group relative h-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+          className="group relative h-80  overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
           style={{
             background: project.image
               ? `url(/assets/${project.image}) center/cover no-repeat`
@@ -30,7 +30,7 @@ const ImagesWithIconDesc = ({ data,classnameforNoOfImages }: prop) => {
 
           {/* Icon Badge */}
           <div
-            className={`absolute top-6 right-6 ${project.iconBg} rounded-md p-3 shadow-lg`}
+            className={`absolute top-6 right-6 ${project.iconBg} p-3 shadow-lg`}
           >
             {project.icon}
           </div>

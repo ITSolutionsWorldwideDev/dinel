@@ -1,4 +1,4 @@
-import Header from "@/components/layout/vacancies/Header";
+import Header from "@/components/layout/vacancies/VaccinciesHeader";
 import HeaderWithSideImage from "@/components/ui/HeaderWithSideImage";
 import NavBar from "@/components/ui/NavBar";
 import VacanciesSearchBar from "@/components/layout/home/VacanciesSearchBar";
@@ -19,26 +19,28 @@ const page = () => {
           <VacanciesSearchBar />
         </div>
       </div>
-      <FindJobSlider />
 
-      {/* <div>
-        <HeaderWithSideImage
-          heading="Find your next challenge as a Dineler"
-          desc="Explore a wide range of exciting technical vacancies in energy, infrastructure, industry, and sustainable technology. Your next project awaits."
-          image="/assets/vacancies/Group 9395.png"
-          btn1="View All Vacancies"
-          btn2="Become a Dineler"
-        />
-      </div> */}
+      <div className="mt-20">
+        <FindJobSlider />
+      </div>
 
       <ApplyWithDinel />
       <HowToApply />
-      <HeadingDescAnd2BtnsWithBg
-        heading="Ready to find your next challenge?"
-        description="Start exploring vacancies and become a part of the Dineler community today."
-        btn1Text="View Vacancies"
-        btn2Text="Contact Us"
-      />
+      <div className="relative">
+        <img
+          src="/assets/home/2ab3e25bb92dd58e32fa83e505bc6ebef6f6ed58(1).jpg"
+          className="absolute inset-0 w-full h-full object-cover mix-blend-multiply"
+          alt=""
+        />
+
+        <HeadingDescAnd2BtnsWithBg
+          heading="Ready to find your next challenge?"
+          description="Start exploring vacancies and become a part of the Dineler community today."
+          btn1Text="View Vacancies"
+          btn2Text="Contact Us"
+        />
+      </div>
+
       <DinelGroupBv />
     </div>
   );

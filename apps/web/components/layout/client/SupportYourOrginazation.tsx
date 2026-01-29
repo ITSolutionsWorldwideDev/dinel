@@ -14,7 +14,7 @@ const SupportYourOrginazation = () => {
         "For peak workloads, complex projects or specific expertise. We provide professionals who can step in quickly and add value from day one.",
       image: "3bd114e408d1b69ce4d1ddbeeb02b7cdcf344725.jpg",
       icon: <RiFlashlightLine />,
-      iconBg: "bg-linear-to-r from-[#FF6900] to-[#FB2C36]",
+      iconBg: "bg-[#FF6B35]",
       points: [
         "Quick deployment",
         "Immediate impact",
@@ -26,9 +26,9 @@ const SupportYourOrginazation = () => {
       title: "Structural Reinforcement",
       description:
         "For organizations that want to grow sustainably. We connect you with professionals who contribute to continuity, knowledge retention and long-term stability.",
-      image: "7add9bee2ec8c7a8546d18e75f20199ecc3208ce.jpg",
+      image: "084776cafb5ff45b23794219e301794f60e37e36.jpg",
       icon: <Target />,
-      iconBg: "bg-linear-to-r from-[#2B7FFF] to-[#00B8DB]",
+      iconBg: "bg-[#FF6B35]",
       points: [
         "Long-term stability",
         "Knowledge retention",
@@ -64,7 +64,7 @@ const SupportYourOrginazation = () => {
                   className="w-full h-65 object-cover"
                 />
                 <div
-                  className={`absolute top-4 right-4 ${item.iconBg} text-white p-3 rounded-lg`}
+                  className={`absolute top-4 right-4 ${item.iconBg} text-white p-3 `}
                 >
                   {item.icon}
                 </div>

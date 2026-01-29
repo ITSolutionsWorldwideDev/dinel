@@ -23,7 +23,7 @@ export default function QuestionAnswer({
   return (
     <div className="container mx-auto p-8">
       <div className=" mx-auto shadow-md bg-white  p-10">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">
+        <h1 className="text-3xl  text-gray-900 mb-8">
           {whosQUestions}
         </h1>
 
@@ -34,7 +34,7 @@ export default function QuestionAnswer({
                 onClick={() => toggleAccordion(index)}
                 className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
               >
-                <span className="text-lg font-semibold text-gray-900">
+                <span className="text-lg font-bold text-gray-900">
                   {faq.question}
                 </span>
                 <ChevronDown

@@ -151,7 +151,7 @@ export default function Cards({ data }: CardsProps) {
                 alt={item.title}
                 width={550}
                 height={350}
-                className="rounded-md object-cover shadow-md"
+                className=" object-cover shadow-md"
               />
             </div>
           </div>

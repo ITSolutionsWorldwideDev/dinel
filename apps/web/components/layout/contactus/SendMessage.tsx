@@ -3,7 +3,7 @@ import { LuSend } from "react-icons/lu";
 const SendMessage = () => {
   return (
       <section className="w-full flex justify-center py-10">
-      <div className="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] rounded-md w-full max-w-lg p-8">
+      <div className="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)]  w-full max-w-lg p-8">
         
         {/* Header */}
         <div className="flex items-center gap-3 mb-4">

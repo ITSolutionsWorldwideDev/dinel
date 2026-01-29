@@ -15,7 +15,7 @@ const page = () => {
       <HeaderWithCenterTextandBgImg
         heading1="Frequently Asked Questions"
         description="Got questions? We've gathered the most common questions from professionals and clients to help you quickly find the answers you need. If you don't see your question here, feel free to contact us directly."
-        image="/assets/faq/979194d0a724928fcf4293d251f622f12ca61d92 (3).jpg"
+        image="/assets/faq/c3dfd859e9ebde955630c979871a692ce7bae8fa.jpg"
       />
 
       <div className="bg-gray-100 p-20">
