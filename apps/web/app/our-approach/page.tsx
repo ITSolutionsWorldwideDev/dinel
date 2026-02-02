@@ -28,7 +28,10 @@ const OurApproach = () => {
         heading="Let's take the next step together"
         desc="Whether you are a professional looking for your next challenge or an organization looking for the right expertise Dinel is ready to support you."
         btn1txt="Become a Dineler"
+        btn1Href='become-a-dineler'
         btn2txt="Contact Dinel"
+        btn2Href='contact-us'
+
       />
       <DinelGroupBv />
     </div>

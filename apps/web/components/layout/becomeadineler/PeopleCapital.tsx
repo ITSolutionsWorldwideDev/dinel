@@ -2,6 +2,7 @@ import React from "react";
 import { Heart, Sparkles, ArrowRight } from "lucide-react";
 import Heading from "@/components/ui/Heading";
 import HeadingAndDesc from "@/components/ui/HeadingAndDesc";
+import Link from "next/link";
 
 const PeopleCapital = () => {
   return (
@@ -43,16 +44,19 @@ const PeopleCapital = () => {
       </div>
       .
       <div className="flex items-center justify-center space-x-3">
-        <button className=" flex items-center justify-center text-white bg-[#FF6B35] hover:bg-blue-700 shadow-xl  px-6 py-3 font-medium transition">
-          Join Dinel Now{" "}
-          <span>
-            <ArrowRight className="ml-2 text-white" />
-          </span>
-        </button>
-
+        <Link href={"/sign-up"}>
+          <button className=" flex items-center justify-center text-white bg-[#FF6B35] hover:bg-blue-700 shadow-xl  px-6 py-3 font-medium transition">
+            Join Dinel Now{" "}
+            <span>
+              <ArrowRight className="ml-2 text-white" />
+            </span>
+          </button>
+        </Link>
+        <Link href={'/vacancies'}>
         <button className="  hover:bg-blue-700 text-[#0A7CD8] border-2 border-[#0A7CD8] px-6 py-3  font-medium transition">
           View Open Positions
         </button>
+        </Link>
       </div>
     </div>
   );

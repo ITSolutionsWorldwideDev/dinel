@@ -1,5 +1,5 @@
 import { Rocket, TrendingUp, Award, Users } from "lucide-react";
-
+import Link from "next/link";
 export default function ProfessionalsSection() {
   return (
     <section className="w-full px-4 py-16">
@@ -79,12 +79,17 @@ export default function ProfessionalsSection() {
 
         {/* Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-          <button className="px-6 py-3 bg-[#FF6B35] text-white font-medium hover:bg-orange-600 transition">
-            Discover Opportunities
-          </button>
-          <button className="px-6 py-3  border-2 border-[#0A7CD8] text-[#0A7CD8] font-medium hover:bg-blue-50 transition">
-            Become a Dineler
-          </button>
+          <Link href={"/vacancies"}>
+            <button className="cursor-pointer px-6 py-3 bg-[#FF6B35] text-white font-medium hover:bg-orange-600 transition">
+              Discover Opportunities
+            </button>
+          </Link>
+
+          <Link href="/become-a-dineler">
+            <button className="cursor-pointer px-6 py-3  border-2 border-[#0A7CD8] text-[#0A7CD8] font-medium hover:bg-blue-50 transition">
+              Become a Dineler
+            </button>
+          </Link>
         </div>
       </div>
     </section>

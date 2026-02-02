@@ -4,6 +4,7 @@ import { FaFacebookF } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function DinelGroupBv() {
   return (
@@ -67,12 +68,6 @@ export default function DinelGroupBv() {
           <div className="flex flex-col justify-between">
             {/* Certification Logos */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-              {/* {[
-                "/assets/dinelgroupbv/0166f4a4ee9b1f3dbe4964cab594052e4f1818ea.png",
-                "/assets/dinelgroupbv/adc952413b1c5d11cbe02ff6645587a593a6bf2f.png",
-                "/assets/dinelgroupbv/8fe1360ae39564e1e88e56da8643cc73f30ba948 (2).png",
-                "/assets/dinelgroupbv/fdb1e4775500652024b848a4a043c8bef17cdeda.png",
-              ].map((src, i) => ( */}
               <div
                 // key={i}
                 className="bg-white rounded-lg flex items-center justify-center "
@@ -121,17 +116,22 @@ export default function DinelGroupBv() {
 
             {/* Social Media Icons */}
             <div className="flex gap-4 justify-end">
-              <div className="bg-white rounded-full flex  w-8 h-8 ">
-                <FaFacebookF className="text-[#FF8026] w-full h-6 mt-2" />
+              <div className="bg-white rounded-full flex  w-8 h-8 justify-center">
+                <Link href={"https://www.facebook.com/DinelGroup"} >
+                  <FaFacebookF className="text-[#FF8026] w-full h-6 mt-2" />
+                </Link>
               </div>
 
-              <div className="bg-white rounded-full flex items-center w-8 h-8 ">
-                <FaInstagram className="text-[#FF8026] w-full h-6  font-bold" />
+              <div className="bg-white rounded-full flex items-center justify-center w-8 h-8 ">
+                <Link href={"https://www.instagram.com/dinelgroup"}>
+                  <FaInstagram className="text-[#FF8026] w-full h-6  font-bold" />
+                </Link>
               </div>
 
-
-              <div className="bg-white rounded-full flex items-center w-8 h-8 ">
-                <FaLinkedinIn className="text-[#FF8026] w-full h-6 " />
+              <div className="bg-white rounded-full flex items-center justify-center w-8 h-8 ">
+                <Link href={"https://nl.linkedin.com/company/dinel-group-bv"}>
+                  <FaLinkedinIn className="text-[#FF8026] w-full h-6 " />
+                </Link>
               </div>
             </div>
           </div>

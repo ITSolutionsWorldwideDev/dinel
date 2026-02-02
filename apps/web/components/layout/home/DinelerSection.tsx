@@ -1,5 +1,6 @@
 import React from "react";
 import { Target, TrendingUp, Award, Users } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   {
@@ -77,9 +78,11 @@ const DinelerSection = () => {
       </div>
 
       <div>
-        <button className="mt-8 mx-auto block bg-[#FF6B35] hover:bg-amber-700 text-white px-6 py-3  font-medium transition">
-          Join the Dineler Network
-        </button>
+        <Link href={"/become-a-dineler"}>
+          <button className="cursor-pointer mt-8 mx-auto block bg-[#FF6B35] hover:bg-amber-700 text-white px-6 py-3  font-medium transition">
+            Join the Dineler Network
+          </button>
+        </Link>
       </div>
     </section>
   );

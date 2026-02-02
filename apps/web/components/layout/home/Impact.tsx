@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Impact() {
   return (
     <section className="bg-[#FF8026]   container mx-auto relative ">
@@ -23,13 +25,16 @@ export default function Impact() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-20 ">
-          <button className="bg-white text-blue-600 font-semibold px-8 py-3  hover:bg-gray-50 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full sm:w-auto cursor-pointer">
-            Become a Dineler
-          </button>
-
-          <button className="bg-transparent text-white font-semibold px-8 py-3  border-2 border-white hover:bg-white hover:text-orange-500 transition-colors duration-200 w-full sm:w-auto cursor-pointer">
-            View Vacancies
-          </button>
+          <Link href={"/become-a-dineler"}>
+            <button className="bg-white text-blue-600 font-semibold px-8 py-3  hover:bg-gray-50 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full sm:w-auto cursor-pointer">
+              Become a Dineler
+            </button>
+          </Link>
+          <Link href={"/vacancies"}>
+            <button className="bg-transparent text-white font-semibold px-8 py-3  border-2 border-white hover:bg-white hover:text-orange-500 transition-colors duration-200 w-full sm:w-auto cursor-pointer">
+              View Vacancies
+            </button>
+          </Link>
         </div>
       </div>
     </section>

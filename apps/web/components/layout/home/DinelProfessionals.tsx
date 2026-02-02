@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-
+import Link from "next/link";
 export default function DinelProfessionals() {
   const sectors = [
     {
@@ -8,18 +8,21 @@ export default function DinelProfessionals() {
       image: "3e0196d5cc66b0216796fe8296ddb9072986d21a.jpg",
       description:
         "Without infrastructure, there's no connection. Literally. Without professionals, there's no infrastructure. To create the right connections, you need professionals you can rely on.",
+      href: "infastructure-vacancies",
     },
     {
       title: "Oil, Gas and Industry",
       image: "0dffbc652b8f354903ca7e53786e3bfe74ac1e18.jpg",
       description:
         "Oil and gas companies that actively embrace (digital) innovation are taking a significant step toward the future. Besides innovation, finding the right permanent and temporary talent is essential.",
+      href: "oil-gasandindustry-vacancies",
     },
     {
       title: "Energy",
       image: "2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
       description:
         "If you want to remain relevant as a company in the energy sector, you must continually improve. And for that, you need people. The right professionals who ensure you stay ahead of the competition.",
+      href: "energy-vacancies",
     },
   ];
 
@@ -75,11 +78,13 @@ export default function DinelProfessionals() {
                 {/* Read More Button */}
               </div>
               <div className="flex items-end justify-end -mt-10 p-6 z-10">
-                <button className="inline-flex items-center justify-center gap-2 bg-[#FF8026] hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition-colors duration-200 group cursor-pointer">
-                  Read more
-                  <ArrowRight />
-                  {/* className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" */}
-                </button>
+                <Link href={`/${sector.href}`}>
+                  <button className="inline-flex items-center justify-center gap-2 bg-[#FF8026] hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition-colors duration-200 group cursor-pointer">
+                    Read more
+                    <ArrowRight />
+                    {/* className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" */}
+                  </button>
+                </Link>
               </div>
             </div>
           ))}

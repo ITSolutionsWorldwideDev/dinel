@@ -26,27 +26,28 @@ export default function BecomeADinelerHeader() {
         <div className="px-6">
           <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight w-1/2">
             Become a Dineler. Make an impact with your expertise.
-
           </h2>
 
           <p className="mt-6 max-w-2xl text-white/90 text-base md:text-lg leading-relaxed">
-           Being a Dineler means more than working on technical projects. It means choosing growth, impact and belonging to a community that values people as much as technology. At Dinel, you don’t just work on projects you help build the future.
+            Being a Dineler means more than working on technical projects. It
+            means choosing growth, impact and belonging to a community that
+            values people as much as technology. At Dinel, you don’t just work
+            on projects you help build the future.
           </p>
 
           {/* Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="#"
+              href="/sign-up"
               className="inline-flex items-center gap-2 bg-[#FF6B35] hover:bg-blue-700 text-white px-6 py-3  font-medium transition"
             >
-             Join Dinel
+              Join Dinel
             </Link>
 
             <Link
-              href="#"
-              className="inline-flex items-center gap-2 bg-white text-[#0A7CD8] border-2 border-[#0A7CD8] hover:bg-gray-100 px-6 py-3  font-medium transition"
+              href={"/vacancies"} className="inline-flex items-center gap-2 bg-white text-[#0A7CD8] border-2 border-[#0A7CD8] hover:bg-gray-100 px-6 py-3  font-medium transition"
             >
-             View Vacancies
+              View Vacancies
             </Link>
           </div>
         </div>

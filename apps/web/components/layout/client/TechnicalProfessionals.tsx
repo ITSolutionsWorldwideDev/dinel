@@ -1,6 +1,6 @@
 import React from "react";
 import { LuHeartHandshake } from "react-icons/lu";
-
+import Link from "next/link";
 const TechnicalProfessionals = () => {
   return (
     <section className="bg-[#FF8026] py-20 px-4">
@@ -27,9 +27,12 @@ const TechnicalProfessionals = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          
+          <Link href={'/contact-us'}>
           <button className="bg-white text-[#0A7CD8] px-6 py-3 font-medium rounded shadow hover:bg-gray-100 transition">
             Contact Dinel
           </button>
+          </Link>
 
           <button className="border border-white px-6 py-3 font-medium rounded hover:bg-white hover:text-orange-500 transition">
             Schedule a Conversation
