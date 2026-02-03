@@ -1,0 +1,29 @@
+// packages/auth/admin-auth/tsconfig.json
+{
+  "compilerOptions": {
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  },
+  "include": ["**/*.ts", "**/*.tsx", "next-auth.d.ts"]
+}
+// {
+//   "extends": "../../tsconfig.json",
+//   "compilerOptions": {
+//     "composite": true,
+//     "outDir": "dist",
+//     "rootDir": "src"
+//   },
+//   "include": ["src", "types/**/*.d.ts", "next-auth.d.ts"],
+// }
+// {
+//   "extends": "../../tsconfig.json",
+//   "compilerOptions": {
+//     "composite": true,
+//     "outDir": "dist",
+//     "rootDir": "src"
+//   },
+//   "include": [ "auth-options.ts", "pg-adapter.ts", "index.ts", "next-auth.d.ts" ],
+//   "include": ["src", "types/**/*.d.ts", "next-auth.d.ts"],
+// }
+//   "include": ["src", "types/**/*.d.ts", "next-auth.d.ts"],

@@ -2,8 +2,12 @@ import React from "react";
 import ActionBtns from "./ActionBtns";
 import MobileMenuBtn from "./MobileMenuBtn";
 import Link from "next/link";
+import { candidateAuth } from "@repo/auth-web";
 
-const DeskstopNavigationMenu = () => {
+export default async function DeskstopNavigationMenu () {
+
+  const session = await candidateAuth();
+
   const navLinks = [
   
     { name: "About Us", href: "/about-us" },
@@ -14,7 +18,9 @@ const DeskstopNavigationMenu = () => {
     { name: "Become a Dineler", href: "/become-a-dineler" },
     { name: "Vacancies", href: "/vacancies" },
     { name: "Blogs", href: "/blogs" },
+    { name: session ? "My Account" : "Member", href: "/account" },
   ];
+
   return (
     <header className="">
       <nav className="relative z-10 container mx-auto px-4 py-4">
@@ -38,4 +44,4 @@ const DeskstopNavigationMenu = () => {
   );
 };
 
-export default DeskstopNavigationMenu;
+

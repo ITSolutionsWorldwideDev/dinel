@@ -4,6 +4,8 @@ import { NextResponse } from "next/server";
 import { pool } from "@acme/db";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@repo/auth";
+import crypto from "crypto";
+import bcrypt from "bcryptjs";
 
 export const runtime = "nodejs";
 
@@ -18,7 +20,7 @@ export async function POST(req: Request) {
   if (!parsed || !tenantId || !cvHash || !mode) {
     return NextResponse.json(
       { error: "Missing required fields" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -26,7 +28,7 @@ export async function POST(req: Request) {
     if (!candidateId) {
       return NextResponse.json(
         { error: "candidateId required for update" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -57,7 +59,7 @@ export async function POST(req: Request) {
         cvHash,
         candidateId,
         tenantId,
-      ]
+      ],
     );
 
     return NextResponse.json({
@@ -67,6 +69,13 @@ export async function POST(req: Request) {
   }
 
   if (mode === "create") {
+    const plainPassword = crypto
+      .randomBytes(8)
+      .toString("base64url")
+      .slice(0, 8);
+
+    const passwordHash = await bcrypt.hash(plainPassword, 12);
+
     const result = await pool.query(
       `
       INSERT INTO candidates (
@@ -79,11 +88,12 @@ export async function POST(req: Request) {
         experience,
         education,
         cv_hash,
+        password_hash,
         source,
         consent_given_at,
         created_at
       )
-      VALUES ($1,$2,$3,$4,$5,$6::jsonb,$7::jsonb,$8::jsonb,$9,'cv-upload',now(),now())
+      VALUES ($1,$2,$3,$4,$5,$6::jsonb,$7::jsonb,$8::jsonb,$9,$10,'cv-upload',now(),now())
       RETURNING *
       `,
       [
@@ -96,7 +106,8 @@ export async function POST(req: Request) {
         JSON.stringify(parsed.experience || []),
         JSON.stringify(parsed.education || []),
         cvHash,
-      ]
+        passwordHash,
+      ],
     );
 
     return NextResponse.json({

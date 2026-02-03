@@ -1,6 +1,7 @@
+// apps/web/app/layout.tsx
 import type { Metadata } from "next";
-
 import "./globals.css";
+import { ToastProvider, useToast } from "@repo/ui";
 
 export const metadata: Metadata = {
   title: "Dinel",
@@ -9,12 +10,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body><ToastProvider>{children}</ToastProvider></body>
     </html>
   );
 }

@@ -34,7 +34,7 @@ export async function GET(req: NextRequest) {
     if (id) {
       const result = await pool.query(
         `SELECT id, name, email, role, status, created_at FROM users WHERE id = $1`,
-        [id]
+        [id],
       );
 
       if (!result.rows.length) {
@@ -50,7 +50,9 @@ export async function GET(req: NextRequest) {
 
     if (search) {
       values.push(`%${search.toLowerCase()}%`);
-      where.push(`LOWER(name) LIKE $${values.length} OR LOWER(email) LIKE $${values.length}`);
+      where.push(
+        `LOWER(name) LIKE $${values.length} OR LOWER(email) LIKE $${values.length}`,
+      );
     }
 
     const whereClause = where.length ? `WHERE ${where.join(" AND ")}` : "";
@@ -90,7 +92,10 @@ export async function GET(req: NextRequest) {
     });
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ error: "Failed to fetch users" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to fetch users" },
+      { status: 500 },
+    );
   }
 }
 
@@ -105,7 +110,7 @@ export async function POST(req: NextRequest) {
     if (!name || !email || !password) {
       return NextResponse.json(
         { error: "Name, email, and password are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -117,16 +122,22 @@ export async function POST(req: NextRequest) {
       VALUES ($1, $2, $3, $4, $5, NOW())
       RETURNING id, name, email, role, status, created_at
       `,
-      [name, email, password_hash, role, status]
+      [name, email, password_hash, role, status],
     );
 
     return NextResponse.json(result.rows[0], { status: 201 });
   } catch (err: any) {
     console.error(err);
     if (err.code === "23505") {
-      return NextResponse.json({ error: "Email already exists" }, { status: 409 });
+      return NextResponse.json(
+        { error: "Email already exists" },
+        { status: 409 },
+      );
     }
-    return NextResponse.json({ error: "Failed to create user" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to create user" },
+      { status: 500 },
+    );
   }
 }
 
@@ -160,7 +171,7 @@ export async function PUT(req: NextRequest) {
       WHERE id = $6
       RETURNING id, name, email, role, status, created_at
       `,
-      [name, email, password_hash, role, status, id]
+      [name, email, password_hash, role, status, id],
     );
 
     if (!result.rows.length) {
@@ -171,9 +182,15 @@ export async function PUT(req: NextRequest) {
   } catch (err: any) {
     console.error(err);
     if (err.code === "23505") {
-      return NextResponse.json({ error: "Email already exists" }, { status: 409 });
+      return NextResponse.json(
+        { error: "Email already exists" },
+        { status: 409 },
+      );
     }
-    return NextResponse.json({ error: "Failed to update user" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to update user" },
+      { status: 500 },
+    );
   }
 }
 
@@ -191,7 +208,7 @@ export async function DELETE(req: NextRequest) {
   try {
     const result = await pool.query(
       `DELETE FROM users WHERE id = $1 RETURNING *`,
-      [id]
+      [id],
     );
 
     if (!result.rows.length) {
@@ -201,6 +218,9 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ message: "User deleted successfully" });
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ error: "Failed to delete user" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to delete user" },
+      { status: 500 },
+    );
   }
 }

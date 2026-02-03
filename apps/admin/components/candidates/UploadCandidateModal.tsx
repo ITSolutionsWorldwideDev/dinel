@@ -88,12 +88,6 @@ export default function UploadCandidateModal({
           >
             {loading ? "Parsing…" : "Upload"}
           </button>
-          {/* <button className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none">
-            Cancel
-          </button>
-          <button className="btn btn-primary fs-13 fw-medium p-2 px-3">
-            Save
-          </button> */}
         </div>
       </div>
     </div>
@@ -135,5 +129,14 @@ export default function UploadCandidateModal({
       </div>
 
 
-    </div> */
+    </div>
+
+    
+          <button className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none">
+            Cancel
+          </button>
+          <button className="btn btn-primary fs-13 fw-medium p-2 px-3">
+            Save
+          </button>  */
+
 }

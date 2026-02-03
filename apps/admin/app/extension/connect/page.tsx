@@ -15,7 +15,7 @@ export default async function ConnectExtensionPage() {
 
   const userId = session.user.id;
   const userUuid = session.user?.public_id;
-  const userEmail = session.user.email;
+  const userEmail = session.user?.email;
 
   if (!userUuid) {
     redirect("/settings");

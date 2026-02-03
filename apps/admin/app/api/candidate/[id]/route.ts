@@ -1,4 +1,5 @@
-// /app/api/candidate/[id]/route.ts
+// /apps/admin/app/api/candidate/[id]/route.ts
+
 import { NextRequest, NextResponse } from "next/server";
 import { pool } from "@acme/db";
 import { notFound } from "next/navigation";
@@ -22,9 +23,9 @@ export async function PUT(
       location = $5,
       linkedin_url = $6,
       cv_url = $7,
-      skills = $8,
-      experience = $9,
-      education = $10,
+      skills = $8::jsonb,
+      experience = $9::jsonb,
+      education = $10::jsonb,
       updated_at = now()
     WHERE id = $11
     RETURNING *
@@ -37,9 +38,9 @@ export async function PUT(
       body.location,
       body.linkedin_url,
       body.cv_url,
-      body.skills,
-      body.experience,
-      body.education,
+      JSON.stringify(body.skills ?? []),
+      JSON.stringify(body.experience ?? []),
+      JSON.stringify(body.education ?? []),
       id,
     ]
   );

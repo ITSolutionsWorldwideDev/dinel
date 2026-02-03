@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { pool } from "@acme/db";
 import axios from "axios";
 import crypto from "crypto";
+import bcrypt from "bcryptjs";
 
 const CARERIX_API_BASE = "https://api.carerix.com/rest/v1";
 
@@ -35,21 +36,28 @@ export async function GET(req: NextRequest) {
         ? crypto.createHash("sha256").update(c.email).digest("hex")
         : crypto.randomUUID(); // fallback if email not available
 
+      const plainPassword = crypto
+        .randomBytes(8)
+        .toString("base64url")
+        .slice(0, 8);
+
+      const passwordHash = await bcrypt.hash(plainPassword, 12);
+
       await pool.query(
         `
         INSERT INTO candidates
           (tenant_id, full_name, headline, location, linkedin_url, skills, experience, education,
-           source, cv_url, email, phone, cv_hash, created_at, updated_at)
+           source, cv_url, email, phone, cv_hash,password_hash, created_at, updated_at)
         VALUES
-          ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,NOW(),NOW())
+          ($1,$2,$3,$4,$5,$6::jsonb,$7::jsonb,$8::jsonb,$9,$10,$11,$12,$13,$14,NOW(),NOW())
         ON CONFLICT (tenant_id, cv_hash) DO UPDATE SET
           full_name = EXCLUDED.full_name,
           headline = EXCLUDED.headline,
           location = EXCLUDED.location,
           linkedin_url = EXCLUDED.linkedin_url,
-          skills = EXCLUDED.skills,
-          experience = EXCLUDED.experience,
-          education = EXCLUDED.education,
+          skills = EXCLUDED.skills::jsonb,
+          experience = EXCLUDED.experience::jsonb,
+          education = EXCLUDED.education::jsonb,
           source = EXCLUDED.source,
           cv_url = EXCLUDED.cv_url,
           email = EXCLUDED.email,
@@ -62,15 +70,16 @@ export async function GET(req: NextRequest) {
           c.headline || null,
           c.location || null,
           c.linkedinUrl || null,
-          JSON.stringify(c.skills || []),
-          JSON.stringify(c.experience || []),
-          JSON.stringify(c.education || []),
+          JSON.stringify(c.skills ?? []),
+          JSON.stringify(c.experience ?? []),
+          JSON.stringify(c.education ?? []),
           "carerix", // source
           c.cvUrl || null,
           c.email || null,
           c.phone || null,
           cvHash,
-        ]
+          passwordHash,
+        ],
       );
     }
 
@@ -90,7 +99,7 @@ export async function GET(req: NextRequest) {
     if (search) {
       values.push(`%${search.toLowerCase()}%`);
       where.push(
-        `(LOWER(full_name) LIKE $${values.length} OR LOWER(email) LIKE $${values.length})`
+        `(LOWER(full_name) LIKE $${values.length} OR LOWER(email) LIKE $${values.length})`,
       );
     }
 
@@ -136,7 +145,7 @@ export async function GET(req: NextRequest) {
     console.error("GET /api/candidates/syncCarerix error:", err);
     return NextResponse.json(
       { error: "Failed to sync candidates from Carerix" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
