@@ -1,9 +1,14 @@
-// packages/auth/index.ts
+// packages/auth/admin-auth/index.ts
 
+import { getServerSession } from "next-auth/next";
 import type { NextAuthOptions } from "next-auth";
+import type { JWT } from "next-auth/jwt";
+import type { Session } from "next-auth";
+import type { NextApiRequest, NextApiResponse } from "next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { runQuery } from "@acme/db";
 import * as bcrypt from "bcryptjs";
+
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -34,7 +39,7 @@ export const authOptions: NextAuthOptions = {
         // Compare hash
         const isValid = await bcrypt.compare(
           credentials.password,
-          user.password_hash
+          user.password_hash,
         );
 
         if (!isValid) {
@@ -53,21 +58,83 @@ export const authOptions: NextAuthOptions = {
 
   session: {
     strategy: "jwt",
+    // ⏱ admin session lifetime (example: 30 minutes)
+    maxAge: 30 * 60, // seconds
+
+    // 🔄 how often JWT is refreshed (optional)
+    updateAge: 5 * 60, // seconds
   },
 
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user }: { token: JWT; user?: any }) {
       if (user) {
         token.id = user.id;
-        token.public_id = user.public_id;   // public_id
+        token.public_id = user.public_id; // public_id
+
+        // track last activity
+        token.lastActiveAt = Date.now();
+
         if ("role" in user && user.role) {
           token.role = user.role;
         }
       }
       return token;
     },
-    async session({ session, token }) {
-      if (token) {
+    async session({ session, token }: { session: Session; token: JWT }) {
+      const isAdminApp = process.env.NEXT_PUBLIC_APP_NAME === "admin";
+
+      // const MAX_IDLE_TIME = 30 * 60 * 1000; // 30 min
+      const MAX_IDLE_TIME = isAdminApp
+        ? 30 * 60 * 1000
+        : 7 * 24 * 60 * 60 * 1000;
+      // 7 days
+
+      const isExpired =
+        token.lastActiveAt && Date.now() - token.lastActiveAt > MAX_IDLE_TIME;
+
+      session.user = {
+        ...session.user,
+        id: token.id!,
+        role: token.role,
+        public_id: token.public_id,
+      };
+      (session as any).expired = Boolean(isExpired);
+      return session;
+    },
+  },
+  jwt: {
+    // optional but recommended
+    maxAge: 1 * 60,
+  },
+
+  pages: {
+    signIn: "/login",
+  },
+};
+
+
+
+export const getAdminSession = () => getServerSession(authOptions)
+// export const candidateAuth = (req: NextApiRequest, res: NextApiResponse) =>
+//   getServerSession(req, res, authOptions);
+
+// import { getServerSession } from "next-auth";
+
+// export const auth = () => getServerSession(authOptions);
+
+/* if (token) {
+
+        const MAX_IDLE_TIME = 30 * 60 * 1000; // 30 min
+
+        // ⏱ idle timeout check
+        if (
+          token.lastActiveAt &&
+          Date.now() - token.lastActiveAt > MAX_IDLE_TIME
+        ) {
+          return null;
+        }
+
+
         session.user = session.user ?? ({} as any);
         const user = session.user as {
           id: string;
@@ -85,16 +152,4 @@ export const authOptions: NextAuthOptions = {
         user.public_id = token.public_id ?? undefined;
         session.user = user;
         // session.user.public_id = token.public_id;
-      }
-      return session;
-    },
-  },
-
-  pages: {
-    signIn: "/login",
-  },
-};
-
-import { getServerSession } from "next-auth";
-
-export const auth = () => getServerSession(authOptions);
+      } */

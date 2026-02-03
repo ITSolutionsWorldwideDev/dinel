@@ -2,6 +2,8 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { pool } from "@acme/db";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@repo/auth";
 
 /* ------------------------------------
    Utils
@@ -99,6 +101,12 @@ export async function GET(req: NextRequest,
 ------------------------------------ */
 export async function POST(req: NextRequest) {
   try {
+
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.id) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     const body = await req.json();
     const { category, status = 1 } = body;
 

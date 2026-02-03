@@ -9,6 +9,7 @@
     "paths": {
       "@/*": ["./*"],
       "@acme/ui": ["../../packages/ui"],
+      "@repo/ui": ["../../packages/ui/src"],
       "@acme/utils": ["../../packages/utils"],
       "@acme/db": ["../../packages/db"]
     }
@@ -17,7 +18,8 @@
     "**/*.ts",
     "**/*.tsx",
     "next-env.d.ts",
-    "next.config.js",
+    "next.config.js",    
+    "../../packages/auth/web-auth/next-auth.d.ts",
     ".next/types/**/*.ts"
   ],
   "exclude": [

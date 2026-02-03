@@ -2,6 +2,8 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { pool } from "@acme/db";
+import crypto from "crypto";
+import bcrypt from "bcryptjs";
 
 /* ------------------------------------
    GET (list or single candidate)
@@ -30,7 +32,7 @@ export async function GET(req: NextRequest) {
   if (search) {
     values.push(`%${search.toLowerCase()}%`);
     where.push(
-      `(LOWER(full_name) LIKE $${values.length} OR LOWER(email) LIKE $${values.length})`
+      `(LOWER(full_name) LIKE $${values.length} OR LOWER(email) LIKE $${values.length})`,
     );
   }
 
@@ -163,10 +165,17 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { full_name, site_url, email, password_hash, status = 1 } = body;
 
+    const plainPassword = crypto
+      .randomBytes(8)
+      .toString("base64url")
+      .slice(0, 8);
+
+    const passwordHash = await bcrypt.hash(plainPassword, 12);
+
     if (!full_name) {
       return NextResponse.json(
         { error: "Candidate is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -176,7 +185,7 @@ export async function POST(req: NextRequest) {
       VALUES ($1, $2, $3, $4, $5, NOW(), NOW())
       RETURNING *
       `,
-      [full_name, site_url, email, password_hash, status]
+      [full_name, site_url, email, passwordHash, status],
     );
 
     return NextResponse.json(result.rows[0], { status: 201 });
@@ -186,13 +195,13 @@ export async function POST(req: NextRequest) {
     if (err.code === "23505") {
       return NextResponse.json(
         { error: "Candidate already exists" },
-        { status: 409 }
+        { status: 409 },
       );
     }
 
     return NextResponse.json(
       { error: "Failed to create candidates" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -208,7 +217,7 @@ export async function PUT(req: NextRequest) {
     if (!id) {
       return NextResponse.json(
         { error: "Candidate ID required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -225,13 +234,13 @@ export async function PUT(req: NextRequest) {
       WHERE id = $4
       RETURNING *
       `,
-      [full_name, site_url, email, password_hash, status, id]
+      [full_name, site_url, email, password_hash, status, id],
     );
 
     if (!result.rows.length) {
       return NextResponse.json(
         { error: "Candidate not found" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -242,13 +251,13 @@ export async function PUT(req: NextRequest) {
     if (err.code === "23505") {
       return NextResponse.json(
         { error: "Candidate slug already exists" },
-        { status: 409 }
+        { status: 409 },
       );
     }
 
     return NextResponse.json(
       { error: "Failed to update candidates" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -263,20 +272,20 @@ export async function DELETE(req: NextRequest) {
   if (!id) {
     return NextResponse.json(
       { error: "Candidate ID required" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
   try {
     const result = await pool.query(
       `DELETE FROM candidates WHERE id = $1 RETURNING *`,
-      [id]
+      [id],
     );
 
     if (!result.rows.length) {
       return NextResponse.json(
         { error: "Candidate not found" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -285,7 +294,7 @@ export async function DELETE(req: NextRequest) {
     console.error(err);
     return NextResponse.json(
       { error: "Failed to delete candidates" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
