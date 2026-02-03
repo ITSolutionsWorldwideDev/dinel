@@ -2,7 +2,7 @@
 "use client";
 
 type Education = {
-  institution: string;
+  institution?: string;
   degree?: string;
   start?: string;
   end?: string;

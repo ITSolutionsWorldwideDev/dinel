@@ -35,9 +35,8 @@ function getOpenAIClient() {
 }
 
 export async function parseCvText(text: string): Promise<ParsedCv> {
-
   const openai = getOpenAIClient();
-  
+
   const completion = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     temperature: 0,
@@ -74,10 +73,30 @@ ${text}
     ],
   });
 
-  const content = completion.choices[0].message.content;
-  if (!content) {
-    throw new Error("Empty AI response");
+  const choice = completion.choices?.[0];
+
+  if (!choice || !choice.message || !choice.message.content) {
+    throw new Error("Invalid or empty AI response");
   }
 
-  return JSON.parse(content);
+  const content = choice.message.content;
+
+  const cleaned = content
+    .replace(/^```json/i, "")
+    .replace(/^```/, "")
+    .replace(/```$/, "")
+    .trim();
+
+  let parsed: ParsedCv;
+
+  try {
+    parsed = JSON.parse(cleaned);
+  } catch {
+    console.error("Raw AI output:", cleaned);
+    throw new Error("AI returned invalid JSON");
+  }
+
+  return parsed;
+
+  // return JSON.parse(content);
 }

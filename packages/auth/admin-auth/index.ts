@@ -70,6 +70,7 @@ export const authOptions: NextAuthOptions = {
       if (user) {
         token.id = user.id;
         token.public_id = user.public_id; // public_id
+        token.email = user.email;
 
         // track last activity
         token.lastActiveAt = Date.now();
@@ -97,6 +98,7 @@ export const authOptions: NextAuthOptions = {
         id: token.id!,
         role: token.role,
         public_id: token.public_id,
+        email: token.email as string,
       };
       (session as any).expired = Boolean(isExpired);
       return session;

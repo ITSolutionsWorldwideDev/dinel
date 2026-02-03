@@ -2,8 +2,8 @@
 "use client";
 
 type Experience = {
-  company: string;
-  title: string;
+  company?: string;
+  title?: string;
   start?: string;
   end?: string;
 };

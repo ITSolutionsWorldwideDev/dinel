@@ -4,10 +4,19 @@ import { NextRequest, NextResponse } from "next/server";
 import { pool } from "@acme/db";
 import { candidateAuth } from "@repo/auth-web";
 
+// export async function GET(
+//   req: NextRequest,
+//   { params }: { params: { id: string } }
+// ) {
+//   const body = await req.json();
+//   const { id } = await params;
+
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id: applicationId } = await params;
+
   const session = await candidateAuth();
 
   if (!session || session.expired) {
@@ -15,7 +24,7 @@ export async function GET(
   }
 
   const candidateId = session.user.id;
-  const applicationId = params.id;
+  // const applicationId = params.id;
 
   try {
     const query = `
