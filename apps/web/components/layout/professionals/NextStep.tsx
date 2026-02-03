@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function NextStep() {
   return (
     <>
@@ -38,13 +39,16 @@ export default function NextStep() {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-[#FF6B35] hover:bg-orange-600 text-white font-semibold px-8 py-3  shadow-md transition-all duration-300 hover:shadow-lg w-full sm:w-auto">
-              View Vacancies
-            </button>
-
-            <button className="bg-white hover:bg-gray-50 text-[#0A7CD8] font-semibold px-8 py-3  border-2 border-[#0A7CD8] shadow-md transition-all duration-300 hover:shadow-lg w-full sm:w-auto">
-              Become a Dineler
-            </button>
+            <Link href={"/vacancies"}>
+              <button className="bg-[#FF6B35] hover:bg-orange-600 text-white font-semibold px-8 py-3  shadow-md transition-all duration-300 hover:shadow-lg w-full sm:w-auto">
+                View Vacancies
+              </button>
+            </Link>
+            <Link href={"/become-a-dineler"}>
+              <button className="bg-white hover:bg-gray-50 text-[#0A7CD8] font-semibold px-8 py-3  border-2 border-[#0A7CD8] shadow-md transition-all duration-300 hover:shadow-lg w-full sm:w-auto">
+                Become a Dineler
+              </button>
+            </Link>
           </div>
         </div>
       </div>

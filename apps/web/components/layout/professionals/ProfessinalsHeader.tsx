@@ -38,14 +38,14 @@ export default function ProfessinalsHeader() {
           {/* Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="#"
+              href="/vacancies"
               className="inline-flex items-center gap-2 bg-amber-700 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition"
             >
               View Vacancies
             </Link>
 
             <Link
-              href="#"
+              href="/become-a-dineler"
               className="inline-flex items-center gap-2 bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium transition"
             >
               Become a Dineler

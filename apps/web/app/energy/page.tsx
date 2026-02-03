@@ -9,7 +9,7 @@ const page = () => {
 
     desc2:
       "Our dedicated professionals are available for short and long-term projects, both nationally and internationally. These professionals are eager to take on complex challenges and contribute to a successful energy transition, on the road to a sustainable world.",
-    experties: [
+    experties: [  
       "Generation and transport of energy",
 
       "Development of new energy sources: wind, sun, water and bio power plants",
@@ -34,7 +34,7 @@ const page = () => {
   return (
     <div>
       <HeaderWithCenterTextandBgImg
-        heading1="Infrastructure"
+        heading1="Energy"
         image="/09eeec94c2c10d796e92a879026d55b32601212b.jpg"
       />
       <div className="mt-20">

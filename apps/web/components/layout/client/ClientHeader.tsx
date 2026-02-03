@@ -41,14 +41,14 @@ export default function ClientHeader() {
             {/* Buttons */}
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href="#"
+                href="/contact-us"
                 className="inline-flex items-center gap-2 bg-[#FF6B35] hover:bg-blue-700 text-white px-6 py-3  font-medium transition"
               >
                 Contact Dinel
               </Link>
 
               <Link
-                href="#"
+                href="/our-approach"
                 className="inline-flex items-center gap-2 bg-white text-[#0A7CD8] border-2 border-[#0A7CD8] hover:bg-gray-100 px-6 py-3 font-medium transition"
               >
                 Discover Our Approach

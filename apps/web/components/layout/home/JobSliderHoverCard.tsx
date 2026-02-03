@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowUpRight, Upload } from "lucide-react";
-const JobSliderHoverCard = ({job}:any) => {
+const JobSliderHoverCard = ({ job }: any) => {
   const handleUploadCV = (jobTitle: any) => {
     alert(`Uploading CV for: ${jobTitle}`);
   };

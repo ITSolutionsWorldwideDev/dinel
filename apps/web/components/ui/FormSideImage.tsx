@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface LoginImageProps {
@@ -31,13 +32,15 @@ const FormSideImage = ({ image, heading, desc }: LoginImageProps) => {
       <div className="absolute inset-0 z-10 flex flex-col min-h-screen px-6">
         {/* Header */}
         <header className="flex justify-end py-6 mt-10">
-          <div className=" text-right">
-            <img
-              src="/assets/Group 1.png"
-              alt=""
-              className="h-auto w-32 md:w-10  rounded-lg mb-2"
-            />
-          </div>
+          <Link href={"/"}>
+            <div className=" text-right">
+              <img
+                src="/assets/Group 1.png"
+                alt=""
+                className="h-auto w-32 md:w-10  rounded-lg mb-2"
+              />
+            </div>
+          </Link>
         </header>
 
         {/* Hero text */}

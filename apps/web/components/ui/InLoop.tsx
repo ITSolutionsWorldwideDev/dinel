@@ -31,7 +31,7 @@ export default function InLoop() {
         className="absolute inset-0 w-full h-full object-cover mix-blend-multiply"
         alt=""
       />
-      <div className="w-full max-w-2xl text-center">
+      <div className="w-full max-w-2xl text-center relative">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
           Stay in the Loop
         </h1>

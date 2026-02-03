@@ -59,7 +59,7 @@ const FindJobSlider = () => {
   ];
 
   // Duplicate data for seamless loop
-  // const duplicatedData = [...jobData, ...jobData, ...jobData];
+  // const duplicatedData = [...jobData, ...jobData, ...jobData]; 
 
   useEffect(() => {
     if (hoveredCard === null) {

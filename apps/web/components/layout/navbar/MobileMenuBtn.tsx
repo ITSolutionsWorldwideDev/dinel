@@ -28,7 +28,7 @@ const MobileMenuBtn = ({ navLinks }: { navLinks: NavLink[] }) => {
       </button>
       {mobileMenuOpen &&
         createPortal(
-          <div className="xl:hidden  p-10 absolute z-100 top-1/9  bg-black/90 container mx-auto w-full h-fit inset-0  overflow-hidden">
+          <div className="xl:hidden  p-10 absolute z-100 top-1/4 bg-black/90 inset-0 container mx-auto w-full h-fit   overflow-hidden">
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <Link
@@ -52,17 +52,3 @@ const MobileMenuBtn = ({ navLinks }: { navLinks: NavLink[] }) => {
 };
 
 export default MobileMenuBtn;
-
-{
-  /* <a
-                key={link.name}
-                href={`${link.name
-                  .toLowerCase()
-                  .trim()
-                  .replace(/[\s\W-]+/g, "")
-                  .replace(/^-+|-+$/g, "")}`}
-                className="text-white text-sm hover:text-orange-500 transition-colors duration-200 py-2"
-              >
-                {link.name}
-              </a> */
-}

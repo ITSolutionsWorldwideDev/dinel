@@ -1,5 +1,5 @@
+import Link from "next/link";
 import React from "react";
-
 
 const ShappingFuture = () => {
   return (
@@ -18,13 +18,17 @@ const ShappingFuture = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-white text-[#0A7CD8] px-6 py-3 font-medium rounded shadow hover:bg-gray-100 transition">
-            Become a Dineler
-          </button>
+          <Link href={`/become-a-dineler`}>
+            <button className="bg-white text-[#0A7CD8] px-6 py-3 font-medium rounded shadow hover:bg-gray-100 transition">
+              Become a Dineler
+            </button>
+          </Link>
 
-          <button className="border border-white px-6 py-3 font-medium rounded hover:bg-white hover:text-orange-500 transition">
-            Contact Dinel
-          </button>
+          <Link href={`/contact-us`}>
+            <button className="border border-white px-6 py-3 font-medium rounded hover:bg-white hover:text-orange-500 transition">
+              Contact Dinel
+            </button>
+          </Link>
         </div>
       </div>
     </section>
