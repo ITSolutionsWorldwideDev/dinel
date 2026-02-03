@@ -8,21 +8,21 @@ export default function DinelProfessionals() {
       image: "3e0196d5cc66b0216796fe8296ddb9072986d21a.jpg",
       description:
         "Without infrastructure, there's no connection. Literally. Without professionals, there's no infrastructure. To create the right connections, you need professionals you can rely on.",
-      href: "infastructure-vacancies",
+      href: "infastructure",
     },
     {
       title: "Oil, Gas and Industry",
       image: "0dffbc652b8f354903ca7e53786e3bfe74ac1e18.jpg",
       description:
         "Oil and gas companies that actively embrace (digital) innovation are taking a significant step toward the future. Besides innovation, finding the right permanent and temporary talent is essential.",
-      href: "oil-gasandindustry-vacancies",
+      href: "oil-gas-energy",
     },
     {
       title: "Energy",
       image: "2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
       description:
         "If you want to remain relevant as a company in the energy sector, you must continually improve. And for that, you need people. The right professionals who ensure you stay ahead of the competition.",
-      href: "energy-vacancies",
+      href: "energy",
     },
   ];
 

@@ -1,16 +1,16 @@
 // "use client";
-
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { MoveUpRight } from "lucide-react";
 import UploadResumaCard from "./UploadResumaCard";
-// import { useState } from "react";
-export default function JobCard({ jobData }: any) {
-  // const [hoveredCard, setHoveredCard] = useState<string | null>(null);
-  // console.log(jobData);
+import Link from "next/link";
 
+export default function JobCard({ jobData }: any) {
   const midPoint = Math.ceil(jobData.length / 2);
   const firstHalf = jobData.slice(0, midPoint);
   const secondHalf = jobData.slice(midPoint);
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <div className="flex flex-col  gap-5 ">
       {firstHalf.map((job: any, ind: number) => (
@@ -33,10 +33,11 @@ export default function JobCard({ jobData }: any) {
                 <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">
                   {job.title}
                 </h1>
-
-                <button className="w-10 h-10 rounded-full border border-orange-500 text-orange-500 flex items-center justify-center hover:bg-orange-500 hover:text-white transition">
-                  <MoveUpRight className="text-black" />
-                </button>
+                <Link href={`${pathname}/${job.id}`}>
+                  <button className="cursor-pointer w-10 h-10 rounded-full border border-orange-500 text-orange-500 flex items-center justify-center hover:bg-orange-500 hover:text-white transition">
+                    <MoveUpRight className="text-black" />
+                  </button>
+                </Link>
               </div>
 
               <hr className="my-6 border-gray-200" />
@@ -95,10 +96,11 @@ export default function JobCard({ jobData }: any) {
                 <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">
                   {job.title}
                 </h1>
-
-                <button className="w-10 h-10 rounded-full border border-orange-500 text-orange-500 flex items-center justify-center hover:bg-orange-500 hover:text-white transition">
-                  <MoveUpRight className="text-black" />
-                </button>
+                <Link href={`${pathname}/${job.id}`}>
+                  <button className="cursor-pointer w-10 h-10 rounded-full border border-orange-500 text-orange-500 flex items-center justify-center hover:bg-orange-500 hover:text-white transition">
+                    <MoveUpRight className="text-black" />
+                  </button>
+                </Link>
               </div>
 
               <hr className="my-6 border-gray-200" />

@@ -1,9 +1,14 @@
-import React from 'react'
+import EnergyJobDetail from "@/components/layout/EnergyJobDetail";
+import DinelGroupBv from "@/components/ui/DinelGroupBv";
+import React from "react";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <EnergyJobDetail />
+      <DinelGroupBv/>
+    </div>
+  );
+};
 
-export default page
+export default page;

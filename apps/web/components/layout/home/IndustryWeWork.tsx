@@ -5,19 +5,19 @@ const industries = [
     id: 1,
     name: "Infrastructure",
     icon: "/assets/home/Group (5).png",
-    href: "infastructure",
+    href: "infastructure-vacancies",
   },
   {
     id: 2,
     name: "Energy",
     icon: "/assets/home/Group (6).png",
-    href: "energy",
+    href: "energy-vacancies",
   },
   {
     id: 3,
     name: "Oil & Gas",
     icon: "/assets/home/Group (7).png",
-    href: "oil-gas-energy",
+    href: "oil-gasandindustry-vacancies",
   },
 ];
 

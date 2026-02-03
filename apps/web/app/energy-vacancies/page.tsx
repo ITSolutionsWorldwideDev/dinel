@@ -1,4 +1,3 @@
-
 import EnergyVacincies from "@/components/ui/EnergyVacincies";
 import HeaderWithCenterTextandBgImg from "@/components/ui/HeaderWithCenterTextandBgImg";
 import NavBar from "@/components/ui/NavBar";
@@ -12,7 +11,7 @@ const page = () => {
         heading2="Vacancies"
         image="/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg"
       />
-      <EnergyVacincies/>
+      <EnergyVacincies />
     </div>
   );
 };

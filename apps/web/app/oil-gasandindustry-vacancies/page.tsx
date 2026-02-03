@@ -1,3 +1,4 @@
+import DinelGroupBv from "@/components/ui/DinelGroupBv";
 import HeaderWithCenterTextandBgImg from "@/components/ui/HeaderWithCenterTextandBgImg";
 import OilGasAndIndustryVacancies from "@/components/ui/OilGasAndIndustryVacancies";
 import Head from "next/head";
@@ -12,6 +13,7 @@ const page = () => {
         image="/0dffbc652b8f354903ca7e53786e3bfe74ac1e18.jpg"
       />
       <OilGasAndIndustryVacancies />
+      
     </div>
   );
 };
