@@ -1,10 +1,10 @@
 import React from "react";
-import JobSideBar from "../layout/job-page/JobSideBar";
-import Paginations from "../layout/job-page/Paginations";
-import DinelGroupBv from "./DinelGroupBv";
+import JobSideBar from "../job-page/JobSideBar";
+import Paginations from "../job-page/Paginations";
+import DinelGroupBv from "../../ui/DinelGroupBv";
 
-const InfastructureVacancies = () => {
-     const jobData = [
+const AllVacancies = () => {
+  const jobData = [
     {
       id: 1,
       title: "Mechanical Construction Lead",
@@ -135,7 +135,6 @@ const InfastructureVacancies = () => {
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
 
-
     {
       id: 17,
       title: "Mechanical Construction Lead",
@@ -144,7 +143,6 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-
 
     {
       id: 18,
@@ -155,7 +153,6 @@ const InfastructureVacancies = () => {
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
 
-
     {
       id: 19,
       title: "Mechanical Construction Lead",
@@ -164,7 +161,6 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-
 
     {
       id: 20,
@@ -175,7 +171,6 @@ const InfastructureVacancies = () => {
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
 
-
     {
       id: 21,
       title: "Mechanical Construction Lead",
@@ -184,7 +179,6 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-
 
     {
       id: 22,
@@ -204,7 +198,6 @@ const InfastructureVacancies = () => {
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
 
-
     {
       id: 24,
       title: "Mechanical Construction Lead",
@@ -213,7 +206,6 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-
 
     {
       id: 25,
@@ -224,7 +216,6 @@ const InfastructureVacancies = () => {
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
 
-
     {
       id: 26,
       title: "Mechanical Construction Lead",
@@ -233,7 +224,7 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-     {
+    {
       id: 27,
       title: "Mechanical Construction Lead",
       discipline: "Stay up to date on the jobs you're interested in.",
@@ -241,7 +232,7 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-     {
+    {
       id: 28,
       title: "Mechanical Construction Lead",
       discipline: "Stay up to date on the jobs you're interested in.",
@@ -249,7 +240,7 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-     {
+    {
       id: 29,
       title: "Mechanical Construction Lead",
       discipline: "Stay up to date on the jobs you're interested in.",
@@ -257,7 +248,7 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-     {
+    {
       id: 30,
       title: "Mechanical Construction Lead",
       discipline: "Stay up to date on the jobs you're interested in.",
@@ -265,7 +256,7 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-     {
+    {
       id: 31,
       title: "Mechanical Construction Lead",
       discipline: "Stay up to date on the jobs you're interested in.",
@@ -273,7 +264,7 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-     {
+    {
       id: 32,
       title: "Mechanical Construction Lead",
       discipline: "Stay up to date on the jobs you're interested in.",
@@ -281,7 +272,7 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-     {
+    {
       id: 33,
       title: "Mechanical Construction Lead",
       discipline: "Stay up to date on the jobs you're interested in.",
@@ -289,7 +280,7 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-     {
+    {
       id: 34,
       title: "Mechanical Construction Lead",
       discipline: "Stay up to date on the jobs you're interested in.",
@@ -297,7 +288,7 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-     {
+    {
       id: 35,
       title: "Mechanical Construction Lead",
       discipline: "Stay up to date on the jobs you're interested in.",
@@ -305,7 +296,7 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-     {
+    {
       id: 36,
       title: "Mechanical Construction Lead",
       discipline: "Stay up to date on the jobs you're interested in.",
@@ -313,7 +304,7 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-     {
+    {
       id: 37,
       title: "Mechanical Construction Lead",
       discipline: "Stay up to date on the jobs you're interested in.",
@@ -321,7 +312,7 @@ const InfastructureVacancies = () => {
       location: "I AGREE TO THE TERMS AND CONDITIONS",
       image: "/2d5d6bb46a33c76277dafba5ed9471f0920aa6a8.jpg",
     },
-  ];
+  ]; // Replace with actual job data or fetch it from props/context
   return (
     <>
       <div className="container mx-auto flex items-start justify-center p-20">
@@ -330,7 +321,7 @@ const InfastructureVacancies = () => {
         </div>
 
         <div>
-          <Paginations jobData={jobData}/>
+          <Paginations jobData={jobData} />
         </div>
       </div>
       <DinelGroupBv />
@@ -338,4 +329,4 @@ const InfastructureVacancies = () => {
   );
 };
 
-export default InfastructureVacancies;
+export default AllVacancies;

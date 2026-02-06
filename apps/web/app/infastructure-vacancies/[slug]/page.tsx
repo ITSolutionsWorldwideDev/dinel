@@ -1,5 +1,6 @@
 import InfrastructureJobDetail from '@/components/layout/InfrastructureJobDetail'
 import DinelGroupBv from '@/components/ui/DinelGroupBv'
+
 import React from 'react'
 
 const page = () => {
@@ -7,6 +8,7 @@ const page = () => {
     <div>
       <InfrastructureJobDetail/>
       <DinelGroupBv/>
+      
     </div>
   )
 }

@@ -1,13 +1,12 @@
 import React from "react";
 import {
-  Briefcase,
   MapPin,
   GraduationCap,
-  Clock,
+  Briefcase,
   Euro,
   TrendingUp,
+  CircleCheck,
 } from "lucide-react";
-import { CircleCheck } from "lucide-react";
 
 interface JobData {
   category: string;
@@ -113,7 +112,7 @@ const JobDescription = ({ jobData }: any) => {
                 What we're looking for
               </h2>
               <div className="space-y-3">
-                {jobData.requirements.map((item:any, index:any) => (
+                {jobData.requirements.map((item: any, index: any) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="mt-1.5 shrink-0">
                       <div className="w-5 h-5 rounded-full  flex items-center justify-center">
@@ -127,7 +126,7 @@ const JobDescription = ({ jobData }: any) => {
             </div>
 
             {/* Benefits */}
-            <div className=" bg-[#FFD6A7] rounded-2xl shadow-sm border border-[#FFD6A7] p-8">
+            <div className=" bg-linear-to-r from-[#FFF7ED] to-[#FFEDD480] rounded-2xl shadow-sm border border-[#FFD6A7] p-8">
               <h2 className="text-2xl font-bold text-slate-800 mb-6 border-b border-b-[#FFD6A7] p-5">
                 What we offer
               </h2>
@@ -156,7 +155,7 @@ const JobDescription = ({ jobData }: any) => {
               <div className="space-y-5">
                 {/* Salary */}
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center ">
+                  <div className="w-10 h-10 rounded-lg bg-[#EFF6FF] flex items-center justify-center ">
                     <Euro className="w-5 h-5 text-[#0A7CD8]" />
                   </div>
                   <div>
@@ -169,7 +168,7 @@ const JobDescription = ({ jobData }: any) => {
 
                 {/* Experience */}
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-red-500 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-[#FAF5FF] flex items-center justify-center shrink-0">
                     <TrendingUp className="w-5 h-5 text-[#9810FA]" />
                   </div>
                   <div>
@@ -182,8 +181,8 @@ const JobDescription = ({ jobData }: any) => {
 
                 {/* Education */}
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-green-500 flex items-center justify-center shrink-0">
-                    <GraduationCap className="w-5 h-5 text-green-600" />
+                  <div className="w-10 h-10 rounded-lg bg-[#F0FDF4] flex items-center justify-center shrink-0">
+                    <GraduationCap className="w-5 h-5 text-[#00A63E]" />
                   </div>
                   <div>
                     <p className="text-sm text-slate-500 mb-1">Education</p>
@@ -195,8 +194,8 @@ const JobDescription = ({ jobData }: any) => {
 
                 {/* Job Type */}
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center shrink-0">
-                    <Clock className="w-5 h-5 text-orange-600" />
+                  <div className="w-10 h-10 rounded-lg bg-[#FFF7ED] flex items-center justify-center shrink-0">
+                    <Briefcase className="w-5 h-5 text-[#FF6B35]" />
                   </div>
                   <div>
                     <p className="text-sm text-slate-500 mb-1">Job type</p>
@@ -208,8 +207,8 @@ const JobDescription = ({ jobData }: any) => {
 
                 {/* Location */}
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-red-600" />
+                  <div className="w-10 h-10 rounded-lg bg-[#FEF2F2] flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-[#FB2C36]" />
                   </div>
                   <div>
                     <p className="text-sm text-slate-500 mb-1">Location</p>
@@ -221,9 +220,6 @@ const JobDescription = ({ jobData }: any) => {
               </div>
 
               {/* Apply Button */}
-              <button className="w-full mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-600/30">
-                Apply Now
-              </button>
             </div>
           </div>
         </div>

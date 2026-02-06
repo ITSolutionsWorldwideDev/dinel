@@ -3,7 +3,12 @@
 import { useState } from "react";
 import { Upload, X } from "lucide-react";
 
-export default function ApplicationForm() {
+interface Props {
+  onClose: () => void;
+  title: string;
+}
+
+export default function JobApplicationForm({ onClose, title }: Props) {
   const [formData, setFormData] = useState({
     firstName: "",
     surname: "",
@@ -52,6 +57,7 @@ export default function ApplicationForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", { ...formData, file });
+    onClose();
     // Add your submission logic here
   };
 
@@ -60,36 +66,34 @@ export default function ApplicationForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <div className="  flex items-center  p-4">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-2xl p-8 relative">
         {/* Close button */}
         <button
           type="button"
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
-          onClick={() => console.log("Close clicked")}
+          onClick={onClose}
         >
           <X size={24} />
         </button>
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-light text-blue-500 mb-2">
+          <h1 className=" md:text-4xl  font-light text-[#0A7CD8] mb-2">
             Interested? Send us
             <br />
             your application!
           </h1>
           <p className="text-gray-600">
             Applying for:{" "}
-            <span className="font-semibold text-gray-800">
-              Senior Control Engineer
-            </span>
+            <span className="font-semibold text-gray-800">{title}</span>
           </p>
         </div>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Name fields */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-black">
             <div>
               <input
                 type="text"
@@ -123,7 +127,7 @@ export default function ApplicationForm() {
               value={formData.city}
               onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+              className="text-black w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
             />
           </div>
 
@@ -136,7 +140,7 @@ export default function ApplicationForm() {
               value={formData.phoneNumber}
               onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+              className="text-black w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
             />
           </div>
 
@@ -149,7 +153,7 @@ export default function ApplicationForm() {
               value={formData.email}
               onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+              className="text-black w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
             />
           </div>
 
@@ -161,7 +165,7 @@ export default function ApplicationForm() {
               value={formData.motivation}
               onChange={handleInputChange}
               rows={4}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 resize-none"
+              className="text-black w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 resize-none"
             />
           </div>
 
@@ -179,14 +183,14 @@ export default function ApplicationForm() {
               onDrop={handleDrop}
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
-              className={`block w-full px-4 py-12 border-2 border-dashed rounded-md cursor-pointer transition-colors ${
+              className={`block w-full px-4 py-12 border-2  rounded-md cursor-pointer transition-colors ${
                 isDragging
                   ? "border-blue-500 bg-blue-50"
-                  : "border-orange-300 bg-orange-50 hover:bg-orange-100"
+                  : "border-[#FFB86A] bg-white hover:bg-orange-100"
               }`}
             >
               <div className="flex flex-col items-center justify-center text-center">
-                <div className="w-12 h-12 bg-orange-200 rounded-full flex items-center justify-center mb-3">
+                <div className="w-12 h-12 bg-[#FFEDD4] rounded-full flex items-center justify-center mb-3">
                   <Upload className="text-orange-600" size={24} />
                 </div>
                 {file ? (
@@ -207,7 +211,7 @@ export default function ApplicationForm() {
                   </div>
                 ) : (
                   <>
-                    <span className="text-orange-600 font-medium mb-1">
+                    <span className="text-[#FF6B35] font-medium mb-1">
                       Choose file...
                     </span>
                     <span className="text-gray-500 text-sm">
@@ -223,7 +227,7 @@ export default function ApplicationForm() {
           <div className="pt-4">
             <button
               type="submit"
-              className="cursor-pointer bg-red-500! hover:bg-blue-600 text-black font-medium px-8 py-3 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="cursor-pointer bg-[#0A7CD8] hover:bg-blue-600 text-white md:font-medium md:px-8 py-3 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Send application
             </button>
