@@ -9,7 +9,7 @@ const page = () => {
   return (
     <>
      <OilGasJobDetail/>
-     <JobApplicationForm/>
+     {/* <JobApplicationForm/> */}
      <DinelGroupBv/>
     </>
   );
