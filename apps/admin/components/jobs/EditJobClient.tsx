@@ -12,7 +12,7 @@ export default function EditJobClient({ jobId }: { jobId: number }) {
   const { showToast } = useToast();
 
   const [jobData, setJobData] = useState({
-    id: jobId,
+    job_id: jobId,
     title: "",
     description: "",
     location: "",
@@ -22,6 +22,8 @@ export default function EditJobClient({ jobId }: { jobId: number }) {
     experience_level: "MID",
     visibility: "PUBLIC",
     status: "DRAFT",
+    sector_id: "",
+    discipline_id: "",
   });
 
   useEffect(() => {
@@ -31,7 +33,7 @@ export default function EditJobClient({ jobId }: { jobId: number }) {
         const job = await res.json();
 
         setJobData({
-          id: jobId,
+          job_id: jobId,
           title: job.title,
           description: job.description,
           location: job.location,
@@ -41,6 +43,8 @@ export default function EditJobClient({ jobId }: { jobId: number }) {
           experience_level: job.experience_level,
           visibility: job.visibility,
           status: job.status,
+          sector_id: job.sector_id,
+          discipline_id: job.discipline_id,
         });
       } catch {
         showToast("error", "Failed to load job");
@@ -72,7 +76,7 @@ export default function EditJobClient({ jobId }: { jobId: number }) {
     <JobForm
       mode="edit"
       initialData={{
-        id: jobData.id,
+        job_id: jobData.job_id,
         title: jobData.title,
         description: jobData.description,
         location: jobData.location,
@@ -82,6 +86,8 @@ export default function EditJobClient({ jobId }: { jobId: number }) {
         experience_level: jobData.experience_level,
         visibility: jobData.visibility,
         status: jobData.status,
+        sector_id: jobData.sector_id,
+        discipline_id: jobData.discipline_id,
       }}
       //   initialData={jobData}
       //   initialData={job}

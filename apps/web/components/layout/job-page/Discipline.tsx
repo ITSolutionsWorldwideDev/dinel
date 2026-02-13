@@ -1,3 +1,5 @@
+// apps/web/components/layout/job-page/Discipline.tsx
+
 "use client";
 
 import { useState } from "react";

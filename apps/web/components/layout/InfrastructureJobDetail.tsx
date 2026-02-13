@@ -1,9 +1,14 @@
-import React from 'react'
-import JobDescHeader from '../ui/JobDescHeader'
-import JobDescription from '../ui/JobDescription'
+// apps/web/components/layout/InfrastructureJobDetail.tsx
+import React from "react";
+import JobDescHeader from "../ui/JobDescHeader";
+import JobDescription from "../ui/JobDescription";
 
-const InfrastructureJobDetail = () => {
-      const jobData = {
+interface Props {
+  job: any;
+}
+
+const InfrastructureJobDetail = ({ job }: Props) => {
+  /* const jobData = {
     category: "Energy & Industry",
     posteddate: "dsadas",
     title: "Senior Control Engineer",
@@ -47,18 +52,31 @@ const InfrastructureJobDetail = () => {
       "Company car and laptop",
       "Opportunities for professional development",
     ],
-  };
+  }; */
   return (
     <div>
-        <JobDescHeader category={jobData.category}
+      {/* <JobDescHeader
+        category={jobData.category}
         postedTime={jobData.posteddate}
         title={jobData.title}
         location={jobData.location}
         experience={jobData.experience}
-        jobType={jobData.jobType}/>
-        <JobDescription jobData={jobData}/>
+        jobType={jobData.jobType}
+      /> */}
+      <JobDescHeader
+        category={job.sector_name}
+        postedTime={Math.floor(
+          (Date.now() - new Date(job.published_at).getTime()) /
+            (1000 * 60 * 60 * 24)
+        )}
+        title={job.title}
+        location={job.location}
+        experience={job.experience_level}
+        jobType={job.employment_type}
+      />
+      <JobDescription jobData={job} />
     </div>
-  )
-}
+  );
+};
 
-export default InfrastructureJobDetail
+export default InfrastructureJobDetail;

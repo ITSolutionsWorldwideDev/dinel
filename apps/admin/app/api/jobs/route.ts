@@ -32,7 +32,7 @@ export async function GET(req: Request) {
     if (filters.search) {
       values.push(`%${filters.search.toLowerCase()}%`);
       where.push(
-        `(LOWER(title) LIKE $${values.length} OR LOWER(location) LIKE $${values.length})`
+        `(LOWER(title) LIKE $${values.length} OR LOWER(location) LIKE $${values.length})`,
       );
     }
 
@@ -55,6 +55,7 @@ export async function GET(req: Request) {
     const dataQuery = `
       SELECT
         id,
+        job_id,
         title,
         location,
         employment_type,
@@ -91,10 +92,12 @@ export async function GET(req: Request) {
     });
   } catch (err) {
     console.error("GET /api/jobs error:", err);
-    return NextResponse.json({ error: "Failed to fetch jobs" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to fetch jobs" },
+      { status: 500 },
+    );
   }
 }
-
 
 /* export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -177,7 +180,6 @@ export async function GET(req: Request) {
   }
 } */
 
-
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -192,12 +194,14 @@ export async function POST(req: Request) {
       experience_level,
       visibility,
       status,
+      sector_id,
+      discipline_id,
     } = body;
 
     if (!title || !description || !employment_type || !workplace_type) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -220,9 +224,11 @@ export async function POST(req: Request) {
         visibility,
         status,
         company_id,
-        created_by
+        created_by,
+        sector_id,
+        discipline_id
       )
-      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)
+      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
       RETURNING *
     `;
 
@@ -239,6 +245,8 @@ export async function POST(req: Request) {
       status || "DRAFT",
       companyId,
       createdBy,
+      sector_id || null,
+      discipline_id || null,
     ];
 
     const result = await pool.query(query, values);
@@ -248,8 +256,7 @@ export async function POST(req: Request) {
     console.error("POST /api/jobs error:", err);
     return NextResponse.json(
       { error: "Failed to create job" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
-

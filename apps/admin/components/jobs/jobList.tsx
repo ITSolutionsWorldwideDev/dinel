@@ -55,19 +55,11 @@ export default function JobsPage() {
   });
 
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [selectedId, setSelectedId] = useState<number | null>(null);
-
-  /* const handleFilterChange = (key: keyof typeof filters, value: string) => {
-    setFilters((prev) => ({
-      ...prev,
-      [key]: value,
-    }));
-    setPage(1);
-  }; */
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const handleFilterChange = <K extends keyof JobFilters>(
     key: K,
-    value: JobFilters[K]
+    value: JobFilters[K],
   ) => {
     setFilters((prev) => ({
       ...prev,
@@ -151,6 +143,7 @@ export default function JobsPage() {
 
   type Job = {
     id: number;
+    job_id: string;
     title: string;
     location: string;
     employment_type: string;
@@ -167,7 +160,7 @@ export default function JobsPage() {
       title: "Title",
       render: (_: any, record: Job) => (
         <button
-          onClick={() => router.push(`/jobs/${record.id}/view`)}
+          onClick={() => router.push(`/jobs/${record.job_id}/view`)}
           className="text-blue-600 hover:underline font-medium"
         >
           {record.title}
@@ -179,61 +172,56 @@ export default function JobsPage() {
       title: "Location",
       dataIndex: "location",
     },
-    {
-      title: "Employment Type",
-      dataIndex: "employment_type",
-    },
+    // {
+    //   title: "Employment Type",
+    //   dataIndex: "employment_type",
+    // },
     {
       title: "Workplace Type",
       dataIndex: "workplace_type",
     },
-    {
-      title: "Department",
-      dataIndex: "department",
-    },
+    // {
+    //   title: "Department",
+    //   dataIndex: "department",
+    // },
     {
       title: "Experience Level",
       dataIndex: "experience_level",
     },
-    {
-      title: "Visibility",
-      dataIndex: "visibility",
-    },
+    // {
+    //   title: "Visibility",
+    //   dataIndex: "visibility",
+    // },
     {
       title: "Published At",
-      dataIndex: "published_at",
+      render: (_: any, record: Job) =>
+        record.published_at
+          ? new Date(record.published_at).toLocaleString("en-GB", {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+              hour: "2-digit",
+              minute: "2-digit",
+            })
+          : "-",
     },
     {
       title: "Status",
       render: (_: any, r: Job) => <StatusBadge status={r.status} />,
     },
-    // {
-    //   title: "Status",
-    //   render: (_: any, record: Job) => (
-    //     <span
-    //       className={
-    //         record.status === "PUBLISHED"
-    //           ? "text-green-600 font-medium"
-    //           : "text-gray-500 font-medium"
-    //       }
-    //     >
-    //       {record.status}
-    //     </span>
-    //   ),
-    // },
     {
       title: "Action",
       render: (_: any, record: Job) => (
         <div className="flex gap-2">
           <button
-            onClick={() => router.push(`/jobs/${record.id}/edit`)}
+            onClick={() => router.push(`/jobs/${record.job_id}/edit`)}
             className="p-2 text-blue-600"
           >
             <Edit size={16} />
           </button>
           <button
             onClick={() => {
-              setSelectedId(record.id);
+              setSelectedId(record.job_id);
               setShowDeleteModal(true);
             }}
             className="p-2 text-red-600"
@@ -287,7 +275,7 @@ export default function JobsPage() {
                 <p className="text-center py-6">Loading...</p>
               ) : (
                 <>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 px-6 pt-3">
                     Showing {data?.items.length} of {meta?.totalResults} jobs
                   </p>
 

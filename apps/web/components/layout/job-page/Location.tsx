@@ -1,3 +1,4 @@
+// apps/web/components/layout/job-page/Location.tsx
 "use client";
 
 import { useState } from "react";

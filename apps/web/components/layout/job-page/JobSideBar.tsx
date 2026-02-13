@@ -1,3 +1,5 @@
+// apps/web/components/layout/job-page/JobSideBar.tsx
+
 import { Search, ChevronDown } from "lucide-react";
 import Discipline from "./Discipline";
 import Location from "./Location";

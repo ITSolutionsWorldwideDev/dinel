@@ -3,9 +3,11 @@
 
 import { useEffect, useState } from "react";
 import { useToast } from "@repo/ui";
+import { useRouter } from "next/navigation";
 
 export default function ViewJobClient({ jobId }: { jobId: number }) {
   const { showToast } = useToast();
+  const router = useRouter();
 
   const [jobData, setJobData] = useState({
     title: "",
@@ -73,55 +75,62 @@ export default function ViewJobClient({ jobId }: { jobId: number }) {
         <div className="card-body">
           <div className="max-w-3xl space-y-4">
             <div className="text-gray-600">
-              <label className="text-xl font-semibold">
+              <label className="text-md font-semibold">
                 <strong>Title: </strong>
               </label>
               <span>{jobData.title}</span>
             </div>
 
             <div className="text-gray-600">
-              <label className="text-xl font-semibold">
+              <label className="text-md font-semibold">
                 <strong>Location: </strong>
               </label>
               <span>{jobData.location}</span>
             </div>
 
             <div className="text-gray-600">
-              <label className="text-xl font-semibold">
+              <label className="text-md font-semibold">
                 <strong>Status: </strong>
               </label>
               <span>{jobData.status}</span>
             </div>
 
             <div className="text-gray-600">
-              <label className="text-xl font-semibold">
+              <label className="text-md font-semibold">
                 <strong>Employment: </strong>
               </label>
               <span>{jobData.employment_type}</span>
             </div>
 
             <div className="text-gray-600">
-              <label className="text-xl font-semibold">
+              <label className="text-md font-semibold">
                 <strong>Workplace: </strong>
               </label>
               <span>{jobData.workplace_type}</span>
             </div>
 
             <div className="text-gray-600">
-              <label className="text-xl font-semibold">
+              <label className="text-md font-semibold">
                 <strong>Experience: </strong>
               </label>
               <span>{jobData.experience_level}</span>
             </div>
 
             <div className="pt-4 border-t">
-              <label className="text-xl font-semibold">
+              <label className="text-md font-semibold">
                 <strong>Description: </strong>
               </label>
               <p className="whitespace-pre-wrap">{jobData.description}</p>
             </div>
 
             <div className="pt-4 border-t">
+              <button
+                type="button"
+                onClick={() => router.back()}
+                className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none"
+              >
+                Cancel
+              </button>
               <button
                 onClick={() => publishToLinkedIn(jobId)}
                 className="px-4 py-2 bg-blue-700 text-white rounded"
