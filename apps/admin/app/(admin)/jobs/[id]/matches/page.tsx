@@ -58,7 +58,7 @@ export default function JobMatchesPage() {
 
           <button
             onClick={recalculate}
-            className="btn btn-primary"
+            className="btn btn-primary cursor-pointer"
           >
             Recalculate Matches
           </button>

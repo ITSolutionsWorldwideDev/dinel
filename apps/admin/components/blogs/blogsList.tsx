@@ -152,11 +152,11 @@ export default function BlogsListComponent() {
             <div className="flex gap-3 justify-center">
               <button
                 onClick={() => setShowDeleteModal(false)}
-                className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none"
+                className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none cursor-pointer"
               >
                 Cancel
               </button>
-              <button onClick={handleDelete} className="btn btn-danger">
+              <button onClick={handleDelete} className="btn btn-danger cursor-pointer">
                 Delete
               </button>
             </div>
