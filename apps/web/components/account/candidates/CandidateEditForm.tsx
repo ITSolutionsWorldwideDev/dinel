@@ -137,7 +137,7 @@ export default function CandidateEditForm({
 
       <button
         onClick={() => setShowUploadModal(true)}
-        className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 transition"
+        className="inline-flex items-center justify-center gap-2 cursor-pointer rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 transition"
       >
         📄 Upload Resume
       </button>
@@ -257,7 +257,7 @@ export default function CandidateEditForm({
       <button
         onClick={save}
         disabled={saving}
-        className="bg-blue-600 text-white px-4 py-2 rounded"
+        className="bg-blue-600 text-white px-4 py-2 cursor-pointer rounded"
       >
         {saving ? "Saving…" : "Save Changes"}
       </button>

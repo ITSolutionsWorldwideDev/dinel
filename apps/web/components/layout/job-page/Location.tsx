@@ -21,7 +21,7 @@ export default function Location() {
       {/* Header */}
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-4 py-4 shadow-sm"
+        className="w-full flex items-center justify-between px-4 py-4 shadow-sm cursor-pointer"
       >
         <span className="font-medium">Locations</span>
         {open ? <ChevronUp size={18} /> : <ChevronDown size={18} />}

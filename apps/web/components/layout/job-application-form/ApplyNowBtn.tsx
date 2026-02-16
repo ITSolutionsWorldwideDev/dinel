@@ -16,7 +16,7 @@ export default function ApplyNowBtn({title, jobId}: ApplyNowBtnProps) {
       {/* Apply button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 transition"
+        className="bg-orange-500 text-white cursor-pointer px-6 py-3 rounded-md hover:bg-orange-600 transition"
       >
         Apply Now
       </button>

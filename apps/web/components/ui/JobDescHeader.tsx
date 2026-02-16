@@ -18,7 +18,7 @@ interface JobDescHeader {
   jobId: string;
 }
 
-export default function JobDescHeader({
+export default async function JobDescHeader({
   category,
   postedTime,
   title,

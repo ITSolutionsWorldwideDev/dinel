@@ -64,7 +64,7 @@ export default function EducationEditor({
           <button
             type="button"
             onClick={() => remove(i)}
-            className="text-sm text-red-600"
+            className="text-sm text-red-600 cursor-pointer"
           >
             Remove
           </button>
@@ -74,7 +74,7 @@ export default function EducationEditor({
       <button
         type="button"
         onClick={add}
-        className="text-sm text-blue-600"
+        className="text-sm text-blue-600 cursor-pointer"
       >
         + Add education
       </button>

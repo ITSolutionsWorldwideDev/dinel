@@ -30,13 +30,13 @@ const SimpleHedingAnd2Btns = ({
       .
       <div className="flex items-center justify-center space-x-3">
         <button
-          className={`flex items-center justify-center hover:bg-blue-700  px-6 py-3  font-medium transition ${btn1Classes}`}
+          className={`flex items-center justify-center hover:bg-blue-700  px-6 py-3 cursor-pointer font-medium transition ${btn1Classes}`}
         >
           {btn1} <span>{icon}</span>
         </button>
 
         <button
-          className={`${btn2Classes} hover:bg-blue-700  px-6 py-3  font-medium transition`}
+          className={`${btn2Classes} hover:bg-blue-700  px-6 py-3  font-medium transition cursor-pointer`}
         >
           {btn2}
         </button>

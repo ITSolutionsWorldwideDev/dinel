@@ -25,6 +25,16 @@ interface JobData {
   requirements: string[];
   benefits: string[];
 }
+
+export function formatEnum(value?: string) {
+  if (!value) return "";
+  return value
+    .toLowerCase()
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
+
 const JobDescription = ({ jobData }: any) => {
   return (
     <div className=" bg-linear-to-br from-slate-50 to-slate-100 p-6">
@@ -37,9 +47,13 @@ const JobDescription = ({ jobData }: any) => {
               <h2 className="text-2xl font-bold text-slate-800 mb-4">
                 About this role
               </h2>
-              <p className="text-slate-600 leading-relaxed">
+              {/* <p className="text-slate-600 leading-relaxed">
                 {jobData.description}
-              </p>
+              </p> */}
+              <div
+                className="whitespace-pre-wrap text-slate-600 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: jobData.description || "" }}
+              />
             </div>
 
             {/* Key Responsibilities */}
@@ -48,7 +62,7 @@ const JobDescription = ({ jobData }: any) => {
                 Key responsibilities
               </h2>
               <div className="space-y-3">
-                {jobData.responsibilities.map((item: any, index: number) => (
+                {jobData.responsibilities?.map((item: any, index: number) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="mt-1.5 shrink-0">
                       <div className="w-5 h-5 rounded-full  flex items-center justify-center">
@@ -67,7 +81,7 @@ const JobDescription = ({ jobData }: any) => {
                 What we're looking for
               </h2>
               <div className="space-y-3">
-                {jobData.requirements.map((item: any, index: any) => (
+                {jobData.requirements?.map((item: any, index: any) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="mt-1.5 shrink-0">
                       <div className="w-5 h-5 rounded-full  flex items-center justify-center">
@@ -86,7 +100,7 @@ const JobDescription = ({ jobData }: any) => {
                 What we offer
               </h2>
               <div className="space-y-3">
-                {jobData.benefits.map((item: any, index: number) => (
+                {jobData.benefits?.map((item: any, index: number) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="mt-1.5 shrink-0">
                       <div className="w-5 h-5 rounded-full  flex items-center justify-center">
@@ -155,7 +169,7 @@ const JobDescription = ({ jobData }: any) => {
                   <div>
                     <p className="text-sm text-slate-500 mb-1">Job type</p>
                     <p className="font-semibold text-slate-800">
-                      {jobData.jobType}
+                      {formatEnum(jobData.employment_type)}
                     </p>
                   </div>
                 </div>
@@ -182,12 +196,13 @@ const JobDescription = ({ jobData }: any) => {
 
 export default JobDescription;
 
-
-              {/* <div className="space-y-4 text-slate-600 leading-relaxed">
+{
+  /* <div className="space-y-4 text-slate-600 leading-relaxed">
                 {jobData.about.description.map((paragraph: any, index: any) => (
                   <p key={index}>{paragraph}</p>
                 ))}
-              </div> */}
+              </div> */
+}
 // const jobData = {
 //   title: "Senior Control Engineer",
 //   location: "Rotterdam",

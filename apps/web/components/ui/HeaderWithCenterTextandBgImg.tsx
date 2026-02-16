@@ -32,7 +32,7 @@ const HeaderWithCenterTextandBgImg = ({
       {/* Content */}
       <div className="relative z-10 h-1/2 flex  items-center container mx-auto justify-center">
         <div className="px-6 text-center">
-          <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight capitalize">
             {heading1}
           </h2>
           {heading2 && (

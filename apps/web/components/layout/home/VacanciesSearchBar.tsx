@@ -48,14 +48,14 @@ export default function VacanciesSearchBar() {
 
           <button
             onClick={handleSearch}
-            className="h-12 px-8 border-2 border-white  text-white font-medium  transition-colors"
+            className="h-12 px-8 border-2 border-white  text-white font-medium  transition-colors cursor-pointer"
           >
             To Search
           </button>
 
           <button
             onClick={() => console.log("View all vacancies")}
-            className="h-12 px-8 bg-[#FF8026]  text-white font-medium  transition-colors"
+            className="h-12 px-8 bg-[#FF8026]  text-white font-medium  transition-colors cursor-pointer"
           >
             All Vacancies
           </button>

@@ -4,7 +4,8 @@
 
 import { useState } from "react";
 import { Upload, X } from "lucide-react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+
 
 interface Props {
   onClose: () => void;
@@ -12,7 +13,7 @@ interface Props {
   jobId: string;
 }
 
-export default async function JobApplicationForm({
+export default function JobApplicationForm({
   onClose,
   title,
   jobId,
@@ -62,13 +63,14 @@ export default async function JobApplicationForm({
     });
 
     if (file) {
-      formDataToSend.append("cv", file, file.name);
+      // formDataToSend.append("cv", file, file.name);
+      formDataToSend.append("resume", file, file.name);
     }
 
     formDataToSend.append("vacancyId", jobId);
 
     try {
-      const response = await fetch("/api/apply", {
+      const response = await fetch("/api/vacancy-apply", {
         method: "POST",
         body: formDataToSend,
       });
@@ -115,7 +117,7 @@ export default async function JobApplicationForm({
         {/* Close button */}
         <button
           type="button"
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
           onClick={onClose}
         >
           <X size={24} />
@@ -248,7 +250,7 @@ export default async function JobApplicationForm({
                         e.preventDefault();
                         removeFile();
                       }}
-                      className="text-red-500 hover:text-red-700"
+                      className="text-red-500 hover:text-red-700 cursor-pointer"
                     >
                       <X size={18} />
                     </button>

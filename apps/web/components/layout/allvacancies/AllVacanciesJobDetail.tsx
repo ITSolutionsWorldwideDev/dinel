@@ -4,13 +4,17 @@ import JobDescHeader from "@/components/ui/JobDescHeader";
 import JobDescription from "@/components/ui/JobDescription";
 import React from "react";
 
+
 interface Props {
-  params: { sectorSlug: string; jobId: string };
+  params: Promise<{
+    sectorSlug: string;
+    jobId: string;
+  }>;
 }
 
 async function fetchJob(jobId: string) {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/public/jobs/${jobId}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/jobs/${jobId}`,
     { cache: "no-store" },
   );
   if (!res.ok) return null;
@@ -18,7 +22,12 @@ async function fetchJob(jobId: string) {
 }
 
 export default async function AllVacanciesJobDetail({ params }: Props) {
-  const jobData = await fetchJob(params.jobId);
+  const { sectorSlug, jobId } = await params;
+
+  // console.log('sectorSlug === ',sectorSlug);
+  // console.log('jobId === ',jobId);
+
+  const jobData = await fetchJob(jobId);
 
   if (!jobData) return <p>Job not found</p>;
 

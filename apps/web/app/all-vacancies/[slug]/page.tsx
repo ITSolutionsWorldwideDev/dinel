@@ -9,6 +9,7 @@ interface Props {
 
 export default function vacancyDetailPage({ params }: Props) {
   return (
-    <AllVacanciesJobDetail params={params}/>
+    <></>
+    // <AllVacanciesJobDetail params={params}/>
   )
 }

@@ -44,7 +44,7 @@ const IndustryDesc = ({ data }: IndustryDescProps) => {
           </div>
 
           <div className="flex items-center justify-center ">
-            <button className="ml-4 bg-[#FF6B35] hover:bg-orange-600 text-white px-8 py-3  font-medium transition-colors duration-200">
+            <button className="ml-4 bg-[#FF6B35] hover:bg-orange-600 text-white px-8 py-3  font-medium transition-colors duration-200 cursor-pointer">
               <Link href={"/contact-us"}>Contact us</Link>
             </button>
           </div>

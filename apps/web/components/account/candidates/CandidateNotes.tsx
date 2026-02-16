@@ -41,7 +41,7 @@ export default function CandidateNotes({
 
       <button
         onClick={addNote}
-        className="bg-gray-800 text-white px-3 py-1 rounded mb-4"
+        className="bg-gray-800 text-white px-3 py-1 rounded mb-4 cursor-pointer"
       >
         Add Note
       </button>

@@ -1,4 +1,4 @@
-// apps/web/app/api/vacancy-apply\route.ts
+// apps/web/app/api/vacancy-apply/route.ts
 
 import { NextRequest, NextResponse } from "next/server";
 import { getCarerixToken } from "@/lib/carerix/carerix-auth";
@@ -68,6 +68,9 @@ export async function POST(request: NextRequest) {
 
 async function uploadResumeToCarerix(file: File, token: string) {
   const arrayBuffer = await file.arrayBuffer();
+
+  console.log('arrayBuffer === ',arrayBuffer);
+  console.log('token === ',token);
 
   const response = await fetch("https://api.carerix.com/v2/documents", {
     method: "POST",

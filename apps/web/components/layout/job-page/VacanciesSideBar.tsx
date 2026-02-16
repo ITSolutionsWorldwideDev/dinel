@@ -121,7 +121,7 @@ export default function VacanciesSideBar({
         {/* <div className="w-full max-w-md  overflow-hidden bg-white">
           <button
             onClick={() => setopenSectors(!openSectors)}
-            className="w-full flex items-center justify-between px-4 py-4 shadow-sm"
+            className="w-full flex items-center justify-between px-4 py-4 shadow-sm cursor-pointer"
           >
             <span className="font-medium">Sectors</span>
             {openSectors ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
@@ -152,7 +152,7 @@ export default function VacanciesSideBar({
         <div className="w-full max-w-md  overflow-hidden bg-white">
           <button
             onClick={() => setopenDiscipline(!openDiscipline)}
-            className="w-full flex items-center justify-between px-4 py-4 shadow-sm"
+            className="w-full flex items-center justify-between px-4 py-4 shadow-sm cursor-pointer"
           >
             <span className="font-medium">Disciplines</span>
             {openDiscipline ? (
@@ -192,7 +192,7 @@ export default function VacanciesSideBar({
         <div className="w-full max-w-md  overflow-hidden bg-white">
           <button
             onClick={() => setopenLoc(!openLoc)}
-            className="w-full flex items-center justify-between px-4 py-4 shadow-sm"
+            className="w-full flex items-center justify-between px-4 py-4 shadow-sm cursor-pointer"
           >
             <span className="font-medium">Locations</span>
             {openLoc ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
@@ -242,7 +242,7 @@ export default function VacanciesSideBar({
             <span>I AGREE TO THE TERMS AND CONDITIONS</span>
           </label>
 
-          <button className="w-full bg-[#FF6B35] text-white py-4 font-medium hover:bg-orange-600 transition">
+          <button className="w-full bg-[#FF6B35] text-white py-4 font-medium hover:bg-orange-600 transition cursor-pointer">
             SET UP ALERT
           </button>
         </div>

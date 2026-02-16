@@ -15,7 +15,7 @@ const JobSliderHoverCard = ({ job }: any) => {
 
       <button
         onClick={() => handleUploadCV(job.title)}
-        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition-colors"
+        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition-colors cursor-pointer"
       >
         Upload Your CV
         <ArrowUpRight className="w-5 h-5" />

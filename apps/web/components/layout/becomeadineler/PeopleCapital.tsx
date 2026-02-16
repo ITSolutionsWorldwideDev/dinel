@@ -45,7 +45,7 @@ const PeopleCapital = () => {
       .
       <div className="flex items-center justify-center space-x-3">
         <Link href={"/sign-up"}>
-          <button className=" flex items-center justify-center text-white bg-[#FF6B35] hover:bg-blue-700 shadow-xl  px-6 py-3 font-medium transition">
+          <button className=" flex items-center justify-center text-white cursor-pointer bg-[#FF6B35] hover:bg-blue-700 shadow-xl  px-6 py-3 font-medium transition">
             Join Dinel Now{" "}
             <span>
               <ArrowRight className="ml-2 text-white" />
@@ -53,7 +53,7 @@ const PeopleCapital = () => {
           </button>
         </Link>
         <Link href={'/vacancies'}>
-        <button className="  hover:bg-blue-700 text-[#0A7CD8] border-2 border-[#0A7CD8] px-6 py-3  font-medium transition">
+        <button className="  hover:bg-blue-700 text-[#0A7CD8] border-2 cursor-pointer border-[#0A7CD8] px-6 py-3  font-medium transition">
           View Open Positions
         </button>
         </Link>

@@ -129,7 +129,7 @@ export default function TabsClient({
               key={tab.id}
               onClick={() => handleClick(tab)}
               className={cn(
-                "relative flex items-center gap-2 px-1 pb-3 text-sm font-medium transition",
+                "relative flex items-center gap-2 px-1 pb-3 cursor-pointer text-sm font-medium transition",
                 active === tab.id
                   ? "text-[#106FBC]"
                   : "text-gray-500 hover:text-gray-800",

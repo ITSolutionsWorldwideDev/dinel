@@ -28,7 +28,7 @@ export default function StatusTabs({
           key={s.label}
           onClick={() => onChange(s.value)}
           className={cn(
-            "px-3 py-1 text-sm rounded-full",
+            "px-3 py-1 text-sm rounded-full cursor-pointer",
             value === s.value
               ? "bg-blue-600 text-white"
               : "bg-gray-100 text-gray-700 hover:bg-gray-200"

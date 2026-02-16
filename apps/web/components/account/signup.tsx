@@ -184,9 +184,9 @@ export default function SignUpComponent() {
                   />
                   <button onClick={() => setShowPassword(!showPassword)}>
                     {showPassword ? (
-                      <EyeOff size={18} className="text-gray-400" />
+                      <EyeOff size={18} className="text-gray-400 cursor-pointer" />
                     ) : (
-                      <Eye size={18} className="text-gray-400" />
+                      <Eye size={18} className="text-gray-400 cursor-pointer" />
                     )}
                   </button>
                 </div>
@@ -208,9 +208,9 @@ export default function SignUpComponent() {
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   >
                     {showConfirmPassword ? (
-                      <EyeOff size={18} className="text-gray-400" />
+                      <EyeOff size={18} className="text-gray-400 cursor-pointer" />
                     ) : (
-                      <Eye size={18} className="text-gray-400" />
+                      <Eye size={18} className="text-gray-400 cursor-pointer" />
                     )}
                   </button>
                 </div>
@@ -235,7 +235,7 @@ export default function SignUpComponent() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className={`w-full bg-[#FF6B35] hover:bg-orange-600 text-white py-3 rounded-lg mt-4 font-medium ${
+                  className={`w-full bg-[#FF6B35] hover:bg-orange-600 text-white py-3 cursor-pointer rounded-lg mt-4 font-medium ${
                     loading ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                 >

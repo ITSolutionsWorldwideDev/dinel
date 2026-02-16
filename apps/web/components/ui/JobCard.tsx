@@ -34,13 +34,15 @@ export default function JobCard({ job, sectors }: Props) {
         {/*  key={ind} */}
         <div className="flex  gap-6">
           {/* Left Image */}
-          <div className="relative w-40 h-auto">
+          <div className="relative w-40 h-auto shrink-0">
             <Image
               src={imageSrc}
               alt={job.title}
               fill
               className="object-cover"
+              sizes="160px"
             />
+          </div>
 
             {/* <Image
                 src={job.image}
@@ -48,16 +50,15 @@ export default function JobCard({ job, sectors }: Props) {
                 fill
                 className="object-cover"
               /> */}
-          </div>
 
           {/* Right Content */}
-          <div className="md:col-span-2 p-6 flex flex-col justify-center">
+          <div className="md:col-span-2 p-6 flex flex-col justify-center w-full">
             {/* Title */}
             <div className="flex items-start justify-between">
               <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">
                 {job.title}
               </h1>
-              <Link href={`/${job.id}`}>
+              <Link href={`/vacancies/all/${job.job_id}`} className="flex items-end justify-end">
                 <button className="cursor-pointer w-10 h-10 rounded-full border border-orange-500 text-orange-500 flex items-center justify-center hover:bg-orange-500 hover:text-white transition">
                   <MoveUpRight className="text-black" />
                 </button>

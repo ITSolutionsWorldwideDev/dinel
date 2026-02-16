@@ -71,7 +71,7 @@ export default function UploadCandidateModal({
           <h3 className="text-lg font-semibold">Upload Resume</h3>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600"
+            className="text-gray-400 hover:text-gray-600 cursor-pointer"
           >
             ✕
           </button>
@@ -105,7 +105,7 @@ export default function UploadCandidateModal({
         <div className="flex justify-end gap-3 border-t px-6 py-4">
           <button
             onClick={onClose}
-            className="rounded-lg border px-4 py-2 text-sm hover:bg-gray-50"
+            className="rounded-lg border px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer"
           >
             Cancel
           </button>
@@ -113,7 +113,7 @@ export default function UploadCandidateModal({
           <button
             onClick={handleUpload}
             disabled={loading || !file}
-            className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+            className="rounded-lg bg-blue-600 px-5 py-2 text-sm cursor-pointer font-medium text-white hover:bg-blue-700 disabled:opacity-50"
           >
             {loading ? "Parsing…" : "Upload & Parse"}
           </button>

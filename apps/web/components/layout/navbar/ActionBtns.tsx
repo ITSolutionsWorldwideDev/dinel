@@ -11,13 +11,13 @@ const ActionBtns = () => {
     <>
       <div className="hidden xl:flex items-center space-x-3 ">
         <Link href="/contact-us">
-          <button className="bg-[#FF8026] hover:bg-orange-600 text-white px-6 py-2 rounded text-sm font-medium transition-colors duration-200">
+          <button className="bg-[#FF8026] hover:bg-orange-600 text-white px-6 py-2 rounded text-sm font-medium cursor-pointer transition-colors duration-200">
             Contact
           </button>
         </Link>
 
         <button
-          className="bg-[#0A7CD8] hover:bg-blue-700 text-white px-6 py-2 rounded text-sm font-medium transition-colors duration-200 flex items-center space-x-2 cursor-pointer"
+          className="bg-[#0A7CD8] hover:bg-blue-700 text-white px-6 py-2 rounded text-sm font-medium cursor-pointer transition-colors duration-200 flex items-center space-x-2"
           onClick={() => setOPen(!open)}
         >
           <FaBell />

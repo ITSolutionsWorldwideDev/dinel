@@ -55,7 +55,7 @@ export default function InLoop() {
 
           <button
             type="submit"
-            className="w-full sm:w-auto px-8 py-3 bg-white text-[#0A7CD8] font-semibold  hover:bg-gray-100 transition-colors"
+            className="w-full sm:w-auto px-8 py-3 bg-white text-[#0A7CD8] font-semibold  hover:bg-gray-100 transition-colors cursor-pointer"
           >
             Subscribe
           </button>
