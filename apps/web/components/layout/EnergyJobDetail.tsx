@@ -50,7 +50,7 @@ const EnergyJobDetail = () => {
   };
   return (
     <div>
-      <JobDescHeader
+      {/* <JobDescHeader
         category={jobData.category}
         
         postedTime={Math.floor(
@@ -62,7 +62,7 @@ const EnergyJobDetail = () => {
         location={jobData.location}
         experience={jobData.experience}
         jobType={jobData.jobType}
-      />
+      /> */}
       <JobDescription jobData={jobData}/>
     </div>
   );

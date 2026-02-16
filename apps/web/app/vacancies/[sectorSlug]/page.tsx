@@ -171,19 +171,22 @@ export default async function SectorVacanciesPage({
               {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> */}
               <div className="flex flex-col  gap-5 ">
                 {firstHalf.map((job: any) => (
-                  <JobCard key={job.job_id} job={job} />
+                  <JobCard
+                    key={job.job_id}
+                    job={job}
+                    sectors={filters.sectors}
+                  />
                 ))}
 
                 <UploadResumaCard />
 
                 {secondHalf.map((job: any) => (
-                  <JobCard key={job.job_id} job={job} />
+                  <JobCard
+                    key={job.job_id}
+                    job={job}
+                    sectors={filters.sectors}
+                  />
                 ))}
-
-                {/* 
-                {jobsData.items.map((job: any, index: number) => (
-                  <JobCard key={job.job_id} job={job} />
-                ))} */}
               </div>
 
               {/* Pagination UI */}
@@ -237,6 +240,12 @@ export default async function SectorVacanciesPage({
   );
 }
 
+{
+  /* 
+                {jobsData.items.map((job: any, index: number) => (
+                  <JobCard key={job.job_id} job={job} />
+                ))} */
+}
 /* const jobData = [
     {
       id: 1,

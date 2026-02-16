@@ -26,8 +26,10 @@ export async function GET(req: NextRequest) {
 
     let joinSector = "";
 
+    console.log('sectorSlug === ',sectorSlug);
+
     // Sector filter (via slug)
-    if (sectorSlug) {
+    if (sectorSlug && sectorSlug !="all") {
       values.push(sectorSlug);
       joinSector = `JOIN sectors s ON s.sector_id = j.sector_id`;
       conditions.push(`s.sectorslug = $${values.length}`);

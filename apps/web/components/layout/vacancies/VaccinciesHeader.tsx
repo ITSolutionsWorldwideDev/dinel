@@ -37,7 +37,8 @@ export default function VaccinciesHeader() {
           {/* Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="/all-vacancies"
+              // href="/all-vacancies"
+              href="/vacancies/all"
               className="inline-flex items-center gap-2 bg-[#FF6B35] hover:bg-blue-700 text-white px-6 py-3  font-medium transition"
             >
               View All Vacancies

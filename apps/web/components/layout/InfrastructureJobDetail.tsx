@@ -63,7 +63,7 @@ const InfrastructureJobDetail = ({ job }: Props) => {
         experience={jobData.experience}
         jobType={jobData.jobType}
       /> */}
-      <JobDescHeader
+      {/* <JobDescHeader
         category={job.sector_name}
         postedTime={Math.floor(
           (Date.now() - new Date(job.published_at).getTime()) /
@@ -73,7 +73,7 @@ const InfrastructureJobDetail = ({ job }: Props) => {
         location={job.location}
         experience={job.experience_level}
         jobType={job.employment_type}
-      />
+      /> */}
       <JobDescription jobData={job} />
     </div>
   );

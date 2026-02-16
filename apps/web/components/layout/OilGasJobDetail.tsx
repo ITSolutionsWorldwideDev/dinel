@@ -50,7 +50,7 @@ const OilGasJobDetail = () => {
   };
   return (
     <div>
-      <JobDescHeader
+      {/* <JobDescHeader
         category={jobData.category}
         postedTime={Math.floor(
           (Date.now() - new Date(jobData.posteddate).getTime()) /
@@ -61,7 +61,7 @@ const OilGasJobDetail = () => {
         location={jobData.location}
         experience={jobData.experience}
         jobType={jobData.jobType}
-      />
+      /> */}
       <JobDescription jobData={jobData} />
     </div>
   );

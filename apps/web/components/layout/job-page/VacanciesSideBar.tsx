@@ -118,7 +118,7 @@ export default function VacanciesSideBar({
           <Search size={18} className="text-gray-500" />
         </div>
 
-        <div className="w-full max-w-md  overflow-hidden bg-white">
+        {/* <div className="w-full max-w-md  overflow-hidden bg-white">
           <button
             onClick={() => setopenSectors(!openSectors)}
             className="w-full flex items-center justify-between px-4 py-4 shadow-sm"
@@ -147,7 +147,7 @@ export default function VacanciesSideBar({
               ))}
             </div>
           )}
-        </div>
+        </div> */}
 
         <div className="w-full max-w-md  overflow-hidden bg-white">
           <button
