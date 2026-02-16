@@ -43,11 +43,6 @@ export async function PUT(
     // const jobId = await params;
     const jobId = (await params).id;
 
-    /* const jobId = Number((await params).id); // convert to number
-    if (isNaN(jobId)) {
-      return NextResponse.json({ error: "Invalid job id" }, { status: 400 });
-    } */
-
     const body = await req.json();
 
     const existing = await pool.query(
@@ -69,6 +64,8 @@ export async function PUT(
       "workplace_type",
       "department",
       "experience_level",
+      "experience",
+      "education",
       "visibility",
       "status",
       "sector_id",
@@ -84,18 +81,6 @@ export async function PUT(
         fields.push(`${key} = $${values.length}`);
       }
     }
-
-    /* Object.entries(body).forEach(([key, value]) => {
-      values.push(value);
-      fields.push(`${key} = $${values.length}`);
-    });*/
-
-    // if (body.title) {
-    //   const slug = slugify(body.title, { lower: true });
-    //   values.push(slug);
-    //   fields.push(`slug = $${values.length}`);
-    // }
-
     if (body.status === "PUBLISHED" && currentStatus !== "PUBLISHED") {
       fields.push(`published_at = NOW()`);
     }

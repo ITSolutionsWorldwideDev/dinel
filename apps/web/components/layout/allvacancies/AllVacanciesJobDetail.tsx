@@ -1,9 +1,49 @@
+// apps/web/components/layout/allvacancies/AllVacanciesJobDetail.tsx
 import DinelGroupBv from "@/components/ui/DinelGroupBv";
 import JobDescHeader from "@/components/ui/JobDescHeader";
 import JobDescription from "@/components/ui/JobDescription";
 import React from "react";
 
-const AllVacanciesJobDetail = () => {
+interface Props {
+  params: { sectorSlug: string; jobId: string };
+}
+
+async function fetchJob(jobId: string) {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/public/jobs/${jobId}`,
+    { cache: "no-store" },
+  );
+  if (!res.ok) return null;
+  return res.json();
+}
+
+export default async function AllVacanciesJobDetail({ params }: Props) {
+  const jobData = await fetchJob(params.jobId);
+
+  if (!jobData) return <p>Job not found</p>;
+
+  return (
+    <>
+      <JobDescHeader
+        category={jobData.category}
+        postedTime={Math.floor(
+          (Date.now() - new Date(jobData.posteddate).getTime()) /
+            (1000 * 60 * 60 * 24),
+        )}
+        // postedTime={jobData.posteddate}
+        title={jobData.title}
+        location={jobData.location}
+        experience={jobData.experience}
+        jobType={jobData.jobType}
+        jobId={jobData.jobId}
+      />
+      <JobDescription jobData={jobData} />
+      <DinelGroupBv />
+    </>
+  );
+}
+
+/* 
   const jobData = {
     category: "Energy & Industry",
     posteddate: "dsadas",
@@ -48,26 +88,4 @@ const AllVacanciesJobDetail = () => {
       "Company car and laptop",
       "Opportunities for professional development",
     ],
-  };
-  return (
-    <>
-      <JobDescHeader
-        category={jobData.category}
-        postedTime={Math.floor(
-          (Date.now() - new Date(jobData.posteddate).getTime()) /
-            (1000 * 60 * 60 * 24)
-        )}
-        // postedTime={jobData.posteddate}
-        title={jobData.title}
-        location={jobData.location}
-        experience={jobData.experience}
-        jobType={jobData.jobType}
-      />
-      <JobDescription jobData={jobData} />
-      <DinelGroupBv />
-    </>
-  );
-};
-
-export default AllVacanciesJobDetail;
-    
+  }; */

@@ -5,6 +5,7 @@ import VacanciesSideBar from "@/components/layout/job-page/VacanciesSideBar";
 import DinelGroupBv from "@/components/ui/DinelGroupBv";
 import JobCard from "@/components/ui/JobCard";
 import Link from "next/link";
+import UploadResumaCard from "@/components/layout/job-page/UploadResumaCard";
 
 interface Props {
   params: Promise<{ sectorSlug: string }>;
@@ -100,7 +101,7 @@ export default async function SectorVacanciesPage({
   const resolvedSearchParams = await searchParams; // ✅ FIX
 
   const page = Number(resolvedSearchParams?.page || 1);
-  const limit = 9;
+  const limit = 4;
 
   const jobsData = await fetchJobs(
     sectorSlug,
@@ -112,6 +113,10 @@ export default async function SectorVacanciesPage({
   const filters = await fetchFilters(sectorSlug);
 
   const totalPages = jobsData.totalPages || 1;
+
+  const middleIndex = Math.floor(jobsData.items.length / 2);
+  const firstHalf = jobsData.items.slice(0, middleIndex);
+  const secondHalf = jobsData.items.slice(middleIndex);
 
   // Preserve existing filters in pagination links
   const buildPageLink = (pageNumber: number) => {
@@ -159,21 +164,31 @@ export default async function SectorVacanciesPage({
         />
 
         <div className="flex-1">
-          {/* Job List */}
           {jobsData.items.length === 0 ? (
             <p>No jobs found</p>
           ) : (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {jobsData.items.map((job: any) => (
+              {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> */}
+              <div className="flex flex-col  gap-5 ">
+                {firstHalf.map((job: any) => (
                   <JobCard key={job.job_id} job={job} />
                 ))}
+
+                <UploadResumaCard />
+
+                {secondHalf.map((job: any) => (
+                  <JobCard key={job.job_id} job={job} />
+                ))}
+
+                {/* 
+                {jobsData.items.map((job: any, index: number) => (
+                  <JobCard key={job.job_id} job={job} />
+                ))} */}
               </div>
 
               {/* Pagination UI */}
               {totalPages > 1 && (
                 <div className="flex justify-center gap-2 mt-10 flex-wrap">
-                  {/* Previous */}
                   {page > 1 && (
                     <Link
                       href={buildPageLink(page - 1)}
@@ -183,7 +198,6 @@ export default async function SectorVacanciesPage({
                     </Link>
                   )}
 
-                  {/* Page Numbers */}
                   {Array.from({ length: totalPages }, (_, i) => {
                     const pageNumber = i + 1;
                     const isActive = pageNumber === page;
@@ -203,7 +217,6 @@ export default async function SectorVacanciesPage({
                     );
                   })}
 
-                  {/* Next */}
                   {page < totalPages && (
                     <Link
                       href={buildPageLink(page + 1)}
@@ -223,7 +236,6 @@ export default async function SectorVacanciesPage({
     </>
   );
 }
-
 
 /* const jobData = [
     {

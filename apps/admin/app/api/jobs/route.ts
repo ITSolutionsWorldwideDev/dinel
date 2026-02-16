@@ -61,7 +61,9 @@ export async function GET(req: Request) {
         employment_type,
         workplace_type,
         department,
-        experience_level,
+        experience_level,        
+        experience,
+        education,
         visibility,
         status,
         published_at
@@ -98,6 +100,93 @@ export async function GET(req: Request) {
     );
   }
 }
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+
+    const {
+      title,
+      description,
+      location,
+      employment_type,
+      workplace_type,
+      department,
+      experience_level,
+      experience,
+      education,
+      visibility,
+      status,
+      sector_id,
+      discipline_id,
+    } = body;
+
+    if (!title || !description || !employment_type || !workplace_type) {
+      return NextResponse.json(
+        { error: "Missing required fields" },
+        { status: 400 },
+      );
+    }
+
+    const slug = slugify(title, { lower: true });
+
+    // TODO: replace with auth context later
+    const companyId = 1;
+    const createdBy = 1;
+
+    const query = `
+      INSERT INTO jobs (
+        title,
+        slug,
+        description,
+        location,
+        employment_type,
+        workplace_type,
+        department,
+        experience_level,
+        experience,
+        education,
+        visibility,
+        status,
+        company_id,
+        created_by,
+        sector_id,
+        discipline_id
+      )
+      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)
+      RETURNING *
+    `;
+
+    const values = [
+      title,
+      slug,
+      description,
+      location,
+      employment_type,
+      workplace_type,
+      department || null,
+      experience_level,
+      experience,
+      education,
+      visibility || "PUBLIC",
+      status || "DRAFT",
+      companyId,
+      createdBy,
+      sector_id || null,
+      discipline_id || null,
+    ];
+
+    const result = await pool.query(query, values);
+
+    return NextResponse.json(result.rows[0], { status: 201 });
+  } catch (err) {
+    console.error("POST /api/jobs error:", err);
+    return NextResponse.json(
+      { error: "Failed to create job" },
+      { status: 500 },
+    );
+  }
+}
+
 
 /* export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -179,84 +268,3 @@ export async function GET(req: Request) {
     );
   }
 } */
-
-export async function POST(req: Request) {
-  try {
-    const body = await req.json();
-
-    const {
-      title,
-      description,
-      location,
-      employment_type,
-      workplace_type,
-      department,
-      experience_level,
-      visibility,
-      status,
-      sector_id,
-      discipline_id,
-    } = body;
-
-    if (!title || !description || !employment_type || !workplace_type) {
-      return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 },
-      );
-    }
-
-    const slug = slugify(title, { lower: true });
-
-    // TODO: replace with auth context later
-    const companyId = 1;
-    const createdBy = 1;
-
-    const query = `
-      INSERT INTO jobs (
-        title,
-        slug,
-        description,
-        location,
-        employment_type,
-        workplace_type,
-        department,
-        experience_level,
-        visibility,
-        status,
-        company_id,
-        created_by,
-        sector_id,
-        discipline_id
-      )
-      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
-      RETURNING *
-    `;
-
-    const values = [
-      title,
-      slug,
-      description,
-      location,
-      employment_type,
-      workplace_type,
-      department || null,
-      experience_level,
-      visibility || "PUBLIC",
-      status || "DRAFT",
-      companyId,
-      createdBy,
-      sector_id || null,
-      discipline_id || null,
-    ];
-
-    const result = await pool.query(query, values);
-
-    return NextResponse.json(result.rows[0], { status: 201 });
-  } catch (err) {
-    console.error("POST /api/jobs error:", err);
-    return NextResponse.json(
-      { error: "Failed to create job" },
-      { status: 500 },
-    );
-  }
-}

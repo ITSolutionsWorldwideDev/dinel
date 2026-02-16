@@ -37,11 +37,6 @@ const JobDescription = ({ jobData }: any) => {
               <h2 className="text-2xl font-bold text-slate-800 mb-4">
                 About this role
               </h2>
-              {/* <div className="space-y-4 text-slate-600 leading-relaxed">
-                {jobData.about.description.map((paragraph: any, index: any) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div> */}
               <p className="text-slate-600 leading-relaxed">
                 {jobData.description}
               </p>
@@ -187,6 +182,12 @@ const JobDescription = ({ jobData }: any) => {
 
 export default JobDescription;
 
+
+              {/* <div className="space-y-4 text-slate-600 leading-relaxed">
+                {jobData.about.description.map((paragraph: any, index: any) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div> */}
 // const jobData = {
 //   title: "Senior Control Engineer",
 //   location: "Rotterdam",

@@ -6,8 +6,9 @@ import JobApplicationForm from "@/components/ui/JobApplicationForm";
 
 interface ApplyNowBtnProps {
   title: string;
+  jobId: string;
 }
-export default function ApplyNowBtn({title}: ApplyNowBtnProps) {
+export default function ApplyNowBtn({title, jobId}: ApplyNowBtnProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,7 +22,7 @@ export default function ApplyNowBtn({title}: ApplyNowBtnProps) {
       </button>
 
       {/* Form modal */}
-      {isOpen && <JobApplicationForm onClose={() => setIsOpen(false)} title={title}/>}
+      {isOpen && <JobApplicationForm onClose={() => setIsOpen(false)} title={title} jobId={jobId}/>}
     </>
   );
 }

@@ -1,11 +1,8 @@
-// // apps/admin/lib/carerix/carerix-client.ts
+// apps/web/lib/carerix/carerix-client.ts
 
 import { getCarerixToken } from "./carerix-auth";
 
-export async function carerixGraphQL<T>(
-  query: string,
-  variables?: Record<string, any>
-): Promise<T> {
+export async function carerixGraphQL<T>(query: string, variables?: Record<string, any>): Promise<T> {
   const token = await getCarerixToken();
 
   const response = await fetch(process.env.CARERIX_GRAPHQL_URL!, {

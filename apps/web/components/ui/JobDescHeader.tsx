@@ -9,12 +9,13 @@ import { ArrowLeft, MapPin, Briefcase, Clock, Calendar } from "lucide-react";
 import ApplyNowBtn from "../layout/job-application-form/ApplyNowBtn";
 
 interface JobDescHeader {
-  category: string;
+  category?: string;
   postedTime: number;
   title: string;
-  location: string;
-  experience: string;
-  jobType: string;
+  location?: string;
+  experience?: string;
+  jobType?: string;
+  jobId: string;
 }
 
 export default function JobDescHeader({
@@ -24,6 +25,7 @@ export default function JobDescHeader({
   location,
   experience,
   jobType,
+  jobId,
 }: JobDescHeader) {
   return (
     <section className="relative w-full h-auto \ block overflow-hidden p-5">
@@ -78,7 +80,7 @@ export default function JobDescHeader({
           </span>
         </div>
 
-        <ApplyNowBtn title={title} />
+        <ApplyNowBtn title={title} jobId={jobId} />
       </div>
       <div className="absolute top-1/3 lg:top-1/4 right-0 z-30">
         <FaqHeaderSection />
