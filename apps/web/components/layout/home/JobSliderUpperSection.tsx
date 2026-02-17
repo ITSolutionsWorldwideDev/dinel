@@ -19,7 +19,7 @@ const JobSliderUpperSection = () => {
 
           {/* Right side - View All Link */}
           <Link
-            href="/vacancies"
+            href="/vacancies/all"
             className="text-[#FF8026] font-semibold text-sm sm:text-base hover:text-orange-600 transition-colors duration-200 uppercase tracking-wide border-b-2 border-black hover:border-orange-600  "
           >
             VIEW ALL VACANCIES

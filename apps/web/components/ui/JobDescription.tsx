@@ -37,22 +37,21 @@ export function formatEnum(value?: string) {
 
 const JobDescription = ({ jobData }: any) => {
   return (
+    <section className="relative w-full overflow-hidden">
     <div className=" bg-linear-to-br from-slate-50 to-slate-100 p-6">
-      <div className="container mx-auto p-10">
-        <div className="flex-wrap flex md:flex-nowrap  justify-center items-start  gap-6">
+      <div className="container mx-auto p-10 relative">
+        <div className="flex-row flex md:flex-nowrap  justify-center items-start  gap-6">
           {/* Main Content */}
-          <div className=" space-y-6 max-w-3xl">
+          <div className="flex flex-col space-y-6 w-2/3 max-w-5xl">
             {/* About Section */}
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
               <h2 className="text-2xl font-bold text-slate-800 mb-4">
                 About this role
               </h2>
-              {/* <p className="text-slate-600 leading-relaxed">
-                {jobData.description}
-              </p> */}
+
               <div
                 className="whitespace-pre-wrap text-slate-600 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: jobData.description || "" }}
+                dangerouslySetInnerHTML={{ __html: jobData.vacancy_information || "" }}
               />
             </div>
 
@@ -96,10 +95,14 @@ const JobDescription = ({ jobData }: any) => {
 
             {/* Benefits */}
             <div className=" bg-linear-to-r from-[#FFF7ED] to-[#FFEDD480] rounded-2xl shadow-sm border border-[#FFD6A7] p-8">
-              <h2 className="text-2xl font-bold text-slate-800 mb-6 border-b border-b-[#FFD6A7] p-5">
+              <h2 className="text-2xl font-bold text-slate-800 mb-6 border-b border-b-[#FFD6A7] py-5">
                 What we offer
               </h2>
-              <div className="space-y-3">
+              <div
+                className="whitespace-pre-wrap text-slate-600 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: jobData.offer_information || "" }}
+              />
+              {/* <div className="space-y-3">
                 {jobData.benefits?.map((item: any, index: number) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="mt-1.5 shrink-0">
@@ -110,12 +113,12 @@ const JobDescription = ({ jobData }: any) => {
                     <p className="text-slate-700">{item}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
 
           {/* Sidebar - Job Details */}
-          <div className="max-w-3xl">
+          <div className="flex flex-col w-1/3">
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6  ">
               <h3 className="text-lg font-semibold text-slate-800 mb-6">
                 Job details
@@ -191,6 +194,7 @@ const JobDescription = ({ jobData }: any) => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

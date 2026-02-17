@@ -208,15 +208,6 @@ export async function POST() {
           vac.vacancyID || "",
           vac.vacancyNo || "",
         ];
-
-        // const closed_at = vac.endDate
-        //   ? new Date(vac.endDate).toTimeString().split(" ")[0] // "HH:MM:SS"
-        //   : null;
-
-        // const deadlineTime = vac.deadline
-        //   ? new Date(vac.deadline).toTimeString().split(" ")[0] // "HH:MM:SS"
-        //   : null;
-
         const closed_at = vac.endDate ? new Date(vac.endDate) : null;
         const deadlineTime = vac.deadline ? new Date(vac.deadline) : null;
 
@@ -288,7 +279,19 @@ export async function POST() {
         else updated++;
       }
 
-      /* for (const vac of vacancies) {
+      /* 
+      
+      
+
+        // const closed_at = vac.endDate
+        //   ? new Date(vac.endDate).toTimeString().split(" ")[0] // "HH:MM:SS"
+        //   : null;
+
+        // const deadlineTime = vac.deadline
+        //   ? new Date(vac.deadline).toTimeString().split(" ")[0] // "HH:MM:SS"
+        //   : null;
+
+      for (const vac of vacancies) {
         const baseSlug = slugify(vac.jobTitle || "job", {
           lower: true,
           strict: true,

@@ -118,3 +118,59 @@ export async function PUT(
     );
   }
 }
+
+export async function DELETE(
+  req: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const client = await pool.connect();
+
+  try {
+    const { id } = await params; // ✅ MUST await
+
+    await client.query("BEGIN");
+
+    const jobResult = await client.query(
+      "SELECT id FROM jobs WHERE job_id = $1",
+      [id]
+    );
+
+    if (!jobResult.rows.length) {
+      await client.query("ROLLBACK");
+      return NextResponse.json(
+        { error: "Job not found" },
+        { status: 404 }
+      );
+    }
+
+    const jobDbId = jobResult.rows[0].id;
+
+    await client.query(
+      "DELETE FROM job_integrations WHERE job_id = $1",
+      [jobDbId]
+    );
+
+    await client.query(
+      "DELETE FROM jobs WHERE id = $1",
+      [jobDbId]
+    );
+
+    await client.query("COMMIT");
+
+    return NextResponse.json(
+      { message: "Job deleted successfully" },
+      { status: 200 }
+    );
+
+  } catch (err) {
+    await client.query("ROLLBACK");
+    console.error("DELETE /api/jobs/:id error:", err);
+
+    return NextResponse.json(
+      { error: "Failed to delete job" },
+      { status: 500 }
+    );
+  } finally {
+    client.release();
+  }
+}

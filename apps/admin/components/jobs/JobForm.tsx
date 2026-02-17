@@ -366,10 +366,6 @@ export default function JobForm({ initialData, onSubmit, mode = "create" }: JobF
               </select>
             </div>
 
-            {/* Existing dropdowns: Sector / Discipline / Employment Type / Workplace / Experience / Education / Visibility / Status */}
-            {/* You can keep all your select fields here exactly as in your previous JobForm code */}
-            {/* ... */}
-
             <div className="flex gap-3">
               <button type="button" onClick={() => router.back()} className="btn btn-secondary">
                 Cancel
@@ -385,6 +381,12 @@ export default function JobForm({ initialData, onSubmit, mode = "create" }: JobF
   );
 }
 
+
+
+
+            {/* Existing dropdowns: Sector / Discipline / Employment Type / Workplace / Experience / Education / Visibility / Status */}
+            {/* You can keep all your select fields here exactly as in your previous JobForm code */}
+            {/* ... */}
 /* "use client";
 
 import { useState, useEffect } from "react";

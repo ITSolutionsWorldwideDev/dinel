@@ -16,6 +16,8 @@ export default function CreateJobClient() {
       body: JSON.stringify(data),
     });
 
+    console.log('res === ',res);
+
     if (!res.ok) {
       throw new Error("Failed to create job");
     }

@@ -30,14 +30,6 @@ type Job = {
 export default function JobsPage() {
   const router = useRouter();
 
-  // const [filters, setFilters] = useState({
-  //   status: "",
-  //   employment_type: "",
-  //   workplace_type: "",
-  //   experience_level: "",
-  //   sort: "recent",
-  // });
-
   const [data, setData] = useState<{
     items: Job[];
     meta: {
@@ -128,7 +120,11 @@ export default function JobsPage() {
     if (!selectedId) return;
 
     try {
-      await fetch(`/api/jobs?id=${selectedId}`, { method: "DELETE" });
+      // await fetch(`/api/jobs?id=${selectedId}`, { method: "DELETE" });
+      await fetch(`/api/jobs/${selectedId}`, {
+        method: "DELETE",
+      });
+
       setShowDeleteModal(false);
       setSelectedId(null);
       setPage(1);
@@ -290,6 +286,79 @@ export default function JobsPage() {
 
             {/* PAGINATION */}
             {meta && meta.totalPages > 1 && (
+              <div className="flex items-center justify-between px-6 py-4 border-t bg-gray-50">
+                {/* LEFT SIDE INFO */}
+                <div className="text-sm text-gray-600">
+                  Page <span className="font-semibold">{meta.page}</span> of{" "}
+                  <span className="font-semibold">{meta.totalPages}</span>
+                </div>
+
+                {/* RIGHT SIDE CONTROLS */}
+                <div className="flex items-center gap-2">
+                  {/* PREV BUTTON */}
+                  <button
+                    onClick={() => setPage((p) => Math.max(1, p - 1))}
+                    disabled={meta.page === 1}
+                    className={`px-3 py-1.5 rounded-md border text-sm font-medium transition
+                    ${
+                      meta.page === 1
+                        ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                        : "bg-white hover:bg-gray-100"
+                    }`}
+                  >
+                    ← Previous
+                  </button>
+
+                  {/* PAGE NUMBERS (SMART RANGE) */}
+                  {Array.from({ length: meta.totalPages })
+                    .filter((_, i) => {
+                      const pageNumber = i + 1;
+                      return (
+                        pageNumber === 1 ||
+                        pageNumber === meta.totalPages ||
+                        Math.abs(pageNumber - meta.page) <= 1
+                      );
+                    })
+                    .map((_, i) => {
+                      const pageNumber =
+                        meta.page === 1 ? i + 1 : meta.page - 1 + i;
+
+                      return (
+                        <button
+                          key={pageNumber}
+                          onClick={() => setPage(pageNumber)}
+                          className={`px-3 py-1.5 rounded-md border text-sm font-medium transition
+                          ${
+                            meta.page === pageNumber
+                              ? "bg-blue-600 text-white border-blue-600"
+                              : "bg-white hover:bg-gray-100"
+                          }`}
+                        >
+                          {pageNumber}
+                        </button>
+                      );
+                    })}
+
+                  {/* NEXT BUTTON */}
+                  <button
+                    onClick={() =>
+                      setPage((p) => Math.min(meta.totalPages, p + 1))
+                    }
+                    disabled={meta.page === meta.totalPages}
+                    className={`px-3 py-1.5 rounded-md border text-sm font-medium transition
+                    ${
+                      meta.page === meta.totalPages
+                        ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                        : "bg-white hover:bg-gray-100"
+                    }`}
+                  >
+                    Next →
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* {meta && meta.totalPages > 1 && (
               <div className="flex gap-2 justify-end p-4">
                 {Array.from({ length: meta.totalPages }).map((_, i) => (
                   <button
@@ -303,7 +372,7 @@ export default function JobsPage() {
                   </button>
                 ))}
               </div>
-            )}
+            )} */}
 
             {/* DELETE MODAL */}
             {showDeleteModal && (
@@ -346,3 +415,11 @@ function StatusBadge({ status }: { status: string }) {
     <span className={`px-2 py-1 rounded text-xs ${map[status]}`}>{status}</span>
   );
 }
+
+// const [filters, setFilters] = useState({
+//   status: "",
+//   employment_type: "",
+//   workplace_type: "",
+//   experience_level: "",
+//   sort: "recent",
+// });

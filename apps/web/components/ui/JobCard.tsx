@@ -99,7 +99,7 @@ export default function JobCard({ job, sectors }: Props) {
                 <p className="text-[#FF6B35] uppercase tracking-wide">
                   Vacancy ID
                 </p>
-                <p className="mt-1 text-gray-800">{job.id}</p>
+                <p className="mt-1 text-gray-800">{job.vacancy_no}</p>
               </div>
             </div>
           </div>

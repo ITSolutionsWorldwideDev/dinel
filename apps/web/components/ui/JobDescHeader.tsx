@@ -28,7 +28,7 @@ export default async function JobDescHeader({
   jobId,
 }: JobDescHeader) {
   return (
-    <section className="relative w-full h-auto \ block overflow-hidden p-5">
+    <section className="relative w-full h-auto \ block overflow-hidden p-5 ">
       <Image
         src="/assets/home/dc3a9870370aac2ce5a74f925281e910465b64aa (1).png" // put image in /public/hero.jpg
         alt="Industry Bridge"
@@ -40,7 +40,7 @@ export default async function JobDescHeader({
 
       <div className="absolute inset-0 bg-black/10 " />
 
-      <div className="relative z-10  mx-auto p-6 text-white mt-10 ">
+      <div className="relative z-10  mx-auto p-6 text-white mt-10 container ">
         <Link
           href="/vacancies"
           className="flex items-center gap-2  mb-6 opacity-90 hover:opacity-100"
@@ -57,7 +57,7 @@ export default async function JobDescHeader({
 
           <span className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-xl text-sm">
             <Calendar size={16} />
-            Posted {postedTime} days ago
+            Posted {(postedTime>0)?postedTime+` days ago`:`today` } 
           </span>
         </div>
 
