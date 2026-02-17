@@ -34,7 +34,7 @@ export default async function AllVacanciesJobDetail({ params }: Props) {
   return (
     <>
       <JobDescHeader
-        category={jobData.category}
+        category={jobData.sector}
         postedTime={Math.floor(
           (Date.now() - new Date(jobData.published_at).getTime()) /
             (1000 * 60 * 60 * 24),
@@ -43,7 +43,7 @@ export default async function AllVacanciesJobDetail({ params }: Props) {
         title={jobData.title}
         location={jobData.location}
         experience={jobData.experience}
-        jobType={jobData.jobType}
+        jobType={jobData.employment_type}
         jobId={jobData.jobId}
       />
       <JobDescription jobData={jobData} />

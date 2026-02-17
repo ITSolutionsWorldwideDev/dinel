@@ -18,6 +18,14 @@ interface JobDescHeader {
   jobId: string;
 }
 
+export function formatEnum(value?: string) {
+  if (!value) return "";
+  return value
+    .toLowerCase()
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
 export default async function JobDescHeader({
   category,
   postedTime,
@@ -71,12 +79,12 @@ export default async function JobDescHeader({
 
           <span className="flex items-center gap-2">
             <Briefcase size={16} />
-            {jobType}
+            {formatEnum(jobType)}
           </span>
 
           <span className="flex items-center gap-2">
             <Clock size={16} />
-            {experience}
+            {formatEnum(experience)}
           </span>
         </div>
 

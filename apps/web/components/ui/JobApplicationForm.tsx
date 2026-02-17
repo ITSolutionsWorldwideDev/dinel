@@ -78,11 +78,12 @@ export default function JobApplicationForm({
         alert("Application submitted successfully!");
         router.push("/thank-you"); // Redirect to a "Thank You" page
       } else {
-        alert("Failed to submit application.");
+        // alert("Failed to submit application.");
+        console.error("Error submitting application");
       }
     } catch (error) {
       console.error("Error submitting form", error);
-      alert("Error submitting application");
+      // alert("Error submitting application");
     }
 
     onClose();

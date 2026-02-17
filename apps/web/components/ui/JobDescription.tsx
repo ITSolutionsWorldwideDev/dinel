@@ -146,7 +146,7 @@ const JobDescription = ({ jobData }: any) => {
                   <div>
                     <p className="text-sm text-slate-500 mb-1">Experience</p>
                     <p className="font-semibold text-slate-800">
-                      {jobData.experience}
+                      {formatEnum(jobData.experience)}
                     </p>
                   </div>
                 </div>
@@ -159,7 +159,7 @@ const JobDescription = ({ jobData }: any) => {
                   <div>
                     <p className="text-sm text-slate-500 mb-1">Education</p>
                     <p className="font-semibold text-slate-800">
-                      {jobData.education}
+                      {formatEnum(jobData.education)}
                     </p>
                   </div>
                 </div>
