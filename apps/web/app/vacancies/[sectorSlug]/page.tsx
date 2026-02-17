@@ -5,7 +5,7 @@ import VacanciesSideBar from "@/components/layout/job-page/VacanciesSideBar";
 import DinelGroupBv from "@/components/ui/DinelGroupBv";
 import JobCard from "@/components/ui/JobCard";
 import Link from "next/link";
-import UploadResumaCard from "@/components/layout/job-page/UploadResumaCard";
+import UploadResumeCard from "@/components/layout/job-page/UploadResumeCard";
 
 interface Props {
   params: Promise<{ sectorSlug: string }>;
@@ -112,6 +112,8 @@ export default async function SectorVacanciesPage({
 
   const filters = await fetchFilters(sectorSlug);
 
+  // console.log('filters === ',filters);
+
   const totalPages = jobsData.totalPages || 1;
 
   const middleIndex = Math.floor(jobsData.items.length / 2);
@@ -178,7 +180,7 @@ export default async function SectorVacanciesPage({
                   />
                 ))}
 
-                <UploadResumaCard />
+                <UploadResumeCard />
 
                 {secondHalf.map((job: any) => (
                   <JobCard

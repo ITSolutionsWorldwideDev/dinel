@@ -200,9 +200,25 @@ export default function VacanciesSideBar({
 
           {openLoc && (
             <div className="border-t px-4 py-3 space-y-2">
-              {locations.map((item: string) => (
+              {locations.map((item) => (
                 <label
-                  key={item}
+                  key={item.location}
+                  className="flex items-center gap-3 cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    checked={selectedLocation.includes(item.location)}
+                    onChange={() =>
+                      toggleItem(item.location, setSelectedLocation)
+                    }
+                  />
+                  <span className="text-sm">{item.location}</span>
+                </label>
+              ))}
+
+              {/* {locations.map((item) => (
+                <label
+                  key={item.location}
                   className="flex items-center gap-3 cursor-pointer"
                 >
                   <input
@@ -212,7 +228,7 @@ export default function VacanciesSideBar({
                   />
                   <span className="text-sm">{item}</span>
                 </label>
-              ))}
+              ))} */}
             </div>
           )}
         </div>
@@ -260,4 +276,3 @@ export default function VacanciesSideBar({
 //   ];
 
 //   locations = ["London", "Pakistan", "Itww", "Halovine", "balgium"];
-

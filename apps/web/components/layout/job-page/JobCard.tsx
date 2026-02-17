@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { MoveUpRight } from "lucide-react";
-import UploadResumaCard from "./UploadResumaCard";
+import UploadResumeCard from "./UploadResumeCard";
 import Link from "next/link";
 
 export default function JobCard({ jobData }: any) {
@@ -75,7 +75,7 @@ export default function JobCard({ jobData }: any) {
         </div>
       ))}
 
-      <UploadResumaCard />
+      <UploadResumeCard />
       {secondHalf.map((job: any, ind: number) => (
         <div className=" w-full shadow-sm overflow-hidden" key={ind}>
           <div className="flex  gap-6">
