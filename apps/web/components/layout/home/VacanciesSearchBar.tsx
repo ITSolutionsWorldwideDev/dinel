@@ -2,12 +2,15 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
-export default function VacanciesSearchBar() {
+type Props = {
+  onSearch: (value: string) => void;
+};
+
+export default function VacanciesSearchBar({ onSearch }: Props) {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = () => {
-    console.log("Searching for:", searchQuery);
-    // Add your search logic here
+    onSearch(searchQuery);
   };
 
   const handleKeyPress = (e: any) => {
@@ -34,7 +37,7 @@ export default function VacanciesSearchBar() {
             <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 p-3">
               <FaSearch size={20} color="black " />
             </div>
-            <div className="absolute left-14 top-1/4 w-0.5 font-bold h-6 bg-black mr-2" />
+            <div className="  mr-2" />
 
             <input
               type="text"
@@ -42,6 +45,11 @@ export default function VacanciesSearchBar() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               // onKeyPress={handleKeyPress}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSearch();
+                }
+              }}
               className="ml-3 bg-white w-full h-12 pl-12 pr-4  border-0 focus:outline-none focus:ring-2  text-gray-700"
             />
           </div>
@@ -54,7 +62,11 @@ export default function VacanciesSearchBar() {
           </button>
 
           <button
-            onClick={() => console.log("View all vacancies")}
+            // onClick={() => console.log("View all vacancies")}
+            onClick={() => {
+              setSearchQuery("");
+              onSearch("");
+            }}
             className="h-12 px-8 bg-[#FF8026]  text-white font-medium  transition-colors cursor-pointer"
           >
             All Vacancies

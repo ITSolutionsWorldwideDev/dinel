@@ -14,8 +14,10 @@ export async function GET(req: NextRequest) {
     const locations = searchParams.getAll("location");
     const search = searchParams.get("search");
 
-    const page = Number(searchParams.get("page") || 1);
-    const limit = Number(searchParams.get("limit") || 9);
+    // const page = Number(searchParams.get("page") || 1);
+    // const limit = Number(searchParams.get("limit") || 9);
+    const page = Math.max(Number(searchParams.get("page")) || 1, 1);
+    const limit = Math.min(Number(searchParams.get("limit")) || 9, 50);
     const offset = (page - 1) * limit;
 
     // -------------------------
@@ -26,10 +28,10 @@ export async function GET(req: NextRequest) {
 
     let joinSector = "";
 
-    console.log('sectorSlug === ',sectorSlug);
+    console.log("sectorSlug === ", sectorSlug);
 
     // Sector filter (via slug)
-    if (sectorSlug && sectorSlug !="all") {
+    if (sectorSlug && sectorSlug != "all") {
       values.push(sectorSlug);
       joinSector = `JOIN sectors s ON s.sector_id = j.sector_id`;
       conditions.push(`s.sectorslug = $${values.length}`);
@@ -47,23 +49,51 @@ export async function GET(req: NextRequest) {
       conditions.push(`j.location = ANY($${values.length})`);
     }
 
-    // Search filter (title + short_description optional)
+    // Search Filter (Title + Description + Location)
     if (search) {
+      values.push(`%${search}%`);
+      conditions.push(`(
+        j.title ILIKE $${values.length}
+        OR j.description ILIKE $${values.length}
+        OR j.location ILIKE $${values.length}
+      )`);
+    }
+    /* if (search) {
       values.push(`%${search}%`);
       conditions.push(`(
         j.title ILIKE $${values.length}
         OR j.short_description ILIKE $${values.length}
       )`);
-    }
+    } */
+
+    const whereClause = conditions.length
+      ? `WHERE ${conditions.join(" AND ")}`
+      : "";
 
     // -------------------------
     // Main Query
     // -------------------------
-    const jobsQuery = `
+    /* const jobsQuery = `
       SELECT j.*
       FROM jobs j
-      ${joinSector}
-      WHERE ${conditions.join(" AND ")}
+      ${joinSector}      
+      ${whereClause}
+      ORDER BY j.published_at DESC
+      LIMIT $${values.length + 1}
+      OFFSET $${values.length + 2}
+    `; */
+
+    const jobsQuery = `
+      SELECT 
+        j.*,
+        s.sector AS sector_name,
+        s.sectorslug AS sector_slug,
+        d.discipline AS discipline_name,
+        d.disciplineslug AS discipline_slug
+      FROM jobs j
+      LEFT JOIN sectors s ON s.sector_id = j.sector_id
+      LEFT JOIN disciplines d ON d.discipline_id = j.discipline_id
+      ${whereClause}
       ORDER BY j.published_at DESC
       LIMIT $${values.length + 1}
       OFFSET $${values.length + 2}
@@ -77,8 +107,9 @@ export async function GET(req: NextRequest) {
     const countQuery = `
       SELECT COUNT(*)
       FROM jobs j
-      ${joinSector}
-      WHERE ${conditions.join(" AND ")}
+      LEFT JOIN sectors s ON s.sector_id = j.sector_id
+      LEFT JOIN disciplines d ON d.discipline_id = j.discipline_id
+      ${whereClause}
     `;
 
     const [jobsResult, countResult] = await Promise.all([
@@ -99,11 +130,10 @@ export async function GET(req: NextRequest) {
     console.error("Jobs API error:", error);
     return NextResponse.json(
       { error: "Failed to fetch jobs" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
-
 
 /* export async function GET(req: NextRequest) {
   try {
@@ -146,4 +176,3 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Failed to fetch jobs" }, { status: 500 });
   }
 } */
-

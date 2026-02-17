@@ -10,7 +10,7 @@ export default function JobCard({ jobData }: any) {
   const firstHalf = jobData.slice(0, midPoint);
   const secondHalf = jobData.slice(midPoint);
   const pathname = usePathname();
-  console.log(pathname);
+  // console.log(pathname);
   return (
     <div className="flex flex-col  gap-5 ">
       {firstHalf.map((job: any, ind: number) => (
