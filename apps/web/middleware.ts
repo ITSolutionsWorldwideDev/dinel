@@ -28,7 +28,7 @@ export default withAuth({
         return true;
       }
 
-      console.log('pathname === ',pathname);
+      // console.log('pathname === ',pathname);
 
       // 🔒 Protect only /account routes
       if (pathname.startsWith("/account")) {

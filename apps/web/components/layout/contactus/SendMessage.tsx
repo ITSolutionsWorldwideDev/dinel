@@ -61,7 +61,7 @@ const SendMessage = () => {
           {/* Button */}
           <button
             type="submit"
-            className="mt-2 w-fit px-5 py-2 bg-[#FF6A00] text-white text-sm font-medium rounded-md hover:bg-[#ff5400] transition-all"
+            className="mt-2 w-fit px-5 py-2 cursor-pointer bg-[#FF6A00] text-white text-sm font-medium rounded-md hover:bg-[#ff5400] transition-all"
           >
             Send Message
           </button>

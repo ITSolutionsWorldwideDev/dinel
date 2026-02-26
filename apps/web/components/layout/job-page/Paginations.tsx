@@ -72,7 +72,7 @@ const Paginations = ({ jobData }: JobListProps) => {
           <button
             disabled={currentPage === 1}
             onClick={() => setCurrentPage((prev) => prev - 1)}
-            className="p-3 rounded border border-[#BCBCBC] disabled:opacity-50"
+            className="p-3 rounded border border-[#BCBCBC] disabled:opacity-50 cursor-pointer"
           >
             <ChevronLeft />
           </button>
@@ -91,7 +91,7 @@ const Paginations = ({ jobData }: JobListProps) => {
               <button
                 key={page}
                 onClick={() => setCurrentPage(page as number)}
-                className={`w-10 h-10 rounded border font-medium transition
+                className={`w-10 h-10 rounded border font-medium transition cursor-pointer
                   ${
                     currentPage === page
                       ? "bg-[#FF6B35] text-white border-[#FF6B35]"
@@ -107,7 +107,7 @@ const Paginations = ({ jobData }: JobListProps) => {
           <button
             disabled={currentPage === totalPages}
             onClick={() => setCurrentPage((prev) => prev + 1)}
-            className="p-3 rounded border border-[#BCBCBC] disabled:opacity-50"
+            className="p-3 rounded border border-[#BCBCBC] disabled:opacity-50 cursor-pointer"
           >
             <ChevronRight />
           </button>

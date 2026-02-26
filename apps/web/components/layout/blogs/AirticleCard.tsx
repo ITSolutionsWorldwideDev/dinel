@@ -59,7 +59,7 @@ export default function AirticleCard() {
 
               {/* CTA Button */}
               <div>
-                <button className="bg-[#FF6B35] hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-lg flex items-center gap-2 transition-all duration-200 shadow-md hover:shadow-lg">
+                <button className="bg-[#FF6B35] hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-lg flex items-center gap-2 transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer">
                   Read Full Article
                   <ArrowRight />
                 </button>

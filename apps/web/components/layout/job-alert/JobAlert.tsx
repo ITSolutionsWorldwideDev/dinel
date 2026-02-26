@@ -237,7 +237,7 @@ export default function JobAlert({ open, setOPen }: any) {
 
           <button
             type="submit"
-            className="bg-[#0A7CD8] hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md"
+            className="bg-[#0A7CD8] hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition duration-200 cursor-pointer"
           >
             Create Job Alert
           </button>

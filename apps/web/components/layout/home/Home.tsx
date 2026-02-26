@@ -1,8 +1,8 @@
 import NavBar from "@/components/ui/NavBar";
 import React from "react";
 import Header from "./Header";
-import VacanciesSearchBar from "./VacanciesSearchBar";
-import JobVacanciesSlider from "./FindJobSlider";
+// import VacanciesSearchBar from "./VacanciesSearchBar";
+// import JobVacanciesSlider from "./FindJobSlider";
 import BlogCard from "@/components/layout/home/BlogCard";
 import DinelerSection from "./DinelerSection";
 import OurApproach from "../../ui/OurApproach";
@@ -14,6 +14,7 @@ import Impact from "./Impact";
 import DinelGroupBv from "../../ui/DinelGroupBv";
 import StatsSection from "./StatsSection";
 import IndustryWeWork from "./IndustryWeWork";
+import FindJobSlider from "./FindJobSlider";
 
 const Homei = () => {
   const items = [
@@ -46,14 +47,17 @@ const Homei = () => {
     <div className="">
       {/* <NavBar /> */}
       <Header />
-      <div className="relative flex justify-center items-center ">
+      {/* <div className="relative flex justify-center items-center ">
         <div className="lg:absolute ">
           <VacanciesSearchBar />
         </div>
-      </div>
+      </div> */}
 
-      <div className=" mt-20">
+      {/* <div className=" mt-20">
         <JobVacanciesSlider />
+      </div> */}
+      <div>
+        <FindJobSlider />
       </div>
       <IndustryWeWork />
       <BlogCard />

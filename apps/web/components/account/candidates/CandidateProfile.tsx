@@ -31,7 +31,7 @@ export default function CandidateProfile({
               <h2 className="text-xl font-semibold">{current.full_name}</h2>
               <button
                 onClick={() => setEditing(!editing)}
-                className="text-blue-600"
+                className="text-blue-600 cursor-pointer"
               >
                 {editing ? "Cancel" : "Edit"}
               </button>

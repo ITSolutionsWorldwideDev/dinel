@@ -16,6 +16,8 @@ export default function CreateJobClient() {
       body: JSON.stringify(data),
     });
 
+    console.log('res === ',res);
+
     if (!res.ok) {
       throw new Error("Failed to create job");
     }
@@ -34,6 +36,8 @@ export default function CreateJobClient() {
         workplace_type: "ONSITE",
         department: "",
         experience_level: "MID",
+        experience: "",
+        education: "",
         visibility: "PUBLIC",
         status: "DRAFT",
       }}

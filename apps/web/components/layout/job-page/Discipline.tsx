@@ -1,3 +1,5 @@
+// apps/web/components/layout/job-page/Discipline.tsx
+
 "use client";
 
 import { useState } from "react";
@@ -26,7 +28,7 @@ export default function Discipline() {
       {/* Header */}
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-4 py-4 shadow-sm"
+        className="w-full flex items-center justify-between px-4 py-4 shadow-sm cursor-pointer"
       >
         <span className="font-medium">Disciplines</span>
         {open ? <ChevronUp size={18} /> : <ChevronDown size={18} />}

@@ -45,6 +45,20 @@ export const SidebarData = [
     submenuHdr: "Jobs Management",
     submenuItems: [
       {
+        label: "Sectors",
+        link: "/sectors",
+        icon: "list-details",
+        showSubRoute: false,
+        submenu: false,
+      },
+      {
+        label: "Disciplines",
+        link: "/disciplines",
+        icon: "list-details",
+        showSubRoute: false,
+        submenu: false,
+      },
+      {
         label: "Jobs",
         link: "/jobs",
         icon: "shield-up",

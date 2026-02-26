@@ -119,7 +119,7 @@ export default function MediaLibrary() {
 
                         <button
                           onClick={() => handleDelete(item.media_id)}
-                          className="absolute right-1 top-1 rounded bg-red-500 px-2 py-1 text-xs text-white"
+                          className="absolute right-1 top-1 rounded bg-red-500 px-2 py-1 text-xs text-white cursor-pointer"
                         >
                           Delete
                         </button>

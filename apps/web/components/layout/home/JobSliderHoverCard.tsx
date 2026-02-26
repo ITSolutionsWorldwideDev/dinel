@@ -1,9 +1,17 @@
+"use client";
 import React from "react";
 import { ArrowUpRight, Upload } from "lucide-react";
+import { useRouter } from "next/navigation";
+
 const JobSliderHoverCard = ({ job }: any) => {
-  const handleUploadCV = (jobTitle: any) => {
-    alert(`Uploading CV for: ${jobTitle}`);
+
+  const router = useRouter();
+
+  const handleUploadCV = (jobTitle: string) => {
+    // Redirect to accounts page (replace "/accounts" with your route if different)
+    router.push("/accounts");
   };
+
   return (
     <div className="flex flex-col items-center justify-center h-full space-y-6 ">
       <div>
@@ -15,7 +23,7 @@ const JobSliderHoverCard = ({ job }: any) => {
 
       <button
         onClick={() => handleUploadCV(job.title)}
-        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition-colors"
+        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition-colors cursor-pointer"
       >
         Upload Your CV
         <ArrowUpRight className="w-5 h-5" />

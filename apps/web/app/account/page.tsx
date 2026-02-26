@@ -17,6 +17,8 @@ export default async function AccountPage() {
 
   const candidateID = session.user.id;
 
+  console.log('candidateID ==== ',candidateID);
+
   return (
     <>
       <BlogsHeader />

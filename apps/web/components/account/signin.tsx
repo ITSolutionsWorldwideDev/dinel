@@ -119,7 +119,7 @@ export default function SigninComponent() {
               <button
                 type="submit"
                 disabled={loading}
-                className={`w-full bg-[#FF6B35] hover:bg-orange-600 text-white py-2 rounded-lg transition ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+                className={`w-full bg-[#FF6B35] hover:bg-orange-600 text-white py-2 cursor-pointer rounded-lg transition ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
               >
                 {loading ? "Signing in..." : "Sign In"}
               </button>

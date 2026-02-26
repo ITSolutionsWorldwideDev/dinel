@@ -1,3 +1,4 @@
+// apps/web/components/ui/JobDescription.tsx
 import React from "react";
 import {
   MapPin,
@@ -24,67 +25,34 @@ interface JobData {
   requirements: string[];
   benefits: string[];
 }
+
+export function formatEnum(value?: string) {
+  if (!value) return "";
+  return value
+    .toLowerCase()
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
+
 const JobDescription = ({ jobData }: any) => {
-  // const jobData = {
-  //   title: "Senior Control Engineer",
-  //   location: "Rotterdam",
-  //   jobType: "Full-time",
-  //   salary: "€5,000 - €7,000 per month",
-  //   experience: "5+ years",
-  //   education: "Bachelor in Engineering",
-
-  //   about: {
-  //     description: [
-  //       "We are looking for an experienced Senior Control Engineer to join our dynamic team in Rotterdam. In this role, you will be responsible for designing, developing, and implementing control systems for industrial processes.",
-  //       "You will work on challenging projects in the energy sector, collaborating with multidisciplinary teams to deliver innovative solutions. This position offers excellent opportunities for professional growth and development.",
-  //     ],
-  //   },
-
-  //   responsibilities: [
-  //     "Design and develop control systems for industrial processes",
-  //     "Create technical specifications and documentation",
-  //     "Commission and test control systems on-site",
-  //     "Provide technical support to clients and project teams",
-  //     "Lead technical discussions with stakeholders",
-  //     "Perform system optimization and troubleshooting",
-  //     "Mentor junior engineers and share knowledge",
-  //   ],
-
-  //   requirements: [
-  //     "Bachelor's or Master's degree in Control Engineering, Electrical Engineering, or related field",
-  //     "Minimum 5 years of experience in control systems design",
-  //     "Strong knowledge of PLC programming (Siemens, Allen Bradley)",
-  //     "Experience with SCADA systems and HMI design",
-  //     "Knowledge of industry standards and safety regulations",
-  //     "Excellent problem-solving and analytical skills",
-  //     "Strong communication skills in English and Dutch",
-  //     "Ability to work independently and in team environments",
-  //   ],
-
-  //   benefits: [
-  //     "Competitive salary package (€5,000 - €7,000 per month)",
-  //     "Attractive benefits including pension plan and health insurance",
-  //     "Company car and laptop",
-  //     "Opportunities for professional development",
-  //   ],
-  // };
-
   return (
+    <section className="relative w-full overflow-hidden">
     <div className=" bg-linear-to-br from-slate-50 to-slate-100 p-6">
-      <div className="container mx-auto p-10">
-        <div className="flex-wrap flex md:flex-nowrap  justify-center items-start  gap-6">
+      <div className="container mx-auto p-10 relative">
+        <div className="flex-row flex md:flex-nowrap  justify-center items-start  gap-6">
           {/* Main Content */}
-          <div className=" space-y-6 max-w-3xl">
+          <div className="flex flex-col space-y-6 w-2/3 max-w-5xl">
             {/* About Section */}
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
               <h2 className="text-2xl font-bold text-slate-800 mb-4">
                 About this role
               </h2>
-              <div className="space-y-4 text-slate-600 leading-relaxed">
-                {jobData.about.description.map((paragraph: any, index: any) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
+
+              <div
+                className="whitespace-pre-wrap text-slate-600 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: jobData.vacancy_information || "" }}
+              />
             </div>
 
             {/* Key Responsibilities */}
@@ -93,7 +61,7 @@ const JobDescription = ({ jobData }: any) => {
                 Key responsibilities
               </h2>
               <div className="space-y-3">
-                {jobData.responsibilities.map((item: any, index: number) => (
+                {jobData.responsibilities?.map((item: any, index: number) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="mt-1.5 shrink-0">
                       <div className="w-5 h-5 rounded-full  flex items-center justify-center">
@@ -112,7 +80,7 @@ const JobDescription = ({ jobData }: any) => {
                 What we're looking for
               </h2>
               <div className="space-y-3">
-                {jobData.requirements.map((item: any, index: any) => (
+                {jobData.requirements?.map((item: any, index: any) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="mt-1.5 shrink-0">
                       <div className="w-5 h-5 rounded-full  flex items-center justify-center">
@@ -127,11 +95,15 @@ const JobDescription = ({ jobData }: any) => {
 
             {/* Benefits */}
             <div className=" bg-linear-to-r from-[#FFF7ED] to-[#FFEDD480] rounded-2xl shadow-sm border border-[#FFD6A7] p-8">
-              <h2 className="text-2xl font-bold text-slate-800 mb-6 border-b border-b-[#FFD6A7] p-5">
+              <h2 className="text-2xl font-bold text-slate-800 mb-6 border-b border-b-[#FFD6A7] py-5">
                 What we offer
               </h2>
-              <div className="space-y-3">
-                {jobData.benefits.map((item: any, index: number) => (
+              <div
+                className="whitespace-pre-wrap text-slate-600 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: jobData.offer_information || "" }}
+              />
+              {/* <div className="space-y-3">
+                {jobData.benefits?.map((item: any, index: number) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="mt-1.5 shrink-0">
                       <div className="w-5 h-5 rounded-full  flex items-center justify-center">
@@ -141,12 +113,12 @@ const JobDescription = ({ jobData }: any) => {
                     <p className="text-slate-700">{item}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
 
           {/* Sidebar - Job Details */}
-          <div className="max-w-3xl">
+          <div className="flex flex-col w-1/3">
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6  ">
               <h3 className="text-lg font-semibold text-slate-800 mb-6">
                 Job details
@@ -174,7 +146,7 @@ const JobDescription = ({ jobData }: any) => {
                   <div>
                     <p className="text-sm text-slate-500 mb-1">Experience</p>
                     <p className="font-semibold text-slate-800">
-                      {jobData.experience}
+                      {formatEnum(jobData.experience)}
                     </p>
                   </div>
                 </div>
@@ -187,7 +159,7 @@ const JobDescription = ({ jobData }: any) => {
                   <div>
                     <p className="text-sm text-slate-500 mb-1">Education</p>
                     <p className="font-semibold text-slate-800">
-                      {jobData.education}
+                      {formatEnum(jobData.education)}
                     </p>
                   </div>
                 </div>
@@ -200,12 +172,11 @@ const JobDescription = ({ jobData }: any) => {
                   <div>
                     <p className="text-sm text-slate-500 mb-1">Job type</p>
                     <p className="font-semibold text-slate-800">
-                      {jobData.jobType}
+                      {formatEnum(jobData.employment_type)}
                     </p>
                   </div>
                 </div>
 
-                {/* Location */}
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-lg bg-[#FEF2F2] flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5 text-[#FB2C36]" />
@@ -218,14 +189,64 @@ const JobDescription = ({ jobData }: any) => {
                   </div>
                 </div>
               </div>
-
-              {/* Apply Button */}
             </div>
           </div>
         </div>
       </div>
     </div>
+    </section>
   );
 };
 
 export default JobDescription;
+
+{
+  /* <div className="space-y-4 text-slate-600 leading-relaxed">
+                {jobData.about.description.map((paragraph: any, index: any) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div> */
+}
+// const jobData = {
+//   title: "Senior Control Engineer",
+//   location: "Rotterdam",
+//   jobType: "Full-time",
+//   salary: "€5,000 - €7,000 per month",
+//   experience: "5+ years",
+//   education: "Bachelor in Engineering",
+
+//   about: {
+//     description: [
+//       "We are looking for an experienced Senior Control Engineer to join our dynamic team in Rotterdam. In this role, you will be responsible for designing, developing, and implementing control systems for industrial processes.",
+//       "You will work on challenging projects in the energy sector, collaborating with multidisciplinary teams to deliver innovative solutions. This position offers excellent opportunities for professional growth and development.",
+//     ],
+//   },
+
+//   responsibilities: [
+//     "Design and develop control systems for industrial processes",
+//     "Create technical specifications and documentation",
+//     "Commission and test control systems on-site",
+//     "Provide technical support to clients and project teams",
+//     "Lead technical discussions with stakeholders",
+//     "Perform system optimization and troubleshooting",
+//     "Mentor junior engineers and share knowledge",
+//   ],
+
+//   requirements: [
+//     "Bachelor's or Master's degree in Control Engineering, Electrical Engineering, or related field",
+//     "Minimum 5 years of experience in control systems design",
+//     "Strong knowledge of PLC programming (Siemens, Allen Bradley)",
+//     "Experience with SCADA systems and HMI design",
+//     "Knowledge of industry standards and safety regulations",
+//     "Excellent problem-solving and analytical skills",
+//     "Strong communication skills in English and Dutch",
+//     "Ability to work independently and in team environments",
+//   ],
+
+//   benefits: [
+//     "Competitive salary package (€5,000 - €7,000 per month)",
+//     "Attractive benefits including pension plan and health insurance",
+//     "Company car and laptop",
+//     "Opportunities for professional development",
+//   ],
+// };

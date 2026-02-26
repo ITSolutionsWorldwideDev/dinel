@@ -1,7 +1,6 @@
 import Header from "@/components/layout/vacancies/VaccinciesHeader";
 import HeaderWithSideImage from "@/components/ui/HeaderWithSideImage";
 import NavBar from "@/components/ui/NavBar";
-import VacanciesSearchBar from "@/components/layout/home/VacanciesSearchBar";
 import FindJobSlider from "@/components/layout/home/FindJobSlider";
 import React from "react";
 import DinelGroupBv from "@/components/ui/DinelGroupBv";
@@ -14,21 +13,15 @@ const page = () => {
     <div>
       {/* <NavBar /> */}
       <Header />
-      <div className="relative flex justify-center items-center ">
-        <div className="lg:absolute z-30">
-          <VacanciesSearchBar />
-        </div>
-      </div>
 
-      <div className="mt-20">
+      <div>
         <FindJobSlider />
       </div>
 
       <ApplyWithDinel />
       <HowToApply />
+      
       <div className="relative">
-        
-
         <HeadingDescAnd2BtnsWithBg
           heading="Ready to find your next challenge?"
           description="Start exploring vacancies and become a part of the Dineler community today."

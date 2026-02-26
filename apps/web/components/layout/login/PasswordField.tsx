@@ -31,7 +31,7 @@ const PasswordField: React.FC<PasswordFieldProps> = ({ name, label = "Password",
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)}
-          className="text-gray-400 shrink-0"
+          className="text-gray-400 shrink-0 cursor-pointer"
           aria-label="Toggle password visibility"
         >
           {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}

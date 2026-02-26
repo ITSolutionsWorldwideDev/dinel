@@ -5,19 +5,21 @@ const industries = [
     id: 1,
     name: "Infrastructure",
     icon: "/assets/home/Group (5).png",
-    href: "infastructure-vacancies",
+    href: "vacancies/infastructure",
+    // href: "infastructure-vacancies",
   },
   {
     id: 2,
     name: "Energy",
     icon: "/assets/home/Group (6).png",
-    href: "energy-vacancies",
+    href: "vacancies/energy",
   },
   {
     id: 3,
     name: "Oil & Gas",
     icon: "/assets/home/Group (7).png",
-    href: "oil-gasandindustry-vacancies",
+    href: "vacancies/oil-gas",
+    // href: "vacancies/oil-gasandindustry-vacancies",
   },
 ];
 
@@ -40,13 +42,13 @@ export default function IndustryWeWork() {
 
               {/* button style */}
 
-              <Link href={`/${item.href}`} className="w-full">
-                <button className="w-full bg-white  mt-6 py-3 text-gray-700 flex items-center justify-between px-3 text-sm">
+              <Link href={`/${item.href}`} className="w-full pointer">
+                <div className="w-full bg-white  mt-6 py-3 text-gray-700 flex items-center justify-between px-3 text-sm">
                   <span>{item.name}</span>
                   <span>
                     <ArrowRight className="text-gray-500" />
                   </span>
-                </button>
+                </div>
               </Link>
             </div>
           ))}

@@ -1,10 +1,15 @@
-import AllVacanciesJobDetail from '@/components/layout/allvacancies/AllVacanciesJobDetail'
-import React from 'react'
+// apps/web/app/all-vacancies/[slug]/page.tsx
 
-const page = () => {
-  return (
-    <AllVacanciesJobDetail/>
-  )
+import AllVacanciesJobDetail from '@/components/layout/allvacancies/AllVacanciesJobDetail'
+
+interface Props {
+  params: { sectorSlug: string; jobId: string };
 }
 
-export default page
+
+export default function vacancyDetailPage({ params }: Props) {
+  return (
+    <></>
+    // <AllVacanciesJobDetail params={params}/>
+  )
+}

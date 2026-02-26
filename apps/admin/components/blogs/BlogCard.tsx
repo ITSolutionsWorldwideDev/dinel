@@ -49,7 +49,7 @@ export default function BlogCard({ blog, onDelete }: Props) {
             </Link>
             <button
               onClick={() => onDelete(blog.blog_id)}
-              className="p-1 hover:text-red-600"
+              className="p-1 hover:text-red-600 cursor-pointer"
             >
               <Trash2 size={14} />
             </button>

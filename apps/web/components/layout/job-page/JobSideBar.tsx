@@ -1,3 +1,5 @@
+// apps/web/components/layout/job-page/JobSideBar.tsx
+
 import { Search, ChevronDown } from "lucide-react";
 import Discipline from "./Discipline";
 import Location from "./Location";
@@ -44,7 +46,7 @@ export default function JobSideBar() {
           </label>
 
           {/* Button */}
-          <button className="w-full bg-[#FF6B35] text-white py-4 font-medium hover:bg-orange-600 transition">
+          <button className="w-full bg-[#FF6B35] text-white py-4 font-medium hover:bg-orange-600 transition cursor-pointer">
             SET UP ALERT
           </button>
         </div>

@@ -30,14 +30,6 @@ type Job = {
 export default function JobsPage() {
   const router = useRouter();
 
-  // const [filters, setFilters] = useState({
-  //   status: "",
-  //   employment_type: "",
-  //   workplace_type: "",
-  //   experience_level: "",
-  //   sort: "recent",
-  // });
-
   const [data, setData] = useState<{
     items: Job[];
     meta: {
@@ -55,19 +47,11 @@ export default function JobsPage() {
   });
 
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [selectedId, setSelectedId] = useState<number | null>(null);
-
-  /* const handleFilterChange = (key: keyof typeof filters, value: string) => {
-    setFilters((prev) => ({
-      ...prev,
-      [key]: value,
-    }));
-    setPage(1);
-  }; */
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const handleFilterChange = <K extends keyof JobFilters>(
     key: K,
-    value: JobFilters[K]
+    value: JobFilters[K],
   ) => {
     setFilters((prev) => ({
       ...prev,
@@ -136,7 +120,11 @@ export default function JobsPage() {
     if (!selectedId) return;
 
     try {
-      await fetch(`/api/jobs?id=${selectedId}`, { method: "DELETE" });
+      // await fetch(`/api/jobs?id=${selectedId}`, { method: "DELETE" });
+      await fetch(`/api/jobs/${selectedId}`, {
+        method: "DELETE",
+      });
+
       setShowDeleteModal(false);
       setSelectedId(null);
       setPage(1);
@@ -151,6 +139,7 @@ export default function JobsPage() {
 
   type Job = {
     id: number;
+    job_id: string;
     title: string;
     location: string;
     employment_type: string;
@@ -167,7 +156,7 @@ export default function JobsPage() {
       title: "Title",
       render: (_: any, record: Job) => (
         <button
-          onClick={() => router.push(`/jobs/${record.id}/view`)}
+          onClick={() => router.push(`/jobs/${record.job_id}/view`)}
           className="text-blue-600 hover:underline font-medium"
         >
           {record.title}
@@ -179,61 +168,56 @@ export default function JobsPage() {
       title: "Location",
       dataIndex: "location",
     },
-    {
-      title: "Employment Type",
-      dataIndex: "employment_type",
-    },
+    // {
+    //   title: "Employment Type",
+    //   dataIndex: "employment_type",
+    // },
     {
       title: "Workplace Type",
       dataIndex: "workplace_type",
     },
-    {
-      title: "Department",
-      dataIndex: "department",
-    },
+    // {
+    //   title: "Department",
+    //   dataIndex: "department",
+    // },
     {
       title: "Experience Level",
       dataIndex: "experience_level",
     },
-    {
-      title: "Visibility",
-      dataIndex: "visibility",
-    },
+    // {
+    //   title: "Visibility",
+    //   dataIndex: "visibility",
+    // },
     {
       title: "Published At",
-      dataIndex: "published_at",
+      render: (_: any, record: Job) =>
+        record.published_at
+          ? new Date(record.published_at).toLocaleString("en-GB", {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+              hour: "2-digit",
+              minute: "2-digit",
+            })
+          : "-",
     },
     {
       title: "Status",
       render: (_: any, r: Job) => <StatusBadge status={r.status} />,
     },
-    // {
-    //   title: "Status",
-    //   render: (_: any, record: Job) => (
-    //     <span
-    //       className={
-    //         record.status === "PUBLISHED"
-    //           ? "text-green-600 font-medium"
-    //           : "text-gray-500 font-medium"
-    //       }
-    //     >
-    //       {record.status}
-    //     </span>
-    //   ),
-    // },
     {
       title: "Action",
       render: (_: any, record: Job) => (
         <div className="flex gap-2">
           <button
-            onClick={() => router.push(`/jobs/${record.id}/edit`)}
+            onClick={() => router.push(`/jobs/${record.job_id}/edit`)}
             className="p-2 text-blue-600"
           >
             <Edit size={16} />
           </button>
           <button
             onClick={() => {
-              setSelectedId(record.id);
+              setSelectedId(record.job_id);
               setShowDeleteModal(true);
             }}
             className="p-2 text-red-600"
@@ -287,7 +271,7 @@ export default function JobsPage() {
                 <p className="text-center py-6">Loading...</p>
               ) : (
                 <>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 px-6 pt-3">
                     Showing {data?.items.length} of {meta?.totalResults} jobs
                   </p>
 
@@ -302,6 +286,79 @@ export default function JobsPage() {
 
             {/* PAGINATION */}
             {meta && meta.totalPages > 1 && (
+              <div className="flex items-center justify-between px-6 py-4 border-t bg-gray-50">
+                {/* LEFT SIDE INFO */}
+                <div className="text-sm text-gray-600">
+                  Page <span className="font-semibold">{meta.page}</span> of{" "}
+                  <span className="font-semibold">{meta.totalPages}</span>
+                </div>
+
+                {/* RIGHT SIDE CONTROLS */}
+                <div className="flex items-center gap-2">
+                  {/* PREV BUTTON */}
+                  <button
+                    onClick={() => setPage((p) => Math.max(1, p - 1))}
+                    disabled={meta.page === 1}
+                    className={`px-3 py-1.5 rounded-md border text-sm font-medium transition
+                    ${
+                      meta.page === 1
+                        ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                        : "bg-white hover:bg-gray-100"
+                    }`}
+                  >
+                    ← Previous
+                  </button>
+
+                  {/* PAGE NUMBERS (SMART RANGE) */}
+                  {Array.from({ length: meta.totalPages })
+                    .filter((_, i) => {
+                      const pageNumber = i + 1;
+                      return (
+                        pageNumber === 1 ||
+                        pageNumber === meta.totalPages ||
+                        Math.abs(pageNumber - meta.page) <= 1
+                      );
+                    })
+                    .map((_, i) => {
+                      const pageNumber =
+                        meta.page === 1 ? i + 1 : meta.page - 1 + i;
+
+                      return (
+                        <button
+                          key={pageNumber}
+                          onClick={() => setPage(pageNumber)}
+                          className={`px-3 py-1.5 rounded-md border text-sm font-medium transition
+                          ${
+                            meta.page === pageNumber
+                              ? "bg-blue-600 text-white border-blue-600"
+                              : "bg-white hover:bg-gray-100"
+                          }`}
+                        >
+                          {pageNumber}
+                        </button>
+                      );
+                    })}
+
+                  {/* NEXT BUTTON */}
+                  <button
+                    onClick={() =>
+                      setPage((p) => Math.min(meta.totalPages, p + 1))
+                    }
+                    disabled={meta.page === meta.totalPages}
+                    className={`px-3 py-1.5 rounded-md border text-sm font-medium transition
+                    ${
+                      meta.page === meta.totalPages
+                        ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                        : "bg-white hover:bg-gray-100"
+                    }`}
+                  >
+                    Next →
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* {meta && meta.totalPages > 1 && (
               <div className="flex gap-2 justify-end p-4">
                 {Array.from({ length: meta.totalPages }).map((_, i) => (
                   <button
@@ -315,7 +372,7 @@ export default function JobsPage() {
                   </button>
                 ))}
               </div>
-            )}
+            )} */}
 
             {/* DELETE MODAL */}
             {showDeleteModal && (
@@ -358,3 +415,11 @@ function StatusBadge({ status }: { status: string }) {
     <span className={`px-2 py-1 rounded text-xs ${map[status]}`}>{status}</span>
   );
 }
+
+// const [filters, setFilters] = useState({
+//   status: "",
+//   employment_type: "",
+//   workplace_type: "",
+//   experience_level: "",
+//   sort: "recent",
+// });

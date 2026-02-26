@@ -149,7 +149,7 @@ export default function Header() {
                     setProfileDropdownOpen(false);
                     signOut({ callbackUrl: "/login" }); // redirect to login page after logout
                   }}
-                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-gray-700"
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-gray-700 cursor-pointer"
                 >
                   Logout
                 </button>
@@ -181,7 +181,7 @@ export default function Header() {
               setMobileDropdownOpen(false);
               signOut({ callbackUrl: "/login" });
             }}
-            className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+            className="block w-full text-left px-4 py-2 hover:bg-gray-100 cursor-pointer"
           >
             Logout
           </button>

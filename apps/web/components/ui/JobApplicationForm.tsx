@@ -1,15 +1,26 @@
+// apps/web/components/ui/JobApplicationForm.tsx
+
 "use client";
 
 import { useState } from "react";
 import { Upload, X } from "lucide-react";
+import { useRouter } from "next/navigation";
+
 
 interface Props {
   onClose: () => void;
   title: string;
+  jobId: string;
 }
 
-export default function JobApplicationForm({ onClose, title }: Props) {
-  const [formData, setFormData] = useState({
+export default function JobApplicationForm({
+  onClose,
+  title,
+  jobId,
+}: Props) {
+  const router = useRouter();
+
+  const [formData, setFormData] = useState<Record<string, string>>({
     firstName: "",
     surname: "",
     city: "",
@@ -17,7 +28,9 @@ export default function JobApplicationForm({ onClose, title }: Props) {
     email: "",
     motivation: "",
   });
+
   const [file, setFile] = useState<File | null>(null);
+
   const [isDragging, setIsDragging] = useState(false);
 
   const handleInputChange = (
@@ -34,6 +47,47 @@ export default function JobApplicationForm({ onClose, title }: Props) {
     if (e.target.files && e.target.files[0]) {
       setFile(e.target.files[0]);
     }
+  };
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    console.log("Form submitted:", { ...formData, file });
+
+    const formDataToSend = new FormData();
+
+    Object.keys(formData).forEach((key) => {
+      const value = formData[key] ?? "";
+      formDataToSend.append(key, value);
+    });
+
+    if (file) {
+      // formDataToSend.append("cv", file, file.name);
+      formDataToSend.append("resume", file, file.name);
+    }
+
+    formDataToSend.append("vacancyId", jobId);
+
+    try {
+      const response = await fetch("/api/vacancy-apply", {
+        method: "POST",
+        body: formDataToSend,
+      });
+      if (response.ok) {
+        alert("Application submitted successfully!");
+        router.push("/thank-you"); // Redirect to a "Thank You" page
+      } else {
+        // alert("Failed to submit application.");
+        console.error("Error submitting application");
+      }
+    } catch (error) {
+      console.error("Error submitting form", error);
+      // alert("Error submitting application");
+    }
+
+    onClose();
+    // Add your submission logic here
   };
 
   const handleDrop = (e: React.DragEvent<HTMLLabelElement>) => {
@@ -54,13 +108,6 @@ export default function JobApplicationForm({ onClose, title }: Props) {
     setIsDragging(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", { ...formData, file });
-    onClose();
-    // Add your submission logic here
-  };
-
   const removeFile = () => {
     setFile(null);
   };
@@ -71,7 +118,7 @@ export default function JobApplicationForm({ onClose, title }: Props) {
         {/* Close button */}
         <button
           type="button"
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
           onClick={onClose}
         >
           <X size={24} />
@@ -204,7 +251,7 @@ export default function JobApplicationForm({ onClose, title }: Props) {
                         e.preventDefault();
                         removeFile();
                       }}
-                      className="text-red-500 hover:text-red-700"
+                      className="text-red-500 hover:text-red-700 cursor-pointer"
                     >
                       <X size={18} />
                     </button>

@@ -32,7 +32,7 @@ export default function QuestionAnswer({
             <div key={index} className="bg-white   border-b border-gray-200">
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                className="w-full px-6 py-5 flex items-center justify-between cursor-pointer text-left hover:bg-gray-50 transition-colors"
               >
                 <span className="text-lg font-bold text-gray-900">
                   {faq.question}
