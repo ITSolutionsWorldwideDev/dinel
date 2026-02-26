@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 const JobSliderNormalCard = ({ job }: any) => {
-  console.log(job);
+  // console.log(job);
   return (
     <div>
       {" "}
