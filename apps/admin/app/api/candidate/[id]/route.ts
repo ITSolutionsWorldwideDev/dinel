@@ -19,7 +19,7 @@ export async function PUT(
       full_name = $1,
       headline = $2,
       email = $3,
-      phone = $4,
+      phone_number = $4,
       location = $5,
       linkedin_url = $6,
       cv_url = $7,
@@ -34,7 +34,7 @@ export async function PUT(
       body.full_name,
       body.headline,
       body.email,
-      body.phone,
+      body.phone_number,
       body.location,
       body.linkedin_url,
       body.cv_url,
@@ -68,7 +68,7 @@ export async function PUT(
     SET
       full_name = $1,
       email = $2,
-      phone = $3,
+      phone_number = $3,
       updated_at = now()
     WHERE id = $4
     RETURNING *
@@ -76,7 +76,7 @@ export async function PUT(
     [
       body.full_name,
       body.email,
-      body.phone,
+      body.phone_number,
       id,
     ]
   );

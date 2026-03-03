@@ -86,7 +86,7 @@ function CandidateSummary({ candidate }: { candidate: any }) {
         <b>Email:</b> {candidate.email}
       </p>
       <p>
-        <b>Phone:</b> {candidate.phone}
+        <b>Phone:</b> {candidate.phone_number}
       </p>
       <p>
         <b>Location:</b> {candidate.location}

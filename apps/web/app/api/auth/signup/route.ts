@@ -7,7 +7,7 @@ const PUBLIC_TENANT_ID = "00000000-0000-0000-0000-000000000000";
 
 export async function POST(req: NextRequest) {
   try {
-    const { full_name, email, phone, location, password } = await req.json();
+    const { full_name, email, phone_number, location, password } = await req.json();
 
     if (!full_name || !email || !password) {
       return NextResponse.json(
@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     const password_hash = await bcrypt.hash(password, 10);
 
     const query = `
-      INSERT INTO candidates (tenant_id, full_name, email, phone, location, source, password_hash, created_at, updated_at)
+      INSERT INTO candidates (tenant_id, full_name, email, phone_number, location, source, password_hash, created_at, updated_at)
       VALUES ($1, $2, $3, $4, $5,'self_signup', $6, NOW(), NOW())
       RETURNING id, full_name, email
     `;
@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
       PUBLIC_TENANT_ID,
       full_name,
       email,
-      phone || null,
+      phone_number || null,
       location || null,
       password_hash,
     ]);

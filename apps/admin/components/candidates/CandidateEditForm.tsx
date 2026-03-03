@@ -9,7 +9,7 @@ type CandidateForm = {
   full_name: string;
   headline?: string;
   email?: string;
-  phone?: string;
+  phone_number?: string;
   location?: string;
   linkedin_url?: string;
   cv_url?: string;
@@ -29,7 +29,7 @@ export default function CandidateEditForm({
     full_name: candidate.full_name || "",
     headline: candidate.headline || "",
     email: candidate.email || "",
-    phone: candidate.phone || "",
+    phone_number: candidate.phone_number || "",
     location: candidate.location || "",
     linkedin_url: candidate.linkedin_url || "",
     cv_url: candidate.cv_url || "",
@@ -81,8 +81,8 @@ export default function CandidateEditForm({
         />
         <Input
           label="Phone"
-          value={form.phone}
-          onChange={(v) => setForm({ ...form, phone: v })}
+          value={form.phone_number}
+          onChange={(v) => setForm({ ...form, phone_number: v })}
         />
         <Input
           label="Location"
@@ -273,8 +273,8 @@ export default function CandidateEditForm({
 
       <input
         className="w-full border p-2 rounded"
-        value={form.phone || ""}
-        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+        value={form.phone_number || ""}
+        onChange={(e) => setForm({ ...form, phone_number: e.target.value })}
       />
 
       <button

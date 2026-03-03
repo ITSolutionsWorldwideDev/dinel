@@ -54,7 +54,7 @@ export async function GET(req: NextRequest) {
         a.id,
         c.full_name,
         c.email,
-        c.phone,
+        c.phone_number,
         j.title AS job_title,
         a.status,
         a.applied_at

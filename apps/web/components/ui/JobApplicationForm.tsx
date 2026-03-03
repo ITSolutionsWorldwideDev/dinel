@@ -53,7 +53,7 @@ export default function JobApplicationForm({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log("Form submitted:", { ...formData, file });
+    // console.log("Form submitted:", { ...formData, file });
 
     const formDataToSend = new FormData();
 
@@ -68,6 +68,8 @@ export default function JobApplicationForm({
     }
 
     formDataToSend.append("vacancyId", jobId);
+
+    // console.log("formDataToSend :", formDataToSend);    
 
     try {
       const response = await fetch("/api/vacancy-apply", {

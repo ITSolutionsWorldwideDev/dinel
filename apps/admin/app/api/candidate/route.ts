@@ -50,7 +50,7 @@ export async function GET(req: NextRequest) {
 
   const dataQuery = `
     SELECT
-      id, full_name, email, phone, location,
+      id, full_name, email, phone_number, location,
       skills, source, linkedin_url, cv_url,
       created_at
     FROM candidates
@@ -126,7 +126,7 @@ export async function GET(req: NextRequest) {
     values.push(limit, offset);
 
     const dataQuery = `
-      SELECT id, tenant_id, full_name, headline, location, linkedin_url, experience, education, skills, source, consent_given_at, imported_by, created_at, updated_at, cv_url, email, phone, cv_hash
+      SELECT id, tenant_id, full_name, headline, location, linkedin_url, experience, education, skills, source, consent_given_at, imported_by, created_at, updated_at, cv_url, email, phone_number, cv_hash
       FROM candidates
       ${whereClause}
       ORDER BY ${orderBy}

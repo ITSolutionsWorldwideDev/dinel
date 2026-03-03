@@ -21,7 +21,7 @@ type Candidate = {
 
   full_name: string;
   email?: string;
-  phone?: string;
+  phone_number?: string;
   location?: string;
 
   headline?: string;

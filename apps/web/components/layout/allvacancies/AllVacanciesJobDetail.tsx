@@ -31,6 +31,8 @@ export default async function AllVacanciesJobDetail({ params }: Props) {
 
   if (!jobData) return <p>Job not found</p>;
 
+  // console.log('jobData JobDescHeader === ',jobData);
+
   return (
     <>
       <JobDescHeader
@@ -44,7 +46,7 @@ export default async function AllVacanciesJobDetail({ params }: Props) {
         location={jobData.location}
         experience={jobData.experience}
         jobType={jobData.employment_type}
-        jobId={jobData.jobId}
+        jobId={jobId}
       />
       <JobDescription jobData={jobData} />
       <DinelGroupBv />

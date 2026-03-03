@@ -50,7 +50,7 @@ export async function GET(req: NextRequest) {
 
   const dataQuery = `
     SELECT
-      id, full_name, email, phone, location,
+      id, full_name, email, phone_number, location,
       skills, source, linkedin_url, cv_url,
       created_at
     FROM candidates

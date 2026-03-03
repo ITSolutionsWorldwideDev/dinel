@@ -1,11 +1,333 @@
 // apps/web/app/api/vacancy-apply/route.ts
+
 import { NextRequest, NextResponse } from "next/server";
-import { getCarerixToken } from "@/lib/carerix/carerix-auth";
+// import { getCarerixToken } from "@/lib/carerix/carerix-auth";
 import { pool } from "@acme/db";
+import crypto from "crypto";
 import { Buffer } from "buffer";
 import { carerixGraphQL } from "@/lib/carerix/carerix-client";
 
 export async function POST(request: NextRequest) {
+  const client = await pool.connect();
+
+  const PUBLIC_TENANT_ID = "00000000-0000-0000-0000-000000000000";
+
+  try {
+    const idempotencyKey =
+      request.headers.get("Idempotency-Key") || crypto.randomUUID();
+
+    // ---------------------------
+    // 1️⃣ IDEMPOTENCY CHECK
+    // ---------------------------
+    const existingRequest = await client.query(
+      "SELECT response FROM submission_requests WHERE idempotency_key=$1",
+      [idempotencyKey],
+    );
+
+    if (existingRequest.rows.length > 0) {
+      return NextResponse.json(existingRequest.rows[0].response);
+    }
+
+    await client.query(
+      "INSERT INTO submission_requests (idempotency_key, status) VALUES ($1, 'PROCESSING')",
+      [idempotencyKey],
+    );
+
+    // ---------------------------
+    // 2️⃣ PARSE FORM DATA
+    // ---------------------------
+    const formData = await request.formData();
+
+    // console.log('formData === ',formData);
+
+    const firstName = formData.get("firstName") as string;
+    const surname = formData.get("surname") as string;
+    const city = formData.get("city") as string;
+    const phoneNumber = formData.get("phoneNumber") as string;
+    const motivation = formData.get("motivation") as string;
+    const vacancyId = formData.get("vacancyId") as string;
+    const email = (formData.get("email") as string)?.toLowerCase();
+
+    const resumeFile = formData.get("resume") as File;
+
+    if (!resumeFile || !(resumeFile instanceof File)) {
+      return NextResponse.json(
+        { error: "Resume file is required." },
+        { status: 400 },
+      );
+    }
+
+    const arrayBuffer = await resumeFile.arrayBuffer();
+    const fileBuffer = Buffer.from(arrayBuffer);
+
+    const resumeHash = crypto
+      .createHash("sha256")
+      .update(fileBuffer)
+      .digest("hex");
+
+    const base64Content = fileBuffer.toString("base64");
+
+    await client.query("BEGIN");
+
+    // ---------------------------
+    // 3️⃣ UPSERT CANDIDATE
+    // ---------------------------
+    const candidateResult = await client.query(
+      `
+      INSERT INTO candidates (tenant_id, email, first_name, surname, city, phone_number, full_name)
+      VALUES ($1,$2,$3,$4,$5,$6,$7)
+      ON CONFLICT (email)
+      DO UPDATE SET
+        first_name = EXCLUDED.first_name,
+        surname = EXCLUDED.surname,
+        city = EXCLUDED.city,
+        phone_number = EXCLUDED.phone_number,
+        updated_at = NOW()
+      RETURNING *;
+      `,
+      [
+        PUBLIC_TENANT_ID,
+        email,
+        firstName,
+        surname,
+        city,
+        phoneNumber,
+        firstName,
+      ],
+    );
+
+    const candidate = candidateResult.rows[0];
+
+    let carerixEmployeeId = candidate.carerix_id;
+
+    // ---------------------------
+    // 4️⃣ ENSURE CARERIX EMPLOYEE
+    // ---------------------------
+    if (!carerixEmployeeId) {
+      const employeeResponse = await carerixGraphQL<{
+        crEmployeeCreate: { _id: string };
+      }>(
+        `
+        mutation CreateEmployee($dedupe: Boolean, $request: CREmployeeRequest!) {
+          crEmployeeCreate(dedupe: $dedupe, request: $request) {
+            _id
+          }
+        }
+        `,
+        {
+          dedupe: true,
+          request: {
+            _kind: "CREmployee",
+            firstName,
+            lastName: surname,
+            emailAddress: email,
+            phoneNumber,
+            city,
+          },
+        },
+      );
+
+      carerixEmployeeId = employeeResponse.crEmployeeCreate._id;
+
+      await client.query(`UPDATE candidates SET carerix_id=$1 WHERE id=$2`, [
+        carerixEmployeeId,
+        candidate.id,
+      ]);
+    }
+
+    // ---------------------------
+    // 5️⃣ RESUME DEDUPE + UPLOAD
+    // ---------------------------
+    if (candidate.resume_hash !== resumeHash) {
+      console.log("carerixEmployeeId ", carerixEmployeeId);
+      console.log("File size (bytes):", resumeFile.size);
+
+      const documentResponse = await carerixGraphQL<{
+        crEmployeeDocumentCreate: {
+          _id: string;
+          toAttachment?: {
+            downloadURL?: string;
+            url?: string;
+            // urlFromContent?: string;
+          };
+        };
+      }>(
+        `
+        mutation UploadEmployeeDocument($request: CREmployeeDocumentRequest!) {
+          crEmployeeDocumentCreate(request: $request) {
+            _id
+            toAttachment {
+              downloadURL
+              url              
+            }
+          }
+        }
+        `,
+        {
+          request: {
+            _kind: "CREmployeeDocument",
+            toEmployee: {
+              _kind: "CREmployee",
+              _id: carerixEmployeeId,
+            },
+            // toDocumentNode: {
+            //   _kind: "CRDataNode",
+            //   _id: "1",
+            // },
+            toDocumentNode: null,
+            toAttachment: {
+              _kind: "CRAttachment",
+              filePath: resumeFile.name,
+              // contentTS: resumeFile.type,
+              // downloadName: resumeFile.name,
+              content: base64Content,
+              // downloadName: resumeFile.name, // The name it will have when downloaded
+              // displayName: resumeFile.name,
+            },
+            // toDocumentNode: { _id: "1" },
+            // fileName: resumeFile.name,
+            // contentType: resumeFile.type,
+            // content: base64Content,
+          },
+        },
+      );
+
+      const attachment = documentResponse.crEmployeeDocumentCreate.toAttachment;
+
+      const resumeUrl =
+        attachment?.url ||
+        attachment?.downloadURL ||
+        // attachment?.urlFromContent ||
+        null;
+
+      console.log("resumeUrl === ", resumeUrl);
+
+      // const resumeUrl =
+      //   documentResponse.crEmployeeDocumentCreate.downloadUrl || null;
+
+      await client.query(
+        `
+        UPDATE candidates
+        SET resume_hash=$1, resume_url=$2, updated_at=NOW()
+        WHERE id=$3
+        `,
+        [resumeHash, resumeUrl, candidate.id],
+      );
+    }
+
+    // ---------------------------
+    // 6️⃣ PREVENT DUPLICATE APPLICATION
+    // ---------------------------
+    const applicationInsert = await client.query(
+      `
+      INSERT INTO applications (candidate_id, vacancy_id)
+      VALUES ($1,$2)
+      ON CONFLICT (candidate_id, vacancy_id)
+      DO NOTHING
+      RETURNING *;
+      `,
+      [candidate.id, vacancyId],
+    );
+
+    let carerixApplicationId: string | null = null;
+
+    if (applicationInsert.rows.length > 0) {
+      const applicationResponse = await carerixGraphQL<{
+        crMatchCreate: { _id: string };
+      }>(
+        `
+        mutation CreateMatch($request: CRMatchRequest!) {
+          crMatchCreate(request: $request) {
+            _id
+          }
+        }
+        `,
+        {
+          request: {
+            _kind: "CRMatch",
+            toEmployee: {
+              _kind: "CREmployee",
+              _id: carerixEmployeeId,
+            },
+            toVacancy: {
+              _kind: "CRVacancy",
+              _id: vacancyId,
+            },
+            motivation: motivation,
+          },
+        },
+      );
+
+      carerixApplicationId = applicationResponse.crMatchCreate._id;
+
+      await client.query(
+        `UPDATE applications SET carerix_application_id=$1 WHERE candidate_id=$2 AND vacancy_id=$3`,
+        [carerixApplicationId, candidate.id, vacancyId],
+      );
+    }
+
+    /* if (applicationInsert.rows.length > 0) {
+      const applicationResponse = await carerixGraphQL<{
+        crApplicationCreate: { _id: string };
+      }>(
+        `
+        mutation CreateApplication($request: CRApplicationRequest!) {
+          crApplicationCreate(request: $request) {
+            _id
+          }
+        }
+        `,
+        {
+          request: {
+            _kind: "CRApplication",
+            employee: { _id: carerixEmployeeId },
+            vacancy: { _id: vacancyId },
+            motivation,
+          },
+        },
+      );
+
+      carerixApplicationId = applicationResponse.crApplicationCreate._id;
+
+      await client.query(
+        `UPDATE applications SET carerix_application_id=$1 WHERE candidate_id=$2 AND vacancy_id=$3`,
+        [carerixApplicationId, candidate.id, vacancyId],
+      );
+    } */
+
+    await client.query("COMMIT");
+
+    const responsePayload = {
+      success: true,
+      carerixEmployeeId,
+      carerixApplicationId,
+    };
+
+    // ---------------------------
+    // 7️⃣ STORE IDEMPOTENT RESPONSE
+    // ---------------------------
+    await client.query(
+      `
+      UPDATE submission_requests
+      SET status='COMPLETED', response=$1
+      WHERE idempotency_key=$2
+      `,
+      [JSON.stringify(responsePayload), idempotencyKey],
+    );
+
+    return NextResponse.json(responsePayload);
+  } catch (error) {
+    await client.query("ROLLBACK");
+    console.error("Vacancy apply error:", error);
+    return NextResponse.json(
+      { error: "Failed to submit application" },
+      { status: 500 },
+    );
+  } finally {
+    client.release();
+  }
+}
+/* export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
 
@@ -158,7 +480,7 @@ export async function POST(request: NextRequest) {
       { status: 500 },
     );
   }
-}
+} */
 
 /* 
 import { NextRequest, NextResponse } from "next/server";

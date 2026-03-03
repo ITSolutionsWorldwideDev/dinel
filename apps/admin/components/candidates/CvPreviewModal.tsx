@@ -30,7 +30,7 @@ export default function CvPreviewModal({ data, onClose, onConfirm }: Props) {
         <div className="grid grid-cols-2 gap-3 text-sm">
           <Preview label="Name" value={parsed.full_name} />
           <Preview label="Email" value={parsed.email} />
-          <Preview label="Phone" value={parsed.phone} />
+          <Preview label="Phone" value={parsed.phone_number} />
           <Preview label="Location" value={parsed.location} />
           <Preview
             label="Experience"
