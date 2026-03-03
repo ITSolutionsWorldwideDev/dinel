@@ -41,6 +41,7 @@ type CarerixVacancy = {
   ownerDisplay?: string;
   statusDisplay?: string;
   startDate?: string;
+  statusChangedDate?: string;
   endDate?: string;
   deadline?: string;
   offerInformation?: string;
@@ -61,6 +62,7 @@ type CarerixVacancy = {
   maxSalary?: number;
   creationDate?: string;
   modificationDate?: string;
+  deleted?: number;
 };
 
 type CarerixVacancyPage = {
@@ -101,6 +103,11 @@ export async function POST() {
     const companyId = Number(process.env.DEFAULT_COMPANY_ID) || 1;
     const createdBy = Number(process.env.DEFAULT_USER_ID) || 1;
 
+    const lastMonth = new Date();
+    lastMonth.setMonth(lastMonth.getMonth() - 1);
+
+    const lastMonthISO = lastMonth.toISOString();
+
     while (page < totalPages) {
       const data = await carerixGraphQL<CarerixVacancyPage>(
         `
@@ -123,6 +130,7 @@ export async function POST() {
                       ownerDisplay
                       statusDisplay
                       startDate
+                      statusChangedDate
                       endDate
                       deadline
                       offerInformation
@@ -144,6 +152,7 @@ export async function POST() {
                       maxSalary
                       creationDate
                       modificationDate
+                      deleted
                   }
                   totalPages
                 }
@@ -156,10 +165,16 @@ export async function POST() {
             size,
             sort: [
               {
-                property: "startDate",
+                property: "modificationDate",
+                // property: "startDate",
                 direction: "DESC",
               },
             ],
+          },
+          filter: {
+            modificationDate: {
+              ge: lastMonthISO, // greater or equal
+            },
           },
         },
       );
@@ -168,6 +183,25 @@ export async function POST() {
       const vacancies = data.crVacancyPage.items;
 
       for (const vac of vacancies) {
+        const deadlineDate = vac.deadline ? new Date(vac?.deadline) : "";
+
+        if (
+          !vac.modificationDate ||
+          Number(vac?.deleted) > 0 ||
+          (vac?.statusDisplay == "Vervallen")  ||
+          (deadlineDate && deadlineDate < lastMonth)
+        ) {
+          continue;
+        }
+
+        const modificationDate = new Date(vac?.modificationDate);
+
+ 
+        if (modificationDate < lastMonth) {
+          page = totalPages;
+          break;
+        }
+
         const baseSlug = slugify(vac.jobTitle || "job", {
           lower: true,
           strict: true,
@@ -211,6 +245,16 @@ export async function POST() {
         const closed_at = vac.endDate ? new Date(vac.endDate) : null;
         const deadlineTime = vac.deadline ? new Date(vac.deadline) : null;
 
+        // console.log("optionalFields statusDisplay ==== ", vac.statusDisplay);
+        // console.log(
+        //   "optionalFields statusChangedDate ==== ",
+        //   vac.statusChangedDate,
+        // );
+        // console.log("optionalFields creationDate ==== ", vac.creationDate);
+        // console.log("optionalFields endDate ==== ", vac.endDate);
+        // console.log("optionalFields deleted ==== ", vac.deleted);
+        // console.log("optionalFields modificationDate ==== ", modificationDate);
+
         const optionalFields: { col: string; val: any }[] = [
           { col: "closed_at", val: closed_at },
           { col: "contact_information", val: vac.contactInformation || null },
@@ -237,7 +281,6 @@ export async function POST() {
         }
 
         const placeholders = values.map((_, i) => `$${i + 1}`).join(",");
-
 
         const result = await pool.query(
           `
@@ -279,7 +322,21 @@ export async function POST() {
         else updated++;
       }
 
-      /* 
+      page++;
+    }
+
+    return NextResponse.json({
+      message: "All Carerix jobs synced",
+      created,
+      updated,
+    });
+  } catch (err) {
+    console.error("Sync error:", err);
+    return NextResponse.json({ error: "Failed to sync jobs" }, { status: 500 });
+  }
+}
+
+/* 
       
       
 
@@ -377,20 +434,6 @@ export async function POST() {
           updated++;
         }
       } */
-
-      page++;
-    }
-
-    return NextResponse.json({
-      message: "All Carerix jobs synced",
-      created,
-      updated,
-    });
-  } catch (err) {
-    console.error("Sync error:", err);
-    return NextResponse.json({ error: "Failed to sync jobs" }, { status: 500 });
-  }
-}
 
 /* const data = await carerixGraphQL<CarerixJobPage>(
         `

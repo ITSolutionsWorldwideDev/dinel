@@ -35,6 +35,8 @@ export default async function JobDescHeader({
   jobType,
   jobId,
 }: JobDescHeader) {
+
+  // console.log('jobId JobDescHeader === ',jobId);
   return (
     <section className="relative w-full h-auto \ block overflow-hidden p-5 ">
       <Image

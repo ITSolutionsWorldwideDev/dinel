@@ -47,7 +47,7 @@ export async function GET(req: NextRequest) {
         `
         INSERT INTO candidates
           (tenant_id, full_name, headline, location, linkedin_url, skills, experience, education,
-           source, cv_url, email, phone, cv_hash,password_hash, created_at, updated_at)
+           source, cv_url, email, phone_number, cv_hash,password_hash, created_at, updated_at)
         VALUES
           ($1,$2,$3,$4,$5,$6::jsonb,$7::jsonb,$8::jsonb,$9,$10,$11,$12,$13,$14,NOW(),NOW())
         ON CONFLICT (tenant_id, cv_hash) DO UPDATE SET
@@ -61,7 +61,7 @@ export async function GET(req: NextRequest) {
           source = EXCLUDED.source,
           cv_url = EXCLUDED.cv_url,
           email = EXCLUDED.email,
-          phone = EXCLUDED.phone,
+          phone_number = EXCLUDED.phone_number,
           updated_at = NOW()
       `,
         [
@@ -76,7 +76,7 @@ export async function GET(req: NextRequest) {
           "carerix", // source
           c.cvUrl || null,
           c.email || null,
-          c.phone || null,
+          c.phone_number || null,
           cvHash,
           passwordHash,
         ],
@@ -117,7 +117,7 @@ export async function GET(req: NextRequest) {
 
     const dataQuery = `
       SELECT
-        id, full_name, email, phone, location,
+        id, full_name, email, phone_number, location,
         skills, source, linkedin_url, cv_url,
         created_at
       FROM candidates

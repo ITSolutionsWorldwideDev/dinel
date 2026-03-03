@@ -21,8 +21,9 @@ export async function carerixGraphQL<T>(query: string, variables?: Record<string
   const json = await response.json();
 
   if (json.errors) {
-    console.error(json.errors);
-    throw new Error("Carerix GraphQL error");
+    console.error("FULL CARERIX ERROR:");
+    console.error(JSON.stringify(json, null, 2));
+    throw new Error(json.errors[0]?.message || "Carerix GraphQL error");
   }
 
   return json.data as T;
