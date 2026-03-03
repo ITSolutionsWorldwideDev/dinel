@@ -3,8 +3,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { pool } from "@acme/db";
 
-export async function GET(req: NextRequest,
-  context: { params: {} }) {
+export async function GET(req: NextRequest, context: { params: {} }) {
   const userId = req.nextUrl.searchParams.get("userId");
 
   if (!userId) {
@@ -16,7 +15,7 @@ export async function GET(req: NextRequest,
    FROM users u 
    LEFT JOIN billing_addresses b ON u.user_id = b.user_id 
    WHERE u.user_id = $1 LIMIT 1`,
-    [userId]
+    [userId],
   );
 
   const data: any = {};
@@ -63,7 +62,7 @@ export async function PUT(req: NextRequest) {
       country = $7,
       updated_at = NOW()
      WHERE user_id = $8`,
-    [firstName, lastName, addrPhone, addr1, city, zip, country, userId]
+    [firstName, lastName, addrPhone, addr1, city, zip, country, userId],
   );
 
   // 2. Upsert billing address
@@ -94,7 +93,7 @@ export async function PUT(req: NextRequest) {
       billingCountry,
       billingPhone,
       billingEmail,
-    ]
+    ],
   );
 
   // 3️⃣ Handle wholesaler request
@@ -106,10 +105,9 @@ export async function PUT(req: NextRequest) {
            companyName = $1,
            taxId = $2
        WHERE user_id = $3`,
-      [companyName, taxId, userId]
+      [companyName, taxId, userId],
     );
   }
-
 
   return NextResponse.json({ success: true });
 }

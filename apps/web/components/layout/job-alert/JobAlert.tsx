@@ -1,60 +1,100 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, KeyboardEvent } from "react";
 import { Tag, Mail, X } from "lucide-react";
 
 export default function JobAlert({ open, setOPen }: any) {
-  const fields = [
-    { key: "infrastructure", label: "Infrastructure" },
-    { key: "oilGasIndustry", label: "Oil, Gas & Industry" },
-    { key: "energy", label: "Energy" },
-  ];
+  const [input, setInput] = useState("");
+  const [tags, setTags] = useState<string[]>([]);
 
-  const educationOptions = [
-    { key: "elementary", label: "Elementary" },
-    { key: "mbo", label: "MBO" },
-    { key: "hbo", label: "HBO" },
-    { key: "wo", label: "WO" },
-  ];
-  const [education, setEducation] = useState<Record<string, boolean>>({
-    elementary: true,
-    mbo: false,
-    hbo: false,
-    wo: false,
-  });
+  const [disciplineData, setDiscipline] = useState<any[]>([]);
+  const [industryData, setIndustry] = useState<any[]>([]);
 
-  const [field, setField] = useState<Record<string, boolean>>({
-    infrastructure: true,
-    oilGasIndustry: false,
-    energy: false,
-  });
+  const [selectedDisciplines, setSelectedDisciplines] = useState<number[]>([]);
+  const [selectedIndustries, setSelectedIndustries] = useState<number>();
 
   const [frequency, setFrequency] = useState("");
-  const [keyword, setKeyword] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // ✅ Fetch Data From Backend
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("/api/job-alert");
+      const data = await res.json();
+
+      setDiscipline(data.disciplines || []);
+      setIndustry(data.sectors || []);
+    };
+
+    fetchData();
+  }, []);
+
+  // ✅ Handle Tags
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && input.trim() !== "") {
+      e.preventDefault();
+
+      if (!tags.includes(input.trim())) {
+        setTags([...tags, input.trim()]);
+      }
+
+      setInput("");
+    }
+  };
+
+  const removeTag = (tagToRemove: string) => {
+    setTags(tags.filter((tag) => tag !== tagToRemove));
+  };
+
+  // ✅ Submit
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     console.log({
-      education,
-      field,
+      disciplines: selectedDisciplines,
+      industries: selectedIndustries,
       frequency,
-      keyword,
+      keywords: tags,
       email,
     });
-    alert("Job alert created successfully!");
+    const payload = {
+      disciplines: selectedDisciplines,
+      industries: selectedIndustries,
+      frequency,
+      keywords: tags,
+      email,
+    };
+    try {
+      const res = await fetch("/api/job-alert", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      alert("Job alert created successfully ✅");
+    } catch (error: any) {
+      console.error(error);
+      alert("Failed to create job alert ❌");
+    }
   };
+  // };
 
   return (
     <div className="w-fit bg-gray-100 flex items-center justify-center p-4">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-2xl p-8">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8 p-4 border-b-2 border-b-dotted  ">
-          <h1 className=" md:text-3xl font- text-[#0A7CD8]">
-            Create Job Alert
-          </h1>
+        <div className="flex items-center justify-between mb-8 p-4 border-b-2 border-b-dotted">
+          <h1 className="md:text-3xl text-[#0A7CD8]">Create Job Alert</h1>
           <button
-            className="text-gray-400 hover:text-gray-600 text-2xl cursor-pointer "
+            className="text-gray-400 hover:text-gray-600 text-2xl cursor-pointer"
             onClick={() => setOPen(!open)}
           >
             <X />
@@ -63,68 +103,75 @@ export default function JobAlert({ open, setOPen }: any) {
 
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-            {/* Education Section */}
+            {/* Discipline */}
             <div>
-              <h2 className="text-lg font-semibold mb-4">Education</h2>
+              <h2 className="text-lg font-semibold mb-4">Discipline</h2>
               <div className="space-y-3">
-                {educationOptions.map((item) => (
+                {disciplineData.map((item) => (
                   <label
-                    key={item.key}
+                    key={item.discipline_id}
                     className="flex items-center space-x-3 cursor-pointer"
                   >
                     <input
                       type="checkbox"
-                      checked={education[item.key]}
-                      onChange={(e) =>
-                        setEducation({
-                          ...education,
-                          [item.key]: e.target.checked,
-                        })
-                      }
-                      className="w-5 h-5 text-orange-500 border-gray-300 rounded focus:ring-orange-500 accent-amber-200"
+                      checked={selectedDisciplines.includes(item.discipline_id)}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setSelectedDisciplines([
+                            ...selectedDisciplines,
+                            item.discipline_id,
+                          ]);
+                        } else {
+                          setSelectedDisciplines(
+                            selectedDisciplines.filter(
+                              (id) => id !== item.discipline_id,
+                            ),
+                          );
+                        }
+                      }}
+                      className="w-5 h-5 accent-amber-400"
                     />
-                    <span className="text-gray-700">{item.label}</span>
+                    <span className="text-gray-700">{item.discipline}</span>
                   </label>
                 ))}
               </div>
             </div>
 
-            {/* Field Section */}
+            {/* Industry */}
             <div>
-              <h2 className="text-lg font-semibold mb-4">Field</h2>
+              <h2 className="text-lg font-semibold mb-4">Industry</h2>
               <div className="space-y-3">
-                {fields.map((item) => (
+                {industryData.map((item) => (
                   <label
-                    key={item.key}
+                    key={item.sector_id}
                     className="flex items-center space-x-3 cursor-pointer"
                   >
                     <input
                       type="checkbox"
-                      checked={field[item.key]}
-                      onChange={(e) =>
-                        setField({ ...field, [item.key]: e.target.checked })
-                      }
-                      className="w-5 h-5 text-orange-500 border-gray-300 rounded focus:ring-orange-500"
+                      name="industry" // important: same name for grouping
+                      checked={selectedIndustries === item.sector_id}
+                      onChange={() => setSelectedIndustries(item.sector_id)}
+                      className="w-5 h-5 accent-amber-400"
                     />
-                    <span className="text-gray-700">{item.label}</span>
+                    <span className="text-gray-700">{item.sector}</span>
                   </label>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Frequency Dropdown */}
+          {/* Frequency */}
           <div className="mb-6">
             <label className="block mb-2">
               <span className="text-gray-700">
-                How often do you want to receive vacancies in your mailbox?
+                How often do you want to receive vacancies?
               </span>
               <span className="text-red-500 ml-1">*</span>
             </label>
             <select
               value={frequency}
               onChange={(e) => setFrequency(e.target.value)}
-              className="w-full  px-4 py-2 border border-gray-300 rounded-md  "
+              className="w-full px-4 py-2 border border-gray-300 rounded-md"
               required
             >
               <option value="">Select frequency</option>
@@ -134,47 +181,60 @@ export default function JobAlert({ open, setOPen }: any) {
             </select>
           </div>
 
-          {/* Keyword Input */}
+          {/* Keyword Tags */}
           <div className="mb-6">
             <label className="block mb-2">
               <span className="text-gray-700">Keyword</span>
             </label>
-            <div className="p-2 relative flex items-center space-x-3 border border-gray-300 rounded-md ">
-              <span className=" text-gray-400 ">
-                <Tag />
-              </span>
+
+            <div className="p-2 flex flex-wrap items-center gap-2 border border-gray-300 rounded-md">
+              <Tag size={18} className="text-gray-400" />
+
+              {tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="flex items-center bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-sm"
+                >
+                  {tag}
+                  <X
+                    size={14}
+                    className="ml-1 cursor-pointer"
+                    onClick={() => removeTag(tag)}
+                  />
+                </span>
+              ))}
+
               <input
                 type="text"
-                value={keyword}
-                onChange={(e) => setKeyword(e.target.value)}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleKeyDown}
                 placeholder="Search vacancies by keyword"
-                className="w-full pl-10 pr-4 py-2 border-none focus:outline-none focus:ring-0"
+                className="flex-1 outline-none"
               />
             </div>
           </div>
 
-          {/* Email Input */}
+          {/* Email */}
           <div className="mb-6">
             <label className="block mb-2">
-              <span className="text-gray-700">What is your email address?</span>
+              <span className="text-gray-700">Email address</span>
               <span className="text-red-500 ml-1">*</span>
             </label>
-            <div className="p-2 relative flex items-center space-x-3 border border-gray-300 rounded-md">
-              <span className=" text-gray-400">
-                <Mail />
-              </span>
+
+            <div className="flex items-center border border-gray-300 rounded-md px-3">
+              <Mail className="text-gray-400" />
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email address"
-                className="w-full pl-10 pr-4 py-2   rounded-md border-none focus:outline-none focus:ring-0"
+                className="w-full px-3 py-2 outline-none"
                 required
               />
             </div>
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="bg-[#0A7CD8] hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition duration-200 cursor-pointer"
