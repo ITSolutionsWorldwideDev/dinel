@@ -20,15 +20,15 @@ export default function VacanciesSearchBar({ onSearch }: Props) {
   };
 
   return (
-    <div className="w-[80vw] bg-linear-to-r from-[#D34A03] to-[#0A7CD8] flex items-center justify-center p-4 border-5 border-white container mx-auto">
+    <div className="w-[85vw] bg-linear-to-r from-[#D34A03] to-[#0A7CD8] flex items-center justify-center p-4 border-5 border-white container mx-auto">
       <div className="w-full max-w-4xl">
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Find the job that suits you
           </h1>
           <p className="text-lg text-white/90">
-            We have over 1,000 vacancies in our portfolio. Search our online
-            vacancies
+            We offer multiple vacancies in our portfolio. Search our online
+            vacancies.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export default function VacanciesSearchBar({ onSearch }: Props) {
                   handleSearch();
                 }
               }}
-              className="ml-3 bg-white w-full h-12 pl-12 pr-4  border-0 focus:outline-none focus:ring-2  text-gray-700"
+              className=" bg-white w-full h-12 pl-12 pr-4  border-0 focus:outline-none focus:ring-2  text-gray-700"
             />
           </div>
 

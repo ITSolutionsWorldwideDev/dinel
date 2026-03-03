@@ -31,7 +31,7 @@ const JobSliderNormalCard = ({ job }: any) => {
 
           <div className="min-h-12">
             <p className="text-orange-500 font-semibold text-sm mb-1">
-              LOCATIE
+              LOCATION
             </p>
             <p className="text-gray-900 font-medium line-clamp-1">
               {job.location}

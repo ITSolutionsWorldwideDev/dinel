@@ -25,28 +25,28 @@ export default function ProfessinalsHeader() {
       <div className="relative z-10 h-full flex   container mx-auto p-10">
         <div className="px-6">
           <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight w-1/2">
-            Your career deserves more than just another assign
+            Your career deserves more than just another assignment.
           </h2>
 
-          <p className="mt-6 max-w-2xl text-white/90 text-base md:text-lg leading-relaxed">
-            At Dinel, it's all about your growth. Whether you are a starter or
-            an experienced technical specialist, we help you take the next step
-            in your career, one that truly fits who you are and where you want
-            to go.
+          <p className="mt-6 w-2xl text-white/90 text-base md:text-xl leading-relaxed">
+            At Dinel, your professional growth comes first. Whether you are a
+            starter or an experienced technical specialist, we help you take the
+            next step in your career, one that truly fits who you are and where
+            you want to go.
           </p>
 
           {/* Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/vacancies"
-              className="inline-flex items-center gap-2 bg-amber-700 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition"
+              className="inline-flex items-center gap-2 bg-[#FF6B35] hover:bg-blue-700 text-white px-6 py-3  font-medium transition"
             >
               View Vacancies
             </Link>
 
             <Link
               href="/become-a-dineler"
-              className="inline-flex items-center gap-2 bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium transition"
+              className="inline-flex items-center gap-2 bg-white text-blue-600 hover:bg-gray-100 px-6 py-3  font-medium transition"
             >
               Become a Dineler
             </Link>

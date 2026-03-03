@@ -1,6 +1,7 @@
 import React from "react";
 import { Zap, Building2, Factory, Leaf } from "lucide-react";
 import TextWithBorderAndBg from "@/components/ui/TextWithBorderAndBg";
+import Link from "next/link";
 
 const projectsData = [
   {
@@ -11,6 +12,7 @@ const projectsData = [
     icon: <Zap className="w-6 h-6 text-white" />,
     image: "9ade3046653c3a8ad63668d5e9647af25a20ecd4.jpg",
     iconBg: "bg-[#FF6B35]",
+    href: "/energy",
   },
   {
     id: 2,
@@ -20,6 +22,7 @@ const projectsData = [
     icon: <Building2 className="w-6 h-6 text-white" />,
     image: "d5c637c6e02ee9e5c67d246227bcb6a689986be7.jpg",
     iconBg: "bg-[#FF6B35]",
+    href: "/infastructure",
   },
   {
     id: 3,
@@ -28,6 +31,7 @@ const projectsData = [
       "Transform manufacturing with cutting-edge automation and intelligent control systems",
     icon: <Factory className="w-6 h-6 text-white" />,
     image: "8740528e1dfc1b37695bdf9420b34c03825c16e9.jpg",
+    href: "/oil-gas-energy",
     iconBg: "bg-[#FF6B35]",
   },
   {
@@ -38,6 +42,7 @@ const projectsData = [
     icon: <Leaf className="w-6 h-6 text-white" />,
     image: "fba342536d7cc6cb6bed38f67444fb0c273fff61.jpg",
     iconBg: "bg-[#FF6B35]",
+    href: "/oil-gas-energy",
   },
 ];
 
@@ -58,33 +63,34 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {projectsData.map((project) => (
-            <div
-              key={project.id}
-              className="group relative h-80  overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
-              style={{
-                background: project.image
-                  ? `url(/assets/professionals/${project.image}) center/cover no-repeat`
-                  : "none",
-              }}
-            >
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all duration-300" />
-
-              {/* Icon Badge */}
+            <Link href={`${project.href}`} key={project.id}>
               <div
-                className={`absolute top-6 right-6 ${project.iconBg}  p-3 shadow-lg`}
+                className="group relative h-80  overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                style={{
+                  background: project.image
+                    ? `url(/assets/professionals/${project.image}) center/cover no-repeat`
+                    : "none",
+                }}
               >
-                {project.icon}
-              </div>
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all duration-300" />
 
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                <p className="text-gray-100 text-sm leading-relaxed">
-                  {project.description}
-                </p>
+                {/* Icon Badge */}
+                <div
+                  className={`absolute top-6 right-6 ${project.iconBg}  p-3 shadow-lg`}
+                >
+                  {project.icon}
+                </div>
+
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                  <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                  <p className="text-gray-100 text-sm leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

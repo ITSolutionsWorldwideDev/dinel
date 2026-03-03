@@ -50,7 +50,7 @@ export default function Guidance() {
             <img
               src="/assets/professionals/a3b84db29c8880eb74a256cfd5f38cd0085e7904.jpg"
               alt="Team collaboration"
-              className="w-[70%] h-auto object-cover"
+              className="w-full h-80 md:h-96 object-cover  shadow-lg"
             />
           </div>
         </div>

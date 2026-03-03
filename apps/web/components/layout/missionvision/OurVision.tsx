@@ -15,8 +15,8 @@ const OurVision = () => {
       desc: "For people, expertise and ambitions",
     },
     {
-      icon: <LiaArrowUpSolid className="text-white" />,
-      iconBg: "bg-[#FF6B35]",
+      icon: <LiaArrowUpSolid className="text-white size-[25] font-extrabold" />,
+      iconBg: "bg-[#FF6B35] ]",
       title: "Trust",
       desc: "Built through transparency and reliability",
     },
@@ -34,10 +34,7 @@ const OurVision = () => {
         <Heading text="Our Vision" icon={<Eye className="text-[#FF6B35]" />} />
       </div>
 
-      <HeadingAndDesc
-        heading="Our vision"
-        desc="We strive to be the partner of choice in the technology sector for professionals who want to make an impact and for organizations that want to move forward with confidence."
-      />
+      <HeadingAndDesc desc="We strive to be the partner of choice in the technology sector for professionals who want to make an impact and for organizations that want to move forward with confidence." />
 
       <div className="flex items-center justify-center">
         <p>We envision a future in which:</p>

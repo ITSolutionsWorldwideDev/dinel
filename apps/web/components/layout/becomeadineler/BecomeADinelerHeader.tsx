@@ -32,7 +32,7 @@ export default function BecomeADinelerHeader() {
             Being a Dineler means more than working on technical projects. It
             means choosing growth, impact and belonging to a community that
             values people as much as technology. At Dinel, you don’t just work
-            on projects you help build the future.
+            on projects; you help build the future.
           </p>
 
           {/* Buttons */}
@@ -45,7 +45,8 @@ export default function BecomeADinelerHeader() {
             </Link>
 
             <Link
-              href={"/vacancies"} className="inline-flex items-center gap-2 bg-white text-[#0A7CD8] border-2 border-[#0A7CD8] hover:bg-gray-100 px-6 py-3  font-medium transition"
+              href={"/vacancies"}
+              className="inline-flex items-center gap-2 bg-white text-[#0A7CD8] border-2 border-[#0A7CD8] hover:bg-gray-100 px-6 py-3  font-medium transition"
             >
               View Vacancies
             </Link>

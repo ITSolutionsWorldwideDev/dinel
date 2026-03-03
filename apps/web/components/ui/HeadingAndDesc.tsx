@@ -1,6 +1,6 @@
 import React from 'react'
 interface Props{
-    heading:string;
+    heading?:string;
     desc:string
 }
 

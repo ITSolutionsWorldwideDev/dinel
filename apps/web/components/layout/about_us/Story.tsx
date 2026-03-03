@@ -11,11 +11,11 @@ const Story = () => {
 
         <div className=" flex items-center justify-center bg-linear-to-br from-[#0A7CD81A] to-[#FF6B351A] rotate-2 p-10">
           <Image
-            src="/assets/aboutus/b65791ecbbe7cd3844d60a9d1bf2011b3997c670.jpg"
+            src="/assets/aboutus/7C9B14D1-ED70-4021-B02C-61EF1A4CFF62 (1).JPG"
             alt="Dinel story"
             width={100}
             height={100}
-            className="h-100 w-[80%] object-cover -rotate-3"
+            className="h-100 w-[80%] object-contain -rotate-3"
             priority
           />
         </div>

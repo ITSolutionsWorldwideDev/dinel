@@ -7,7 +7,7 @@ export default function Stats() {
       icon: Award,
       iconBg: "bg-[#FF6B35]",
       value: "25+",
-      label: "Years Experience",
+      label: "Years of experience",
     },
     {
       icon: Target,

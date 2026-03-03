@@ -23,7 +23,7 @@ export default function Header() {
       {/* Big faded text */}
 
       {/* Content */}
-      <h1 className="absolute -top-1/4 left-0 p-10 inset-0  font-extrabold text-[#0A7CD8]/25 text-[clamp(2rem,31vw,30rem)]  flex items-center justify-center pointer-events-none select-none container mx-auto">
+      <h1 className="absolute -top-1/6 left-0 p-10 inset-0  font-extrabold text-[#0A7CD8]/25 text-[clamp(2rem,31vw,30rem)]  flex items-center justify-center pointer-events-none select-none container mx-auto">
         DINEL
       </h1>
       {/* <div className="relative  items-center flex justify-between mt-40"> */}

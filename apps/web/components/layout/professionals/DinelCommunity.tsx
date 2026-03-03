@@ -11,7 +11,7 @@ export default function DinelCommunity() {
             <img
               src="/assets/professionals/f3cb5f09732e11c1b1a756b3c30c794845839fd1.jpg"
               alt="Team collaboration"
-              className="w-[70%]  "
+              className="w-full h-80 md:h-96 object-cover  shadow-lg"
             />
           </div>
 
@@ -21,7 +21,9 @@ export default function DinelCommunity() {
               The Dineler Community
             </h1>
 
-            <p className="text-xl text-gray-600 mb-8">You are not alone</p>
+            <p className="text-xl text-gray-600 mb-8">
+              As a Dineler, you are never alone.
+            </p>
 
             <p className="text-gray-700 mb-8 leading-relaxed">
               As a Dineler, you become part of a growing network of

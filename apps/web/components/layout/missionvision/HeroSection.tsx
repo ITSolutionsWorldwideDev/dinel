@@ -14,7 +14,7 @@ const HeroSection = () => {
           icon={<Target className="text-[#0A7CD8]" />}
         />
       ),
-      title: "Our Mission",
+      // title: "Our Mission",
 
       description:
         "Dinel connects technical professionals with the right opportunities and organizations with the right expertise. Through our T-I-E-R philosophy, we help professionals accelerate their careers and support organizations in achieving sustainable and innovative growth. We believe that when people are supported and challenged, technology creates real impact.",

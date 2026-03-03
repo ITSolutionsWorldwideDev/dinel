@@ -19,13 +19,13 @@ const ShappingFuture = () => {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href={`/become-a-dineler`}>
-            <button className="bg-white text-[#0A7CD8] px-6 py-3 font-medium rounded cursor-pointer shadow hover:bg-gray-100 transition">
+            <button className="bg-white text-[#0A7CD8] px-6 py-3 font-medium cursor-pointer shadow hover:bg-gray-100 transition">
               Become a Dineler
             </button>
           </Link>
 
           <Link href={`/contact-us`}>
-            <button className="border border-white px-6 py-3 font-medium cursor-pointer rounded hover:bg-white hover:text-orange-500 transition">
+            <button className="border border-white px-6 py-3 font-medium cursor-pointer  hover:bg-white hover:text-orange-500 transition">
               Contact Dinel
             </button>
           </Link>

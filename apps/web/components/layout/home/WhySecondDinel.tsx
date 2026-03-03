@@ -25,7 +25,7 @@ export default function CareerSection() {
           className="w-full h-full object-contain opacity-10 "
         />
       </div> */}
-      <div className="flex items-center p-10 lg:p-20 mb-10 justify-center">
+      <div className="flex  lg:p-20 lg:mb-10 ">
         <h1 className="font-bold xl:text-7xl lg:text-5xl md:text-4xl sm:text-2xl">
           Empowering Careers Through Dinel
         </h1>

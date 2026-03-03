@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function DinelBanner() {
   return (
-    <div className="w-full mt-20 bg-gray-50   flex items-center justify-center">
+    <div className="container mx-auto mt-20 bg-gray-50   flex items-center justify-center">
       <div className=" bg-white  shadow-2xl overflow-hidden relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
           {/* Left Content Section */}
@@ -28,7 +28,7 @@ export default function DinelBanner() {
               <blockquote className="mb-8 text-base md:text-lg leading-relaxed max-w-lg">
                 "We understand what drives technicians and what they are looking
                 for in their next step. That's why our team can match the right
-                people to the right projects. "Or goal is your next challenge."
+                people to the right projects. Our goal is your next challenge.
               </blockquote>
 
               {/* Signature */}
@@ -40,20 +40,15 @@ export default function DinelBanner() {
           </div>
 
           {/* Right Image Section */}
-          <div className="relative h-64 md:h-96 w-full lg:h-full bg-gray-900">
+          <div className="relative  w-auto  h-80 md:h-96 lg:h-auto">
             <Image
-              src={`/assets/home/6028079d32ff364b1ee8c7814d4265486be8f7d0.png`}
+              src="/assets/home/6028079d32ff364b1ee8c7814d4265486be8f7d0.png"
               alt="dinel"
               fill
-              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
+              className=" object-fill"
+              priority
             />
-
-            {/* Color accent strip */}
-            {/* <div className="absolute left-0 top-0 bottom-0 w-3 flex flex-col">
-              <div className="flex-1 bg-[#F87417]"></div>
-              <div className="flex-1 bg-[#0A7CD8]"></div>
-              <div className="flex-1 bg-[#008001]"></div>
-            </div> */}
           </div>
         </div>
       </div>

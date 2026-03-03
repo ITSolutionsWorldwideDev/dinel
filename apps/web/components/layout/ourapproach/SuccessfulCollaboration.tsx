@@ -15,7 +15,7 @@ const SuccessfulCollaboration = () => {
         <FiMessageSquare className="text-white bg-[#FF6B35] w-20 h-20 p-5 " />
       ),
       stepclass: "text-[#FF6B35]",
-      step: "Step1",
+      step: "Step 1",
       title: "Understanding",
       subtitle: "We start with listening",
       heading:
@@ -23,12 +23,12 @@ const SuccessfulCollaboration = () => {
       bullets: [
         {
           icon: <CircleCheckBig className="text-[#FF6B35]"/>,
-          heading: "For professionals :",
+          heading: "For professionals:",
           title: "We start with a conversation to understand your needs",
         },
         {
           icon: <CircleCheckBig className="text-[#FF6B35]"/>,
-          heading: "For clients :",
+          heading: "For clients:",
           title: "We search specifically for the right professional or team",
         },
       ],
@@ -41,7 +41,7 @@ const SuccessfulCollaboration = () => {
         <Users className="text-white bg-[#FF6B35] w-20 h-20 p-5 " />
       ),
       stepclass: "text-[#FF6B35]",
-      step: "Step2",
+      step: "Step 2",
       title: "Connecting",
       subtitle: "Arriving at the right solution",
       heading:
@@ -74,7 +74,7 @@ const SuccessfulCollaboration = () => {
         <Headphones className="text-white bg-[#FF6B35] w-20 h-20 p-5 " />
       ),
       stepclass: "text-[#FF6B35]",
-      step: "Step3",
+      step: "Step 3",
       title: "Guiding",
       subtitle: "Support throughout the entire journey",
       heading: "Our involvement doesn't stop after the right solution is made.",

@@ -27,7 +27,7 @@ const SimpleHedingAnd2Btns = ({
       <div className="mt-10">
         <HeadingAndDesc heading={`${heading}`} desc={`${des}`} />
       </div>
-      .
+      
       <div className="flex items-center justify-center space-x-3">
         <button
           className={`flex items-center justify-center hover:bg-blue-700  px-6 py-3 cursor-pointer font-medium transition ${btn1Classes}`}

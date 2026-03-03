@@ -33,9 +33,9 @@ export default function DinelGroupBv() {
                 <div>
                   <h3 className="font-bold text-white text-lg">Address</h3>
                   <p className="text-white">
-                    daltonstraat 11 3335 Jr zwijndrecht
+                    Daltonstraat 11 3335 JR Zwijndrecht
                     <br />
-                    the netherlands
+                    The Netherlands
                   </p>
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function DinelGroupBv() {
             {/* Social Media Icons */}
             <div className="flex gap-4 justify-end">
               <div className="bg-white rounded-full flex  w-8 h-8 justify-center">
-                <Link href={"https://www.facebook.com/DinelGroup"} >
+                <Link href={"https://www.facebook.com/DinelGroup"}>
                   <FaFacebookF className="text-[#FF8026] w-full h-6 mt-2" />
                 </Link>
               </div>

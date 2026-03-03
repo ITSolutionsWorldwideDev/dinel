@@ -33,7 +33,7 @@ const MindSet = () => {
 
           {/* Heading */}
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            More than a role. A <br />  mindset.
+            More than a role. A   mindset.
           </h2>
 
           {/* Subtitle */}

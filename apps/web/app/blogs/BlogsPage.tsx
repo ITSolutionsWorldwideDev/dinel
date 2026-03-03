@@ -73,5 +73,5 @@ export default async function BlogsPage({ searchParams }: Props) {
         }}
       />
     </>
-  );
+  )
 }

@@ -31,7 +31,7 @@ export default function DinelProfessionals() {
       {/* Hero Section */}
 
       <div className="contianer mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24  relative ">
-        <div className="absolute inset-0 top-1/8 opacity-10  bg-[url('/assets/home/b5119110651a2589afaa1a533594d432fdac1f03.png')] bg-no-repeat bg-top-right z-0 " />
+        <div className="hidden md:absolute inset-0 top-1/8 opacity-10  bg-[url('/assets/home/b5119110651a2589afaa1a533594d432fdac1f03.png')] bg-no-repeat bg-top-right z-0 " />
 
         {/* Header */}
         <div className="text-center mb-16">

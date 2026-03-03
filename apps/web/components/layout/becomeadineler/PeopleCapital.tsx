@@ -32,7 +32,7 @@ const PeopleCapital = () => {
       </section>
       <div className="flex items-center justify-center mt-20">
         <Heading
-          text="Take The Next Step"
+          text="Take the Next Step"
           icon={<Sparkles className="text-[#FFDF20]" />}
         />
       </div>
@@ -52,10 +52,10 @@ const PeopleCapital = () => {
             </span>
           </button>
         </Link>
-        <Link href={'/vacancies'}>
-        <button className="  hover:bg-blue-700 text-[#0A7CD8] border-2 cursor-pointer border-[#0A7CD8] px-6 py-3  font-medium transition">
-          View Open Positions
-        </button>
+        <Link href={"/vacancies"}>
+          <button className="  hover:bg-blue-700 text-[#0A7CD8] border-2 cursor-pointer border-[#0A7CD8] px-6 py-3  font-medium transition">
+            View Open Positions
+          </button>
         </Link>
       </div>
     </div>

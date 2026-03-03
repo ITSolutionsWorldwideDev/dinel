@@ -2,7 +2,7 @@
 import InLoop from "@/components/ui/InLoop";
 import DinelGroupBv from "@/components/ui/DinelGroupBv";
 import HeaderWithCenterTextandBgImg from "@/components/ui/HeaderWithCenterTextandBgImg";
-import NavBar from "@/components/ui/NavBar";
+// import NavBar from "@/components/ui/NavBar";
 import BlogsPage from "./BlogsPage";
 import React from "react";
 
@@ -25,10 +25,9 @@ export default async function Page({
         description="Expert perspectives on technical recruitment, career growth, and industry trends"
         image="/assets/blogs/e875e3acada50c3f4f57d3941244b540e6b73a72.jpg"
       />
-      <BlogsPage searchParams={resolvedSearchParams} />;
-      
+      <BlogsPage searchParams={resolvedSearchParams} />
 
-        <InLoop />
+      <InLoop />
       <DinelGroupBv />
     </>
   );

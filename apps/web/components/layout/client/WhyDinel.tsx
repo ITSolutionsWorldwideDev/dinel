@@ -66,7 +66,7 @@ export default function WhyDinel() {
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Card 1 */}
-          <div className="relative rounded-xl overflow-hidden shadow-md group">
+          <div className="relative  overflow-hidden shadow-md group">
             <Image
               src="/assets/client/32a9eb855ff90ee2610eb62ef911c236d533e313.jpg"
               alt="Technology Experts"
@@ -84,7 +84,7 @@ export default function WhyDinel() {
               <h3 className="text-white text-2xl font-semibold mb-1">
                 Technology Experts
               </h3>
-              <p className="text-gray-200 text-sm max-w-xs">
+              <p className="text-gray-200 text-md ">
                 We understand the technical challenges because we come from
                 engineering ourselves.
               </p>
@@ -92,7 +92,7 @@ export default function WhyDinel() {
           </div>
 
           {/* Card 2 */}
-          <div className="relative rounded-xl overflow-hidden shadow-md group">
+          <div className="relative  overflow-hidden shadow-md group">
             <Image
               src="/assets/client/692c3bba8fe6079fc09c7787c7a18c8bfea4d6b7 (2).jpg"
               alt="People First"
@@ -110,14 +110,14 @@ export default function WhyDinel() {
               <h3 className="text-white text-2xl font-semibold mb-1">
                 People First
               </h3>
-              <p className="text-gray-200 text-sm max-w-xs">
+              <p className="text-gray-200 text-md ">
                 We match personalities and culture, not just skills on paper.
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5 container mx-auto mt-10">
+      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5 p-5 container mx-auto mt-10">
         {features.map((item, index) => (
           <IconWithTextCard item={item} index={index} key={index} />
         ))}

@@ -1,11 +1,11 @@
 import { FiTarget } from "react-icons/fi";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { FiUsers } from "react-icons/fi";
-
+import Link from "next/link";
 export default function PartofStory() {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
-      <div className="max-w-5xl w-full">
+      <div className=" w-full">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -53,12 +53,16 @@ export default function PartofStory() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="px-8 py-4 bg-[#FF6B35] text-white cursor-pointer font-semibold text-lg border-2 border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 w-full sm:w-auto">
-            Become a Dineler
-          </button>
-          <button className="px-8 py-4 bg-white  font-semibold text-lg border-2 border-[#0A7CD8] text-[#0A7CD8] hover:bg-orange-50 transition-all duration-200 w-full sm:w-auto cursor-pointer">
-            Contact Dinel
-          </button>
+          <Link href="/become-a-dineler" className="w-full sm:w-auto">
+            <button className="px-8 py-4 bg-[#FF6B35] text-white cursor-pointer font-semibold text-lg border-2 border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 w-full sm:w-auto">
+              Become a Dineler
+            </button>
+          </Link>
+          <Link href="/contact-us" className="w-full sm:w-auto">
+            <button className="px-8 py-4 bg-white  font-semibold text-lg border-2 border-[#0A7CD8] text-[#0A7CD8] hover:bg-orange-50 transition-all duration-200 w-full sm:w-auto cursor-pointer">
+              Contact Dinel
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -44,7 +44,7 @@ const Homei = () => {
   ];
 
   return (
-    <div className="">
+    <div className="bg-gray-50">
       {/* <NavBar /> */}
       <Header />
       {/* <div className="relative flex justify-center items-center ">
@@ -56,10 +56,12 @@ const Homei = () => {
       {/* <div className=" mt-20">
         <JobVacanciesSlider />
       </div> */}
+
+      <IndustryWeWork />
+
       <div>
         <FindJobSlider />
       </div>
-      <IndustryWeWork />
       <BlogCard />
       <DinelerSection />
       <OurApproach

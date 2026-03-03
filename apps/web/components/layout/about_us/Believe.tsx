@@ -15,7 +15,7 @@ const beliefs = [
   },
   {
     title: "Recognized Growth",
-    desc: "Sustainable results come from long-term relationships",
+    desc: "Professionals grow when their expertise is acknowledged and valued.",
     icon: <TrendingUp className="w-6 h-6 text-white" />,
     bg: "bg-[#FF6B35]",
   },

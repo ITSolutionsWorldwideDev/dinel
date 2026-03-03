@@ -4,12 +4,10 @@ import MobileMenuBtn from "./MobileMenuBtn";
 import Link from "next/link";
 import { candidateAuth } from "@repo/auth-web";
 
-export default async function DeskstopNavigationMenu () {
-
+export default async function DeskstopNavigationMenu() {
   const session = await candidateAuth();
 
   const navLinks = [
-  
     { name: "About Us", href: "/about-us" },
     { name: "Professionals", href: "/professionals" },
     { name: "Clients", href: "/clients" },
@@ -18,15 +16,16 @@ export default async function DeskstopNavigationMenu () {
     { name: "Become a Dineler", href: "/become-a-dineler" },
     { name: "Vacancies", href: "/vacancies" },
     { name: "Blogs", href: "/blogs" },
+
     { name: session ? "My Account" : "Member", href: "/account" },
   ];
 
   return (
     <header className="">
-      <nav className="relative z-10 container mx-auto px-4 py-4">
+      <nav className="relative z-10 container mx-auto py-10">
         <div className="flex items-center justify-between">
           {/* Desktop Navigation */}
-          <div className="hidden xl:flex items-center space-x-6">
+          <div className="hidden xl:flex items-center space-x-5">
             {navLinks.map((link: any) => (
               <Link
                 key={link.name}
@@ -42,6 +41,4 @@ export default async function DeskstopNavigationMenu () {
       </nav>
     </header>
   );
-};
-
-
+}

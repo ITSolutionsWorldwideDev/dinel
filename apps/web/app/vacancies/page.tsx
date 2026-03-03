@@ -20,7 +20,7 @@ const page = () => {
 
       <ApplyWithDinel />
       <HowToApply />
-      
+
       <div className="relative">
         <HeadingDescAnd2BtnsWithBg
           heading="Ready to find your next challenge?"

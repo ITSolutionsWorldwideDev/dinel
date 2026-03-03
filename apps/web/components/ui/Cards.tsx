@@ -11,7 +11,7 @@ export interface Section {
   icon?: ReactNode;
   step?:string;
   stepclass?:string
-  title: string;
+  title?: string;
   subtitle?: string;
   heading?: string;
   bullets?: Bullet[];
@@ -142,13 +142,13 @@ export default function Cards({ data }: CardsProps) {
 
             {/* Image */}
             <div
-              className={`w-full h-[90%] flex justify-center ${
+              className={`w-full h-[90%] flex  ${
                 isImageRight ? "lg:order-2" : ""
               }`}
             >
               <Image
                 src={item.image}
-                alt={item.title}
+                alt={item.title || ""}
                 width={550}
                 height={350}
                 className=" object-cover shadow-md"

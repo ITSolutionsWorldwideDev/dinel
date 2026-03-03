@@ -42,14 +42,14 @@ const FindJobSlider = () => {
 
   const jobData = data?.items;
 
-  const handleSearch = (value: string) => {
-    setFilters((prev) => ({
-      ...prev,
-      search: value || undefined,
-    }));
+  // const handleSearch = (value: string) => {
+  //   setFilters((prev) => ({
+  //     ...prev,
+  //     search: value || undefined,
+  //   }));
 
-    setPage(1);
-  };
+  //   setPage(1);
+  // };
 
   // Sample JSON data
 
@@ -188,12 +188,6 @@ const FindJobSlider = () => {
 
   return (
     <>
-      <div className="relative flex justify-center items-center ">
-        <div className="lg:absolute z-30">
-          <VacanciesSearchBar onSearch={handleSearch} />
-        </div>
-      </div>
-
       <div className="mt-20">
         <div className=" bg-gray-50 py-16 overflow-hidden container mx-auto">
           <JobSliderUpperSection />

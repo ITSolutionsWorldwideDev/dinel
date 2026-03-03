@@ -15,6 +15,7 @@ const Experience = () => {
       icon: <Zap className="w-6 h-6 text-white" />,
       image: "client/43e0391a2438655203ee058c7a427f2f86234395.jpg",
       iconBg: "bg-[#FF6B35]",
+      href: "/energy",
     },
     {
       id: 2,
@@ -22,6 +23,7 @@ const Experience = () => {
       icon: <Building2 className="w-6 h-6 text-white" />,
       image: "client/e2ccddbe046bf71b43ad2be7832ac133f3e6ec47.jpg",
       iconBg: "bg-[#FF6B35]",
+      href: "/infastructure",
     },
     {
       id: 3,
@@ -29,17 +31,18 @@ const Experience = () => {
       icon: <Factory className="w-6 h-6 text-white" />,
       image: "client/68aca5cf526a5529540c7b89d9b48654e4ef1bef.jpg",
       iconBg: "bg-[#FF6B35]",
+      href: "/oil-gas-energy",
     },
-    {
-      id: 4,
-      title: "Sustainable and innovative technology",
-      icon: <Leaf className="w-6 h-6 text-white" />,
-      image: "client/970ef23aae953e071a6f02873e28320db60751db.jpg",
-      iconBg: "bg-[#FF6B35]",
-    },
+    // {
+    //   id: 4,
+    //   title: "Sustainable and innovative technology",
+    //   icon: <Leaf className="w-6 h-6 text-white" />,
+    //   image: "client/970ef23aae953e071a6f02873e28320db60751db.jpg",
+    //   iconBg: "bg-[#FF6B35]",
+    // },
   ];
   return (
-    <div>
+    <div className="p-5">
       <div className="flex items-center justify-center">
         <Heading
           text="Industries We Serve"
@@ -53,10 +56,8 @@ const Experience = () => {
 
       <ImagesWithIconDesc
         data={projectsData}
-        classnameforNoOfImages="grid grid-cols-1 md:grid-cols-4 gap-6"
+        classnameforNoOfImages="grid grid-cols-1 md:grid-cols-3 gap-6"
       />
-
-      
     </div>
   );
 };

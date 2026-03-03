@@ -26,8 +26,8 @@ const ActionBtns = () => {
       </div>
       {open &&
         createPortal(
-          <div className="absolute right-0 top-10  z-100">
-            <JobAlert open={open} setOPen={setOPen}/>
+          <div className="absolute right-0 top-10 md:right-1/5 md:top-1/5  z-100">
+            <JobAlert open={open} setOPen={setOPen} />
           </div>,
           document.body,
         )}

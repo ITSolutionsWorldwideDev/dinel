@@ -35,7 +35,7 @@ const Environment = () => {
         {
           //   icon: <FiMessageSquare />,
           title:
-            "For us, success is not just filling a role it's contributing to the success of your organization.",
+            "For us, success is not just filling a role; it's contributing to the success of your organization.",
         },
         {
           //   icon: <CiSearch />,

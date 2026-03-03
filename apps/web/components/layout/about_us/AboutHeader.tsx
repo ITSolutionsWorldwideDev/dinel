@@ -26,9 +26,9 @@ export default function AboutHeader() {
             About Dinel
           </h2>
 
-          <p className="mt-6 w-40 sm:w-60 md:w-100 lg:w-2xl text-white/90 text-base md:text-lg leading-relaxed">
+          <p className="mt-6 w-40 sm:w-60 md:w-100 lg:w-2xl text-white/90 text-base md:text-2xl  leading-relaxed">
             Dinel is an organization built by and for technical professionals.
-            Founded on the belief that people, not processes or invoices make
+            Founded on the belief that people, not processes or invoices, make
             technology succeed.
           </p>
         </div>

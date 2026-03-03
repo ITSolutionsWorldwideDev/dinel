@@ -110,7 +110,7 @@ export default function JobAlert({ open, setOPen }: any) {
                 {disciplineData.map((item) => (
                   <label
                     key={item.discipline_id}
-                    className="flex items-center space-x-3 cursor-pointer"
+                    className="flex items-center  space-x-3 cursor-pointer"
                   >
                     <input
                       type="checkbox"
