@@ -1,6 +1,9 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
+// import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 type Props = {
   onSearch: (value: string) => void;
@@ -9,14 +12,12 @@ type Props = {
 export default function VacanciesSearchBar({ onSearch }: Props) {
   const [searchQuery, setSearchQuery] = useState("");
 
+  console.log(onSearch, "onSearch in search bar");
+  const router = useRouter();
   const handleSearch = () => {
-    onSearch(searchQuery);
-  };
-
-  const handleKeyPress = (e: any) => {
-    if (e.key === "Enter") {
-      handleSearch();
-    }
+    if (!searchQuery.trim()) return;
+    // onSearch(searchQuery);
+    router.push(`/vacancies/all?search=${encodeURIComponent(searchQuery)}`);
   };
 
   return (
@@ -34,7 +35,7 @@ export default function VacanciesSearchBar({ onSearch }: Props) {
 
         <div className="flex flex-col sm:flex-row gap-10 items-stretch">
           <div className="flex-1 relative">
-            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 p-3">
+            <div className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400 p-3">
               <FaSearch size={20} color="black " />
             </div>
             <div className="  mr-2" />
@@ -44,7 +45,6 @@ export default function VacanciesSearchBar({ onSearch }: Props) {
               placeholder="Search vacancies by keyword"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              // onKeyPress={handleKeyPress}
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   handleSearch();
@@ -61,16 +61,18 @@ export default function VacanciesSearchBar({ onSearch }: Props) {
             To Search
           </button>
 
-          <button
-            // onClick={() => console.log("View all vacancies")}
-            onClick={() => {
-              setSearchQuery("");
-              onSearch("");
-            }}
-            className="h-12 px-8 bg-[#FF8026]  text-white font-medium  transition-colors cursor-pointer"
-          >
-            All Vacancies
-          </button>
+          <Link href={`/vacancies/all`} className="">
+            <button
+              // onClick={() => console.log("View all vacancies")}
+              onClick={() => {
+                setSearchQuery("");
+                onSearch("");
+              }}
+              className="h-12 px-8 bg-[#FF8026]  text-white font-medium  transition-colors cursor-pointer"
+            >
+              All Vacancies
+            </button>
+          </Link>
         </div>
       </div>
     </div>
