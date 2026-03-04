@@ -9,7 +9,8 @@ import Link from "next/link";
 
 import { Mail, LogIn } from "lucide-react";
 import PasswordField from "@/components/layout/login/PasswordField";
-import LoginImage from "@/components/ui/FormSideImage";
+// import LoginImage from "@/components/ui/FormSideImage";
+import FormSideImage from "@/components/ui/FormSideImage";
 
 export default function SigninComponent() {
   const { status } = useSession();
@@ -138,7 +139,12 @@ export default function SigninComponent() {
             </p>
           </div>
         </div>
-        <LoginImage />
+        {/* <LoginImage /> */}
+        <FormSideImage
+          heading="Your Career Journey Starts Here"
+          desc="Access your personalized portal to track applications and manage your profile"
+          image="8de6dd4ea97098339dd92da4572cd8074f734c9f.jpg"
+        />
       </div>
     </>
   );

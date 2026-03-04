@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function DinelBanner() {
   return (
-    <div className="container mx-auto mt-20 bg-gray-50   flex items-center justify-center">
+    <div className="container mx-auto mt-20 bg-gray-50 p-8 ">
       <div className=" bg-white  shadow-2xl overflow-hidden relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+        <div className="grid grid-cols-1 lg:flex  gap-0">
           {/* Left Content Section */}
           <div className="bg-[#FF8936] p-8 md:p-12 lg:p-16 text-white flex flex-col justify-center">
             {/* Header */}
@@ -40,13 +40,13 @@ export default function DinelBanner() {
           </div>
 
           {/* Right Image Section */}
-          <div className="relative  w-auto  h-80 md:h-96 lg:h-auto">
+          <div className=" relative w-full lg:w-[30%]  h-80 md:h-96 lg:h-auto ">
             <Image
               src="/assets/home/6028079d32ff364b1ee8c7814d4265486be8f7d0.png"
               alt="dinel"
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
-              className=" object-fill"
+              // sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
+              className="  h-full w-full"
               priority
             />
           </div>

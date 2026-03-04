@@ -184,7 +184,10 @@ export default function SignUpComponent() {
                   />
                   <button onClick={() => setShowPassword(!showPassword)}>
                     {showPassword ? (
-                      <EyeOff size={18} className="text-gray-400 cursor-pointer" />
+                      <EyeOff
+                        size={18}
+                        className="text-gray-400 cursor-pointer"
+                      />
                     ) : (
                       <Eye size={18} className="text-gray-400 cursor-pointer" />
                     )}
@@ -208,7 +211,10 @@ export default function SignUpComponent() {
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   >
                     {showConfirmPassword ? (
-                      <EyeOff size={18} className="text-gray-400 cursor-pointer" />
+                      <EyeOff
+                        size={18}
+                        className="text-gray-400 cursor-pointer"
+                      />
                     ) : (
                       <Eye size={18} className="text-gray-400 cursor-pointer" />
                     )}
@@ -254,7 +260,7 @@ export default function SignUpComponent() {
           </div>
         </div>
         <FormSideImage
-          image="/d28660e78278ab38b2bf73fd7d7c3d6703e2b540.jpg"
+          image="d28660e78278ab38b2bf73fd7d7c3d6703e2b540.jpg"
           heading="Join Dinel Today"
           desc="Create your account and discover amazing career opportunities"
         />

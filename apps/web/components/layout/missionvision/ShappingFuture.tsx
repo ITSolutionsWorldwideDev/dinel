@@ -3,7 +3,12 @@ import React from "react";
 
 const ShappingFuture = () => {
   return (
-    <section className="bg-[#FF8026] py-20 px-4">
+    <section className="bg-[#FF8026] py-20 px-4 relative">
+      <img
+        src="/assets/home/2ab3e25bb92dd58e32fa83e505bc6ebef6f6ed58(1).jpg"
+        className="absolute inset-0 w-full h-full object-cover mix-blend-multiply"
+        alt=""
+      />
       <div className="max-w-3xl mx-auto text-center text-white">
         {/* Heading */}
         <h1 className="text-3xl md:text-5xl font-semibold mb-6 ">

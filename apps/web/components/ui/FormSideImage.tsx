@@ -2,9 +2,9 @@ import Link from "next/link";
 import React from "react";
 
 interface LoginImageProps {
-  image?: string;
-  heading?: string;
-  desc?: string;
+  image: string;
+  heading: string;
+  desc: string;
 }
 const FormSideImage = ({ image, heading, desc }: LoginImageProps) => {
   return (
@@ -19,14 +19,14 @@ const FormSideImage = ({ image, heading, desc }: LoginImageProps) => {
         }}
       />
       {/* <img
-        src="/8de6dd4ea97098339dd92da4572cd8074f734c9f.jpg"
+        src="/assets/8de6dd4ea97098339dd92da4572cd8074f734c9f.jpg"
         alt=""
         className="w-full h-screen  "
       /> */}
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-linear-to-br from-[#0A7CD8] via-[#FF6B35] to-[#FF6B35]" />
-      <div className="absolute inset-0 bg-linear-to-t from-[#FF6B35]  to-[#0A7CD8]/10" />
+      <div className="absolute opacity-80 inset-0 bg-linear-to-br from-[#0A7CD8] via-[#0A7CD8] to-[#FF6B35]" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#FF6B35]/70  to-[#0A7CD8]/10" />
 
       {/* Content */}
       <div className="absolute inset-0 z-10 flex flex-col min-h-screen px-6">
@@ -37,7 +37,7 @@ const FormSideImage = ({ image, heading, desc }: LoginImageProps) => {
               <img
                 src="/assets/Group 1.png"
                 alt=""
-                className="h-auto w-32 md:w-10  rounded-lg mb-2"
+                className="h-auto w-auto md:w-auto  rounded-lg mb-2"
               />
             </div>
           </Link>
