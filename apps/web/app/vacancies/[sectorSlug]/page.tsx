@@ -120,8 +120,8 @@ export default async function SectorVacanciesPage({
   const firstHalf = jobsData.items.slice(0, middleIndex);
   const secondHalf = jobsData.items.slice(middleIndex);
 
-  // Helper function to build query string with all filters
-  const buildQueryString = (pageNumber?: number) => {
+  // Preserve existing filters in pagination links
+  const buildPageLink = (pageNumber: number) => {
     const params = new URLSearchParams();
 
     if (resolvedSearchParams?.search) {
@@ -144,17 +144,9 @@ export default async function SectorVacanciesPage({
       locations.forEach((l) => params.append("location", l));
     }
 
-    if (pageNumber !== undefined) {
-      params.set("page", String(pageNumber));
-    }
+    params.set("page", String(pageNumber));
 
-    return params.toString();
-  };
-
-  // Preserve existing filters in pagination links
-  const buildPageLink = (pageNumber: number) => {
-    const queryString = buildQueryString(pageNumber);
-    return queryString ? `?${queryString}` : "";
+    return `?${params.toString()}`;
   };
 
   return (
@@ -185,7 +177,6 @@ export default async function SectorVacanciesPage({
                     key={job.job_id}
                     job={job}
                     sectors={filters.sectors}
-                    returnQueryString={buildQueryString()}
                   />
                 ))}
 
@@ -196,7 +187,6 @@ export default async function SectorVacanciesPage({
                     key={job.job_id}
                     job={job}
                     sectors={filters.sectors}
-                    returnQueryString={buildQueryString()}
                   />
                 ))}
               </div>

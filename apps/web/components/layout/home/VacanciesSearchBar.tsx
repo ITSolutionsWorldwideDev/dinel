@@ -12,13 +12,16 @@ type Props = {
 export default function VacanciesSearchBar({ onSearch }: Props) {
   const [searchQuery, setSearchQuery] = useState("");
 
-  console.log(onSearch, "onSearch in search bar");
+console.log(onSearch, "onSearch in search bar");
   const router = useRouter();
   const handleSearch = () => {
     if (!searchQuery.trim()) return;
     // onSearch(searchQuery);
-    router.push(`/vacancies/all?search=${encodeURIComponent(searchQuery)}`);
+     router.push(`/all-vacancies?search=${encodeURIComponent(searchQuery)}`);
+
   };
+
+  
 
   return (
     <div className="w-[85vw] bg-linear-to-r from-[#D34A03] to-[#0A7CD8] flex items-center justify-center p-4 border-5 border-white container mx-auto">
@@ -45,6 +48,7 @@ export default function VacanciesSearchBar({ onSearch }: Props) {
               placeholder="Search vacancies by keyword"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+             
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   handleSearch();

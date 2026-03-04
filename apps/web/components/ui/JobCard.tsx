@@ -7,7 +7,6 @@ import { MoveUpRight } from "lucide-react";
 interface Props {
   job: any;
   sectors: any;
-  returnQueryString?: string;
 }
 
 const sectorImageMap: Record<string, string> = {
@@ -19,13 +18,8 @@ const sectorImageMap: Record<string, string> = {
     "/0dffbc652b8f354903ca7e53786e3bfe74ac1e18.jpg",
 };
 
-export default function JobCard({ job, sectors, returnQueryString }: Props) {
+export default function JobCard({ job, sectors }: Props) {
   const imageSrc = sectorImageMap[job.sector_id] || "/images/default.jpg";
-  
-  // Build the job detail link with preserved query params
-  const jobDetailLink = returnQueryString 
-    ? `/vacancies/all/${job.job_id}?${returnQueryString}`
-    : `/vacancies/all/${job.job_id}`;
 
   return (
     <>
@@ -51,7 +45,7 @@ export default function JobCard({ job, sectors, returnQueryString }: Props) {
                 {job.title}
               </h1>
               <Link
-                href={jobDetailLink}
+                href={`/vacancies/all/${job.job_id}`}
                 className="flex items-end justify-end"
               >
                 <button className="cursor-pointer w-10 h-10 rounded-full border border-orange-500 text-orange-500 flex items-center justify-center hover:bg-orange-500 hover:text-white transition">
