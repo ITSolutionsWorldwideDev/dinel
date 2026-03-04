@@ -123,7 +123,6 @@ export default async function SectorVacanciesPage({
   // Preserve existing filters in pagination links
   const buildPageLink = (pageNumber: number) => {
     const params = new URLSearchParams();
-console.log(resolvedSearchParams);
     if (resolvedSearchParams?.search) {
       params.set("search", resolvedSearchParams.search);
     }
@@ -162,7 +161,7 @@ console.log(resolvedSearchParams);
           sectors={filters.sectors}
           disciplines={filters.disciplines}
           locations={filters.locations}
-          currentFilters={searchParams}
+          currentFilters={resolvedSearchParams}
         />
 
         <div className="flex-1">
