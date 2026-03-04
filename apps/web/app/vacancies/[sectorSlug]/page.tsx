@@ -123,7 +123,7 @@ export default async function SectorVacanciesPage({
   // Preserve existing filters in pagination links
   const buildPageLink = (pageNumber: number) => {
     const params = new URLSearchParams();
-
+console.log(resolvedSearchParams);
     if (resolvedSearchParams?.search) {
       params.set("search", resolvedSearchParams.search);
     }

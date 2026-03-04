@@ -17,7 +17,7 @@ console.log(onSearch, "onSearch in search bar");
   const handleSearch = () => {
     if (!searchQuery.trim()) return;
     // onSearch(searchQuery);
-     router.push(`/all-vacancies?search=${encodeURIComponent(searchQuery)}`);
+     router.push(`/vacancies/all?search=${encodeURIComponent(searchQuery)}`);
 
   };
 
