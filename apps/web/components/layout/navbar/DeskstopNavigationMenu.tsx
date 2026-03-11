@@ -17,7 +17,7 @@ export default async function DeskstopNavigationMenu() {
     { name: "Vacancies", href: "/vacancies" },
     { name: "Blogs", href: "/blogs" },
 
-    // { name: session ? "My Account" : "Member", href: "/account" },
+    { name: session ? "My Account" : "Member", href: "/account" },
   ];
 
   return (
