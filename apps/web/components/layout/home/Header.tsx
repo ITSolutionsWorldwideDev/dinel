@@ -1,24 +1,33 @@
+// apps/web/components/layout/home/Header.tsx
+
+
 import { FaqHeaderSection } from "@/components/ui/FaqHeaderSection";
+import HeroVideo from "@/components/ui/HeroVideo";
 import NavBar from "@/components/ui/NavBar";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
-import VacanciesSearchBar from "./VacanciesSearchBar";
+// import VacanciesSearchBar from "./VacanciesSearchBar";
 
 export default function Header() {
+
   return (
     <section className="relative w-full h-auto lg:h-screen block overflow-hidden p-5">
       {/* Background Image */}
-      <Image
-        src="/assets/home/dc3a9870370aac2ce5a74f925281e910465b64aa (1).png" // put image in /public/hero.jpg
+      {/* <Image
+        src="/assets/home/dc3a9870370aac2ce5a74f925281e910465b64aa (1).png"
         alt="Industry Bridge"
         fill
         priority
         className="object-cover absolute inset-0 w-full h-full  "
-      />
+      /> */}
+
+      {/* Video Background */}
+      <HeroVideo />
+
       <NavBar />
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/10" />
+      {/* <div className="absolute inset-0 bg-black/10" /> */}
 
       {/* Big faded text */}
 
