@@ -22,8 +22,7 @@ export default function VacanciesSideBar({
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  
-console.log('currentFilters == ', currentFilters);
+  // console.log('currentFilters == ', currentFilters);
 
   const selectedSectors = searchParams.getAll("sector");
   const selectedDisciplines = searchParams.getAll("discipline");
