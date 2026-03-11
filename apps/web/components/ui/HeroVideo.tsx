@@ -5,7 +5,7 @@
 import { useEffect, useState } from "react";
 
 export default function HeroVideo() {
-  const [videoSrc, setVideoSrc] = useState("/assets/home/day-banner.mp4");
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
 
   useEffect(() => {
     const netherlandsTime = new Date().toLocaleString("en-US", {
@@ -15,14 +15,15 @@ export default function HeroVideo() {
     });
 
     const hour = parseInt(netherlandsTime);
-
-    if (hour >= 6 && hour < 18) {
-      setVideoSrc("/assets/home/day-banner.mp4");
+    console.log(hour);
+    if (hour > 6 && hour < 18) {
+      setVideoSrc("/assets/home/day-banner1.mp4");
+      // console.log("inside");
     } else {
-      setVideoSrc("/assets/home/night-banner.mp4");
+      setVideoSrc("/assets/home/night-banner2.mp4");
+      // console.log("inside else");
     }
   }, []);
-
 
   return (
     <video
@@ -30,9 +31,9 @@ export default function HeroVideo() {
       muted
       loop
       playsInline
-      className="absolute inset-0 w-full h-full object-cover"
+      className="absolute inset-0   w-full h-full object-cover "
     >
-      <source src={videoSrc} type="video/mp4" />
+      {videoSrc && <source src={videoSrc} type="video/mp4" />}
     </video>
   );
 }

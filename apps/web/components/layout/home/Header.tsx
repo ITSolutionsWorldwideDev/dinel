@@ -1,6 +1,5 @@
 // apps/web/components/layout/home/Header.tsx
 
-
 import { FaqHeaderSection } from "@/components/ui/FaqHeaderSection";
 import HeroVideo from "@/components/ui/HeroVideo";
 import NavBar from "@/components/ui/NavBar";
@@ -10,9 +9,8 @@ import { FaArrowRight } from "react-icons/fa6";
 // import VacanciesSearchBar from "./VacanciesSearchBar";
 
 export default function Header() {
-
   return (
-    <section className="relative w-full h-auto lg:h-screen block overflow-hidden p-5">
+    <section className="relative w-full h-auto lg:h-screen block  overflow-hidden">
       {/* Background Image */}
       {/* <Image
         src="/assets/home/dc3a9870370aac2ce5a74f925281e910465b64aa (1).png"

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function NavBar() {
   return (
-    <header className="  w-full ">
+    <header className="w-full">
       {/* Navigation container */}
       <nav className="relative z-100 container mx-auto p-3">
         <div className="flex items-center justify-between">
