@@ -28,6 +28,10 @@ export default function ViewJobClient({ jobId }: { jobId: number }) {
     vacancy_id: "",
     vacancy_no: "",
     vacancy_information: "",
+    intro_information: "",
+    company_information: "",
+    additional_information: "",
+    requirements: "",
     work_city: "",
     work_full_address: "",
     work_postal_code: "",
@@ -66,6 +70,10 @@ export default function ViewJobClient({ jobId }: { jobId: number }) {
           vacancy_id: job.vacancy_id,
           vacancy_no: job.vacancy_no,
           vacancy_information: job.vacancy_information,
+          intro_information: job.intro_information,
+          company_information: job.company_information,
+          additional_information: job.additional_information,
+          requirements: job.requirements,
           work_city: job.work_city,
           work_full_address: job.work_full_address,
           work_postal_code: job.work_postal_code,
@@ -173,6 +181,54 @@ export default function ViewJobClient({ jobId }: { jobId: number }) {
               className="whitespace-pre-wrap"
               dangerouslySetInnerHTML={{
                 __html: jobData.vacancy_information || "",
+              }}
+            />
+          </div>
+
+          <div className="text-gray-600 pt-2">
+            <label className="text-md font-semibold">
+              <strong>Intro Information: </strong>
+            </label>
+            <div
+              className="whitespace-pre-wrap"
+              dangerouslySetInnerHTML={{
+                __html: jobData.intro_information || "",
+              }}
+            />
+          </div>
+
+          <div className="text-gray-600 pt-2">
+            <label className="text-md font-semibold">
+              <strong>Company Information: </strong>
+            </label>
+            <div
+              className="whitespace-pre-wrap"
+              dangerouslySetInnerHTML={{
+                __html: jobData.company_information || "",
+              }}
+            />
+          </div>
+
+          <div className="text-gray-600 pt-2">
+            <label className="text-md font-semibold">
+              <strong>Additional Information: </strong>
+            </label>
+            <div
+              className="whitespace-pre-wrap"
+              dangerouslySetInnerHTML={{
+                __html: jobData.additional_information || "",
+              }}
+            />
+          </div>
+
+          <div className="text-gray-600 pt-2">
+            <label className="text-md font-semibold">
+              <strong>Requirements: </strong>
+            </label>
+            <div
+              className="whitespace-pre-wrap"
+              dangerouslySetInnerHTML={{
+                __html: jobData.requirements || "",
               }}
             />
           </div>

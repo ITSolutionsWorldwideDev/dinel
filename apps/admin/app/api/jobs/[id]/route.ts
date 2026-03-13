@@ -47,7 +47,7 @@ export async function PUT(
 
     const existing = await pool.query(
       `SELECT status FROM jobs WHERE job_id = $1`,
-      [jobId]
+      [jobId],
     );
 
     if (!existing.rows.length) {
@@ -70,6 +70,19 @@ export async function PUT(
       "status",
       "sector_id",
       "discipline_id",
+      "work_city",
+      "work_full_address",
+      "work_postal_code",
+      "work_street",
+      "country_node",
+      "vacancy_information",
+      "intro_information",
+      "company_information",
+      "additional_information",
+      "requirements",
+      "hours_per_week",
+      "deadline",
+      "closed_at",
     ];
 
     const fields: any = [];
@@ -101,7 +114,7 @@ export async function PUT(
 
     values.push(jobId);
 
-    console.log("query === ", query);
+    // console.log("query === ", query);
 
     const result = await pool.query(query, values);
 
@@ -121,7 +134,7 @@ export async function PUT(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: string }> },
 ) {
   const client = await pool.connect();
 
@@ -132,43 +145,35 @@ export async function DELETE(
 
     const jobResult = await client.query(
       "SELECT id FROM jobs WHERE job_id = $1",
-      [id]
+      [id],
     );
 
     if (!jobResult.rows.length) {
       await client.query("ROLLBACK");
-      return NextResponse.json(
-        { error: "Job not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Job not found" }, { status: 404 });
     }
 
     const jobDbId = jobResult.rows[0].id;
 
-    await client.query(
-      "DELETE FROM job_integrations WHERE job_id = $1",
-      [jobDbId]
-    );
+    await client.query("DELETE FROM job_integrations WHERE job_id = $1", [
+      jobDbId,
+    ]);
 
-    await client.query(
-      "DELETE FROM jobs WHERE id = $1",
-      [jobDbId]
-    );
+    await client.query("DELETE FROM jobs WHERE id = $1", [jobDbId]);
 
     await client.query("COMMIT");
 
     return NextResponse.json(
       { message: "Job deleted successfully" },
-      { status: 200 }
+      { status: 200 },
     );
-
   } catch (err) {
     await client.query("ROLLBACK");
     console.error("DELETE /api/jobs/:id error:", err);
 
     return NextResponse.json(
       { error: "Failed to delete job" },
-      { status: 500 }
+      { status: 500 },
     );
   } finally {
     client.release();

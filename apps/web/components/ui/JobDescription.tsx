@@ -51,7 +51,13 @@ const JobDescription = ({ jobData }: any) => {
 
               <div
                 className="whitespace-pre-wrap text-slate-600 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: jobData.vacancy_information || "" }}
+                dangerouslySetInnerHTML={{ __html: jobData.company_information || "" }}
+              />
+              <br></br>
+
+              <div
+                className="whitespace-pre-wrap text-slate-600 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: jobData.intro_information || "" }}
               />
             </div>
 
@@ -60,7 +66,11 @@ const JobDescription = ({ jobData }: any) => {
               <h2 className="text-2xl font-bold text-slate-800 mb-6">
                 Key responsibilities
               </h2>
-              <div className="space-y-3">
+              <div
+                className="whitespace-pre-wrap text-slate-600 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: jobData.vacancy_information || "" }}
+              />
+              {/* <div className="space-y-3">
                 {jobData.responsibilities?.map((item: any, index: number) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="mt-1.5 shrink-0">
@@ -71,7 +81,7 @@ const JobDescription = ({ jobData }: any) => {
                     <p className="text-slate-700">{item}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Requirements */}
@@ -79,7 +89,12 @@ const JobDescription = ({ jobData }: any) => {
               <h2 className="text-2xl font-bold text-slate-800 mb-6">
                 What we're looking for
               </h2>
-              <div className="space-y-3">
+              
+              <div
+                className="whitespace-pre-wrap text-slate-600 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: jobData.requirements || "" }}
+              />
+              {/* <div className="space-y-3">
                 {jobData.requirements?.map((item: any, index: any) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="mt-1.5 shrink-0">
@@ -90,7 +105,7 @@ const JobDescription = ({ jobData }: any) => {
                     <p className="text-slate-700">{item}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Benefits */}
