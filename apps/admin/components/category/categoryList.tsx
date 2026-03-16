@@ -22,6 +22,10 @@ export default function CategoryListComponent() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(false);
 
+  const [search, setSearch] = useState("");
+  const [status, setStatus] = useState<string | null>(null);
+  const [sort, setSort] = useState<string | null>(null);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -42,9 +46,25 @@ export default function CategoryListComponent() {
   const fetchCategories = async () => {
     try {
       setLoading(true);
-      const res = await fetch("/api/category");
+
+      const params = new URLSearchParams();
+
+      if (search) params.append("search", search);
+      if (sort) params.append("sort", sort);
+
+      const res = await fetch(`/api/category?${params.toString()}`);
       const data = await res.json();
-      setCategories(data.items || []);
+
+      let items = data.items || [];
+
+      // frontend status filter
+      if (status) {
+        items = items.filter((c: Category) =>
+          status === "Active" ? c.status === 1 : c.status === 0,
+        );
+      }
+
+      setCategories(items);
     } catch (err) {
       console.error("Failed to load categories", err);
       showToast("error", "Failed to load categories");
@@ -55,7 +75,7 @@ export default function CategoryListComponent() {
 
   useEffect(() => {
     fetchCategories();
-  }, []);
+  }, [search, status, sort]);
 
   /* ------------------------------------
      Modals
@@ -89,7 +109,6 @@ export default function CategoryListComponent() {
         category: formData.category,
         status: formData.status ? 1 : 0,
       };
-      
 
       const res = await fetch("/api/category", {
         method: isEditMode ? "PUT" : "POST",
@@ -97,7 +116,7 @@ export default function CategoryListComponent() {
         body: JSON.stringify(
           isEditMode
             ? { category_id: formData.category_id, ...payload }
-            : payload
+            : payload,
         ),
       });
 
@@ -105,7 +124,7 @@ export default function CategoryListComponent() {
 
       showToast(
         "success",
-        isEditMode ? "Category updated" : "Category created"
+        isEditMode ? "Category updated" : "Category created",
       );
 
       setIsModalOpen(false);
@@ -203,7 +222,12 @@ export default function CategoryListComponent() {
 
           <div className="card table-list-card">
             <div className="card-header flex justify-between items-center">
-              <FilterBar />
+              <FilterBar
+                search={search}
+                setSearch={setSearch}
+                setStatus={setStatus}
+                setSort={setSort}
+              />
             </div>
 
             <div className="card-body">
@@ -297,10 +321,7 @@ export default function CategoryListComponent() {
               >
                 Cancel
               </button>
-              <button
-                onClick={handleDelete}
-                className="btn btn-danger"
-              >
+              <button onClick={handleDelete} className="btn btn-danger">
                 Delete
               </button>
             </div>

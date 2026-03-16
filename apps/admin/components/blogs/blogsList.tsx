@@ -26,8 +26,11 @@ export default function BlogsListComponent() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [search, setSearch] = useState("");
+  const [status, setStatus] = useState<string | null>(null);
+  const [sort, setSort] = useState<string | null>(null);
 
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
   const { showToast } = useToast();
@@ -44,9 +47,27 @@ export default function BlogsListComponent() {
   const fetchBlogs = async () => {
     try {
       setLoading(true);
-      const res = await fetch("/api/blogs");
+
+      const params = new URLSearchParams();
+
+      if (search) params.append("search", search);
+      if (sort) params.append("sort", sort);
+
+      const res = await fetch(`/api/blogs?${params.toString()}`);
       const data = await res.json();
-      setBlogs(data.items || []);
+
+      let items = data.items || [];
+
+      // frontend status filter
+      if (status) {
+        items = items.filter((b: Blog) =>
+          status === "Published"
+            ? b.status === "published"
+            : b.status === "draft",
+        );
+      }
+
+      setBlogs(items);
     } catch (err) {
       console.error("Failed to load blogs", err);
       showToast("error", "Failed to load blogs");
@@ -57,7 +78,7 @@ export default function BlogsListComponent() {
 
   useEffect(() => {
     fetchBlogs();
-  }, []);
+  }, [search, status, sort]);
 
   /* ------------------------------------
      Delete
@@ -97,14 +118,22 @@ export default function BlogsListComponent() {
               <TbCirclePlus size={18} />
               Add Blog
             </Link> */}
-            <Link href="/blogs/create" className="btn btn-info flex flex-row gap-2">
+            <Link
+              href="/blogs/create"
+              className="btn btn-info flex flex-row gap-2"
+            >
               <TbCirclePlus size={18} />
               Add Blog
             </Link>
           </div>
           <div className="card">
             <div className="card-header flex justify-between items-center">
-              <FilterBar />
+              <FilterBar
+                search={search}
+                setSearch={setSearch}
+                setStatus={setStatus}
+                setSort={setSort}
+              />
             </div>
             <div className="card-body p-3"></div>
           </div>
@@ -156,7 +185,10 @@ export default function BlogsListComponent() {
               >
                 Cancel
               </button>
-              <button onClick={handleDelete} className="btn btn-danger cursor-pointer">
+              <button
+                onClick={handleDelete}
+                className="btn btn-danger cursor-pointer"
+              >
                 Delete
               </button>
             </div>
