@@ -88,9 +88,20 @@ export async function PUT(
     const fields: any = [];
     const values: any[] = [];
 
+    const dateFields = ["deadline", "closed_at"];
+    const uuidFields = ["job_id", "sector_id", "discipline_id"];
+
     for (const key of allowedFields) {
       if (body[key] !== undefined) {
-        values.push(body[key]);
+        let value = body[key];
+
+        if (dateFields.includes(key)) {
+          value = value ? new Date(value) : null;
+        } else if (uuidFields.includes(key)) {
+          value = value || null;
+        }
+
+        values.push(value);
         fields.push(`${key} = $${values.length}`);
       }
     }
@@ -104,6 +115,8 @@ export async function PUT(
         { status: 400 },
       );
     }
+
+    console.log("fields === ", fields.join(", "));
 
     const query = `
       UPDATE jobs

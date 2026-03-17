@@ -253,7 +253,7 @@ export default function JobForm({ initialData, onSubmit, mode = "create" }: JobF
             </div>
 
             {/* CLOSED AT */}
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <label>Closed At</label>
               <input
                 type="date"
@@ -261,7 +261,7 @@ export default function JobForm({ initialData, onSubmit, mode = "create" }: JobF
                 value={form.closed_at}
                 onChange={(e) => update("closed_at", e.target.value)}
               />
-            </div>
+            </div> */}
 
             
 

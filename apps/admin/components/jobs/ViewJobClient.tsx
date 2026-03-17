@@ -169,9 +169,9 @@ export default function ViewJobClient({ jobId }: { jobId: number }) {
           <div>
             <strong>Deadline:</strong> {jobData.deadline}
           </div>
-          <div>
+          {/* <div>
             <strong>Closed At:</strong> {jobData.closed_at}
-          </div>
+          </div> */}
           {/* <div><strong>Vacancy Information:</strong> {jobData.vacancy_information}</div> */}
           <div className="text-gray-600 pt-2">
             <label className="text-md font-semibold">
