@@ -15,11 +15,12 @@ export const SidebarData = [
       },
     ],
   },
+
   {
-    label: "Inventory",
+    label: "Content (CMS)",
     submenuOpen: true,
     showSubRoute: false,
-    submenuHdr: "Inventory",
+    submenuHdr: "Content (CMS)",
     submenuItems: [
       {
         label: "Category",
@@ -35,8 +36,23 @@ export const SidebarData = [
         showSubRoute: false,
         submenu: false,
       },
+      {
+        label: "Blog",
+        link: "/blogs",
+        icon: "wallpaper",
+        showSubRoute: false,
+        submenu: false,
+      },
     ],
   },
+  // {
+  //   label: "Inventory",
+  //   submenuOpen: true,
+  //   showSubRoute: false,
+  //   submenuHdr: "Inventory",
+  //   submenuItems: [
+  //   ],
+  // },
 
   {
     label: "Jobs Management",
@@ -69,22 +85,6 @@ export const SidebarData = [
         link: "/applications",
         icon: "file",
         showSubRoute: false,
-      },
-    ],
-  },
-
-  {
-    label: "Content (CMS)",
-    submenuOpen: true,
-    showSubRoute: false,
-    submenuHdr: "Content (CMS)",
-    submenuItems: [
-      {
-        label: "Blog",
-        link: "/blogs",
-        icon: "wallpaper",
-        showSubRoute: false,
-        submenu: false,
       },
     ],
   },
