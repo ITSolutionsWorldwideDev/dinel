@@ -17,10 +17,10 @@ export default function HeroVideo() {
     const hour = parseInt(netherlandsTime);
     console.log(hour);
     if (hour > 6 && hour < 18) {
-      setVideoSrc("/assets/home/day-banner1.mp4");
+      setVideoSrc("/assets/home/Day Video (2).mp4");
       // console.log("inside");
     } else {
-      setVideoSrc("/assets/home/night-banner2.mp4");
+      setVideoSrc("/assets/home/Night Video.mp4");
       // console.log("inside else");
     }
   }, []);
