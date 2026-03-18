@@ -49,14 +49,14 @@ export default function Dashboard() {
                   14 New Companies Subscribed Today !!!
                 </p>
               </div>
-              <div className="d-flex align-items-center flex-wrap mb-1">
+              {/* <div className="d-flex align-items-center flex-wrap mb-1">
                 <Link href="#" className="btn btn-dark btn-md me-2 mb-2">
                   Companies
                 </Link>
                 <Link href="#" className="btn btn-light btn-md mb-2">
                   All Packages
                 </Link>
-              </div>
+              </div> */}
             </div>
             <div className="welcome-bg">
               <img
@@ -94,7 +94,7 @@ export default function Dashboard() {
 
         <DashboardSideWidgets route={route} /> */}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-4 ">
           {/* World Map */}
           <div className="card flex-fill">
             <div className="card-header d-flex justify-content-between align-items-center">

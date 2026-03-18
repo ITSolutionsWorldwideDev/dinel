@@ -2,8 +2,13 @@
 "use client";
 
 import { useState } from "react";
-// import { useToast } from "@repo/ui";
 import { Button, useToast } from "@repo/ui";
+
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+const ALLOWED_TYPES = [
+  "application/pdf",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+];
 
 export default function UploadCandidateModal({
   tenantId,
@@ -22,6 +27,24 @@ export default function UploadCandidateModal({
   const [loading, setLoading] = useState(false);
 
   const { showToast } = useToast();
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = e.target.files?.[0];
+
+    if (!selectedFile) return;
+
+    if (!ALLOWED_TYPES.includes(selectedFile.type)) {
+      showToast("error", "Only PDF or DOCX files are allowed");
+      return;
+    }
+
+    if (selectedFile.size > MAX_FILE_SIZE) {
+      showToast("error", "File size must be less than 5MB");
+      return;
+    }
+
+    setFile(selectedFile);
+  };
 
   const handleUpload = async () => {
     if (!file) {
@@ -48,7 +71,6 @@ export default function UploadCandidateModal({
         return;
       }
 
-      // ✅ OPEN PREVIEW
       onParsed(data);
     } catch (err) {
       showToast("error", "Something went wrong while parsing CV");
@@ -70,8 +92,12 @@ export default function UploadCandidateModal({
           <input
             type="file"
             accept=".pdf,.docx"
-            onChange={(e) => setFile(e.target.files?.[0] || null)}
+            onChange={handleFileChange}
+            // onChange={(e) => setFile(e.target.files?.[0] || null)}
           />
+          <p className="text-xs text-gray-500 mt-2">
+            Allowed: PDF, DOCX • Max size: 5MB
+          </p>
         </div>
 
         <div className="modal-footer flex justify-end gap-2">
@@ -92,51 +118,4 @@ export default function UploadCandidateModal({
       </div>
     </div>
   );
-}
-{
-  /* <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
-      <div className="bg-white p-6 rounded w-full max-w-md">
-
-
-
-
-        
-        <h3 className="font-semibold mb-4">Upload CV</h3>
-
-        <input
-          type="file"
-          accept=".pdf,.docx"
-          onChange={(e) => setFile(e.target.files?.[0] || null)}
-        />
-
-        <div className="flex justify-end gap-2 mt-4">
-          <button
-            onClick={onClose}
-            className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={handleUpload}
-            disabled={loading}
-            className="btn btn-primary fs-13 fw-medium p-2 px-3"
-          >
-            {loading ? "Parsing…" : "Upload"}
-          </button>
-        </div>
-
-        
-      </div>
-
-
-    </div>
-
-    
-          <button className="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none">
-            Cancel
-          </button>
-          <button className="btn btn-primary fs-13 fw-medium p-2 px-3">
-            Save
-          </button>  */
-
 }

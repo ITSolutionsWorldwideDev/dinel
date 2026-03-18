@@ -25,7 +25,7 @@ export default function ThankYouPage({
       </p>
 
       {/* Progress/Confirmation Checklist */}
-      <div className="mb-10 w-full max-w-sm overflow-hidden rounded-xl border bg-card text-left shadow-sm">
+      {/* <div className="mb-10 w-full max-w-sm overflow-hidden rounded-xl border bg-card text-left shadow-sm">
         <div className="p-4 border-b bg-muted/30">
           <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Submission Status
@@ -43,7 +43,7 @@ export default function ThankYouPage({
             <span className="text-sm font-medium">Carerix Match created</span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Action Buttons */}
       <div className="flex flex-col gap-3 sm:flex-row">

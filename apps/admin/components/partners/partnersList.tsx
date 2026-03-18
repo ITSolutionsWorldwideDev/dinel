@@ -24,6 +24,10 @@ export default function PartnersListComponent() {
   const [partners, setPartners] = useState<Partner[]>([]);
   const [loading, setLoading] = useState(false);
 
+  const [search, setSearch] = useState("");
+  const [status, setStatus] = useState<string | null>(null);
+  const [sort, setSort] = useState<string | null>(null);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -45,7 +49,7 @@ export default function PartnersListComponent() {
   /* ------------------------------------
      Fetch Partners
   ------------------------------------ */
-  const fetchPartners = async () => {
+  /* const fetchPartners = async () => {
     try {
       setLoading(true);
       const res = await fetch("/api/partner");
@@ -56,11 +60,40 @@ export default function PartnersListComponent() {
     } finally {
       setLoading(false);
     }
+  }; */
+
+  const fetchPartners = async () => {
+    try {
+      setLoading(true);
+
+      const params = new URLSearchParams();
+
+      if (search) params.append("search", search);
+      if (sort) params.append("sort", sort);
+
+      const res = await fetch(`/api/partner?${params.toString()}`);
+      const data = await res.json();
+
+      let items = data.items || [];
+
+      // frontend status filter
+      if (status) {
+        items = items.filter((p: Partner) =>
+          status === "Active" ? p.status === 1 : p.status === 0
+        );
+      }
+
+      setPartners(items);
+    } catch {
+      showToast("error", "Failed to load partners");
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     fetchPartners();
-  }, []);
+  }, [search, status, sort]);
 
   /* ------------------------------------
      Modals
@@ -215,7 +248,13 @@ export default function PartnersListComponent() {
 
           <div className="card table-list-card">
             <div className="card-header flex justify-between items-center">
-              <FilterBar />
+              {/* <FilterBar /> */}
+              <FilterBar
+              search={search}
+              setSearch={setSearch}
+              setStatus={setStatus}
+              setSort={setSort}
+            />
             </div>
 
             <div className="card-body">

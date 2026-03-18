@@ -17220,6 +17220,9 @@ body {
   }
 }
 
+.fa-envelope {
+  --fa: "\f0e0"; }
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;

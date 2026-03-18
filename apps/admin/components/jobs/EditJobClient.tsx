@@ -32,10 +32,15 @@ export default function EditJobClient({ jobId }: { jobId: number }) {
     work_street: "",
     country_node: "",
     vacancy_information: "",
+    intro_information: "",
+    company_information: "",
+    additional_information: "",
+    requirements: "",
     hours_per_week: 0,
     deadline: "",
     closed_at: "",
   });
+
 
   useEffect(() => {
     const fetchJob = async () => {
@@ -66,6 +71,10 @@ export default function EditJobClient({ jobId }: { jobId: number }) {
           work_street: job.work_street || "",
           country_node: job.country_node || "",
           vacancy_information: job.vacancy_information || "",
+          intro_information: job.intro_information || "",
+          company_information: job.company_information || "",
+          additional_information: job.additional_information || "",
+          requirements: job.requirements || "",
           hours_per_week: job.hours_per_week || 0,
           deadline: job.deadline ? job.deadline.split("T")[0] : "",
           closed_at: job.closed_at ? job.closed_at.split("T")[0] : "",

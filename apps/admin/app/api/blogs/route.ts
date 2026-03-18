@@ -45,7 +45,7 @@ export async function GET(req: NextRequest, context: { params: {} }) {
           LEFT JOIN categories c ON c.category_id = b.category_id
           WHERE blog_id = $1
           ORDER BY b.created_at DESC`,
-        [id]
+        [id],
       );
 
       if (!result.rows.length) {
@@ -78,7 +78,7 @@ export async function GET(req: NextRequest, context: { params: {} }) {
           AND b.status = 'published'
         LIMIT 1
         `,
-        [slug]
+        [slug],
       );
 
       if (!result.rows.length) {
@@ -106,6 +106,12 @@ export async function GET(req: NextRequest, context: { params: {} }) {
 
     values.push(limit, offset);
 
+    const baseFrom = `
+      FROM blogs b
+      LEFT JOIN media m ON m.media_id = b.featured_image_id
+      LEFT JOIN categories c ON c.category_id = b.category_id
+    `;
+
     const dataQuery = `
       SELECT
             b.blog_id,
@@ -122,9 +128,7 @@ export async function GET(req: NextRequest, context: { params: {} }) {
             m.file_url AS featured_image_url,
             c.category,
             c.categoryslug
-      FROM blogs b
-      LEFT JOIN media m ON m.media_id = b.featured_image_id
-      LEFT JOIN categories c ON c.category_id = b.category_id
+      ${baseFrom}
       ${whereClause}
       ORDER BY ${orderBy}
       LIMIT $${values.length - 1} OFFSET $${values.length}
@@ -132,7 +136,7 @@ export async function GET(req: NextRequest, context: { params: {} }) {
 
     const countQuery = `
       SELECT COUNT(*)::int AS count
-      FROM blogs
+      ${baseFrom}
       ${whereClause}
     `;
 
@@ -152,7 +156,7 @@ export async function GET(req: NextRequest, context: { params: {} }) {
     console.error(err);
     return NextResponse.json(
       { error: "Failed to fetch blogs" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -171,7 +175,7 @@ export async function POST(req: Request) {
     if (!body.title || !body.slug || !body.content) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -222,7 +226,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json(
       { error: "Failed to create blog" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -239,7 +243,7 @@ export async function PUT(req: Request) {
     if (!id) {
       return NextResponse.json(
         { error: "Blog ID is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -248,7 +252,7 @@ export async function PUT(req: Request) {
     if (!body.title || !body.slug || !body.content) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -302,7 +306,7 @@ export async function PUT(req: Request) {
 
     return NextResponse.json(
       { error: "Failed to update blog" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -321,7 +325,7 @@ export async function DELETE(req: NextRequest) {
   try {
     const result = await pool.query(
       `DELETE FROM blogs WHERE blog_id = $1 RETURNING *`,
-      [id]
+      [id],
     );
 
     if (!result.rows.length) {
@@ -333,7 +337,7 @@ export async function DELETE(req: NextRequest) {
     console.error(err);
     return NextResponse.json(
       { error: "Failed to delete blog" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

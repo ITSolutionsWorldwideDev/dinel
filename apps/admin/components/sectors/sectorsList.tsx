@@ -22,6 +22,10 @@ export default function SectorListComponent() {
   const [categories, setCategories] = useState<Sector[]>([]);
   const [loading, setLoading] = useState(false);
 
+  const [search, setSearch] = useState("");
+  const [status, setStatus] = useState<string | null>(null);
+  const [sort, setSort] = useState<string | null>(null);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -42,12 +46,28 @@ export default function SectorListComponent() {
   const fetchCategories = async () => {
     try {
       setLoading(true);
-      const res = await fetch("/api/sectors");
+
+      const params = new URLSearchParams();
+
+      if (search) params.append("search", search);
+      if (sort) params.append("sort", sort);
+
+      const res = await fetch(`/api/sectors?${params.toString()}`);
       const data = await res.json();
-      setCategories(data.items || []);
+
+      let items = data.items || [];
+
+      // frontend status filter
+      if (status) {
+        items = items.filter((s: Sector) =>
+          status === "Active" ? s.status === 1 : s.status === 0,
+        );
+      }
+
+      setCategories(items);
     } catch (err) {
-      console.error("Failed to load categories", err);
-      showToast("error", "Failed to load categories");
+      console.error("Failed to load sectors", err);
+      showToast("error", "Failed to load sectors");
     } finally {
       setLoading(false);
     }
@@ -55,7 +75,7 @@ export default function SectorListComponent() {
 
   useEffect(() => {
     fetchCategories();
-  }, []);
+  }, [search, status, sort]);
 
   /* ------------------------------------
      Modals
@@ -89,24 +109,18 @@ export default function SectorListComponent() {
         sector: formData.sector,
         status: formData.status ? 1 : 0,
       };
-      
 
       const res = await fetch("/api/sectors", {
         method: isEditMode ? "PUT" : "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(
-          isEditMode
-            ? { sector_id: formData.sector_id, ...payload }
-            : payload
+          isEditMode ? { sector_id: formData.sector_id, ...payload } : payload,
         ),
       });
 
       if (!res.ok) throw new Error();
 
-      showToast(
-        "success",
-        isEditMode ? "Sector updated" : "Sector created"
-      );
+      showToast("success", isEditMode ? "Sector updated" : "Sector created");
 
       setIsModalOpen(false);
       fetchCategories();
@@ -203,7 +217,12 @@ export default function SectorListComponent() {
 
           <div className="card table-list-card">
             <div className="card-header flex justify-between items-center">
-              <FilterBar />
+              <FilterBar
+                search={search}
+                setSearch={setSearch}
+                setStatus={setStatus}
+                setSort={setSort}
+              />
             </div>
 
             <div className="card-body">
@@ -297,10 +316,7 @@ export default function SectorListComponent() {
               >
                 Cancel
               </button>
-              <button
-                onClick={handleDelete}
-                className="btn btn-danger"
-              >
+              <button onClick={handleDelete} className="btn btn-danger">
                 Delete
               </button>
             </div>

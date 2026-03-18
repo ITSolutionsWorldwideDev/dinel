@@ -33,6 +33,10 @@ export default function JobForm({ initialData, onSubmit, mode = "create" }: JobF
     work_street: "",
     country_node: "",
     vacancy_information: "",
+    intro_information: "",
+    company_information: "",
+    additional_information: "",
+    requirements: "",
     hours_per_week: 0,
     deadline: "",
     closed_at: "",
@@ -186,6 +190,46 @@ export default function JobForm({ initialData, onSubmit, mode = "create" }: JobF
               />
             </div>
 
+            {/* Intro INFORMATION */}
+            <div className="mb-3">
+              <label>Intro Information</label>
+              <textarea
+                className="w-full border rounded px-3 py-2 min-h-80"
+                value={form.intro_information}
+                onChange={(e) => update("intro_information", e.target.value)}
+              />
+            </div>
+
+            {/* Company INFORMATION */}
+            <div className="mb-3">
+              <label>Company Information</label>
+              <textarea
+                className="w-full border rounded px-3 py-2 min-h-80"
+                value={form.company_information}
+                onChange={(e) => update("company_information", e.target.value)}
+              />
+            </div>
+
+            {/* Additional INFORMATION */}
+            <div className="mb-3">
+              <label>Additional Information</label>
+              <textarea
+                className="w-full border rounded px-3 py-2 min-h-80"
+                value={form.additional_information}
+                onChange={(e) => update("additional_information", e.target.value)}
+              />
+            </div>
+
+            {/* Requirements */}
+            <div className="mb-3">
+              <label>Requirements</label>
+              <textarea
+                className="w-full border rounded px-3 py-2 min-h-80"
+                value={form.requirements}
+                onChange={(e) => update("requirements", e.target.value)}
+              />
+            </div>
+
             {/* HOURS PER WEEK */}
             <div className="mb-3">
               <label>Hours per Week</label>
@@ -209,7 +253,7 @@ export default function JobForm({ initialData, onSubmit, mode = "create" }: JobF
             </div>
 
             {/* CLOSED AT */}
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <label>Closed At</label>
               <input
                 type="date"
@@ -217,7 +261,7 @@ export default function JobForm({ initialData, onSubmit, mode = "create" }: JobF
                 value={form.closed_at}
                 onChange={(e) => update("closed_at", e.target.value)}
               />
-            </div>
+            </div> */}
 
             
 

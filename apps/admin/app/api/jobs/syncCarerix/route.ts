@@ -60,6 +60,12 @@ type CarerixVacancy = {
   fte?: number;
   minSalary?: number;
   maxSalary?: number;
+  introInformation?: string;
+  companyInformation?: string;
+  additionalInformation?: string;
+  applicationContactInformation?: string;
+  requirements?: string;
+
   creationDate?: string;
   modificationDate?: string;
   deleted?: number;
@@ -128,6 +134,13 @@ export async function POST() {
                       companyName
                       contactInformation
                       ownerDisplay
+
+                      introInformation
+                      companyInformation
+                      additionalInformation
+                      applicationContactInformation
+                      requirements
+              
                       statusDisplay
                       startDate
                       statusChangedDate
@@ -188,7 +201,7 @@ export async function POST() {
         if (
           !vac.modificationDate ||
           Number(vac?.deleted) > 0 ||
-          (vac?.statusDisplay == "Vervallen")  ||
+          vac?.statusDisplay == "Vervallen" ||
           (deadlineDate && deadlineDate < lastMonth)
         ) {
           continue;
@@ -196,7 +209,6 @@ export async function POST() {
 
         const modificationDate = new Date(vac?.modificationDate);
 
- 
         if (modificationDate < lastMonth) {
           page = totalPages;
           break;
@@ -254,6 +266,7 @@ export async function POST() {
         // console.log("optionalFields endDate ==== ", vac.endDate);
         // console.log("optionalFields deleted ==== ", vac.deleted);
         // console.log("optionalFields modificationDate ==== ", modificationDate);
+        // console.log("optionalFields modificationDate ==== ", modificationDate);
 
         const optionalFields: { col: string; val: any }[] = [
           { col: "closed_at", val: closed_at },
@@ -266,6 +279,17 @@ export async function POST() {
           { col: "work_street", val: vac.workStreet || null },
           { col: "country_node", val: vac.countryNode || null },
           { col: "vacancy_information", val: vac.vacancyInformation || null },
+          { col: "intro_information", val: vac.introInformation || null },
+          { col: "company_information", val: vac.companyInformation || null },
+          {
+            col: "additional_information",
+            val: vac.additionalInformation || null,
+          },
+          {
+            col: "application_contact_information",
+            val: vac.applicationContactInformation || null,
+          },
+          { col: "requirements", val: vac.requirements || null },
           {
             col: "hours_per_week",
             val: typeof vac.hoursPerWeek === "number" ? vac.hoursPerWeek : null,
@@ -279,7 +303,16 @@ export async function POST() {
             values.push(field.val);
           }
         }
-
+        //       INSERT INTO public.jobs(
+        // id, title, slug, description, location, employment_type, workplace_type,
+        // department, experience_level, status, visibility, apply_url, company_id,
+        // created_by, published_at, closed_at, created_at, updated_at, carerix_id,
+        // company_name, job_id, sector_id, discipline_id, experience, education, vacancy_id,
+        // vacancy_no, contact_information, status_display, offer_information, work_city,
+        // work_full_address, work_postal_code, work_street, country_node, 
+        // vacancy_information,
+        // hours_per_week, deadline, intro_information, company_information,
+        // additional_information, application_contact_information, requirements)
         const placeholders = values.map((_, i) => `$${i + 1}`).join(",");
 
         const result = await pool.query(
@@ -308,6 +341,11 @@ export async function POST() {
               "work_street" = EXCLUDED."work_street",
               "country_node" = EXCLUDED."country_node",
               "vacancy_information" = EXCLUDED."vacancy_information",
+              "intro_information" = EXCLUDED."intro_information",
+              "company_information" = EXCLUDED."company_information",
+              "additional_information" = EXCLUDED."additional_information",
+              "application_contact_information" = EXCLUDED."application_contact_information",
+              "requirements" = EXCLUDED."requirements",
               "hours_per_week" = EXCLUDED."hours_per_week",
               deadline = EXCLUDED.deadline,
               closed_at = EXCLUDED.closed_at,

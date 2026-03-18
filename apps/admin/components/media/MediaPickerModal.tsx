@@ -51,7 +51,7 @@ export default function MediaPickerModal({
         </div>
 
         {/* Upload */}
-        <div className="mb-4">
+        <div className="mb-4 p-8 bg-[#d2d2d2]">
           <UploadButton<MediaRouter, "imageUploader">
             endpoint="imageUploader"
             onClientUploadComplete={() => fetchMedia()}
