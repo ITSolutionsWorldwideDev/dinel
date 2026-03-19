@@ -24,12 +24,12 @@ const SuccessfulCollaboration = () => {
         {
           icon: <CircleCheckBig className="text-[#FF6B35]"/>,
           heading: "For professionals:",
-          title: "We start with a conversation to understand your needs",
+          title: "We start with a conversation to understand your ambitions and career goals.",
         },
         {
           icon: <CircleCheckBig className="text-[#FF6B35]"/>,
           heading: "For clients:",
-          title: "We search specifically for the right professional or team",
+          title: "We start with a conversation to understand your organization, project needs, and team dynamics.",
         },
       ],
       description:

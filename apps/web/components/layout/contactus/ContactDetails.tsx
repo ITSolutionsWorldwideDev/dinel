@@ -18,7 +18,7 @@ const ContactDetails = () => {
             </div>
             <div>
               <h4 className="font-semibold text-slate-900">Phone</h4>
-              <p className="text-slate-600 text-sm">+31 123 456 7890</p>
+              <p className="text-slate-600 text-sm">010 234 35 73</p>
             </div>
           </div>
 
@@ -41,11 +41,10 @@ const ContactDetails = () => {
             <div>
               <h4 className="font-semibold text-slate-900">Address</h4>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Dinel <br />
-                Headquarters <br />
-                Example Street 12 <br />
-                1234 AB City <br />
-                The Netherlands
+                Daltonstraat 11
+                <br />
+                3335 JR Zwijndrecht <br />
+                The Netherlands <br />
               </p>
             </div>
           </div>

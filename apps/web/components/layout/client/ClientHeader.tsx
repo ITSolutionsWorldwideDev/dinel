@@ -22,6 +22,7 @@ export default function ClientHeader() {
         <NavBar />
         {/* Overlay */}
         <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#0A7CD8]/70 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#0A7CD8]/70 to-transparent" />
 
         {/* Big faded text */}
 
@@ -32,12 +33,11 @@ export default function ClientHeader() {
               <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ">
                 The right people make your projects succeed
               </h2>
-              {/* <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#0A7CD8]/70 to-transparent" /> */}
 
               <p className="mt-6 max-w-2xl text-white/90 text-base md:text-xl leading-relaxed">
                 Organizations today face major challenges in energy transition,
-                sustainability and technological innovation. Successful projects
-                require the right technical professionalsat the right time.
+                sustainability and technological innovation.Successful projects
+                require the right technical professionals at the right time.
                 Dinel support organizations with experienced, committed
                 specialists who bring knowledge, continuity and results.
               </p>

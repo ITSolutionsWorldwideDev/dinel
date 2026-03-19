@@ -67,8 +67,8 @@ export default function DinelToday() {
               Innovative Organizations
             </h3>
             <p className="text-sm text-gray-200 leading-relaxed">
-              Companies facing challenges in innovation, capacity and continuity
-              who need the right expertise
+              Companies facing challenges in innovation, capacity, and
+              continuity that need the right expertise.
             </p>
           </div>
         </div>

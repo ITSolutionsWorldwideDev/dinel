@@ -95,7 +95,7 @@ export default function Projects() {
         </div>
 
         {/* Bottom Message */}
-        <TextWithBorderAndBg text="These are projects where your work matters today and in the future." />
+        <TextWithBorderAndBg text="These are projects where your work creates impact today and in the future." />
       </div>
     </div>
   );

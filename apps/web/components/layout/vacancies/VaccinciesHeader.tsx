@@ -18,6 +18,7 @@ export default function VaccinciesHeader() {
       <NavBar />
       {/* Overlay */}
       <div className="absolute inset-0 bg-linear-to-r from-transparent  to-[#0A7CD8]" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent  to-[#0A7CD8]" />
 
       {/* Big faded text */}
 
@@ -45,7 +46,7 @@ export default function VaccinciesHeader() {
             </Link>
 
             <Link
-              href={'/become-a-dineler'}
+              href={"/become-a-dineler"}
               className="inline-flex items-center gap-2 bg-white text-[#0A7CD8] border-2 border-[#0A7CD8] hover:bg-gray-100 px-6 py-3  font-medium transition"
             >
               Become a Dineler

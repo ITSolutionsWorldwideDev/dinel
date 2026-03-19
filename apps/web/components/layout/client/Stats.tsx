@@ -19,7 +19,7 @@ export default function Stats() {
       icon: Rocket,
       iconBg: "bg-[#FF6B35]",
       value: "Fast",
-      label: "Delivery Time",
+      label: "delivery",
     },
     {
       icon: Handshake,

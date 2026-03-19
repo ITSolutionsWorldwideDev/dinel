@@ -28,7 +28,7 @@ export default function DinelBanner() {
               <blockquote className="mb-8 text-base md:text-lg leading-relaxed max-w-lg">
                 "We understand what drives technicians and what they are looking
                 for in their next step. That's why our team can match the right
-                people to the right projects. Our goal is your next challenge.
+                people to the right projects. Our goal is to help you find your next challenge.
               </blockquote>
 
               {/* Signature */}

@@ -24,7 +24,7 @@ export default function WhyDinel() {
       icon: <Rocket className="text-white" />,
       iconBg: "bg-[#FF6B35]",
       title: "Quick Delivery",
-      desc: "Fast deployment without compromising on quality or compatibility",
+      desc: "Fast deployment without compromising quality or compatibility",
     },
     {
       icon: <Handshake className="text-white" />,

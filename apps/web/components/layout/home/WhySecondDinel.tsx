@@ -4,7 +4,7 @@ export default function CareerSection() {
   const features = [
     {
       icon: "/assets/home/Vector (1).png",
-      text: "Challenging Jobs And Projects",
+      text: "Challenging jobs and projects",
     },
     {
       icon: "/assets/home/Vector (2).png",
@@ -12,7 +12,7 @@ export default function CareerSection() {
     },
     {
       icon: "/assets/home/streamline-flex_decent-work-and-economic-growth.png",
-      text: "Focus On Growth And Development",
+      text: "Focus on growth and development",
     },
   ];
 

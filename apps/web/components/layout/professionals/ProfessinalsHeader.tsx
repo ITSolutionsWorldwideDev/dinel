@@ -29,10 +29,10 @@ export default function ProfessinalsHeader() {
           </h2>
 
           <p className="mt-6 w-2xl text-white/90 text-base md:text-xl leading-relaxed">
-            At Dinel, your professional growth comes first. Whether you are a
-            starter or an experienced technical specialist, we help you take the
-            next step in your career, one that truly fits who you are and where
-            you want to go.
+            At Dinel, your professional growth comes first.Whether you are
+            starting your career or are an experienced technical specialist, we
+            help you take the next step in your career, one that truly fits who
+            you are and where you want to go.
           </p>
 
           {/* Buttons */}

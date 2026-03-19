@@ -17,7 +17,7 @@ export default function NextStep() {
               <p className="text-white text-xl md:text-3xl font-medium leading-relaxed">
                 "We understand what drives technicians and what they are looking
                 for in their next step. That's why our team can match the right
-                people to the right projects. Our goal is your next challenge."
+                people to the right projects. Our goal is to help you find your next challenge."
               </p>
             </blockquote>
           </div>

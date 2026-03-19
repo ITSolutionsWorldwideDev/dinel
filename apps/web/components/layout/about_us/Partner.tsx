@@ -7,7 +7,7 @@ import { CircleCheckBig } from "lucide-react";
 const features = [
   {
     title: "We listen before we connect",
-    desc: "Understanding your goals and ambitions comes first",
+    desc: "Understanding your goals and ambitions always comes first.",
     bg: "bg-[#FF6B35]",
     icon: <IoEarOutline className="white" />,
   },
@@ -44,7 +44,7 @@ export default function Partner() {
         {/* LEFT CONTENT */}
         <div>
           <p className="text-gray-600 max-w-lg mb-10">
-            What sets Dinel apart is our personal and transparent approach.
+            What sets Dinel apart is its personal and transparent approach.{" "}
           </p>
 
           <div className="space-y-5">

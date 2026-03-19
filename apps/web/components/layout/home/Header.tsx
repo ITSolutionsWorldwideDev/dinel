@@ -43,8 +43,7 @@ export default function Header() {
 
           <p className="mt-6 max-w-2xl text-white/90 text-base md:text-lg leading-relaxed">
             We connect professionals with meaningful projects in energy,
-            infrastructure, industry and sustainable technology. Projects where
-            your knowledge makes an impact and your career can truly grow.
+            infrastructure, industry and sustainable technology.Projects where your knowledge creates impact and your career can truly grow.
           </p>
 
           {/* Buttons */}

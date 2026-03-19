@@ -36,7 +36,7 @@ export default function DinelCommunity() {
                   <CheckCircle className="w-5 h-5 text-[#0A7CD8]" />
                 </div>
                 <p className="text-gray-700 pt-1">
-                  Share knowledge and experience
+                  Share knowledge and experiences
                 </p>
               </div>
 

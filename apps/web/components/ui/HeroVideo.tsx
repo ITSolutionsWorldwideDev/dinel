@@ -16,7 +16,7 @@ export default function HeroVideo() {
 
     const hour = parseInt(netherlandsTime);
     console.log(hour);
-    if (hour > 6 && hour < 18) {
+    if (hour > 6 && hour < 18) {  
       setVideoSrc("/assets/home/Day Video (2).mp4");
       // console.log("inside");
     } else {

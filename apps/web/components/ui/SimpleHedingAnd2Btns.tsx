@@ -2,6 +2,7 @@ import React from "react";
 import HeadingAndDesc from "../ui/HeadingAndDesc";
 import { ArrowRight } from "lucide-react";
 import { SignPrivateKeyInput } from "crypto";
+import Link from "next/link";
 
 interface SimpleHedingAnd2BtnsProps {
   heading: string;
@@ -27,19 +28,23 @@ const SimpleHedingAnd2Btns = ({
       <div className="mt-10">
         <HeadingAndDesc heading={`${heading}`} desc={`${des}`} />
       </div>
-      
-      <div className="flex items-center justify-center space-x-3">
-        <button
-          className={`flex items-center justify-center hover:bg-blue-700  px-6 py-3 cursor-pointer font-medium transition ${btn1Classes}`}
-        >
-          {btn1} <span>{icon}</span>
-        </button>
 
-        <button
-          className={`${btn2Classes} hover:bg-blue-700  px-6 py-3  font-medium transition cursor-pointer`}
-        >
-          {btn2}
-        </button>
+      <div className="flex items-center justify-center space-x-3">
+        <Link href={"/become-a-dineler"}>
+          <button
+            className={`flex items-center justify-center hover:bg-blue-700  px-6 py-3 cursor-pointer font-medium transition ${btn1Classes}`}
+          >
+            {btn1} <span>{icon}</span>
+          </button>
+        </Link>
+
+        <Link href={'/vacancies'}>
+          <button
+            className={`${btn2Classes} hover:bg-blue-700  px-6 py-3  font-medium transition cursor-pointer`}
+          >
+            {btn2}
+          </button>
+        </Link>
       </div>
     </>
   );
