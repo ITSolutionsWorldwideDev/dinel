@@ -39,10 +39,10 @@ export default function ComingSoon() {
       <div className="cs-glow cs-glow-2" />
 
       <div className="cs-content">
-        <span className="cs-eyebrow">Staffing Outsource</span>
+        <span className="cs-eyebrow">Staff Outsourcing</span>
 
         <h1 className="cs-heading">
-          Welcome to Staffing Outsource.
+          Welcome to Staff Outsourcing.
           <br />
           <span className="cs-heading-accent">We're coming soon.</span>
         </h1>
