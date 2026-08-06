@@ -13,10 +13,9 @@ export default async function DeskstopNavigationMenu() {
     { name: "Clients", href: "/clients" },
     { name: "Our Approach", href: "/our-approach" },
     { name: "Mission & Vision", href: "/mission-vision" },
-    { name: "Become a Dineler", href: "/become-a-dineler" },
+    { name: "Become a Team Member", href: "/become-a-dineler" },
     { name: "Vacancies", href: "/vacancies" },
     { name: "Blogs", href: "/blogs" },
-
     { name: session ? "My Account" : "Member", href: "/account" },
   ];
 

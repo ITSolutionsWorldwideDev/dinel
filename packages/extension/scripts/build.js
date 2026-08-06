@@ -52,10 +52,12 @@ if (!ADMIN_URL) {
   // ---------------------------
   // Move zip to admin public
   // ---------------------------
-  const target = path.resolve(
-    __dirname,
-    "../../../apps/admin/public/extension/dinel-linkedin-import-extension.zip"
-  );
+  const targetDir = path.resolve(__dirname, "../../../apps/admin/public/extension");
+  const target = path.join(targetDir, "dinel-linkedin-import-extension.zip");
+
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
+  }
 
   fs.renameSync(zipPath, target);
 
