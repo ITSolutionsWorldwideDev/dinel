@@ -31,13 +31,13 @@ export default function Header() {
 
       {/* Content */}
       <h1 className="absolute -top-1/6 left-0 p-10 inset-0  font-extrabold text-[#0A7CD8]/25 text-[clamp(2rem,31vw,30rem)]  flex items-center justify-center pointer-events-none select-none container mx-auto">
-        DINEL
+        STAFF OUTSOURCING
       </h1>
       {/* <div className="relative  items-center flex justify-between mt-40"> */}
       <div className=" h-full  flex   container mx-auto  ">
         <div className="px-6 relative">
           <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Become a Dineler. <br />
+            Become a Team Member. <br />
             Help build the future.
           </h2>
 
@@ -52,7 +52,7 @@ export default function Header() {
               href="/become-a-dineler"
               className="inline-flex items-center gap-2 bg-[#0A7CD8] hover:bg-blue-700 text-white px-6 py-3  font-medium transition"
             >
-              Become a Dineler <FaArrowRight />
+              Become a Team Member <FaArrowRight />
             </Link>
 
             <Link

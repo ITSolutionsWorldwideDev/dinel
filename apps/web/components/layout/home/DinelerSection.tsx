@@ -37,10 +37,10 @@ const DinelerSection = () => {
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            What does it mean to be a Dineler?
+            What does it mean to be a Team Member?
           </h2>
           <p className="mt-4 text-gray-600 text-base md:text-lg">
-            A Dineler is more than a technical specialist.
+            A Team Member is more than a technical specialist.
           </p>
         </div>
 
