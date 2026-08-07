@@ -26,7 +26,7 @@ const Environment = () => {
         },
       ],
       description: "This ensures continuity, quality and trust.",
-      image: "/assets/client/07f49e93c26a58394c7f7d6c77415ee3f6a9b9cb.jpg",
+      image: "/assets/client/",
     },
     {
       title: "Partnership Mindset",
@@ -45,7 +45,7 @@ const Environment = () => {
       ],
       description:
         "From the first conversation to the start of your project and beyond — we stay involved and support you every step of the way.",
-      image: "/assets/client/d14607b526b23f855e2aaf22afc5b34e267f761b.jpg",
+      image: "/assets/client/",
     },
   ];
   return (

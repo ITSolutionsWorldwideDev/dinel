@@ -40,16 +40,7 @@ export default function DinelBanner() {
           </div>
 
           {/* Right Image Section */}
-          <div className=" relative w-full lg:w-[30%]  h-80 md:h-96 lg:h-auto ">
-            <Image
-              src="/assets/home/6028079d32ff364b1ee8c7814d4265486be8f7d0.png"
-              alt="dinel"
-              fill
-              // sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw"
-              className="  h-full w-full"
-              priority
-            />
-          </div>
+          
         </div>
       </div>
     </div>

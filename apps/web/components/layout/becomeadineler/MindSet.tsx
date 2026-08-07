@@ -17,13 +17,7 @@ const MindSet = () => {
         
         {/* Left Image */}
         <div className="w-full h-[70%] mx-auto">
-          <Image
-            src="/assets/becomeadineler/63ecd05064f36afc1f3b6ab5f47d7d048d6252d3.jpg" // replace with your image path
-            alt="Team meeting"
-            width={600}
-            height={450}    
-            className=" shadow-lg w-full h-full object-cover"
-          />
+       
         </div>
 
         {/* Right Content */}

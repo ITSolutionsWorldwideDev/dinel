@@ -33,24 +33,13 @@ export default function CareerSection() {
 
       <div className="py-20 relative ">
         <div className="absolute right-0 w-auto h-full -z-1 ">
-          <img
-            src="/assets/home/b5119110651a2589afaa1a533594d432fdac1f03.png"
-            alt=""
-            className="w-full h-full object-cover opacity-10 "
-          />
+        
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 overflow-visible">
           {/* LEFT IMAGE */}
 
           <div className="">
-            <Image
-              src="/assets/home/6040b4edeacfbde72a6d1c2b653d02d63ed00b49 (1).jpg"
-              width={800}
-              height={500}
-              alt="Person"
-              className="
-            object-cover w-full"
-            />
+           
           </div>
 
           {/* RIGHT GRID CONTENT */}

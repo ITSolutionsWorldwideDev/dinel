@@ -143,7 +143,7 @@ export default function SigninComponent() {
         <FormSideImage
           heading="Your Career Journey Starts Here"
           desc="Access your personalized portal to track applications and manage your profile"
-          image="8de6dd4ea97098339dd92da4572cd8074f734c9f.jpg"
+          image=""
         />
       </div>
     </>

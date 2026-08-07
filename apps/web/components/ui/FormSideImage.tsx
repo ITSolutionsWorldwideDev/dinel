@@ -34,11 +34,7 @@ const FormSideImage = ({ image, heading, desc }: LoginImageProps) => {
         <header className="flex justify-end py-6 mt-10">
           <Link href={"/"}>
             <div className=" text-right">
-              <img
-                src="/assets/Group 1.png"
-                alt=""
-                className="h-auto w-auto md:w-auto  rounded-lg mb-2"
-              />
+             
             </div>
           </Link>
         </header>
