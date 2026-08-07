@@ -1,34 +1,31 @@
-// apps/web/app/blogs/page.tsx
-import InLoop from "@/components/ui/InLoop";
-import DinelGroupBv from "@/components/ui/DinelGroupBv";
-import HeaderWithCenterTextandBgImg from "@/components/ui/HeaderWithCenterTextandBgImg";
-// import NavBar from "@/components/ui/NavBar";
-import BlogsPage from "./BlogsPage";
-import React from "react";
+// apps/web/app/blogs/BlogsPage.tsx
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: Promise<{
-    page?: string;
-    search?: string;
-    category?: string;
-  }>;
-}) {
-  const resolvedSearchParams = await searchParams;
+import { BookOpen } from "lucide-react";
 
+export default function BlogsPage() {
   return (
-    <>
-      {/* <NavBar /> */}
-      <HeaderWithCenterTextandBgImg
-        heading1="Insights & Stories"
-        description="Expert perspectives on technical recruitment, career growth, and industry trends"
-        image="/assets/blogs/e875e3acada50c3f4f57d3941244b540e6b73a72.jpg"
-      />
-      <BlogsPage searchParams={resolvedSearchParams} />
+    <div className="min-h-[60vh] flex items-center justify-center bg-gray-50">
+      <div className="container mx-auto px-6 py-24 text-center">
+        <div className="flex justify-center mb-6">
+          <div className="bg-[#0A7CD8]/10 rounded-full p-6">
+            <BookOpen size={48} className="text-[#0A7CD8]" />
+          </div>
+        </div>
 
-      <InLoop />
-      <DinelGroupBv />
-    </>
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          Blogs
+        </h1>
+
+        <p className="text-gray-500 text-lg max-w-md mx-auto mb-8">
+          We're working on some great content. Our blog is coming soon —
+          stay tuned!
+        </p>
+
+        <div className="inline-flex items-center gap-2 bg-[#FF8026]/10 text-[#FF8026] px-5 py-2.5 rounded-full text-sm font-medium">
+          <span className="w-2 h-2 bg-[#FF8026] rounded-full animate-pulse"></span>
+          Coming Soon
+        </div>
+      </div>
+    </div>
   );
 }
