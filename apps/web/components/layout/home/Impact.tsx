@@ -18,7 +18,7 @@ export default function Impact() {
 
         {/* Subheading */}
         <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10">
-          Become a Dineler and work on projects that shape the future. With your
+          Become a Staff Outsourcing Professional and work on projects that shape the future. With your
           expertise and our guidance, you can grow, contribute and make a real
           difference.
         </p>

@@ -26,10 +26,10 @@ const OurApproach = () => {
 
       <TextWithTwoBtns
         heading="Let's take the next step together"
-        desc="Whether you are a professional looking for your next challenge or an organization looking for the right expertise, Dinel is ready to support you."
+        desc="Whether you are a professional looking for your next challenge or an organization looking for the right expertise, Staff Outsourcing is ready to support you."
         btn1txt="Become a Team Member"
-        btn1Href="become-a-dineler"
-        btn2txt="Contact Dinel"
+        btn1Href="become-a-staff-outsourcing-professional"
+        btn2txt="Contact US"
         btn2Href="contact-us"
       />
       <DinelGroupBv />

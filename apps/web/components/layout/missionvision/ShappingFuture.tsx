@@ -17,7 +17,7 @@ const ShappingFuture = () => {
 
         {/* Description */}
         <p className="text-base md:text-lg max-w-xl mx-auto mb-10">
-          Whether you are a professional or an organization, Dinel invites you
+          Whether you are a professional or an organization, we invites you
           to grow, contribute and make an impact together.
         </p>
 

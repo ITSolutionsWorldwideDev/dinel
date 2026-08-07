@@ -10,7 +10,7 @@ export default function DinelBanner() {
             {/* Header */}
             <div className="mb-8">
               <h2 className="text-xl md:text-2xl font-bold mb-2 text-black">
-                Dinel Professionals, Wherever Technology
+                Staff Outsourcing Professionals, Wherever Technology
               </h2>
               <h2 className="text-xl md:text-2xl font-bold text-black">
                 Is Needed, For Over 25 Years!

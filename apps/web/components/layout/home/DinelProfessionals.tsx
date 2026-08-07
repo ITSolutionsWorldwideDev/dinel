@@ -36,14 +36,14 @@ export default function DinelProfessionals() {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-orange-500 font-semibold text-sm sm:text-base mb-4 tracking-wide uppercase">
-            DINEL PROFESSIONALS:
+            STAFF OUTSOURCING PROFESSIONALS:
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             Wherever Technology Is Needed.{" "}
             <span className="block mt-2">For Over 25 Years.</span>
           </h1>
           <p className="text-gray-600 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">
-            At Dinel, we build lasting relationships with clients and
+            At Staff Outsourcing, we build lasting relationships with clients and
             professionals. Committed, energetic, and knowledgeable, we connect
             passionate tech talent to permanent and temporary roles by combining
             personal experience with market expertise.

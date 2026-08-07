@@ -12,7 +12,7 @@ export default function ProfessionalsSection() {
           </h1>
           <p className="mt-4 text-gray-600 text-sm md:text-base">
             Whether you are at the start of your career or an experienced
-            specialist, Dinel helps you take the next step.
+            specialist, we helps you take the next step.
           </p>
         </div>
 

@@ -28,7 +28,7 @@ const HowToApply = () => {
     {
       number: "4",
       title: "Start Your Project",
-      desc: "Begin your journey with full guidance and support from the Dinel team",
+      desc: "Begin your journey with full guidance and support from our team",
       icon: <TbRocket />,
     },
   ];

@@ -32,7 +32,7 @@ export default function BecomeADinelerHeader() {
           <p className="mt-6 max-w-2xl text-white/90 text-base md:text-lg leading-relaxed">
             Being a Staff Outsourcing professional means more than working on technical projects. It
             means choosing growth, impact and belonging to a community that
-            values people as much as technology. At Dinel, you don’t just work
+            values people as much as technology. At Staff Outsourcing, you don’t just work
             on projects; you help build the future.
           </p>
 
@@ -42,7 +42,7 @@ export default function BecomeADinelerHeader() {
               href="/sign-up"
               className="inline-flex items-center gap-2 bg-[#FF6B35] hover:bg-blue-700 text-white px-6 py-3  font-medium transition"
             >
-              Join Dinel
+              Join US
             </Link>
 
             <Link

@@ -44,7 +44,7 @@ export default async function middleware(req: NextRequest) {
   // 🔓 In paths ko password gate se bypass karo
   const bypass =
     pathname.startsWith("/coming-soon") ||
-    pathname.startsWith("/api/unlock") ||
+    pathname.startsWith("/api/") ||
     pathname.startsWith("/_next") ||
     pathname.startsWith("/favicon.ico");
 
@@ -52,11 +52,11 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // 🔒 Sabse pehle site-wide password check
-  const siteAccess = req.cookies.get("site_access");
-  if (siteAccess?.value !== "granted") {
-    return NextResponse.redirect(new URL("/coming-soon", req.url));
-  }
+// 🔒 Sabse pehle site-wide password check
+   const siteAccess = req.cookies.get("site_access");
+   if (siteAccess?.value !== "granted") {
+     return NextResponse.redirect(new URL("/coming-soon", req.url));
+   }
 
   // ✅ Password sahi hai — ab tumhara normal NextAuth logic chalega
   // @ts-expect-error - withAuth expects NextRequestWithAuth

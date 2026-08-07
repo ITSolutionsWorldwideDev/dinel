@@ -38,7 +38,7 @@ export default function ClientHeader() {
                 Organizations today face major challenges in energy transition,
                 sustainability and technological innovation.Successful projects
                 require the right technical professionals at the right time.
-                Dinel support organizations with experienced, committed
+                We support organizations with experienced, committed
                 specialists who bring knowledge, continuity and results.
               </p>
 
