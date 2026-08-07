@@ -15,7 +15,7 @@ const OurApproach = () => {
       <HeaderWithCenterTextandBgImg
         heading1="A clear approach."
         heading2="Built on trust and experience."
-        description="At Dinel, everything starts with understanding. Understanding professionals, organizations, and the specific needs behind every engagement."
+        description="At , everything starts with understanding. Understanding professionals, organizations, and the specific needs behind every engagement."
         image="/assets/ourapproach/979194d0a724928fcf4293d251f622f12ca61d92 (1).jpg"
       />
 
@@ -27,7 +27,7 @@ const OurApproach = () => {
       <TextWithTwoBtns
         heading="Let's take the next step together"
         desc="Whether you are a professional looking for your next challenge or an organization looking for the right expertise, Dinel is ready to support you."
-        btn1txt="Become a Dineler"
+        btn1txt="Become a Team Member"
         btn1Href="become-a-dineler"
         btn2txt="Contact Dinel"
         btn2Href="contact-us"

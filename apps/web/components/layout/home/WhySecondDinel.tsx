@@ -27,7 +27,7 @@ export default function CareerSection() {
       </div> */}
       <div className="flex  lg:p-20 lg:mb-10 ">
         <h1 className="font-bold xl:text-7xl lg:text-5xl md:text-4xl sm:text-2xl">
-          Empowering Careers Through Dinel
+          Empowering Careers Through Staff Outsourcing
         </h1>
       </div>
 

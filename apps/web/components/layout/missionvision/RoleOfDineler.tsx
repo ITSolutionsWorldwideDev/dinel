@@ -12,16 +12,16 @@ const RoleOfDineler = () => {
   return (
     <div>
       <HeadingAndDesc
-        heading="The Role of the Dineler"
-        desc="The Dineler in our future  "
+        heading="The Role of Staff Outsourcing"
+        desc="Our future  "
       />
       <p className="flex items-centerm justify-center -mt-10">
-        In our vision, Dinelers play a central role.
+        In our vision, Staff Outsourcing plays a central role.
       </p>
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8">
           {/* Title */}
-          <h3 className="text-lg font-medium mb-6">A Dineler:</h3>
+          <h3 className="text-lg font-medium mb-6">A Staff Outsourcing Professional:</h3>
 
           {/* List */}
           <ul className="space-y-4 mb-8">
@@ -41,7 +41,7 @@ const RoleOfDineler = () => {
 
           {/* Bottom Text */}
           <p className="text-center text-gray-600 text-sm leading-relaxed">
-            Together, Dinelers form a community of professionals who help shape
+            Together, Staff Outsourcing professionals form a community of professionals who help shape
             the world of tomorrow.
           </p>
         </div>

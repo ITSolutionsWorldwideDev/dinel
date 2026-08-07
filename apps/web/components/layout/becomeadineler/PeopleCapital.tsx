@@ -38,7 +38,7 @@ const PeopleCapital = () => {
       </div>
       <div className="mt-10">
         <HeadingAndDesc
-          heading="Ready to become a Dineler?"
+          heading="Ready to become a Staff Outsourcing Professional?"
           desc="Take the next step in your career and work on projects that challenge you, inspire you and allow you to grow."
         />
       </div>
@@ -46,7 +46,7 @@ const PeopleCapital = () => {
       <div className="flex items-center justify-center space-x-3">
         <Link href={"/sign-up"}>
           <button className=" flex items-center justify-center text-white cursor-pointer bg-[#FF6B35] hover:bg-blue-700 shadow-xl  px-6 py-3 font-medium transition">
-            Join Dinel Now{" "}
+            Join us Now{" "}
             <span>
               <ArrowRight className="ml-2 text-white" />
             </span>

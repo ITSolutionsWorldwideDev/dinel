@@ -29,7 +29,7 @@ const MindSet = () => {
         {/* Right Content */}
         <div>
           {/* Badge */}
-          <Heading icon={<Heart className="text-[#d34a03]"/>} text="The Dineler Mindset"/>
+          <Heading icon={<Heart className="text-[#d34a03]"/>} text="Staff Outsourcing Mindset"/>
 
           {/* Heading */}
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -38,7 +38,7 @@ const MindSet = () => {
 
           {/* Subtitle */}
           <p className="text-gray-600 mb-8">
-            A Dineler is a professional who:
+            A Staff Outsourcing professional is a professional who:
           </p>
 
           {/* Points */}
@@ -60,7 +60,7 @@ const MindSet = () => {
 
           {/* CTA */}
           <div className="bg-linear-to-r from-blue-600 to-orange-400 text-white px-6 py-4  font-medium">
-            Being a Dineler means working with purpose and pride.
+            Being a Staff Outsourcing professional means working with purpose and pride.
           </div>
         </div>
 

@@ -87,7 +87,7 @@ export default function ProfessionalsSection() {
 
           <Link href="/become-a-dineler">
             <button className="cursor-pointer px-6 py-3  border-2 border-[#0A7CD8] text-[#0A7CD8] font-medium hover:bg-blue-50 transition">
-              Become a Dineler
+              Become our Team Member
             </button>
           </Link>
         </div>

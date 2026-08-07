@@ -39,7 +39,7 @@ const ProjectWithImpact = () => {
 
       <HeadingAndDesc
         heading="Work that matters"
-        desc="As a Dineler, you work on projects in:"
+        desc="As a Staff Outsourcing professional, you work on projects in:"
       />
 
       <div className="grid sm:grid-cols-2 md:grid-cols-4  gap-5 container mx-auto mt-10 p-5">

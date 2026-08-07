@@ -18,15 +18,15 @@ export default function DinelCommunity() {
           {/* Content Section */}
           <div className="  p-8 ">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              The Dineler Community
+              The Staff Outsourcing Community
             </h1>
 
             <p className="text-xl text-gray-600 mb-8">
-              As a Dineler, you are never alone.
+              As a Staff Outsourcing member, you are never alone.
             </p>
 
             <p className="text-gray-700 mb-8 leading-relaxed">
-              As a Dineler, you become part of a growing network of
+              As a Staff Outsourcing member, you become part of a growing network of
               professionals who:
             </p>
 
@@ -61,7 +61,7 @@ export default function DinelCommunity() {
 
             <div className=" pt-8  ">
               <p className="text-gray-700 ">
-                Being a Dineler means belonging to a community that values
+                Being a Staff Outsourcing member means belonging to a community that values
                 people as much as technology.
               </p>
             </div>

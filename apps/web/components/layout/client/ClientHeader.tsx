@@ -48,7 +48,7 @@ export default function ClientHeader() {
                   href="/contact-us"
                   className="inline-flex items-center gap-2 bg-[#FF6B35] hover:bg-blue-700 text-white px-6 py-3  font-medium transition"
                 >
-                  Contact Dinel
+                  Contact us
                 </Link>
 
                 <Link

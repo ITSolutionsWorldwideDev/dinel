@@ -24,7 +24,7 @@ const page = () => {
       <div className="relative">
         <HeadingDescAnd2BtnsWithBg
           heading="Ready to find your next challenge?"
-          description="Start exploring vacancies and become a part of the Dineler community today."
+          description="Start exploring vacancies and become a part of the Staff Outsourcing community today."
           btn1Text="View Vacancies"
           btn2Text="Contact Us"
           btn1Href="vacancies"

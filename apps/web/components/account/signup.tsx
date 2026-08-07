@@ -261,7 +261,7 @@ export default function SignUpComponent() {
         </div>
         <FormSideImage
           image="d28660e78278ab38b2bf73fd7d7c3d6703e2b540.jpg"
-          heading="Join Dinel Today"
+          heading="Join  Today"
           desc="Create your account and discover amazing career opportunities"
         />
       </div>

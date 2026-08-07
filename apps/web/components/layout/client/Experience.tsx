@@ -51,7 +51,7 @@ const Experience = () => {
       </div>
       <HeadingAndDesc
         heading="Experience across multiple sectors"
-        desc="Dinel works with organizations active in:"
+        desc="Staff Outsourcing works with organizations active in:"
       />
 
       <ImagesWithIconDesc

@@ -23,11 +23,11 @@ export default function AboutHeader() {
       <div className="relative z-10 h-1/2 flex items-center-safe container mx-auto justify-center">
         <div className="px-6 text-center">
           <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            About Dinel
+            About Staff Outsourcing
           </h2>
 
           <p className="mt-6 w-40 sm:w-60 md:w-100 lg:w-2xl text-white/90 text-base md:text-2xl  leading-relaxed">
-            Dinel is an organization built by and for technical professionals.
+            Staff Outsourcing is an organization built by and for technical professionals.
             Founded on the belief that people, not processes or invoices, make
             technology succeed.
           </p>

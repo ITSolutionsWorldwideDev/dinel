@@ -21,7 +21,7 @@ export default function DinelGroupBv() {
           {/* Left Section - Contact Info */}
           <div className="space-y-8">
             <h1 className="text-4xl md:text-5xl font-bold text-white">
-              Dinel Group BV
+              Group BV
             </h1>
 
             <div className="space-y-6">
@@ -33,9 +33,9 @@ export default function DinelGroupBv() {
                 <div>
                   <h3 className="font-bold text-white text-lg">Address</h3>
                   <p className="text-white">
-                    Daltonstraat 11 3335 JR Zwijndrecht
+                   
                     <br />
-                    The Netherlands
+                   
                   </p>
                 </div>
               </div>
@@ -47,7 +47,7 @@ export default function DinelGroupBv() {
                 </div>
                 <div>
                   <h3 className="font-bold text-white text-lg">Phone Number</h3>
-                  <p className="text-white">010 234 35 73</p>
+                  <p className="text-white"></p>
                 </div>
               </div>
 
@@ -58,7 +58,7 @@ export default function DinelGroupBv() {
                 </div>
                 <div>
                   <h3 className="font-bold text-white text-lg">Email</h3>
-                  <p className="text-white">info@dinel.nl</p>
+                  <p className="text-white"></p>
                 </div>
               </div>
             </div>

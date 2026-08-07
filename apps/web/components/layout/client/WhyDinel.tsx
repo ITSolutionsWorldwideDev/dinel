@@ -45,7 +45,7 @@ export default function WhyDinel() {
         {/* Tag */}
         <Heading
           icon={<Shield className="text-[#0A7CD8]" />}
-          text="Why Choose Dinel"
+          text="Why Choose Staff Outsourcing?"
         />
 
         {/* Title */}
@@ -59,7 +59,7 @@ export default function WhyDinel() {
 
         {/* Subtext */}
         <p className="text-gray-600 max-w-xl mx-auto mb-12">
-          At Dinel, we look beyond CVs and availability. We focus on long-term
+          At Staff Outsourcing, we look beyond CVs and availability. We focus on long-term
           value for your projects and your organization.
         </p>
 

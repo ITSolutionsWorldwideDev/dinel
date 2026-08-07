@@ -27,7 +27,7 @@ const TechnicalProfessionals = () => {
 
         {/* Description */}
         <p className="text-base md:text-lg max-w-xl mx-auto mb-10">
-          Let’s discuss how Dinel can support your organization with expertise,
+          Let’s discuss how we can support your organization with expertise,
           capacity and continuity.
         </p>
 

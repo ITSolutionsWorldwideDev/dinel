@@ -40,7 +40,7 @@ const Environment = () => {
         {
           //   icon: <CiSearch />,
           title:
-            "That's why many clients choose Dinel as a long-term partner for their technical challenges.",
+            "That's why many clients choose us as a long-term partner for their technical challenges.",
         },
       ],
       description:

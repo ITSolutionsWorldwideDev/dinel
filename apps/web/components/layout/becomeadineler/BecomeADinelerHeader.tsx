@@ -26,11 +26,11 @@ export default function BecomeADinelerHeader() {
       <div className="relative z-10 h-full flex   container mx-auto p-10">
         <div className="px-6">
           <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight w-1/2">
-            Become a Dineler. Make an impact with your expertise.
+            Become a Staff Outsourcing Professional. Make an impact with your expertise.
           </h2>
 
           <p className="mt-6 max-w-2xl text-white/90 text-base md:text-lg leading-relaxed">
-            Being a Dineler means more than working on technical projects. It
+            Being a Staff Outsourcing professional means more than working on technical projects. It
             means choosing growth, impact and belonging to a community that
             values people as much as technology. At Dinel, you don’t just work
             on projects; you help build the future.

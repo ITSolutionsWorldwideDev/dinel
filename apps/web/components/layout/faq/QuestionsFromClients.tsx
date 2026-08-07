@@ -5,14 +5,14 @@ const QuestionsFromClients = () => {
 
     const faqs = [
     {
-      question: "What is a Dineler?",
+      question: "What is a Staff Outsourcing professional?",
       answer:
-        "A Dineler is a professional who works with Dinel, contributing their expertise to various projects and initiatives. Dinelers are part of a dynamic team that values innovation, collaboration, and professional growth.",
+        "A Staff Outsourcing professional is a skilled individual who works with our company, contributing their expertise to various projects and initiatives. Our professionals are part of a dynamic team that values innovation, collaboration, and professional growth.",
     },
     {
-      question: "How does Dinel support my career development?",
+      question: "How does our company support my career development?",
       answer:
-        "Dinel supports your career development through mentorship programs, training opportunities, skill development workshops, and exposure to diverse projects. We believe in investing in our team members' growth and providing clear pathways for advancement.",
+        "We supports your career development through mentorship programs, training opportunities, skill development workshops, and exposure to diverse projects. We believe in investing in our team members' growth and providing clear pathways for advancement.",
     },
     {
       question: "How do I apply for vacancies?",
@@ -22,7 +22,7 @@ const QuestionsFromClients = () => {
     {
       question: "What types of projects can I expect to work on?",
       answer:
-        "As a Dineler, you'll work on a variety of projects ranging from client-facing initiatives to internal innovation projects. These may include technology implementations, strategic consulting, process optimization, and creative solutions across different industries.",
+        "As a Staff Outsourcing professional, you'll work on a variety of projects ranging from client-facing initiatives to internal innovation projects. These may include technology implementations, strategic consulting, process optimization, and creative solutions across different industries.",
     },
   ];
   return (

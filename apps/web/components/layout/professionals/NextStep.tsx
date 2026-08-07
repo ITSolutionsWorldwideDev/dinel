@@ -33,7 +33,7 @@ export default function NextStep() {
 
           {/* Subheading */}
           <p className="text-gray-600 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            Become a Dineler and work on projects that challenge you, inspire
+            Become a Staff Outsourcing member and work on projects that challenge you, inspire
             you and help you grow.
           </p>
 
@@ -46,7 +46,7 @@ export default function NextStep() {
             </Link>
             <Link href={"/become-a-dineler"}>
               <button className="bg-white hover:bg-gray-50 text-[#0A7CD8] font-semibold px-8 py-3  border-2 border-[#0A7CD8] shadow-md transition-all duration-300 hover:shadow-lg w-full sm:w-auto cursor-pointer">
-                Become a Dineler
+                Become a Team Member
               </button>
             </Link>
           </div>

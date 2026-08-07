@@ -31,8 +31,8 @@ const page = () => {
         <SimpleHedingAnd2Btns
           heading="Still have questions?"
           des="We're here to help! Contact us anytime we'll be happy to assist."
-          btn1="Contact Dinel"
-          btn2="Become a Dineler"
+          btn1="Contact us"
+          btn2="Become a Staff Outsourcing Professional"
           btn1Classes="bg-[#FF6B35] text-white"
           btn2Classes="text-[#0A7CD8] border border-[#0A7CD8]"
         />

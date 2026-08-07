@@ -38,11 +38,11 @@ const WhyDinel = () => {
   return (
     <div>
       <div className="flex items-center justify-center">
-        <Heading icon={<Rocket className="text-[#0A7CD8]"/>} text=" Why Choose Dinel" />
+        <Heading icon={<Rocket className="text-[#0A7CD8]"/>} text=" Why Choose us" />
       </div>
 
       <HeadingAndDesc
-        heading="Why professionals choose Dinel"
+        heading="Why professionals choose Staff Outsourcing "
         desc="Join a community that invests in your growth and values your expertise"
       />
       <div className="grid sm:grid-cols-2  gap-5 container mx-auto mt-10 p-5">

@@ -24,7 +24,7 @@ const Story = () => {
         <div>
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 text-sm font-medium text-gray-700 bg-linear-to-br from-[#0A7CD81A] to-[#FF6B351A] rounded-full">
-            <IoBulbOutline className="text-[#FF6B35]" /> The Story Behind Dinel
+            <IoBulbOutline className="text-[#FF6B35]" /> The Story Behind Staff Outsourcing
           </div>
 
           {/* Heading */}
@@ -36,14 +36,14 @@ const Story = () => {
 
           {/* Description */}
           <p className="mt-6 text-gray-600 leading-relaxed">
-            Dinel was founded in 2000 by Paul Mathey, after having worked as an
+            Staff Outsourcing was founded in 2000 by Paul Mathey, after having worked as an
             electrical engineer for more than ten years.
           </p>
 
           <p className="mt-4 text-gray-600 leading-relaxed">
             During his career, he experienced first-hand how many agencies
             treated professionals as numbers, while the real value lies in
-            people, knowledge and commitment. From that conviction, Dinel was
+            people, knowledge and commitment. From that conviction, Staff Outsourcing was
             created: an organization that puts professionals first and builds
             long-term relationships based on trust, respect and transparency.
           </p>

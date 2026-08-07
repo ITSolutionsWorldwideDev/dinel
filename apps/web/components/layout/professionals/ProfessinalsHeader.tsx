@@ -29,7 +29,7 @@ export default function ProfessinalsHeader() {
           </h2>
 
           <p className="mt-6 w-2xl text-white/90 text-base md:text-xl leading-relaxed">
-            At Dinel, your professional growth comes first.Whether you are
+            At Staff Outsourcing, your professional growth comes first.Whether you are
             starting your career or are an experienced technical specialist, we
             help you take the next step in your career, one that truly fits who
             you are and where you want to go.
@@ -48,7 +48,7 @@ export default function ProfessinalsHeader() {
               href="/become-a-dineler"
               className="inline-flex items-center gap-2 bg-white text-blue-600 hover:bg-gray-100 px-6 py-3  font-medium transition"
             >
-              Become a Dineler
+              Become a Team Mmember 
             </Link>
           </div>
         </div>

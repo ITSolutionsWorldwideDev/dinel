@@ -18,7 +18,7 @@ const ContactDetails = () => {
             </div>
             <div>
               <h4 className="font-semibold text-slate-900">Phone</h4>
-              <p className="text-slate-600 text-sm">010 234 35 73</p>
+              <p className="text-slate-600 text-sm"></p>
             </div>
           </div>
 
@@ -29,7 +29,7 @@ const ContactDetails = () => {
             </div>
             <div>
               <h4 className="font-semibold text-slate-900">Email</h4>
-              <p className="text-slate-600 text-sm">info@dinel.nl</p>
+              <p className="text-slate-600 text-sm"></p>
             </div>
           </div>
 
@@ -41,10 +41,10 @@ const ContactDetails = () => {
             <div>
               <h4 className="font-semibold text-slate-900">Address</h4>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Daltonstraat 11
+                
                 <br />
-                3335 JR Zwijndrecht <br />
-                The Netherlands <br />
+                 <br />
+                <br />
               </p>
             </div>
           </div>

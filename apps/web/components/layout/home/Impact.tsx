@@ -27,7 +27,7 @@ export default function Impact() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-20 ">
           <Link href={"/become-a-dineler"}>
             <button className="bg-white text-blue-600 font-semibold px-8 py-3  hover:bg-gray-50 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full sm:w-auto cursor-pointer">
-              Become a Dineler
+              Become a Team Member
             </button>
           </Link>
           <Link href={"/vacancies"}>

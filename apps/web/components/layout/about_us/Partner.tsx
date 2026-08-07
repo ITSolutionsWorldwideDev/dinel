@@ -44,7 +44,7 @@ export default function Partner() {
         {/* LEFT CONTENT */}
         <div>
           <p className="text-gray-600 max-w-lg mb-10">
-            What sets Dinel apart is its personal and transparent approach.{" "}
+            What sets usapart is its personal and transparent approach.{" "}
           </p>
 
           <div className="space-y-5">

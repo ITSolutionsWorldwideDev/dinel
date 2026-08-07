@@ -72,7 +72,7 @@ const DinelerSection = () => {
       </div>
       <div className="flex items-center justify-center mt-10">
         <p>
-          Being a Dineler means: building the future with knowledge, courage and
+          Being with us means: building the future with knowledge, courage and
           commitment.
         </p>
       </div>
@@ -80,7 +80,7 @@ const DinelerSection = () => {
       <div>
         <Link href={"/become-a-dineler"}>
           <button className="cursor-pointer mt-8 mx-auto block bg-[#FF6B35] hover:bg-amber-700 text-white px-6 py-3  font-medium transition">
-            Join the Dineler Network
+            Join Staff Outsourcing
           </button>
         </Link>
       </div>

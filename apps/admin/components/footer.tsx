@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-white border-t p-4 mt-8">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
         <p className="text-gray-600 text-sm">
-          2026 © Dinel. All Rights Reserved
+          2026 © . All Rights Reserved
         </p>
         <p className="text-gray-600 text-sm">
           Designed &amp; Developed by{" "}

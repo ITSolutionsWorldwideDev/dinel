@@ -31,10 +31,10 @@ export default function WhyDineler() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Why become a Dineler?
+            Why Staff Outsourcing?
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Because your career is more than a list of projects. At Dinel, you
+            Because your career is more than a list of projects. At Staff Outsourcing, you
             are not placed—you are guided.
           </p>
         </div>

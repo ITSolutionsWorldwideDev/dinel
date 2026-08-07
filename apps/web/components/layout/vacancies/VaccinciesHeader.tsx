@@ -26,7 +26,7 @@ export default function VaccinciesHeader() {
       <div className="relative z-10 h-full flex   container mx-auto p-10">
         <div className="px-6">
           <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight w-1/2">
-            Find your next challenge as a Dineler
+            Find your next challenge as a Staff Outsourcing professional
           </h2>
 
           <p className="mt-6 max-w-2xl text-white/90 text-base md:text-lg leading-relaxed">
@@ -49,7 +49,7 @@ export default function VaccinciesHeader() {
               href={"/become-a-dineler"}
               className="inline-flex items-center gap-2 bg-white text-[#0A7CD8] border-2 border-[#0A7CD8] hover:bg-gray-100 px-6 py-3  font-medium transition"
             >
-              Become a Dineler
+              Become a Staff Outsourcing professional <FaArrowRight />
             </Link>
           </div>
         </div>

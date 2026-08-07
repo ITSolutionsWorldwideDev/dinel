@@ -7,7 +7,7 @@ export default function DinelToday() {
       {/* Header */}
       <div className="mx-auto text-center mb-12">
         <span className="inline-block mb-4 rounded-full bg-linear-to-r from-[#0A7CD81A] to-[#FF6B351A] px-4 py-1 text-sm font-medium text-black">
-          Dinel Today
+          Staff Outsourcing   Today
         </span>
 
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
@@ -15,7 +15,7 @@ export default function DinelToday() {
         </h2>
 
         <p className="text-gray-600 text-base md:text-lg">
-          Today, Dinel is a trusted partner for forward-thinking professionals
+          Today, Staff Outsourcing is a trusted partner for forward-thinking professionals
           and organizations
         </p>
       </div>
@@ -77,7 +77,7 @@ export default function DinelToday() {
       {/* Footer Text */}
       <p className="mt-10 text-center text-gray-600 text-sm md:text-base">
         Together, we are building a network of{" "}
-        <span className="text-blue-600 font-semibold"> Dinel</span>{" "}
+        <span className="text-blue-600 font-semibold">Staff Outsourcing</span>{" "}
         professionals who want to make an impact and shape the future.
       </p>
     </section>

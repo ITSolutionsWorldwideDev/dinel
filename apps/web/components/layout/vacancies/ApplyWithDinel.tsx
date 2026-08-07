@@ -34,7 +34,7 @@ const ApplyWithDinel = () => {
   return (
     <div className="container mx-auto p-5">
       {/* <div className="flex items-start "> */}
-      <h2 className="text-3xl font-bold p-5  mb-4">Why apply with Dinel?</h2>
+      <h2 className="text-3xl font-bold p-5  mb-4">Why apply with us?</h2>
 
       {/* </div> */}
       <IconCardCenterAlign values={values} />

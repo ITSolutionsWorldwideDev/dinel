@@ -47,7 +47,7 @@ const SupportYourOrginazation = () => {
       </div>
       <HeadingAndDesc
         heading={"Flexible solutions for sustainable growth"}
-        desc={"Dinel supports organizations in two key ways:"}
+        desc={"Staff Outsourcing supports organizations in two key ways:"}
       />
 
       <section className="container mx-auto px-6 py-16">
