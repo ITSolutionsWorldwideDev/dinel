@@ -117,19 +117,19 @@ export default function DinelGroupBv() {
             {/* Social Media Icons */}
             <div className="flex gap-4 justify-end">
               <div className="bg-white rounded-full flex  w-8 h-8 justify-center">
-                <Link href={"https://www.facebook.com/DinelGroup"}>
+                <Link href={""}>
                   <FaFacebookF className="text-[#FF8026] w-full h-6 mt-2" />
                 </Link>
               </div>
 
               <div className="bg-white rounded-full flex items-center justify-center w-8 h-8 ">
-                <Link href={"https://www.instagram.com/dinelgroup"}>
+                <Link href={""}>
                   <FaInstagram className="text-[#FF8026] w-full h-6  font-bold" />
                 </Link>
               </div>
 
               <div className="bg-white rounded-full flex items-center justify-center w-8 h-8 ">
-                <Link href={"https://nl.linkedin.com/company/dinel-group-bv"}>
+                <Link href={""}>
                   <FaLinkedinIn className="text-[#FF8026] w-full h-6 " />
                 </Link>
               </div>
