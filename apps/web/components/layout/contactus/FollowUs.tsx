@@ -16,7 +16,7 @@ const FollowUs = () => {
 
         <div className="flex flex-wrap gap-4">
           <Link
-            href="https://linkedin.com"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#0A7CD8] hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-200"
@@ -25,7 +25,7 @@ const FollowUs = () => {
           </Link>
 
           <Link
-            href="https://instagram.com"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#0A7CD8] hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-200"
@@ -34,7 +34,7 @@ const FollowUs = () => {
           </Link>
 
           <Link
-            href="https://facebook.com"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#0A7CD8] hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-200"
