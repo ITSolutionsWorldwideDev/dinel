@@ -14,8 +14,8 @@ const contentData: ContentData = {
     highlight: "technology work",
   },
   description: [
-    "Technology only creates impact when driven by the right people. That's why Dinel focuses on long-term matches, between professionals who want to grow and organizations that want to move forward sustainably.",
-    "As a Dineler, you work on projects that matter, supported by personal guidance and a network that understands your ambitions.",
+    "Technology only creates impact when driven by the right people. That's why we focuses on long-term matches, between professionals who want to grow and organizations that want to move forward sustainably.",
+    "You will work on projects that matter, supported by personal guidance and a network that understands your ambitions.",
   ],
 };
 

@@ -56,7 +56,7 @@ export default function Projects() {
             Projects that make an impact
           </h1>
           <p className="text-lg text-gray-600">
-            Dinel connects professionals to projects in:
+            We connects professionals to projects in:
           </p>
         </div>
 

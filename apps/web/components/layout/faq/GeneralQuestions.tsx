@@ -22,7 +22,7 @@ const GeneralQuestions = () => {
     {
       question: "What types of projects can I expect to work on?",
       answer:
-        "As a Dineler, you'll work on a variety of projects ranging from client-facing initiatives to internal innovation projects. These may include technology implementations, strategic consulting, process optimization, and creative solutions across different industries.",
+        "you'll work on a variety of projects ranging from client-facing initiatives to internal innovation projects. These may include technology implementations, strategic consulting, process optimization, and creative solutions across different industries.",
     },
   ];
   return (
