@@ -8,13 +8,7 @@ export default function BecomeADinelerHeader() {
   return (
     <section className="relative w-full h-auto lg:h-screen min-h-125 overflow-hidden ">
       {/* Background Image */}
-      <Image
-        src="/assets/becomeadineler/8f457e298d700805e45d661383e0469e82d41552.jpg"
-        alt="Industry Bridge"
-        fill
-        priority
-        className="object-cover absolute inset-0 w-full h-full  "
-      />
+     
       <NavBar />
       {/* Overlay */}
       <div className="absolute inset-0 bg-linear-to-r from-transparent  to-[#0A7CD8]" />
