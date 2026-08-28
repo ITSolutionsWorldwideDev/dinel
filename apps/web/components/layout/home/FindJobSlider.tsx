@@ -42,65 +42,6 @@ const FindJobSlider = () => {
 
   const jobData = data?.items;
 
-  // const handleSearch = (value: string) => {
-  //   setFilters((prev) => ({
-  //     ...prev,
-  //     search: value || undefined,
-  //   }));
-
-  //   setPage(1);
-  // };
-
-  // Sample JSON data
-
-  /* const jobData = [
-    {
-      id: 1,
-      title: "Senior Logistiek Medewerker",
-      discipline: "CONSTRUCTION & MAINTENANCE",
-      sector: "PETROCHEMICAL",
-      location: "FLEVOLAND",
-    },
-    {
-      id: 2,
-      title: "Installatieverant woordelijke Hoog- en Laagspanning",
-      discipline: "CONSTRUCTION & MAINTENANCE",
-      sector: "PETROCHEMICAL",
-      location: "FLEVOLAND",
-    },
-    {
-      id: 3,
-      title: "Senior Logistiek Medewerker",
-      discipline: "CONSTRUCTION & MAINTENANCE",
-      sector: "PETROCHEMICAL",
-      location: "FLEVOLAND",
-    },
-
-    {
-      id: 3,
-      title: "Senior Logistiek Medewerker",
-      discipline: "CONSTRUCTION & MAINTENANCE",
-      sector: "PETROCHEMICAL",
-      location: "FLEVOLAND",
-    },
-
-    {
-      id: 3,
-      title: "Senior Logistiek Medewerker",
-      discipline: "CONSTRUCTION & MAINTENANCE",
-      sector: "PETROCHEMICAL",
-      location: "FLEVOLAND",
-    },
-
-    {
-      id: 3,
-      title: "Senior Logistiek Medewerker",
-      discipline: "CONSTRUCTION & MAINTENANCE",
-      sector: "PETROCHEMICAL",
-      location: "FLEVOLAND",
-    },
-  ];  */
-
   const fetchJobs = async () => {
     try {
       setLoading(true);
@@ -133,8 +74,6 @@ const FindJobSlider = () => {
   useEffect(() => {
     fetchJobs();
   }, [page, filters]);
-  // Duplicate data for seamless loop
-  // const duplicatedData = [...jobData, ...jobData, ...jobData];
 
   const duplicatedData = useMemo(() => {
     if (!jobData) return [];
@@ -165,31 +104,10 @@ const FindJobSlider = () => {
     }
   }, [hoveredCard, jobData]);
 
-  /* useEffect(() => {
-    if (!jobData || jobData.length === 0) return;
-
-    if (hoveredCard === null) {
-      const interval = setInterval(() => {
-        setOffset((prev) => {
-          const newOffset = prev - 1;
-          const cardWidth = 370;
-
-          if (Math.abs(newOffset) >= cardWidth * jobData.length) {
-            return 0;
-          }
-
-          return newOffset;
-        });
-      }, 20);
-
-      return () => clearInterval(interval);
-    }
-  }, [hoveredCard, jobData]); */
-
   return (
     <>
       <div className="mt-20">
-        <div className=" bg-gray-50 py-16 overflow-hidden container mx-auto">
+        <div className="bg-gray-50 py-16 overflow-hidden container mx-auto">
           <JobSliderUpperSection />
 
           <div className="relative">
@@ -203,10 +121,10 @@ const FindJobSlider = () => {
               {duplicatedData?.map((job, index) => (
                 <div
                   key={`${job.id}-${index}`}
-                  className={`shrink-0 w-87.5 h-100 rounded-lg shadow-lg transition-all duration-300 cursor-pointer relative ${
+                  className={`shrink-0 w-87.5 h-100 rounded-2xl transition-all duration-300 cursor-pointer relative border ${
                     hoveredCard === `${job.id}-${index}`
-                      ? "bg-[url('/assets/home/ac558c59fa76f4ddec80658fcef8766dc73597c2.jpg')] bg-cover  "
-                      : "bg-white"
+                      ? "bg-gradient-to-br from-[#0d2b33] to-[#1a4550] border-transparent shadow-xl shadow-[#0d2b33]/20"
+                      : "bg-white border-gray-100 shadow-md hover:border-[#1a4550]/30"
                   }`}
                   onMouseEnter={() => setHoveredCard(`${job.id}-${index}`)}
                   onMouseLeave={() => setHoveredCard(null)}
@@ -233,26 +151,3 @@ const FindJobSlider = () => {
 };
 
 export default FindJobSlider;
-/* 
-
-
-  const handleUploadCV = (jobTitle: any) => {
-    alert(`Uploading CV for: ${jobTitle}`);
-  }; */
-
-/* useEffect(() => {
-    if (hoveredCard === null) {
-      const interval = setInterval(() => {
-        setOffset((prev) => {
-          const newOffset = prev + 1;
-          const cardWidth = 370;
-          if (Math.abs(newOffset) >= cardWidth * jobData?.length) {
-            return 0;
-          }
-          return newOffset;
-        });
-      }, 10);
-
-      return () => clearInterval(interval);
-    }
-  }, [hoveredCard, jobData?.length]); */
