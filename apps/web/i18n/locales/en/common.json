@@ -1,0 +1,228 @@
+{
+  "nav": {
+    "about": "About Us",
+    "professionals": "Professionals",
+    "clients": "Clients",
+    "approach": "Our Approach",
+    "mission": "Mission & Vision",
+    "becomeMember": "Become a Team Member",
+    "vacancies": "Vacancies",
+    "blogs": "Blogs",
+    "myAccount": "My Account",
+    "member": "Member"
+  },
+  "header": {
+    "badge": "Staffing & Recruitment Partner",
+    "bigText": "STAFF OUTSOURCING",
+    "titleLine1": "Hire staff in the Netherlands",
+    "titleLine2": "with staff outsourcing",
+    "description": "Two ways to grow your team: <b>Payrolling</b> (we employ, you lease) or <b>RPO</b> (we recruit, you hire directly). Built exclusively for Dutch companies using EU-based talent across IT, digital, admin, finance, and travel. You choose the model, we handle the hiring.",
+    "ctaPrimary": "Become a Call",
+    "ctaSecondary": "Questions first? WhatsApp us →"
+  },
+
+
+
+  "vacanciesSearch": {
+  "heading": "Find the job that suits you",
+  "subtext": "We offer multiple vacancies in our portfolio. Search our online vacancies.",
+  "placeholder": "Search vacancies by keyword",
+  "searchButton": "To Search",
+  "allVacancies": "All Vacancies"
+},
+
+
+
+"industryWeWork": {
+  "heading": "The Industries we work in",
+  "infrastructure": "Infrastructure",
+  "energy": "Energy",
+  "oilGas": "Oil & Gas"
+},
+
+
+"whoWeHelp": {
+  "heading": "Who we help",
+  "subheading": "Most staffing companies make you figure out which model you need. We'll tell you straight — four services, two ways of working.",
+  "groupATitle": "Group A — We recruit. You hire.",
+  "groupABadge": "Direct Hiring",
+  "groupBTitle": "Group B — We employ. You lease.",
+  "groupBBadge": "Employment & Payroll",
+  "fitsLabel": "✨ Fits you if:",
+  "cardsA": [
+    {
+      "title": "Recruitment / Placement",
+      "desc": "You already know roughly who you want — you just need someone to find and vet them. We run the search, the shortlist, and the interviews. The candidate goes straight onto your payroll.",
+      "fit": "It's a one-off hire and you want the candidate on your team from day one.",
+      "cta": "See how Placement works"
+    },
+    {
+      "title": "RPO",
+      "desc": "You're hiring for more than one role, or you will be over the next few months. We run your recruitment process end-to-end — embedded in your hiring calendar, not a single search.",
+      "fit": "You're building out a team, not filling one seat.",
+      "cta": "See how RPO works"
+    }
+  ],
+  "cardsB": [
+    {
+      "title": "Temporary Staffing / Staff Outsourcing",
+      "desc": "You need someone working for you without adding headcount to your own payroll. We employ them — contracts, payroll, tax, Dutch labor law — and you direct the day-to-day work.",
+      "fit": "The need is short-to-medium term, or you're not ready to commit to a direct hire yet.",
+      "cta": "See how Staff Outsourcing works"
+    },
+    {
+      "title": "Payrolling",
+      "desc": "You've already found your candidate yourself. We become the legal employer on paper — contracts, payroll, tax — while they work exclusively for you.",
+      "fit": "You've sourced the person already and just need the employment relationship handled.",
+      "cta": "See how Payrolling works"
+    }
+  ],
+  "bannerTitle": "Still trying to figure out the right fit?",
+  "bannerDesc": "Not sure which one? We'll tell you which of the four fits your situation — not just sell you the one we'd rather do.",
+  "bannerCta": "Book a call"
+},
+
+
+"rolesWePlace": {
+  "badge": "Our Expertise",
+  "heading": "Roles we place",
+  "subheading": "Roles grouped by what you're actually hiring for. Click a category below to switch roles.",
+  "categories": [
+    {
+      "title": "IT & Development",
+      "href": "/professionals/it-development",
+      "roles": ["Full Stack Developer", "Front-End Developer", "Back-End Developer", "App Developer (iOS/Android)", "Data Engineer", "AI Engineer", "ML Engineer", "Software Tester (QA)", "IT Support (Remote)", "Electrical Engineer"]
+    },
+    {
+      "title": "Design Services",
+      "href": "/professionals/design-services",
+      "roles": ["Webdesigner/Developer", "Graphic Designer"]
+    },
+    {
+      "title": "Marketing & Analytics",
+      "href": "/professionals/marketing-analytics",
+      "roles": ["Social Media Manager", "Content Creator/Copywriter", "Online Marketer", "Google Analytics Specialist", "Power BI Specialist", "Data Analyst"]
+    },
+    {
+      "title": "Admin & Business Support",
+      "href": "/professionals/admin-business-support",
+      "roles": ["Virtual Assistant", "Ecommerce Web Shop Assistant", "Customer Support Agent (Remote)", "Data Entry Specialist", "HR Assistant (Remote)", "Customer Relations Agent"]
+    },
+    {
+      "title": "Finance & Accounting",
+      "href": "/professionals/finance-accounting",
+      "roles": ["Accountant/Financial Assistant", "Administrative Accounting Assistant", "Microsoft Excel Specialist"]
+    },
+    {
+      "title": "Travel & Reservations",
+      "href": "/professionals/travel-reservations",
+      "roles": ["Online Travel Advisor", "Reservations Clerk", "Customer Service (Travel Agency)", "Travel Marketer"]
+    }
+  ]
+},
+
+
+"whyDutchCompanies": {
+  "badge": "Why Us",
+  "heading": "Why Dutch companies choose us",
+  "para1": "Most staffing options built for the Dutch market fall into one of two camps. Offshore agencies place talent in India, Malaysia, the Philippines, or Colombia — cheap, but you're managing time zone gaps and a candidate who doesn't know Dutch employment norms. Or you get compliance advisors built to help foreign companies set up payroll when entering the Netherlands — useful if you're a US company opening a Dutch office, useless if you're a Dutch company trying to hire.",
+  "para2": "We're neither. We're built for Dutch companies, hiring Dutch and EU-based talent, in your time zone, under Dutch labor law, with both employment models — Payrolling and RPO — under one roof.",
+  "points": [
+    {
+      "title": "Dutch and EU-based talent",
+      "desc": "Same time zone, same working culture, no handoff friction."
+    },
+    {
+      "title": "Both models, one provider",
+      "desc": "You don't need a second vendor when your needs shift from temporary to permanent."
+    },
+    {
+      "title": "Built for Dutch buyers",
+      "desc": "Not a compliance add-on bolted onto a service designed for someone else."
+    }
+  ]
+},
+
+"howItWorks": {
+  "badge": "How It Works",
+  "heading": "How it works",
+  "subheading": "Same process whether you pick Payrolling or RPO — the difference is what happens after step 3.",
+  "cta": "Book Free Consultation",
+  "steps": [
+    {
+      "num": "01",
+      "title": "Tell us the role",
+      "desc": "Book a call or send a WhatsApp message with what you need — role, seniority, timeline."
+    },
+    {
+      "num": "02",
+      "title": "We shortlist candidates",
+      "desc": "Typically within 5 business days, we handpick top-tier matching profiles for your review."
+    },
+    {
+      "num": "03",
+      "title": "You interview",
+      "desc": "As many rounds as you need. We coordinate all the scheduling seamlessly."
+    },
+    {
+      "num": "04",
+      "title": "Choose your model",
+      "desc": "Select between Payrolling (starts on our payroll) or RPO (straight onto yours)."
+    }
+  ]
+},
+
+
+"faqSection": {
+  "badge": "FAQ",
+  "heading": "Frequently asked questions",
+  "faqs": [
+    {
+      "q": "Is this legal under Dutch labor law?",
+      "a": "Yes. With Payrolling, we're the legal employer of record — contracts, tax withholding, and statutory obligations are ours to handle, not yours. With RPO, the candidate is hired directly by you, under your own employment terms, so standard Dutch employment law applies as it would for any hire you make."
+    },
+    {
+      "q": "What does it cost?",
+      "a": "It depends on the role and the model. Payrolling pricing is based on the employee's gross salary plus a service fee; RPO pricing is typically a placement fee based on the role's salary band. We'll give you an exact number on a call once we know the role — we don't publish a flat rate because a Virtual Assistant and an AI Engineer aren't priced the same way."
+    },
+    {
+      "q": "How long does it take to fill a role?",
+      "a": "Varies by role and how niche the skill set is. [Confirm typical timeline per role category — e.g. \"2–3 weeks for most IT/digital roles\" — flagging as placeholder until confirmed.]"
+    },
+    {
+      "q": "Can we switch from Payrolling to a direct hire later?",
+      "a": "Yes — that's a common path. If a payrolled candidate works out and you want them on your own payroll long-term, we can convert the arrangement. Ask us about terms when you're ready."
+    },
+    {
+      "q": "Do you only work with companies hiring one role, or can you handle multiple hires at once?",
+      "a": "Both. Some clients hire one role at a time; others are building out a whole team. Same process either way."
+    },
+    {
+      "q": "Is there a minimum contract length?",
+      "a": "[Placeholder — confirm minimum terms per model before publishing]"
+    },
+    {
+      "q": "What's the difference between Recruitment/Placement and Staff Outsourcing?",
+      "a": "With Placement, the person becomes your employee directly. With Staff Outsourcing, we employ them and lease them to you — you still direct their work, but the employment contract stays with us."
+    }
+  ]
+},
+
+
+"impact": {
+  "badge": "Join Us",
+  "heading": "Tell us the role. We'll tell you the right way to hire for it",
+  "subheading": "Become a Staff Outsourcing Professional and work on projects that shape the future. With your expertise and our guidance, you can grow, contribute and make a real difference.",
+  "ctaPrimary": "Book a call",
+  "ctaSecondary": "WhatsApp us →"
+},
+
+"actionBtns": {
+  "contact": "Contact",
+  "jobAlert": "Job alert"
+}
+
+
+
+}
+

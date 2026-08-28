@@ -1,0 +1,224 @@
+{
+  "nav": {
+    "about": "Over Ons",
+    "professionals": "Professionals",
+    "clients": "Klanten",
+    "approach": "Onze Aanpak",
+    "mission": "Missie & Visie",
+    "becomeMember": "Word Teamlid",
+    "vacancies": "Vacatures",
+    "blogs": "Blogs",
+    "myAccount": "Mijn Account",
+    "member": "Lid"
+  },
+  "header": {
+    "badge": "Werving & Selectie Partner",
+    "bigText": "STAFF OUTSOURCING",
+    "titleLine1": "Werf personeel in Nederland",
+    "titleLine2": "met staff outsourcing",
+    "description": "Twee manieren om uw team te laten groeien: <b>Payrolling</b> (wij zijn werkgever, u least personeel) of <b>RPO</b> (wij werven, u neemt rechtstreeks in dienst). Uitsluitend ontwikkeld voor Nederlandse bedrijven die gebruikmaken van EU-talent binnen IT, digitaal, administratie, finance en reizen. U kiest het model, wij regelen de werving.",
+    "ctaPrimary": "Word Teamlid",
+    "ctaSecondary": "Eerst vragen? WhatsApp ons →"
+  },
+
+"vacanciesSearch": {
+  "heading": "Vind de baan die bij jou past",
+  "subtext": "Wij bieden meerdere vacatures in ons portfolio. Doorzoek onze online vacatures.",
+  "placeholder": "Zoek vacatures op trefwoord",
+  "searchButton": "Zoeken",
+  "allVacancies": "Alle Vacatures"
+},
+
+
+"industryWeWork": {
+  "heading": "De sectoren waarin wij werken",
+  "infrastructure": "Infrastructuur",
+  "energy": "Energie",
+  "oilGas": "Olie & Gas"
+},
+
+
+
+"whoWeHelp": {
+  "heading": "Wie wij helpen",
+  "subheading": "De meeste uitzendbureaus laten u zelf uitzoeken welk model u nodig heeft. Wij zijn er duidelijk over — vier diensten, twee manieren van werken.",
+  "groupATitle": "Groep A — Wij werven. U neemt aan.",
+  "groupABadge": "Directe Werving",
+  "groupBTitle": "Groep B — Wij zijn werkgever. U least.",
+  "groupBBadge": "Werkgeverschap & Payroll",
+  "fitsLabel": "✨ Past bij u als:",
+  "cardsA": [
+    {
+      "title": "Werving & Selectie",
+      "desc": "U weet ongeveer al wie u zoekt — u heeft alleen iemand nodig om te zoeken en te screenen. Wij verzorgen de zoektocht, de shortlist en de gesprekken. De kandidaat komt direct op uw loonlijst.",
+      "fit": "Het is een eenmalige aanname en u wilt de kandidaat vanaf dag één in uw team.",
+      "cta": "Bekijk hoe Plaatsing werkt"
+    },
+    {
+      "title": "RPO",
+      "desc": "U werft voor meer dan één functie, of gaat dat de komende maanden doen. Wij verzorgen uw volledige wervingsproces — ingebed in uw wervingskalender, geen losse zoekopdracht.",
+      "fit": "U bouwt een team op, niet één functie invullen.",
+      "cta": "Bekijk hoe RPO werkt"
+    }
+  ],
+  "cardsB": [
+    {
+      "title": "Uitzendwerk / Staff Outsourcing",
+      "desc": "U heeft iemand nodig die voor u werkt, zonder dat dit uw eigen loonlijst belast. Wij zijn de werkgever — contracten, salaris, belasting, Nederlands arbeidsrecht — en u stuurt de dagelijkse werkzaamheden aan.",
+      "fit": "De behoefte is kort- tot middellange termijn, of u bent nog niet klaar voor een vaste aanname.",
+      "cta": "Bekijk hoe Staff Outsourcing werkt"
+    },
+    {
+      "title": "Payrolling",
+      "desc": "U heeft zelf al een kandidaat gevonden. Wij worden op papier de juridische werkgever — contracten, salaris, belasting — terwijl deze persoon exclusief voor u werkt.",
+      "fit": "U heeft de persoon al gevonden en wilt alleen de arbeidsrelatie geregeld hebben.",
+      "cta": "Bekijk hoe Payrolling werkt"
+    }
+  ],
+  "bannerTitle": "Nog steeds op zoek naar de juiste fit?",
+  "bannerDesc": "Niet zeker welke? Wij vertellen u welke van de vier bij uw situatie past — we verkopen niet gewoon de optie die wij het liefst doen.",
+  "bannerCta": "Boek een gesprek"
+},
+
+
+"rolesWePlace": {
+  "badge": "Onze Expertise",
+  "heading": "Functies die wij invullen",
+  "subheading": "Functies gegroepeerd op waar u daadwerkelijk voor werft. Klik op een categorie om functies te wisselen.",
+  "categories": [
+    {
+      "title": "IT & Ontwikkeling",
+      "href": "/professionals/it-development",
+      "roles": ["Full Stack Developer", "Front-End Developer", "Back-End Developer", "App Developer (iOS/Android)", "Data Engineer", "AI Engineer", "ML Engineer", "Software Tester (QA)", "IT Support (Remote)", "Elektrotechnisch Ingenieur"]
+    },
+    {
+      "title": "Design Diensten",
+      "href": "/professionals/design-services",
+      "roles": ["Webdesigner/Developer", "Grafisch Ontwerper"]
+    },
+    {
+      "title": "Marketing & Analyse",
+      "href": "/professionals/marketing-analytics",
+      "roles": ["Social Media Manager", "Content Creator/Copywriter", "Online Marketeer", "Google Analytics Specialist", "Power BI Specialist", "Data Analist"]
+    },
+    {
+      "title": "Administratie & Business Support",
+      "href": "/professionals/admin-business-support",
+      "roles": ["Virtueel Assistent", "Ecommerce Webshop Assistent", "Klantenservice Medewerker (Remote)", "Data Entry Specialist", "HR Assistent (Remote)", "Klantrelatiebeheerder"]
+    },
+    {
+      "title": "Finance & Boekhouding",
+      "href": "/professionals/finance-accounting",
+      "roles": ["Accountant/Financieel Assistent", "Administratief Boekhoudkundig Assistent", "Microsoft Excel Specialist"]
+    },
+    {
+      "title": "Reizen & Reserveringen",
+      "href": "/professionals/travel-reservations",
+      "roles": ["Online Reisadviseur", "Reserveringsmedewerker", "Klantenservice (Reisbureau)", "Reismarketeer"]
+    }
+  ]
+},
+
+
+"whyDutchCompanies": {
+  "badge": "Waarom Wij",
+  "heading": "Waarom Nederlandse bedrijven voor ons kiezen",
+  "para1": "De meeste uitzendopties voor de Nederlandse markt vallen in een van twee categorieën. Offshore bureaus plaatsen talent in India, Maleisië, de Filipijnen of Colombia — goedkoop, maar u beheert tijdzoneverschillen en een kandidaat die de Nederlandse arbeidsnormen niet kent. Of u krijgt compliance-adviseurs die buitenlandse bedrijven helpen bij het opzetten van payroll bij toetreding tot Nederland — handig als u een Amerikaans bedrijf bent dat een Nederlands kantoor opent, nutteloos als u een Nederlands bedrijf bent dat wil werven.",
+  "para2": "Wij zijn geen van beide. Wij zijn gebouwd voor Nederlandse bedrijven, die Nederlands en EU-talent werven, in uw tijdzone, onder Nederlands arbeidsrecht, met beide werkgeversmodellen — Payrolling en RPO — onder één dak.",
+  "points": [
+    {
+      "title": "Nederlands en EU-talent",
+      "desc": "Dezelfde tijdzone, dezelfde werkcultuur, geen overdrachtswrijving."
+    },
+    {
+      "title": "Beide modellen, één partner",
+      "desc": "U heeft geen tweede leverancier nodig wanneer uw behoefte verschuift van tijdelijk naar vast."
+    },
+    {
+      "title": "Gebouwd voor Nederlandse opdrachtgevers",
+      "desc": "Geen compliance-toevoeging aan een dienst die voor iemand anders is ontworpen."
+    }
+  ]
+},
+
+
+"howItWorks": {
+  "badge": "Hoe Het Werkt",
+  "heading": "Hoe het werkt",
+  "subheading": "Hetzelfde proces of u nu Payrolling of RPO kiest — het verschil zit in wat er na stap 3 gebeurt.",
+  "cta": "Boek Gratis Consult",
+  "steps": [
+    {
+      "num": "01",
+      "title": "Vertel ons de functie",
+      "desc": "Boek een gesprek of stuur een WhatsApp-bericht met wat u nodig heeft — functie, senioriteit, tijdlijn."
+    },
+    {
+      "num": "02",
+      "title": "Wij stellen een shortlist samen",
+      "desc": "Meestal binnen 5 werkdagen selecteren wij handmatig topkandidaten voor uw beoordeling."
+    },
+    {
+      "num": "03",
+      "title": "U voert gesprekken",
+      "desc": "Zoveel rondes als u nodig heeft. Wij coördineren de volledige planning naadloos."
+    },
+    {
+      "num": "04",
+      "title": "Kies uw model",
+      "desc": "Kies tussen Payrolling (start op onze loonlijst) of RPO (rechtstreeks op de uwe)."
+    }
+  ]
+},
+
+
+"faqSection": {
+  "badge": "FAQ",
+  "heading": "Veelgestelde vragen",
+  "faqs": [
+    {
+      "q": "Is dit legaal onder het Nederlands arbeidsrecht?",
+      "a": "Ja. Bij Payrolling zijn wij de juridische werkgever — contracten, loonbelasting en wettelijke verplichtingen zijn onze verantwoordelijkheid, niet de uwe. Bij RPO wordt de kandidaat rechtstreeks door u aangenomen, onder uw eigen arbeidsvoorwaarden, dus geldt het standaard Nederlands arbeidsrecht zoals bij elke aanname die u doet."
+    },
+    {
+      "q": "Wat kost het?",
+      "a": "Dat hangt af van de functie en het model. Payrolling-prijzen zijn gebaseerd op het brutosalaris van de medewerker plus een servicevergoeding; RPO-prijzen zijn meestal een plaatsingsvergoeding gebaseerd op de salarisschaal van de functie. We geven u een exact bedrag tijdens een gesprek zodra we de functie kennen — we publiceren geen vast tarief omdat een Virtueel Assistent en een AI Engineer niet op dezelfde manier geprijsd worden."
+    },
+    {
+      "q": "Hoe lang duurt het om een functie in te vullen?",
+      "a": "Varieert per functie en hoe specialistisch de vaardigheden zijn. [Bevestig gebruikelijke doorlooptijd per functiecategorie — bijv. \"2–3 weken voor de meeste IT/digitale functies\" — gemarkeerd als plaatshouder tot bevestigd.]"
+    },
+    {
+      "q": "Kunnen we later overstappen van Payrolling naar een directe aanname?",
+      "a": "Ja — dat is een gebruikelijk traject. Als een gepayrollde kandidaat goed bevalt en u wilt hem/haar op de lange termijn op uw eigen loonlijst, kunnen we de overeenkomst omzetten. Vraag ons naar de voorwaarden wanneer u zover bent."
+    },
+    {
+      "q": "Werkt u alleen met bedrijven die één functie werven, of kunt u meerdere aannames tegelijk regelen?",
+      "a": "Beide. Sommige klanten werven één functie tegelijk; anderen bouwen een heel team op. Hetzelfde proces in beide gevallen."
+    },
+    {
+      "q": "Is er een minimale contractduur?",
+      "a": "[Plaatshouder — bevestig minimale voorwaarden per model vóór publicatie]"
+    },
+    {
+      "q": "Wat is het verschil tussen Werving & Selectie en Staff Outsourcing?",
+      "a": "Bij Plaatsing wordt de persoon rechtstreeks uw werknemer. Bij Staff Outsourcing zijn wij de werkgever en leasen wij deze persoon aan u uit — u stuurt nog steeds het werk aan, maar het arbeidscontract blijft bij ons."
+    }
+  ]
+},
+
+"impact": {
+  "badge": "Doe Mee",
+  "heading": "Vertel ons de functie. Wij vertellen u de juiste manier om ervoor te werven",
+  "subheading": "Word een Staff Outsourcing Professional en werk aan projecten die de toekomst vormgeven. Met uw expertise en onze begeleiding kunt u groeien, bijdragen en een echt verschil maken.",
+  "ctaPrimary": "Boek een gesprek",
+  "ctaSecondary": "WhatsApp ons →"
+},
+
+"actionBtns": {
+  "contact": "Contact",
+  "jobAlert": "Vacaturemelding"
+}
+
+
+}

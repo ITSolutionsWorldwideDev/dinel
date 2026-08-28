@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "../../../i18n/navigation";
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 interface VacanciesSearchBarProps {
   onSearch?: (value: string) => void;
@@ -12,6 +13,7 @@ interface VacanciesSearchBarProps {
 export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
+  const t = useTranslations("vacanciesSearch");
 
   const handleSearch = () => {
     if (onSearch) {
@@ -38,19 +40,16 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
   return (
     <div className="w-[80vw] max-w-5xl bg-gradient-to-r from-[#0d2b33] to-[#1a4550] flex items-center justify-center p-6 md:p-8 rounded-2xl border border-white/10 shadow-xl mx-auto">
       <div className="w-full">
-        {/* Heading & Subtext */}
         <div className="text-center mb-6">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-            Find the job that suits you
+            {t("heading")}
           </h2>
 
           <p className="text-sm md:text-base text-white/80">
-            We offer multiple vacancies in our portfolio. Search our online
-            vacancies.
+            {t("subtext")}
           </p>
         </div>
 
-        {/* Search Controls */}
         <div className="flex flex-col md:flex-row gap-3 items-stretch justify-center max-w-3xl mx-auto">
           <div className="flex-1 relative">
             <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
@@ -59,7 +58,7 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
 
             <input
               type="text"
-              placeholder="Search vacancies by keyword"
+              placeholder={t("placeholder")}
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value);
@@ -81,7 +80,7 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
             onClick={handleSearch}
             className="h-11 px-6 rounded-lg bg-[#f2c40d] text-[#0d2b33] text-sm font-semibold hover:bg-white transition-colors cursor-pointer shrink-0"
           >
-            To Search
+            {t("searchButton")}
           </button>
 
           <Link
@@ -89,7 +88,7 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
             onClick={handleAllVacancies}
             className="h-11 px-6 rounded-lg border-2 border-white/40 text-white text-sm font-medium hover:bg-white/10 transition-colors cursor-pointer flex items-center justify-center shrink-0"
           >
-            All Vacancies
+            {t("allVacancies")}
           </Link>
         </div>
       </div>

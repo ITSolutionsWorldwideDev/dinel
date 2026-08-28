@@ -1,14 +1,15 @@
 "use client";
-import Link from "next/link";
+import { Link } from "../../../i18n/navigation";
 import { createPortal } from "react-dom";
 import { FaBell } from "react-icons/fa6";
 import React, { useState } from "react";
 import JobAlert from "../job-alert/JobAlert";
+import { useTranslations } from "next-intl";
 
 const ActionBtns = () => {
   const [open, setOPen] = useState(false);
+  const t = useTranslations("actionBtns");
 
-  // Same height, padding, aur layout ke sath width bhi fix kar di hai
   const buttonCommonStyles =
     "h-11 px-5 rounded-md text-sm font-medium cursor-pointer transition-colors duration-200 flex items-center justify-center whitespace-nowrap";
 
@@ -19,7 +20,7 @@ const ActionBtns = () => {
           <button
             className={`bg-gradient-to-br from-[#0d2b33] to-[#1a4550] hover:from-[#1a4550] hover:to-[#0d2b33] text-white ${buttonCommonStyles}`}
           >
-            Contact
+            {t("contact")}
           </button>
         </Link>
 
@@ -28,7 +29,7 @@ const ActionBtns = () => {
           onClick={() => setOPen(!open)}
         >
           <FaBell className="shrink-0 text-base" />
-          <span>Job alert</span>
+          <span>{t("jobAlert")}</span>
         </button>
       </div>
 

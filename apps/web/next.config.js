@@ -1,3 +1,7 @@
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -6,7 +10,6 @@ const nextConfig = {
         protocol: "https",
         hostname: "utfs.io",
       },
-      // Optional: allow UploadThing CDN subdomains
       {
         protocol: "https",
         hostname: "*.uploadthing.com",
@@ -15,19 +18,5 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
 
-
-/* 
-// apps/web/next.config.js
-module.exports = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**.uploadthing.com",
-      },
-    ],
-  },
-};
-*/
