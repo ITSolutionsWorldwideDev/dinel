@@ -14,7 +14,6 @@ export default function AboutHeader() {
         priority
         className="object-cover absolute inset-0 w-full h-full "
       />
-      <NavBar />
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-linear-to-l from-[#0A7CD8]/90 to-[#0A7CD8]/20" />

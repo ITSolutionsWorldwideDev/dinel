@@ -27,7 +27,6 @@ const HeaderWithCenterTextandBgImg = ({
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-linear-to-l from-[#0A7CD8] to-[#0A7CD8]/20 " />
-      <NavBar />
 
       {/* Content */}
       <div className="relative z-10 h-1/2 flex  items-center container mx-auto justify-center">

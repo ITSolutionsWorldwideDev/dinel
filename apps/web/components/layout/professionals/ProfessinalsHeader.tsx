@@ -15,8 +15,7 @@ export default function ProfessinalsHeader() {
         priority
         className="object-cover absolute inset-0 w-full h-full scale-x-[-1] "
       />
-      <NavBar />
-      {/* Overlay */}
+     {/* Overlay */}
       <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#0A7CD8] to-transparent" />
 
       {/* Big faded text */}

@@ -24,7 +24,6 @@ export default function ComingSoon() {
     setLoading(false);
 
     if (res.ok) {
-      // Marks THIS tab as unlocked. New tabs won't have this unless "remember" was checked.
       sessionStorage.setItem("site_unlocked", "1");
       router.push("/");
       router.refresh();
@@ -100,6 +99,11 @@ export default function ComingSoon() {
       </div>
 
       <style>{`
+        /* 👇 HIDES HEADER AND FOOTER AUTOMATICALLY ON THIS PAGE */
+        header, footer {
+          display: none !important;
+        }
+
         .cs-wrapper {
           position: relative;
           min-height: 100vh;

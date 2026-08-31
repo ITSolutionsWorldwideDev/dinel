@@ -19,7 +19,6 @@ export default function ClientHeader() {
       <section className="relative w-full h-auto lg:min-h-screen container mx-auto overflow-hidden">
         {/* Background Image */}
 
-        <NavBar />
         {/* Overlay */}
         <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#0A7CD8]/70 to-transparent" />
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#0A7CD8]/70 to-transparent" />

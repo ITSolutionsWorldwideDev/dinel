@@ -5,7 +5,8 @@ export default async function Impact() {
   const t = await getTranslations("impact");
 
   return (
-    <section className="bg-[#0d2b33] relative overflow-hidden">
+    /* `mb-16 md:mb-24` add kiya gaya hai footer se fasla banane ke liye */
+    <section className="bg-[#0d2b33] relative overflow-hidden mb-16 md:mb-24">
       <img
         src="/assets/home/2ab3e25bb92dd58e32fa83e505bc6ebef6f6ed58(1).jpg"
         className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20"
@@ -14,9 +15,9 @@ export default async function Impact() {
 
       <div className="bg-[#0d2b33] absolute inset-0 opacity-80" />
 
-      <div className="w-full px-6 md:px-12 lg:px-16 py-20 md:py-28 relative z-10 text-center max-w-5xl mx-auto">
+      <div className="w-full px-8 md:px-16 lg:px-24 py-24 md:py-36 relative z-10 text-center max-w-6xl mx-auto">
 
-        <span className="text-xs uppercase tracking-widest font-bold text-[#f2c40d] bg-[#f2c40d]/10 px-3 py-1.5 rounded-full inline-block mb-4">
+        <span className="text-xs uppercase tracking-widest font-bold text-[#f2c40d] bg-[#f2c40d]/10 px-3.5 py-1.5 rounded-full inline-block mb-4">
           {t("badge")}
         </span>
 

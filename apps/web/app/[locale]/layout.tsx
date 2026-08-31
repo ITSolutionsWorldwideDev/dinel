@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ToastProvider } from "@repo/ui";
 import AccessGuard from "@/components/AccessGuard";
+import DeskstopNavigationMenu from "@/components/layout/navbar/DeskstopNavigationMenu";
+import Footer from "@/components/layout/footer";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { headers } from "next/headers";
 import { routing } from "../../i18n/routing";
 
 export const metadata: Metadata = {
@@ -30,14 +33,28 @@ export default async function LocaleLayout({
   }
 
   setRequestLocale(locale);
+
   const messages = await getMessages();
+
+  // Server Side Path Check (Bina kisi client component wrapper ke)
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") || headersList.get("next-url") || "";
+  const isComingSoon = pathname.includes("coming-soon");
 
   return (
     <html lang={locale}>
       <body>
         <AccessGuard />
+
         <NextIntlClientProvider messages={messages}>
-          <ToastProvider>{children}</ToastProvider>
+          <ToastProvider>
+            {/* Direct condition check on Server Level */}
+            {!isComingSoon && <DeskstopNavigationMenu />}
+
+            {children}
+
+            {!isComingSoon && <Footer />}
+          </ToastProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -9,7 +9,6 @@ export default function BecomeADinelerHeader() {
     <section className="relative w-full h-auto lg:h-screen min-h-125 overflow-hidden ">
       {/* Background Image */}
      
-      <NavBar />
       {/* Overlay */}
       <div className="absolute inset-0 bg-linear-to-r from-transparent  to-[#0A7CD8]" />
       <div className="absolute inset-0 bg-linear-to-b from-transparent  to-[#0A7CD8]/70" />

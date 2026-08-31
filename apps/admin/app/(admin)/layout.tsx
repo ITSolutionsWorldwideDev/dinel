@@ -1,34 +1,26 @@
-// apps/admin/app/(dashboard)/layout.tsx
+// apps/admin/app/(admin)/layout.tsx
 "use client";
 
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
-import Footer from "@/components/footer";
+// ❌ Step 1: Footer import remove kar diya gaya hai kyunki yeh file missing hai
+// import Footer from "@/components/footer"; 
 
-import { useSession, signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-import "../layout.css";
-import { ToastProvider, useToast } from "@repo/ui";
-import { SessionActivity } from "../providers/session-activity";
-// import "../globals.css";
-
-function AdminLayoutInner({ children }: { children: React.ReactNode }) {
-  // const { status } = useSession();
-  const { data: session, status } = useSession();
+export default function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const { status } = useSession();
   const router = useRouter();
-  const { showToast } = useToast();
 
   useEffect(() => {
-    if (status === "authenticated" && session?.user?.expired) {
-      showToast("danger", "Session expired. Please login again.");
-
-      signOut({
-        callbackUrl: "/login",
-      });
-    }
-  }, [status, session, showToast]);
+    if (status === "unauthenticated") router.replace("/login");
+  }, [status, router]);
 
   if (status === "loading") return <p>Loading...</p>;
   if (status === "unauthenticated") return null;
@@ -38,50 +30,7 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
       <Header />
       <Sidebar />
       <main>{children}</main>
-      <Footer />
+      {/* ❌ Step 2: JSX se <Footer /> component remove kar diya hai */}
     </div>
   );
 }
-
-// ----------------------------
-// Provider wrapper
-// ----------------------------
-export default function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <ToastProvider>
-      <SessionActivity />
-      <AdminLayoutInner>{children}</AdminLayoutInner>
-    </ToastProvider>
-  );
-}
-/* export default function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const { status } = useSession();
-  const router = useRouter();
-
-  // Protect all admin pages
-  useEffect(() => {
-    if (status === "unauthenticated") router.replace("/login");
-  }, [status, router]);
-
-  if (status === "loading") return <p>Loading...</p>;
-  if (status === "unauthenticated") return null;
-
-  return (
-    <ToastProvider>
-      <div className="main-wrapper">
-        <Header />
-        <Sidebar />
-        <main>{children}</main>
-        <Footer />
-      </div>
-    </ToastProvider>
-  );
-} */

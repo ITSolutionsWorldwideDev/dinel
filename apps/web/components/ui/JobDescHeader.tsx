@@ -46,7 +46,7 @@ export default async function JobDescHeader({
         priority
         className="object-cover absolute inset-0 w-full h-full  "
       />
-      <NavBar />
+      
 
       <div className="absolute inset-0 bg-black/10 " />
 

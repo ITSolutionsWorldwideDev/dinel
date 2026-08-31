@@ -218,7 +218,507 @@
 "actionBtns": {
   "contact": "Contact",
   "jobAlert": "Vacaturemelding"
-}
+},
+
+
+
+
+
+  "itDevelopment": {
+    "seo": {
+      "slug": "/it-development",
+      "metaTitle": "IT-ontwikkelaars inhuren in Nederland | Staff Outsourcing",
+      "metaDescription": "Huur front-end, back-end, full-stack en andere IT-ontwikkelaars in Nederland. Werf ze rechtstreeks aan of leen gepayrolld personeel — wij regelen de werving."
+    },
+    "hero": {
+      "h1": "IT- en developmentpersoneel inhuren in Nederland",
+      "subhead": "Van front-end tot AI-engineering — werf ontwikkelaars rechtstreeks aan, of leen gepayrolld IT-personeel. Tien rollen, één aanspreekpunt.",
+      "primaryCtaText": "Plan een gesprek →",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Eerst nog vragen? WhatsApp ons →",
+      "secondaryCtaLink": "https://wa.me/[placeholder]"
+    },
+    "sections": {
+      "coverageTitle": "Wat deze categorie omvat",
+      "coverageBody": "Bedrijven komen om drie verschillende redenen bij ons voor IT-rollen, en die zijn niet inwisselbaar. Sommigen bouwen een product en hebben ontwikkelaars nodig die een codebase langdurig gaan beheren. Anderen hebben een werkend developmentteam met één gat — een QA-specialist, een data engineer — dat al het andere werk vertraagt. Weer anderen hebben gewoon dekking nodig: IT-support, testen, onderhoudswerk dat moet gebeuren maar geen fulltime aanstelling op de eigen loonlijst rechtvaardigt.\n\nIT & Development dekt alle drie: front-end, back-end en full-stack development, mobiele app-ontwikkeling, data- en AI/ML-engineering, QA-testen, IT-support, en elektrotechnische rollen binnen technische teams.",
+      "rolesTitle": "Rollen binnen deze categorie",
+      "roles": [
+        {
+          "title": "Full Stack Developer",
+          "description": "Bouwt en beheert zowel de front-end als de back-end van een product.",
+          "link": "/hire-full-stack-developer"
+        },
+        {
+          "title": "Front-End Developer",
+          "description": "Bouwt wat gebruikers zien en waarmee ze interacteren.",
+          "link": "/hire-front-end-developer"
+        },
+        {
+          "title": "Back-End Developer",
+          "description": "Bouwt de server, database en logicalaag daarachter.",
+          "link": "/hire-back-end-developer"
+        },
+        {
+          "title": "App Developer (iOS/Android)",
+          "description": "Bouwt native of cross-platform mobiele apps.",
+          "link": "/hire-app-developer"
+        },
+        {
+          "title": "Data Engineer",
+          "description": "Bouwt en onderhoudt de pipelines die data laten stromen waar het nodig is.",
+          "link": "/hire-data-engineer"
+        },
+        {
+          "title": "AI Engineer",
+          "description": "Bouwt en implementeert AI-gedreven features en modellen in productie.",
+          "link": "/hire-ai-engineer"
+        },
+        {
+          "title": "ML Engineer",
+          "description": "Bouwt en traint de machine learning-modellen zelf.",
+          "link": "/hire-ml-engineer"
+        },
+        {
+          "title": "Software Tester (QA)",
+          "description": "Vindt wat kapot is voordat je gebruikers het doen.",
+          "link": "/hire-software-tester-qa"
+        },
+        {
+          "title": "IT Support (Remote)",
+          "description": "Houdt systemen, apparaten en toegang draaiende voor je team.",
+          "link": "/hire-it-support"
+        },
+        {
+          "title": "Elektrotechnisch Engineer",
+          "description": "Regelt de elektrotechnische en hardwarekant van technische projecten, niet alleen software.",
+          "link": "/hire-electrical-engineer"
+        }
+      ],
+      "modelTitle": "Payrolling vs RPO voor deze categorie",
+      "modelBody": "Hier zit een echt onderscheid, maar dat loopt langs het type rol, niet langs de categorie als geheel. Kernontwikkelrollen — full-stack, back-end, mobiel — gaan meestal via RPO: bedrijven willen die persoon als vaste, directe aanstelling, omdat ze langdurig productcode beheren en institutionele kennis ertoe doet. Dekkings- en supportrollen — QA-testen, IT-support — gaan vaker via Payrolling of Staff Outsourcing, omdat de behoefte reëel is maar niet altijd een vaste aanstelling rechtvaardigt. Twijfel je aan welke kant van die lijn jouw rol valt? Daar is het gesprek precies voor.",
+      "howItWorksTitle": "Hoe het werkt",
+      "howItWorksBody": "Zelfde proces als de rest van de site: jij vertelt ons de rol, wij stellen een shortlist samen, jij voert de gesprekken, jij kiest het model.",
+      "howItWorksLink": "/#how-it-works",
+      "faqTitle": "Veelgestelde vragen",
+      "faqs": [
+        {
+          "q": "Screenen jullie op een specifieke techstack, of alleen algemeen niveau?",
+          "a": "Specifieke stack. Heb je iemand nodig die met React en Node heeft gewerkt, of productie-ervaring heeft met een bepaalde data pipeline-tool? Vertel het ons tijdens het gesprek — daar screenen we op, niet op een generiek 'developer'-profiel."
+        },
+        {
+          "q": "We hebben geen technisch persoon in huis om kandidaten te beoordelen — hoe werkt de screening dan?",
+          "a": "Wij verzorgen de technische screening voordat iemand op jouw shortlist komt. Jij voert nog steeds de gesprekken die voor jou belangrijk zijn — cultuur, communicatie, hoe iemand een probleem aanpakt — maar je begint niet bij nul op technisch vlak."
+        },
+        {
+          "q": "Kunnen jullie iemand vinden met een niche-framework of -taal, niet alleen de bekende?",
+          "a": "Hangt van de niche af — vertel ons wat je nodig hebt en we zijn eerlijk over of het een snelle zoektocht is of een langere."
+        },
+        {
+          "q": "Plaatsen jullie zowel tijdelijk/contractpersoneel als vast IT-personeel?",
+          "a": "Ja — dat is precies de Payrolling vs RPO-splitsing hierboven. Zelfde talentpool, andere arbeidsstructuur afhankelijk van wat je nodig hebt."
+        }
+      ],
+      "finalCta": {
+        "headline": "Bouw je een developmentteam, of vul je één technisch gat op? Vertel ons de rol.",
+        "primaryCtaText": "Plan een gesprek →",
+        "primaryCtaLink": "/contact",
+        "secondaryCtaText": "Of WhatsApp ons →",
+        "secondaryCtaLink": "https://wa.me/[placeholder]"
+      }
+    }
+  },
+
+  "designServices": {
+    "seo": {
+      "slug": "/design-services",
+      "metaTitle": "Web- en grafisch designers inhuren in Nederland | Staff Outsourcing",
+      "metaDescription": "Huur een webdesigner/developer of grafisch designer in Nederland. Werf rechtstreeks aan of leen gepayrolld designpersoneel — wij regelen de werving."
+    },
+    "hero": {
+      "h1": "Designpersoneel inhuren in Nederland",
+      "subhead": "Webdesign en grafisch design — werf rechtstreeks aan, of leen gepayrolld designpersoneel voor doorlopend of projectwerk.",
+      "primaryCtaText": "Plan een gesprek →",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Eerst nog vragen? WhatsApp ons →",
+      "secondaryCtaLink": "https://wa.me/[placeholder]"
+    },
+    "sections": {
+      "coverageTitle": "Wat deze categorie omvat",
+      "coverageBody": "Twee verschillende functies worden onder 'design' op één hoop gegooid, terwijl het niet dezelfde aanstelling is. De ene gaat over de website zelf — hoe die gebouwd is en eruitziet. De andere gaat over al het andere visuele materiaal dat je bedrijf naar buiten brengt — branding, marketingmateriaal, social graphics — los van één specifieke websitebouw.\n\nDesign Services dekt beide: het bouwen en ontwerpen van een website, en het produceren van het visuele materiaal daaromheen.",
+      "rolesTitle": "Rollen binnen deze categorie",
+      "roles": [
+        {
+          "title": "Webdesigner/Developer",
+          "description": "Bouwt en ontwerpt de website zelf, front-end en visueel ontwerp samen.",
+          "link": "/hire-webdesigner-developer"
+        },
+        {
+          "title": "Grafisch Designer",
+          "description": "Creëert branding, marketingmateriaal en visueel materiaal dat niet aan één specifieke websitebouw gebonden is.",
+          "link": "/hire-graphic-designer"
+        }
+      ],
+      "howItWorksTitle": "Hoe het werkt",
+      "howItWorksBody": "Zelfde proces als de rest van de site: jij vertelt ons de rol, wij stellen een shortlist samen, jij voert de gesprekken, jij kiest het model.",
+      "howItWorksLink": "/#how-it-works",
+      "faqTitle": "Veelgestelde vragen",
+      "faqs": [
+        {
+          "q": "Bekijken jullie portfolio's voordat jullie shortlisten?",
+          "a": "Ja — elke designkandidaat wordt geshortlist op basis van echt werk, niet alleen een cv. Je ziet portfolio's voordat je gaat interviewen."
+        },
+        {
+          "q": "Kan dit parttime of projectmatig, in plaats van fulltime?",
+          "a": "Hangt van het model af. Staff Outsourcing en Payrolling zijn flexibel in te zetten voor parttime of projectmatig werk; een directe RPO-aanstelling is doorgaans fulltime. Vertel ons de vorm van het werk en wij vertellen je welk model past."
+        },
+        {
+          "q": "Matchen jullie kandidaten op een specifieke toolset — Figma, Adobe, WordPress?",
+          "a": "Ja, als je ons vertelt waar jouw team mee werkt. We screenen op tool-fit naast het designwerk zelf."
+        },
+        {
+          "q": "Is een Webdesigner/Developer dezelfde persoon als een Grafisch Designer, of aparte specialisten?",
+          "a": "Apart. Een Webdesigner/Developer bouwt de site zelf; een Grafisch Designer produceert visueel materiaal. Sommige kandidaten dekken beide — geef dat aan tijdens het gesprek als dat is wat je nodig hebt."
+        }
+      ],
+      "finalCta": {
+        "headline": "Bouw je een website, of heb je doorlopend designwerk nodig? Vertel ons de rol.",
+        "primaryCtaText": "Plan een gesprek →",
+        "primaryCtaLink": "/contact",
+        "secondaryCtaText": "Of WhatsApp ons →",
+        "secondaryCtaLink": "https://wa.me/[placeholder]"
+      }
+    }
+  },
+
+
+
+  "marketingAnalytics": {
+    "seo": {
+      "slug": "/marketing-analyse",
+      "metaTitle": "Marketing- & analysepersoneel inhuren in Nederland",
+      "metaDescription": "Huur social media-, content-, marketing- of analysepersoneel in Nederland. Werf direct in dienst of huur payroll-personeel — wij regelen de werving."
+    },
+    "hero": {
+      "h1": "Marketing- & analysepersoneel inhuren in Nederland",
+      "subhead": "Van het dagelijks beheren van uw kanalen tot het lezen van wat werkt — werf direct in dienst, of huur payroll-personeel voor marketing en analyse.",
+      "primaryCtaText": "Plan een gesprek →",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Eerst een vraag? App ons →",
+      "secondaryCtaLink": "https://wa.me/[placeholder]"
+    },
+    "sections": {
+      "coverageTitle": "Wat deze categorie omvat",
+      "coverageBody": "\"Marketing\" wordt gebruikt als één woord voor functies die eigenlijk weinig overlappen. Iemand moet de kanalen dagelijks beheren. Iemand moet maken wat daarop komt. Iemand moet beslissen waar het budget naartoe gaat. En iemand moet u achteraf vertellen of het iets heeft opgeleverd. Dat zijn vier verschillende vaardigheden, geen ene generalistische functie.\n\nMarketing & Analytics dekt uitvoering (social, content), strategie (online marketing) en meting (analytics, BI, data) — zo huurt u voor het gat dat u écht heeft, niet voor een verzamelfunctie \"marketing\".",
+      "rolesTitle": "Functies in deze categorie",
+      "roles": [
+        {
+          "title": "Social Media Manager",
+          "description": "Beheert uw kanalen dagelijks: posten, engagement, community.",
+          "link": "/social-media-manager-inhuren"
+        },
+        {
+          "title": "Content Creator/Copywriter",
+          "description": "Schrijft en produceert wat op die kanalen komt en verder.",
+          "link": "/content-creator-copywriter-inhuren"
+        },
+        {
+          "title": "Online Marketeer",
+          "description": "Bepaalt waar het budget naartoe gaat over kanalen en campagnes.",
+          "link": "/online-marketeer-inhuren"
+        },
+        {
+          "title": "Google Analytics Specialist",
+          "description": "Meet en rapporteert hoe uw verkeer en campagnes daadwerkelijk presteren.",
+          "link": "/google-analytics-specialist-inhuren"
+        },
+        {
+          "title": "Power BI Specialist",
+          "description": "Zet uw data om in dashboards waar uw team écht mee kan werken.",
+          "link": "/power-bi-specialist-inhuren"
+        },
+        {
+          "title": "Data Analist",
+          "description": "Duikt in de data om een specifieke bedrijfsvraag te beantwoorden, verder dan één dashboardtool.",
+          "link": "/data-analist-inhuren"
+        }
+      ],
+      "modelTitle": "Payrolling vs RPO voor deze categorie",
+      "modelBody": "Er is hier een neiging te zien, al is het goed dit te toetsen aan echte plaatsingen voordat we het als vaststaand behandelen. Doorlopende uitvoerende functies — Social Media Manager, Content Creator — werken vaak beter als RPO-aanname, omdat iemand die dagelijks uw kanalen beheert baat heeft bij een vast teamlid zijn, geen wisselende resource. Analyse- en rapportagefuncties — Google Analytics Specialist, Power BI Specialist, Data Analist — passen vaker bij Payrolling of Staff Outsourcing, omdat de behoefte gekoppeld kan zijn aan een specifiek rapportageritme of project in plaats van een permanente plek. Online Marketeer zit ertussenin en hangt af van of u werft voor één campagne of een doorlopende strategische rol — bespreek dit tijdens het gesprek.",
+      "howItWorksTitle": "Hoe het werkt",
+      "howItWorksBody": "Zelfde proces als de rest van de site: u geeft de functie door, wij stellen een shortlist samen, u voert de gesprekken, u kiest het model.",
+      "howItWorksLink": "/#hoe-het-werkt",
+      "faqTitle": "Veelgestelde vragen",
+      "faqs": [
+        {
+          "q": "Screenen jullie op specifieke platforms — Google Ads, HubSpot, een bepaald CMS?",
+          "a": "Ja, als u doorgeeft wat uw stack is. Wij matchen op de tools die u daadwerkelijk gebruikt, niet op een generieke marketingvaardigheid."
+        },
+        {
+          "q": "Kan één persoon zowel content als social doen, of zijn dit altijd aparte aannames?",
+          "a": "Hangt van de omvang af. Sommige kandidaten doen beide echt; bij een groeiende kanaalbelasting splitsen de meeste bedrijven dit uiteindelijk. Geef uw volume door, dan adviseren wij in plaats van aan te nemen."
+        },
+        {
+          "q": "Kunnen jullie analysekandidaten data interpreteren, of alleen rapporten trekken?",
+          "a": "Beide zitten in de pool — een Google Analytics Specialist zit dichter bij rapportage en trackingopzet, terwijl een Data Analist specifiek wordt aangenomen om data te interpreteren en vragen te beantwoorden. Geef door wat u nodig heeft."
+        },
+        {
+          "q": "Is dit geschikt voor seizoensgebonden of campagnematig werk, niet alleen doorlopende functies?",
+          "a": "Ja — Staff Outsourcing en Payrolling zijn beide flexibel in te zetten rond een vaste campagne of seizoen. Geef dit door tijdens het gesprek, dan houden we daar rekening mee bij de shortlist."
+        }
+      ],
+      "finalCta": {
+        "headline": "Heeft u iemand nodig die kanalen beheert, of iemand die de cijfers leest? Geef de functie door.",
+        "primaryCtaText": "Plan een gesprek →",
+        "primaryCtaLink": "/contact",
+        "secondaryCtaText": "Of app ons →",
+        "secondaryCtaLink": "https://wa.me/[placeholder]"
+      }
+    }
+  },
+
+
+
+
+  "adminBusinessSupport": {
+    "seo": {
+      "slug": "/administratie-bedrijfsondersteuning",
+      "metaTitle": "Administratief personeel inhuren in Nederland",
+      "metaDescription": "Huur een virtuele assistent, klantenservicemedewerker of administratief specialist in Nederland. Werf direct in dienst of huur payroll-personeel."
+    },
+    "hero": {
+      "h1": "Administratief & ondersteunend personeel inhuren in Nederland",
+      "subhead": "Virtuele assistenten, klantenservice, data entry en HR-administratie — werf direct in dienst, of huur payroll-personeel voor flexibele bezetting.",
+      "primaryCtaText": "Plan een gesprek →",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Eerst een vraag? App ons →",
+      "secondaryCtaLink": "https://wa.me/[placeholder]"
+    },
+    "sections": {
+      "coverageTitle": "Wat deze categorie omvat",
+      "coverageBody": "De meeste bedrijven hebben voor dit werk geen hele afdeling nodig — ze hebben één of twee betrouwbare mensen nodig die het dekken. Iemand die supporttickets beantwoordt. Iemand die uw webshop en administratie op orde houdt. Iemand die de HR-administratie afhandelt die zich opstapelt tussen de echte wervingsbeslissingen door.\n\nAdministratie & Bedrijfsondersteuning dekt de functies die de dagelijkse operatie draaiende houden zonder dat u er een eigen intern team voor hoeft op te bouwen.",
+      "rolesTitle": "Functies in deze categorie",
+      "roles": [
+        {
+          "title": "Virtual Assistant",
+          "description": "Handelt dagelijkse administratieve taken op afstand af, zodat u dat niet hoeft te doen.",
+          "link": "/virtual-assistant-inhuren"
+        },
+        {
+          "title": "Ecommerce Webshop Assistent",
+          "description": "Beheert listings, bestellingen en de dagelijkse webshopoperatie.",
+          "link": "/ecommerce-webshop-assistent-inhuren"
+        },
+        {
+          "title": "Customer Support Agent (Remote)",
+          "description": "Handelt klantvragen en tickets namens u af.",
+          "link": "/customer-support-agent-inhuren"
+        },
+        {
+          "title": "Data Entry Specialist",
+          "description": "Houdt uw administratie, spreadsheets en systemen accuraat en actueel.",
+          "link": "/data-entry-specialist-inhuren"
+        },
+        {
+          "title": "HR Assistant (Remote)",
+          "description": "Handelt HR-administratie af: onboarding, dossiers, planningsondersteuning.",
+          "link": "/hr-assistant-inhuren"
+        },
+        {
+          "title": "Customer Relations Agent",
+          "description": "Beheert doorlopende klantrelaties en contact op accountniveau.",
+          "link": "/customer-relations-agent-inhuren"
+        }
+      ],
+      "modelTitle": "Payrolling vs RPO voor deze categorie",
+      "modelBody": "Dit is een van de duidelijkere categorieën. Administratief en ondersteunend werk draait meestal om flexibele, schaalbare bezetting — de ticketqueue moet beantwoord worden, de administratie moet actueel blijven, de webshop moet beheerd worden — en daar zijn Payrolling en Staff Outsourcing precies voor bedoeld: bezetting die op- en afschaalt zonder dat u de volledige werkgeversrelatie draagt. RPO komt hier minder vaak voor, meestal alleen als een functie zoals HR Assistant naar verwachting uitgroeit tot een vaste, ingebedde positie in uw team.",
+      "howItWorksTitle": "Hoe het werkt",
+      "howItWorksBody": "Zelfde proces als de rest van de site: u geeft de functie door, wij stellen een shortlist samen, u voert de gesprekken, u kiest het model.",
+      "howItWorksLink": "/#hoe-het-werkt",
+      "faqTitle": "Veelgestelde vragen",
+      "faqs": [
+        {
+          "q": "Kan dit parttime, of een paar uur per week?",
+          "a": "Ja — dit is een van de categorieën waar parttime en flexibele uren gebruikelijk zijn. Geef de daadwerkelijke werklast door, dan stellen wij daarop de shortlist samen."
+        },
+        {
+          "q": "Spreken kandidaten zowel Nederlands als Engels?",
+          "a": "Hangt van de functie en uw behoefte af — sommige klantgerichte functies vragen specifiek om Nederlands, andere zijn prima met alleen Engels. Geef uw vereiste door, dan screenen wij daar direct op."
+        },
+        {
+          "q": "Kunnen jullie zo'n functie snel invullen, bij een kortetermijngat?",
+          "a": "Administratieve en ondersteunende functies zijn doorgaans onder de snellere invullingen, omdat de vereisten minder specialistisch zijn dan bijvoorbeeld een technische functie."
+        },
+        {
+          "q": "Is er een minimale afname bij Staff Outsourcing?",
+          "a": "Neem contact op, dan lopen we de contractvoorwaarden voor uw specifieke situatie met u door."
+        }
+      ],
+      "finalCta": {
+        "headline": "Dagelijkse ondersteuning nodig, zonder er een afdeling voor op te bouwen? Geef de functie door.",
+        "primaryCtaText": "Plan een gesprek →",
+        "primaryCtaLink": "/contact",
+        "secondaryCtaText": "Of app ons →",
+        "secondaryCtaLink": "https://wa.me/[placeholder]"
+      }
+    }
+  },
+
+
+
+
+
+  
+  "financeAccounting": {
+    "seo": {
+      "slug": "/finance-accounting",
+      "metaTitle": "Finance & Accounting personeel inhuren in Nederland",
+      "metaDescription": "Huur een boekhouder, boekhoudkundig assistent of Excel-specialist in Nederland. Werf direct in dienst of huur payroll-personeel."
+    },
+    "hero": {
+      "h1": "Finance & Accounting personeel inhuren in Nederland",
+      "subhead": "Boekhouding, financiële administratie en rapportage — werf direct in dienst, of huur payroll-personeel voor doorlopend of seizoensgebonden werk.",
+      "primaryCtaText": "Plan een gesprek →",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Eerst een vraag? App ons →",
+      "secondaryCtaLink": "https://wa.me/[placeholder]"
+    },
+    "sections": {
+      "coverageTitle": "Wat deze categorie omvat",
+      "coverageBody": "Financieel werk valt uiteen in twee soorten behoefte. De ene is de doorlopende functie — iemand die de boekhouding, facturatie en financiële administratie week in week uit beheert. De andere is ondersteuning en capaciteit — hulp bij data-invoer, afstemming, of het bouwen van de spreadsheets en modellen waar de financiële functie op draait, vooral rond drukke periodes zoals de jaarafsluiting.\n\nFinance & Accounting dekt beide: de kernfunctie boekhouding, en de ondersteunende functies die alles soepel laten lopen.",
+      "rolesTitle": "Functies in deze categorie",
+      "roles": [
+        {
+          "title": "Accountant/Financieel Assistent",
+          "description": "Verzorgt boekhouding, facturatie en dagelijkse financiële administratie.",
+          "link": "/accountant-financieel-assistent-inhuren"
+        },
+        {
+          "title": "Administratief Medewerker Boekhouding",
+          "description": "Ondersteunt de boekhoudfunctie met data-invoer, afstemming en administratief werk.",
+          "link": "/administratief-medewerker-boekhouding-inhuren"
+        },
+        {
+          "title": "Microsoft Excel Specialist",
+          "description": "Bouwt en onderhoudt de spreadsheets, modellen en rapportages waar uw financiële functie op draait.",
+          "link": "/microsoft-excel-specialist-inhuren"
+        }
+      ],
+      "modelTitle": "Payrolling vs RPO voor deze categorie",
+      "modelBody": "Er is hier een redelijk verschil per functie, al is het goed dit te toetsen aan echte plaatsingen. De kernfunctie Accountant/Financieel Assistent neigt naar RPO — bedrijven willen continuïteit en vertrouwen in wie de boekhouding beheert, en dat betekent meestal een directe, vaste aanname. De twee ondersteunende functies — Administratief Medewerker Boekhouding en Microsoft Excel Specialist — passen vaker bij Payrolling of Staff Outsourcing, omdat de behoefte gekoppeld kan zijn aan een drukke periode, een achterstand, of een specifiek rapportageproject in plaats van een vaste plek.",
+      "howItWorksTitle": "Hoe het werkt",
+      "howItWorksBody": "Zelfde proces als de rest van de site: u geeft de functie door, wij stellen een shortlist samen, u voert de gesprekken, u kiest het model.",
+      "howItWorksLink": "/#hoe-het-werkt",
+      "faqTitle": "Veelgestelde vragen",
+      "faqs": [
+        {
+          "q": "Hoe screenen jullie kandidaten die toegang krijgen tot financiële data?",
+          "a": "[Placeholder — daadwerkelijk screeningsproces voor financiële functies bevestigen (achtergrondchecks, referentie-eisen, etc.) vóór publicatie.]"
+        },
+        {
+          "q": "Hebben kandidaten ervaring met Nederlandse boekhoudnormen en belastingvereisten?",
+          "a": "Ja, dit is iets waar we specifiek op screenen bij financiële functies — het wordt niet behandeld als een generieke boekhoudvaardigheid."
+        },
+        {
+          "q": "Kan dit tijdelijk — ter vervanging van verlof, of een drukke periode zoals de jaarafsluiting?",
+          "a": "Ja, dat is een gangbare toepassing voor Staff Outsourcing en Payrolling hier. Geef de periode door, dan houden we daar bij de shortlist rekening mee."
+        },
+        {
+          "q": "Is er een minimale afname bij Staff Outsourcing?",
+          "a": "[Placeholder — minimale contractvoorwaarden bevestigen vóór publicatie.]"
+        }
+      ],
+      "finalCta": {
+        "headline": "De boekhouding op orde nodig, of extra capaciteit rond een drukke periode? Geef de functie door.",
+        "primaryCtaText": "Plan een gesprek →",
+        "primaryCtaLink": "/contact",
+        "secondaryCtaText": "Of app ons →",
+        "secondaryCtaLink": "https://wa.me/[placeholder]"
+      }
+    }
+  },
+
+
+
+  "travelReservations": {
+    "seo": {
+      "slug": "/travel-reserveringen",
+      "metaTitle": "Travel- & reserveringspersoneel inhuren",
+      "metaDescription": "Huur een travel advisor, reserveringsmedewerker of reisbureau-supportpersoneel in Nederland. Werf direct in dienst of huur payroll-personeel."
+    },
+    "hero": {
+      "h1": "Travel- & reserveringspersoneel inhuren in Nederland",
+      "subhead": "Boekingen, reserveringen en klantenservice voor reisorganisaties — werf direct in dienst, of huur payroll-personeel voor piekperiodes.",
+      "primaryCtaText": "Plan een gesprek →",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Eerst een vraag? App ons →",
+      "secondaryCtaLink": "https://wa.me/[placeholder]"
+    },
+    "sections": {
+      "coverageTitle": "Wat deze categorie omvat",
+      "coverageBody": "Reisorganisaties draaien op volume dat niet constant is — boekingen pieken rond vakantieperiodes en reisseizoenen, en vlakken daarna af. Dat bepaalt wat u daadwerkelijk nodig heeft: soms een vaste adviseur die klantrelaties opbouwt, soms reserveringscapaciteit om boekingen snel te verwerken, soms ondersteuning om wijzigingen en problemen af te handelen als reisplannen veranderen.\n\nTravel & Reserveringen dekt advies-, boekings-, klantenservice- en marketingfuncties specifiek gebouwd voor reisorganisaties — geen algemeen klantenservicepersoneel dat is omgekat naar een reiscontext.",
+      "rolesTitle": "Functies in deze categorie",
+      "roles": [
+        {
+          "title": "Online Travel Advisor",
+          "description": "Adviseert en boekt reizen voor klanten over providers en kanalen heen.",
+          "link": "/online-travel-advisor-inhuren"
+        },
+        {
+          "title": "Reserveringsmedewerker",
+          "description": "Verwerkt boekingen en reserveringen direct.",
+          "link": "/reserveringsmedewerker-inhuren"
+        },
+        {
+          "title": "Customer Service (Reisbureau)",
+          "description": "Handelt klantvragen, wijzigingen en problemen bij bestaande boekingen af.",
+          "link": "/customer-service-reisbureau-inhuren"
+        },
+        {
+          "title": "Travel Marketeer",
+          "description": "Vermarkt reisaanbiedingen en promoties om boekingen te stimuleren.",
+          "link": "/travel-marketeer-inhuren"
+        }
+      ],
+      "modelTitle": "Payrolling vs RPO voor deze categorie",
+      "modelBody": "Er is hier een verschil dat het waard is te toetsen aan echte plaatsingen. Boekings- en klantenservicefuncties — Reserveringsmedewerker, Customer Service (Reisbureau) — passen vaak bij Payrolling of Staff Outsourcing, omdat reisorganisaties vaak moeten opschalen rond piekboekingsperiodes zonder die bezetting het hele jaar te dragen. Online Travel Advisor en Travel Marketeer werken vaker als RPO-aanname, omdat adviesrelaties en marketingstrategie doorgaans baat hebben bij continuïteit in plaats van seizoensgebonden wisseling.",
+      "howItWorksTitle": "Hoe het werkt",
+      "howItWorksBody": "Zelfde proces als de rest van de site: u geeft de functie door, wij stellen een shortlist samen, u voert de gesprekken, u kiest het model.",
+      "howItWorksLink": "/#hoe-het-werkt",
+      "faqTitle": "Veelgestelde vragen",
+      "faqs": [
+        {
+          "q": "Kunnen jullie opschalen voor het hoogseizoen en daarna weer afschalen?",
+          "a": "Ja — dit is een van de meest voorkomende toepassingen van Staff Outsourcing in deze categorie. Geef uw piekdata en volume door, dan houden we daar bij de shortlist rekening mee."
+        },
+        {
+          "q": "Hebben kandidaten ervaring met specifieke boekings- of GDS-systemen?",
+          "a": "[Placeholder — bevestigen met welke systemen kandidaten doorgaans ervaring hebben (bijv. Amadeus, Sabre) vóór publicatie.]"
+        },
+        {
+          "q": "Kunnen kandidaten meerdere talen aan, niet alleen Nederlands en Engels?",
+          "a": "Hangt van de kandidaat en functie af — geef door wat uw klantenbestand nodig heeft, dan screenen wij daar direct op."
+        },
+        {
+          "q": "Is er een minimale afname bij Staff Outsourcing voor een seizoensgebonden behoefte?",
+          "a": "[Placeholder — minimale contractvoorwaarden voor seizoensgebonden/kortlopende plaatsingen bevestigen vóór publicatie.]"
+        }
+      ],
+      "finalCta": {
+        "headline": "Seizoensgebonden boekingscapaciteit nodig, of een vaste reisadviseur? Geef de functie door.",
+        "primaryCtaText": "Plan een gesprek →",
+        "primaryCtaLink": "/contact",
+        "secondaryCtaText": "Of app ons →",
+        "secondaryCtaLink": "https://wa.me/[placeholder]"
+      }
+    }
+  }
+
+
 
 
 }
+
+
+
+
+

@@ -14,13 +14,13 @@ const MobileMenuActionBtn = () => {
   return (
     <>
       <div className="xl:hidden flex items-center space-x-3 ">
-        <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded text-sm font-medium transition-colors duration-200">
+        <button className="bg-[#0d2b33] hover:bg-[#071c22] text-white px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200">
           <Link href={"/contact-us"} className="">
             {t("contact")}
           </Link>{" "}
         </button>
         <button
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-sm font-medium transition-colors duration-200 flex items-center space-x-2"
+          className="bg-[#f2c40d] hover:bg-[#e0b207] text-[#0d2b33] px-6 py-2 rounded-full text-sm font-bold transition-colors duration-200 flex items-center space-x-2"
           onClick={() => setOPen(!open)}
         >
           <FaBell />

@@ -220,9 +220,532 @@
 "actionBtns": {
   "contact": "Contact",
   "jobAlert": "Job alert"
+},
+
+
+
+
+
+ 
+  "itDevelopment": {
+    "seo": {
+      "slug": "/en/it-development",
+      "metaTitle": "Hire IT Developers in the Netherlands | Staff Outsourcing",
+      "metaDescription": "Hire front-end, back-end, full-stack and other IT developers in the Netherlands. Recruit them directly or lease payrolled staff — we handle the hiring."
+    },
+    "hero": {
+      "h1": "Hire IT & development staff in the Netherlands",
+      "subhead": "Front-end to AI engineering — recruit developers directly, or lease payrolled IT staff. Ten roles, one point of contact.",
+      "primaryCtaText": "Book a call →",
+      "primaryCtaLink": "/en/contact",
+      "secondaryCtaText": "Questions first? WhatsApp us →",
+      "secondaryCtaLink": "https://wa.me/[placeholder]"
+    },
+    "sections": {
+      "coverageTitle": "What this category covers",
+      "coverageBody": "Companies come to us for IT roles for three different reasons, and they're not interchangeable. Some are building a product and need developers who'll own a codebase long-term. Some have a working dev team with one gap — a QA specialist, a data engineer — that's slowing everything else down. Others need coverage: IT support, testing, maintenance work that has to happen but doesn't need a full-time hire on their own payroll.\n\nIT & Development covers all three: front-end, back-end and full-stack development, mobile app development, data and AI/ML engineering, QA testing, IT support, and electrical engineering roles that sit inside technical teams.",
+      "rolesTitle": "Roles in this category",
+      "roles": [
+        {
+          "title": "Full Stack Developer",
+          "description": "Builds and owns both the front-end and back-end of a product.",
+          "link": "/en/hire-full-stack-developer"
+        },
+        {
+          "title": "Front-End Developer",
+          "description": "Builds what users see and interact with.",
+          "link": "/en/hire-front-end-developer"
+        },
+        {
+          "title": "Back-End Developer",
+          "description": "Builds the server, database and logic layer behind it.",
+          "link": "/en/hire-back-end-developer"
+        },
+        {
+          "title": "App Developer (iOS/Android)",
+          "description": "Builds native or cross-platform mobile apps.",
+          "link": "/en/hire-app-developer"
+        },
+        {
+          "title": "Data Engineer",
+          "description": "Builds and maintains the pipelines that get data where it needs to go.",
+          "link": "/en/hire-data-engineer"
+        },
+        {
+          "title": "AI Engineer",
+          "description": "Builds and deploys AI-driven features and models into production.",
+          "link": "/en/hire-ai-engineer"
+        },
+        {
+          "title": "ML Engineer",
+          "description": "Builds and trains the machine learning models themselves.",
+          "link": "/en/hire-ml-engineer"
+        },
+        {
+          "title": "Software Tester (QA)",
+          "description": "Finds what's broken before your users do.",
+          "link": "/en/hire-software-tester-qa"
+        },
+        {
+          "title": "IT Support (Remote)",
+          "description": "Keeps systems, devices and access running for your team.",
+          "link": "/en/hire-it-support"
+        },
+        {
+          "title": "Electrical Engineer",
+          "description": "Handles the electrical and hardware side of technical projects, not just software.",
+          "link": "/en/hire-electrical-engineer"
+        }
+      ],
+      "modelTitle": "Payrolling vs RPO for this category",
+      "modelBody": "There's a real split here, but it runs by role type, not by the category as a whole. Core development roles — full-stack, back-end, mobile — tend to go through RPO: companies want that person as a permanent, direct hire, since they'll own product code long-term and institutional knowledge matters. Coverage and support roles — QA testing, IT support — more often go through Payrolling or Staff Outsourcing, since the need is real but doesn't always justify a permanent headcount addition. If you're not sure which side of that line your role falls on, that's exactly what the call is for.",
+      "howItWorksTitle": "How it works",
+      "howItWorksBody": "Same process as the rest of the site: you tell us the role, we shortlist candidates, you interview, you pick the model.",
+      "howItWorksLink": "/en/#how-it-works",
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Do you vet for a specific tech stack, or just general skill level?",
+          "a": "Specific stack. If you need someone who's worked in React and Node, or has production experience with a particular data pipeline tool, tell us on the call — we screen against that, not a generic \"developer\" profile."
+        },
+        {
+          "q": "We don't have a technical person in-house to assess candidates — how does vetting work then?",
+          "a": "We handle the technical screening before anyone reaches your shortlist. You still run the interviews that matter to you — culture, communication, how they think through a problem — but you're not starting from zero on technical fit."
+        },
+        {
+          "q": "Can you find someone with a niche framework or language, not just the common ones?",
+          "a": "Depends on the niche — tell us what you need and we'll be straight with you about whether it's a fast search or a longer one."
+        },
+        {
+          "q": "Do you place both contract/temporary and permanent IT staff?",
+          "a": "Yes — that's the Payrolling vs RPO split above. Same talent pool, different employment structure depending on what you need."
+        }
+      ],
+      "finalCta": {
+        "headline": "Building a dev team, or filling one technical gap? Tell us the role.",
+        "primaryCtaText": "Book a call →",
+        "primaryCtaLink": "/en/contact",
+        "secondaryCtaText": "Or WhatsApp us →",
+        "secondaryCtaLink": "https://wa.me/[placeholder]"
+      }
+    }
+  },
+
+  "designServices": {
+    "seo": {
+      "slug": "/en/design-services",
+      "metaTitle": "Hire Web & Graphic Designers in Netherlands | Staff Outsourcing",
+      "metaDescription": "Hire a webdesigner/developer or graphic designer in the Netherlands. Recruit directly or lease payrolled design staff — we handle the hiring."
+    },
+    "hero": {
+      "h1": "Hire design staff in the Netherlands",
+      "subhead": "Web design and graphic design — recruit directly, or lease payrolled design staff for ongoing or project work.",
+      "primaryCtaText": "Book a call →",
+      "primaryCtaLink": "/en/contact",
+      "secondaryCtaText": "Questions first? WhatsApp us →",
+      "secondaryCtaLink": "https://wa.me/[placeholder]"
+    },
+    "sections": {
+      "coverageTitle": "What this category covers",
+      "coverageBody": "Two different jobs get lumped under \"design\" and they're not the same hire. One is about the website itself — how it's built and how it looks. The other is about everything else visual your business puts out — branding, marketing assets, social graphics — independent of any one website build.\n\nDesign Services covers both: building and designing a website, and producing the visual assets that go around it.",
+      "rolesTitle": "Roles in this category",
+      "roles": [
+        {
+          "title": "Webdesigner/Developer",
+          "description": "Builds and designs the website itself, front-end and visual design together.",
+          "link": "/en/hire-webdesigner-developer"
+        },
+        {
+          "title": "Graphic Designer",
+          "description": "Creates branding, marketing materials, and visual assets not tied to a single website build.",
+          "link": "/en/hire-graphic-designer"
+        }
+      ],
+      "howItWorksTitle": "How it works",
+      "howItWorksBody": "Same process as the rest of the site: you tell us the role, we shortlist candidates, you interview, you pick the model.",
+      "howItWorksLink": "/en/#how-it-works",
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Do you review portfolios before shortlisting?",
+          "a": "Yes — every design candidate is shortlisted against real work samples, not just a CV. You'll see portfolios before you interview."
+        },
+        {
+          "q": "Can this be part-time or project-based, rather than full-time?",
+          "a": "Depends on the model. Staff Outsourcing and Payrolling can flex around part-time or project-based work; a direct RPO hire is typically full-time. Tell us the shape of the work and we'll tell you which model fits."
+        },
+        {
+          "q": "Do you match candidates to a specific tool set — Figma, Adobe, WordPress?",
+          "a": "Yes, if you tell us what your team works in. We screen for tool fit alongside the design work itself."
+        },
+        {
+          "q": "Is a Webdesigner/Developer the same person as a Graphic Designer, or separate specialists?",
+          "a": "Separate. A Webdesigner/Developer builds the site itself; a Graphic Designer produces visual assets. Some candidates cover both — say so on the call if that's what you need."
+        }
+      ],
+      "finalCta": {
+        "headline": "Building a website, or need ongoing design work? Tell us the role.",
+        "primaryCtaText": "Book a call →",
+        "primaryCtaLink": "/en/contact",
+        "secondaryCtaText": "Or WhatsApp us →",
+        "secondaryCtaLink": "https://wa.me/[placeholder]"
+      }
+    }
+  },
+
+
+  
+  "marketingAnalytics": {
+    "seo": {
+      "slug": "/en/marketing-analytics",
+      "metaTitle": "Hire Marketing & Analytics Staff in the Netherlands",
+      "metaDescription": "Hire social media, content, online marketing or analytics staff in the Netherlands. Recruit directly or lease payrolled staff — we handle the hiring."
+    },
+    "hero": {
+      "h1": "Hire marketing & analytics staff in the Netherlands",
+      "subhead": "From running your channels to reading what's working — recruit directly, or lease payrolled marketing and analytics staff.",
+      "primaryCtaText": "Book a call →",
+      "primaryCtaLink": "/en/contact",
+      "secondaryCtaText": "Questions first? WhatsApp us →",
+      "secondaryCtaLink": "https://wa.me/[placeholder]"
+    },
+    "sections": {
+      "coverageTitle": "What this category covers",
+      "coverageBody": "\"Marketing\" gets used as one word for jobs that don't actually overlap much. Someone has to run the channels day to day. Someone has to make what goes on them. Someone has to decide where the budget goes. And someone has to tell you, afterward, whether any of it worked. Those are four different skill sets, not one generalist role.\n\nMarketing & Analytics covers execution (social, content), strategy (online marketing), and measurement (analytics, BI, data) — so you can hire for the specific gap you actually have, not a catch-all \"marketing person.\"",
+      "rolesTitle": "Roles in this category",
+      "roles": [
+        {
+          "title": "Social Media Manager",
+          "description": "Runs your channels day to day: posting, engagement, community.",
+          "link": "/en/hire-social-media-manager"
+        },
+        {
+          "title": "Content Creator/Copywriter",
+          "description": "Writes and produces what goes on those channels and beyond.",
+          "link": "/en/hire-content-creator-copywriter"
+        },
+        {
+          "title": "Online Marketer",
+          "description": "Plans where the budget goes across channels and campaigns.",
+          "link": "/en/hire-online-marketer"
+        },
+        {
+          "title": "Google Analytics Specialist",
+          "description": "Tracks and reports on how your traffic and campaigns are actually performing.",
+          "link": "/en/hire-google-analytics-specialist"
+        },
+        {
+          "title": "Power BI Specialist",
+          "description": "Turns your data into dashboards your team can actually act on.",
+          "link": "/en/hire-power-bi-specialist"
+        },
+        {
+          "title": "Data Analyst",
+          "description": "Digs into the data to answer a specific business question, beyond one dashboard tool.",
+          "link": "/en/hire-data-analyst"
+        }
+      ],
+      "modelTitle": "Payrolling vs RPO for this category",
+      "modelBody": "There's a lean here, though it's worth confirming against real placements before we call it settled. Always-on execution roles — Social Media Manager, Content Creator — tend to work better as RPO hires, since someone running your channels day to day benefits from being an actual team member, not a rotating resource. Analytics and reporting roles — Google Analytics Specialist, Power BI Specialist, Data Analyst — more often suit Payrolling or Staff Outsourcing, since the need can be tied to a specific reporting cadence or project rather than a permanent seat. Online Marketer sits in between and depends on whether you're hiring for one campaign or an ongoing strategy role — worth flagging on the call.",
+      "howItWorksTitle": "How it works",
+      "howItWorksBody": "Same process as the rest of the site: you tell us the role, we shortlist candidates, you interview, you pick the model.",
+      "howItWorksLink": "/en/#how-it-works",
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Do you screen for specific platforms — Google Ads, HubSpot, a particular CMS?",
+          "a": "Yes, if you tell us what your stack is. We match against the tools you actually use, not a generic marketing skill set."
+        },
+        {
+          "q": "Can one person cover both content and social, or are these always separate hires?",
+          "a": "Depends on scope. Some candidates genuinely do both; for a growing channel workload, most companies eventually split them. Tell us your volume and we'll advise rather than assume."
+        },
+        {
+          "q": "Are your analytics candidates able to interpret data, or just pull reports?",
+          "a": "Both exist in the pool — a Google Analytics Specialist is closer to reporting and tracking setup, while a Data Analyst is hired specifically to interpret and answer questions with the data. Tell us which you need."
+        },
+        {
+          "q": "Is this suited to seasonal or campaign-based work, not just ongoing roles?",
+          "a": "Yes — Staff Outsourcing and Payrolling both flex around a defined campaign or season. Say so on the call and we'll shortlist with that timeline in mind."
+        }
+      ],
+      "finalCta": {
+        "headline": "Need someone running channels, or someone reading the numbers? Tell us the role.",
+        "primaryCtaText": "Book a call →",
+        "primaryCtaLink": "/en/contact",
+        "secondaryCtaText": "Or WhatsApp us →",
+        "secondaryCtaLink": "https://wa.me/[placeholder]"
+      }
+    }
+  },
+
+
+  "adminBusinessSupport": {
+    "seo": {
+      "slug": "/en/admin-business-support",
+      "metaTitle": "Hire Admin & Support Staff in the Netherlands",
+      "metaDescription": "Hire a virtual assistant, customer support agent or admin specialist in the Netherlands. Recruit directly or lease payrolled staff."
+    },
+    "hero": {
+      "h1": "Hire admin & business support staff in the Netherlands",
+      "subhead": "Virtual assistants, customer support, data entry and HR admin — recruit directly, or lease payrolled staff for flexible headcount.",
+      "primaryCtaText": "Book a call →",
+      "primaryCtaLink": "/en/contact",
+      "secondaryCtaText": "Questions first? WhatsApp us →",
+      "secondaryCtaLink": "https://wa.me/[placeholder]"
+    },
+    "sections": {
+      "coverageTitle": "What this category covers",
+      "coverageBody": "Most companies don't need a full department for this work — they need one or two reliable people covering it. Someone answering support tickets. Someone keeping your webshop and records straight. Someone handling the HR admin that piles up between actual hiring decisions.\n\nAdmin & Business Support covers the roles that keep day-to-day operations running without needing a dedicated internal team built around them.",
+      "rolesTitle": "Roles in this category",
+      "roles": [
+        {
+          "title": "Virtual Assistant",
+          "description": "Handles day-to-day admin tasks remotely, so they're off your plate.",
+          "link": "/en/hire-virtual-assistant"
+        },
+        {
+          "title": "Ecommerce Web Shop Assistant",
+          "description": "Manages listings, orders and daily webshop operations.",
+          "link": "/en/hire-ecommerce-web-shop-assistant"
+        },
+        {
+          "title": "Customer Support Agent (Remote)",
+          "description": "Handles customer queries and tickets on your behalf.",
+          "link": "/en/hire-customer-support-agent"
+        },
+        {
+          "title": "Data Entry Specialist",
+          "description": "Keeps your records, spreadsheets and systems accurate and current.",
+          "link": "/en/hire-data-entry-specialist"
+        },
+        {
+          "title": "HR Assistant (Remote)",
+          "description": "Handles HR admin: onboarding paperwork, records, scheduling support.",
+          "link": "/en/hire-hr-assistant"
+        },
+        {
+          "title": "Customer Relations Agent",
+          "description": "Manages ongoing client relationships and account-level contact.",
+          "link": "/en/hire-customer-relations-agent"
+        }
+      ],
+      "modelTitle": "Payrolling vs RPO for this category",
+      "modelBody": "This is one of the more clear-cut categories. Admin and support work is usually about flexible, scalable coverage — you need the ticket queue answered, the records kept current, the webshop managed — and that's exactly what Payrolling and Staff Outsourcing are built for: headcount that can flex up or down without you carrying the full employer relationship. RPO shows up here less often, typically only when a role like HR Assistant is expected to grow into a permanent, embedded position on your team.",
+      "howItWorksTitle": "How it works",
+      "howItWorksBody": "Same process as the rest of the site: you tell us the role, we shortlist candidates, you interview, you pick the model.",
+      "howItWorksLink": "/en/#how-it-works",
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Can these roles be part-time, or a few hours a week?",
+          "a": "Yes — this is one of the categories where part-time and flexible-hours arrangements are common. Tell us the actual workload and we'll shortlist for it."
+        },
+        {
+          "q": "Do candidates speak both Dutch and English?",
+          "a": "Depends on the role and what you need — some client-facing roles need Dutch specifically, others are fine in English only. Tell us your requirement and we'll screen for it directly."
+        },
+        {
+          "q": "Can you fill one of these roles quickly, for a short-notice gap?",
+          "a": "Admin and support roles are typically among the faster fills, since the skill requirements are less specialized than, say, a technical role."
+        },
+        {
+          "q": "Is there a minimum commitment if I go with Staff Outsourcing?",
+          "a": "Get in touch and we'll walk you through the contract terms for your specific situation."
+        }
+      ],
+      "finalCta": {
+        "headline": "Need day-to-day support handled, without building a department for it? Tell us the role.",
+        "primaryCtaText": "Book a call →",
+        "primaryCtaLink": "/en/contact",
+        "secondaryCtaText": "Or WhatsApp us →",
+        "secondaryCtaLink": "https://wa.me/[placeholder]"
+      }
+    }
+  },
+
+
+
+  
+  "financeAccounting": {
+    "seo": {
+      "slug": "/en/finance-accounting",
+      "metaTitle": "Hire Finance & Accounting Staff in the Netherlands",
+      "metaDescription": "Hire an accountant, accounting assistant or Excel specialist in the Netherlands. Recruit directly or lease payrolled finance staff."
+    },
+    "hero": {
+      "h1": "Hire finance & accounting staff in the Netherlands",
+      "subhead": "Bookkeeping, financial admin and reporting — recruit directly, or lease payrolled finance staff for ongoing or seasonal work.",
+      "primaryCtaText": "Book a call →",
+      "primaryCtaLink": "/en/contact",
+      "secondaryCtaText": "Questions first? WhatsApp us →",
+      "secondaryCtaLink": "https://wa.me/[placeholder]"
+    },
+    "sections": {
+      "coverageTitle": "What this category covers",
+      "coverageBody": "Finance work splits into two kinds of need. One is the ongoing function — someone who owns the books, the invoicing, the financial admin, week in and week out. The other is support and capacity help — with data entry, reconciliation, or building the spreadsheets and models the finance function runs on, especially around busy periods like year-end.\n\nFinance & Accounting covers both: the core bookkeeping role, and the support roles that keep it running smoothly.",
+      "rolesTitle": "Roles in this category",
+      "roles": [
+        {
+          "title": "Accountant/Financial Assistant",
+          "description": "Handles bookkeeping, invoicing and day-to-day financial admin.",
+          "link": "/en/hire-accountant-financial-assistant"
+        },
+        {
+          "title": "Administrative Accounting Assistant",
+          "description": "Supports the accounting function with data entry, reconciliation and admin work.",
+          "link": "/en/hire-administrative-accounting-assistant"
+        },
+        {
+          "title": "Microsoft Excel Specialist",
+          "description": "Builds and maintains the spreadsheets, models and reports your finance function runs on.",
+          "link": "/en/hire-microsoft-excel-specialist"
+        }
+      ],
+      "modelTitle": "Payrolling vs RPO for this category",
+      "modelBody": "There's a reasonable split by role, though worth confirming against real placements. The core Accountant/Financial Assistant role tends toward RPO — companies want continuity and trust in who's handling their books, and that usually means a direct, permanent hire. The two support roles — Administrative Accounting Assistant and Microsoft Excel Specialist — more often suit Payrolling or Staff Outsourcing, since the need can be tied to a busy period, a backlog, or a specific reporting project rather than a permanent seat.",
+      "howItWorksTitle": "How it works",
+      "howItWorksBody": "Same process as the rest of the site: you tell us the role, we shortlist candidates, you interview, you pick the model.",
+      "howItWorksLink": "/en/#how-it-works",
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "How do you vet candidates who'll have access to financial data?",
+          "a": "[Placeholder — confirm actual vetting process for finance-specific roles (background checks, reference requirements, etc.) before publishing.]"
+        },
+        {
+          "q": "Do candidates have experience with Dutch accounting standards and tax requirements?",
+          "a": "Yes, this is something we screen for specifically on finance roles — it's not treated as a generic bookkeeping skill set."
+        },
+        {
+          "q": "Can this be temporary — covering leave, or a busy period like year-end?",
+          "a": "Yes, that's a common use case for Staff Outsourcing and Payrolling here. Tell us the timeframe and we'll shortlist with that in mind."
+        },
+        {
+          "q": "Is there a minimum commitment if I go with Staff Outsourcing?",
+          "a": "[Placeholder — confirm minimum contract terms before publishing.]"
+        }
+      ],
+      "finalCta": {
+        "headline": "Need the books handled, or extra capacity around a busy period? Tell us the role.",
+        "primaryCtaText": "Book a call →",
+        "primaryCtaLink": "/en/contact",
+        "secondaryCtaText": "Or WhatsApp us →",
+        "secondaryCtaLink": "https://wa.me/[placeholder]"
+      }
+    }
+  },
+
+
+
+
+  "travelReservations": {
+    "seo": {
+      "slug": "/en/travel-reservations",
+      "metaTitle": "Hire Travel & Reservations Staff in the Netherlands",
+      "metaDescription": "Hire a travel advisor, reservations clerk or travel agency support staff in the Netherlands. Recruit directly or lease payrolled staff."
+    },
+    "hero": {
+      "h1": "Hire travel & reservations staff in the Netherlands",
+      "subhead": "Booking, reservations and customer service for travel businesses — recruit directly, or lease payrolled staff for peak-season demand.",
+      "primaryCtaText": "Book a call →",
+      "primaryCtaLink": "/en/contact",
+      "secondaryCtaText": "Questions first? WhatsApp us →",
+      "secondaryCtaLink": "https://wa.me/[placeholder]"
+    },
+    "sections": {
+      "coverageTitle": "What this category covers",
+      "coverageBody": "Travel businesses run on volume that isn't constant — bookings spike around holidays and travel seasons, then level off. That shapes what you actually need: sometimes a dedicated advisor building customer relationships, sometimes reservations capacity to process bookings at speed, sometimes support to handle changes and issues when travel plans shift.\n\nTravel & Reservations covers advisory, booking operations, customer service and marketing roles built specifically for travel businesses — not general customer service staff repositioned for a travel context.",
+      "rolesTitle": "Roles in this category",
+      "roles": [
+        {
+          "title": "Online Travel Advisor",
+          "description": "Advises and books travel for customers across providers and channels.",
+          "link": "/en/hire-online-travel-advisor"
+        },
+        {
+          "title": "Reservations Clerk",
+          "description": "Processes bookings and reservations directly.",
+          "link": "/en/hire-reservations-clerk"
+        },
+        {
+          "title": "Customer Service (Travel Agency)",
+          "description": "Handles customer queries, changes and issues on existing bookings.",
+          "link": "/en/hire-customer-service-travel-agency"
+        },
+        {
+          "title": "Travel Marketer",
+          "description": "Markets travel offers and promotions to drive bookings.",
+          "link": "/en/hire-travel-marketer"
+        }
+      ],
+      "modelTitle": "Payrolling vs RPO for this category",
+      "modelBody": "There's a split here worth confirming against real placements. Booking and customer service roles — Reservations Clerk, Customer Service (Travel Agency) — tend to suit Payrolling or Staff Outsourcing, since travel businesses often need to flex capacity up around peak booking seasons without carrying that headcount year-round. Online Travel Advisor and Travel Marketer more often work as RPO hires, since advisory relationships and marketing strategy usually benefit from continuity rather than seasonal turnover.",
+      "howItWorksTitle": "How it works",
+      "howItWorksBody": "Same process as the rest of the site: you tell us the role, we shortlist candidates, you interview, you pick the model.",
+      "howItWorksLink": "/en/#how-it-works",
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Can you staff up for peak season and scale back afterward?",
+          "a": "Yes — this is one of the more common uses of Staff Outsourcing in this category. Tell us your peak dates and volume and we'll shortlist with that timeline in mind."
+        },
+        {
+          "q": "Do candidates have experience with specific booking or GDS systems?",
+          "a": "[Placeholder — confirm which systems candidates typically have experience with (e.g. Amadeus, Sabre) before publishing.]"
+        },
+        {
+          "q": "Do candidates handle multiple languages, not just Dutch and English?",
+          "a": "Depends on the candidate and role — tell us what your customer base needs and we'll screen for it directly."
+        },
+        {
+          "q": "Is there a minimum commitment if I go with Staff Outsourcing for a seasonal need?",
+          "a": "[Placeholder — confirm minimum contract terms for seasonal/short-term placements before publishing.]"
+        }
+      ],
+      "finalCta": {
+        "headline": "Need seasonal booking capacity, or an ongoing travel advisor? Tell us the role.",
+        "primaryCtaText": "Book a call →",
+        "primaryCtaLink": "/en/contact",
+        "secondaryCtaText": "Or WhatsApp us →",
+        "secondaryCtaLink": "https://wa.me/[placeholder]"
+      }
+    }
+  },
+
+
+
+
+  "footer": {
+  "brandName": "Dinel",
+  "brandDescription": "Your staffing partner in the Netherlands, connecting Dutch companies with EU-based talent.",
+  "headings": { "company": "Company", "jobSeekers": "Job seekers", "contact": "Contact" },
+  "links": {
+    "about": "About us",
+    "howItWorks": "How it works",
+    "industries": "Industries",
+    "faq": "FAQ",
+    "contact": "Contact us",
+    "vacancies": "Vacancies",
+    "allVacancies": "All vacancies",
+    "howToApply": "How to apply",
+    "privacy": "Privacy policy",
+    "terms": "Terms & conditions"
+  },
+  "address": "Netherlands",
+  "phone": "+31 00 000 0000",
+  "email": "info@example.com",
+  "copyright": "© {year} Dinel. All rights reserved."
+}
 }
 
 
 
-}
+
+
+
+
+
+
+
 

@@ -19,7 +19,7 @@ const HeaderWithSideImage = ({ heading, desc, image, btn1, btn2 }: props) => {
       <div className="absolute inset-0 bg-linear-to-r from-[#000000B2] to-[#106FBC]" />
 
       {/* Big faded text */}
-      <NavBar />
+     
       {/* Content */}
 
       <div className="relative z-10 h-full flex flex-col xl:flex-row justify-center items-center overflow-visible mx-auto">

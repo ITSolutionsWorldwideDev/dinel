@@ -10,9 +10,17 @@ export default async function DeskstopNavigationMenu() {
   const session = await candidateAuth();
   const t = await getTranslations("nav");
 
+  const categories = [
+    { name: "IT & Development", href: "/it-development" },
+    { name: "Design Services", href: "/design-services" },
+    { name: "Marketing & Analytics", href: "/marketing-analytics" },
+    { name: "Administration & Business Support", href: "/admin-business-support" },
+    { name: "Finance & Accounting", href: "/finance-accounting" },
+    { name: "Travel & Reservations", href: "/travel-reservations" },
+  ];
+
   const navLinks = [
     { name: t("about"), href: "/about-us" },
-    { name: t("professionals"), href: "/professionals" },
     { name: t("clients"), href: "/clients" },
     { name: t("approach"), href: "/our-approach" },
     { name: t("mission"), href: "/mission-vision" },
@@ -23,11 +31,12 @@ export default async function DeskstopNavigationMenu() {
   ];
 
   return (
-    <header className="w-full shadow-sm sticky top-0 z-50">
-      <nav className="relative z-10 container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+    <header className="w-full bg-white shadow-sm sticky top-0 z-50">
+      <nav className="w-full px-4 sm:px-6 lg:px-12 py-4">
+        <div className="flex items-center justify-between w-full">
 
-          <div className="flex items-center">
+          {/* Logo Section */}
+          <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
                 src="/assets/logo/Logo 2.png"
@@ -40,10 +49,40 @@ export default async function DeskstopNavigationMenu() {
             </Link>
           </div>
 
-          <div className="hidden xl:flex items-center space-x-1 mx-auto">
-            {navLinks.map((link) => (
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex items-center space-x-1">
+            {/* First Link (About) */}
+            {navLinks[0] && (
               <Link
-                key={link.href}
+                href={navLinks[0].href}
+                className="px-3.5 py-2 rounded-full text-gray-700 text-sm font-medium hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-200 whitespace-nowrap"
+              >
+                {navLinks[0].name}
+              </Link>
+            )}
+
+            {/* Services Dropdown on Hover */}
+            <div className="relative group">
+              <button className="px-3.5 py-2 rounded-full text-gray-700 text-sm font-medium hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-200 whitespace-nowrap flex items-center gap-1">
+                Services ▾
+              </button>
+              <div className="absolute top-full left-0 w-72 bg-white shadow-xl rounded-2xl py-2 hidden group-hover:block border border-gray-100">
+                {categories.map((cat, idx) => (
+                  <Link
+                    key={idx}
+                    href={cat.href}
+                    className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-colors"
+                  >
+                    {cat.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Remaining Links */}
+            {navLinks.slice(1).map((link, index) => (
+              <Link
+                key={index}
                 href={link.href ? link.href : "#"}
                 className="px-3.5 py-2 rounded-full text-gray-700 text-sm font-medium hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-200 whitespace-nowrap"
               >
@@ -52,13 +91,15 @@ export default async function DeskstopNavigationMenu() {
             ))}
           </div>
 
-          <div className="hidden xl:flex items-center">
+          {/* Desktop Language Switcher */}
+          <div className="hidden lg:flex items-center">
             <LanguageSwitcher />
           </div>
 
-          <div className="xl:hidden flex items-center gap-2">
+          {/* Mobile / Tablet Menu Button */}
+          <div className="lg:hidden flex items-center gap-2">
             <LanguageSwitcher />
-            <MobileMenuBtn navLinks={navLinks} />
+            <MobileMenuBtn navLinks={navLinks} categories={categories} />
           </div>
 
         </div>

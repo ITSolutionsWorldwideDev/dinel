@@ -13,7 +13,6 @@ import React from "react";
 const client = () => {
   return (
     <div>
-      {/* <NavBar /> */}
 
       <ClientHeader />
       <WhyDinel />

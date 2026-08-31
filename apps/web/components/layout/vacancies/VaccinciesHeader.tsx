@@ -15,7 +15,7 @@ export default function VaccinciesHeader() {
         priority
         className="object-cover absolute inset-0 w-full h-full  "
       />
-      <NavBar />
+      
       {/* Overlay */}
       <div className="absolute inset-0 bg-linear-to-r from-transparent  to-[#0A7CD8]" />
       <div className="absolute inset-0 bg-linear-to-b from-transparent  to-[#0A7CD8]" />
