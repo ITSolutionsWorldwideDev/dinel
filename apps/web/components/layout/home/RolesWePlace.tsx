@@ -34,7 +34,8 @@ export default function RolesWePlace() {
 
   return (
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+      {/* Changed from max-w-7xl to w-full with minimal side padding (px-4 sm:px-8) */}
+      <div className="w-full px-4 sm:px-8 lg:px-12">
 
         {/* HEADING */}
         <div className="text-center max-w-3xl mx-auto mb-14">
@@ -49,14 +50,14 @@ export default function RolesWePlace() {
           </p>
         </div>
 
-        {/* MAIN CONTENT */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
+        {/* MAIN CONTENT - Full width grid layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
           {/* IMAGE */}
-          <div className="lg:col-span-5 lg:sticky lg:top-24">
-            <div className="rounded-2xl overflow-hidden border border-[#0d2b33]/10 bg-gray-100 aspect-[4/5] w-full">
+          <div className="lg:col-span-5 flex flex-col">
+            <div className="rounded-2xl overflow-hidden border border-[#0d2b33]/10 bg-gray-100 h-full w-full min-h-[500px]">
               <img
-                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80"
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
                 alt="Modern corporate office team collaborating"
                 className="w-full h-full object-cover"
               />
@@ -64,8 +65,8 @@ export default function RolesWePlace() {
           </div>
 
           {/* ROLES */}
-          <div className="lg:col-span-7 relative">
-            <div className="flex flex-col gap-5 max-h-[560px] overflow-y-auto pr-6 scroll-smooth [scrollbar-width:thin] [scrollbar-color:#0d2b33_transparent]">
+          <div className="lg:col-span-7 flex flex-col">
+            <div className="flex flex-col gap-5 h-full max-h-[560px] overflow-y-auto pr-6 scroll-smooth [scrollbar-width:thin] [scrollbar-color:#0d2b33_transparent]">
               {roleCategories.map((category, index) => {
                 const Icon = categories[index]?.icon;
 
@@ -75,7 +76,7 @@ export default function RolesWePlace() {
                     ref={(el) => {
                       itemRefs.current[index] = el;
                     }}
-                    className="bg-white border border-[#0d2b33]/10 rounded-2xl p-7"
+                    className="bg-white border border-[#0d2b33]/10 rounded-2xl p-7 flex-shrink-0"
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <span className="w-9 h-9 rounded-full flex items-center justify-center bg-[#0d2b33]/5 text-[#0d2b33]">
