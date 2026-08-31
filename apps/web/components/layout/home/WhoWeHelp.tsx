@@ -8,14 +8,14 @@ const iconsA = [Search, Users];
 const iconsB = [Clock3, FileSignature];
 
 const GroupHeader = ({ badge, title }: { badge: string; title: string }) => (
-  <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-gray-100 pb-4 mb-6 gap-2">
-    <div className="flex items-center gap-3">
-      <span className="w-3 h-3 rounded-full bg-[#f2c40d] ring-4 ring-[#f2c40d]/20" />
-      <h3 className="text-xl md:text-2xl font-bold text-[#0d2b33]">
+  <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-[#0d2b33]/10 pb-5 mb-8 gap-3">
+    <div className="flex items-center gap-3.5">
+      <span className="w-3.5 h-3.5 rounded-full bg-[#f2c40d] ring-4 ring-[#f2c40d]/20 shadow-sm" />
+      <h3 className="text-xl md:text-2xl font-black text-[#0d2b33] tracking-tight">
         {title}
       </h3>
     </div>
-    <span className="text-xs font-bold tracking-wider uppercase bg-[#0d2b33]/5 text-[#0d2b33] px-3 py-1 rounded-full self-start md:self-auto">
+    <span className="text-xs font-black tracking-[0.2em] uppercase bg-[#1a4550]/5 border border-[#1a4550]/15 text-[#1a4550] px-4 py-1.5 rounded-full self-start md:self-auto shadow-sm">
       {badge}
     </span>
   </div>
@@ -36,38 +36,37 @@ const HelpCard = ({
   fitsLabel: string;
   cta: string;
 }) => (
-  <div className="group relative rounded-2xl bg-gradient-to-b from-white to-gray-50/60 border border-gray-200/90 shadow-sm hover:shadow-xl hover:border-[#1a4550]/40 transition-all duration-300 p-5 md:p-6 flex flex-col justify-between overflow-hidden">
-    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#f2c40d] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+  <div className="group relative rounded-3xl bg-white border-2 border-[#1a4550]/15 shadow-xl shadow-[#1a4550]/5 hover:shadow-2xl hover:border-[#1a4550] transition-all duration-300 p-6 md:p-8 flex flex-col justify-between overflow-hidden">
+    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#1a4550] to-[#f2c40d] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
     <div>
-      <div className="flex items-center justify-between mb-4">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0d2b33] to-[#1a4550] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
-          <Icon className="w-6 h-6 text-white" />
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#0d2b33] to-[#1a4550] flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300 border border-white/20">
+          <Icon className="w-7 h-7 text-[#f2c40d]" />
         </div>
+        <h4 className="text-xl font-bold text-[#0d2b33] group-hover:text-[#1a4550] transition-colors">
+          {title}
+        </h4>
       </div>
-
-      <h4 className="text-lg font-bold text-[#0d2b33] mb-2 group-hover:text-[#1a4550] transition-colors">
-        {title}
-      </h4>
-      <p className="text-gray-600 text-sm leading-relaxed mb-4">
+      <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 font-normal">
         {desc}
       </p>
     </div>
 
     <div>
-      <div className="bg-white rounded-xl p-3.5 border border-gray-200/70 shadow-xs mb-4 group-hover:border-[#f2c40d]/50 group-hover:shadow-sm transition-all duration-300">
-        <p className="text-xs text-gray-600">
-          <span className="font-bold text-[#0d2b33] block mb-0.5">{fitsLabel}</span>
+      <div className="bg-[#f7fafa] rounded-2xl p-4 border border-[#0d2b33]/10 shadow-inner mb-6 group-hover:border-[#1a4550]/30 transition-all duration-300">
+        <p className="text-xs md:text-sm text-gray-600">
+          <span className="font-extrabold text-[#0d2b33] block mb-1 uppercase tracking-wider text-[11px]">{fitsLabel}</span>
           {fit}
         </p>
       </div>
 
       <Link
         href="#"
-        className="inline-flex items-center gap-2 text-xs md:text-sm font-bold text-[#0d2b33] hover:text-[#f2c40d] transition-colors"
+        className="inline-flex items-center gap-2 text-xs md:text-sm font-black text-[#1a4550] hover:text-[#0d2b33] transition-colors"
       >
         {cta}
-        <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+        <ArrowRight className="w-4 h-4 text-[#f2c40d] group-hover:translate-x-1.5 transition-transform" />
       </Link>
     </div>
   </div>
@@ -80,52 +79,59 @@ const WhoWeHelp = async () => {
   const fitsLabel = t("fitsLabel");
 
   return (
-    <section className="relative bg-gray-50/50 pt-12 md:pt-16 pb-0 overflow-hidden">
-      <div className="absolute -top-20 -left-20 w-60 h-60 rounded-full bg-[#0d2b33]/5 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-20 -right-20 w-72 h-72 rounded-full bg-[#f2c40d]/10 blur-3xl pointer-events-none" />
+    <section className="relative bg-gradient-to-b from-white via-[#f7fafa] to-white pb-24 overflow-hidden">
+      <div className="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-[#0d2b33]/5 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-20 -right-20 w-96 h-96 rounded-full bg-[#f2c40d]/10 blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 w-full py-0 px-4 md:px-8 lg:px-12">
-        <div className="text-center max-w-3xl mx-auto mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0d2b33] mb-3">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-16 max-w-[1500px] mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 mb-3">
+            <span className="w-8 h-[3px] bg-[#f2c40d] rounded-full" />
+            <span className="text-xs font-black tracking-[0.2em] uppercase text-[#1a4550]">
+              Targeted Solutions
+            </span>
+            <span className="w-8 h-[3px] bg-[#f2c40d] rounded-full" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black text-[#0d2b33] mb-4 tracking-tight">
             {t("heading")}
           </h2>
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+          <p className="text-gray-600 text-base md:text-lg leading-relaxed font-medium">
             {t("subheading")}
           </p>
         </div>
 
-        <div className="mb-8 rounded-3xl bg-white border border-gray-200/60 shadow-md p-5 md:p-8 w-full">
+        <div className="mb-12 rounded-[2.5rem] bg-white border border-[#0d2b33]/10 shadow-2xl shadow-[#1a4550]/5 p-6 md:p-10 w-full">
           <GroupHeader title={t("groupATitle")} badge={t("groupABadge")} />
-          <div className="grid md:grid-cols-2 gap-6 w-full">
+          <div className="grid md:grid-cols-2 gap-8 w-full">
             {cardsA.map((card, i) => (
               <HelpCard key={card.title} icon={iconsA[i]} fitsLabel={fitsLabel} {...card} />
             ))}
           </div>
         </div>
 
-        <div className="mb-12 rounded-3xl bg-white border border-gray-200/60 shadow-md p-5 md:p-8 w-full">
+        <div className="mb-16 rounded-[2.5rem] bg-white border border-[#0d2b33]/10 shadow-2xl shadow-[#1a4550]/5 p-6 md:p-10 w-full">
           <GroupHeader title={t("groupBTitle")} badge={t("groupBBadge")} />
-          <div className="grid md:grid-cols-2 gap-6 w-full">
+          <div className="grid md:grid-cols-2 gap-8 w-full">
             {cardsB.map((card, i) => (
               <HelpCard key={card.title} icon={iconsB[i]} fitsLabel={fitsLabel} {...card} />
             ))}
           </div>
         </div>
 
-        <div className="relative rounded-3xl bg-gradient-to-br from-[#0d2b33] to-[#1a4550] px-6 py-8 md:px-10 md:py-10 text-center overflow-hidden shadow-xl w-full">
-          <div className="absolute -right-10 -top-10 w-36 h-36 rounded-full bg-[#f2c40d]/10 blur-xl" />
-          <div className="absolute -left-10 -bottom-10 w-32 h-32 rounded-full bg-[#f2c40d]/5 blur-xl" />
+        <div className="relative rounded-[2.5rem] bg-gradient-to-br from-[#0d2b33] via-[#1a4550] to-[#0d2b33] px-8 py-12 md:px-16 md:py-14 text-center overflow-hidden shadow-2xl w-full border border-white/10">
+          <div className="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-[#f2c40d]/15 blur-2xl" />
+          <div className="absolute -left-12 -bottom-12 w-48 h-48 rounded-full bg-[#f2c40d]/10 blur-2xl" />
 
-          <h3 className="text-lg md:text-xl font-bold text-white mb-2 relative z-10">
+          <h3 className="text-2xl md:text-3xl font-black text-white mb-4 relative z-10 tracking-tight">
             {t("bannerTitle")}
           </h3>
-          <p className="relative z-10 text-gray-300 text-xs md:text-sm max-w-2xl mx-auto mb-6 leading-relaxed">
+          <p className="relative z-10 text-gray-200 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed font-light">
             {t("bannerDesc")}
           </p>
 
           <Link
             href="#"
-            className="relative z-10 inline-flex items-center gap-2 bg-[#f2c40d] text-[#0d2b33] font-bold px-7 py-3 rounded-full text-sm hover:bg-white transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="relative z-10 inline-flex items-center gap-3 bg-[#f2c40d] text-[#0d2b33] font-black px-9 py-4 rounded-full text-sm md:text-base hover:bg-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
           >
             {t("bannerCta")}
             <ArrowRight className="w-4 h-4" />

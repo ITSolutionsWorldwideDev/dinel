@@ -2,37 +2,38 @@ import { FaArrowRight } from "react-icons/fa6";
 
 export default function CategoryHero({ data }: { data: any }) {
   return (
-    <section className="relative w-full bg-gradient-to-b from-[#e8f2f5] via-[#f4f9fa] to-white pt-14 pb-16 px-4 sm:px-6 lg:px-12 overflow-hidden">
-      {/* Light blue premium glow, matches site's blue theme */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[500px] -z-0">
-        <div className="absolute left-1/2 -translate-x-1/2 top-[-220px] w-[700px] h-[700px] rounded-full bg-[#153f4a]/[0.12] blur-[100px]" />
+    <section className="relative w-full bg-gradient-to-b from-[#0d2b33] via-[#153f4a] to-[#0d2b33] text-white pt-20 pb-24 px-4 sm:px-6 lg:px-12 overflow-hidden shadow-2xl">
+      {/* Dynamic background glow and subtle geometric accent */}
+      <div className="pointer-events-none absolute inset-0 -z-0 opacity-20">
+        <div className="absolute left-1/2 -translate-x-1/2 top-[-100px] w-[800px] h-[400px] rounded-full bg-[#f2c40d] blur-[140px]" />
       </div>
 
-      <div className="relative max-w-4xl mx-auto text-center flex flex-col items-center">
-        <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase text-[#0d2b33] bg-white/70 border border-[#0d2b33]/10 px-4 py-1.5 rounded-full mb-5 shadow-sm">
-          Category Overview
+      <div className="relative max-w-4xl mx-auto text-center flex flex-col items-center z-10">
+        <span className="inline-flex items-center gap-2 text-xs font-black tracking-[0.255em] uppercase text-[#f2c40d] bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full mb-6 shadow-inner">
+          ✦ Category Overview ✦
         </span>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-5 text-[#0d2b33] leading-[1.1]">
-          {data?.h1}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight mb-6 text-white leading-[1.08] drop-shadow-md">
+          {data?.h1}{" "}
+          
         </h1>
 
-        <p className="text-lg sm:text-xl text-gray-600 mb-9 leading-relaxed max-w-2xl">
+        <p className="text-base sm:text-xl text-gray-200 mb-10 leading-relaxed max-w-2xl font-light tracking-wide opacity-90">
           {data?.subhead}
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
             href={data?.primaryCtaLink || "/contact-us"}
-            className="inline-flex items-center gap-2 bg-[#153f4a] hover:bg-[#0d2b33] text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-base"
+            className="inline-flex items-center gap-2.5 bg-[#f2c40d] hover:bg-white text-[#0d2b33] px-8 py-4 rounded-full font-extrabold shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 text-sm tracking-wide"
           >
             {data?.primaryCtaText || "Get Started"}{" "}
-            <FaArrowRight className="w-4 h-4 text-[#f2c40d]" />
+            <FaArrowRight className="w-4 h-4 text-[#0d2b33]" />
           </a>
 
           <a
             href={data?.secondaryCtaLink || "/vacancies"}
-            className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-[#153f4a] border-2 border-[#153f4a]/20 hover:border-[#153f4a] px-8 py-4 rounded-full font-bold shadow-sm hover:shadow-md transition-all duration-300 text-base"
+            className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white px-8 py-4 rounded-full font-bold shadow-sm transition-all duration-300 text-sm tracking-wide backdrop-blur-sm"
           >
             {data?.secondaryCtaText || "Explore Vacancies"}
           </a>

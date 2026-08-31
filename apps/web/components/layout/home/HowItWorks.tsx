@@ -18,8 +18,8 @@ const HowItWorks = async () => {
   const steps = t.raw("steps") as Step[];
 
   return (
-    <section className="bg-white relative overflow-hidden py-20 md:py-28">
-      <div className="w-full px-6 md:px-12 lg:px-16">
+    <section className="bg-white relative overflow-hidden pb-20 md:pb-28">
+      <div className="w-full px-6 md:px-12 lg:px-16 max-w-[1500px] mx-auto">
 
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-block text-xs font-bold tracking-widest uppercase text-[#0d2b33] bg-[#0d2b33]/5 px-3 py-1.5 rounded-full mb-3">
