@@ -1,5 +1,4 @@
 import { Link } from "../../i18n/navigation";
-import { getTranslations } from "next-intl/server";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -9,9 +8,6 @@ import {
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 export default async function Footer() {
-  const t = await getTranslations("footer");
-  const navT = await getTranslations("nav");
-
   // ================= SERVICES =================
   const services = [
     {
@@ -63,15 +59,15 @@ export default async function Footer() {
   // ================= MAIN LINKS =================
   const mainLinks = [
     {
-      label: navT("home"),
+      label: "Home",
       href: "/",
     },
     {
-      label: navT("approach"),
+      label: "Our Approach",
       href: "/our-approach",
     },
     {
-      label: navT("contact"),
+      label: "Contact Us",
       href: "/contact-us",
     },
   ];
@@ -114,22 +110,20 @@ export default async function Footer() {
 
   return (
     <footer className="w-full bg-[#0d2b33] text-white">
-
       {/* ================= MAIN FOOTER ================= */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
-
+          
           {/* ================= BRAND ================= */}
           <div className="lg:col-span-3">
             <Link href="/" className="inline-block">
               <span className="text-2xl font-extrabold tracking-tight">
-                {t("brandName")}
+                Staff Outsourcing
               </span>
             </Link>
 
             <p className="mt-4 text-sm text-white/70 leading-relaxed max-w-sm">
-              {t("brandDescription")}
+              Providing top-tier staffing, recruitment, and outsourcing solutions to scale your business globally with efficiency.
             </p>
 
             {/* Socials */}
@@ -212,24 +206,19 @@ export default async function Footer() {
           {/* ================= CONTACT ================= */}
           <div className="lg:col-span-2">
             <h3 className="text-sm font-bold uppercase tracking-wider text-white mb-5">
-              {navT("contact")}
+              Contact
             </h3>
 
             <ul className="space-y-3.5">
-
               {/* Address */}
               <li className="flex items-start gap-3 text-sm text-white/70">
                 <FaMapMarkerAlt className="w-4 h-4 mt-0.5 text-[#f2c40d] shrink-0" />
-
-                <span>
-                  XYZ Street, ABC Road, City Name
-                </span>
+                <span>XYZ Street, ABC Road, City Name</span>
               </li>
 
               {/* Phone */}
               <li className="flex items-center gap-3 text-sm text-white/70">
                 <FaPhoneAlt className="w-3.5 h-3.5 text-[#f2c40d] shrink-0" />
-
                 <a
                   href="tel:+0000000000"
                   className="hover:text-[#f2c40d] transition-colors whitespace-nowrap"
@@ -241,7 +230,6 @@ export default async function Footer() {
               {/* Email */}
               <li className="flex items-center gap-3 text-sm text-white/70">
                 <FaEnvelope className="w-3.5 h-3.5 text-[#f2c40d] shrink-0" />
-
                 <a
                   href="mailto:info@example.com"
                   className="hover:text-[#f2c40d] transition-colors whitespace-nowrap"
@@ -249,7 +237,6 @@ export default async function Footer() {
                   info@example.com
                 </a>
               </li>
-
             </ul>
           </div>
 
@@ -258,9 +245,7 @@ export default async function Footer() {
 
       {/* ================= BOTTOM ================= */}
       <div className="border-t border-white/10">
-
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-
           <p className="text-xs text-white/60">
             &copy; {new Date().getFullYear()} All rights reserved.
           </p>
@@ -276,10 +261,8 @@ export default async function Footer() {
               </Link>
             ))}
           </div>
-
         </div>
       </div>
-
     </footer>
   );
 }
