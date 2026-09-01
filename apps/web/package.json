@@ -13,6 +13,7 @@
   "dependencies": {
     "@repo/auth-web": "*",
     "@repo/ui": "*",
+    "framer-motion": "^13.1.1",
     "next-intl": "^4.14.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"

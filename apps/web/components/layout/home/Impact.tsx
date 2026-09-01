@@ -37,12 +37,12 @@ export default async function Impact() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-20">
-          <Link href={"/become-a-team-member"}>
+          <Link href={"/contact-us"}>
             <button className="bg-[#f2c40d] text-[#0d2b33] font-black px-9 py-4 rounded-full hover:bg-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 w-full sm:w-auto cursor-pointer text-sm md:text-base">
               {t("ctaPrimary")}
             </button>
           </Link>
-          <Link href={"/vacancies"}>
+          <Link href={"/contact-us"}>
             <button className="bg-transparent text-white font-black px-9 py-4 rounded-full border-2 border-white/30 hover:border-white hover:bg-white/10 transition-all duration-300 w-full sm:w-auto cursor-pointer text-sm md:text-base">
               {t("ctaSecondary")}
             </button>

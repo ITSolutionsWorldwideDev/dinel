@@ -1,8 +1,8 @@
 // WhoWeHelp.tsx
 import React from "react";
 import { Search, Users, Clock3, FileSignature, ArrowRight } from "lucide-react";
-import { getTranslations } from "next-intl/server";
 import Link from "next/link";
+import { getTranslations, getLocale } from "next-intl/server";
 
 const iconsA = [Search, Users];
 const iconsB = [Clock3, FileSignature];
@@ -28,6 +28,7 @@ const HelpCard = ({
   fit,
   fitsLabel,
   cta,
+  href = "#",
 }: {
   icon: any;
   title: string;
@@ -35,6 +36,7 @@ const HelpCard = ({
   fit: string;
   fitsLabel: string;
   cta: string;
+  href?: string;
 }) => (
   <div className="group relative rounded-3xl bg-white border-2 border-[#1a4550]/15 shadow-xl shadow-[#1a4550]/5 hover:shadow-2xl hover:border-[#1a4550] transition-all duration-300 p-6 md:p-8 flex flex-col justify-between overflow-hidden">
     <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#1a4550] to-[#f2c40d] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -62,7 +64,7 @@ const HelpCard = ({
       </div>
 
       <Link
-        href="#"
+        href={href}
         className="inline-flex items-center gap-2 text-xs md:text-sm font-black text-[#1a4550] hover:text-[#0d2b33] transition-colors"
       >
         {cta}
@@ -73,11 +75,23 @@ const HelpCard = ({
 );
 
 const WhoWeHelp = async () => {
+  const locale = await getLocale();
+  
   const t = await getTranslations("whoWeHelp");
   const cardsA = t.raw("cardsA") as { title: string; desc: string; fit: string; cta: string }[];
   const cardsB = t.raw("cardsB") as { title: string; desc: string; fit: string; cta: string }[];
   const fitsLabel = t("fitsLabel");
 
+  // Exact paths map aligned with your 4 new pages inside service folder:
+  // Group A (cardsA): 0 -> recruitment-process-outsourcing, 1 -> temporary-staffing
+  // Group B (cardsB): 0 -> payrolling, 1 -> recruitment-placement
+// Group A (cardsA): 0 -> "Recruitment / Placement", 1 -> "RPO"
+const basePathsA = ["/service/recruitment-placement", "/service/recruitment-process-outsourcing"];
+const basePathsB = ["/service/temporary-staffing", "/service/payrolling"];
+
+const localePrefix = locale === "en" ? "" : `/${locale}`;
+const linksA = basePathsA.map(path => `${localePrefix}${path}`);
+const linksB = basePathsB.map(path => `${localePrefix}${path}`);
   return (
     <section className="relative bg-gradient-to-b from-white via-[#f7fafa] to-white pb-24 overflow-hidden">
       <div className="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-[#0d2b33]/5 blur-3xl pointer-events-none" />
@@ -103,9 +117,22 @@ const WhoWeHelp = async () => {
         <div className="mb-12 rounded-[2.5rem] bg-white border border-[#0d2b33]/10 shadow-2xl shadow-[#1a4550]/5 p-6 md:p-10 w-full">
           <GroupHeader title={t("groupATitle")} badge={t("groupABadge")} />
           <div className="grid md:grid-cols-2 gap-8 w-full">
-            {cardsA.map((card, i) => (
-              <HelpCard key={card.title} icon={iconsA[i]} fitsLabel={fitsLabel} {...card} />
-            ))}
+            {cardsA.map((card, i) => {
+              const cardTitle = i === 0 && !card.title.includes("RPO") 
+                ? `${card.title} (RPO)` 
+                : card.title;
+
+              return (
+                <HelpCard 
+                  key={card.title} 
+                  icon={iconsA[i]} 
+                  fitsLabel={fitsLabel} 
+                  {...card} 
+                  title={cardTitle}
+                  href={linksA[i]} 
+                />
+              );
+            })}
           </div>
         </div>
 
@@ -113,7 +140,13 @@ const WhoWeHelp = async () => {
           <GroupHeader title={t("groupBTitle")} badge={t("groupBBadge")} />
           <div className="grid md:grid-cols-2 gap-8 w-full">
             {cardsB.map((card, i) => (
-              <HelpCard key={card.title} icon={iconsB[i]} fitsLabel={fitsLabel} {...card} />
+              <HelpCard 
+                key={card.title} 
+                icon={iconsB[i]} 
+                fitsLabel={fitsLabel} 
+                {...card} 
+                href={linksB[i]} 
+              />
             ))}
           </div>
         </div>
@@ -130,7 +163,7 @@ const WhoWeHelp = async () => {
           </p>
 
           <Link
-            href="#"
+            href={`/${locale}/contact`}
             className="relative z-10 inline-flex items-center gap-3 bg-[#f2c40d] text-[#0d2b33] font-black px-9 py-4 rounded-full text-sm md:text-base hover:bg-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
           >
             {t("bannerCta")}

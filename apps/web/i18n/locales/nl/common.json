@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home": "Home",
     "about": "Over Ons",
     "professionals": "Professionals",
     "clients": "Klanten",
@@ -9,7 +10,8 @@
     "vacancies": "Vacatures",
     "blogs": "Blogs",
     "myAccount": "Mijn Account",
-    "member": "Lid"
+    "member": "Lid",
+    "contact": "Contact"
   },
   "header": {
     "badge": "Werving & Selectie Partner",
@@ -55,7 +57,7 @@
       "cta": "Bekijk hoe Plaatsing werkt"
     },
     {
-      "title": "RPO",
+      "title": "Recruitment Process Outsourcing",
       "desc": "U werft voor meer dan één functie, of gaat dat de komende maanden doen. Wij verzorgen uw volledige wervingsproces — ingebed in uw wervingskalender, geen losse zoekopdracht.",
       "fit": "U bouwt een team op, niet één functie invullen.",
       "cta": "Bekijk hoe RPO werkt"
@@ -711,12 +713,379 @@
         "secondaryCtaLink": "https://wa.me/[placeholder]"
       }
     }
-  }
+  },
 
 
 
+  
+  "recruitmentOutsourcing": {
+    "hero": {
+      "badge": "Werving & Selectie",
+      "title": "Werving Outsourcing voor Nederlandse Bedrijven",
+      "subtitle": "U zoekt iemand specifiek—een developer, een accountant, een supportmedewerker—en u wilt diegene zelf rechtstreeks op uw eigen payroll in dienst nemen.",
+      "ctaText": "Plan een Gesprek",
+      "ctaLink": "/contact"
+    },
+    "sections": {
+      "conceptTitle": "Wat Werving Outsourcing Daadwerkelijk Betekent",
+      "conceptBody1": "Wij zoeken, screenen en stellen kandidaten voor op basis van de rol die u wilt vervullen. U interviewt wie er op de shortlist staat. Als er een match is, doet u het aanbod en worden ze uw medewerker—niet de onze.",
+      "conceptBody2": "Dit is anders dan Payrolling, waarbij wij de juridische werkgever blijven. Werving outsourcing of werving/plaatsing is een eenmalige transactie: wij doen het zoekwerk, u doet de hiring.",
+      "conceptBody3": "Dit past bij bedrijven die precies weten welke rol ze invullen en volledige controle willen over die persoon op de lange termijn.",
+      "noteTitle": "Korte Notitie over Namen",
+      "noteBody": "Sommige mensen noemen dit werving & selectie of plaatsing—zelfde service, andere naam. Geen leasing, geen gedeeld werkgeverschap. U krijgt een kandidaat, u doet een aanbod, klaar.",
+      
+      "processTitle": "Hoe Het Werkt",
+      "steps": [
+        { "step": "01", "title": "U vertelt wat u nodig heeft", "desc": "Functie, senioriteit, vereiste vaardigheden, budget en tijdlijn." },
+        { "step": "02", "title": "Wij zoeken en screenen", "desc": "Wij sourcen kandidaten uit ons netwerk en voeren de initiële screening uit." },
+        { "step": "03", "title": "U ontvangt een shortlist", "desc": "U bekijkt de cv's en wij plannen de interviews in met wie u wilt spreken." },
+        { "step": "04", "title": "U interviewt en beslist", "desc": "U voert de gesprekken op uw eigen manier." },
+        { "step": "05", "title": "U doet een aanbod", "desc": "Zodra u iemand kiest, is de hire van u. Contract en onboarding via u." }
+      ],
 
+      "laborTitle": "Wat Wij Doen vs. Wat Bij U Blijft",
+      "weHandle": [
+        "Sourcen van kandidaten via actieve netwerken",
+        "Initiële screening & kwalificatiechecks",
+        "Coördineren van interviewlogistiek",
+        "Referenties checken (indien gewenst)"
+      ],
+      "youHandle": [
+        "Finale interviewbeslissingen",
+        "Arbeidsvoorwaarden en salarisonderhandeling",
+        "Arbeidsovereenkomst & direct payrollbeheer",
+        "Onboarding en langetermijnbeheer"
+      ],
+      "laborFooter": "Er is hier geen gedeelde aansprakelijkheid of co-employment kwestie. Dat is het voordeel ten opzichte van Payrolling.",
+
+      "comparisonTitle": "Werving Outsourcing vs. Payrolling",
+      "comparisonSubtitle": "Welk model past bij uw huidige fase?",
+      "rpoTitle": "Werving Outsourcing / Plaatsing",
+      "rpoDesc": "Als u al weet dat u deze persoon als vaste medewerker wilt en klaar bent voor direct dienstverband, is dit de meest directe optie zonder doorlopende beheervergoeding.",
+      "payrollTitle": "Payrolling Alternatief",
+      "payrollDesc": "Als u nog niet klaar bent voor direct dienstverband of de rol wilt testen, is Payrolling het overwegen waard. Wij blijven juridisch werkgever.",
+
+      "faqTitle": "Veelgestelde Vragen",
+      "faqs": [
+        { "question": "Hoe lang duurt een werving outsourcing zoektocht meestal?", "answer": "De tijdlijn hangt af van de senioriteit en hoe specifiek de vaardigheden zijn." },
+        { "question": "Is werving outsourcing hetzelfde als werving & selectie?", "answer": "Ja, verschillende namen voor dezelfde service." },
+        { "question": "Rekent u kosten als de hire niet slaagt?", "answer": "Garantie- en vervolgvoorwaarden worden vooraf afgesproken." },
+        { "question": "Kunnen jullie helpen met het arbeidscontract?", "answer": "We kunnen verwijzen naar standaard templates, maar het contract is tussen u en de kandidaat." },
+        { "question": "Wat als geen enkele kandidaat past?", "answer": "We gaan terug naar de zoekfase om verdere opties te bekijken." },
+        { "question": "Plaatsen jullie alleen mensen in de vermelde rollen?", "answer": "Dat zijn onze kerncategorieën, maar neem gerust contact op voor andere rollen." }
+      ],
+
+      "finalCta": {
+        "heading": "Klaar om uw volgende teamlid te vinden?",
+        "description": "Plan direct een gesprek in om uw specifieke wensen te bespreken.",
+        "buttonText": "Plan een gesprek",
+        "buttonLink": "/contact"
+      }
+    }
+  },
+
+
+  "recruitmentProcessOutsourcing": {
+    "meta": {
+      "title": "Recruitment Process Outsourcing (RPO) | Staff Outsourcing",
+      "description": "RPO voor Nederlandse bedrijven met doorlopende wervingsbehoeften. Wij voeren uw wervingsproces uit voor meerdere rollen, inclusief sourcing en screening.",
+      "slug": "/recruitment-process-outsourcing"
+    },
+    "hero": {
+      "badge": "Recruitment Process Outsourcing (RPO)",
+      "title": "Recruitment Process Outsourcing (RPO) voor Nederlandse Bedrijven",
+      "subtitle": "Als u één vacature vervult, heeft u geen RPO nodig—dan heeft u Werving & Selectie nodig. RPO is voor wanneer werven zelf een probleem is geworden: u opent meerdere rollen tegelijk, uw interne team kan het niet bijbenen, of u groeit zo snel dat ad-hoc werven niet meer volstaat.",
+      "ctaText": "Plan een Gesprek",
+      "ctaLink": "/contact"
+    },
+    "sections": {
+      "conceptTitle": "Wat RPO Daadwerkelijk Betekent",
+      "conceptBody1": "Recruitment process outsourcing betekent dat we niet zomaar één persoon voor u vinden—we voeren het wervingsproces voor u uit, op doorlopende basis, zo lang als u dat nodig heeft.",
+      "conceptBody2": "Zie het minder als \"vul deze vacature\" en meer als \"beheer dit deel van onze operatie.\" We sluiten aan bij hoe u werft—sourcing, screening, interviewcoördinatie en soms offertemanagement—op elk gewenst volume.",
+      "conceptBody3": "Bij een enkele plaatsing vertelt u ons één keer wat u nodig heeft, leveren we een shortlist en stopt de opdracht. RPO werkt niet zo. Het is een doorlopende afspraak: we treden op als verlengstuk van uw wervingsteam.",
+      "noteTitle": "Terugkerend vs. Eenmalig Werven",
+      "noteBody": "Dat kan betekenen vijf hires dit kwartaal en twee volgend kwartaal, of het opzetten van een compleet nieuwe afdeling. Hoe dan ook, u hoeft het gesprek niet elke keer opnieuw te starten—wij kennen uw wervingsstandaard en proces.",
+
+      "processTitle": "Hoe Het Werkt",
+      "steps": [
+        { "step": "01", "title": "We bepalen samen uw wervingsbehoefte", "desc": "Niet zomaar één rol—het patroon. Hoeveel hires, over welke periode, en over welke functies. [Minimumvolume nader te bepalen.]" },
+        { "step": "02", "title": "We bouwen het proces rondom uw standaarden", "desc": "Screeningscriteria, interviewrondes en wat een \"ja\" betekent—eenmalig vastgelegd, consistent toegepast op elke kandidaat." },
+        { "step": "03", "title": "We voeren continue sourcing en screening uit", "desc": "Geen enkele shortlist, maar een doorlopende pipeline. Kandidaten worden gesourced en gescreend zodra rollen openstaan." },
+        { "step": "04", "title": "U interviewt en neemt beslissingen", "desc": "Net als bij plaatsing leveren wij gekwalificeerde kandidaten; u beslist wie er bij u komt werken." },
+        { "step": "05", "title": "We passen ons aan wanneer uw behoeften veranderen", "desc": "Wervingstempo verandert. Rollen worden toegevoegd of gepauzeerd. RPO beweegt flexibel mee." }
+      ],
+
+      "laborTitle": "Wat Wij Doen vs. Wat Bij U Blijft",
+      "weHandle": [
+        "Doorlopende sourcing en screening voor meerdere rollen",
+        "Interviewcoördinatie en pipeline-beheer",
+        "Afhankelijk van de scope, onderdelen van het aanbodproces"
+      ],
+      "youHandle": [
+        "Finale beslissingen over aanname",
+        "Arbeidsovereenkomsten en onboarding",
+        "Hoe elke nieuwe medewerker in uw team past"
+      ],
+      "laborFooter": "RPO neemt meer proces uit handen dan een enkele plaatsing. Maar de juridische arbeidsrelatie blijft bij u, net als bij Werving & Selectie. RPO is geen Payrolling.",
+
+      "comparisonTitle": "RPO vs. Werving & Selectie: Wat Past Bij U",
+      "comparisonSubtitle": "Als u één vacature vult, is RPO overkill—u betaalt dan voor infrastructuur rondom een volume dat u niet heeft.",
+      "rpoTitle": "RPO (Recruitment Process Outsourcing)",
+      "rpoDesc": "RPO bewijst zijn waarde wanneer werven een herhaalde, structurele behoefte wordt—verschillende rollen tegelijk of een hoog tempo dat uw eigen team niet aankan. Als u verwacht dit over drie maanden weer nodig te hebben, past RPO waarschijnlijk.",
+      "payrollTitle": "Werving & Selectie Alternatief",
+      "payrollDesc": "Plaatsing handelt een enkele hire netjes af zonder een doorlopend proces in te richten voor iets dat niet terugkeert. Is dit een eenmalig gat om te vullen, kies dan voor Werving & Selectie.",
+
+      "faqTitle": "Veelgestelde Vragen",
+      "faqs": [
+        { "question": "Wat is het verschil tussen RPO en Werving & Selectie?", "answer": "Plaatsing is een eenmalige zoektocht naar één rol. RPO is een doorlopend wervingsproces over meerdere rollen of een langere periode." },
+        { "question": "Is er een minimumaantal hires of contractduur voor RPO?", "answer": "[Nader te bepalen in overleg met de klant.]" },
+        { "question": "Kan RPO slechts één afdeling dekken in plaats van het hele bedrijf?", "answer": "Ja, de RPO-scope wordt meestal rondom een functie of team opgesteld en gedefinieerd tijdens het eerste gesprek." },
+        { "question": "Zijn jullie betrokken bij de uiteindelijke aannamebeslissing?", "answer": "Nee, net als bij elke plaatsing blijft de eindbeslissing bij u. Wij beheren de pipeline en het proces, niet de beslissing." },
+        { "question": "Hoe wordt RPO geprijsd in vergelijking met een enkele plaatsing?", "answer": "[Prijsmodel—retainer, per-hire of hybrid—moet nog worden bevestigd.]" }
+      ],
+
+      "finalCta": {
+        "heading": "Klaar om uw wervingsproces op te schalen?",
+        "description": "RPO vraagt om een goed gesprek over rolvolume, tijdlijn en uitdagingen, zodat een formulier alleen niet volstaat.",
+        "buttonText": "Plan een gesprek",
+        "buttonLink": "/contact"
+      }
+    }
+  },
+
+  "temporaryStaffingServices": {
+    "meta": {
+      "title": "Tijdelijke Uitzenddiensten Nederland | Staff Outsourcing",
+      "description": "Flexibele tijdelijke staffing voor Nederlandse bedrijven. Wij zijn de werkgever, u stuurt het werk aan, schaal op of af zonder ontslagprocedures.",
+      "slug": "/temporary-staffing"
+    },
+    "hero": {
+      "badge": "Tijdelijke Uitzenddiensten",
+      "title": "Tijdelijke Staffing Services voor Nederlandse Bedrijven",
+      "subtitle": "Soms heeft u geen vaste medewerker nodig. U zoekt iemand voor drie maanden, tijdens een drukke periode, of ter vervanging terwijl u nagaat of de rol permanent moet worden. Dat is waar tijdelijke staffing voor is—extra handen zonder de langetermijnverplichting.",
+      "ctaText": "Plan een Gesprek",
+      "ctaLink": "/contact"
+    },
+    "sections": {
+      "conceptTitle": "Wat Tijdelijke Staffing Daadwerkelijk Betekent",
+      "conceptBody1": "Wij sourcen, screenen en plaatsen iemand bij uw team—maar in tegenstelling tot Werving & Selectie blijven ze op onze payroll staan. U krijgt het dagelijkse werk; wij handelen de werkgeverskant af.",
+      "conceptBody2": "Dit is ideaal bij een gedefinieerd project, een seizoenspiek, ouderschapsverlof opvangen of om te testen of een rol op termijn nodig is voordat u zich definitief verbindt.",
+      "conceptBody3": "Weet u al zeker dat het een vaste functie betreft die u direct wilt behouden, dan is deze pagina niet de juiste keuze—kies dan voor Werving & Selectie.",
+      "noteTitle": "Werkgeverschap op afstand",
+      "noteBody": "Wij nemen de persoon in dienst en u stuurt het werk aan. Wanneer het project afloopt of uw behoefte verandert, eindigt de samenwerking zonder dat u een ontslagprocedure hoeft te beheren.",
+
+      "processTitle": "Hoe Het Werkt",
+      "steps": [
+        { "step": "01", "title": "U vertelt ons wat de aard van de behoefte is", "desc": "Rol, geschatte duur, startdatum en eventuele doorgroeimogelijkheden naar vast." },
+        { "step": "02", "title": "Wij sourcen en plaatsen een geschikte kandidaat", "desc": "Niet elke kandidaat wil tijdelijk werk; we screenen specifiek op personen die comfortabel zijn met tijdelijke opdrachten." },
+        { "step": "03", "title": "Ze starten binnen uw team", "desc": "Dagelijks werken ze onder uw aansturing, net als ieder ander teamlid—het verschil zit in wie de loonstrook uitgeeft." },
+        { "step": "04", "title": "Wij beheren de administratie", "desc": "Salarisadministratie, contracten en wettelijke verplichtingen worden volledig uit handen genomen." },
+        { "step": "05", "title": "Einde, verlenging of conversie", "desc": "Wanneer de behoefte stopt, eindigt de plaatsing netjes. Wilt u verlengen of omzetten naar vast, dan is dat een gesprek en geen juridisch proces." }
+      ],
+
+      "laborTitle": "Wat Wij Doen vs. Wat Bij U Blijft",
+      "weHandle": [
+        "Arbeidsovereenkomst, loonadministratie en loonheffingen",
+        "Beheer van wettelijk verlof en secundaire arbeidsvoorwaarden",
+        "Juridisch werkgeverschap gedurende de gehele plaatsing"
+      ],
+      "youHandle": [
+        "Dagelijkse aansturing van de werkzaamheden",
+        "Prestatiefeedback",
+        "Beslissen wanneer de opdracht eindigt of wordt omgezet naar een langere termijn"
+      ],
+      "laborFooter": "Dit is het voordeel van flexibiliteit dat Payrolling en Tijdelijke Staffing delen—u draagt geen werkgeversaansprakelijkheid voor iemand die u slechts enkele maanden nodig heeft.",
+
+      "comparisonTitle": "Tijdelijke Staffing vs. Werving & Selectie",
+      "comparisonSubtitle": "Welk model past bij uw huidige fase?",
+      "rpoTitle": "Tijdelijke Staffing",
+      "rpoDesc": "Als uw behoefte tijd- of scope-gebonden is—een project, verlofopvang of het testen van marktvraag—voorkomt Tijdelijke Staffing de mismatch van een vaste aanname. Een simpele vuistregel: zou u het erg vinden om deze persoon na zes maanden te verliezen, kies dan voor Placement. Was zes maanden het plan, kies dan Tijdelijke Staffing.",
+      "payrollTitle": "Werving & Selectie Alternatief",
+      "payrollDesc": "Weet u exact welke rol u vervult en wilt u die persoon vanaf dag één direct in dienst, dan is Werving & Selectie eenvoudiger zonder doorlopende relatie met ons nadat de introductie heeft plaatsgevonden.",
+
+      "faqTitle": "Veelgestelde Vragen",
+      "faqs": [
+        { "question": "Wat is de minimale duur voor een tijdelijke plaatsing?", "answer": "[Nader te bepalen in overleg met de klant.]" },
+        { "question": "Kan een tijdelijke plaatsing later worden omgezet in een vaste aanstelling?", "answer": "Ja, dat is een veelvoorkomend traject. [Conversievoorwaarden en eventuele kosten worden vooraf bevestigd.]" },
+        { "question": "Wie is wettelijk verantwoordelijk voor deze persoon tijdens de plaatsing?", "answer": "Wij zijn dat—wij zijn de juridische werkgever gedurende de plaatsing. U stuurt het werk aan, maar de juridische en administratieve verplichtingen liggen bij ons." },
+        { "question": "Is Tijdelijke Staffing hetzelfde als Payrolling?", "answer": "Nauw verwant—beide omvatten ons als juridische werkgever. Tijdelijke Staffing duidt doorgaans op een kortere, afgebakende behoefte; Payrolling kan langduriger of onbepaald doorlopen." },
+        { "question": "Kunnen we dezelfde persoon later opnieuw opvragen voor een project?", "answer": "[Nader te bepalen op basis van beschikbaarheid.]" }
+      ],
+
+      "finalCta": {
+        "heading": "Flexibele ondersteuning nodig voor uw team?",
+        "description": "Tijdelijke behoeften gaan vaak gepaard met tijdsdruk—een telefoongesprek brengt de zaken sneller in beweging dan een formulier.",
+        "buttonText": "Plan een gesprek",
+        "buttonLink": "/contact"
+      }
+    }
+  },
+
+
+"payrollingServices": {
+    "meta": {
+      "title": "Payrolling Services voor Nederlandse Bedrijven | Staff Outsourcing",
+      "description": "Wij worden de juridische werkgever, u houdt volledige controle over het werk. Payroll outsourcing zonder de nalevings- en administratieve last.",
+      "slug": "/payrolling"
+    },
+    "hero": {
+      "badge": "Payrolling Services",
+      "title": "Payrolling voor Nederlandse Bedrijven",
+      "subtitle": "U heeft iemand gevonden die voor uw bedrijf wil werken—via uw eigen zoektocht of via ons—maar u wilt niet de juridische werkgever worden. Payrolling lost dit op: wij nemen de persoon op papier in dienst, u stuurt ze dagelijks aan, en alle werkgeversverplichtingen liggen bij ons.",
+      "ctaText": "Plan een Gesprek",
+      "ctaLink": "/contact"
+    },
+    "sections": {
+      "conceptTitle": "Wat Payrolling Daadwerkelijk Betekent",
+      "conceptBody1": "Wij worden de juridische werkgever van record. Contract, loonadministratie, loonheffingen, wettelijk verlof en eventuele pensioenbijdragen lopen volledig via ons. U krijgt de volledige operationele controle.",
+      "conceptBody2": "Wat u niet overneemt is de administratieve en juridische druk van het Nederlandse arbeidsrecht. Dit verschilt van Werving & Selectie, waarbij de persoon direct bij u in dienst treedt.",
+      "conceptBody3": "Bedrijven gebruiken dit om verschillende redenen: het ontbreken van een Nederlandse payroll-infrastructuur, de wens om flexibel op te schalen zonder ontslagcomplexiteit, of het vermijden van werkgeversaansprakelijkheid.",
+      "noteTitle": "Duur en Flexibiliteit",
+      "noteBody": "Het is geen tijdelijk werk in de zin van \"kortetermijnopvang.\" Payrolling kan onbepaalde tijd doorlopen—iemand kan jarenlang onder deze constructie voor uw team werken als dat zo uitkomt.",
+
+      "processTitle": "Hoe Het Werkt",
+      "steps": [
+        { "step": "01", "title": "U bepaalt wie er voor u gaat werken", "desc": "Of het nu iemand is die u zelf heeft gevonden of via onze sourcing—Payrolling werkt in beide gevallen." },
+        { "step": "02", "title": "Wij richten het dienstverband in", "desc": "Contract, loonheffingsregistratie en naleving van de Nederlandse wetgeving worden vooraf geregeld." },
+        { "step": "03", "title": "Ze sluiten aan bij uw team onder uw aansturing", "desc": "Dagelijks management, taken en prestaties liggen bij u. Wij bemoeien ons niet met de uitvoering van het werk." },
+        { "step": "04", "title": "Wij draaien de payroll en beheren verplichtingen", "desc": "Salarisbetalingen, loonheffingen, wettelijke voordelen en doorlopende compliance zolang de regeling loopt." },
+        { "step": "05", "title": "Het arrangement loopt door, past zich aan of eindigt", "desc": "Geen vaste einddatum verplicht. Schaal af, verleng of zet later om in een direct dienstverband als dat beter past." }
+      ],
+
+      "laborTitle": "Wat Wij Doen vs. Wat Bij U Blijft",
+      "weHandle": [
+        "Arbeidsovereenkomst, loonverwerking en belastinginhoudingen",
+        "Wettelijk verlof, secundaire arbeidsvoorwaarden en eventuele pensioenen",
+        "Doorlopende naleving van het Nederlandse arbeidsrecht als juridische werkgever"
+      ],
+      "youHandle": [
+        "Dagelijkse aansturing van het werk en prestatiemanagement",
+        "Beslissen of de constructie doorloopt, opschaalt of eindigt",
+        "Operationele inpassing in het team"
+      ],
+      "laborFooter": "Het voordeel is helder: u krijgt het werk verricht zonder de juridische en administratieve last van het werkgeverschap te dragen.",
+
+      "comparisonTitle": "Payrolling vs. Werving & Selectie",
+      "comparisonSubtitle": "Welke constructie past bij uw bedrijf?",
+      "rpoTitle": "Payrolling",
+      "rpoDesc": "Als u liever geen directe werkgeversaansprakelijkheid draagt, geen Nederlandse salarisadministratie heeft, of flexibiliteit zoekt zonder ontslagprocedures, neemt Payrolling die last uit handen. Het kost op termijn meer dan een eenmalige fee, maar levert flexibiliteit op.",
+      "payrollTitle": "Werving & Selectie Alternatief",
+      "payrollDesc": "Wilt u deze persoon vanaf dag één als directe medewerker—met uw eigen contract en volledige langetermijnbinding—dan is Werving & Selectie de meest directe route zonder doorlopende fee.",
+
+      "faqTitle": "Veelgestelde Vragen",
+      "faqs": [
+        { "question": "Is er een minimale duur voor een Payrolling-arrangement?", "answer": "[Nader te bepalen in overleg met de klant.]" },
+        { "question": "Hoe wordt Payrolling geprijsd?", "answer": "[Prijsstructuur—managementfee bovenop salaris, vast tarief, etc.—moet nog worden bevestigd.]" },
+        { "question": "Kunnen we een Payrolling-arrangement later omzetten in een direct dienstverband?", "answer": "Ja, dat is een veelvoorkomend traject. [Specifieke voorwaarden en conversiekosten nader te bepalen.]" },
+        { "question": "Wat is het verschil tussen Payrolling en Tijdelijke Staffing?", "answer": "Tijdelijke Staffing richt zich op afgebakende, kortere behoeften; Payrolling is gebouwd voor langere of onbepaalde constructies waarin u nog steeds geen direct werkgeverschap wilt." },
+        { "question": "Wie is er aansprakelijk als er iets misgaat binnen het dienstverband?", "answer": "Als juridische werkgever ligt die aansprakelijkheid bij ons en niet bij u, inclusief eventuele geschillen of ontslagkwesties." }
+      ],
+
+      "finalCta": {
+        "heading": "Klaar om uw loonadministratie uit te besteden?",
+        "description": "Payrolling-beslissingen draaien meestal om kostenstructuur en compliance, wat live bespreken sneller duidelijkheid geeft.",
+        "buttonText": "Plan een gesprek",
+        "buttonLink": "/contact"
+      }
+    }
+  },
+
+
+
+  "common": {
+  "heroBadge": "Neem contact op",
+  "heroTitle": "Vertel ons waar je naar op zoek bent",
+  "heroSubtitle": "Of je nu precies weet welke rol je nodig hebt of nog twijfelt tussen placement en payrolling — begin hier. We stellen een paar vragen en wijzen je de juiste weg.",
+  "waysTitle": "Twee manieren om ons te bereiken",
+  "callTitle": "Plan een gesprek",
+  "callDesc": "Voor alles wat een echt gesprek vereist — een nieuwe rol, meerdere vacatures, of als je niet zeker weet welk model past.",
+  "callBtn": "Gesprek Inplannen",
+  "whatsappTitle": "WhatsApp",
+  "whatsappDesc": "Voor snelle vragen — planning, specifieke rollen, of zaken waar geen volledig gesprek voor nodig is.",
+  "whatsappBtn": "Chat via WhatsApp",
+  "formTitle": "Stuur ons een bericht",
+  "nameLabel": "Naam",
+  "companyLabel": "Bedrijf",
+  "emailLabel": "E-mail",
+  "phoneLabel": "Telefoon (optioneel)",
+  "hiringForLabel": "Waar ben je naar op zoek?",
+  "categoryLabel": "Servicemodel",
+  "cat1": "Werving & Selectie / Placement",
+  "cat2": "Uitzenden / Payrolling",
+  "cat3": "Weet ik nog niet",
+  "messageLabel": "Bericht (optioneel)",
+  "submitBtn": "Verstuur Aanvraag",
+  "detailsTitle": "Overige gegevens",
+  "emailField": "E-mail",
+  "phoneField": "Telefoon",
+  "addressField": "Kantooradres",
+  "kvkField": "KvK-nummer",
+  "responseField": "Reactietijd",
+  "responseVal": "Wij reageren binnen één werkdag",
+  "reassurance": "Weet je niet zeker welke service je nodig hebt? Daar is het gesprek voor — we lossen het samen op."
+},
+
+
+
+"ourApproach": {
+  "heroBadge": "Onze aanpak",
+  "heroTitle": "We verkopen niet één model. We kijken welk model past.",
+  "heroSubtitle": "Veel staffingbedrijven sturen je richting het model waar ze zelf omheen zijn gebouwd. Wij werken met twee modellen — werving & selectie en payrolling — en onze eerste taak is om te bepalen welke oplossing jouw probleem echt oplost, niet welke oplossing wij het liefst verkopen.",
+
+  "thinkingBadge": "Hoe we ernaar kijken",
+  "thinkingTitle": "Het model komt op de tweede plaats. Het probleem komt eerst.",
+
+  "thinking": {
+    "item1Title": "Het probleem komt eerst",
+    "item1Desc": "Voordat we over functies praten, kijken we welk gat je daadwerkelijk probeert te vullen. Een vaste plek in je team vraagt om een andere aanpak dan drie maanden extra capaciteit tijdens een drukke periode.",
+
+    "item2Title": "We zeggen het als we niet de juiste partij zijn",
+    "item2Desc": "Heb je offshore staffing nodig vanwege kosten, of compliance-advies voor het opzetten van een Nederlandse entiteit? Dan zijn wij niet de juiste partij. We zeggen dat liever tijdens het eerste gesprek dan dat we werk aannemen en onder de maat leveren.",
+
+    "item3Title": "Breedte boven specialisatie — bewust gekozen",
+    "item3Desc": "We werken binnen zes domeinen, niet slechts één. Dat is een bewuste keuze. De meeste bedrijven hebben niet op één moment maar één vacature. Het voordeel: je hebt geen vijf verschillende leveranciers nodig voor vijf verschillende rollen."
+  },
+
+  "workBadge": "Hoe dit eruitziet in de praktijk",
+  "workTitle": "Zo ziet onze aanpak er dagelijks uit",
+  "workSubtitle": "Onze aanpak is niet alleen iets wat we zeggen. Het bepaalt hoe we vanaf het eerste gesprek met je samenwerken.",
+
+  "work": {
+    "item1Title": "We beoordelen kandidaten vóór de shortlist, niet erna.",
+    "item1Desc": "We kijken eerst of een kandidaat daadwerkelijk bij de functie past voordat we deze aan jou voorstellen.",
+
+    "item2Title": "Je krijgt een shortlist, geen stapel cv's.",
+    "item2Desc": "We verkleinen de selectie voordat jij tijd besteedt aan het beoordelen van kandidaten, zodat je team zich kan richten op de mensen die het gesprek waard zijn.",
+
+    "item3Title": "Eén aanspreekpunt, ook voor verschillende rollen.",
+    "item3Desc": "Zoek je dit kwartaal een developer en volgend kwartaal een administratief medewerker? Dan hoef je jouw bedrijf niet steeds opnieuw uit te leggen.",
+
+    "item4Title": "We blijven betrokken na de plaatsing.",
+    "item4Desc": "Onze samenwerking stopt niet bij het ondertekenen van het contract. We blijven betrokken voor continuïteit na de eerste plaatsing."
+  },
+
+  "linesBadge": "Waar we de grens trekken",
+  "linesTitle": "Wat we niet doen",
+
+  "lines": {
+    "item1": "We sturen je niet richting payrolling wanneer een functie duidelijk bedoeld is als vaste aanstelling, alleen omdat het voor ons een langerlopend contract betekent.",
+    "item2": "We verkopen geen shortlist die we niet kunnen waarmaken. Hebben we nog geen sterke kandidaat? Dan zeggen we dat liever dan dat we een zwakke kandidaat sturen om een deadline te halen.",
+    "item3": "We beloven geen resultaten waar we niet achter kunnen staan. We zijn liever duidelijk over wat we realistisch kunnen leveren dan dat we beloftes doen die we niet kunnen waarmaken."
+  },
+
+  "ctaTitle": "Vertel ons wat je probeert op te lossen",
+  "ctaSubtitle": "Weet je niet zeker welk staffingmodel bij je past? Vertel ons wat je nodig hebt en we helpen je de juiste volgende stap te bepalen.",
+  "ctaPrimary": "Plan een gesprek",
+  "ctaSecondary": "WhatsApp"
 }
+}
+  
+
+
+
+
+
+
 
 
 

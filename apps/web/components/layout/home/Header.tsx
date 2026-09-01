@@ -47,14 +47,14 @@ export default async function Header() {
 
           <div className="mt-9 flex flex-wrap justify-center gap-4">
             <Link
-              href="/become-a-team-member"
+              href="/contact-us"
               className="inline-flex items-center gap-2.5 bg-[#1a4550] hover:bg-[#0d2b33] text-white px-8 py-4 text-sm font-bold transition-all rounded-full shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 border border-white/10"
             >
               {t("ctaPrimary")} <FaArrowRight className="w-3.5 h-3.5" />
             </Link>
 
             <Link
-              href="/vacancies"
+              href="/contact-us"
               className="inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md px-8 py-4 text-sm font-semibold transition-all rounded-full shadow-lg"
             >
               {t("ctaSecondary")}

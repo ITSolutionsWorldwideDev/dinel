@@ -1,34 +1,80 @@
 import React from "react";
 import MobileMenuBtn from "./MobileMenuBtn";
 import Image from "next/image";
-import { candidateAuth } from "@repo/auth-web";
 import { getTranslations } from "next-intl/server";
 import { Link } from "../../../i18n/navigation";
 import LanguageSwitcher from "../../common/LanguageSwitcher";
 import { ChevronDown } from "lucide-react";
 
 export default async function DeskstopNavigationMenu() {
-  const session = await candidateAuth();
-  const t = await getTranslations("nav");
+  // Navigation translations
+  const navT = await getTranslations("nav");
 
-  const categories = [
-    { name: "IT & Development", href: "/it-development" },
-    { name: "Design Services", href: "/design-services" },
-    { name: "Marketing & Analytics", href: "/marketing-analytics" },
-    { name: "Administration & Business Support", href: "/admin-business-support" },
-    { name: "Finance & Accounting", href: "/finance-accounting" },
-    { name: "Travel & Reservations", href: "/travel-reservations" },
+  // Common translations
+  const commonT = await getTranslations();
+
+  // Existing Services
+  const services = [
+    {
+      name: "IT & Development",
+      href: "/it-development",
+    },
+    {
+      name: "Design Services",
+      href: "/design-services",
+    },
+    {
+      name: "Marketing & Analytics",
+      href: "/marketing-analytics",
+    },
+    {
+      name: "Administration & Business Support",
+      href: "/admin-business-support",
+    },
+    {
+      name: "Finance & Accounting",
+      href: "/finance-accounting",
+    },
+    {
+      name: "Travel & Reservations",
+      href: "/travel-reservations",
+    },
   ];
 
+  // Categories
+  const categories = [
+    {
+      name: commonT("whoWeHelp.cardsA.0.title"),
+      href: "/service/recruitment-placement",
+    },
+    {
+      name: commonT("whoWeHelp.cardsA.1.title"),
+      href: "/service/recruitment-process-outsourcing",
+    },
+    {
+      name: commonT("whoWeHelp.cardsB.0.title"),
+      href: "/service/temporary-staffing",
+    },
+    {
+      name: commonT("whoWeHelp.cardsB.1.title"),
+      href: "/service/payrolling",
+    },
+  ];
+
+  // Mobile navigation links
   const navLinks = [
-    { name: t("about"), href: "/about-us" },
-    { name: t("clients"), href: "/clients" },
-    { name: t("approach"), href: "/our-approach" },
-    { name: t("mission"), href: "/mission-vision" },
-    { name: t("becomeMember"), href: "/become-a-team-member" },
-    { name: t("vacancies"), href: "/vacancies" },
-    { name: t("blogs"), href: "/blogs" },
-    { name: session ? t("myAccount") : t("member"), href: "/account" },
+    {
+      name: navT("home"),
+      href: "/",
+    },
+    {
+      name: navT("approach"),
+      href: "/our-approach",
+    },
+    {
+      name: navT("contact"),
+      href: "/contact-us",
+    },
   ];
 
   return (
@@ -36,12 +82,12 @@ export default async function DeskstopNavigationMenu() {
       <nav className="w-full px-4 sm:px-8 lg:px-16 py-3.5 max-w-[1600px] mx-auto">
         <div className="flex items-center justify-between w-full">
 
-          {/* Logo Section */}
+          {/* ================= LOGO ================= */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center group">
               <Image
                 src="/assets/logo/Logo 2.png"
-                alt="Company Logo"
+                alt="Staff Outsourcing"
                 width={130}
                 height={45}
                 className="object-contain group-hover:scale-105 transition-transform duration-300"
@@ -50,59 +96,95 @@ export default async function DeskstopNavigationMenu() {
             </Link>
           </div>
 
-          {/* Desktop Navigation Links */}
+          {/* ================= DESKTOP NAVIGATION ================= */}
           <div className="hidden lg:flex items-center space-x-1">
-            {/* First Link (About) */}
-            {navLinks[0] && (
-              <Link
-                href={navLinks[0].href}
-                className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap"
-              >
-                {navLinks[0].name}
-              </Link>
-            )}
 
-            {/* Services Dropdown on Hover */}
+            {/* HOME */}
+            <Link
+              href="/"
+              className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap"
+            >
+              {navT("home")}
+            </Link>
+
+            {/* ================= SERVICES ================= */}
             <div className="relative group py-2">
-              <button className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap flex items-center gap-1.5 cursor-pointer">
-                Services 
+              <button
+                type="button"
+                className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
+              >
+                Services
+
                 <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-300 text-[#1a4550]" />
               </button>
-              
+
               <div className="absolute top-full left-0 w-72 bg-white shadow-2xl shadow-[#1a4550]/15 rounded-2xl py-3 hidden group-hover:block border-2 border-[#1a4550]/10 translate-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
-                {categories.map((cat, idx) => (
+                {services.map((service, index) => (
                   <Link
-                    key={idx}
-                    href={cat.href}
+                    key={index}
+                    href={service.href}
                     className="block px-4 py-2.5 mx-2 rounded-xl text-xs xl:text-sm text-gray-700 font-medium hover:bg-[#1a4550]/5 hover:text-[#1a4550] hover:font-bold transition-all"
                   >
-                    {cat.name}
+                    {service.name}
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* Remaining Links */}
-            {navLinks.slice(1).map((link, index) => (
-              <Link
-                key={index}
-                href={link.href ? link.href : "#"}
-                className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap"
+            {/* ================= CATEGORIES ================= */}
+            <div className="relative group py-2">
+              <button
+                type="button"
+                className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
               >
-                {link.name}
-              </Link>
-            ))}
+                Categories
+
+                <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-300 text-[#1a4550]" />
+              </button>
+
+              <div className="absolute top-full left-0 w-80 bg-white shadow-2xl shadow-[#1a4550]/15 rounded-2xl py-3 hidden group-hover:block border-2 border-[#1a4550]/10 translate-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
+                {categories.map((category, index) => (
+                  <Link
+                    key={index}
+                    href={category.href}
+                    className="block px-4 py-3 mx-2 rounded-xl text-xs xl:text-sm text-gray-700 font-medium hover:bg-[#1a4550]/5 hover:text-[#1a4550] hover:font-bold transition-all"
+                  >
+                    {category.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* ================= OUR APPROACH ================= */}
+            <Link
+              href="/our-approach"
+              className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap"
+            >
+              {navT("approach")}
+            </Link>
+
+            {/* ================= CONTACT US ================= */}
+            <Link
+              href="/contact-us"
+              className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap"
+            >
+              {navT("contact")}
+            </Link>
           </div>
 
-          {/* Desktop Language Switcher */}
+          {/* ================= DESKTOP LANGUAGE ================= */}
           <div className="hidden lg:flex items-center">
             <LanguageSwitcher />
           </div>
 
-          {/* Mobile / Tablet Menu Button */}
+          {/* ================= MOBILE / TABLET ================= */}
           <div className="lg:hidden flex items-center gap-2">
             <LanguageSwitcher />
-            <MobileMenuBtn navLinks={navLinks} categories={categories} />
+
+            <MobileMenuBtn
+              navLinks={navLinks}
+              categories={categories}
+            />
           </div>
 
         </div>

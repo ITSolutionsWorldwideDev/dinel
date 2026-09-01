@@ -1,5 +1,6 @@
 {
-  "nav": {
+ "nav": {
+    "home": "Home",
     "about": "About Us",
     "professionals": "Professionals",
     "clients": "Clients",
@@ -9,7 +10,8 @@
     "vacancies": "Vacancies",
     "blogs": "Blogs",
     "myAccount": "My Account",
-    "member": "Member"
+    "member": "Member",
+    "contact": "Contact"
   },
   "header": {
     "badge": "Staffing & Recruitment Partner",
@@ -57,7 +59,7 @@
       "cta": "See how Placement works"
     },
     {
-      "title": "RPO",
+      "title": "Recruitment Process Outsourcing",
       "desc": "You're hiring for more than one role, or you will be over the next few months. We run your recruitment process end-to-end — embedded in your hiring calendar, not a single search.",
       "fit": "You're building out a team, not filling one seat.",
       "cta": "See how RPO works"
@@ -735,17 +737,377 @@
   "address": "Netherlands",
   "phone": "+31 00 000 0000",
   "email": "info@example.com",
-  "copyright": "© {year} Dinel. All rights reserved."
+  "copyright": "© {year} . All rights reserved."
+},
+
+
+
+
+
+  "recruitmentOutsourcing": {
+    "hero": {
+      "badge": "Recruitment Outsourcing",
+      "title": "Recruitment Outsourcing for Dutch Companies",
+      "subtitle": "You need someone specific—a developer, an accountant, a support agent—and you want to hire them yourself, directly, on your own payroll.",
+      "ctaText": "Book a Call",
+      "ctaLink": "/contact"
+    },
+    "sections": {
+      "conceptTitle": "What Recruitment Outsourcing Actually Means",
+      "conceptBody1": "We search, screen, and shortlist candidates against the role you need filled. You interview whoever makes the shortlist. If someone's a fit, you extend the offer and they become your employee—not ours, not a leased worker, yours from day one.",
+      "conceptBody2": "This is different from Payrolling, where we stay the legal employer and the person works for you under our umbrella. Recruitment outsourcing (or recruitment/placement) is a one-time transaction: we do the sourcing work, you do the hiring.",
+      "conceptBody3": "It suits companies who know exactly what role they're filling and want full control over that person going forward—performance reviews, career development, how they fit the team long-term.",
+      "noteTitle": "Quick Note on Names",
+      "noteBody": "Some people call this recruitment/placement instead—same service, different name. No leasing, no shared employment, no ongoing contract with us once the hire is made. You get a candidate, you make an offer, they join your team. Done.",
+      
+      "processTitle": "How It Works",
+      "steps": [
+        { "step": "01", "title": "You tell us what you need", "desc": "Role, seniority, must-have skills, budget range, timeline. The more specific, the faster the shortlist." },
+        { "step": "02", "title": "We search and screen", "desc": "We source candidates from our network and active search, running initial screening (skills, availability, salary) before anyone gets to you." },
+        { "step": "03", "title": "You get a shortlist", "desc": "You review curated CVs and we set up interviews with the ones you want to speak with." },
+        { "step": "04", "title": "You interview and decide", "desc": "We're not in the room for this part unless you want us to be. You run the interviews your way." },
+        { "step": "05", "title": "You make the offer, they join", "desc": "Once you've picked someone, the hire is yours. Contract, onboarding, everything standard employment, no involvement from us after." }
+      ],
+
+      "laborTitle": "What We Handle vs. What Stays With You",
+      "weHandle": [
+        "Sourcing candidates from active networks",
+        "Initial screening & qualification checks",
+        "Coordinating interview logistics smoothly",
+        "Checking references (if included)"
+      ],
+      "youHandle": [
+        "Final interview decisions",
+        "Job offer and compensation negotiations",
+        "Employment contract & direct payroll setup",
+        "Onboarding and long-term management"
+      ],
+      "laborFooter": "There's no shared liability here, no co-employment question to untangle. That's the trade-off versus Payrolling: less flexibility to scale down fast, but a cleaner, simpler employment relationship from the start.",
+
+      "comparisonTitle": "Recruitment Outsourcing vs. Payrolling",
+      "comparisonSubtitle": "Which model fits your current hiring phase?",
+      "rpoTitle": "Recruitment Outsourcing / Placement",
+      "rpoDesc": "If you already know you want this person as a permanent team member and you're set up to employ staff directly (contracts, payroll, the works), recruitment/placement is the more straightforward option. You're not paying an ongoing management fee, and there's no in-between employer.",
+      "payrollTitle": "Payrolling Alternative",
+      "payrollDesc": "If you're not ready to take on direct employment yet—maybe you don't have Dutch payroll infrastructure set up, or you want to test the role before committing—Payrolling is worth a look instead. We stay the legal employer and you can scale without severance conversations.",
+
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        { "question": "How long does a recruitment outsourcing search usually take?", "answer": "Timeline depends on role seniority and how niche the skill set is. Placeholder until we have real fill-time data to share." },
+        { "question": "Is recruitment outsourcing the same as recruitment/placement?", "answer": "Yes—different names, same service. We source and screen candidates, you interview and hire them directly." },
+        { "question": "Do you charge if the hire doesn't work out?", "answer": "Refund/replacement guarantee terms to be confirmed with client before publishing." },
+        { "question": "Can you help with the employment contract once we've picked someone?", "answer": "We can point you toward standard Dutch employment contract templates, but the contract itself is between you and your new hire—we're not the employer of record for these placements." },
+        { "question": "What if none of the shortlisted candidates are right?", "answer": "We go back to sourcing. Confirm whether there's a cap on rounds included before additional fees apply." },
+        { "question": "Do you only place people in the roles listed on your site?", "answer": "Those are our core categories, but if you've got a role outside that list, get in touch—worth a conversation before assuming it's not something we cover." }
+      ],
+
+      "finalCta": {
+        "heading": "Ready to find your next team member?",
+        "description": "Recruitment outsourcing searches usually need some back-and-forth on role specifics anyway, so a call gets to the useful part faster than a form.",
+        "buttonText": "Book a call",
+        "buttonLink": "/contact"
+      }
+    }
+  },
+
+
+
+
+  "recruitmentProcessOutsourcing": {
+    "meta": {
+      "title": "Recruitment Process Outsourcing (RPO) | Staff Outsourcing",
+      "description": "RPO for Dutch companies with ongoing hiring needs. We run your recruitment process across multiple roles sourcing, screening, and pipeline, continuously.",
+      "slug": "/recruitment-process-outsourcing"
+    },
+    "hero": {
+      "badge": "Recruitment Process Outsourcing (RPO)",
+      "title": "Recruitment Process Outsourcing (RPO) for Dutch Companies",
+      "subtitle": "If you're filling one role, you don't need RPO—you need Recruitment/Placement. RPO is for when hiring itself has become a problem: you're opening multiple roles at once, your internal team can't keep up with the pipeline, or you're scaling fast enough that ad-hoc hiring isn't cutting it anymore.",
+      "ctaText": "Book a Call",
+      "ctaLink": "/contact"
+    },
+    "sections": {
+      "conceptTitle": "What RPO Actually Means",
+      "conceptBody1": "Recruitment process outsourcing means we don't just find you one person—we run the hiring process for you, on an ongoing basis, for as long as you need it.",
+      "conceptBody2": "Think of it less as \"fill this vacancy\" and more as \"handle this part of our operation.\" We plug into how you hire—sourcing, screening, interview coordination, sometimes offer management—and run it at whatever volume you need.",
+      "conceptBody3": "With a single placement, you tell us what you need once, we deliver a shortlist, the engagement ends. RPO doesn't work that way. It's a standing arrangement: we act as an extension of your hiring function, working from your requirements on a continuous basis as new roles open up.",
+      "noteTitle": "Recurring vs One-Off Hiring",
+      "noteBody": "That might mean five hires this quarter and two next quarter. It might mean staffing an entire new department. Either way, you're not restarting the conversation every time—we already know your hiring bar, your process, and what \"a good fit\" looks like for your company.",
+
+      "processTitle": "How It Works",
+      "steps": [
+        { "step": "01", "title": "We scope your hiring needs together", "desc": "Not just one role—the pattern. How many hires, over what period, across which functions. [Minimum engagement volume/duration to be confirmed with client before publishing.]" },
+        { "step": "02", "title": "We build the process around your standards", "desc": "Screening criteria, interview stages, what \"yes\" looks like for each role—set once, applied consistently across every hire that comes through." },
+        { "step": "03", "title": "We run sourcing and screening continuously", "desc": "Not a single shortlist—an ongoing pipeline. Candidates get sourced, screened, and queued as roles open, so you're not starting from zero each time." },
+        { "step": "04", "title": "You interview and make hiring decisions", "desc": "Same as Placement—we hand you qualified candidates, you make the call on who joins." },
+        { "step": "05", "title": "We adjust as your needs shift", "desc": "Hiring pace changes. Roles get added or paused. RPO flexes with that instead of requiring a new engagement every time your plan changes." }
+      ],
+
+      "laborTitle": "What We Handle vs. What Stays With You",
+      "weHandle": [
+        "Ongoing sourcing and screening across multiple roles",
+        "Interview coordination and pipeline management",
+        "Depending on scope, parts of the offer process if you want that handed off"
+      ],
+      "youHandle": [
+        "Final hiring decisions",
+        "Employment contracts and onboarding",
+        "How each new hire fits into your team once they're in"
+      ],
+      "laborFooter": "RPO takes more of the process off your plate than a single placement does—that's the point of it. But the actual employment relationship still sits with you, same as Recruitment/Placement. RPO isn't Payrolling; we're not the employer here either way.",
+
+      "comparisonTitle": "RPO vs. Recruitment/Placement: Which Fits You",
+      "comparisonSubtitle": "If you're filling one seat, RPO is overkill—you'd be paying for infrastructure built around volume you don't have.",
+      "rpoTitle": "RPO (Recruitment Process Outsourcing)",
+      "rpoDesc": "RPO earns its cost when hiring becomes a repeated, sustained need—several roles at once, a new team getting built out, or hiring pace that's outstripping what your internal team can manage alone. The honest way to decide: if you can picture needing this again in three months for a different role, RPO probably fits.",
+      "payrollTitle": "Recruitment / Placement Alternative",
+      "payrollDesc": "Placement handles a single hire cleanly, without setting up an ongoing process for something that isn't recurring. If this is a one-off gap to fill, go with Recruitment/Placement instead and revisit RPO if hiring volume picks up.",
+
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        { "question": "What's the difference between RPO and Recruitment/Placement?", "answer": "Placement is a one-time search for one role. RPO is an ongoing hiring process we run for you across multiple roles or a sustained period." },
+        { "question": "Is there a minimum number of hires or length of engagement for RPO?", "answer": "[To be confirmed with client—flagging rather than inventing a threshold.]" },
+        { "question": "Can RPO cover just one department, not the whole company?", "answer": "Yes—RPO scope is usually set around a function or team, not necessarily every hire across the business. Scope gets defined during the initial conversation." },
+        { "question": "Do you become involved in making the final hiring decision?", "answer": "No—same as with any placement, the final call on who joins your team stays with you. We manage the pipeline and process, not the decision." },
+        { "question": "How is RPO priced compared to a single placement?", "answer": "[Pricing model—retainer, per-hire, or hybrid—to be confirmed before this goes live.]" }
+      ],
+
+      "finalCta": {
+        "heading": "Ready to scale your hiring process?",
+        "description": "RPO scoping needs a real conversation—role volume, timeline, current hiring pain points—so a form alone won't capture what's needed.",
+        "buttonText": "Book a call",
+        "buttonLink": "/contact"
+      }
+    }
+  },
+
+"temporaryStaffingServices": {
+    "meta": {
+      "title": "Temporary Staffing Services Netherlands | Staff Outsourcing",
+      "description": "Flexible temporary staffing for Dutch companies. We employ the person, you direct the work, scale up or down without a termination process.",
+      "slug": "/temporary-staffing"
+    },
+    "hero": {
+      "badge": "Temporary Staffing Services",
+      "title": "Temporary Staffing Services for Dutch Companies",
+      "subtitle": "Sometimes you don't need a permanent hire. You need someone for three months, or through a busy season, or to cover a role while you figure out if it needs to be permanent at all. That's what temporary staffing is for—extra hands, without the long-term commitment of a full hire.",
+      "ctaText": "Book a Call",
+      "ctaLink": "/contact"
+    },
+    "sections": {
+      "conceptTitle": "What Temporary Staffing Actually Means",
+      "conceptBody1": "We source, screen, and place someone with your team—but unlike Recruitment/Placement, they stay on our payroll, not yours. You get their day-to-day work; we handle the employment side: contracts, payroll, the administrative parts of having staff.",
+      "conceptBody2": "This matters most when your need has a shape to it—a defined project, a seasonal spike, covering parental leave, testing whether a role is even needed long-term before you commit to hiring for it.",
+      "conceptBody3": "If you already know this is a permanent role you want filled once and kept, this isn't the right page—go with Recruitment/Placement instead. Temporary staffing is built for flexibility, not for someone you're planning to keep for years.",
+      "noteTitle": "Employer of Record Control",
+      "noteBody": "We employ the person. You direct their work. When the project ends or your need shifts, the arrangement ends without you managing a termination process because you were never their employer to begin with.",
+
+      "processTitle": "How It Works",
+      "steps": [
+        { "step": "01", "title": "You tell us the shape of the need", "desc": "Role, duration (even roughly), start date, whether it might extend or convert to permanent later." },
+        { "step": "02", "title": "We source and place someone suited to a temporary arrangement", "desc": "Not every candidate wants temp work—we screen specifically for people who are comfortable with defined-length engagements." },
+        { "step": "03", "title": "They start working with your team", "desc": "Day-to-day, they work under your direction, same as any team member—the difference is who's issuing their paycheck and holding the employment contract." },
+        { "step": "04", "title": "We handle the employment admin", "desc": "Payroll, contract, statutory obligations—off your plate entirely." },
+        { "step": "05", "title": "The arrangement ends, extends, or converts", "desc": "When the need ends, so does the placement, cleanly. If you want to extend it or bring the person on permanently instead, that's a conversation, not a legal process." }
+      ],
+
+      "laborTitle": "What We Handle vs. What Stays With You",
+      "weHandle": [
+        "Employment contract, payroll, and tax withholding",
+        "Statutory leave and benefits administration",
+        "Acting as the legal employer of record for the duration of the placement"
+      ],
+      "youHandle": [
+        "Day-to-day direction of the person's work",
+        "Performance feedback",
+        "Deciding when the engagement ends or whether it should convert to something longer"
+      ],
+      "laborFooter": "This is the flexibility trade Payrolling and Temporary Staffing share—you're not carrying employer liability for someone you might only need for a few months.",
+
+      "comparisonTitle": "Temporary Staffing vs. Recruitment/Placement",
+      "comparisonSubtitle": "Which model fits your current hiring phase?",
+      "rpoTitle": "Temporary Staffing",
+      "rpoDesc": "If your need is defined by time or scope rather than permanence—a project, a leave cover, testing demand—Temporary Staffing avoids the mismatch of hiring someone permanently. A rough test: if you'd be upset to lose this person after six months, you probably want Placement. If six months was the plan all along, Temporary Staffing fits better.",
+      "payrollTitle": "Recruitment / Placement Alternative",
+      "payrollDesc": "If you know exactly what role you're filling and you want that person as a direct, permanent hire from day one, Placement is simpler—no ongoing relationship with us once the introduction's made, and the person is fully yours from the start.",
+
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        { "question": "What's the minimum length for a temporary placement?", "answer": "[To be confirmed with client—flagging rather than inventing a number.]" },
+        { "question": "Can a temporary placement convert to a permanent hire later?", "answer": "Yes—that's a common path. [Conversion terms and any associated fee structure to be confirmed before publishing.]" },
+        { "question": "Who's legally responsible for this person while they're placed with us?", "answer": "We are—we're the employer of record for the duration of the placement. You direct their work, but the employment relationship, payroll, and statutory obligations sit with us." },
+        { "question": "Is Temporary Staffing the same as Payrolling?", "answer": "Closely related—both involve us as the legal employer. Temporary Staffing typically implies a defined, shorter-term need; Payrolling can run longer-term or indefinitely." },
+        { "question": "Can we request the same person again for a future project?", "answer": "[To be confirmed—depends on availability and whether that's something actively offered.]" }
+      ],
+
+      "finalCta": {
+        "heading": "Need flexible support for your team?",
+        "description": "Temporary needs often come with timeline pressure—a call gets things moving faster than a form-and-wait cycle.",
+        "buttonText": "Book a call",
+        "buttonLink": "/contact"
+      }
+    }
+  },
+
+
+
+  "payrollingServices": {
+    "meta": {
+      "title": "Payrolling Services for Dutch Companies | Staff Outsourcing",
+      "description": "We become the legal employer, you keep full control of the work. Payroll outsourcing without the compliance and admin burden.",
+      "slug": "/payrolling"
+    },
+    "hero": {
+      "badge": "Payrolling Services",
+      "title": "Payrolling for Dutch Companies",
+      "subtitle": "You've found someone you want working for your company—maybe through your own search, maybe through us—but you don't want to become their legal employer. Payrolling solves that: we hire the person on paper, you manage them day to day, and all the employer obligations sit with us instead of you.",
+      "ctaText": "Book a Call",
+      "ctaLink": "/contact"
+    },
+    "sections": {
+      "conceptTitle": "What Payrolling Actually Means",
+      "conceptBody1": "We become the legal employer of record. Contract, payroll, tax withholding, statutory leave, pension contributions where applicable—all of it runs through us. You get full operational control: this person works on your team, follows your direction, does the job you need done.",
+      "conceptBody2": "What you don't take on is the administrative and legal weight of Dutch employment law. This is different from Recruitment/Placement, where the person becomes your direct employee outright.",
+      "conceptBody3": "Companies use this for a few different reasons: not having Dutch payroll infrastructure set up yet, wanting flexibility to scale headcount without the complexity of hiring and terminating directly, or simply preferring not to carry employer liability.",
+      "noteTitle": "Duration and Flexibility",
+      "noteBody": "It's not temp work in the sense of \"short-term cover.\" Payrolling can run indefinitely—someone can work with your team for years under this arrangement if that's what suits you. The difference from a direct hire isn't duration; it's who's legally responsible.",
+
+      "processTitle": "How It Works",
+      "steps": [
+        { "step": "01", "title": "You identify who's going to work with you", "desc": "Either someone you've already found, or someone we help source—Payrolling works either way." },
+        { "step": "02", "title": "We set up the employment", "desc": "Contract, payroll registration, compliance with Dutch labor law handled on our end before the person starts." },
+        { "step": "03", "title": "They join your team and work under your direction", "desc": "Day-to-day management, tasks, performance—all yours. We're not involved in how the work actually gets done." },
+        { "step": "04", "title": "We run payroll and handle employer obligations continuously", "desc": "Salary payments, tax withholding, statutory benefits, and ongoing compliance for as long as the arrangement runs." },
+        { "step": "05", "title": "The arrangement continues, adjusts, or ends based on your needs", "desc": "No fixed end date required. Scale down, extend, or convert to direct employment later if that becomes the right move." }
+      ],
+
+      "laborTitle": "What We Handle vs. What Stays With You",
+      "weHandle": [
+        "Employment contract, payroll processing, and tax/social security withholding",
+        "Statutory leave, benefits, and pension contributions where applicable",
+        "Ongoing compliance with Dutch employment law as the legal employer of record"
+      ],
+      "youHandle": [
+        "Day-to-day direction of the work and performance management",
+        "Deciding whether the arrangement continues, scales, or ends",
+        "Operational integration of the team member"
+      ],
+      "laborFooter": "The appeal here is straightforward: you get the person's work without taking on the legal and administrative weight of being their employer.",
+
+      "comparisonTitle": "Payrolling vs. Recruitment/Placement",
+      "comparisonSubtitle": "Which path fits your current company setup?",
+      "rpoTitle": "Payrolling",
+      "rpoDesc": "If you'd rather not take on direct employer liability, don't have Dutch payroll set up, or want the flexibility to adjust headcount without a termination process, Payrolling carries that weight for you. It costs more over time than a one-off placement fee, but buys flexibility and removes the administrative burden.",
+      "payrollTitle": "Recruitment / Placement Alternative",
+      "payrollDesc": "If you want this person as a direct employee from day one—your contract, your payroll, full long-term investment—Placement is the more direct route. No ongoing fee to us once the hire is made.",
+
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        { "question": "Is there a minimum duration for a Payrolling arrangement?", "answer": "[To be confirmed—flagging rather than inventing a number.]" },
+        { "question": "How is Payrolling priced?", "answer": "[Pricing structure—management fee on top of salary, flat rate, etc.—to be confirmed before this goes live.]" },
+        { "question": "Can we convert a Payrolling arrangement to a direct hire later?", "answer": "Yes, that's a common path. [Specific terms and any conversion fee to be confirmed with client.]" },
+        { "question": "What's the difference between Payrolling and Temporary Staffing?", "answer": "Temporary Staffing covers defined, shorter-term needs; Payrolling is built for longer or indefinite arrangements where you still don't want direct employer liability." },
+        { "question": "Who's liable if something goes wrong with this person's employment?", "answer": "As the legal employer of record, that liability sits with us, not with you—including disputes or dismissal issues." }
+      ],
+
+      "finalCta": {
+        "heading": "Ready to outsource your payroll administration?",
+        "description": "Payrolling decisions usually hinge on cost structure and compliance questions that are easier to walk through live than over a form.",
+        "buttonText": "Book a call",
+        "buttonLink": "/contact"
+      }
+    }
+  },
+
+
+
+
+
+  "common": {
+    "heroBadge": "Get in Touch",
+    "heroTitle": "Tell us what you're hiring for",
+    "heroSubtitle": "Whether you know exactly which role you need or you're still figuring out placement vs. payrolling — start here. We'll ask a few questions and point you to the right next step.",
+    "waysTitle": "Two ways to reach us",
+    "callTitle": "Book a call",
+    "callDesc": "For anything that needs a real conversation — a new role, multiple hires, or you're not sure which model fits.",
+    "callBtn": "Schedule a Call",
+    "whatsappTitle": "WhatsApp",
+    "whatsappDesc": "For quick questions — timeline, whether we cover a specific role, anything that doesn't need a full call.",
+    "whatsappBtn": "Chat on WhatsApp",
+    "formTitle": "Send us a message",
+    "nameLabel": "Name",
+    "companyLabel": "Company",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone (optional)",
+    "hiringForLabel": "What are you hiring for?",
+    "categoryLabel": "Service Model",
+    "cat1": "Recruitment / Placement",
+    "cat2": "Temporary Staffing / Payrolling",
+    "cat3": "Not sure yet",
+    "messageLabel": "Message (optional)",
+    "submitBtn": "Submit Inquiry",
+    "detailsTitle": "Other details",
+    "emailField": "Email",
+    "phoneField": "Phone",
+    "addressField": "Office address",
+    "kvkField": "KvK number",
+    "responseField": "Response time",
+    "responseVal": "We respond within one business day",
+    "reassurance": "Not sure which service you need? That's what the call is for — we'll sort it out together."
+  },
+
+
+
+  "ourApproach": {
+  "heroBadge": "Our Approach",
+  "heroTitle": "We don't sell one model. We figure out which one fits.",
+  "heroSubtitle": "A lot of staffing firms have a model they push because it's the one they're built around. We run two — recruitment/placement and payrolling — and the first real part of our job is figuring out which one actually solves your problem, not which one we'd rather sell you.",
+
+  "thinkingBadge": "How We Think About It",
+  "thinkingTitle": "The model comes second. The problem comes first.",
+
+  "thinking": {
+    "item1Title": "The problem comes first",
+    "item1Desc": "Before we talk roles, we ask what kind of gap you're actually filling. A permanent seat on your team needs a different approach than three months of coverage during a busy stretch.",
+
+    "item2Title": "We'll tell you when we're not the right fit",
+    "item2Desc": "If you need offshore staffing for cost reasons, or compliance advisory for setting up a Dutch entity, we're not that. We'd rather say so on the first call than take the work and underdeliver.",
+
+    "item3Title": "Coverage over specialization — on purpose",
+    "item3Desc": "We place across six domains, not one. That's deliberate. Most companies don't have a single hiring need at a single point in time. The upside is that you don't need five vendors for five different roles."
+  },
+
+  "workBadge": "How That Shows Up in the Work",
+  "workTitle": "What this actually looks like day to day",
+  "workSubtitle": "Our approach isn't just something we say. It shapes how we work with you from the first conversation onward.",
+
+  "work": {
+    "item1Title": "We vet before we shortlist, not after.",
+    "item1Desc": "We focus on understanding whether a candidate actually fits the role before putting them in front of you.",
+
+    "item2Title": "You get a shortlist, not a stack of resumes.",
+    "item2Desc": "We narrow the field before you spend time reviewing candidates, so your team can focus on the people worth meeting.",
+
+    "item3Title": "One point of contact, even across roles.",
+    "item3Desc": "If you're hiring a developer this quarter and an admin assistant next quarter, you don't have to re-explain your company from scratch.",
+
+    "item4Title": "We stay involved after placement.",
+    "item4Desc": "Our relationship doesn't stop at contract signature. We stay connected so there is continuity beyond the initial placement."
+  },
+
+  "linesBadge": "Where We Draw the Line",
+  "linesTitle": "What we won't do",
+
+  "lines": {
+    "item1": "We won't push payrolling when a role is clearly a permanent hire, just because it's a longer-running contract for us.",
+    "item2": "We won't oversell a shortlist. If we don't have a strong candidate yet, we'll say that instead of sending a weak one just to hit a deadline.",
+    "item3": "We won't guarantee outcomes we can't stand behind. We'd rather be clear about what we can realistically deliver than make promises we can't keep."
+  },
+
+  "ctaTitle": "Tell us what you're trying to solve",
+  "ctaSubtitle": "Not sure which staffing model fits? Tell us what you need and we'll help you figure out the right next step.",
+  "ctaPrimary": "Book a Call",
+  "ctaSecondary": "WhatsApp"
 }
 }
-
-
-
-
-
-
-
-
-
-
 

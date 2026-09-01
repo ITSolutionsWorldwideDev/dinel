@@ -28,11 +28,20 @@ const MobileMenuBtn = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
+  const services = [
+    { label: "IT & Development", href: "/it-development" },
+    { label: "Design Services", href: "/design-services" },
+    { label: "Marketing & Analytics", href: "/marketing-analytics" },
+    { label: "Administration & Business Support", href: "/admin-business-support" },
+    { label: "Finance & Accounting", href: "/finance-accounting" },
+    { label: "Travel & Reservations", href: "/travel-reservations" },
+  ];
+
   return (
     <>
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="xl:hidden text-[#0d2b33] p-2 focus:outline-none"
+        className="xl:hidden text-[#0d2b33] p-2 focus:outline-none relative z-[10000]"
       >
         {mobileMenuOpen ? (
           <RxCross1 className="w-6 h-6" />
@@ -40,27 +49,28 @@ const MobileMenuBtn = ({
           <AiOutlineMenu className="w-7 h-7 font-bold" />
         )}
       </button>
+
       {mobileMenuOpen &&
         createPortal(
-          <div className="xl:hidden p-6 absolute z-100 top-20 bg-black/95 inset-x-0 mx-auto w-full h-fit overflow-y-auto max-h-[85vh] shadow-2xl">
-            <div className="flex flex-col space-y-2">
+          <div className="xl:hidden fixed inset-0 top-[72px] z-[9999] bg-black/95 p-6 overflow-y-auto shadow-2xl flex flex-col justify-between">
+            <div className="flex flex-col space-y-2 pb-10">
               
-              {/* First Link (About) */}
+              {/* First Link */}
               {navLinks[0] && (
                 <Link
                   href={navLinks[0].href || "#"}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white text-sm hover:text-orange-500 transition-colors duration-200 py-2 border-b border-white/20"
+                  className="text-white text-base font-medium hover:text-[#f2c40d] transition-colors py-3 border-b border-white/20"
                 >
                   {navLinks[0].name}
                 </Link>
               )}
 
-              {/* Services Dropdown Accordion */}
+              {/* Services Dropdown */}
               <div className="py-2 border-b border-white/20">
                 <button
                   onClick={() => setServicesOpen(!servicesOpen)}
-                  className="w-full flex items-center justify-between text-white text-sm py-1 hover:text-orange-500 transition-colors"
+                  className="w-full flex items-center justify-between text-white text-base font-medium py-1 hover:text-[#f2c40d] transition-colors"
                 >
                   <span>Services</span>
                   <FaChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
@@ -68,22 +78,41 @@ const MobileMenuBtn = ({
                 
                 {servicesOpen && (
                   <div className="flex flex-col space-y-2 pl-4 mt-2">
-                    {categories.map((cat, idx) => (
+                    {services.map((service) => (
                       <Link
-                        key={idx}
-                        href={cat.href}
+                        key={service.href}
+                        href={service.href}
                         onClick={() => {
                           setMobileMenuOpen(false);
                           setServicesOpen(false);
                         }}
-                        className="text-gray-300 text-sm hover:text-orange-500 transition-colors duration-200 py-1.5"
+                        className="text-gray-300 text-sm hover:text-[#f2c40d] transition-colors py-2"
                       >
-                        {cat.name}
+                        {service.label}
                       </Link>
                     ))}
                   </div>
                 )}
               </div>
+
+              {/* Categories */}
+              {categories && categories.length > 0 && (
+                <div className="py-2 border-b border-white/20">
+                  <span className="text-white text-sm font-bold block mb-2">Categories</span>
+                  <div className="flex flex-col space-y-2 pl-4">
+                    {categories.map((cat, idx) => (
+                      <Link
+                        key={idx}
+                        href={cat.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="text-gray-300 text-sm hover:text-[#f2c40d] transition-colors py-2"
+                      >
+                        {cat.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Remaining Links */}
               {navLinks.slice(1).map((link) => (
@@ -91,18 +120,18 @@ const MobileMenuBtn = ({
                   key={link.name}
                   href={link.href ? link.href : "#"}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white text-sm hover:text-orange-500 transition-colors duration-200 py-2 border-b border-white/20"
+                  className="text-white text-base font-medium hover:text-[#f2c40d] transition-colors py-3 border-b border-white/20"
                 >
                   {link.name}
                 </Link>
               ))}
             </div>
 
-            <div className="mt-6">
+            <div className="mt-auto pt-6 pb-8">
               <MobileMenuActionBtn />
             </div>
           </div>,
-          document.body,
+          document.body
         )}
     </>
   );

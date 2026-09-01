@@ -44,7 +44,7 @@ export default function Dashboard() {
           <div className="welcome-wrap mb-6">
             <div className=" d-flex align-items-center justify-content-between flex-wrap">
               <div className="mb-3">
-                <h2 className="mb-1 text-white">Welcome Back, Dineller</h2>
+                <h2 className="mb-1 text-white">Welcome Back, </h2>
                 <p className="text-light">
                   14 New Companies Subscribed Today !!!
                 </p>

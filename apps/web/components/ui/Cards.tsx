@@ -26,7 +26,7 @@ interface CardsProps {
 export default function Cards({ data }: CardsProps) {
   // const sections = [
   //   {
-  //     title: "The Dineler Community",
+  //     title: "The  Community",
   //     subtitle: "You are not alone",
   //     bullets: [
   //       "Share knowledge and experience",
@@ -34,7 +34,7 @@ export default function Cards({ data }: CardsProps) {
   //       "Believe in quality, trust and commitment",
   //     ],
   //     description:
-  //       "Being a Dineler means belonging to a community that values people as much as technology.",
+  //       "Being us means belonging to a community that values people as much as technology.",
   //     image: "/assets/client/7add9bee2ec8c7a8546d18e75f20199ecc3208ce.jpg",
   //   },
   //   {

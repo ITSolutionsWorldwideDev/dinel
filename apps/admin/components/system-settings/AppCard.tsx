@@ -20,11 +20,11 @@ export default function AppCard() {
 
       <div className="p-4 pt-0">
         <h3 className="font-semibold text-sm line-clamp-2 mb-2">
-          Dinel LinkedIn Extension
+           LinkedIn Extension
         </h3>
 
         <p className="text-xs text-gray-500 line-clamp-2 mb-3">
-          Import for LinkedIn profiles into Dinel recruitment platform.
+          Import for LinkedIn profiles into  recruitment platform.
         </p>
 
         <div className="flex flex-col gap-2 text-xs">

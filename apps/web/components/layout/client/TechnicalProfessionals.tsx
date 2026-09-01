@@ -35,7 +35,7 @@ const TechnicalProfessionals = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           {/* <Link href={'/contact-us'}>
           <button className="bg-white text-[#0A7CD8] px-6 py-3 font-medium  shadow hover:bg-gray-100 transition cursor-pointer">
-            Contact Dinel
+            Contact us
           </button>
           </Link> */}
 

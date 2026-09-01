@@ -79,7 +79,7 @@ export default function SigninComponent() {
                         )}
 
                         <h4 className="text-[16px]">
-                          Access the Dinel panel using your email and passcode.
+                          Access the panel using your email and passcode.
                         </h4>
                       </div>
                       <div className="mb-4">
@@ -126,7 +126,7 @@ export default function SigninComponent() {
                       </div>
 
                       <div className="my-6 flex justify-center items-center copyright-text">
-                        <p>Copyright &copy; 2026 Dinel</p>
+                        <p>Copyright &copy; </p>
                       </div>
                     </div>
                   </form>

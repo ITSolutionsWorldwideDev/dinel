@@ -8,7 +8,7 @@ import WhyDutchCompanies from "./WhyDutchCompanies";
 import HowItWorks from "./HowItWorks";
 import FaqSection from "./FaqSection";
 import Impact from "./Impact";
-
+import { getTranslations, getLocale } from "next-intl/server";
 const Homei = () => {
   return (
     <div className="bg-gray-50">

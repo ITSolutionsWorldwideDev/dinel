@@ -24,7 +24,7 @@ export default function CategoryHero({ data }: { data: any }) {
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
-            href={data?.primaryCtaLink || "/contact-us"}
+            href="/contact-us"
             className="inline-flex items-center gap-2.5 bg-[#f2c40d] hover:bg-white text-[#0d2b33] px-8 py-4 rounded-full font-extrabold shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 text-sm tracking-wide"
           >
             {data?.primaryCtaText || "Get Started"}{" "}
@@ -32,7 +32,7 @@ export default function CategoryHero({ data }: { data: any }) {
           </a>
 
           <a
-            href={data?.secondaryCtaLink || "/vacancies"}
+            href="/contact-us"
             className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white px-8 py-4 rounded-full font-bold shadow-sm transition-all duration-300 text-sm tracking-wide backdrop-blur-sm"
           >
             {data?.secondaryCtaText || "Explore Vacancies"}
