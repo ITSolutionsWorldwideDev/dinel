@@ -17,8 +17,8 @@ const HowItWorks = async () => {
   const t = await getTranslations("howItWorks");
   const steps = t.raw("steps") as Step[];
 
-return (
-    <section className="bg-white relative overflow-hidden py-20 md:py-28 w-full">
+  return (
+    <section className="bg-white relative overflow-hidden pt-8 pb-8 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-12">
 
         <div className="text-center max-w-2xl mx-auto mb-16">

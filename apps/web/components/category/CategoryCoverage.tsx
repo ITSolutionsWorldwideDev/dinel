@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CategoryCoverage({ title, body }: { title: string; body: string }) {
   return (
-    <section className="w-full bg-gradient-to-b from-white via-[#f7fafa] to-white py-24 overflow-hidden">
+    <section className="w-full bg-gradient-to-b from-white via-[#f7fafa] to-white py-0 overflow-hidden">
       <div className="w-full px-4 sm:px-6 lg:px-16 max-w-[1500px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
