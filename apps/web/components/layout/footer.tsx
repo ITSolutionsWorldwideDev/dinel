@@ -229,14 +229,14 @@ export default async function Footer() {
 
               {/* Email */}
               <li className="flex items-center gap-3 text-sm text-white/70">
-                <FaEnvelope className="w-3.5 h-3.5 text-[#f2c40d] shrink-0" />
-                <a
-                  href="mailto:info@example.com"
-                  className="hover:text-[#f2c40d] transition-colors whitespace-nowrap"
-                >
-                  info@example.com
-                </a>
-              </li>
+  <FaEnvelope className="w-3.5 h-3.5 text-[#f2c40d] shrink-0" />
+  <a
+    href="mailto:info@staffoutsourcing.nl"
+    className="hover:text-[#f2c40d] transition-colors whitespace-nowrap"
+  >
+    info@staffoutsourcing.nl
+  </a>
+</li>
             </ul>
           </div>
 

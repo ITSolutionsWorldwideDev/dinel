@@ -21,8 +21,8 @@
     "titleLine1": "Hire staff in the Netherlands",
     "titleLine2": "with staff outsourcing",
     "description": "Two ways to grow your team: <b>Payrolling</b> (we employ, you lease) or <b>RPO</b> (we recruit, you hire directly). Built exclusively for Dutch companies using EU-based talent across IT, digital, admin, finance, and travel. You choose the model, we handle the hiring.",
-    "ctaPrimary": "Become a Call",
-    "ctaSecondary": "Questions first? WhatsApp us →"
+    "ctaPrimary": "Get in Touch",
+    "ctaSecondary": "About US"
   },
 
 
@@ -39,9 +39,9 @@
 
 "industryWeWork": {
   "heading": "The Industries we work in",
-  "infrastructure": "Infrastructure",
-  "energy": "Energy",
-  "oilGas": "Oil & Gas"
+  "infrastructure": "Engineering",
+  "energy": "Supply Chain",
+  "oilGas": "IT Services"
 },
 
 
@@ -218,7 +218,7 @@
   "heading": "Tell us the role. We'll tell you the right way to hire for it",
   "subheading": "Become a Staff Outsourcing Professional and work on projects that shape the future. With your expertise and our guidance, you can grow, contribute and make a real difference.",
   "ctaPrimary": "Book a call",
-  "ctaSecondary": "WhatsApp us →"
+  "ctaSecondary": "Contact us →"
 },
 
 "actionBtns": {
@@ -242,7 +242,7 @@
       "subhead": "Front-end to AI engineering — recruit developers directly, or lease payrolled IT staff. Ten roles, one point of contact.",
       "primaryCtaText": "Book a call →",
       "primaryCtaLink": "/en/contact",
-      "secondaryCtaText": "Questions first? WhatsApp us →",
+      "secondaryCtaText": "Contact Us",
       "secondaryCtaLink": "https://wa.me/[placeholder]"
     },
     "sections": {
@@ -329,8 +329,8 @@
         "headline": "Building a dev team, or filling one technical gap? Tell us the role.",
         "primaryCtaText": "Book a call →",
         "primaryCtaLink": "/en/contact",
-        "secondaryCtaText": "Or WhatsApp us →",
-        "secondaryCtaLink": "https://wa.me/[placeholder]"
+        "secondaryCtaText": "Contact Us →",
+        "secondaryCtaLink": "/en/contact"
       }
     }
   },
@@ -346,8 +346,8 @@
       "subhead": "Web design and graphic design — recruit directly, or lease payrolled design staff for ongoing or project work.",
       "primaryCtaText": "Book a call →",
       "primaryCtaLink": "/en/contact",
-      "secondaryCtaText": "Questions first? WhatsApp us →",
-      "secondaryCtaLink": "https://wa.me/[placeholder]"
+      "secondaryCtaText": "Contact Us",
+      "secondaryCtaLink": "/en/contact"
     },
     "sections": {
       "coverageTitle": "What this category covers",
@@ -391,8 +391,8 @@
         "headline": "Building a website, or need ongoing design work? Tell us the role.",
         "primaryCtaText": "Book a call →",
         "primaryCtaLink": "/en/contact",
-        "secondaryCtaText": "Or WhatsApp us →",
-        "secondaryCtaLink": "https://wa.me/[placeholder]"
+        "secondaryCtaText": "Contact Us →",
+        "secondaryCtaLink": "/en/contact"
       }
     }
   },
@@ -410,8 +410,8 @@
       "subhead": "From running your channels to reading what's working — recruit directly, or lease payrolled marketing and analytics staff.",
       "primaryCtaText": "Book a call →",
       "primaryCtaLink": "/en/contact",
-      "secondaryCtaText": "Questions first? WhatsApp us →",
-      "secondaryCtaLink": "https://wa.me/[placeholder]"
+      "secondaryCtaText": "Contact Us",
+      "secondaryCtaLink": "/en/contact"
     },
     "sections": {
       "coverageTitle": "What this category covers",
@@ -477,8 +477,8 @@
         "headline": "Need someone running channels, or someone reading the numbers? Tell us the role.",
         "primaryCtaText": "Book a call →",
         "primaryCtaLink": "/en/contact",
-        "secondaryCtaText": "Or WhatsApp us →",
-        "secondaryCtaLink": "https://wa.me/[placeholder]"
+        "secondaryCtaText": "Contact Us →",
+        "secondaryCtaLink": "/en/contact"
       }
     }
   },
@@ -495,8 +495,8 @@
       "subhead": "Virtual assistants, customer support, data entry and HR admin — recruit directly, or lease payrolled staff for flexible headcount.",
       "primaryCtaText": "Book a call →",
       "primaryCtaLink": "/en/contact",
-      "secondaryCtaText": "Questions first? WhatsApp us →",
-      "secondaryCtaLink": "https://wa.me/[placeholder]"
+      "secondaryCtaText": "Contact Us",
+      "secondaryCtaLink": "/en/contact"
     },
     "sections": {
       "coverageTitle": "What this category covers",
@@ -562,8 +562,8 @@
         "headline": "Need day-to-day support handled, without building a department for it? Tell us the role.",
         "primaryCtaText": "Book a call →",
         "primaryCtaLink": "/en/contact",
-        "secondaryCtaText": "Or WhatsApp us →",
-        "secondaryCtaLink": "https://wa.me/[placeholder]"
+        "secondaryCtaText": "Contact Us →",
+        "secondaryCtaLink": "/en/contact"
       }
     }
   },
@@ -582,8 +582,8 @@
       "subhead": "Bookkeeping, financial admin and reporting — recruit directly, or lease payrolled finance staff for ongoing or seasonal work.",
       "primaryCtaText": "Book a call →",
       "primaryCtaLink": "/en/contact",
-      "secondaryCtaText": "Questions first? WhatsApp us →",
-      "secondaryCtaLink": "https://wa.me/[placeholder]"
+      "secondaryCtaText": "Contact Us",
+      "secondaryCtaLink": "/en/contact"
     },
     "sections": {
       "coverageTitle": "What this category covers",
@@ -634,8 +634,8 @@
         "headline": "Need the books handled, or extra capacity around a busy period? Tell us the role.",
         "primaryCtaText": "Book a call →",
         "primaryCtaLink": "/en/contact",
-        "secondaryCtaText": "Or WhatsApp us →",
-        "secondaryCtaLink": "https://wa.me/[placeholder]"
+        "secondaryCtaText": "Contact Us →",
+        "secondaryCtaLink": "/en/contact"
       }
     }
   },
@@ -654,8 +654,8 @@
       "subhead": "Booking, reservations and customer service for travel businesses — recruit directly, or lease payrolled staff for peak-season demand.",
       "primaryCtaText": "Book a call →",
       "primaryCtaLink": "/en/contact",
-      "secondaryCtaText": "Questions first? WhatsApp us →",
-      "secondaryCtaLink": "https://wa.me/[placeholder]"
+      "secondaryCtaText": "Contact Us",
+      "secondaryCtaLink": "/en/contact"
     },
     "sections": {
       "coverageTitle": "What this category covers",
@@ -711,8 +711,8 @@
         "headline": "Need seasonal booking capacity, or an ongoing travel advisor? Tell us the role.",
         "primaryCtaText": "Book a call →",
         "primaryCtaLink": "/en/contact",
-        "secondaryCtaText": "Or WhatsApp us →",
-        "secondaryCtaLink": "https://wa.me/[placeholder]"
+        "secondaryCtaText": "Contact Us →",
+        "secondaryCtaLink": "/en/contact"
       }
     }
   },
@@ -1033,9 +1033,9 @@
     "callTitle": "Book a call",
     "callDesc": "For anything that needs a real conversation — a new role, multiple hires, or you're not sure which model fits.",
     "callBtn": "Schedule a Call",
-    "whatsappTitle": "WhatsApp",
+    "whatsappTitle": "Contact",
     "whatsappDesc": "For quick questions — timeline, whether we cover a specific role, anything that doesn't need a full call.",
-    "whatsappBtn": "Chat on WhatsApp",
+    "whatsappBtn": "Chat with us",
     "formTitle": "Send us a message",
     "nameLabel": "Name",
     "companyLabel": "Company",
@@ -1109,7 +1109,7 @@
   "ctaTitle": "Tell us what you're trying to solve",
   "ctaSubtitle": "Not sure which staffing model fits? Tell us what you need and we'll help you figure out the right next step.",
   "ctaPrimary": "Book a Call",
-  "ctaSecondary": "WhatsApp"
+  "ctaSecondary": "Contact Us"
 }
 }
 

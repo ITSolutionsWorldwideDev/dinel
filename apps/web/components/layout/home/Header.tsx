@@ -52,7 +52,7 @@ export default async function Header() {
             </Link>
 
             <Link
-              href="/contact-us"
+              href="/our-approach"
               className="inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md px-8 py-4 text-sm font-semibold transition-all rounded-full shadow-lg"
             >
               {t("ctaSecondary")}

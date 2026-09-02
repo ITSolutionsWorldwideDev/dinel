@@ -18,23 +18,21 @@ export default function IndustryWeWork() {
       id: 1,
       name: t("infrastructure"),
       icon: "/assets/home/Group (5).png",
-      href: "vacancies/infastructure",
-      description: "Explore robust infrastructure projects, building foundations for modern communities and long-term economic development.",
+      href: "",
+      description: "Driving innovation and technical excellence across complex structural, mechanical, and industrial engineering projects.",
     },
     {
       id: 2,
       name: t("energy"),
       icon: "/assets/home/Group (6).png",
-      href: "vacancies/energy",
-      description: "Powering the future through sustainable energy initiatives, grid modernizations, and renewable power innovations.",
-    },
+      href: "",
+description: "Optimizing global logistics, warehouse operations, and inventory management for seamless flow and operational efficiency.",    },
     {
       id: 3,
       name: t("oilGas"),
       icon: "/assets/home/Group (7).png",
-      href: "vacancies/oil-gas",
-      description: "Advanced engineering solutions driving operational excellence, extraction efficiency, and safety across oil and gas sectors.",
-    },
+      href: "",
+description: "Empowering digital transformation through robust software solutions, cloud infrastructure, and advanced technical support.",    },
   ];
 
   const [filters, setFilters] = useState<JobFilters>({

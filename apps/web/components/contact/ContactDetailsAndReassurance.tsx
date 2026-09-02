@@ -10,11 +10,11 @@ export default async function ContactDetailsAndReassurance() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
           <div>
             <span className="font-bold text-[#1a4550] block text-xs uppercase tracking-wider">{t("emailField")}</span>
-            <span className="text-gray-600">info@examplegroup.com</span>
+            <span className="text-gray-600">info@staffoutsourcing.nl</span>
           </div>
           <div>
             <span className="font-bold text-[#1a4550] block text-xs uppercase tracking-wider">{t("phoneField")}</span>
-            <span className="text-gray-600">+31 (0) 20 000 0000</span>
+            <span className="text-gray-600">+31 (0) 00 000 0000</span>
           </div>
           <div>
             <span className="font-bold text-[#1a4550] block text-xs uppercase tracking-wider">{t("kvkField")}</span>
