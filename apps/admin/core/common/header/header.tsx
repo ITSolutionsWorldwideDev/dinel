@@ -419,7 +419,7 @@ export default function Header() {
               <Link href="/email">
                 {/* <i data-feather="mail" /> */}
                 <i className="ti ti-mail"></i>
-                <span className="badge rounded-pill">1</span>
+                
               </Link>
             </li>
             {/* Notifications */}

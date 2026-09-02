@@ -24,9 +24,7 @@ export default async function Header() {
 
       <div className="relative z-10 w-full px-4 sm:px-6 md:px-12 lg:px-16 container mx-auto">
         <div className="w-full max-w-5xl mx-auto text-center">
-          <span className="text-xs uppercase tracking-[0.2em] font-extrabold text-[#1a4550] bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full inline-block mb-6 border border-white/30 shadow-lg">
-            ✨ {t("badge")}
-          </span>
+          
 
           <h2 className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight drop-shadow-xl">
             {t("titleLine1")}{" "}
