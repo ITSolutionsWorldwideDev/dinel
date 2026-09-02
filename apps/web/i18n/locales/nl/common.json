@@ -20,8 +20,8 @@
     "titleLine1": "Werf personeel in Nederland",
     "titleLine2": "met staff outsourcing",
     "description": "Twee manieren om uw team te laten groeien: <b>Payrolling</b> (wij zijn werkgever, u least personeel) of <b>RPO</b> (wij werven, u neemt rechtstreeks in dienst). Uitsluitend ontwikkeld voor Nederlandse bedrijven die gebruikmaken van EU-talent binnen IT, digitaal, administratie, finance en reizen. U kiest het model, wij regelen de werving.",
-    "ctaPrimary": "Word Teamlid",
-    "ctaSecondary": "Eerst vragen? WhatsApp ons →"
+    "ctaPrimary": "Neem Contact Op",
+    "ctaSecondary": "Over Ons →"
   },
 
 "vacanciesSearch": {
@@ -215,7 +215,7 @@
   "heading": "Vertel ons de functie. Wij vertellen u de juiste manier om ervoor te werven",
   "subheading": "Word een Staff Outsourcing Professional en werk aan projecten die de toekomst vormgeven. Met uw expertise en onze begeleiding kunt u groeien, bijdragen en een echt verschil maken.",
   "ctaPrimary": "Boek een gesprek",
-  "ctaSecondary": "WhatsApp ons →"
+  "ctaSecondary": "Neem Contact Op→"
 },
 
 "actionBtns": {
@@ -238,8 +238,8 @@
       "subhead": "Van front-end tot AI-engineering — werf ontwikkelaars rechtstreeks aan, of leen gepayrolld IT-personeel. Tien rollen, één aanspreekpunt.",
       "primaryCtaText": "Plan een gesprek →",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Eerst nog vragen? WhatsApp ons →",
-      "secondaryCtaLink": "https://wa.me/[placeholder]"
+      "secondaryCtaText": "Neem Contact Opp→",
+      "secondaryCtaLink": ""
     },
     "sections": {
       "coverageTitle": "Wat deze categorie omvat",
@@ -325,8 +325,8 @@
         "headline": "Bouw je een developmentteam, of vul je één technisch gat op? Vertel ons de rol.",
         "primaryCtaText": "Plan een gesprek →",
         "primaryCtaLink": "/contact",
-        "secondaryCtaText": "Of WhatsApp ons →",
-        "secondaryCtaLink": "https://wa.me/[placeholder]"
+        "secondaryCtaText": "Of Neem Contact Op→",
+        "secondaryCtaLink": ""
       }
     }
   },
@@ -342,8 +342,8 @@
       "subhead": "Webdesign en grafisch design — werf rechtstreeks aan, of leen gepayrolld designpersoneel voor doorlopend of projectwerk.",
       "primaryCtaText": "Plan een gesprek →",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Eerst nog vragen? WhatsApp ons →",
-      "secondaryCtaLink": "https://wa.me/[placeholder]"
+      "secondaryCtaText": "Neem Contact Opp→",
+      "secondaryCtaLink": ""
     },
     "sections": {
       "coverageTitle": "Wat deze categorie omvat",
@@ -387,8 +387,8 @@
         "headline": "Bouw je een website, of heb je doorlopend designwerk nodig? Vertel ons de rol.",
         "primaryCtaText": "Plan een gesprek →",
         "primaryCtaLink": "/contact",
-        "secondaryCtaText": "Of WhatsApp ons →",
-        "secondaryCtaLink": "https://wa.me/[placeholder]"
+        "secondaryCtaText": "Of Neem Contact Op→",
+        "secondaryCtaLink": ""
       }
     }
   },
@@ -406,8 +406,8 @@
       "subhead": "Van het dagelijks beheren van uw kanalen tot het lezen van wat werkt — werf direct in dienst, of huur payroll-personeel voor marketing en analyse.",
       "primaryCtaText": "Plan een gesprek →",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Eerst een vraag? App ons →",
-      "secondaryCtaLink": "https://wa.me/[placeholder]"
+      "secondaryCtaText": "Neem Contact Op→",
+      "secondaryCtaLink": ""
     },
     "sections": {
       "coverageTitle": "Wat deze categorie omvat",
@@ -473,8 +473,8 @@
         "headline": "Heeft u iemand nodig die kanalen beheert, of iemand die de cijfers leest? Geef de functie door.",
         "primaryCtaText": "Plan een gesprek →",
         "primaryCtaLink": "/contact",
-        "secondaryCtaText": "Of app ons →",
-        "secondaryCtaLink": "https://wa.me/[placeholder]"
+        "secondaryCtaText": "Neem Contact Op →",
+        "secondaryCtaLink": "/contact-us"
       }
     }
   },
@@ -493,8 +493,8 @@
       "subhead": "Virtuele assistenten, klantenservice, data entry en HR-administratie — werf direct in dienst, of huur payroll-personeel voor flexibele bezetting.",
       "primaryCtaText": "Plan een gesprek →",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Eerst een vraag? App ons →",
-      "secondaryCtaLink": "https://wa.me/[placeholder]"
+      "secondaryCtaText": "Neem Contact Op→",
+      "secondaryCtaLink": "/contact"
     },
     "sections": {
       "coverageTitle": "Wat deze categorie omvat",
@@ -560,8 +560,8 @@
         "headline": "Dagelijkse ondersteuning nodig, zonder er een afdeling voor op te bouwen? Geef de functie door.",
         "primaryCtaText": "Plan een gesprek →",
         "primaryCtaLink": "/contact",
-        "secondaryCtaText": "Of app ons →",
-        "secondaryCtaLink": "https://wa.me/[placeholder]"
+        "secondaryCtaText": "Neem Contact Op →",
+        "secondaryCtaLink": ""
       }
     }
   },
@@ -582,8 +582,8 @@
       "subhead": "Boekhouding, financiële administratie en rapportage — werf direct in dienst, of huur payroll-personeel voor doorlopend of seizoensgebonden werk.",
       "primaryCtaText": "Plan een gesprek →",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Eerst een vraag? App ons →",
-      "secondaryCtaLink": "https://wa.me/[placeholder]"
+      "secondaryCtaText": "Neem Contact Op→",
+      "secondaryCtaLink": ""
     },
     "sections": {
       "coverageTitle": "Wat deze categorie omvat",
@@ -634,8 +634,8 @@
         "headline": "De boekhouding op orde nodig, of extra capaciteit rond een drukke periode? Geef de functie door.",
         "primaryCtaText": "Plan een gesprek →",
         "primaryCtaLink": "/contact",
-        "secondaryCtaText": "Of app ons →",
-        "secondaryCtaLink": "https://wa.me/[placeholder]"
+        "secondaryCtaText": "Neem Contact Op →",
+        "secondaryCtaLink": ""
       }
     }
   },
@@ -653,8 +653,8 @@
       "subhead": "Boekingen, reserveringen en klantenservice voor reisorganisaties — werf direct in dienst, of huur payroll-personeel voor piekperiodes.",
       "primaryCtaText": "Plan een gesprek →",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Eerst een vraag? App ons →",
-      "secondaryCtaLink": "https://wa.me/[placeholder]"
+      "secondaryCtaText": "Neem Contact Op→",
+      "secondaryCtaLink": ""
     },
     "sections": {
       "coverageTitle": "Wat deze categorie omvat",
@@ -710,8 +710,8 @@
         "headline": "Seizoensgebonden boekingscapaciteit nodig, of een vaste reisadviseur? Geef de functie door.",
         "primaryCtaText": "Plan een gesprek →",
         "primaryCtaLink": "/contact",
-        "secondaryCtaText": "Of app ons →",
-        "secondaryCtaLink": "https://wa.me/[placeholder]"
+        "secondaryCtaText": "Neem Contact Op →",
+        "secondaryCtaLink": ""
       }
     }
   },
@@ -1001,9 +1001,9 @@
   "callTitle": "Plan een gesprek",
   "callDesc": "Voor alles wat een echt gesprek vereist — een nieuwe rol, meerdere vacatures, of als je niet zeker weet welk model past.",
   "callBtn": "Gesprek Inplannen",
-  "whatsappTitle": "WhatsApp",
+  "whatsappTitle": "Contact",
   "whatsappDesc": "Voor snelle vragen — planning, specifieke rollen, of zaken waar geen volledig gesprek voor nodig is.",
-  "whatsappBtn": "Chat via WhatsApp",
+  "whatsappBtn": "Chat with us",
   "formTitle": "Stuur ons een bericht",
   "nameLabel": "Naam",
   "companyLabel": "Bedrijf",
@@ -1077,7 +1077,7 @@
   "ctaTitle": "Vertel ons wat je probeert op te lossen",
   "ctaSubtitle": "Weet je niet zeker welk staffingmodel bij je past? Vertel ons wat je nodig hebt en we helpen je de juiste volgende stap te bepalen.",
   "ctaPrimary": "Plan een gesprek",
-  "ctaSecondary": "WhatsApp"
+  "ctaSecondary": "Contact"
 }
 }
   

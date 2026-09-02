@@ -12,7 +12,7 @@ export default function CategoryFinalCta({ data }: { data: any }) {
           {data?.primaryCtaText}
         </a>
         <a
-          href={data?.secondaryCtaLink || "/vacancies"}
+          href={data?.secondaryCtaLink || "/contact-us"}
           className="bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md px-8 py-3.5 rounded-full font-bold transition-all"
         >
           {data?.secondaryCtaText}
