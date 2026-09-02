@@ -96,18 +96,6 @@ export default async function Footer() {
     },
   ];
 
-  // ================= LEGAL =================
-  const legalLinks = [
-    {
-      label: "Cookie Policy",
-      href: "/cookie-policy",
-    },
-    {
-      label: "Sitemap",
-      href: "/sitemap",
-    },
-  ];
-
   return (
     <footer className="w-full bg-[#0d2b33] text-white">
       {/* ================= MAIN FOOTER ================= */}
@@ -229,14 +217,14 @@ export default async function Footer() {
 
               {/* Email */}
               <li className="flex items-center gap-3 text-sm text-white/70">
-  <FaEnvelope className="w-3.5 h-3.5 text-[#f2c40d] shrink-0" />
-  <a
-    href="mailto:info@staffoutsourcing.nl"
-    className="hover:text-[#f2c40d] transition-colors whitespace-nowrap"
-  >
-    info@staffoutsourcing.nl
-  </a>
-</li>
+                <FaEnvelope className="w-3.5 h-3.5 text-[#f2c40d] shrink-0" />
+                <a
+                  href="mailto:info@staffoutsourcing.nl"
+                  className="hover:text-[#f2c40d] transition-colors whitespace-nowrap"
+                >
+                  info@staffoutsourcing.nl
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -249,18 +237,6 @@ export default async function Footer() {
           <p className="text-xs text-white/60">
             &copy; {new Date().getFullYear()} All rights reserved.
           </p>
-
-          <div className="flex items-center gap-6">
-            {legalLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-xs text-white/60 hover:text-[#f2c40d] transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

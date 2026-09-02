@@ -328,9 +328,9 @@
       "finalCta": {
         "headline": "Building a dev team, or filling one technical gap? Tell us the role.",
         "primaryCtaText": "Book a call →",
-        "primaryCtaLink": "/en/contact",
+        "primaryCtaLink": "/en/contact-us",
         "secondaryCtaText": "Contact Us →",
-        "secondaryCtaLink": "/en/contact"
+        "secondaryCtaLink": "/en/contact-us"
       }
     }
   },
@@ -390,9 +390,9 @@
       "finalCta": {
         "headline": "Building a website, or need ongoing design work? Tell us the role.",
         "primaryCtaText": "Book a call →",
-        "primaryCtaLink": "/en/contact",
+        "primaryCtaLink": "/en/contact-us",
         "secondaryCtaText": "Contact Us →",
-        "secondaryCtaLink": "/en/contact"
+        "secondaryCtaLink": "/en/contact-us"
       }
     }
   },
@@ -476,9 +476,9 @@
       "finalCta": {
         "headline": "Need someone running channels, or someone reading the numbers? Tell us the role.",
         "primaryCtaText": "Book a call →",
-        "primaryCtaLink": "/en/contact",
+        "primaryCtaLink": "/en/contact-us",
         "secondaryCtaText": "Contact Us →",
-        "secondaryCtaLink": "/en/contact"
+        "secondaryCtaLink": "/en/contact-us"
       }
     }
   },
@@ -633,9 +633,9 @@
       "finalCta": {
         "headline": "Need the books handled, or extra capacity around a busy period? Tell us the role.",
         "primaryCtaText": "Book a call →",
-        "primaryCtaLink": "/en/contact",
+        "primaryCtaLink": "/en/contact-us",
         "secondaryCtaText": "Contact Us →",
-        "secondaryCtaLink": "/en/contact"
+        "secondaryCtaLink": "/en/contact-us"
       }
     }
   },
@@ -653,10 +653,10 @@
       "h1": "Hire travel & reservations staff in the Netherlands",
       "subhead": "Booking, reservations and customer service for travel businesses — recruit directly, or lease payrolled staff for peak-season demand.",
       "primaryCtaText": "Book a call →",
-      "primaryCtaLink": "/en/contact",
+      "primaryCtaLink": "/en/contact-us ",
       "secondaryCtaText": "Contact Us",
-      "secondaryCtaLink": "/en/contact"
-    },
+      "secondaryCtaLink": "/en/contact-us"
+    },    
     "sections": {
       "coverageTitle": "What this category covers",
       "coverageBody": "Travel businesses run on volume that isn't constant — bookings spike around holidays and travel seasons, then level off. That shapes what you actually need: sometimes a dedicated advisor building customer relationships, sometimes reservations capacity to process bookings at speed, sometimes support to handle changes and issues when travel plans shift.\n\nTravel & Reservations covers advisory, booking operations, customer service and marketing roles built specifically for travel businesses — not general customer service staff repositioned for a travel context.",
@@ -710,9 +710,9 @@
       "finalCta": {
         "headline": "Need seasonal booking capacity, or an ongoing travel advisor? Tell us the role.",
         "primaryCtaText": "Book a call →",
-        "primaryCtaLink": "/en/contact",
+        "primaryCtaLink": "/en/contact-us",
         "secondaryCtaText": "Contact Us →",
-        "secondaryCtaLink": "/en/contact"
+        "secondaryCtaLink": "/en/contact-us"
       }
     }
   },

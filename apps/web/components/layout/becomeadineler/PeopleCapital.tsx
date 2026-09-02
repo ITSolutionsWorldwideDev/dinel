@@ -36,12 +36,7 @@ const PeopleCapital = () => {
           icon={<Sparkles className="text-[#FFDF20]" />}
         />
       </div>
-      <div className="mt-10">
-        <HeadingAndDesc
-          heading="Ready to become a Staff Outsourcing Professional?"
-          desc="Take the next step in your career and work on projects that challenge you, inspire you and allow you to grow."
-        />
-      </div>
+     
       .
       <div className="flex items-center justify-center space-x-3">
         <Link href={"/sign-up"}>
