@@ -13,30 +13,30 @@ export default async function DeskstopNavigationMenu() {
   // Common translations
   const commonT = await getTranslations();
 
-  // Existing Services
+  // Existing Services (Localized)
   const services = [
     {
-      name: "IT & Development",
+      name: navT("servicesList.itDevelopment"),
       href: "/it-development",
     },
     {
-      name: "Design Services",
+      name: navT("servicesList.designServices"),
       href: "/design-services",
     },
     {
-      name: "Marketing & Analytics",
+      name: navT("servicesList.marketingAnalytics"),
       href: "/marketing-analytics",
     },
     {
-      name: "Administration & Business Support",
+      name: navT("servicesList.adminBusinessSupport"),
       href: "/admin-business-support",
     },
     {
-      name: "Finance & Accounting",
+      name: navT("servicesList.financeAccounting"),
       href: "/finance-accounting",
     },
     {
-      name: "Travel & Reservations",
+      name: navT("servicesList.travelReservations"),
       href: "/travel-reservations",
     },
   ];
@@ -113,8 +113,7 @@ export default async function DeskstopNavigationMenu() {
                 type="button"
                 className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
               >
-                Services
-
+                {navT("services")}
                 <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-300 text-[#1a4550]" />
               </button>
 
@@ -137,8 +136,7 @@ export default async function DeskstopNavigationMenu() {
                 type="button"
                 className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
               >
-                Categories
-
+                {navT("categories")}
                 <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-300 text-[#1a4550]" />
               </button>
 

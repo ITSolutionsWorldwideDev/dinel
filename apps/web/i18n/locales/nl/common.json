@@ -1,17 +1,18 @@
 {
   "nav": {
-    "home": "Home",
-    "about": "Over Ons",
-    "professionals": "Professionals",
-    "clients": "Klanten",
+    "home": "Startpagina",
+    "services": "Diensten",
+    "categories": "Categorieën",
     "approach": "Onze Aanpak",
-    "mission": "Missie & Visie",
-    "becomeMember": "Word Teamlid",
-    "vacancies": "Vacatures",
-    "blogs": "Blogs",
-    "myAccount": "Mijn Account",
-    "member": "Lid",
-    "contact": "Contact"
+    "contact": "Contact",
+    "servicesList": {
+      "itDevelopment": "IT & Ontwikkeling",
+      "designServices": "Ontwerpdiensten",
+      "marketingAnalytics": "Marketing & Analyse",
+      "adminBusinessSupport": "Administratie & Zakelijke Ondersteuning",
+      "financeAccounting": "Financiën & Boekhouding",
+      "travelReservations": "Reizen & Reserveringen"
+    }
   },
   "header": {
     "badge": "Werving & Selectie Partner",

@@ -9,8 +9,8 @@ export default async function Header() {
   const t = await getTranslations("header");
 
   return (
-    <section className="relative w-full min-h-screen lg:h-screen flex flex-col justify-center overflow-hidden">
-      <HeroVideo />
+// 1) h-screen ki jagah min-h-screen use karo (lg breakpoint pe bhi), taake zoom/chhoti height pe content cut/overlap na ho:
+<section className="relative w-full min-h-screen flex flex-col justify-center overflow-hidden py-16 lg:py-20">      <HeroVideo />
 
       {/* Dark overlay so text stays readable over the video */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/30 z-[1]" />
@@ -67,7 +67,6 @@ export default async function Header() {
         </div>
       </div>
 
-      <div className="h-6 lg:h-8 w-full shrink-0" aria-hidden="true" />
-    </section>
+<div className="h-20 sm:h-24 md:h-28 lg:h-32 w-full shrink-0" aria-hidden="true" />    </section>
   );
 }

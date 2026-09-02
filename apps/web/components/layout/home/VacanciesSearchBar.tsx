@@ -38,7 +38,7 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
   };
 
   return (
-    <div className="w-[90vw] max-w-3xl bg-white flex items-center justify-center p-6 md:p-8 rounded-[2rem] border-2 border-[#1a4550]/15 shadow-2xl shadow-[#1a4550]/10 mx-auto relative overflow-hidden backdrop-blur-xl">
+    <div className="w-[90vw] max-w-3xl bg-white flex items-center justify-center p-6 md:p-8 rounded-[2rem] border-2 border-[#1a4550]/15 shadow-2xl shadow-[#1a4550]/10 mx-auto relative overflow-hidden backdrop-blur-xl -mt-6 sm:-mt-8 md:-mt-10 z-20">
       {/* Decorative ambient background glows */}
       <div className="absolute -top-20 -right-20 w-56 h-56 bg-[#1a4550]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-20 -left-20 w-56 h-56 bg-[#f2c40d]/15 rounded-full blur-3xl pointer-events-none" />

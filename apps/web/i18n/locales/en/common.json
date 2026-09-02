@@ -1,17 +1,19 @@
+
 {
- "nav": {
+  "nav": {
     "home": "Home",
-    "about": "About Us",
-    "professionals": "Professionals",
-    "clients": "Clients",
+    "services": "Services",
+    "categories": "Categories",
     "approach": "Our Approach",
-    "mission": "Mission & Vision",
-    "becomeMember": "Become a Team Member",
-    "vacancies": "Vacancies",
-    "blogs": "Blogs",
-    "myAccount": "My Account",
-    "member": "Member",
-    "contact": "Contact"
+    "contact": "Contact",
+    "servicesList": {
+      "itDevelopment": "IT & Development",
+      "designServices": "Design Services",
+      "marketingAnalytics": "Marketing & Analytics",
+      "adminBusinessSupport": "Administration & Business Support",
+      "financeAccounting": "Finance & Accounting",
+      "travelReservations": "Travel & Reservations"
+    }
   },
   "header": {
     "badge": "Staffing & Recruitment Partner",
