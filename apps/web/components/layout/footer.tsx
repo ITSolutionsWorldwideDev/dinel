@@ -3,7 +3,6 @@ import {
   FaFacebookF,
   FaLinkedinIn,
   FaInstagram,
-  FaXTwitter,
 } from "react-icons/fa6";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
@@ -76,23 +75,18 @@ export default async function Footer() {
   const socials = [
     {
       icon: FaLinkedinIn,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/company/staffoutsourcing-nl/about/?viewAsMember=true",
       label: "LinkedIn",
     },
     {
       icon: FaFacebookF,
-      href: "https://facebook.com",
+      href: "https://www.facebook.com/profile.php?id=61594189973030",
       label: "Facebook",
     },
     {
       icon: FaInstagram,
-      href: "https://instagram.com",
+      href: "https://www.instagram.com/staffoutsourcingsocial/",
       label: "Instagram",
-    },
-    {
-      icon: FaXTwitter,
-      href: "https://twitter.com",
-      label: "X",
     },
   ];
 
@@ -201,7 +195,7 @@ export default async function Footer() {
               {/* Address */}
               <li className="flex items-start gap-3 text-sm text-white/70">
                 <FaMapMarkerAlt className="w-4 h-4 mt-0.5 text-[#f2c40d] shrink-0" />
-                <span>XYZ Street, ABC Road, City Name</span>
+                <span>Mandenmakerstraat 100C, 3194 DG Hoogvliet Rotterdam, Netherlands</span>
               </li>
 
               {/* Phone */}

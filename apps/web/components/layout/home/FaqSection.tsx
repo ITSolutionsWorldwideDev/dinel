@@ -15,15 +15,11 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-white via-[#f7fafa] to-white pb-24 relative overflow-hidden">
-      {/* Decorative background blurs */}
-      <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-[#0d2b33]/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-[#f2c40d]/10 blur-3xl pointer-events-none" />
+    <div className="flex h-full w-full flex-col justify-between">
+      <div className="relative z-10 w-full flex-1 flex flex-col">
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-8 relative z-10">
-        
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="w-8 h-[3px] bg-[#f2c40d] rounded-full" />
             <span className="text-xs font-black tracking-[0.2em] uppercase text-[#1a4550] bg-[#1a4550]/5 border border-[#1a4550]/15 px-3.5 py-1.5 rounded-full">
@@ -37,13 +33,13 @@ const FaqSection = () => {
         </div>
 
         {/* FAQ Accordion List */}
-        <div className="space-y-4">
+        <div className="space-y-4 w-full flex-1">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
               <div
                 key={faq.q}
-                className={`rounded-3xl border-2 transition-all duration-300 overflow-hidden shadow-lg shadow-[#1a4550]/5 ${
+                className={`w-full rounded-3xl border-2 transition-all duration-300 overflow-hidden shadow-lg shadow-[#1a4550]/5 ${
                   isOpen
                     ? "border-[#1a4550] bg-white shadow-xl"
                     : "border-[#1a4550]/15 bg-white hover:border-[#1a4550]/40"
@@ -91,7 +87,7 @@ const FaqSection = () => {
           })}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

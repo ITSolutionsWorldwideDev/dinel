@@ -9,6 +9,8 @@ import DivisionOfLaborSection from '@/components/service/DivisionOfLaborSection'
 import DecisionGuideSection from '@/components/service/DecisionGuideSection';
 import FaqSection from '@/components/service/FaqSection';
 import FinalCtaSection from '@/components/service/FinalCtaSection';
+import ContactFormMapSection from '@/components/shared/ContactFormMapSection';
+import { allCategories } from '@/components/forms/categories';
 
 interface PageProps {
   params: Promise<{
@@ -32,13 +34,7 @@ export default async function SubServicePage({ params }: PageProps) {
   const resolvedParams = await params;
   const { locale, service } = resolvedParams;
 
-  const commonPath = path.join(
-    process.cwd(),
-    'i18n',
-    'locales',
-    locale,
-    'common.json'
-  );
+  const commonPath = path.join(process.cwd(), 'i18n', 'locales', locale, 'common.json');
 
   if (!fs.existsSync(commonPath)) {
     notFound();
@@ -64,6 +60,15 @@ export default async function SubServicePage({ params }: PageProps) {
         <ProcessSection sec={sec} />
         <DivisionOfLaborSection sec={sec} />
         <DecisionGuideSection sec={sec} />
+      </div>
+
+      <ContactFormMapSection
+        categories={allCategories}
+        title="Ready to Get Started?"
+        description="Tell us about your hiring needs — pick the category that fits and we'll take it from there."
+      />
+
+      <div className="px-4 sm:px-6 lg:px-16 pb-16 max-w-[1400px] mx-auto space-y-24">
         <FaqSection sec={sec} />
         <FinalCtaSection sec={sec} />
       </div>
