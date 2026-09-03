@@ -61,7 +61,7 @@ export default async function DeskstopNavigationMenu() {
     },
   ];
 
-  // Mobile navigation links
+ // Mobile & Desktop navigation links
   const navLinks = [
     {
       name: navT("home"),
@@ -70,6 +70,14 @@ export default async function DeskstopNavigationMenu() {
     {
       name: navT("approach"),
       href: "/our-approach",
+    },
+    {
+      name: navT("about") || "About",
+      href: "/about",
+    },
+    {
+      name: "Careers",
+      href: "/careers",
     },
     {
       name: navT("contact"),
@@ -153,7 +161,7 @@ export default async function DeskstopNavigationMenu() {
               </div>
             </div>
 
-            {/* ================= OUR APPROACH ================= */}
+         {/* ================= OUR APPROACH ================= */}
             <Link
               href="/our-approach"
               className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap"
@@ -161,6 +169,21 @@ export default async function DeskstopNavigationMenu() {
               {navT("approach")}
             </Link>
 
+            {/* ================= ABOUT US ================= */}
+            <Link
+              href="/about"
+              className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap"
+            >
+              {navT("about") || "About"}
+            </Link>
+
+            {/* ================= CAREERS ================= */}
+            <Link
+              href="/careers"
+              className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap"
+            >
+              Careers
+            </Link>
             {/* ================= CONTACT US ================= */}
             <Link
               href="/contact-us"

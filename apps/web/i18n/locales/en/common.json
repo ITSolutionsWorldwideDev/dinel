@@ -1,20 +1,21 @@
 
 {
-  "nav": {
-    "home": "Home",
-    "services": "Services",
-    "categories": "Categories",
-    "approach": "Our Approach",
-    "contact": "Contact",
-    "servicesList": {
-      "itDevelopment": "IT & Development",
-      "designServices": "Design Services",
-      "marketingAnalytics": "Marketing & Analytics",
-      "adminBusinessSupport": "Administration & Business Support",
-      "financeAccounting": "Finance & Accounting",
-      "travelReservations": "Travel & Reservations"
-    }
-  },
+"nav": {
+  "home": "Home",
+  "services": "Services",
+  "categories": "Categories",
+  "approach": "Our Approach",
+  "about": "About Us",
+  "contact": "Contact",
+  "servicesList": {
+    "itDevelopment": "IT & Development",
+    "designServices": "Design Services",
+    "marketingAnalytics": "Marketing & Analytics",
+    "adminBusinessSupport": "Administration & Business Support",
+    "financeAccounting": "Finance & Accounting",
+    "travelReservations": "Travel & Reservations"
+  }
+},
   "header": {
     
     "bigText": "STAFF OUTSOURCING",
@@ -1110,6 +1111,56 @@
   "ctaSubtitle": "Not sure which staffing model fits? Tell us what you need and we'll help you figure out the right next step.",
   "ctaPrimary": "Book a Call",
   "ctaSecondary": "Contact Us"
+},
+
+
+"careers": {
+    "hero": {
+      "badge": "Join Our Team",
+      "title": "Build Your Future With Us",
+      "description": "Explore exciting career opportunities and help us shape the future of global industries."
+    },
+    "intro": {
+      "badge": "Work Culture & Growth",
+      "titlePrefix": "Why Build Your Career",
+      "titleHighlight": "With Us?",
+      "description": "We foster a culture of innovation, collaboration, and continuous excellence. Whether you are an expert engineer, an IT specialist, or a supply chain strategist, we provide the platform you need to make a global impact.",
+      "card1Title": "Global Impact",
+      "card1Desc": "Work on mission-critical international projects across engineering, technology, and logistics that shape industries.",
+      "card2Title": "Accelerated Growth",
+      "card2Desc": "Accelerate your professional trajectory through structured mentorship, leadership pathways, and complex skill challenges.",
+      "card3Title": "Dynamic Ecosystem",
+      "card3Desc": "Collaborate with top-tier multidisciplinary talent within an inclusive, empowering, and cutting-edge environment."
+    }
+  },
+"about": {
+  "hero": {
+    "badge": "About Us",
+    "title": "Dutch Companies Shouldn't Need Five Vendors to Fill Five Roles",
+    "description": "We exist for Dutch companies hiring in the Netherlands — providing direct placement and employer-of-record staffing under one roof."
+  },
+  "mission": {
+    "badge": "Our Mission",
+    "heading": "What We Do & Why, Right Now",
+    "body": "Dutch companies shouldn't need five vendors to fill five different roles. Our mission is to be the one staffing partner that actually covers the ground, giving you a single, reliable way to hire — whether that's a direct placement or staff we employ on your behalf."
+  },
+  "vision": {
+    "badge": "Our Vision",
+    "heading": "Where This Goes",
+    "body": "We want companies to stop thinking of us as a vendor they call when there's a gap, and start thinking of us as the staffing partner they loop in before the gap happens."
+  },
+  "practice": {
+    "badge": "Not Just a Statement on a Page",
+    "title": "What This Means in Practice",
+    "description": "That is why we run both employment models under one roof instead of specializing in just one, and why we cover six distinct domains with absolute operational rigor.",
+    "cta": "See How Our Approach Works"
+  },
+  "contact": {
+    "badge": "Get In Touch",
+    "title": "Start Your Journey With Us",
+    "description": "Connect with our team or visit our office location to explore seamless collaboration opportunities."
+  }
 }
+
 }
 

@@ -146,7 +146,7 @@ export default function JobSeekerFields({
       </div>
 
       <div className="sm:col-span-2">
-        <label className={labelClass}>Cover Message</label>
+        <label className={labelClass}>Write a Message</label>
         <div className="relative">
           <MessageSquare className="pointer-events-none absolute left-3 top-3 h-4 w-4 text-gray-400" />
           <textarea

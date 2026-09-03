@@ -16,23 +16,23 @@ export default function IndustryWeWork() {
   const industries = [
     {
       id: 1,
-      name: t("infrastructure"),
-      icon: HardHat,
-      href: "/it-development",
-      description: "Driving innovation and technical excellence across complex structural, mechanical, and industrial engineering projects.",
-    },
-    {
-      id: 2,
-      name: t("energy"),
+      name: t("infrastructure"), // Supply Chain
       icon: Truck,
-      href: "/marketing-analytics",
+      href: "/careers?category=Supply+Chain", // Supply Chain category filter
       description: "Optimizing global logistics, warehouse operations, and inventory management for seamless flow and operational efficiency.",
     },
     {
+      id: 2,
+      name: t("energy"), // Engineering
+      icon: HardHat,
+      href: "/careers?category=Engineering", // Engineering category filter
+      description: "Driving innovation and technical excellence across complex structural, mechanical, and industrial engineering projects.",
+    },
+    {
       id: 3,
-      name: t("oilGas"),
+      name: t("oilGas"), // IT
       icon: Monitor,
-      href: "/it-development",
+      href: "/careers?category=IT", // IT category filter
       description: "Empowering digital transformation through robust software solutions, cloud infrastructure, and advanced technical support.",
     },
   ];

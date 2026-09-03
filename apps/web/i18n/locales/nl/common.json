@@ -1,19 +1,20 @@
 {
-  "nav": {
-    "home": "Startpagina",
-    "services": "Diensten",
-    "categories": "Categorieën",
-    "approach": "Onze Aanpak",
-    "contact": "Contact",
-    "servicesList": {
-      "itDevelopment": "IT & Ontwikkeling",
-      "designServices": "Ontwerpdiensten",
-      "marketingAnalytics": "Marketing & Analyse",
-      "adminBusinessSupport": "Administratie & Zakelijke Ondersteuning",
-      "financeAccounting": "Financiën & Boekhouding",
-      "travelReservations": "Reizen & Reserveringen"
-    }
-  },
+"nav": {
+  "home": "Home",
+  "services": "Services",
+  "categories": "Categorieën",
+  "approach": "Onze Aanpak",
+  "about": "Over Ons",
+  "contact": "Contact",
+  "servicesList": {
+    "itDevelopment": "IT & Development",
+    "designServices": "Design Services",
+    "marketingAnalytics": "Marketing & Analytics",
+    "adminBusinessSupport": "Administration & Business Support",
+    "financeAccounting": "Finance & Accounting",
+    "travelReservations": "Travel & Reservations"
+  }
+},
   "header": {
     "badge": "Werving & Selectie Partner",
     "bigText": "STAFF OUTSOURCING",
@@ -1078,6 +1079,57 @@
   "ctaSubtitle": "Weet je niet zeker welk staffingmodel bij je past? Vertel ons wat je nodig hebt en we helpen je de juiste volgende stap te bepalen.",
   "ctaPrimary": "Plan een gesprek",
   "ctaSecondary": "Contact"
+},
+
+
+"careers": {
+    "hero": {
+      "badge": "Word Lid Van Ons Team",
+      "title": "Bouw Je Toekomst Met Ons Mee",
+      "description": "Ontdek interessante carrièremogelijkheden en help ons de toekomst van wereldwijde industrieën vorm te geven."
+    },
+    "intro": {
+      "badge": "Bedrijfscultuur & Groei",
+      "titlePrefix": "Waarom Je Carrière Bouwen",
+      "titleHighlight": "Bij Ons?",
+      "description": "Wij stimuleren een cultuur van innovatie, samenwerking en continue uitmuntendheid. Of je nu een expert-ingenieur, IT-specialist of supply chain-strateeg bent, wij bieden het platform dat je nodig hebt om een wereldwijde impact te maken.",
+      "card1Title": "Wereldwijde Impact",
+      "card1Desc": "Werk aan bedrijfskritische internationale projecten binnen engineering, technologie en logistiek die industrieën vormgeven.",
+      "card2Title": "Versnelde Groei",
+      "card2Desc": "Versnel je professionele traject door gestructureerde mentorschappen, leiderschapstrajecten en complexe vaardigheidsuitdagingen.",
+      "card3Title": "Dynamisch Ecosystem",
+      "card3Desc": "Werk samen met multidisciplinair toptalent binnen een inclusieve, stimulerende en geavanceerde omgeving."
+    }
+  },
+
+
+  "about": {
+  "hero": {
+    "badge": "Over Ons",
+    "title": "Nederlandse Bedrijven Hebben Geen Vijf Leveranciers Nodig",
+    "description": "Wij zijn er voor Nederlandse bedrijven die in Nederland werven — direct placement en payroll onder één dak."
+  },
+  "mission": {
+    "badge": "Onze Missie",
+    "heading": "Wat We Doen & Waarom, Nu",
+    "body": "Nederlandse bedrijven zouden geen vijf leveranciers nodig moeten hebben voor vijf verschillende rollen. Onze missie is om de ene wervingspartner te zijn die daadwerkelijk alle facetten dekt, zodat u één betrouwbare manier heeft om personeel aan te nemen."
+  },
+  "vision": {
+    "badge": "Onze Visie",
+    "heading": "Waar Dit Naartoe Gaat",
+    "body": "We willen dat bedrijven stoppen met ons te zien als een leverancier die ze bellen bij een gat, en ons gaan beschouwen als de partner die ze betrekken voordat het gat ontstaat."
+  },
+  "practice": {
+    "badge": "Niet Zomaar een Tekst op een Pagina",
+    "title": "Wat Dit In De Praktijk Betekent",
+    "description": "Daarom voeren we beide dienstverbandmodellen onder één dak uit in plaats van ons te specialiseren in slechts één, en daarom dekken we zes verschillende domeinen met absolute operationele nauwkeurigheid.",
+    "cta": "Bekijk Onze Aanpak"
+  },
+  "contact": {
+    "badge": "Neem Contact Op",
+    "title": "Start Uw Reis Met Ons",
+    "description": "Neem contact op met ons team of bezoek ons kantoor om naadloze samenwerkingsmogelijkheden te ontdekken."
+  }
 }
 }
   
