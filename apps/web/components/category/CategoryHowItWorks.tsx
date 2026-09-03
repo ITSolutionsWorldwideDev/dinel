@@ -66,13 +66,7 @@ const HowItWorks = async () => {
         </div>
 
         <div className="text-center">
-          <Link
-            href="#"
-            className="inline-flex items-center gap-2 bg-[#0d2b33] hover:bg-[#153f4a] text-white font-semibold px-8 py-4 rounded-full transition-all shadow-sm"
-          >
-            {t("cta")}
-            <ArrowRight className="w-4 h-4 text-[#f2c40d]" />
-          </Link>
+          
         </div>
 
       </div>

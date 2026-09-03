@@ -163,7 +163,7 @@ const linksB = basePathsB.map(path => `${localePrefix}${path}`);
           </p>
 
           <Link
-            href={`/${locale}/contact`}
+            href={`/${locale}/contact-us`}
             className="relative z-10 inline-flex items-center gap-3 bg-[#f2c40d] text-[#0d2b33] font-black px-9 py-4 rounded-full text-sm md:text-base hover:bg-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
           >
             {t("bannerCta")}
