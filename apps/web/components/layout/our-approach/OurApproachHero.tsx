@@ -4,7 +4,7 @@ export default async function OurApproachHero() {
   const t = await getTranslations();
 
   return (
-    <section className="relative w-full bg-gradient-to-br from-[#0d2b33] via-[#1a4550] to-[#0d2b33] text-white py-24 md:py-32 px-6 md:px-16 overflow-hidden rounded-3xl border border-white/10 shadow-2xl mb-16">
+    <section className="relative w-full bg-gradient-to-br from-[#0d2b33] via-[#1a4550] to-[#0d2b33] text-white py-24 md:py-32 px-4 sm:px-8 lg:px-16 overflow-hidden rounded-3xl border border-white/10 shadow-2xl mb-16">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,196,13,0.2),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto text-center relative z-10">

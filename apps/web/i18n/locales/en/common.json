@@ -796,9 +796,9 @@
 
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "question": "How long does a recruitment outsourcing search usually take?", "answer": "Timeline depends on role seniority and how niche the skill set is. Placeholder until we have real fill-time data to share." },
-        { "question": "Is recruitment outsourcing the same as recruitment/placement?", "answer": "Yes—different names, same service. We source and screen candidates, you interview and hire them directly." },
-        { "question": "Do you charge if the hire doesn't work out?", "answer": "Refund/replacement guarantee terms to be confirmed with client before publishing." },
+        { "question": "How long does a recruitment outsourcing search usually take?", "answer": "Timeline depends on role seniority and how niche the skill set is. Placeholder until we have real fill-time data to share. We continuously refine our hiring process to balance thoroughness with a prompt, respectful candidate experience." },
+        { "question": "Is recruitment outsourcing the same as recruitment/placement?", "answer": "Whether you call it recruitment outsourcing or talent placement, the core benefit remains the same: you gain expert sourcing power without the overhead of expanding your permanent internal recruitment department." },
+        { "question": "Do you charge if the hire doesn't work out?", "answer": "Refund/replacement guarantee terms to beRefund/replacement guarantee terms to be confirmed with client before publishing, subject to standard probationary period evaluations. confirmed with client before publishing." },
         { "question": "Can you help with the employment contract once we've picked someone?", "answer": "We can point you toward standard Dutch employment contract templates, but the contract itself is between you and your new hire—we're not the employer of record for these placements." },
         { "question": "What if none of the shortlisted candidates are right?", "answer": "We go back to sourcing. Confirm whether there's a cap on rounds included before additional fees apply." },
         { "question": "Do you only place people in the roles listed on your site?", "answer": "Those are our core categories, but if you've got a role outside that list, get in touch—worth a conversation before assuming it's not something we cover." }

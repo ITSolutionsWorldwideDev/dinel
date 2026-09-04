@@ -51,7 +51,7 @@ export default async function JobDetailPage({
     <div className="bg-[#f6f4ef]">
       {/* ---------- HERO HEADER ---------- */}
       <section className="bg-[#0d2b33] text-white">
-        <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 pt-10 pb-14">
+        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-16 pt-10 pb-14">
           <Link
             href="/careers"
             className="inline-flex items-center gap-2 text-sm font-medium text-white/60 hover:text-white transition-colors mb-10"
@@ -86,7 +86,7 @@ export default async function JobDetailPage({
       </section>
 
       {/* ---------- BODY ---------- */}
-      <section className="w-full max-w-[1500px] mx-auto px-6 md:px-16 py-14">
+      <section className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-16 py-14">
         <div className="grid md:grid-cols-[1fr_350px] gap-14 items-start">
           {/* Main content */}
           <div>
@@ -151,7 +151,7 @@ export default async function JobDetailPage({
           </div>
 
           {/* Sticky sidebar */}
-          <aside className=" top-10 h-fit">
+          <aside className="sticky top-10 h-fit">
             <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
               <h3 className="text-sm font-bold text-[#0d2b33] mb-5">
                 Job overview

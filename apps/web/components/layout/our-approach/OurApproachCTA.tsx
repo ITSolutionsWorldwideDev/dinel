@@ -5,7 +5,7 @@ export default async function OurApproachCTA() {
   const t = await getTranslations();
 
   return (
-    <section className="max-w-6xl mx-auto px-6 md:px-8 pb-16">
+    <section className="max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-16 pb-16">
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#0d2b33] to-[#1a4550] text-white px-8 py-16 md:px-16 text-center">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,196,13,0.18),transparent_45%)] pointer-events-none" />
 
@@ -26,14 +26,14 @@ export default async function OurApproachCTA() {
               {t("ourApproach.ctaPrimary")}
             </Link>
 
-            <a
+            <Link
               href="/en/contact-us"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-3.5 rounded-xl border border-white/30 bg-white/10 text-white font-bold hover:bg-white/20 transition"
             >
               {t("ourApproach.ctaSecondary")}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -4,8 +4,8 @@ export default async function CareerIntro() {
   const t = await getTranslations("careers.intro");
 
   return (
-    <section className="relative py-24 px-6 overflow-hidden bg-white">
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section className="relative py-24 px-4 sm:px-8 lg:px-16 overflow-hidden bg-white">
+      <div className="max-w-[1500px] mx-auto relative z-10">
         
         {/* Header Content */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">

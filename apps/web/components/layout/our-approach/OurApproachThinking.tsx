@@ -22,7 +22,7 @@ export default async function OurApproachThinking() {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto px-6 md:px-8 py-8 md:py-12">
+    <section className="max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-16 py-8 md:py-12">
       <div className="text-center mb-14">
         <span className="inline-block text-[#f2c40d] text-xs font-black tracking-widest uppercase mb-4">
           {t("ourApproach.thinkingBadge")}

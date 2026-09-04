@@ -10,7 +10,7 @@ export default async function OurApproachLines() {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto px-6 md:px-8 py-8 md:py-16">
+    <section className="max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-16 py-8 md:py-16">
       <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20 items-start">
         <div>
           <span className="inline-block text-[#f2c40d] text-xs font-black tracking-widest uppercase mb-4">

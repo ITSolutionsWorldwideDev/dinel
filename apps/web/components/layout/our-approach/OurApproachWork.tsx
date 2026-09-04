@@ -28,7 +28,7 @@ export default async function OurApproachWork() {
 
   return (
     <section className="bg-[#f7f9fa] py-20 md:py-24 my-16">
-      <div className="max-w-6xl mx-auto px-6 md:px-8">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-16">
         <div className="max-w-3xl mb-14">
           <span className="inline-block text-[#0A7CD8] text-xs font-black tracking-widest uppercase mb-4">
             {t("ourApproach.workBadge")}

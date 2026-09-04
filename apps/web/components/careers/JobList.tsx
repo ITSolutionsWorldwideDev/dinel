@@ -1,12 +1,13 @@
 import { Link } from "@/i18n/navigation";
 import { MapPin } from "lucide-react";
 import { jobCategories, allJobs, JobCategoryGroup } from "@/app/data/jobs";
+
 export default function JobList() {
   const totalJobs = allJobs.length;
 
   return (
-    <section className="py-16 px-6 md:px-16 bg-slate-50 min-h-screen">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-16 px-4 sm:px-8 lg:px-16 bg-slate-50 min-h-screen">
+      <div className="max-w-[1500px] mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-black text-[#0d2b33] tracking-tight">
             Find Your Next <span className="text-[#0d2b33]">Great Role</span>
