@@ -173,20 +173,19 @@ export default function HiringFields({
       </div>
 
       <div className="sm:col-span-2">
-        <label className={labelClass}>Write a Message *</label>
-        <div className="relative">
-          <FileText className="pointer-events-none absolute left-3 top-3 h-4 w-4 text-gray-400" />
-          <textarea
-            required
-            rows={5}
-            value={data.jobDescription}
-            onChange={(e) => update("jobDescription", e.target.value)}
-            className="w-full rounded-lg border border-gray-300 py-2 pl-9 pr-3 text-sm focus:border-[#1a4550] focus:outline-none focus:ring-1 focus:ring-[#1a4550]"
-            placeholder="Describe the role, required skills, and responsibilities..."
-          />
-        </div>
-      </div>
-
+  <label className={labelClass}>Write a Message *</label>
+  <div className="relative">
+    <FileText className="pointer-events-none absolute left-3 top-3 h-4 w-4 text-gray-400" />
+    <textarea
+      required
+      rows={3}
+      value={data.jobDescription}
+      onChange={(e) => update("jobDescription", e.target.value)}
+      className="w-full rounded-lg border border-gray-300 py-2 pl-9 pr-3 text-sm focus:border-[#1a4550] focus:outline-none focus:ring-1 focus:ring-[#1a4550]"
+      placeholder="Describe the role, required skills, and responsibilities..."
+    />
+  </div>
+</div>
       <div className="sm:col-span-2">
         <label className={labelClass}>
           Job Description Document <span className="font-normal text-gray-400">(optional)</span>
@@ -227,40 +226,39 @@ export default function HiringFields({
         </p>
       </div>
 
-      <div className="sm:col-span-2">
-        <label className={labelClass}>KVK Number</label>
-        <div className="relative">
-          <Wallet className={`h-4 w-4 ${iconWrapClass}`} />
-          <input
-            type="text"
-            value={data.budget}
-            onChange={(e) => update("budget", e.target.value)}
-            className={inputClass}
-            placeholder=""
-          />
-        </div>
-      </div>
+<div>
+  <label className={labelClass}>KVK Number</label>
+  <div className="relative">
+    <Wallet className={`h-4 w-4 ${iconWrapClass}`} />
+    <input
+      type="text"
+      value={data.budget}
+      onChange={(e) => update("budget", e.target.value)}
+      className={inputClass}
+      placeholder=""
+    />
+  </div>
+</div>
 
-      {/* Where did you hear about us? field */}
-      <div className="sm:col-span-2">
-        <label className={labelClass}>Where did you hear about us?</label>
-        <div className="relative">
-          <HelpCircle className={`h-4 w-4 ${iconWrapClass}`} />
-          <select
-            value={(data as any).hearAboutUs || ""}
-            onChange={(e) => update("hearAboutUs" as any, e.target.value)}
-            className={inputClass}
-          >
-            <option value="">Select an option</option>
-            <option value="facebook">Facebook</option>
-            <option value="linkedin">LinkedIn</option>
-            <option value="google">Google Search</option>
-            <option value="instagram">Instagram</option>
-            <option value="friend">Friend / Colleague</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-      </div>
+<div>
+  <label className={labelClass}>Where did you hear about us?</label>
+  <div className="relative">
+    <HelpCircle className={`h-4 w-4 ${iconWrapClass}`} />
+    <select
+      value={(data as any).hearAboutUs || ""}
+      onChange={(e) => update("hearAboutUs" as any, e.target.value)}
+      className={inputClass}
+    >
+      <option value="">Select an option</option>
+      <option value="facebook">Facebook</option>
+      <option value="linkedin">LinkedIn</option>
+      <option value="google">Google Search</option>
+      <option value="instagram">Instagram</option>
+      <option value="friend">Friend / Colleague</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+</div>
     </div>
   );
 }

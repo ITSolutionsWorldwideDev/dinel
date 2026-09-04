@@ -122,47 +122,61 @@ export default function EnquiryForm({
     }
   };
 
-  return (
-    <div className="flex w-full items-center justify-center bg-transparent p-0">
-      <div className="w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-xl grid grid-cols-1 lg:grid-cols-12 border border-gray-200">
-        
-        {/* Left Half Section (Background #1a4550) */}
-        <div className="bg-[#1a4550] p-8 text-white flex flex-col justify-between lg:col-span-5">
-          <div>
-            <span className="inline-block rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wider uppercase mb-6 text-white/90">
-              {mode === "hiring" ? "HIRING PARTNERS" : "OPEN APPLICATION"}
-            </span>
-            <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">
-              {mode === "hiring" ? "Looking to hire top-tier talent?" : "Don't see your perfect role?"}
-            </h2>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              {mode === "hiring"
-                ? "Submit your requirements or job description and let us connect you with vetted professionals suited for your culture."
-                : "We hire for talent, not just open headcount. Send us your profile and tell us what you would like to build — we will reach out when the right opportunity opens."}
-            </p>
-          </div>
+return (
+  <div className="flex w-full items-center justify-center bg-transparent pt-1 pb-4">
+  <div className="w-full overflow-hidden rounded-3xl bg-white shadow-xl grid grid-cols-1 lg:grid-cols-12 border border-gray-200">
+{/* Left Half Section (Background #1a4550) */}
+<div className="bg-[#1a4550] p-8 text-white flex flex-col justify-between lg:col-span-5">
+  <div>
+    <span className="inline-block rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wider uppercase mb-6 text-white/90">
+      {mode === "hiring" ? "HIRING PARTNERS" : "OPEN APPLICATION"}
+    </span>
+    <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">
+      {mode === "hiring" ? "Looking to hire top-tier talent?" : "Don't see your perfect role?"}
+    </h2>
+    <p className="text-sm text-gray-300 leading-relaxed mb-8">
+      {mode === "hiring"
+        ? "Submit your requirements or job description and let us connect you with vetted professionals suited for your culture."
+        : "We hire for talent, not just open headcount. Send us your profile and tell us what you would like to build — we will reach out when the right opportunity opens."}
+    </p>
 
-          {/* Bottom Bullet Points / Features */}
-          <div className="mt-8 space-y-3 pt-6 border-t border-white/10 text-xs text-gray-300">
-            <div className="flex items-center gap-3">
-              <Clock className="h-4 w-4 shrink-0 text-white/80" />
-              <span>We respond quickly within 1-2 business days</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <ShieldCheck className="h-4 w-4 shrink-0 text-white/80" />
-              <span>Your data is secure and handled with privacy</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Award className="h-4 w-4 shrink-0 text-white/80" />
-              <span>Dedicated support for professionals and companies</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Coffee className="h-4 w-4 shrink-0 text-white/80" />
-              <span>Relaxed, transparent, and direct communication</span>
-            </div>
-          </div>
-        </div>
+    {/* Stats Row - fills empty space */}
+    <div className="grid grid-cols-3 gap-4 py-6 border-y border-white/10">
+      <div>
+        <p className="text-2xl font-bold text-[#f2c40d]">150+</p>
+        <p className="text-[11px] text-gray-300 mt-1">Placements Made</p>
+      </div>
+      <div>
+        <p className="text-2xl font-bold text-[#f2c40d]">48h</p>
+        <p className="text-[11px] text-gray-300 mt-1">Avg. Response</p>
+      </div>
+      <div>
+        <p className="text-2xl font-bold text-[#f2c40d]">98%</p>
+        <p className="text-[11px] text-gray-300 mt-1">Client Satisfaction</p>
+      </div>
+    </div>
+  </div>
 
+  {/* Bottom Bullet Points / Features */}
+  <div className="mt-8 space-y-3 pt-6 border-t border-white/10 text-xs text-gray-300">
+    <div className="flex items-center gap-3">
+      <Clock className="h-4 w-4 shrink-0 text-white/80" />
+      <span>We respond quickly within 1-2 business days</span>
+    </div>
+    <div className="flex items-center gap-3">
+      <ShieldCheck className="h-4 w-4 shrink-0 text-white/80" />
+      <span>Your data is secure and handled with privacy</span>
+    </div>
+    <div className="flex items-center gap-3">
+      <Award className="h-4 w-4 shrink-0 text-white/80" />
+      <span>Dedicated support for professionals and companies</span>
+    </div>
+    <div className="flex items-center gap-3">
+      <Coffee className="h-4 w-4 shrink-0 text-white/80" />
+      <span>Relaxed, transparent, and direct communication</span>
+    </div>
+  </div>
+</div>
         {/* Right Half Section (Form Fields Container) */}
         <div className="p-6 sm:p-8 lg:col-span-7 bg-white flex flex-col justify-center">
           {!lockMode && (

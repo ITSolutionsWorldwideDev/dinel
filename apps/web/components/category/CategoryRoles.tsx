@@ -5,7 +5,7 @@ export default function CategoryRoles({ title, roles }: { title: string; roles: 
   return (
     <section className="w-full bg-gradient-to-b from-white via-[#f7fafa] to-white py-20 overflow-hidden">
       {/* Header */}
-      <div className="w-full px-4 sm:px-6 lg:px-16 mb-16 max-w-[1500px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <div className="flex items-center gap-3 mb-3">
             <span className="w-10 h-[3px] bg-[#f2c40d] rounded-full" />
@@ -23,7 +23,7 @@ export default function CategoryRoles({ title, roles }: { title: string; roles: 
       </div>
 
       {/* Grid */}
-      <div className="w-full px-4 sm:px-6 lg:px-16 max-w-[1500px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {roles?.map((roleName: string, index: number) => (
           <div
             key={index}

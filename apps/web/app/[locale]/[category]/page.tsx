@@ -18,7 +18,7 @@ interface PageProps {
     category: string;
   }>;
 }
-
+ 
 const categoryKeyMap: Record<string, string> = {
   'it-development': 'itDevelopment',
   'design-services': 'designServices',
@@ -56,7 +56,8 @@ export default async function CategoryPage({ params }: PageProps) {
     <main className="w-full">
       <CategoryHero data={pageHero} />
 
-      <div className="px-4 sm:px-6 lg:px-12 py-12 space-y-16 max-w-[1400px] mx-auto">
+      {/* Single consistent container — controls width for ALL sections on this page */}
+      <div className="w-full px-4 sm:px-8 lg:px-16 max-w-[1500px] mx-auto py-12 space-y-16">
         <CategoryCoverage title={pageSections?.coverageTitle} body={pageSections?.coverageBody} />
         <CategoryRoles title={pageSections?.rolesTitle} roles={rolesCategory.roles} />
 
@@ -65,10 +66,8 @@ export default async function CategoryPage({ params }: PageProps) {
         )}
 
         <HowItWorks />
-      </div>
 
-      <div className="px-4 sm:px-6 lg:px-12 py-12 space-y-16 max-w-[1400px] mx-auto">
-        {/* Enquiry Form added before FAQ section with hiring mode locked */}
+        {/* Enquiry Form */}
         <section className="w-full">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold tracking-tight text-[#0d2b33] sm:text-4xl">
@@ -78,12 +77,12 @@ export default async function CategoryPage({ params }: PageProps) {
               Fill out the form below and our hiring team will get back to you shortly.
             </p>
           </div>
-          
-          <EnquiryForm 
-            categories={allCategories} 
-            defaultMode="hiring" 
+
+          <EnquiryForm
+            categories={allCategories}
+            defaultMode="hiring"
             lockMode={true}
-            defaultCategory={categoryKey} 
+            defaultCategory={categoryKey}
           />
         </section>
 

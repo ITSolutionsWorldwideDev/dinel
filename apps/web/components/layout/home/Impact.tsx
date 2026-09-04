@@ -5,7 +5,7 @@ export default async function Impact() {
   const t = await getTranslations("impact");
 
   return (
-    <section className="bg-[#0d2b33] relative overflow-hidden mb-16 md:mb-24 rounded-[2.5rem] mx-4 sm:mx-8 lg:mx-16 shadow-2xl">
+    <section className="bg-[#0d2b33] relative overflow-hidden mb-12 md:mb-16 rounded-[2.5rem] mx-4 sm:mx-8 lg:mx-16 shadow-2xl">
       <img
         src="/assets/home/2ab3e25bb92dd58e32fa83e505bc6ebef6f6ed58(1).jpg"
         className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20"
@@ -18,7 +18,7 @@ export default async function Impact() {
       <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-[#f2c40d]/10 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-24 -right-24 w-80 h-80 rounded-full bg-[#f2c40d]/15 blur-3xl pointer-events-none" />
 
-      <div className="w-full px-6 sm:px-12 lg:px-20 py-20 md:py-32 relative z-10 text-center max-w-5xl mx-auto">
+      <div className="w-full px-6 sm:px-12 lg:px-20 py-12 md:py-16 relative z-10 text-center max-w-6xl mx-auto">
 
         <div className="inline-flex items-center gap-2 mb-4">
           <span className="w-8 h-[3px] bg-[#f2c40d] rounded-full" />
@@ -28,11 +28,11 @@ export default async function Impact() {
           <span className="w-8 h-[3px] bg-[#f2c40d] rounded-full" />
         </div>
 
-        <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight leading-tight">
+        <h2 className="text-3xl md:text-5xl font-black text-white mb-5 tracking-tight leading-tight max-w-4xl mx-auto">
           {t("heading")}
         </h2>
 
-        <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed font-medium">
+        <p className="text-base md:text-lg text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed font-medium">
           {t("subheading")}
         </p>
 

@@ -131,54 +131,53 @@ export default function JobSeekerFields({
         </div>
       </div>
 
-      <div className="sm:col-span-2">
-        <label className={labelClass}>LinkedIn / Portfolio (optional)</label>
-        <div className="relative">
-          <Link2 className={`h-4 w-4 ${iconWrapClass}`} />
-          <input
-            type="url"
-            value={data.linkedin}
-            onChange={(e) => update("linkedin", e.target.value)}
-            className={inputClass}
-            placeholder="https://linkedin.com/in/yourname"
-          />
-        </div>
-      </div>
+ <div>
+  <label className={labelClass}>LinkedIn / Portfolio (optional)</label>
+  <div className="relative">
+    <Link2 className={`h-4 w-4 ${iconWrapClass}`} />
+    <input
+      type="url"
+      value={data.linkedin}
+      onChange={(e) => update("linkedin", e.target.value)}
+      className={inputClass}
+      placeholder="https://linkedin.com/in/yourname"
+    />
+  </div>
+</div>
 
-      {/* Where did you hear about us? field */}
-      <div className="sm:col-span-2">
-        <label className={labelClass}>Where did you hear about us?</label>
-        <div className="relative">
-          <HelpCircle className={`h-4 w-4 ${iconWrapClass}`} />
-          <select
-            value={(data as any).hearAboutUs || ""}
-            onChange={(e) => update("hearAboutUs" as any, e.target.value)}
-            className={inputClass}
-          >
-            <option value="">Select an option</option>
-            <option value="facebook">Facebook</option>
-            <option value="linkedin">LinkedIn</option>
-            <option value="google">Google Search</option>
-            <option value="instagram">Instagram</option>
-            <option value="friend">Friend / Colleague</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-      </div>
+<div>
+  <label className={labelClass}>Where did you hear about us?</label>
+  <div className="relative">
+    <HelpCircle className={`h-4 w-4 ${iconWrapClass}`} />
+    <select
+      value={(data as any).hearAboutUs || ""}
+      onChange={(e) => update("hearAboutUs" as any, e.target.value)}
+      className={inputClass}
+    >
+      <option value="">Select an option</option>
+      <option value="facebook">Facebook</option>
+      <option value="linkedin">LinkedIn</option>
+      <option value="google">Google Search</option>
+      <option value="instagram">Instagram</option>
+      <option value="friend">Friend / Colleague</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+</div>
 
-      <div className="sm:col-span-2">
-        <label className={labelClass}>Write a Message</label>
-        <div className="relative">
-          <MessageSquare className="pointer-events-none absolute left-3 top-3 h-4 w-4 text-gray-400" />
-          <textarea
-            rows={4}
-            value={data.coverMessage}
-            onChange={(e) => update("coverMessage", e.target.value)}
-            className="w-full rounded-lg border border-gray-300 py-2 pl-9 pr-3 text-sm focus:border-[#1a4550] focus:outline-none focus:ring-1 focus:ring-[#1a4550]"
-            placeholder="Briefly introduce yourself and what you're looking for..."
-          />
-        </div>
-      </div>
+   <div className="sm:col-span-2">
+  <label className={labelClass}>Write a Message</label>
+  <div className="relative">
+    <MessageSquare className="pointer-events-none absolute left-3 top-3 h-4 w-4 text-gray-400" />
+    <textarea
+      rows={3}
+      value={data.coverMessage}
+      onChange={(e) => update("coverMessage", e.target.value)}
+      className="w-full rounded-lg border border-gray-300 py-2 pl-9 pr-3 text-sm focus:border-[#1a4550] focus:outline-none focus:ring-1 focus:ring-[#1a4550]"
+      placeholder="Briefly introduce yourself and what you're looking for..."
+    />
+  </div>
+</div>
 
       <div className="sm:col-span-2">
         <label className={labelClass}>Upload CV *</label>

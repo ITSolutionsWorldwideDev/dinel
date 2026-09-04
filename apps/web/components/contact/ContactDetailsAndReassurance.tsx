@@ -4,7 +4,7 @@ export default async function ContactDetailsAndReassurance() {
   const t = await getTranslations("common");
 
   return (
-    <section className="w-full max-w-4xl mx-auto space-y-8 mb-16 px-4 sm:px-0">
+    <section className="w-full max-w-[1500px] mx-auto space-y-8 mb-16 px-4 sm:px-8 lg:px-16">
       <div className="bg-[#f7fafa] p-8 md:p-10 rounded-3xl border border-[#1a4550]/10 shadow-sm">
         <h3 className="text-xl font-extrabold text-[#0d2b33] mb-6">{t("detailsTitle")}</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">

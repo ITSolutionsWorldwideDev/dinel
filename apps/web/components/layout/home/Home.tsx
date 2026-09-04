@@ -20,7 +20,7 @@ const allCategories = [
 
 const Home = () => {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 overflow-x-hidden">
       <Header />
       <WhoWeHelp />
       <RolesWePlace />
@@ -34,13 +34,10 @@ const Home = () => {
         <div className="pointer-events-none absolute top-10 left-10 h-72 w-72 rounded-full bg-[#0d2b33]/5 blur-3xl" />
         <div className="pointer-events-none absolute bottom-10 right-10 h-80 w-80 rounded-full bg-[#f2c40d]/10 blur-3xl" />
 
-        <div className="w-full px-4 sm:px-6 lg:px-16 max-w-[1500px] mx-auto relative z-10">
-          
+<div className="w-full px-4 sm:px-8 lg:px-16 max-w-[1500px] mx-auto relative z-10">          
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-16 pt-8">
-            <span className="inline-block text-xs font-bold tracking-widest uppercase text-[#0d2b33] bg-[#0d2b33]/5 px-3 py-1.5 rounded-full mb-3">
-              Get In Touch
-            </span>
+           
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0d2b33] tracking-tight mb-4">
               Start Your Journey With Us
             </h2>
@@ -57,11 +54,12 @@ const Home = () => {
       </section>
 
       {/* Section 2: Centered FAQ Section */}
-      <section className="relative overflow-hidden bg-[#f7fafa] py-24 border-t border-b border-[#1a4550]/10">
-        <div className="mx-auto max-w-4xl px-4 sm:px-8">
-          <FaqSection />
-        </div>
-      </section>
+    {/* Section 2: FAQ Section */}
+<section className="relative overflow-hidden bg-[#f7fafa] py-24 border-t border-b border-[#1a4550]/10">
+  <div className="w-full px-4 sm:px-8 lg:px-16 max-w-[1500px] mx-auto">
+    <FaqSection />
+  </div>
+</section>
 
       <Impact />
     </div>

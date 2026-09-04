@@ -16,23 +16,23 @@ export default function IndustryWeWork() {
   const industries = [
     {
       id: 1,
-      name: t("infrastructure"), // Supply Chain
+      name: t("infrastructure"),
       icon: Truck,
-      href: "/careers?category=Supply+Chain", // Supply Chain category filter
+      href: "/careers?category=Supply+Chain",
       description: "Optimizing global logistics, warehouse operations, and inventory management for seamless flow and operational efficiency.",
     },
     {
       id: 2,
-      name: t("energy"), // Engineering
+      name: t("energy"),
       icon: HardHat,
-      href: "/careers?category=Engineering", // Engineering category filter
+      href: "/careers?category=Engineering",
       description: "Driving innovation and technical excellence across complex structural, mechanical, and industrial engineering projects.",
     },
     {
       id: 3,
-      name: t("oilGas"), // IT
+      name: t("oilGas"),
       icon: Monitor,
-      href: "/careers?category=IT", // IT category filter
+      href: "/careers?category=IT",
       description: "Empowering digital transformation through robust software solutions, cloud infrastructure, and advanced technical support.",
     },
   ];
@@ -52,10 +52,8 @@ export default function IndustryWeWork() {
 
   return (
     <>
-     
-
-      <section className="bg-white pt-16 lg:mt-16 pb-20 overflow-hidden w-full">
-        <div className="w-full pt-10 pb-0 px-4 md:px-10 lg:px-16">
+      <section className="bg-white pt-16 lg:mt-16 pb-20 overflow-x-hidden w-full">
+  <div className="w-full px-4 sm:px-8 lg:px-16 max-w-[1500px] mx-auto">
           
           <div className="text-center mb-16">
             <span className="inline-block py-1.5 px-4 rounded-full bg-[#1a4550]/10 text-[#1a4550] text-xs font-bold tracking-wider uppercase mb-3">
@@ -66,13 +64,14 @@ export default function IndustryWeWork() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full pt-10">
-            {industries.map((item) => {
+          {/* Added mx-auto and constrained max-w to prevent edge bleeding */}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full pt-12">
+              {industries.map((item) => {
               const IconComponent = item.icon;
               return (
                 <div
                   key={item.id}
-                  className="relative bg-white pt-16 pb-6 px-6 rounded-3xl shadow-xl shadow-[#1a4550]/5 border border-gray-100 flex flex-col items-center justify-between text-center group hover:-translate-y-2 transition-all duration-300 w-full"
+                  className="relative bg-white pt-20 pb-6 px-6 rounded-3xl shadow-xl shadow-[#1a4550]/5 border border-gray-100 flex flex-col items-center justify-between text-center group hover:-translate-y-2 transition-all duration-300 w-full my-4 md:my-0"
                 >
                   {/* Floating Badge Icon */}
                   <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-gradient-to-br from-[#1a4550] to-[#0d2b33] rounded-2xl rotate-45 flex items-center justify-center shadow-lg shadow-[#1a4550]/30 group-hover:rotate-90 transition-transform duration-500">
