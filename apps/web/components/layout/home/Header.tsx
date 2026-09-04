@@ -9,8 +9,8 @@ export default async function Header() {
   const t = await getTranslations("header");
 
   return (
-// 1) h-screen ki jagah min-h-screen use karo (lg breakpoint pe bhi), taake zoom/chhoti height pe content cut/overlap na ho:
-<section className="relative w-full min-h-screen flex flex-col justify-center overflow-hidden py-16 lg:py-20">      <HeroVideo />
+    <section className="relative w-full min-h-screen flex flex-col justify-between overflow-visible pt-16 lg:pt-20 pb-56 sm:pb-64 md:pb-72">
+      <HeroVideo />
 
       {/* Dark overlay so text stays readable over the video */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/30 z-[1]" />
@@ -22,10 +22,9 @@ export default async function Header() {
         {t("bigText")}
       </h1>
 
-      <div className="relative z-10 w-full px-4 sm:px-6 md:px-12 lg:px-16 container mx-auto">
+      <div className="relative z-10 w-full px-4 sm:px-6 md:px-12 lg:px-16 container mx-auto my-auto">
         <div className="w-full max-w-5xl mx-auto text-center">
           
-
           <h2 className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight drop-shadow-xl">
             {t("titleLine1")}{" "}
             <span className="italic font-serif font-light text-[#f2c40d] tracking-normal drop-shadow-lg">
@@ -52,19 +51,21 @@ export default async function Header() {
             </Link>
 
             <Link
-              href="/our-approach"
+              href="/about"
               className="inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md px-8 py-4 text-sm font-semibold transition-all rounded-full shadow-lg"
             >
               {t("ctaSecondary")}
             </Link>
           </div>
         </div>
-
-        <div className="mt-10">
-        
-        </div>
       </div>
 
-<div className="h-20 sm:h-24 md:h-28 lg:h-32 w-full shrink-0" aria-hidden="true" />    </section>
+      {/* Search bar pushed further down below the buttons with increased section padding */}
+      <div className="relative z-20 w-full px-4 sm:px-6 md:px-12 lg:px-16 container mx-auto flex justify-center mb-[-11rem] sm:mb-[-13rem] translate-y-16 sm:translate-y-20">
+        <div className="w-full max-w-4xl">
+          <VacanciesSearchBar />
+        </div>
+      </div>
+    </section>
   );
 }

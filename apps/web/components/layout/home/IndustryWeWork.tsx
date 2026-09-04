@@ -52,11 +52,7 @@ export default function IndustryWeWork() {
 
   return (
     <>
-      <div className="relative flex justify-center items-center">
-        <div className="lg:absolute z-35">
-          <VacanciesSearchBar onSearch={handleSearch} />
-        </div>
-      </div>
+     
 
       <section className="bg-white pt-16 lg:mt-16 pb-20 overflow-hidden w-full">
         <div className="w-full pt-10 pb-0 px-4 md:px-10 lg:px-16">

@@ -286,7 +286,7 @@ export async function POST(req: NextRequest) {
 
               <tr>
                 <td style="border: 1px solid #ddd;">
-                  <strong>Number of Positions</strong>
+                  <strong>KVK Number</strong>
                 </td>
                 <td style="border: 1px solid #ddd;">
                   ${escapeHtml(positions || "-")}
@@ -295,7 +295,7 @@ export async function POST(req: NextRequest) {
 
               <tr>
                 <td style="border: 1px solid #ddd;">
-                  <strong>Budget / Timeline</strong>
+                  <strong>KVK Number</strong>
                 </td>
                 <td style="border: 1px solid #ddd;">
                   ${escapeHtml(budget || "-")}

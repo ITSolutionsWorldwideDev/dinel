@@ -11,6 +11,7 @@ import {
   FileText,
   Wallet,
   Paperclip,
+  HelpCircle,
 } from "lucide-react";
 import { Category, HiringFormState } from "./types";
 
@@ -172,7 +173,7 @@ export default function HiringFields({
       </div>
 
       <div className="sm:col-span-2">
-        <label className={labelClass}>Job Description *</label>
+        <label className={labelClass}>Write a Message *</label>
         <div className="relative">
           <FileText className="pointer-events-none absolute left-3 top-3 h-4 w-4 text-gray-400" />
           <textarea
@@ -227,7 +228,7 @@ export default function HiringFields({
       </div>
 
       <div className="sm:col-span-2">
-        <label className={labelClass}>Budget / Timeline (optional)</label>
+        <label className={labelClass}>KVK Number</label>
         <div className="relative">
           <Wallet className={`h-4 w-4 ${iconWrapClass}`} />
           <input
@@ -235,8 +236,29 @@ export default function HiringFields({
             value={data.budget}
             onChange={(e) => update("budget", e.target.value)}
             className={inputClass}
-            placeholder="e.g. €3000-4000/month, start within 2 weeks"
+            placeholder=""
           />
+        </div>
+      </div>
+
+      {/* Where did you hear about us? field */}
+      <div className="sm:col-span-2">
+        <label className={labelClass}>Where did you hear about us?</label>
+        <div className="relative">
+          <HelpCircle className={`h-4 w-4 ${iconWrapClass}`} />
+          <select
+            value={(data as any).hearAboutUs || ""}
+            onChange={(e) => update("hearAboutUs" as any, e.target.value)}
+            className={inputClass}
+          >
+            <option value="">Select an option</option>
+            <option value="facebook">Facebook</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="google">Google Search</option>
+            <option value="instagram">Instagram</option>
+            <option value="friend">Friend / Colleague</option>
+            <option value="other">Other</option>
+          </select>
         </div>
       </div>
     </div>

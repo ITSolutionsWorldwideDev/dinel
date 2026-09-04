@@ -1,8 +1,8 @@
 {
 "nav": {
   "home": "Home",
-  "services": "Services",
-  "categories": "Categorieën",
+  "services": "Hoe we werven",
+  "categories": "Functies waarin we plaatsen",
   "approach": "Onze Aanpak",
   "about": "Over Ons",
   "contact": "Contact",
@@ -30,7 +30,7 @@
   "subtext": "Wij bieden meerdere vacatures in ons portfolio. Doorzoek onze online vacatures.",
   "placeholder": "Zoek vacatures op trefwoord",
   "searchButton": "Zoeken",
-  "allVacancies": "Alle Vacatures"
+  "allVacancies": "Careers"
 },
 
 

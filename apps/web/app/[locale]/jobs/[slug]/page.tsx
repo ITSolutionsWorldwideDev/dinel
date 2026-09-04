@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import { MapPin, ArrowLeft, Clock3, CheckCircle2 } from "lucide-react";
-// Adjust this relative path if your tsconfig paths aren't set up for monorepo packages yet
 import { allJobs, getJobBySlug } from "../../../data/jobs";
+import EnquiryForm from "@/components/forms/EnquiryForm";
 
 // Pre-render a static page for every job slug at build time
 export function generateStaticParams() {
@@ -42,13 +42,18 @@ export default async function JobDetailPage({
     notFound();
   }
 
+  // Define categories array matching the Category type ({ value, label })
+  const allCategories = [
+    { value: job.category, label: job.category }
+  ];
+
   return (
     <div className="bg-[#f6f4ef]">
       {/* ---------- HERO HEADER ---------- */}
       <section className="bg-[#0d2b33] text-white">
-        <div className="max-w-5xl mx-auto px-6 md:px-16 pt-10 pb-14">
+        <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 pt-10 pb-14">
           <Link
-            href="/jobs"
+            href="/careers"
             className="inline-flex items-center gap-2 text-sm font-medium text-white/60 hover:text-white transition-colors mb-10"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -81,15 +86,15 @@ export default async function JobDetailPage({
       </section>
 
       {/* ---------- BODY ---------- */}
-      <section className="max-w-5xl mx-auto px-6 md:px-16 py-14">
-        <div className="grid md:grid-cols-[1fr_300px] gap-14">
+      <section className="w-full max-w-[1500px] mx-auto px-6 md:px-16 py-14">
+        <div className="grid md:grid-cols-[1fr_350px] gap-14 items-start">
           {/* Main content */}
           <div>
             <div className="mb-12">
               <h2 className="text-xl font-bold text-[#0d2b33] mb-4">
                 About the role
               </h2>
-              <p className="text-slate-600 leading-relaxed text-[15px] max-w-[65ch]">
+              <p className="text-slate-600 leading-relaxed text-[15px] max-w-none">
                 {job.description}
               </p>
             </div>
@@ -108,7 +113,7 @@ export default async function JobDetailPage({
               </ul>
             </div>
 
-            <div className="pt-10 border-t border-slate-200">
+            <div className="mb-14 pt-10 border-t border-slate-200">
               <h2 className="text-xl font-bold text-[#0d2b33] mb-5">
                 Requirements
               </h2>
@@ -121,11 +126,33 @@ export default async function JobDetailPage({
                 ))}
               </ul>
             </div>
+
+            {/* ---------- APPLICATION FORM SECTION (Job Seeker Locked) ---------- */}
+            <div id="apply-form" className="pt-10 border-t border-slate-200 scroll-mt-10">
+              <div className="mb-6">
+                <h2 className="text-2xl font-bold text-[#0d2b33] tracking-tight">
+                  Apply for this role
+                </h2>
+                <p className="text-slate-600 text-sm mt-1">
+                  Fill out your details below to submit your application for {job.title}.
+                </p>
+              </div>
+
+              <div className="w-full">
+                <EnquiryForm
+                  categories={allCategories}
+                  defaultMode="jobseeker"
+                  lockMode={true}
+                  defaultCategory={job.category}
+                  lockCategory={true}
+                />
+              </div>
+            </div>
           </div>
 
           {/* Sticky sidebar */}
-          <aside className="md:sticky md:top-10 h-fit">
-            <div className="bg-white rounded-2xl border border-slate-200 p-6">
+          <aside className=" top-10 h-fit">
+            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
               <h3 className="text-sm font-bold text-[#0d2b33] mb-5">
                 Job overview
               </h3>
@@ -151,12 +178,12 @@ export default async function JobDetailPage({
                 </div>
               </dl>
 
-              <Link
-                href="/contact-us"
+              <a
+                href="#apply-form"
                 className="mt-6 block w-full text-center px-6 py-3 rounded-xl bg-[#0d2b33] text-white text-sm font-bold hover:bg-[#153e49] transition-colors"
               >
                 Apply for this role
-              </Link>
+              </a>
             </div>
           </aside>
         </div>

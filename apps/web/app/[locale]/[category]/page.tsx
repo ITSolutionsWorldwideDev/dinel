@@ -9,7 +9,7 @@ import CategoryModel from '../../../components/category/CategoryModel';
 import CategoryFaq from '../../../components/category/CategoryFaq';
 import CategoryFinalCta from '../../../components/category/CategoryFinalCta';
 import HowItWorks from '../../../components/category/CategoryHowItWorks';
-import ContactFormMapSection from '@/components/shared/ContactFormMapSection';
+import EnquiryForm from '@/components/forms/EnquiryForm';
 import { allCategories } from '@/components/forms/categories';
 
 interface PageProps {
@@ -56,7 +56,7 @@ export default async function CategoryPage({ params }: PageProps) {
     <main className="w-full">
       <CategoryHero data={pageHero} />
 
-      <div className="px-4 sm:px-6 lg:px-12 py-12">
+      <div className="px-4 sm:px-6 lg:px-12 py-12 space-y-16 max-w-[1400px] mx-auto">
         <CategoryCoverage title={pageSections?.coverageTitle} body={pageSections?.coverageBody} />
         <CategoryRoles title={pageSections?.rolesTitle} roles={rolesCategory.roles} />
 
@@ -67,15 +67,26 @@ export default async function CategoryPage({ params }: PageProps) {
         <HowItWorks />
       </div>
 
-      <ContactFormMapSection
-        categories={allCategories}
-        defaultCategory={category}
-        lockCategory={true}
-        title="Hire Talent for This Role"
-        description="Tell us what you need and our team will get back to you shortly."
-      />
+      <div className="px-4 sm:px-6 lg:px-12 py-12 space-y-16 max-w-[1400px] mx-auto">
+        {/* Enquiry Form added before FAQ section with hiring mode locked */}
+        <section className="w-full">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold tracking-tight text-[#0d2b33] sm:text-4xl">
+              Ready to hire for {category.replace(/-/g, ' ')}?
+            </h2>
+            <p className="mt-2 text-lg text-gray-600">
+              Fill out the form below and our hiring team will get back to you shortly.
+            </p>
+          </div>
+          
+          <EnquiryForm 
+            categories={allCategories} 
+            defaultMode="hiring" 
+            lockMode={true}
+            defaultCategory={categoryKey} 
+          />
+        </section>
 
-      <div className="px-4 sm:px-6 lg:px-12 py-12">
         <CategoryFaq title={pageSections?.faqTitle} faqs={pageSections?.faqs || []} />
         <CategoryFinalCta data={pageSections?.finalCta} />
       </div>

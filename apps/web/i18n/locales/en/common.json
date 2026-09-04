@@ -2,8 +2,8 @@
 {
 "nav": {
   "home": "Home",
-  "services": "Services",
-  "categories": "Categories",
+  "services": "How we Hire",
+  "categories": "Roles We Place",
   "approach": "Our Approach",
   "about": "About Us",
   "contact": "Contact",
@@ -33,7 +33,7 @@
   "subtext": "We offer multiple vacancies in our portfolio. Search our online vacancies.",
   "placeholder": "Search vacancies by keyword",
   "searchButton": "To Search",
-  "allVacancies": "All Vacancies"
+  "allVacancies": "Careers"
 },
 
 

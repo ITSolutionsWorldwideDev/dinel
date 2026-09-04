@@ -19,7 +19,7 @@ const ContactPage = () => {
       <ContactHero />
       <ContactChannels />
 
-      {/* Form & Real Map Section from Home */}
+      {/* Form Section stretched to full width */}
       <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#f7fafa] to-white py-20">
         <div className="pointer-events-none absolute top-10 left-10 h-72 w-72 rounded-full bg-[#0d2b33]/5 blur-3xl" />
         <div className="pointer-events-none absolute bottom-10 right-10 h-80 w-80 rounded-full bg-[#f2c40d]/10 blur-3xl" />
@@ -39,33 +39,14 @@ const ContactPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-2">
-            
-            {/* Left: Enquiry Form */}
-            <div className="flex flex-col w-full">
-              <EnquiryForm categories={allCategories} defaultMode="hiring" />
-            </div>
-
-            {/* Right: Real Interactive Map */}
-            <div className="flex flex-col w-full h-full min-h-[480px] lg:min-h-full overflow-hidden rounded-3xl border-2 border-[#1a4550]/15 bg-white shadow-xl shadow-[#1a4550]/5 relative">
-              <iframe
-                title="Office Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.617469614488!2d4.895167876839958!3d52.37021577201977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c63fb361665a95%3A0xb357f8674918e7e!2sAmsterdam%2C%20Netherlands!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
-                className="absolute inset-0 h-full w-full border-0 grayscale contrast-125 opacity-90 hover:grayscale-0 transition-all duration-500"
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-
+          {/* Fully stretched single column for the form */}
+          <div className="w-full">
+            <EnquiryForm categories={allCategories} defaultMode="hiring" />
           </div>
         </div>
       </section>
 
-
-
-            <ContactDetailsAndReassurance />
-
+      <ContactDetailsAndReassurance />
     </div>
   );
 };

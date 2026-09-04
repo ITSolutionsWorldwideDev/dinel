@@ -9,7 +9,7 @@ import DivisionOfLaborSection from '@/components/service/DivisionOfLaborSection'
 import DecisionGuideSection from '@/components/service/DecisionGuideSection';
 import FaqSection from '@/components/service/FaqSection';
 import FinalCtaSection from '@/components/service/FinalCtaSection';
-import ContactFormMapSection from '@/components/shared/ContactFormMapSection';
+import EnquiryForm from '@/components/forms/EnquiryForm';
 import { allCategories } from '@/components/forms/categories';
 
 interface PageProps {
@@ -62,13 +62,26 @@ export default async function SubServicePage({ params }: PageProps) {
         <DecisionGuideSection sec={sec} />
       </div>
 
-      <ContactFormMapSection
-        categories={allCategories}
-        title="Ready to Get Started?"
-        description="Tell us about your hiring needs — pick the category that fits and we'll take it from there."
-      />
-
       <div className="px-4 sm:px-6 lg:px-16 pb-16 max-w-[1400px] mx-auto space-y-24">
+        {/* Enquiry Form moved above FaqSection with hiring mode locked */}
+        <section className="w-full">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold tracking-tight text-[#0d2b33] sm:text-4xl">
+              Ready to get started?
+            </h2>
+            <p className="mt-2 text-lg text-gray-600">
+              Fill out the form below and our hiring team will get back to you shortly.
+            </p>
+          </div>
+          
+          <EnquiryForm 
+            categories={allCategories} 
+            defaultMode="hiring" 
+            lockMode={true}
+            defaultCategory={serviceKey} 
+          />
+        </section>
+
         <FaqSection sec={sec} />
         <FinalCtaSection sec={sec} />
       </div>

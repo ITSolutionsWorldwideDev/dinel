@@ -24,7 +24,7 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
     if (!searchQuery.trim()) return;
 
     router.push(
-      `/vacancies/all?search=${encodeURIComponent(searchQuery)}`
+      `/careers?search=${encodeURIComponent(searchQuery)}`
     );
   };
 
@@ -34,7 +34,7 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
       onSearch("");
       return;
     }
-    router.push("/vacancies/all");
+    router.push("/careers");
   };
 
   return (
@@ -88,7 +88,7 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
           </button>
 
           <Link
-            href="/vacancies/all"
+            href="/careers"
             onClick={handleAllVacancies}
             className="h-11 px-6 rounded-xl border-2 border-[#1a4550]/20 bg-transparent text-[#1a4550] text-xs md:text-sm font-black hover:bg-[#1a4550] hover:text-white hover:border-[#1a4550] transition-all duration-300 cursor-pointer flex items-center justify-center shrink-0 active:scale-95 shadow-sm"
           >

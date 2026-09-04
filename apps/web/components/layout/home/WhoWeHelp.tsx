@@ -82,18 +82,15 @@ const WhoWeHelp = async () => {
   const cardsB = t.raw("cardsB") as { title: string; desc: string; fit: string; cta: string }[];
   const fitsLabel = t("fitsLabel");
 
-  // Exact paths map aligned with your 4 new pages inside service folder:
-  // Group A (cardsA): 0 -> recruitment-process-outsourcing, 1 -> temporary-staffing
-  // Group B (cardsB): 0 -> payrolling, 1 -> recruitment-placement
-// Group A (cardsA): 0 -> "Recruitment / Placement", 1 -> "RPO"
-const basePathsA = ["/service/recruitment-placement", "/service/recruitment-process-outsourcing"];
-const basePathsB = ["/service/temporary-staffing", "/service/payrolling"];
+  const basePathsA = ["/service/recruitment-placement", "/service/recruitment-process-outsourcing"];
+  const basePathsB = ["/service/temporary-staffing", "/service/payrolling"];
 
-const localePrefix = locale === "en" ? "" : `/${locale}`;
-const linksA = basePathsA.map(path => `${localePrefix}${path}`);
-const linksB = basePathsB.map(path => `${localePrefix}${path}`);
+  const localePrefix = locale === "en" ? "" : `/${locale}`;
+  const linksA = basePathsA.map(path => `${localePrefix}${path}`);
+  const linksB = basePathsB.map(path => `${localePrefix}${path}`);
+
   return (
-    <section className="relative bg-gradient-to-b from-white via-[#f7fafa] to-white pb-24 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-white via-[#f7fafa] to-white pt-16 sm:pt-20 md:pt-24 pb-24 overflow-hidden">
       <div className="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-[#0d2b33]/5 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-20 -right-20 w-96 h-96 rounded-full bg-[#f2c40d]/10 blur-3xl pointer-events-none" />
 

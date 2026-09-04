@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Briefcase, UserSearch } from "lucide-react";
+import { Briefcase, UserSearch, Clock, ShieldCheck, Award, Coffee } from "lucide-react";
 import HiringFields from "./HiringFields";
 import JobSeekerFields from "./JobSeekerFields";
 import {
@@ -77,6 +77,7 @@ export default function EnquiryForm({
         formData.append("positions", hiringData.positions);
         formData.append("jobDescription", hiringData.jobDescription);
         formData.append("budget", hiringData.budget);
+        formData.append("hearAboutUs", (hiringData as any).hearAboutUs || "");
         if (hiringData.jobDescriptionFile) {
           formData.append("jobDescriptionFile", hiringData.jobDescriptionFile);
         }
@@ -100,6 +101,7 @@ export default function EnquiryForm({
         formData.append("category", jobSeekerData.category);
         formData.append("coverMessage", jobSeekerData.coverMessage);
         formData.append("linkedin", jobSeekerData.linkedin);
+        formData.append("hearAboutUs", (jobSeekerData as any).hearAboutUs || "");
         formData.append("cv", jobSeekerData.cv);
 
         const res = await fetch("/api/enquiry", {
@@ -121,79 +123,127 @@ export default function EnquiryForm({
   };
 
   return (
-    <div className="flex h-full w-full flex-col rounded-3xl border-2 border-[#1a4550]/15 bg-white p-7 shadow-lg shadow-[#1a4550]/5">
-      {!lockMode && (
-        <div className="mb-6 flex rounded-md bg-gray-100 p-1">
-          <button
-            type="button"
-            onClick={() => handleModeSwitch("hiring")}
-            className={`flex flex-1 items-center justify-center gap-1.5 rounded-md py-2 text-sm font-medium transition-colors ${
-              mode === "hiring"
-                ? "bg-[#1a4550] text-white shadow-sm"
-                : "text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            <Briefcase className="h-4 w-4" />
-            I&apos;m Hiring
-          </button>
-          <button
-            type="button"
-            onClick={() => handleModeSwitch("jobseeker")}
-            className={`flex flex-1 items-center justify-center gap-1.5 rounded-md py-2 text-sm font-medium transition-colors ${
-              mode === "jobseeker"
-                ? "bg-[#1a4550] text-white shadow-sm"
-                : "text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            <UserSearch className="h-4 w-4" />
-            I&apos;m Looking for a Job
-          </button>
+    <div className="flex w-full items-center justify-center bg-transparent p-0">
+      <div className="w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-xl grid grid-cols-1 lg:grid-cols-12 border border-gray-200">
+        
+        {/* Left Half Section (Background #1a4550) */}
+        <div className="bg-[#1a4550] p-8 text-white flex flex-col justify-between lg:col-span-5">
+          <div>
+            <span className="inline-block rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wider uppercase mb-6 text-white/90">
+              {mode === "hiring" ? "HIRING PARTNERS" : "OPEN APPLICATION"}
+            </span>
+            <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">
+              {mode === "hiring" ? "Looking to hire top-tier talent?" : "Don't see your perfect role?"}
+            </h2>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              {mode === "hiring"
+                ? "Submit your requirements or job description and let us connect you with vetted professionals suited for your culture."
+                : "We hire for talent, not just open headcount. Send us your profile and tell us what you would like to build — we will reach out when the right opportunity opens."}
+            </p>
+          </div>
+
+          {/* Bottom Bullet Points / Features */}
+          <div className="mt-8 space-y-3 pt-6 border-t border-white/10 text-xs text-gray-300">
+            <div className="flex items-center gap-3">
+              <Clock className="h-4 w-4 shrink-0 text-white/80" />
+              <span>We respond quickly within 1-2 business days</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <ShieldCheck className="h-4 w-4 shrink-0 text-white/80" />
+              <span>Your data is secure and handled with privacy</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Award className="h-4 w-4 shrink-0 text-white/80" />
+              <span>Dedicated support for professionals and companies</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Coffee className="h-4 w-4 shrink-0 text-white/80" />
+              <span>Relaxed, transparent, and direct communication</span>
+            </div>
+          </div>
         </div>
-      )}
 
-      <form onSubmit={handleSubmit}>
-        {mode === "hiring" ? (
-          <HiringFields
-            data={hiringData}
-            onChange={setHiringData}
-            categories={categories}
-            categoryLocked={lockCategory}
-          />
-        ) : (
-          <JobSeekerFields
-            data={jobSeekerData}
-            onChange={setJobSeekerData}
-            categories={categories}
-            categoryLocked={lockCategory}
-          />
-        )}
+        {/* Right Half Section (Form Fields Container) */}
+        <div className="p-6 sm:p-8 lg:col-span-7 bg-white flex flex-col justify-center">
+          {!lockMode && (
+            <div className="mb-6 flex rounded-md bg-gray-100 p-1">
+              <button
+                type="button"
+                onClick={() => handleModeSwitch("hiring")}
+                className={`flex flex-1 items-center justify-center gap-1.5 rounded-md py-2 text-sm font-medium transition-colors ${
+                  mode === "hiring"
+                    ? "bg-[#1a4550] text-white shadow-sm"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                <Briefcase className="h-4 w-4" />
+                I&apos;m Hiring
+              </button>
+              <button
+                type="button"
+                onClick={() => handleModeSwitch("jobseeker")}
+                className={`flex flex-1 items-center justify-center gap-1.5 rounded-md py-2 text-sm font-medium transition-colors ${
+                  mode === "jobseeker"
+                    ? "bg-[#1a4550] text-white shadow-sm"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                <UserSearch className="h-4 w-4" />
+                I&apos;m Looking for a Job
+              </button>
+            </div>
+          )}
 
-        {status === "error" && (
-          <p className="mt-4 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">
-            {errorMessage}
-          </p>
-        )}
+          <form onSubmit={handleSubmit}>
+            {mode === "hiring" ? (
+              <HiringFields
+                data={hiringData}
+                onChange={setHiringData}
+                categories={categories}
+                categoryLocked={lockCategory}
+              />
+            ) : (
+              <JobSeekerFields
+                data={jobSeekerData}
+                onChange={setJobSeekerData}
+                categories={categories}
+                categoryLocked={lockCategory}
+              />
+            )}
 
-        {status === "success" && (
-          <p className="mt-4 rounded-md bg-green-50 px-3 py-2 text-sm text-green-700">
-            {mode === "hiring"
-              ? "Thanks! Your enquiry has been received — we'll be in touch shortly."
-              : "Thanks! Your application has been submitted successfully."}
-          </p>
-        )}
+            {status === "error" && (
+              <p className="mt-4 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">
+                {errorMessage}
+              </p>
+            )}
 
-        <button
-          type="submit"
-          disabled={status === "submitting"}
-          className="mt-6 w-full rounded-md bg-[#1a4550] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#123540] disabled:cursor-not-allowed disabled:opacity-60"
-        >
-          {status === "submitting"
-            ? "Submitting..."
-            : mode === "hiring"
-            ? "Submit Enquiry"
-            : "Submit Application"}
-        </button>
-      </form>
+            {status === "success" && (
+              <p className="mt-4 rounded-md bg-green-50 px-3 py-2 text-sm text-green-700">
+                {mode === "hiring"
+                  ? "Thanks! Your enquiry has been received — we'll be in touch shortly."
+                  : "Thanks! Your application has been submitted successfully."}
+              </p>
+            )}
+
+            <button
+              type="submit"
+              disabled={status === "submitting"}
+              className="mt-6 w-full rounded-md bg-[#1a4550] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#123540] disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {status === "submitting"
+                ? "Submitting..."
+                : mode === "hiring"
+                ? "Submit Enquiry"
+                : "Submit Application"}
+            </button>
+            
+            <p className="mt-3 text-center text-xs text-gray-400">
+              We respect your privacy. Your info is never sold or shared.
+            </p>
+          </form>
+        </div>
+
+      </div>
     </div>
   );
 }

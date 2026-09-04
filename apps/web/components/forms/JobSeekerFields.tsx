@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { User, Mail, Phone, Layers, Link2, MessageSquare, FileUp } from "lucide-react";
+import { User, Mail, Phone, Layers, Link2, MessageSquare, FileUp, HelpCircle } from "lucide-react";
 import { Category, JobSeekerFormState } from "./types";
 
 interface JobSeekerFieldsProps {
@@ -105,7 +105,7 @@ export default function JobSeekerFields({
             value={data.phone}
             onChange={(e) => update("phone", e.target.value)}
             className={inputClass}
-            placeholder="+92 300 1234567"
+            placeholder="+31 300 1234567"
           />
         </div>
       </div>
@@ -142,6 +142,27 @@ export default function JobSeekerFields({
             className={inputClass}
             placeholder="https://linkedin.com/in/yourname"
           />
+        </div>
+      </div>
+
+      {/* Where did you hear about us? field */}
+      <div className="sm:col-span-2">
+        <label className={labelClass}>Where did you hear about us?</label>
+        <div className="relative">
+          <HelpCircle className={`h-4 w-4 ${iconWrapClass}`} />
+          <select
+            value={(data as any).hearAboutUs || ""}
+            onChange={(e) => update("hearAboutUs" as any, e.target.value)}
+            className={inputClass}
+          >
+            <option value="">Select an option</option>
+            <option value="facebook">Facebook</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="google">Google Search</option>
+            <option value="instagram">Instagram</option>
+            <option value="friend">Friend / Colleague</option>
+            <option value="other">Other</option>
+          </select>
         </div>
       </div>
 
