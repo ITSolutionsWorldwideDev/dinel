@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Briefcase, UserSearch, Clock, ShieldCheck, Award, Coffee } from "lucide-react";
+import { Briefcase, UserSearch, Clock, ShieldCheck, Award, Coffee, Zap, Users, Target } from "lucide-react";
 import HiringFields from "./HiringFields";
 import JobSeekerFields from "./JobSeekerFields";
 import {
@@ -14,13 +14,9 @@ import {
 } from "./types";
 
 interface EnquiryFormProps {
-  /** Fixed set of categories relevant to this page (e.g. IT Development, Marketing). */
   categories: Category[];
-  /** Default mode when the form loads. */
   defaultMode?: FormMode;
-  /** If true, hides the Hiring/Job Seeker toggle — used on pages where context is already known. */
   lockMode?: boolean;
-  /** Pre-select and lock the category dropdown — used on category/service pages. */
   defaultCategory?: string;
   lockCategory?: boolean;
 }
@@ -122,72 +118,86 @@ export default function EnquiryForm({
     }
   };
 
-return (
-  <div className="flex w-full items-center justify-center bg-transparent pt-1 pb-4">
-  <div className="w-full overflow-hidden rounded-3xl bg-white shadow-xl grid grid-cols-1 lg:grid-cols-12 border border-gray-200">
-{/* Left Half Section (Background #1a4550) */}
-<div className="bg-[#1a4550] p-8 text-white flex flex-col justify-between lg:col-span-5">
-  <div>
-    <span className="inline-block rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wider uppercase mb-6 text-white/90">
-      {mode === "hiring" ? "HIRING PARTNERS" : "OPEN APPLICATION"}
-    </span>
-    <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">
-      {mode === "hiring" ? "Looking to hire top-tier talent?" : "Don't see your perfect role?"}
-    </h2>
-    <p className="text-sm text-gray-300 leading-relaxed mb-8">
-      {mode === "hiring"
-        ? "Submit your requirements or job description and let us connect you with vetted professionals suited for your culture."
-        : "We hire for talent, not just open headcount. Send us your profile and tell us what you would like to build — we will reach out when the right opportunity opens."}
-    </p>
+  return (
+    <div className="flex w-full items-center justify-center bg-transparent py-4">
+      <div className="w-full overflow-hidden rounded-3xl bg-white shadow-2xl grid grid-cols-1 lg:grid-cols-12 border border-gray-100">
+        
+        {/* Left Half Section (Background #1a4550) */}
+        <div className="bg-[#1a4550] p-8 sm:p-10 text-white flex flex-col justify-between lg:col-span-5 relative overflow-hidden">
+          {/* Subtle decorative glow effect */}
+          <div className="absolute -right-12 -top-12 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none" />
 
-    {/* Stats Row - fills empty space */}
-    <div className="grid grid-cols-3 gap-4 py-6 border-y border-white/10">
-      <div>
-        <p className="text-2xl font-bold text-[#f2c40d]">150+</p>
-        <p className="text-[11px] text-gray-300 mt-1">Placements Made</p>
-      </div>
-      <div>
-        <p className="text-2xl font-bold text-[#f2c40d]">48h</p>
-        <p className="text-[11px] text-gray-300 mt-1">Avg. Response</p>
-      </div>
-      <div>
-        <p className="text-2xl font-bold text-[#f2c40d]">98%</p>
-        <p className="text-[11px] text-gray-300 mt-1">Client Satisfaction</p>
-      </div>
-    </div>
-  </div>
+          <div className="relative z-10">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-semibold tracking-wider uppercase mb-6 text-white/90 backdrop-blur-sm border border-white/10">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#f2c40d]"></span>
+              {mode === "hiring" ? "Hiring Partners" : "Open Application"}
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 text-white leading-tight">
+              {mode === "hiring" ? "Looking to hire top-tier talent?" : "Don't see your perfect role?"}
+            </h2>
+            <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-8">
+              {mode === "hiring"
+                ? "Submit your requirements or job description and let us connect you with vetted professionals tailored to your culture."
+                : "We hire for raw talent, not just open headcount. Send us your profile and let us know what you want to build."}
+            </p>
 
-  {/* Bottom Bullet Points / Features */}
-  <div className="mt-8 space-y-3 pt-6 border-t border-white/10 text-xs text-gray-300">
-    <div className="flex items-center gap-3">
-      <Clock className="h-4 w-4 shrink-0 text-white/80" />
-      <span>We respond quickly within 1-2 business days</span>
-    </div>
-    <div className="flex items-center gap-3">
-      <ShieldCheck className="h-4 w-4 shrink-0 text-white/80" />
-      <span>Your data is secure and handled with privacy</span>
-    </div>
-    <div className="flex items-center gap-3">
-      <Award className="h-4 w-4 shrink-0 text-white/80" />
-      <span>Dedicated support for professionals and companies</span>
-    </div>
-    <div className="flex items-center gap-3">
-      <Coffee className="h-4 w-4 shrink-0 text-white/80" />
-      <span>Relaxed, transparent, and direct communication</span>
-    </div>
-  </div>
-</div>
+            {/* Stats / Badges Row - Balanced alignment */}
+            <div className="grid grid-cols-3 gap-3 py-6 border-y border-white/10">
+              <div className="flex flex-col items-center text-center p-2 rounded-xl bg-white/5 border border-white/5">
+                <Zap className="h-5 w-5 text-[#f2c40d] mb-1.5" />
+                <span className="text-xs font-semibold text-white">Fast Vetting</span>
+              </div>
+              <div className="flex flex-col items-center text-center p-2 rounded-xl bg-white/5 border border-white/5">
+                <Users className="h-5 w-5 text-[#f2c40d] mb-1.5" />
+                <span className="text-xs font-semibold text-white">Top Talent</span>
+              </div>
+              <div className="flex flex-col items-center text-center p-2 rounded-xl bg-white/5 border border-white/5">
+                <Target className="h-5 w-5 text-[#f2c40d] mb-1.5" />
+                <span className="text-xs font-semibold text-white">Direct Fit</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Features List */}
+          <div className="mt-8 space-y-3.5 pt-6 border-t border-white/10 text-xs text-gray-300 relative z-10">
+            <div className="flex items-center gap-3">
+              <div className="p-1.5 rounded-lg bg-white/10 text-[#f2c40d]">
+                <Clock className="h-4 w-4 shrink-0" />
+              </div>
+              <span className="font-medium">Quick response within 1-2 business days</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="p-1.5 rounded-lg bg-white/10 text-[#f2c40d]">
+                <ShieldCheck className="h-4 w-4 shrink-0" />
+              </div>
+              <span className="font-medium">Secure and confidential data handling</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="p-1.5 rounded-lg bg-white/10 text-[#f2c40d]">
+                <Award className="h-4 w-4 shrink-0" />
+              </div>
+              <span className="font-medium">Dedicated support for teams & specialists</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="p-1.5 rounded-lg bg-white/10 text-[#f2c40d]">
+                <Coffee className="h-4 w-4 shrink-0" />
+              </div>
+              <span className="font-medium">Transparent and straightforward communication</span>
+            </div>
+          </div>
+        </div>
+
         {/* Right Half Section (Form Fields Container) */}
-        <div className="p-6 sm:p-8 lg:col-span-7 bg-white flex flex-col justify-center">
+        <div className="p-6 sm:p-10 lg:col-span-7 bg-white flex flex-col justify-center">
           {!lockMode && (
-            <div className="mb-6 flex rounded-md bg-gray-100 p-1">
+            <div className="mb-8 flex rounded-xl bg-gray-100 p-1.5 border border-gray-200/60 shadow-inner">
               <button
                 type="button"
                 onClick={() => handleModeSwitch("hiring")}
-                className={`flex flex-1 items-center justify-center gap-1.5 rounded-md py-2 text-sm font-medium transition-colors ${
+                className={`flex flex-1 items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-semibold transition-all duration-200 ${
                   mode === "hiring"
-                    ? "bg-[#1a4550] text-white shadow-sm"
-                    : "text-gray-600 hover:text-gray-900"
+                    ? "bg-[#1a4550] text-white shadow-md shadow-[#1a4550]/20"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-200/50"
                 }`}
               >
                 <Briefcase className="h-4 w-4" />
@@ -196,10 +206,10 @@ return (
               <button
                 type="button"
                 onClick={() => handleModeSwitch("jobseeker")}
-                className={`flex flex-1 items-center justify-center gap-1.5 rounded-md py-2 text-sm font-medium transition-colors ${
+                className={`flex flex-1 items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-semibold transition-all duration-200 ${
                   mode === "jobseeker"
-                    ? "bg-[#1a4550] text-white shadow-sm"
-                    : "text-gray-600 hover:text-gray-900"
+                    ? "bg-[#1a4550] text-white shadow-md shadow-[#1a4550]/20"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-200/50"
                 }`}
               >
                 <UserSearch className="h-4 w-4" />
@@ -208,7 +218,7 @@ return (
             </div>
           )}
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="space-y-4">
             {mode === "hiring" ? (
               <HiringFields
                 data={hiringData}
@@ -226,32 +236,32 @@ return (
             )}
 
             {status === "error" && (
-              <p className="mt-4 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">
+              <div className="rounded-xl bg-red-50 p-4 border border-red-100 text-sm text-red-700 animate-shake">
                 {errorMessage}
-              </p>
+              </div>
             )}
 
             {status === "success" && (
-              <p className="mt-4 rounded-md bg-green-50 px-3 py-2 text-sm text-green-700">
+              <div className="rounded-xl bg-green-50 p-4 border border-green-100 text-sm text-green-700 font-medium">
                 {mode === "hiring"
                   ? "Thanks! Your enquiry has been received — we'll be in touch shortly."
                   : "Thanks! Your application has been submitted successfully."}
-              </p>
+              </div>
             )}
 
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="mt-6 w-full rounded-md bg-[#1a4550] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#123540] disabled:cursor-not-allowed disabled:opacity-60"
+              className="mt-6 w-full rounded-xl bg-[#1a4550] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#1a4550]/20 transition-all duration-200 hover:bg-[#123540] hover:shadow-xl hover:shadow-[#1a4550]/30 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {status === "submitting"
-                ? "Submitting..."
+                ? "Submitting details..."
                 : mode === "hiring"
                 ? "Submit Enquiry"
                 : "Submit Application"}
             </button>
             
-            <p className="mt-3 text-center text-xs text-gray-400">
+            <p className="mt-4 text-center text-xs text-gray-400 font-medium">
               We respect your privacy. Your info is never sold or shared.
             </p>
           </form>

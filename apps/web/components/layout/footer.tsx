@@ -75,12 +75,12 @@ export default async function Footer() {
   const socials = [
     {
       icon: FaLinkedinIn,
-      href: "https://www.linkedin.com/company/staffoutsourcing-nl/about/?viewAsMember=true",
+      href: "https://www.linkedin.com/company/staffoutsourcing-nl/",
       label: "LinkedIn",
     },
     {
       icon: FaFacebookF,
-      href: "https://www.facebook.com/profile.php?id=61594189973030",
+      href: "https://www.facebook.com/staffoutsourcing.nl/",
       label: "Facebook",
     },
     {

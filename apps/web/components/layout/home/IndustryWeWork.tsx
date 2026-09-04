@@ -1,8 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { ArrowRight, HardHat, Truck, Monitor } from "lucide-react";
+import { ArrowRight, HardHat, PackageOpen, Monitor } from "lucide-react";
 import { Link } from "../../../i18n/navigation";
-import VacanciesSearchBar from "./VacanciesSearchBar";
 import { useTranslations } from "next-intl";
 
 type JobFilters = {
@@ -17,7 +16,7 @@ export default function IndustryWeWork() {
     {
       id: 1,
       name: t("infrastructure"),
-      icon: Truck,
+      icon: PackageOpen, // Truck ki jagah PackageOpen icon laga diya hai jo supply chain/infrastructure ke sath match kare
       href: "/careers?category=Supply+Chain",
       description: "Optimizing global logistics, warehouse operations, and inventory management for seamless flow and operational efficiency.",
     },
@@ -53,7 +52,7 @@ export default function IndustryWeWork() {
   return (
     <>
       <section className="bg-white pt-16 lg:mt-16 pb-20 overflow-x-hidden w-full">
-  <div className="w-full px-4 sm:px-8 lg:px-16 max-w-[1500px] mx-auto">
+        <div className="w-full px-4 sm:px-8 lg:px-16 max-w-[1500px] mx-auto">
           
           <div className="text-center mb-16">
             <span className="inline-block py-1.5 px-4 rounded-full bg-[#1a4550]/10 text-[#1a4550] text-xs font-bold tracking-wider uppercase mb-3">
@@ -64,9 +63,8 @@ export default function IndustryWeWork() {
             </h2>
           </div>
 
-          {/* Added mx-auto and constrained max-w to prevent edge bleeding */}
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full pt-12">
-              {industries.map((item) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full pt-12">
+            {industries.map((item) => {
               const IconComponent = item.icon;
               return (
                 <div
