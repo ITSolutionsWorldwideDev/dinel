@@ -8,6 +8,7 @@ import HowItWorks from "./HowItWorks";
 import FaqSection from "./FaqSection";
 import Impact from "./Impact";
 import EnquiryForm from "@/components/forms/EnquiryForm";
+import ClientLogos from "./ClientLogos";
 
 const allCategories = [
   { value: "it-development", label: "IT & Development" },
@@ -24,10 +25,17 @@ const Home = () => {
       <Header />
       <WhoWeHelp />
       <RolesWePlace />
-      <IndustryWeWork />
+      
 
       <WhyDutchCompanies />
       <HowItWorks />
+      <IndustryWeWork />
+<ClientLogos />
+           
+ 
+
+         {/* yahan ya jahan bhi order chahiye waha daal do */}
+
 
       {/* Section 1: Form Section stretched to full width */}
       <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#f7fafa] to-white pb-16 pt-0">

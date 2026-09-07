@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import MobileMenuActionBtn from "./MobileMenuActionBtn";
 import { AiOutlineMenu } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
 import { FaChevronDown } from "react-icons/fa6";
@@ -118,10 +117,6 @@ const MobileMenuBtn = ({
                 </React.Fragment>
               ))}
 
-            </div>
-
-            <div className="mt-auto pt-6 pb-8">
-              <MobileMenuActionBtn />
             </div>
           </div>,
           document.body

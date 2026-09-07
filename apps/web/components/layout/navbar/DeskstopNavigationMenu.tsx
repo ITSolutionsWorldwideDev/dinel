@@ -115,51 +115,55 @@ export default async function DeskstopNavigationMenu() {
               {navT("home")}
             </Link>
 
-            {/* ================= SERVICES ================= */}
-            <div className="relative group py-2">
-              <button
-                type="button"
-                className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
-              >
-                {navT("services")}
-                <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-300 text-[#1a4550]" />
-              </button>
+{/* ================= SERVICES ================= */}
+<div className="relative group py-2">
+  <button
+    type="button"
+    className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
+  >
+    {navT("services")}
+    <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-300 text-[#1a4550]" />
+  </button>
 
-              <div className="absolute top-full left-0 w-72 bg-white shadow-2xl shadow-[#1a4550]/15 rounded-2xl py-3 hidden group-hover:block border-2 border-[#1a4550]/10 translate-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
-                {services.map((service, index) => (
-                  <Link
-                    key={index}
-                    href={service.href}
-                    className="block px-4 py-2.5 mx-2 rounded-xl text-xs xl:text-sm text-gray-700 font-medium hover:bg-[#1a4550]/5 hover:text-[#1a4550] hover:font-bold transition-all"
-                  >
-                    {service.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+  <div className="absolute top-full left-0 pt-2 w-72 hidden group-hover:block">
+    <div className="bg-white shadow-2xl shadow-[#1a4550]/15 rounded-2xl py-3 border-2 border-[#1a4550]/10 animate-in fade-in slide-in-from-top-2 duration-200">
+      {services.map((service, index) => (
+        <Link
+          key={index}
+          href={service.href}
+          className="block px-4 py-2.5 mx-2 rounded-xl text-xs xl:text-sm text-gray-700 font-medium hover:bg-[#1a4550]/5 hover:text-[#1a4550] hover:font-bold transition-all"
+        >
+          {service.name}
+        </Link>
+      ))}
+    </div>
+  </div>
+</div>
 
-            {/* ================= CATEGORIES ================= */}
-            <div className="relative group py-2">
-              <button
-                type="button"
-                className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
-              >
-                {navT("categories")}
-                <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-300 text-[#1a4550]" />
-              </button>
+{/* ================= CATEGORIES ================= */}
+<div className="relative group py-2">
+  <button
+    type="button"
+    className="px-3.5 py-2 rounded-xl text-gray-700 text-xs xl:text-sm font-bold hover:bg-[#0d2b33]/5 hover:text-[#0d2b33] transition-all duration-300 whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
+  >
+    {navT("categories")}
+    <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-300 text-[#1a4550]" />
+  </button>
 
-              <div className="absolute top-full left-0 w-80 bg-white shadow-2xl shadow-[#1a4550]/15 rounded-2xl py-3 hidden group-hover:block border-2 border-[#1a4550]/10 translate-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
-                {categories.map((category, index) => (
-                  <Link
-                    key={index}
-                    href={category.href}
-                    className="block px-4 py-3 mx-2 rounded-xl text-xs xl:text-sm text-gray-700 font-medium hover:bg-[#1a4550]/5 hover:text-[#1a4550] hover:font-bold transition-all"
-                  >
-                    {category.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+  <div className="absolute top-full left-0 pt-2 w-80 hidden group-hover:block">
+    <div className="bg-white shadow-2xl shadow-[#1a4550]/15 rounded-2xl py-3 border-2 border-[#1a4550]/10 animate-in fade-in slide-in-from-top-2 duration-200">
+      {categories.map((category, index) => (
+        <Link
+          key={index}
+          href={category.href}
+          className="block px-4 py-3 mx-2 rounded-xl text-xs xl:text-sm text-gray-700 font-medium hover:bg-[#1a4550]/5 hover:text-[#1a4550] hover:font-bold transition-all"
+        >
+          {category.name}
+        </Link>
+      ))}
+    </div>
+  </div>
+</div>
 
          {/* ================= OUR APPROACH ================= */}
             <Link
@@ -201,7 +205,7 @@ export default async function DeskstopNavigationMenu() {
           {/* ================= MOBILE / TABLET ================= */}
           <div className="lg:hidden flex items-center gap-2">
             <LanguageSwitcher />
-
+4
             <MobileMenuBtn
               navLinks={navLinks}
               categories={categories}
