@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import fs from 'fs';
 import path from 'path';
+import type { Metadata } from 'next';
 
 import CategoryHero from '../../../components/category/CategoryHero';
 import CategoryCoverage from '../../../components/category/CategoryCoverage';
@@ -11,6 +12,7 @@ import CategoryFinalCta from '../../../components/category/CategoryFinalCta';
 import HowItWorks from '../../../components/category/CategoryHowItWorks';
 import EnquiryForm from '@/components/forms/EnquiryForm';
 import { allCategories } from '@/components/forms/categories';
+import { getCanonicalUrl } from '@/lib/seo';
 
 interface PageProps {
   params: Promise<{
@@ -27,6 +29,42 @@ const categoryKeyMap: Record<string, string> = {
   'finance-accounting': 'financeAccounting',
   'travel-reservations': 'travelReservations',
 };
+
+function getCategoryData(locale: string, category: string) {
+  const commonPath = path.join(process.cwd(), 'i18n', 'locales', locale, 'common.json');
+  if (!fs.existsSync(commonPath)) return null;
+
+  const commonData = JSON.parse(fs.readFileSync(commonPath, 'utf8'));
+  const categoryKey = categoryKeyMap[category];
+  if (!categoryKey || !commonData[categoryKey]) return null;
+
+  return commonData[categoryKey];
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale, category } = await params;
+  const categoryData = getCategoryData(locale, category);
+
+  if (!categoryData) {
+    return {
+      title: "Staff Outsourcing",
+      description: "Recruit and outsource staff in the Netherlands.",
+      alternates: {
+        canonical: getCanonicalUrl(locale, [category]),
+      },
+    };
+  }
+
+  const seo = categoryData.seo;
+
+  return {
+    title: seo?.metaTitle ?? "Staff Outsourcing",
+    description: seo?.metaDescription ?? "Recruit and outsource staff in the Netherlands.",
+    alternates: {
+      canonical: getCanonicalUrl(locale, [category]),
+    },
+  };
+}
 
 export default async function CategoryPage({ params }: PageProps) {
   const resolvedParams = await params;
@@ -56,7 +94,6 @@ export default async function CategoryPage({ params }: PageProps) {
     <main className="w-full">
       <CategoryHero data={pageHero} />
 
-      {/* Single consistent container — controls width for ALL sections on this page */}
       <div className="w-full px-4 sm:px-8 lg:px-16 max-w-[1500px] mx-auto py-12 space-y-16">
         <CategoryCoverage title={pageSections?.coverageTitle} body={pageSections?.coverageBody} />
         <CategoryRoles title={pageSections?.rolesTitle} roles={rolesCategory.roles} />
@@ -67,7 +104,6 @@ export default async function CategoryPage({ params }: PageProps) {
 
         <HowItWorks />
 
-        {/* Enquiry Form */}
         <section className="w-full">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold tracking-tight text-[#0d2b33] sm:text-4xl">

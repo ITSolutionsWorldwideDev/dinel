@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { routing } from "../i18n/routing";
 import { allJobs } from "./data/jobs";
 
-const baseUrl = "https://staffoutsourcing.nl";
+const baseUrl = "https://www.staffoutsourcing.nl";
 
 // Static routes that exist for every locale
 const staticRoutes = [

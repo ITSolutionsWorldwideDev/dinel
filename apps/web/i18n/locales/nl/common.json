@@ -1,4 +1,13 @@
 {
+"home": {
+  "seo": {
+    "metaTitle": "Personeel Werven & Uitbesteden in Nederland | Staff Outsourcing",
+    "metaDescription": "Neem rechtstreeks personeel aan of huur payrolled medewerkers in. Werving & selectie of payrolling — wij helpen u het juiste model te vinden.",
+    "slug": "/nl"
+  }
+},
+
+
 "nav": {
   "home": "Home",
   "services": "Hoe we werven",
@@ -721,6 +730,11 @@
 
   
   "recruitmentOutsourcing": {
+    "meta": {
+      "title": "Werving & Selectie (Recruitment Outsourcing) | Staff Outsourcing",
+      "description": "Neem personeel rechtstreeks op uw eigen payroll aan. Wij zoeken, screenen en selecteren kandidaten voor Nederlandse bedrijven—u interviewt, beslist en doet het aanbod.",
+      "slug": "/recruitment-outsourcing"
+    },
     "hero": {
       "badge": "Werving & Selectie",
       "title": "Werving Outsourcing voor Nederlandse Bedrijven",
@@ -994,7 +1008,13 @@
 
 
 
-  "common": {
+"common": {
+  "meta": {
+    "title": "Contact | Staff Outsourcing",
+    "description": "Vertel ons waar u naar op zoek bent. Plan een gesprek of stuur een bericht en wij wijzen u de juiste weg naar het passende servicemodel.",
+    "slug": "/contact"
+  },
+
   "heroBadge": "Neem contact op",
   "heroTitle": "Vertel ons waar je naar op zoek bent",
   "heroSubtitle": "Of je nu precies weet welke rol je nodig hebt of nog twijfelt tussen placement en payrolling — begin hier. We stellen een paar vragen en wijzen je de juiste weg.",
@@ -1030,6 +1050,11 @@
 
 
 "ourApproach": {
+  "meta": {
+    "title": "Onze Aanpak | Staff Outsourcing",
+    "description": "Wij bieden zowel werving & selectie als payrolling, en helpen u bepalen welk model daadwerkelijk bij uw wervingsvraagstuk past—niet wat wij het liefst verkopen.",
+    "slug": "/our-approach"
+  },
   "heroBadge": "Onze aanpak",
   "heroTitle": "We verkopen niet één model. We kijken welk model past.",
   "heroSubtitle": "Veel staffingbedrijven sturen je richting het model waar ze zelf omheen zijn gebouwd. Wij werken met twee modellen — werving & selectie en payrolling — en onze eerste taak is om te bepalen welke oplossing jouw probleem echt oplost, niet welke oplossing wij het liefst verkopen.",
@@ -1083,6 +1108,11 @@
 
 
 "careers": {
+  "meta": {
+    "title": "Vacatures | Staff Outsourcing",
+    "description": "Bekijk onze openstaande vacatures en word onderdeel van ons team. Wij zijn altijd op zoek naar goede mensen om Nederlandse bedrijven op de juiste manier te helpen werven.",
+    "slug": "/careers"
+  },
     "hero": {
       "badge": "Word Lid Van Ons Team",
       "title": "Bouw Je Toekomst Met Ons Mee",
@@ -1104,6 +1134,11 @@
 
 
   "about": {
+  "meta": {
+    "title": "Over Ons | Staff Outsourcing",
+    "description": "Wij helpen Nederlandse bedrijven op de juiste manier te werven—werving & selectie of payrolling, wat ook echt bij uw wervingsvraagstuk past.",
+    "slug": "/about"
+  },
   "hero": {
     "badge": "Over Ons",
     "title": "Nederlandse Bedrijven Hebben Geen Vijf Leveranciers Nodig",

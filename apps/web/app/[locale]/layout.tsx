@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Script from "next/script";
 import { ToastProvider } from "@repo/ui";
 import DeskstopNavigationMenu from "@/components/layout/navbar/DeskstopNavigationMenu";
 import Footer from "@/components/layout/footer";
@@ -37,21 +36,6 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <head>
-        {/* Google tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XGQ2P9EDJ7"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XGQ2P9EDJ7');
-          `}
-        </Script>
-      </head>
       <body>
         <NextIntlClientProvider messages={messages}>
           <ToastProvider>

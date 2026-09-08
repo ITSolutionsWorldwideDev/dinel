@@ -1,5 +1,12 @@
 
 {
+  "home": {
+  "seo": {
+    "metaTitle": "Hire IT & Staff in the Netherlands | Staff Outsourcing",
+    "metaDescription": "Hire staff directly or lease payrolled employees in the Netherlands. Recruitment/Placement or Payrolling — one point of contact for both.",
+    "slug": "/en"
+  }
+},
 "nav": {
   "home": "Home",
   "services": "How we Hire",
@@ -747,7 +754,12 @@
 
 
 
-  "recruitmentOutsourcing": {
+ "recruitmentOutsourcing": {
+    "meta": {
+      "title": "Recruitment Outsourcing (Placement) | Staff Outsourcing",
+      "description": "Hire staff directly on your own payroll. We source, screen and shortlist candidates for Dutch companies—you interview, decide, and make the offer.",
+      "slug": "/recruitment-outsourcing"
+    },
     "hero": {
       "badge": "Recruitment Outsourcing",
       "title": "Recruitment Outsourcing for Dutch Companies",
@@ -1025,43 +1037,52 @@
 
 
 
-
-  "common": {
-    "heroBadge": "Get in Touch",
-    "heroTitle": "Tell us what you're hiring for",
-    "heroSubtitle": "Whether you know exactly which role you need or you're still figuring out placement vs. payrolling start here. We'll ask a few questions and point you to the right next step.",
-    "waysTitle": "Two ways to reach us",
-    "callTitle": "Book a call",
-    "callDesc": "For anything that needs a real conversation a new role, multiple hires, or you're not sure which model fits.",
-    "callBtn": "Schedule a Call",
-    "whatsappTitle": "Contact",
-    "whatsappDesc": "For quick questions timeline, whether we cover a specific role, anything that doesn't need a full call.",
-    "whatsappBtn": "Chat with us",
-    "formTitle": "Send us a message",
-    "nameLabel": "Name",
-    "companyLabel": "Company",
-    "emailLabel": "Email",
-    "phoneLabel": "Phone (optional)",
-    "hiringForLabel": "What are you hiring for?",
-    "categoryLabel": "Service Model",
-    "cat1": "Recruitment / Placement",
-    "cat2": "Temporary Staffing / Payrolling",
-    "cat3": "Not sure yet",
-    "messageLabel": "Message (optional)",
-    "submitBtn": "Submit Inquiry",
-    "detailsTitle": "Other details",
-    "emailField": "Email",
-    "phoneField": "Phone",
-    "addressField": "Office address",
-    "kvkField": "KvK number",
-    "responseField": "Response time",
-    "responseVal": "We respond within one business day",
-    "reassurance": "Not sure which service you need? That's what the call is for we'll sort it out together."
+"common": {
+  "meta": {
+    "title": "Contact Us | Staff Outsourcing",
+    "description": "Tell us what you're hiring for. Book a call or send a message and we'll point you to the right staffing model for your needs.",
+    "slug": "/contact"
   },
 
+  "heroBadge": "Get in Touch",
+  "heroTitle": "Tell us what you're hiring for",
+  "heroSubtitle": "Whether you know exactly which role you need or you're still figuring out placement vs. payrolling start here. We'll ask a few questions and point you to the right next step.",
+  "waysTitle": "Two ways to reach us",
+  "callTitle": "Book a call",
+  "callDesc": "For anything that needs a real conversation a new role, multiple hires, or you're not sure which model fits.",
+  "callBtn": "Schedule a Call",
+  "whatsappTitle": "Contact",
+  "whatsappDesc": "For quick questions timeline, whether we cover a specific role, anything that doesn't need a full call.",
+  "whatsappBtn": "Chat with us",
+  "formTitle": "Send us a message",
+  "nameLabel": "Name",
+  "companyLabel": "Company",
+  "emailLabel": "Email",
+  "phoneLabel": "Phone (optional)",
+  "hiringForLabel": "What are you hiring for?",
+  "categoryLabel": "Service Model",
+  "cat1": "Recruitment / Placement",
+  "cat2": "Temporary Staffing / Payrolling",
+  "cat3": "Not sure yet",
+  "messageLabel": "Message (optional)",
+  "submitBtn": "Submit Inquiry",
+  "detailsTitle": "Other details",
+  "emailField": "Email",
+  "phoneField": "Phone",
+  "addressField": "Office address",
+  "kvkField": "KvK number",
+  "responseField": "Response time",
+  "responseVal": "We respond within one business day",
+  "reassurance": "Not sure which service you need? That's what the call is for we'll sort it out together."
+},
 
 
   "ourApproach": {
+  "meta": {
+    "title": "Our Approach to Staffing | Staff Outsourcing",
+    "description": "We run recruitment/placement and payrolling, and help you figure out which model actually fits your hiring problem—not which one we'd rather sell.",
+    "slug": "/our-approach"
+  },
   "heroBadge": "Our Approach",
   "heroTitle": "We don't sell one model. We figure out which one fits.",
   "heroSubtitle": "A lot of staffing firms have a model they push because it's the one they're built around. We run two recruitment/placement and payrolling and the first real part of our job is figuring out which one actually solves your problem, not which one we'd rather sell you.",
@@ -1115,6 +1136,11 @@
 
 
 "careers": {
+  "meta": {
+    "title": "Careers | Staff Outsourcing",
+    "description": "Explore open roles and join our team. We're always looking for great people to help Dutch companies hire the right way.",
+    "slug": "/careers"
+  },
     "hero": {
       "badge": "Join Our Team",
       "title": "Build Your Future With Us",
@@ -1134,6 +1160,11 @@
     }
   },
 "about": {
+  "meta": {
+    "title": "About Us | Staff Outsourcing",
+    "description": "We help Dutch companies hire the right way—recruitment/placement or payrolling, whichever actually fits your hiring problem.",
+    "slug": "/about"
+  },
   "hero": {
     "badge": "About Us",
     "title": "Dutch Companies Shouldn't Need Five Vendors to Fill Five Roles",

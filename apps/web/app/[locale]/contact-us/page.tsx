@@ -1,8 +1,44 @@
+import fs from "fs";
+import path from "path";
+import type { Metadata } from "next";
+
 import ContactHero from "@/components/contact/ContactHero";
 import ContactChannels from "@/components/contact/ContactChannels";
 import ContactDetailsAndReassurance from "@/components/contact/ContactDetailsAndReassurance";
 import EnquiryForm from "@/components/forms/EnquiryForm";
 import React from "react";
+import { getCanonicalUrl } from "@/lib/seo";
+
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  const commonPath = path.join(process.cwd(), "i18n", "locales", locale, "common.json");
+
+  if (!fs.existsSync(commonPath)) {
+    return {
+      title: "Contact Us | Staff Outsourcing",
+      description: "Get in touch with our team to discuss your hiring needs in the Netherlands.",
+      alternates: {
+        canonical: getCanonicalUrl(locale, ["contact-us"]),
+      },
+    };
+  }
+
+  const commonData = JSON.parse(fs.readFileSync(commonPath, "utf8"));
+  const meta = commonData.contact?.meta;
+
+  return {
+    title: meta?.title ?? "Contact Us | Staff Outsourcing",
+    description: meta?.description ?? "Get in touch with our team to discuss your hiring needs in the Netherlands.",
+    alternates: {
+      canonical: getCanonicalUrl(locale, ["contact-us"]),
+    },
+  };
+}
 
 const allCategories = [
   { value: "it-development", label: "IT & Development" },
@@ -19,14 +55,11 @@ const ContactPage = () => {
       <ContactHero />
       <ContactChannels />
 
-      {/* Form Section stretched to full width */}
       <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#f7fafa] to-white py-20">
         <div className="pointer-events-none absolute top-10 left-10 h-72 w-72 rounded-full bg-[#0d2b33]/5 blur-3xl" />
         <div className="pointer-events-none absolute bottom-10 right-10 h-80 w-80 rounded-full bg-[#f2c40d]/10 blur-3xl" />
 
         <div className="w-full px-6 md:px-12 lg:px-16 max-w-[1500px] mx-auto relative z-10">
-          
-          {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="inline-block text-xs font-bold tracking-widest uppercase text-[#0d2b33] bg-[#0d2b33]/5 px-3 py-1.5 rounded-full mb-3">
               Get In Touch
@@ -39,7 +72,6 @@ const ContactPage = () => {
             </p>
           </div>
 
-          {/* Fully stretched single column for the form */}
           <div className="w-full">
             <EnquiryForm categories={allCategories} defaultMode="hiring" />
           </div>
