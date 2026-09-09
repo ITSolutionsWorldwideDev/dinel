@@ -205,7 +205,7 @@ export default async function DeskstopNavigationMenu() {
           {/* ================= MOBILE / TABLET ================= */}
           <div className="lg:hidden flex items-center gap-2">
             <LanguageSwitcher />
-4
+
             <MobileMenuBtn
               navLinks={navLinks}
               categories={categories}

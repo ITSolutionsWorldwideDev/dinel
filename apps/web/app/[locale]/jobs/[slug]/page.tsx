@@ -58,6 +58,10 @@ export default async function JobDetailPage({
     { value: job.category, label: job.category }
   ];
 
+const today = new Date();
+const validThroughDate = new Date();
+validThroughDate.setFullYear(today.getFullYear() + 2);
+
 const jobPostingSchema = {
   "@context": "https://schema.org",
   "@type": "JobPosting",
@@ -72,12 +76,14 @@ const jobPostingSchema = {
     name: "Staff Outsourcing",
     value: job.slug,
   },
+  datePosted: today.toISOString(),
+  validThrough: validThroughDate.toISOString(),
   employmentType: mapEmploymentType(job.type),
   hiringOrganization: {
     "@type": "Organization",
     name: "Staff Outsourcing",
     sameAs: "https://staffoutsourcing.nl",
-    logo: "https://staffoutsourcing.nl/logo.png",
+  logo: "https://staffoutsourcing.nl/assets/logo/Logo%202.png",
   },
   jobLocation: {
     "@type": "Place",

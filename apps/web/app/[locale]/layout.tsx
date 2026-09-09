@@ -22,7 +22,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Staff Outsourcing",
   url: "https://staffoutsourcing.nl",
-  logo: "https://staffoutsourcing.nl/logo.png",
+  logo: "https://staffoutsourcing.nl/assets/logo/Logo%202.png",
   email: "info@staffoutsourcing.nl",
   sameAs: [
     "https://www.linkedin.com/company/staffoutsourcing-nl/",
@@ -31,10 +31,18 @@ const organizationSchema = {
   ],
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Mandenmakerstraat 100C",
+    streetAddress: "Mandenmakerstraat 100C, 3194 DG Hoogvliet Rotterdam, Netherlands",
     postalCode: "3194 DG",
     addressLocality: "Hoogvliet Rotterdam",
     addressCountry: "NL",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+31-00-000000000", 
+    contactType: "customer service",
+    email: "info@staffoutsourcing.nl",
+    areaServed: "NL",
+    availableLanguage: ["Dutch", "English"],
   },
 };
 
