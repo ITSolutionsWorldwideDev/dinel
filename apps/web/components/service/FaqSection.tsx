@@ -18,6 +18,19 @@ export default function FaqSection({ sec }: FaqProps) {
   const leftFaqs = faqs.slice(0, midpoint);
   const rightFaqs = faqs.slice(midpoint);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   const renderFaq = (faq: FaqItem, i: number) => (
     <div key={i} className="bg-[#f7fafa] p-6 rounded-2xl border border-[#1a4550]/10">
       <h3 className="text-base md:text-lg font-bold text-[#0d2b33] mb-2 flex items-center gap-3">
@@ -32,6 +45,13 @@ export default function FaqSection({ sec }: FaqProps) {
 
   return (
     <section className="w-full">
+      {faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
       <div className="text-center mb-16">
         <span className="inline-block py-1.5 px-4 rounded-full bg-[#1a4550]/10 text-[#1a4550] text-xs font-bold tracking-wider uppercase mb-3">
           ~ Got Questions? ~

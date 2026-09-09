@@ -19,6 +19,19 @@ const FaqSection = () => {
   const leftFaqs = faqs.slice(0, midpoint);
   const rightFaqs = faqs.slice(midpoint);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   const renderFaq = (faq: Faq, i: number) => {
     const isOpen = openIndex === i;
     return (
@@ -72,6 +85,12 @@ const FaqSection = () => {
   return (
     <div className="flex h-full w-full flex-col justify-between">
       <div className="relative z-10 w-full flex-1 flex flex-col">
+        {faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        )}
 
         {/* Header */}
         <div className="text-center mb-10">

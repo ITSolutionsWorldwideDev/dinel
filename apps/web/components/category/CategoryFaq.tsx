@@ -23,6 +23,19 @@ export default function CategoryFaq({ title, faqs }: CategoryFaqProps) {
   const leftFaqs = faqs?.slice(0, midpoint) || [];
   const rightFaqs = faqs?.slice(midpoint) || [];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (faqs || []).map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   const renderFaq = (faq: FaqItem, index: number) => {
     const isOpen = openIndex === index;
     return (
@@ -58,6 +71,11 @@ export default function CategoryFaq({ title, faqs }: CategoryFaqProps) {
 
   return (
     <section className="w-full bg-gradient-to-b from-white via-[#f7fafa] to-white pb-24 overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <div className="text-center max-w-2xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 mb-3">
           <span className="w-8 h-[3px] bg-[#f2c40d] rounded-full" />

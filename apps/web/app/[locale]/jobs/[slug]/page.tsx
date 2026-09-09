@@ -30,6 +30,17 @@ export async function generateMetadata({
   };
 }
 
+// Maps your job.type string to schema.org's required enum values
+function mapEmploymentType(type: string): string {
+  const normalized = type?.toLowerCase() || "";
+  if (normalized.includes("part")) return "PART_TIME";
+  if (normalized.includes("contract")) return "CONTRACTOR";
+  if (normalized.includes("temp")) return "TEMPORARY";
+  if (normalized.includes("intern")) return "INTERN";
+  if (normalized.includes("volunteer")) return "VOLUNTEER";
+  return "FULL_TIME"; // default
+}
+
 export default async function JobDetailPage({
   params,
 }: {
@@ -47,8 +58,43 @@ export default async function JobDetailPage({
     { value: job.category, label: job.category }
   ];
 
+ const jobPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  title: job.title,
+  description: [
+    job.description,
+    ...(job.responsibilities || []),
+    ...(job.requirements || []),
+  ].join(" "),
+  identifier: {
+    "@type": "PropertyValue",
+    name: "Staff Outsourcing", // TODO: replace with actual company name
+    value: job.slug,
+  },
+  employmentType: mapEmploymentType(job.type),
+  hiringOrganization: {
+    "@type": "Organization",
+    name: "Staff Outsourcing", // TODO: replace with actual company name
+    sameAs: "https://www.yoursite.com", // TODO: replace with actual domain
+    logo: "https://www.yoursite.com/logo.png", // TODO: replace with actual logo URL
+  },
+  jobLocation: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: job.location,
+    },
+  },
+};
+
   return (
     <div className="bg-[#f6f4ef]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}
+      />
+
       {/* ---------- HERO HEADER ---------- */}
       <section className="bg-[#0d2b33] text-white">
         <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-16 pt-10 pb-14">
@@ -178,12 +224,12 @@ export default async function JobDetailPage({
                 </div>
               </dl>
 
-              <a
+              <Link
                 href="#apply-form"
                 className="mt-6 block w-full text-center px-6 py-3 rounded-xl bg-[#0d2b33] text-white text-sm font-bold hover:bg-[#153e49] transition-colors"
               >
                 Apply for this role
-              </a>
+              </Link>
             </div>
           </aside>
         </div>

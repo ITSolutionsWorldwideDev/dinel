@@ -17,6 +17,24 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Your Company Name", // TODO: replace with actual company name
+  url: "https://www.yoursite.com", // TODO: replace with actual domain
+  logo: "https://www.yoursite.com/logo.png", // TODO: replace with actual logo URL
+  sameAs: [
+    "https://www.facebook.com/yourpage",
+    "https://www.linkedin.com/company/yourpage",
+    // add/remove as needed
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+1-555-555-5555", // TODO
+    contactType: "customer service",
+  },
+};
+
 export default async function LocaleLayout({
   children,
   params,
@@ -50,6 +68,10 @@ export default async function LocaleLayout({
               gtag('config', 'G-XGQ2P9EDJ7');
             `,
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
       <body>
