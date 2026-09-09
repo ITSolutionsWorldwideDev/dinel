@@ -58,7 +58,7 @@ export default async function JobDetailPage({
     { value: job.category, label: job.category }
   ];
 
- const jobPostingSchema = {
+const jobPostingSchema = {
   "@context": "https://schema.org",
   "@type": "JobPosting",
   title: job.title,
@@ -69,15 +69,15 @@ export default async function JobDetailPage({
   ].join(" "),
   identifier: {
     "@type": "PropertyValue",
-    name: "Staff Outsourcing", // TODO: replace with actual company name
+    name: "Staff Outsourcing",
     value: job.slug,
   },
   employmentType: mapEmploymentType(job.type),
   hiringOrganization: {
     "@type": "Organization",
-    name: "Staff Outsourcing", // TODO: replace with actual company name
-    sameAs: "https://www.yoursite.com", // TODO: replace with actual domain
-    logo: "https://www.yoursite.com/logo.png", // TODO: replace with actual logo URL
+    name: "Staff Outsourcing",
+    sameAs: "https://staffoutsourcing.nl",
+    logo: "https://staffoutsourcing.nl/logo.png",
   },
   jobLocation: {
     "@type": "Place",
@@ -87,7 +87,6 @@ export default async function JobDetailPage({
     },
   },
 };
-
   return (
     <div className="bg-[#f6f4ef]">
       <script
