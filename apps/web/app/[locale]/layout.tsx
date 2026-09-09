@@ -20,18 +20,21 @@ export function generateStaticParams() {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Your Company Name", // TODO: replace with actual company name
-  url: "https://www.yoursite.com", // TODO: replace with actual domain
-  logo: "https://www.yoursite.com/logo.png", // TODO: replace with actual logo URL
+  name: "Staff Outsourcing",
+  url: "https://staffoutsourcing.nl",
+  logo: "https://staffoutsourcing.nl/logo.png",
+  email: "info@staffoutsourcing.nl",
   sameAs: [
-    "https://www.facebook.com/yourpage",
-    "https://www.linkedin.com/company/yourpage",
-    // add/remove as needed
+    "https://www.linkedin.com/company/staffoutsourcing-nl/",
+    "https://www.facebook.com/staffoutsourcing.nl/",
+    "https://www.instagram.com/staffoutsourcingsocial/",
   ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+1-555-555-5555", // TODO
-    contactType: "customer service",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Mandenmakerstraat 100C",
+    postalCode: "3194 DG",
+    addressLocality: "Hoogvliet Rotterdam",
+    addressCountry: "NL",
   },
 };
 
