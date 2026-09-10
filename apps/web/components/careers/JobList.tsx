@@ -1,9 +1,12 @@
+import { getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { MapPin } from "lucide-react";
-import { jobCategories, allJobs, JobCategoryGroup } from "@/app/data/jobs";
+import { localizeJobCategories, allJobs } from "@/app/data/jobs";
 
-export default function JobList() {
+export default async function JobList() {
   const totalJobs = allJobs.length;
+  const locale = (await getLocale()) as "en" | "nl";
+  const jobCategories = localizeJobCategories(locale);
 
   return (
     <section className="py-16 px-4 sm:px-8 lg:px-16 bg-slate-50 min-h-screen">
@@ -18,7 +21,7 @@ export default function JobList() {
         </div>
 
         <div className="space-y-12">
-          {jobCategories.map((group: JobCategoryGroup, groupIndex: number) => (
+          {jobCategories.map((group, groupIndex: number) => (
             <div key={groupIndex} className="space-y-4">
               <div className="flex items-center gap-3 border-b border-slate-200 pb-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#0d2b33]" />

@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
+import { getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { MapPin, ArrowLeft, Clock3, CheckCircle2 } from "lucide-react";
-import { allJobs, getJobBySlug } from "../../../data/jobs";
+import { getJobBySlug, localizeJob, allJobs } from "../../../data/jobs";
 import EnquiryForm from "@/components/forms/EnquiryForm";
 
 // Pre-render a static page for every job slug at build time
@@ -18,11 +19,14 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const job = getJobBySlug(slug);
+  const rawJob = getJobBySlug(slug);
 
-  if (!job) {
+  if (!rawJob) {
     return { title: "Job not found" };
   }
+
+  const locale = (await getLocale()) as "en" | "nl";
+  const job = localizeJob(rawJob, locale);
 
   return {
     title: `${job.title} | Careers`,
@@ -36,7 +40,7 @@ function mapEmploymentType(type: string): string {
   if (normalized.includes("part")) return "PART_TIME";
   if (normalized.includes("contract")) return "CONTRACTOR";
   if (normalized.includes("temp")) return "TEMPORARY";
-  if (normalized.includes("intern")) return "INTERN";
+  if (normalized.includes("intern") || normalized.includes("stage")) return "INTERN";
   if (normalized.includes("volunteer")) return "VOLUNTEER";
   return "FULL_TIME"; // default
 }
@@ -47,52 +51,56 @@ export default async function JobDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const job = getJobBySlug(slug);
+  const rawJob = getJobBySlug(slug);
 
-  if (!job) {
+  if (!rawJob) {
     notFound();
   }
+
+  const locale = (await getLocale()) as "en" | "nl";
+  const job = localizeJob(rawJob, locale);
 
   // Define categories array matching the Category type ({ value, label })
   const allCategories = [
     { value: job.category, label: job.category }
   ];
 
-const today = new Date();
-const validThroughDate = new Date();
-validThroughDate.setFullYear(today.getFullYear() + 2);
+  const today = new Date();
+  const validThroughDate = new Date();
+  validThroughDate.setFullYear(today.getFullYear() + 2);
 
-const jobPostingSchema = {
-  "@context": "https://schema.org",
-  "@type": "JobPosting",
-  title: job.title,
-  description: [
-    job.description,
-    ...(job.responsibilities || []),
-    ...(job.requirements || []),
-  ].join(" "),
-  identifier: {
-    "@type": "PropertyValue",
-    name: "Staff Outsourcing",
-    value: job.slug,
-  },
-  datePosted: today.toISOString(),
-  validThrough: validThroughDate.toISOString(),
-  employmentType: mapEmploymentType(job.type),
-  hiringOrganization: {
-    "@type": "Organization",
-    name: "Staff Outsourcing",
-    sameAs: "https://staffoutsourcing.nl",
-  logo: "https://staffoutsourcing.nl/assets/logo/Logo%202.png",
-  },
-  jobLocation: {
-    "@type": "Place",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: job.location,
+  const jobPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title: job.title,
+    description: [
+      job.description,
+      ...(job.responsibilities || []),
+      ...(job.requirements || []),
+    ].join(" "),
+    identifier: {
+      "@type": "PropertyValue",
+      name: "Staff Outsourcing",
+      value: job.slug,
     },
-  },
-};
+    datePosted: today.toISOString(),
+    validThrough: validThroughDate.toISOString(),
+    employmentType: mapEmploymentType(job.type),
+    hiringOrganization: {
+      "@type": "Organization",
+      name: "Staff Outsourcing",
+      sameAs: "https://staffoutsourcing.nl",
+      logo: "https://staffoutsourcing.nl/assets/logo/Logo%202.png",
+    },
+    jobLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: job.location,
+      },
+    },
+  };
+
   return (
     <div className="bg-[#f6f4ef]">
       <script
