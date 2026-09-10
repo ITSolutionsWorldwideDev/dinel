@@ -1,7 +1,7 @@
 // WhoWeHelp.tsx
 import React from "react";
 import { Search, Users, Clock3, FileSignature, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { getTranslations, getLocale } from "next-intl/server";
 
 const iconsA = [Search, Users];
@@ -76,18 +76,16 @@ const HelpCard = ({
 
 const WhoWeHelp = async () => {
   const locale = await getLocale();
-  
+
   const t = await getTranslations("whoWeHelp");
   const cardsA = t.raw("cardsA") as { title: string; desc: string; fit: string; cta: string }[];
   const cardsB = t.raw("cardsB") as { title: string; desc: string; fit: string; cta: string }[];
   const fitsLabel = t("fitsLabel");
 
-  const basePathsA = ["/service/recruitment-placement", "/service/recruitment-process-outsourcing"];
-  const basePathsB = ["/service/temporary-staffing", "/service/payrolling"];
-
-  const localePrefix = locale === "en" ? "" : `/${locale}`;
-  const linksA = basePathsA.map(path => `${localePrefix}${path}`);
-  const linksB = basePathsB.map(path => `${localePrefix}${path}`);
+  // Relative paths only — the localized Link component from @/i18n/navigation
+  // automatically adds the correct locale prefix (none for nl, /en for en).
+  const linksA = ["/service/recruitment-placement", "/service/recruitment-process-outsourcing"];
+  const linksB = ["/service/temporary-staffing", "/service/payrolling"];
 
   return (
     <section className="relative bg-gradient-to-b from-white via-[#f7fafa] to-white pt-16 sm:pt-20 md:pt-24 pb-24 overflow-hidden">
@@ -115,18 +113,18 @@ const WhoWeHelp = async () => {
           <GroupHeader title={t("groupATitle")} badge={t("groupABadge")} />
           <div className="grid md:grid-cols-2 gap-8 w-full">
             {cardsA.map((card, i) => {
-              const cardTitle = i === 0 && !card.title.includes("RPO") 
-                ? `${card.title} (RPO)` 
+              const cardTitle = i === 0 && !card.title.includes("RPO")
+                ? `${card.title} (RPO)`
                 : card.title;
 
               return (
-                <HelpCard 
-                  key={card.title} 
-                  icon={iconsA[i]} 
-                  fitsLabel={fitsLabel} 
-                  {...card} 
+                <HelpCard
+                  key={card.title}
+                  icon={iconsA[i]}
+                  fitsLabel={fitsLabel}
+                  {...card}
                   title={cardTitle}
-                  href={linksA[i]} 
+                  href={linksA[i]}
                 />
               );
             })}
@@ -137,12 +135,12 @@ const WhoWeHelp = async () => {
           <GroupHeader title={t("groupBTitle")} badge={t("groupBBadge")} />
           <div className="grid md:grid-cols-2 gap-8 w-full">
             {cardsB.map((card, i) => (
-              <HelpCard 
-                key={card.title} 
-                icon={iconsB[i]} 
-                fitsLabel={fitsLabel} 
-                {...card} 
-                href={linksB[i]} 
+              <HelpCard
+                key={card.title}
+                icon={iconsB[i]}
+                fitsLabel={fitsLabel}
+                {...card}
+                href={linksB[i]}
               />
             ))}
           </div>
@@ -160,7 +158,7 @@ const WhoWeHelp = async () => {
           </p>
 
           <Link
-            href={`/${locale}/contact-us`}
+            href="/contact-us"
             className="relative z-10 inline-flex items-center gap-3 bg-[#f2c40d] text-[#0d2b33] font-black px-9 py-4 rounded-full text-sm md:text-base hover:bg-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
           >
             {t("bannerCta")}
