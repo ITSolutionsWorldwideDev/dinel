@@ -383,6 +383,10 @@ export async function POST(req: NextRequest) {
         formData.get("category") || ""
       ).trim();
 
+      const jobTitle = String(
+        formData.get("jobTitle") || ""
+      ).trim();
+
       const coverMessage = String(
         formData.get("coverMessage") || ""
       ).trim();
@@ -501,6 +505,21 @@ export async function POST(req: NextRequest) {
                 </td>
               </tr>
 
+              ${
+                jobTitle
+                  ? `
+                    <tr>
+                      <td style="border: 1px solid #ddd;">
+                        <strong>Applied For</strong>
+                      </td>
+                      <td style="border: 1px solid #ddd;">
+                        ${escapeHtml(jobTitle)}
+                      </td>
+                    </tr>
+                  `
+                  : ""
+              }
+
               <tr>
                 <td style="border: 1px solid #ddd;">
                   <strong>LinkedIn / Portfolio</strong>
@@ -544,7 +563,9 @@ export async function POST(req: NextRequest) {
 
         replyTo: email,
 
-        subject: `New Job Application — ${fullName} (${category})`,
+        subject: jobTitle
+          ? `New Application — ${jobTitle} — ${fullName}`
+          : `New Job Application — ${fullName} (${category})`,
 
         html,
 

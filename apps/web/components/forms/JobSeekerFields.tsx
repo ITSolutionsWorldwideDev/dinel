@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { User, Mail, Phone, Layers, Link2, MessageSquare, FileUp, HelpCircle } from "lucide-react";
+import { User, Mail, Phone, Layers, Link2, MessageSquare, FileUp, HelpCircle, Briefcase } from "lucide-react";
 import { Category, JobSeekerFormState } from "./types";
 
 interface JobSeekerFieldsProps {
@@ -9,6 +9,7 @@ interface JobSeekerFieldsProps {
   onChange: (data: JobSeekerFormState) => void;
   categories: Category[];
   categoryLocked?: boolean;
+  jobTitleLocked?: boolean;
 }
 
 const MAX_CV_SIZE_MB = 5;
@@ -29,6 +30,7 @@ export default function JobSeekerFields({
   onChange,
   categories,
   categoryLocked = false,
+  jobTitleLocked = false,
 }: JobSeekerFieldsProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -66,6 +68,22 @@ export default function JobSeekerFields({
 
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      {/* Job Title - only shows when applying from a job page */}
+      {jobTitleLocked && data.jobTitle && (
+        <div className="sm:col-span-2">
+          <label className={labelClass}>Applying for</label>
+          <div className="relative">
+            <Briefcase className={`h-4 w-4 ${iconWrapClass}`} />
+            <input
+              type="text"
+              readOnly
+              value={data.jobTitle}
+              className={`${inputClass} bg-gray-100 text-gray-600 cursor-not-allowed`}
+            />
+          </div>
+        </div>
+      )}
+
       <div>
         <label className={labelClass}>Full Name *</label>
         <div className="relative">

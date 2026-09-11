@@ -199,12 +199,14 @@ export default async function JobDetailPage({
 
               <div className="w-full">
                 <EnquiryForm
-                  categories={allCategories}
-                  defaultMode="jobseeker"
-                  lockMode={true}
-                  defaultCategory={job.category}
-                  lockCategory={true}
-                />
+  categories={allCategories}
+  defaultMode="jobseeker"
+  lockMode={true}
+  defaultCategory={job.category}
+  lockCategory={true}
+  defaultJobTitle={job.title}
+  lockJobTitle={true}
+/>
               </div>
             </div>
           </div>

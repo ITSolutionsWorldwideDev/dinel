@@ -55,9 +55,9 @@
 "whoWeHelp": {
   "heading": "Wie wij helpen",
   "subheading": "De meeste uitzendbureaus laten u zelf uitzoeken welk model u nodig heeft. Wij zijn er duidelijk over  vier diensten, twee manieren van werken.",
-  "groupATitle": "Groep A  Wij werven. U neemt aan.",
+  "groupATitle": "Wij werven. U neemt aan.",
   "groupABadge": "Directe Werving",
-  "groupBTitle": "Groep B  Wij zijn werkgever. U least.",
+  "groupBTitle": "Wij zijn werkgever. U least.",
   "groupBBadge": "Werkgeverschap & Payroll",
   "fitsLabel": "✨ Past bij u als:",
   "cardsA": [
@@ -1165,8 +1165,148 @@
     "title": "Start Uw Reis Met Ons",
     "description": "Neem contact op met ons team of bezoek ons kantoor om naadloze samenwerkingsmogelijkheden te ontdekken."
   }
+},
+
+
+  "privacy": {
+    "meta": {
+      "title": "Privacybeleid | Staff Outsourcing",
+      "description": "Lees ons privacybeleid om te begrijpen hoe Staff Outsourcing uw persoonlijke gegevens verwerkt en beschermt."
+    },
+    "hero": {
+      "badge": "Juridisch",
+      "title": "Privacybeleid",
+      "description": "Uw privacy is belangrijk voor ons. Leer hoe we uw informatie verzamelen, gebruiken en beschermen."
+    },
+    "sections": {
+      "s1": {
+        "title": "1. Wie we zijn",
+        "body": "Staff Outsourcing is een professionele leverancier van personeels- en technologieoplossingen, gespecialiseerd in detachering op afstand, IT-ondersteuning, infrastructuurautomatisering en aanverwante digitale diensten. Onze inzet voor uw privacy is gebaseerd op transparantie en vertrouwen."
+      },
+      "s2": {
+        "title": "2. Informatie die we verzamelen",
+        "intro": "We verzamelen de volgende soorten informatie:",
+        "sub1Title": "a. Persoonlijke informatie die u verstrekt",
+        "item1": "Naam",
+        "item2": "E-mailadres",
+        "item3": "Bedrijfsnaam",
+        "item4": "Telefoonnummer",
+        "item5": "Functietitel",
+        "item6": "Alle andere gegevens die u indient via contactformulieren, aanmeldingen voor nieuwsbrieven of demo-aanvragen",
+        "sub2Title": "b. Automatisch verzamelde informatie",
+        "auto1": "IP-adres",
+        "auto2": "Browsertype en apparaat",
+        "auto3": "Bezochte pagina's en bestede tijd",
+        "auto4": "Verwijzende site en geografische locatie",
+        "auto5": "Cookies en analytische gegevens (via tools zoals Google Analytics)"
+      },
+      "s3": {
+        "title": "3. Hoe wij uw informatie gebruiken",
+        "item1": "Onze diensten leveren en verbeteren",
+        "item2": "Reageren op uw vragen",
+        "item3": "Consultaties of demo's plannen",
+        "item4": "Nieuwsbrieven of marketingupdates verzenden (met uw toestemming)",
+        "item5": "Sitegebruik en prestaties analyseren",
+        "item6": "Voldoen aan wettelijke verplichtingen"
+      },
+      "s4": {
+        "title": "4. Cookies en trackingtechnologieën",
+        "body": "We gebruiken cookies om de gebruikerservaring te verbeteren, siteverkeer te analyseren en onze marketing af te stemmen. Door onze site te gebruiken, stemt u in met het gebruik van cookies in overeenstemming met dit beleid. U kunt uw cookie-instellingen in uw browser wijzigen."
+      },
+      "s5": {
+        "title": "5. Gegevens delen",
+        "intro": "We verkopen of verhuren uw persoonsgegevens niet. We kunnen gegevens delen met:",
+        "item1": "Vertrouwde externe dienstverleners (bijv. CRM-, e-mail- en analysetools)",
+        "item2": "Juridische of regelgevende autoriteiten (indien wettelijk vereist)",
+        "footer": "Alle derde partijen zijn verplicht om uw gegevens veilig en vertrouwelijk te houden."
+      },
+      "s6": {
+        "title": "6. Internationale gegevensoverdrachten",
+        "body": "Als u zich bevindt buiten het land waar onze servers worden gehost, kunnen uw gegevens internationaal worden overgedragen en opgeslagen. Wij zorgen ervoor dat er passende waarborgen aanwezig zijn voor internationale gegevensoverdrachten, met name onder de AVG."
+      },
+      "s7": {
+        "title": "7. Uw gegevensrechten",
+        "intro": "U hebt het recht om:",
+        "item1": "Uw persoonlijke informatie in te zien, te corrigeren of te verwijderen",
+        "item2": "Uw toestemming op elk moment in te trekken",
+        "item3": "Bezwaar te maken tegen gegevensverwerking",
+        "item4": "Een klacht in te dienen bij een gegevensbeschermingsautoriteit (indien van toepassing)",
+        "contactText": "Om uw rechten uit te oefenen, kunt u ons e-mailen op:"
+      },
+      "s8": {
+        "title": "8. Gegevensbewaring",
+        "intro": "We bewaren uw informatie slechts zolang als nodig is om:",
+        "item1": "De doeleinden te bereiken die in dit beleid zijn uiteengezet",
+        "item2": "Te voldoen aan wettelijke of boekhoudkundige verplichtingen",
+        "item3": "Lopende zakelijke relaties te ondersteunen"
+      },
+      "s9": {
+        "title": "9. Links van derden",
+        "body": "Onze website kan links naar websites van derden bevatten. Wij zijn niet verantwoordelijk voor het privacybeleid van deze websites en raden aan om hun beleid apart te bekijken."
+      },
+      "s10": {
+        "title": "10. Beveiligingsmaatregelen",
+        "body": "Wij implementeren passende technische en organisatorische maatregelen om uw persoonsgegevens te beschermen tegen unautoriserende toegang, wijziging, openbaarmaking of vernietiging."
+      },
+      "s11": {
+        "title": "11. Privacy van kinderen",
+        "body": "Onze diensten zijn niet bedoeld voor personen jonger dan 16 jaar. Wij verzamelen niet bewust gegevens van minderjarigen."
+      }
+    }
+  },
+  "terms": {
+    "meta": {
+      "title": "Algemene Voorwaarden | Staff Outsourcing",
+      "description": "Lees de algemene voorwaarden voor het gebruik van de website en diensten van Staff Outsourcing."
+    },
+    "hero": {
+      "badge": "Juridisch",
+      "title": "Algemene Voorwaarden",
+      "description": "Lees deze algemene voorwaarden zorgvuldig door voordat u onze diensten gebruikt."
+    },
+    "sections": {
+      "s1": {
+        "title": "1. Akkoord met de voorwaarden",
+        "body": "Door de website en diensten van Staff Outsourcing te bezoeken of te gebruiken, gaat u akkoord met deze Algemene Voorwaarden. Als u het niet eens bent met enig deel van de voorwaarden, mag u geen gebruik maken van onze diensten."
+      },
+      "s2": {
+        "title": "2. Intellectuele eigendomsrechten",
+        "body": "Afgezien van de inhoud die van u is, bezitten Staff Outsourcing en/of haar licentiegevers onder deze Voorwaarden alle intellectuele eigendomsrechten en materialen op deze website."
+      },
+      "s3": {
+        "title": "3. Beperkingen",
+        "body": "Het is u ten strengste verboden om websitemateriaal in andere media te publiceren, te verkopen, in sublicentie te geven, te commercialiseren, publiekelijk uit te voeren of deze website te gebruiken op een manier die schadelijk is of kan zijn voor deze website."
+      },
+      "s4": {
+        "title": "4. Gebruikersinhoud",
+        "body": "In deze Standaard Algemene Voorwaarden voor de Website betekent 'Gebruikersinhoud' alle audio, videotekst, afbeeldingen of ander materiaal dat u ervoor kiest om op deze website weer te geven. Door dit weer te geven, verleent u Staff Outsourcing een niet-exclusieve, wereldwijde, onherroepelijke licentie om dit te gebruiken, te reproduceren en aan te passen."
+      },
+      "s5": {
+        "title": "5. Geen garanties",
+        "body": "Deze website wordt geleverd 'zoals deze is', met alle fouten, en Staff Outsourcing geeft geen enkele verklaring of garantie van welke aard dan ook met betrekking tot deze website of de materialen op deze website."
+      },
+      "s6": {
+        "title": "6. Beperking van aansprakelijkheid",
+        "body": "In geen geval zal Staff Outsourcing, noch haar functionarissen, directeuren en werknemers, aansprakelijk worden gesteld voor enige zaken die voortvloeien uit of op enigerlei wijze verband houden met uw gebruik van deze website."
+      },
+      "s7": {
+        "title": "7. Vrijwaring",
+        "body": "Hierbij vrijwaart u Staff Outsourcing ten volle tegen alle aansprakelijkheden, kosten, eisen, oorzaken van actie, schade en uitgaven die op enigerlei wijze verband houden met uw schending van enige bepaling van deze Voorwaarden."
+      },
+      "s8": {
+        "title": "8. Wijziging van voorwaarden",
+        "body": "Staff Outsourcing mag deze voorwaarden te allen tijde naar eigen inzicht wijzigen, en door deze website te gebruiken wordt van u verwacht dat u deze voorwaarden regelmatig controleert."
+      },
+      "s9": {
+        "title": "9. Contactgegevens",
+        "body": "Als u vragen heeft over onze voorwaarden, kunt u contact met ons opnemen via:"
+      }
+    }
+  }
 }
-}
+
+
+
   
 
 

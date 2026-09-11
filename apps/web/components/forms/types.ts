@@ -22,6 +22,7 @@ export interface JobSeekerFormState {
   email: string;
   phone: string;
   category: string;
+  jobTitle: string;
   coverMessage: string;
   linkedin: string;
   cv: File | null;
@@ -44,6 +45,7 @@ export const initialJobSeekerState: JobSeekerFormState = {
   email: "",
   phone: "",
   category: "",
+  jobTitle: "",
   coverMessage: "",
   linkedin: "",
   cv: null,

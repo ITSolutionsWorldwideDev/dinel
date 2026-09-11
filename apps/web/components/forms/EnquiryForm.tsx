@@ -19,6 +19,8 @@ interface EnquiryFormProps {
   lockMode?: boolean;
   defaultCategory?: string;
   lockCategory?: boolean;
+  defaultJobTitle?: string;
+  lockJobTitle?: boolean;
 }
 
 type SubmitStatus = "idle" | "submitting" | "success" | "error";
@@ -29,6 +31,8 @@ export default function EnquiryForm({
   lockMode = false,
   defaultCategory = "",
   lockCategory = false,
+  defaultJobTitle = "",
+  lockJobTitle = false,
 }: EnquiryFormProps) {
   const [mode, setMode] = useState<FormMode>(defaultMode);
   const [status, setStatus] = useState<SubmitStatus>("idle");
@@ -42,11 +46,16 @@ export default function EnquiryForm({
   const [jobSeekerData, setJobSeekerData] = useState<JobSeekerFormState>({
     ...initialJobSeekerState,
     category: defaultCategory,
+    jobTitle: defaultJobTitle,
   });
 
   const resetForms = () => {
     setHiringData({ ...initialHiringState, category: defaultCategory });
-    setJobSeekerData({ ...initialJobSeekerState, category: defaultCategory });
+    setJobSeekerData({
+      ...initialJobSeekerState,
+      category: defaultCategory,
+      jobTitle: defaultJobTitle,
+    });
   };
 
   const handleModeSwitch = (newMode: FormMode) => {
@@ -95,6 +104,7 @@ export default function EnquiryForm({
         formData.append("email", jobSeekerData.email);
         formData.append("phone", jobSeekerData.phone);
         formData.append("category", jobSeekerData.category);
+        formData.append("jobTitle", jobSeekerData.jobTitle);
         formData.append("coverMessage", jobSeekerData.coverMessage);
         formData.append("linkedin", jobSeekerData.linkedin);
         formData.append("hearAboutUs", (jobSeekerData as any).hearAboutUs || "");
@@ -124,7 +134,6 @@ export default function EnquiryForm({
         
         {/* Left Half Section (Background #1a4550) */}
         <div className="bg-[#1a4550] p-8 sm:p-10 text-white flex flex-col justify-between lg:col-span-5 relative overflow-hidden">
-          {/* Subtle decorative glow effect */}
           <div className="absolute -right-12 -top-12 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none" />
 
           <div className="relative z-10">
@@ -133,7 +142,11 @@ export default function EnquiryForm({
               {mode === "hiring" ? "Hiring Partners" : "Open Application"}
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 text-white leading-tight">
-              {mode === "hiring" ? "Looking to hire top-tier talent?" : "Don't see your perfect role?"}
+              {mode === "hiring"
+                ? "Looking to hire top-tier talent?"
+                : lockJobTitle && defaultJobTitle
+                ? `Apply for ${defaultJobTitle}`
+                : "Don't see your perfect role?"}
             </h2>
             <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-8">
               {mode === "hiring"
@@ -141,7 +154,6 @@ export default function EnquiryForm({
                 : "We hire for raw talent, not just open headcount. Send us your profile and let us know what you want to build."}
             </p>
 
-            {/* Stats / Badges Row - Balanced alignment */}
             <div className="grid grid-cols-3 gap-3 py-6 border-y border-white/10">
               <div className="flex flex-col items-center text-center p-2 rounded-xl bg-white/5 border border-white/5">
                 <Zap className="h-5 w-5 text-[#f2c40d] mb-1.5" />
@@ -158,7 +170,6 @@ export default function EnquiryForm({
             </div>
           </div>
 
-          {/* Bottom Features List */}
           <div className="mt-8 space-y-3.5 pt-6 border-t border-white/10 text-xs text-gray-300 relative z-10">
             <div className="flex items-center gap-3">
               <div className="p-1.5 rounded-lg bg-white/10 text-[#f2c40d]">
@@ -232,6 +243,7 @@ export default function EnquiryForm({
                 onChange={setJobSeekerData}
                 categories={categories}
                 categoryLocked={lockCategory}
+                jobTitleLocked={lockJobTitle}
               />
             )}
 

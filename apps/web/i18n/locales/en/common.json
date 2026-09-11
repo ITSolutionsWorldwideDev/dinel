@@ -3,7 +3,7 @@
   "home": {
   "seo": {
     "metaTitle": "Hire IT & Staff in the Netherlands | Staff Outsourcing",
-    "metaDescription": "Hire staff directly or lease payrolled employees in the Netherlands. Recruitment/Placement or Payrolling — one point of contact for both.",
+    "metaDescription": "Hire staff directly or lease payrolled employees in the Netherlands. Recruitment/Placement or Payrolling  one point of contact for both.",
     "slug": "/en"
   }
 },
@@ -56,9 +56,9 @@
 "whoWeHelp": {
   "heading": "Who we help",
   "subheading": "Most staffing companies make you figure out which model you need. We'll tell you straight four services, two ways of working.",
-  "groupATitle": "Group A We recruit. You hire.",
+  "groupATitle": "We recruit. You hire.",
   "groupABadge": "Direct Hiring",
-  "groupBTitle": "Group B We employ. You lease.",
+  "groupBTitle": "We employ. You lease.",
   "groupBBadge": "Employment & Payroll",
   "fitsLabel": "✨ Fits you if:",
   "cardsA": [
@@ -757,23 +757,23 @@
  "recruitmentOutsourcing": {
     "meta": {
       "title": "Recruitment Outsourcing (Placement) | Staff Outsourcing",
-      "description": "Hire staff directly on your own payroll. We source, screen and shortlist candidates for Dutch companies—you interview, decide, and make the offer.",
+      "description": "Hire staff directly on your own payroll. We source, screen and shortlist candidates for Dutch companiesyou interview, decide, and make the offer.",
       "slug": "/recruitment-outsourcing"
     },
     "hero": {
       "badge": "Recruitment Outsourcing",
       "title": "Recruitment Outsourcing for Dutch Companies",
-      "subtitle": "You need someone specific—a developer, an accountant, a support agent—and you want to hire them yourself, directly, on your own payroll.",
+      "subtitle": "You need someone specifica developer, an accountant, a support agentand you want to hire them yourself, directly, on your own payroll.",
       "ctaText": "Book a Call",
       "ctaLink": "/contact"
     },
     "sections": {
       "conceptTitle": "What Recruitment Outsourcing Actually Means",
-      "conceptBody1": "We search, screen, and shortlist candidates against the role you need filled. You interview whoever makes the shortlist. If someone's a fit, you extend the offer and they become your employee—not ours, not a leased worker, yours from day one.",
+      "conceptBody1": "We search, screen, and shortlist candidates against the role you need filled. You interview whoever makes the shortlist. If someone's a fit, you extend the offer and they become your employeenot ours, not a leased worker, yours from day one.",
       "conceptBody2": "This is different from Payrolling, where we stay the legal employer and the person works for you under our umbrella. Recruitment outsourcing (or recruitment/placement) is a one-time transaction: we do the sourcing work, you do the hiring.",
-      "conceptBody3": "It suits companies who know exactly what role they're filling and want full control over that person going forward—performance reviews, career development, how they fit the team long-term.",
+      "conceptBody3": "It suits companies who know exactly what role they're filling and want full control over that person going forwardperformance reviews, career development, how they fit the team long-term.",
       "noteTitle": "Quick Note on Names",
-      "noteBody": "Some people call this recruitment/placement instead—same service, different name. No leasing, no shared employment, no ongoing contract with us once the hire is made. You get a candidate, you make an offer, they join your team. Done.",
+      "noteBody": "Some people call this recruitment/placement insteadsame service, different name. No leasing, no shared employment, no ongoing contract with us once the hire is made. You get a candidate, you make an offer, they join your team. Done.",
       
       "processTitle": "How It Works",
       "steps": [
@@ -804,16 +804,16 @@
       "rpoTitle": "Recruitment Outsourcing / Placement",
       "rpoDesc": "If you already know you want this person as a permanent team member and you're set up to employ staff directly (contracts, payroll, the works), recruitment/placement is the more straightforward option. You're not paying an ongoing management fee, and there's no in-between employer.",
       "payrollTitle": "Payrolling Alternative",
-      "payrollDesc": "If you're not ready to take on direct employment yet—maybe you don't have Dutch payroll infrastructure set up, or you want to test the role before committing—Payrolling is worth a look instead. We stay the legal employer and you can scale without severance conversations.",
+      "payrollDesc": "If you're not ready to take on direct employment yetmaybe you don't have Dutch payroll infrastructure set up, or you want to test the role before committingPayrolling is worth a look instead. We stay the legal employer and you can scale without severance conversations.",
 
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
         { "question": "How long does a recruitment outsourcing search usually take?", "answer": "Timeline depends on role seniority and how niche the skill set is. Placeholder until we have real fill-time data to share. We continuously refine our hiring process to balance thoroughness with a prompt, respectful candidate experience." },
         { "question": "Is recruitment outsourcing the same as recruitment/placement?", "answer": "Whether you call it recruitment outsourcing or talent placement, the core benefit remains the same: you gain expert sourcing power without the overhead of expanding your permanent internal recruitment department." },
         { "question": "Do you charge if the hire doesn't work out?", "answer": "Refund/replacement guarantee terms to beRefund/replacement guarantee terms to be confirmed with client before publishing, subject to standard probationary period evaluations. confirmed with client before publishing." },
-        { "question": "Can you help with the employment contract once we've picked someone?", "answer": "We can point you toward standard Dutch employment contract templates, but the contract itself is between you and your new hire—we're not the employer of record for these placements." },
+        { "question": "Can you help with the employment contract once we've picked someone?", "answer": "We can point you toward standard Dutch employment contract templates, but the contract itself is between you and your new hirewe're not the employer of record for these placements." },
         { "question": "What if none of the shortlisted candidates are right?", "answer": "We go back to sourcing. Confirm whether there's a cap on rounds included before additional fees apply." },
-        { "question": "Do you only place people in the roles listed on your site?", "answer": "Those are our core categories, but if you've got a role outside that list, get in touch—worth a conversation before assuming it's not something we cover." }
+        { "question": "Do you only place people in the roles listed on your site?", "answer": "Those are our core categories, but if you've got a role outside that list, get in touchworth a conversation before assuming it's not something we cover." }
       ],
 
       "finalCta": {
@@ -837,24 +837,24 @@
     "hero": {
       "badge": "Recruitment Process Outsourcing (RPO)",
       "title": "Recruitment Process Outsourcing (RPO) for Dutch Companies",
-      "subtitle": "If you're filling one role, you don't need RPO—you need Recruitment/Placement. RPO is for when hiring itself has become a problem: you're opening multiple roles at once, your internal team can't keep up with the pipeline, or you're scaling fast enough that ad-hoc hiring isn't cutting it anymore.",
+      "subtitle": "If you're filling one role, you don't need RPOyou need Recruitment/Placement. RPO is for when hiring itself has become a problem: you're opening multiple roles at once, your internal team can't keep up with the pipeline, or you're scaling fast enough that ad-hoc hiring isn't cutting it anymore.",
       "ctaText": "Book a Call",
       "ctaLink": "/contact"
     },
     "sections": {
       "conceptTitle": "What RPO Actually Means",
-      "conceptBody1": "Recruitment process outsourcing means we don't just find you one person—we run the hiring process for you, on an ongoing basis, for as long as you need it.",
-      "conceptBody2": "Think of it less as \"fill this vacancy\" and more as \"handle this part of our operation.\" We plug into how you hire—sourcing, screening, interview coordination, sometimes offer management—and run it at whatever volume you need.",
+      "conceptBody1": "Recruitment process outsourcing means we don't just find you one personwe run the hiring process for you, on an ongoing basis, for as long as you need it.",
+      "conceptBody2": "Think of it less as \"fill this vacancy\" and more as \"handle this part of our operation.\" We plug into how you hiresourcing, screening, interview coordination, sometimes offer managementand run it at whatever volume you need.",
       "conceptBody3": "With a single placement, you tell us what you need once, we deliver a shortlist, the engagement ends. RPO doesn't work that way. It's a standing arrangement: we act as an extension of your hiring function, working from your requirements on a continuous basis as new roles open up.",
       "noteTitle": "Recurring vs One-Off Hiring",
-      "noteBody": "That might mean five hires this quarter and two next quarter. It might mean staffing an entire new department. Either way, you're not restarting the conversation every time—we already know your hiring bar, your process, and what \"a good fit\" looks like for your company.",
+      "noteBody": "That might mean five hires this quarter and two next quarter. It might mean staffing an entire new department. Either way, you're not restarting the conversation every timewe already know your hiring bar, your process, and what \"a good fit\" looks like for your company.",
 
       "processTitle": "How It Works",
       "steps": [
-        { "step": "01", "title": "We scope your hiring needs together", "desc": "Not just one role—the pattern. How many hires, over what period, across which functions. [Minimum engagement volume/duration to be confirmed with client before publishing.]" },
-        { "step": "02", "title": "We build the process around your standards", "desc": "Screening criteria, interview stages, what \"yes\" looks like for each role—set once, applied consistently across every hire that comes through." },
-        { "step": "03", "title": "We run sourcing and screening continuously", "desc": "Not a single shortlist—an ongoing pipeline. Candidates get sourced, screened, and queued as roles open, so you're not starting from zero each time." },
-        { "step": "04", "title": "You interview and make hiring decisions", "desc": "Same as Placement—we hand you qualified candidates, you make the call on who joins." },
+        { "step": "01", "title": "We scope your hiring needs together", "desc": "Not just one rolethe pattern. How many hires, over what period, across which functions. [Minimum engagement volume/duration to be confirmed with client before publishing.]" },
+        { "step": "02", "title": "We build the process around your standards", "desc": "Screening criteria, interview stages, what \"yes\" looks like for each roleset once, applied consistently across every hire that comes through." },
+        { "step": "03", "title": "We run sourcing and screening continuously", "desc": "Not a single shortlistan ongoing pipeline. Candidates get sourced, screened, and queued as roles open, so you're not starting from zero each time." },
+        { "step": "04", "title": "You interview and make hiring decisions", "desc": "Same as Placementwe hand you qualified candidates, you make the call on who joins." },
         { "step": "05", "title": "We adjust as your needs shift", "desc": "Hiring pace changes. Roles get added or paused. RPO flexes with that instead of requiring a new engagement every time your plan changes." }
       ],
 
@@ -869,27 +869,27 @@
         "Employment contracts and onboarding",
         "How each new hire fits into your team once they're in"
       ],
-      "laborFooter": "RPO takes more of the process off your plate than a single placement does—that's the point of it. But the actual employment relationship still sits with you, same as Recruitment/Placement. RPO isn't Payrolling; we're not the employer here either way.",
+      "laborFooter": "RPO takes more of the process off your plate than a single placement doesthat's the point of it. But the actual employment relationship still sits with you, same as Recruitment/Placement. RPO isn't Payrolling; we're not the employer here either way.",
 
       "comparisonTitle": "RPO vs. Recruitment/Placement: Which Fits You",
-      "comparisonSubtitle": "If you're filling one seat, RPO is overkill—you'd be paying for infrastructure built around volume you don't have.",
+      "comparisonSubtitle": "If you're filling one seat, RPO is overkillyou'd be paying for infrastructure built around volume you don't have.",
       "rpoTitle": "RPO (Recruitment Process Outsourcing)",
-      "rpoDesc": "RPO earns its cost when hiring becomes a repeated, sustained need—several roles at once, a new team getting built out, or hiring pace that's outstripping what your internal team can manage alone. The honest way to decide: if you can picture needing this again in three months for a different role, RPO probably fits.",
+      "rpoDesc": "RPO earns its cost when hiring becomes a repeated, sustained needseveral roles at once, a new team getting built out, or hiring pace that's outstripping what your internal team can manage alone. The honest way to decide: if you can picture needing this again in three months for a different role, RPO probably fits.",
       "payrollTitle": "Recruitment / Placement Alternative",
       "payrollDesc": "Placement handles a single hire cleanly, without setting up an ongoing process for something that isn't recurring. If this is a one-off gap to fill, go with Recruitment/Placement instead and revisit RPO if hiring volume picks up.",
 
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
         { "question": "What's the difference between RPO and Recruitment/Placement?", "answer": "Placement is a one-time search for one role. RPO is an ongoing hiring process we run for you across multiple roles or a sustained period." },
-        { "question": "Is there a minimum number of hires or length of engagement for RPO?", "answer": "[To be confirmed with client—flagging rather than inventing a threshold.]" },
-        { "question": "Can RPO cover just one department, not the whole company?", "answer": "Yes—RPO scope is usually set around a function or team, not necessarily every hire across the business. Scope gets defined during the initial conversation." },
-        { "question": "Do you become involved in making the final hiring decision?", "answer": "No—same as with any placement, the final call on who joins your team stays with you. We manage the pipeline and process, not the decision." },
-        { "question": "How is RPO priced compared to a single placement?", "answer": "[Pricing model—retainer, per-hire, or hybrid—to be confirmed before this goes live.]" }
+        { "question": "Is there a minimum number of hires or length of engagement for RPO?", "answer": "[To be confirmed with clientflagging rather than inventing a threshold.]" },
+        { "question": "Can RPO cover just one department, not the whole company?", "answer": "YesRPO scope is usually set around a function or team, not necessarily every hire across the business. Scope gets defined during the initial conversation." },
+        { "question": "Do you become involved in making the final hiring decision?", "answer": "Nosame as with any placement, the final call on who joins your team stays with you. We manage the pipeline and process, not the decision." },
+        { "question": "How is RPO priced compared to a single placement?", "answer": "[Pricing modelretainer, per-hire, or hybridto be confirmed before this goes live.]" }
       ],
 
       "finalCta": {
         "heading": "Ready to scale your hiring process?",
-        "description": "RPO scoping needs a real conversation—role volume, timeline, current hiring pain points—so a form alone won't capture what's needed.",
+        "description": "RPO scoping needs a real conversationrole volume, timeline, current hiring pain pointsso a form alone won't capture what's needed.",
         "buttonText": "Book a call",
         "buttonLink": "/contact"
       }
@@ -905,24 +905,24 @@
     "hero": {
       "badge": "Temporary Staffing Services",
       "title": "Temporary Staffing Services for Dutch Companies",
-      "subtitle": "Sometimes you don't need a permanent hire. You need someone for three months, or through a busy season, or to cover a role while you figure out if it needs to be permanent at all. That's what temporary staffing is for—extra hands, without the long-term commitment of a full hire.",
+      "subtitle": "Sometimes you don't need a permanent hire. You need someone for three months, or through a busy season, or to cover a role while you figure out if it needs to be permanent at all. That's what temporary staffing is forextra hands, without the long-term commitment of a full hire.",
       "ctaText": "Book a Call",
       "ctaLink": "/contact"
     },
     "sections": {
       "conceptTitle": "What Temporary Staffing Actually Means",
-      "conceptBody1": "We source, screen, and place someone with your team—but unlike Recruitment/Placement, they stay on our payroll, not yours. You get their day-to-day work; we handle the employment side: contracts, payroll, the administrative parts of having staff.",
-      "conceptBody2": "This matters most when your need has a shape to it—a defined project, a seasonal spike, covering parental leave, testing whether a role is even needed long-term before you commit to hiring for it.",
-      "conceptBody3": "If you already know this is a permanent role you want filled once and kept, this isn't the right page—go with Recruitment/Placement instead. Temporary staffing is built for flexibility, not for someone you're planning to keep for years.",
+      "conceptBody1": "We source, screen, and place someone with your teambut unlike Recruitment/Placement, they stay on our payroll, not yours. You get their day-to-day work; we handle the employment side: contracts, payroll, the administrative parts of having staff.",
+      "conceptBody2": "This matters most when your need has a shape to ita defined project, a seasonal spike, covering parental leave, testing whether a role is even needed long-term before you commit to hiring for it.",
+      "conceptBody3": "If you already know this is a permanent role you want filled once and kept, this isn't the right pagego with Recruitment/Placement instead. Temporary staffing is built for flexibility, not for someone you're planning to keep for years.",
       "noteTitle": "Employer of Record Control",
       "noteBody": "We employ the person. You direct their work. When the project ends or your need shifts, the arrangement ends without you managing a termination process because you were never their employer to begin with.",
 
       "processTitle": "How It Works",
       "steps": [
         { "step": "01", "title": "You tell us the shape of the need", "desc": "Role, duration (even roughly), start date, whether it might extend or convert to permanent later." },
-        { "step": "02", "title": "We source and place someone suited to a temporary arrangement", "desc": "Not every candidate wants temp work—we screen specifically for people who are comfortable with defined-length engagements." },
-        { "step": "03", "title": "They start working with your team", "desc": "Day-to-day, they work under your direction, same as any team member—the difference is who's issuing their paycheck and holding the employment contract." },
-        { "step": "04", "title": "We handle the employment admin", "desc": "Payroll, contract, statutory obligations—off your plate entirely." },
+        { "step": "02", "title": "We source and place someone suited to a temporary arrangement", "desc": "Not every candidate wants temp workwe screen specifically for people who are comfortable with defined-length engagements." },
+        { "step": "03", "title": "They start working with your team", "desc": "Day-to-day, they work under your direction, same as any team memberthe difference is who's issuing their paycheck and holding the employment contract." },
+        { "step": "04", "title": "We handle the employment admin", "desc": "Payroll, contract, statutory obligationsoff your plate entirely." },
         { "step": "05", "title": "The arrangement ends, extends, or converts", "desc": "When the need ends, so does the placement, cleanly. If you want to extend it or bring the person on permanently instead, that's a conversation, not a legal process." }
       ],
 
@@ -937,27 +937,27 @@
         "Performance feedback",
         "Deciding when the engagement ends or whether it should convert to something longer"
       ],
-      "laborFooter": "This is the flexibility trade Payrolling and Temporary Staffing share—you're not carrying employer liability for someone you might only need for a few months.",
+      "laborFooter": "This is the flexibility trade Payrolling and Temporary Staffing shareyou're not carrying employer liability for someone you might only need for a few months.",
 
       "comparisonTitle": "Temporary Staffing vs. Recruitment/Placement",
       "comparisonSubtitle": "Which model fits your current hiring phase?",
       "rpoTitle": "Temporary Staffing",
-      "rpoDesc": "If your need is defined by time or scope rather than permanence—a project, a leave cover, testing demand—Temporary Staffing avoids the mismatch of hiring someone permanently. A rough test: if you'd be upset to lose this person after six months, you probably want Placement. If six months was the plan all along, Temporary Staffing fits better.",
+      "rpoDesc": "If your need is defined by time or scope rather than permanencea project, a leave cover, testing demandTemporary Staffing avoids the mismatch of hiring someone permanently. A rough test: if you'd be upset to lose this person after six months, you probably want Placement. If six months was the plan all along, Temporary Staffing fits better.",
       "payrollTitle": "Recruitment / Placement Alternative",
-      "payrollDesc": "If you know exactly what role you're filling and you want that person as a direct, permanent hire from day one, Placement is simpler—no ongoing relationship with us once the introduction's made, and the person is fully yours from the start.",
+      "payrollDesc": "If you know exactly what role you're filling and you want that person as a direct, permanent hire from day one, Placement is simplerno ongoing relationship with us once the introduction's made, and the person is fully yours from the start.",
 
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "question": "What's the minimum length for a temporary placement?", "answer": "[To be confirmed with client—flagging rather than inventing a number.]" },
-        { "question": "Can a temporary placement convert to a permanent hire later?", "answer": "Yes—that's a common path. [Conversion terms and any associated fee structure to be confirmed before publishing.]" },
-        { "question": "Who's legally responsible for this person while they're placed with us?", "answer": "We are—we're the employer of record for the duration of the placement. You direct their work, but the employment relationship, payroll, and statutory obligations sit with us." },
-        { "question": "Is Temporary Staffing the same as Payrolling?", "answer": "Closely related—both involve us as the legal employer. Temporary Staffing typically implies a defined, shorter-term need; Payrolling can run longer-term or indefinitely." },
-        { "question": "Can we request the same person again for a future project?", "answer": "[To be confirmed—depends on availability and whether that's something actively offered.]" }
+        { "question": "What's the minimum length for a temporary placement?", "answer": "[To be confirmed with clientflagging rather than inventing a number.]" },
+        { "question": "Can a temporary placement convert to a permanent hire later?", "answer": "Yesthat's a common path. [Conversion terms and any associated fee structure to be confirmed before publishing.]" },
+        { "question": "Who's legally responsible for this person while they're placed with us?", "answer": "We arewe're the employer of record for the duration of the placement. You direct their work, but the employment relationship, payroll, and statutory obligations sit with us." },
+        { "question": "Is Temporary Staffing the same as Payrolling?", "answer": "Closely relatedboth involve us as the legal employer. Temporary Staffing typically implies a defined, shorter-term need; Payrolling can run longer-term or indefinitely." },
+        { "question": "Can we request the same person again for a future project?", "answer": "[To be confirmeddepends on availability and whether that's something actively offered.]" }
       ],
 
       "finalCta": {
         "heading": "Need flexible support for your team?",
-        "description": "Temporary needs often come with timeline pressure—a call gets things moving faster than a form-and-wait cycle.",
+        "description": "Temporary needs often come with timeline pressurea call gets things moving faster than a form-and-wait cycle.",
         "buttonText": "Book a call",
         "buttonLink": "/contact"
       }
@@ -975,23 +975,23 @@
     "hero": {
       "badge": "Payrolling Services",
       "title": "Payrolling for Dutch Companies",
-      "subtitle": "You've found someone you want working for your company—maybe through your own search, maybe through us—but you don't want to become their legal employer. Payrolling solves that: we hire the person on paper, you manage them day to day, and all the employer obligations sit with us instead of you.",
+      "subtitle": "You've found someone you want working for your companymaybe through your own search, maybe through usbut you don't want to become their legal employer. Payrolling solves that: we hire the person on paper, you manage them day to day, and all the employer obligations sit with us instead of you.",
       "ctaText": "Book a Call",
       "ctaLink": "/contact"
     },
     "sections": {
       "conceptTitle": "What Payrolling Actually Means",
-      "conceptBody1": "We become the legal employer of record. Contract, payroll, tax withholding, statutory leave, pension contributions where applicable—all of it runs through us. You get full operational control: this person works on your team, follows your direction, does the job you need done.",
+      "conceptBody1": "We become the legal employer of record. Contract, payroll, tax withholding, statutory leave, pension contributions where applicableall of it runs through us. You get full operational control: this person works on your team, follows your direction, does the job you need done.",
       "conceptBody2": "What you don't take on is the administrative and legal weight of Dutch employment law. This is different from Recruitment/Placement, where the person becomes your direct employee outright.",
       "conceptBody3": "Companies use this for a few different reasons: not having Dutch payroll infrastructure set up yet, wanting flexibility to scale headcount without the complexity of hiring and terminating directly, or simply preferring not to carry employer liability.",
       "noteTitle": "Duration and Flexibility",
-      "noteBody": "It's not temp work in the sense of \"short-term cover.\" Payrolling can run indefinitely—someone can work with your team for years under this arrangement if that's what suits you. The difference from a direct hire isn't duration; it's who's legally responsible.",
+      "noteBody": "It's not temp work in the sense of \"short-term cover.\" Payrolling can run indefinitelysomeone can work with your team for years under this arrangement if that's what suits you. The difference from a direct hire isn't duration; it's who's legally responsible.",
 
       "processTitle": "How It Works",
       "steps": [
-        { "step": "01", "title": "You identify who's going to work with you", "desc": "Either someone you've already found, or someone we help source—Payrolling works either way." },
+        { "step": "01", "title": "You identify who's going to work with you", "desc": "Either someone you've already found, or someone we help sourcePayrolling works either way." },
         { "step": "02", "title": "We set up the employment", "desc": "Contract, payroll registration, compliance with Dutch labor law handled on our end before the person starts." },
-        { "step": "03", "title": "They join your team and work under your direction", "desc": "Day-to-day management, tasks, performance—all yours. We're not involved in how the work actually gets done." },
+        { "step": "03", "title": "They join your team and work under your direction", "desc": "Day-to-day management, tasks, performanceall yours. We're not involved in how the work actually gets done." },
         { "step": "04", "title": "We run payroll and handle employer obligations continuously", "desc": "Salary payments, tax withholding, statutory benefits, and ongoing compliance for as long as the arrangement runs." },
         { "step": "05", "title": "The arrangement continues, adjusts, or ends based on your needs", "desc": "No fixed end date required. Scale down, extend, or convert to direct employment later if that becomes the right move." }
       ],
@@ -1014,15 +1014,15 @@
       "rpoTitle": "Payrolling",
       "rpoDesc": "If you'd rather not take on direct employer liability, don't have Dutch payroll set up, or want the flexibility to adjust headcount without a termination process, Payrolling carries that weight for you. It costs more over time than a one-off placement fee, but buys flexibility and removes the administrative burden.",
       "payrollTitle": "Recruitment / Placement Alternative",
-      "payrollDesc": "If you want this person as a direct employee from day one—your contract, your payroll, full long-term investment—Placement is the more direct route. No ongoing fee to us once the hire is made.",
+      "payrollDesc": "If you want this person as a direct employee from day oneyour contract, your payroll, full long-term investmentPlacement is the more direct route. No ongoing fee to us once the hire is made.",
 
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "question": "Is there a minimum duration for a Payrolling arrangement?", "answer": "[To be confirmed—flagging rather than inventing a number.]" },
-        { "question": "How is Payrolling priced?", "answer": "[Pricing structure—management fee on top of salary, flat rate, etc.—to be confirmed before this goes live.]" },
+        { "question": "Is there a minimum duration for a Payrolling arrangement?", "answer": "[To be confirmedflagging rather than inventing a number.]" },
+        { "question": "How is Payrolling priced?", "answer": "[Pricing structuremanagement fee on top of salary, flat rate, etc.to be confirmed before this goes live.]" },
         { "question": "Can we convert a Payrolling arrangement to a direct hire later?", "answer": "Yes, that's a common path. [Specific terms and any conversion fee to be confirmed with client.]" },
         { "question": "What's the difference between Payrolling and Temporary Staffing?", "answer": "Temporary Staffing covers defined, shorter-term needs; Payrolling is built for longer or indefinite arrangements where you still don't want direct employer liability." },
-        { "question": "Who's liable if something goes wrong with this person's employment?", "answer": "As the legal employer of record, that liability sits with us, not with you—including disputes or dismissal issues." }
+        { "question": "Who's liable if something goes wrong with this person's employment?", "answer": "As the legal employer of record, that liability sits with us, not with youincluding disputes or dismissal issues." }
       ],
 
       "finalCta": {
@@ -1080,7 +1080,7 @@
   "ourApproach": {
   "meta": {
     "title": "Our Approach to Staffing | Staff Outsourcing",
-    "description": "We run recruitment/placement and payrolling, and help you figure out which model actually fits your hiring problem—not which one we'd rather sell.",
+    "description": "We run recruitment/placement and payrolling, and help you figure out which model actually fits your hiring problemnot which one we'd rather sell.",
     "slug": "/our-approach"
   },
   "heroBadge": "Our Approach",
@@ -1162,7 +1162,7 @@
 "about": {
   "meta": {
     "title": "About Us | Staff Outsourcing",
-    "description": "We help Dutch companies hire the right way—recruitment/placement or payrolling, whichever actually fits your hiring problem.",
+    "description": "We help Dutch companies hire the right wayrecruitment/placement or payrolling, whichever actually fits your hiring problem.",
     "slug": "/about"
   },
   "hero": {
@@ -1191,7 +1191,147 @@
     "title": "Start Your Journey With Us",
     "description": "Connect with our team or visit our office location to explore seamless collaboration opportunities."
   }
+},
+
+
+
+  "privacy": {
+    "meta": {
+      "title": "Privacy Policy | Staff Outsourcing",
+      "description": "Read our privacy policy to understand how Staff Outsourcing handles and protects your personal information."
+    },
+    "hero": {
+      "badge": "Legal",
+      "title": "Privacy Policy",
+      "description": "Your privacy is important to us. Learn how we collect, use, and protect your information."
+    },
+    "sections": {
+      "s1": {
+        "title": "1. Who We Are",
+        "body": "Staff Outsourcing is a professional staffing and technology solutions provider specializing in remote team placement, IT support, infrastructure automation, and related digital services. Our commitment to your privacy is based on transparency and trust."
+      },
+      "s2": {
+        "title": "2. Information We Collect",
+        "intro": "We collect the following types of information:",
+        "sub1Title": "a. Personal Information You Provide",
+        "item1": "Name",
+        "item2": "Email address",
+        "item3": "Company name",
+        "item4": "Phone number",
+        "item5": "Job title",
+        "item6": "Any other data you submit via contact forms, newsletter sign-ups, or demo requests",
+        "sub2Title": "b. Automatically Collected Information",
+        "auto1": "IP address",
+        "auto2": "Browser type and device",
+        "auto3": "Pages visited and time spent",
+        "auto4": "Referring site and geographic location",
+        "auto5": "Cookies and analytics data (via tools like Google Analytics)"
+      },
+      "s3": {
+        "title": "3. How We Use Your Information",
+        "item1": "Provide and improve our services",
+        "item2": "Respond to your inquiries",
+        "item3": "Schedule consultations or demos",
+        "item4": "Send newsletters or marketing updates (with your consent)",
+        "item5": "Analyze site usage and performance",
+        "item6": "Comply with legal obligations"
+      },
+      "s4": {
+        "title": "4. Cookies and Tracking Technologies",
+        "body": "We use cookies to enhance user experience, analyze site traffic, and tailor our marketing. By using our site, you consent to the use of cookies in accordance with this policy. You can modify your cookie settings in your browser."
+      },
+      "s5": {
+        "title": "5. Data Sharing",
+        "intro": "We do not sell or rent your personal data. We may share data with:",
+        "item1": "Trusted third-party service providers (e.g., CRM, email, analytics tools)",
+        "item2": "Legal or regulatory authorities (if required by law)",
+        "footer": "All third parties are obligated to keep your data secure and confidential."
+      },
+      "s6": {
+        "title": "6. International Data Transfers",
+        "body": "If you are located outside the country where our servers are hosted, your data may be transferred and stored internationally. We ensure appropriate safeguards are in place for international data transfers, particularly under GDPR."
+      },
+      "s7": {
+        "title": "7. Your Data Rights",
+        "intro": "You have the right to:",
+        "item1": "Access, correct, or delete your personal information",
+        "item2": "Withdraw consent at any time",
+        "item3": "Object to data processing",
+        "item4": "Lodge a complaint with a data protection authority (if applicable)",
+        "contactText": "To exercise your rights, email us at:"
+      },
+      "s8": {
+        "title": "8. Data Retention",
+        "intro": "We retain your information only as long as necessary to:",
+        "item1": "Fulfill the purposes outlined in this policy",
+        "item2": "Comply with legal or accounting obligations",
+        "item3": "Support ongoing business relationships"
+      },
+      "s9": {
+        "title": "9. Third-Party Links",
+        "body": "Our website may contain links to third-party websites. We are not responsible for the privacy practices of these websites and recommend reviewing their policies separately."
+      },
+      "s10": {
+        "title": "10. Security Measures",
+        "body": "We implement appropriate technical and organizational measures to protect your personal data from unauthorized access, alteration, disclosure, or destruction."
+      },
+      "s11": {
+        "title": "11. Children's Privacy",
+        "body": "Our services are not intended for individuals under 16 years of age. We do not knowingly collect data from minors."
+      }
+    }
+  },
+  "terms": {
+    "meta": {
+      "title": "Terms and Conditions | Staff Outsourcing",
+      "description": "Read the terms and conditions for using Staff Outsourcing's website and services."
+    },
+    "hero": {
+      "badge": "Legal",
+      "title": "Terms and Conditions",
+      "description": "Please read these terms and conditions carefully before using our services."
+    },
+    "sections": {
+      "s1": {
+        "title": "1. Agreement to Terms",
+        "body": "By accessing or using the Staff Outsourcing website and services, you agree to be bound by these Terms and Conditions. If you disagree with any part of the terms, you may not access our services."
+      },
+      "s2": {
+        "title": "2. Intellectual Property Rights",
+        "body": "Other than the content you own, under these Terms, Staff Outsourcing and/or its licensors own all the intellectual property rights and materials contained in this website."
+      },
+      "s3": {
+        "title": "3. Restrictions",
+        "body": "You are specifically restricted from publishing any website material in any other media, selling, sublicensing, commercializing, publicly performing, or using this website in any way that is or may be damaging to this website."
+      },
+      "s4": {
+        "title": "4. User Content",
+        "body": "In these Website Standard Terms and Conditions, 'User Content' shall mean any audio, video text, images, or other material you choose to display on this website. By displaying it, you grant Staff Outsourcing a non-exclusive, worldwide irrevocable license to use, reproduce, and adapt it."
+      },
+      "s5": {
+        "title": "5. No Warranties",
+        "body": "This website is provided 'as is,' with all faults, and Staff Outsourcing expresses no representations or warranties, of any kind related to this website or the materials contained on this website."
+      },
+      "s6": {
+        "title": "6. Limitation of Liability",
+        "body": "In no event shall Staff Outsourcing, nor any of its officers, directors, and employees, be held liable for anything arising out of or in any way connected with your use of this website."
+      },
+      "s7": {
+        "title": "7. Indemnification",
+        "body": "You hereby indemnify to the fullest extent Staff Outsourcing from and against any and/or all liabilities, costs, demands, causes of action, damages, and expenses arising in any way related to your breach of any of the provisions of these Terms."
+      },
+      "s8": {
+        "title": "8. Variation of Terms",
+        "body": "Staff Outsourcing is permitted to revise these terms at any time as it sees fit, and by using this website you are expected to review these terms on a regular basis."
+      },
+      "s9": {
+        "title": "9. Contact Information",
+        "body": "If you have any queries regarding any of our terms, please contact us at:"
+      }
+    }
+  }
 }
 
-}
+
+
 
