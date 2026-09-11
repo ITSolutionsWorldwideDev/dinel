@@ -4,22 +4,24 @@ import React, { useRef } from "react";
 import { Link } from "../../../i18n/navigation";
 import {
   FaCode,
-  FaPaintBrush,
+  FaPaintbrush,
   FaChartLine,
   FaHeadset,
   FaCalculator,
   FaPlane,
+  FaTruckFast, // 👈 Supply Chain ke liye icon
   FaArrowRight,
-} from "react-icons/fa";
+} from "react-icons/fa6"; // Note: fa6 imports use kiye hain icons ke liye
 import { useTranslations } from "next-intl";
 
 const categories = [
   { name: "IT & Development", href: "/it-development", icon: FaCode },
-  { name: "Design Services", href: "/design-services", icon: FaPaintBrush },
+  { name: "Design Services", href: "/design-services", icon: FaPaintbrush },
   { name: "Marketing & Analytics", href: "/marketing-analytics", icon: FaChartLine },
   { name: "Administration & Business Support", href: "/admin-business-support", icon: FaHeadset },
   { name: "Finance & Accounting", href: "/finance-accounting", icon: FaCalculator },
   { name: "Travel & Reservations", href: "/travel-reservations", icon: FaPlane },
+  { name: "Supply Chain", href: "/supply-chain", icon: FaTruckFast }, // 👈 Added Supply Chain
 ];
 
 type CategoryRoles = {

@@ -39,6 +39,10 @@ export default async function DeskstopNavigationMenu() {
       name: navT("servicesList.travelReservations"),
       href: "/travel-reservations",
     },
+    {
+      name: navT("servicesList.supplyChain"),
+      href: "/supply-chain",
+    },
   ];
 
   // Categories

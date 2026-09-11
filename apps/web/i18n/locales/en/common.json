@@ -20,7 +20,8 @@
     "marketingAnalytics": "Marketing & Analytics",
     "adminBusinessSupport": "Administration & Business Support",
     "financeAccounting": "Finance & Accounting",
-    "travelReservations": "Travel & Reservations"
+    "travelReservations": "Travel & Reservations",
+    "supplyChain": "Supply Chain"
   }
 },
   "header": {
@@ -99,7 +100,7 @@
   "badge": "Our Expertise",
   "heading": "Roles we place",
   "subheading": "Roles grouped by what you're actually hiring for. Click a category below to switch roles.",
-  "categories": [
+ "categories": [
     {
       "title": "IT & Development",
       "href": "/professionals/it-development",
@@ -129,6 +130,17 @@
       "title": "Travel & Reservations",
       "href": "/professionals/travel-reservations",
       "roles": ["Online Travel Advisor", "Reservations Clerk", "Customer Service (Travel Agency)", "Travel Marketer"]
+    },
+    {
+      "title": "Supply Chain",
+      "href": "/en/supply-chain",
+      "roles": [
+        "Supply Chain Coordinator",
+        "Procurement Specialist",
+        "Logistics Coordinator",
+        "Inventory/Warehouse Planner",
+        "Supply Chain Analyst"
+      ]
     }
   ]
 },
@@ -342,6 +354,85 @@
       }
     }
   },
+
+"supplyChain": {
+  "seo": {
+    "slug": "/en/supply-chain",
+    "metaTitle": "Hire Supply Chain Staff in the Netherlands | Staff Outsourcing",
+    "metaDescription": "Hire supply chain, procurement, logistics and warehouse staff in the Netherlands. Recruit them directly or lease payrolled staff we handle the hiring."
+  },
+  "hero": {
+    "h1": "Hire supply chain staff in the Netherlands",
+    "subhead": "From day-to-day coordination to procurement strategy recruit directly, or lease payrolled staff. Five roles, one point of contact.",
+    "primaryCtaText": "Book a call →",
+    "primaryCtaLink": "/en/contact",
+    "secondaryCtaText": "Contact Us",
+    "secondaryCtaLink": "https://wa.me/[placeholder]"
+  },
+  "sections": {
+    "coverageTitle": "What this category covers",
+    "coverageBody": "This category is for companies that move, store, or source physical goods and need people who can keep that running not the strategic \"supply chain transformation\" consulting angle, the operational one. Some companies need someone tracking stock and orders day to day; others need someone deciding which suppliers to use and negotiating terms. Different problems, different roles.",
+    "rolesTitle": "Roles in this category",
+    "roles": [
+      {
+        "title": "Supply Chain Coordinator",
+        "description": "keeps the day-to-day flow of goods, orders, and suppliers on schedule.",
+        "link": "/en/hire-supply-chain-coordinator"
+      },
+      {
+        "title": "Procurement Specialist",
+        "description": "sources suppliers and negotiates terms; owns what you buy and from whom.",
+        "link": "/en/hire-procurement-specialist"
+      },
+      {
+        "title": "Logistics Coordinator",
+        "description": "manages transport, shipping, and delivery timing specifically.",
+        "link": "/en/hire-logistics-coordinator"
+      },
+      {
+        "title": "Inventory/Warehouse Planner",
+        "description": "plans stock levels and warehouse space so you're not overstocked or short.",
+        "link": "/en/hire-inventory-warehouse-planner"
+      },
+      {
+        "title": "Supply Chain Analyst",
+        "description": "turns your shipping, stock, and supplier data into decisions on where the bottlenecks are.",
+        "link": "/en/hire-supply-chain-analyst"
+      }
+    ],
+    "modelTitle": "Payrolling vs RPO for this category",
+    "modelBody": "Operational, volume-driven roles Logistics Coordinator, Inventory/Warehouse Planner tend to fit Payrolling, since demand shifts with order volume and season the same way it does in Travel. Roles built around ongoing supplier relationships and strategy Procurement Specialist, Supply Chain Analyst tend to work better as a permanent hire through RPO, since the value compounds the longer someone stays in the role.",
+    "howItWorksTitle": "How it works",
+    "howItWorksBody": "Same intake-to-placement process as every category.",
+    "howItWorksLink": "/en/#how-it-works",
+    "faqTitle": "FAQ",
+    "faqs": [
+      {
+        "q": "Can staffing here scale with order volume or seasonal demand?",
+        "a": "Yes that's a common Payrolling use case, the same logic as retail or travel peaks."
+      },
+      {
+        "q": "Do you place people with experience in a specific ERP or WMS system (SAP, etc.)?",
+        "a": "Tell us your system and we match against it. [placeholder confirm which systems we vet for]"
+      },
+      {
+        "q": "Is a Procurement Specialist the same as a buyer?",
+        "a": "Close, but a Procurement Specialist typically owns supplier selection and contract terms too, not just placing orders flag which one you actually need."
+      },
+      {
+        "q": "Do you cover import/export or customs-related admin?",
+        "a": "[placeholder confirm if this is in scope, since it's common in Dutch logistics]"
+      }
+    ],
+    "finalCta": {
+      "headline": "Need day-to-day coordination, or a strategic supply chain hire? Tell us the role.",
+      "primaryCtaText": "Book a call →",
+      "primaryCtaLink": "/en/contact-us",
+      "secondaryCtaText": "Contact Us →",
+      "secondaryCtaLink": "/en/contact-us"
+    }
+  }
+},
 
   "designServices": {
     "seo": {

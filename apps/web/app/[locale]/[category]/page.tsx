@@ -20,7 +20,7 @@ interface PageProps {
     category: string;
   }>;
 }
- 
+
 const categoryKeyMap: Record<string, string> = {
   'it-development': 'itDevelopment',
   'design-services': 'designServices',
@@ -28,6 +28,7 @@ const categoryKeyMap: Record<string, string> = {
   'admin-business-support': 'adminBusinessSupport',
   'finance-accounting': 'financeAccounting',
   'travel-reservations': 'travelReservations',
+  'supply-chain': 'supplyChain',
 };
 
 function getCategoryData(locale: string, category: string) {
@@ -87,8 +88,11 @@ export default async function CategoryPage({ params }: PageProps) {
   const pageHero = categoryData.hero;
   const pageSections = categoryData.sections;
 
-  const rolesCategory =
-    commonData.rolesWePlace?.categories?.find((c: any) => c.href.includes(category)) || { roles: [] };
+  // Fallback to check roles directly from page sections first, then look into rolesWePlace if needed
+  const rolesList =
+    pageSections?.roles ||
+    commonData.rolesWePlace?.categories?.find((c: any) => c.href.includes(category))?.roles ||
+    [];
 
   return (
     <main className="w-full">
@@ -96,7 +100,7 @@ export default async function CategoryPage({ params }: PageProps) {
 
       <div className="w-full px-4 sm:px-8 lg:px-16 max-w-[1500px] mx-auto py-12 space-y-16">
         <CategoryCoverage title={pageSections?.coverageTitle} body={pageSections?.coverageBody} />
-        <CategoryRoles title={pageSections?.rolesTitle} roles={rolesCategory.roles} />
+        <CategoryRoles title={pageSections?.rolesTitle} roles={rolesList} />
 
         {pageSections?.modelTitle && (
           <CategoryModel title={pageSections?.modelTitle} body={pageSections?.modelBody} />

@@ -16,12 +16,13 @@
   "about": "Over Ons",
   "contact": "Contact",
   "servicesList": {
-    "itDevelopment": "IT & Development",
-    "designServices": "Design Services",
-    "marketingAnalytics": "Marketing & Analytics",
-    "adminBusinessSupport": "Administration & Business Support",
-    "financeAccounting": "Finance & Accounting",
-    "travelReservations": "Travel & Reservations"
+    "itDevelopment": "IT en Ontwikkeling",
+    "designServices": "Ontwerpdiensten",
+    "marketingAnalytics": "Marketing en Analytics",
+    "adminBusinessSupport": "Administratie en Bedrijfsondersteuning",
+    "financeAccounting": "Financiën en Boekhouding",
+    "travelReservations": "Reizen en Reserveringen",
+    "supplyChain": "Logistiek en Supply Chain"
   }
 },
   "header": {
@@ -128,8 +129,19 @@
       "title": "Reizen & Reserveringen",
       "href": "/professionals/travel-reservations",
       "roles": ["Online Reisadviseur", "Reserveringsmedewerker", "Klantenservice (Reisbureau)", "Reismarketeer"]
+    },
+ {
+      "title": "Supply Chain",
+      "href": "/en/supply-chain",
+      "roles": [
+        "Supply Chain Coördinator",
+        "Inkoopspecialist",
+        "Logistiek Coördinator",
+        "Voorraad- / Magazijnplanner",
+        "Supply Chain Analist"
+      ]
     }
-  ]
+]
 },
 
 
@@ -234,7 +246,84 @@
 },
 
 
-
+"supplyChain": {
+  "seo": {
+    "slug": "/nl/supply-chain",
+    "metaTitle": "Supply Chain-personeel inhuren in Nederland | Staff Outsourcing",
+    "metaDescription": "Huur supply chain-, inkoop-, logistiek- en magazijnpersoneel in Nederland. Rechtstreeks werven of payrolled personeel inzetten wij regelen de werving."
+  },
+  "hero": {
+    "h1": "Huur supply chain-personeel in Nederland",
+    "subhead": "Van dagelijkse coördinatie tot inkoopstrategie werf rechtstreeks, of huur payrolled personeel. Vijf rollen, één aanspreekpunt.",
+    "primaryCtaText": "Plan een gesprek →",
+    "primaryCtaLink": "/nl/contact",
+    "secondaryCtaText": "Neem contact op",
+    "secondaryCtaLink": "https://wa.me/[placeholder]"
+  },
+  "sections": {
+    "coverageTitle": "Wat deze categorie omvat",
+    "coverageBody": "Deze categorie is voor bedrijven die fysieke goederen verplaatsen, opslaan of inkopen en daar mensen bij nodig hebben die dat draaiende houden niet de strategische \"supply chain transformatie\"-consultancy-invalshoek, maar de operationele kant. Sommige bedrijven hebben iemand nodig die dagelijks voorraad en bestellingen bijhoudt; andere hebben iemand nodig die bepaalt welke leveranciers ze gebruiken en onderhandelt over voorwaarden. Verschillende problemen, verschillende rollen.",
+    "rolesTitle": "Rollen in deze categorie",
+    "roles": [
+      {
+        "title": "Supply Chain Coordinator",
+        "description": "houdt de dagelijkse stroom van goederen, bestellingen en leveranciers op schema.",
+        "link": "/nl/hire-supply-chain-coordinator"
+      },
+      {
+        "title": "Procurement Specialist",
+        "description": "zoekt leveranciers en onderhandelt over voorwaarden; bepaalt wat u inkoopt en bij wie.",
+        "link": "/nl/hire-procurement-specialist"
+      },
+      {
+        "title": "Logistics Coordinator",
+        "description": "beheert transport, verzending en levertijden specifiek.",
+        "link": "/nl/hire-logistics-coordinator"
+      },
+      {
+        "title": "Inventory/Warehouse Planner",
+        "description": "plant voorraadniveaus en magazijnruimte, zodat u niet over- of onderbevoorraad raakt.",
+        "link": "/nl/hire-inventory-warehouse-planner"
+      },
+      {
+        "title": "Supply Chain Analyst",
+        "description": "zet uw verzend-, voorraad- en leveranciersdata om in beslissingen over waar de knelpunten zitten.",
+        "link": "/nl/hire-supply-chain-analyst"
+      }
+    ],
+    "modelTitle": "Payrolling vs RPO voor deze categorie",
+    "modelBody": "Operationele, volumegedreven rollen Logistics Coordinator, Inventory/Warehouse Planner passen vaak bij Payrolling, omdat de vraag meebeweegt met bestelvolume en seizoen, net als bij Travel. Rollen die draaien om doorlopende leveranciersrelaties en strategie Procurement Specialist, Supply Chain Analyst werken vaak beter als vaste plek via RPO, omdat de waarde toeneemt naarmate iemand langer in de rol zit.",
+    "howItWorksTitle": "Hoe het werkt",
+    "howItWorksBody": "Zelfde proces als bij elke categorie.",
+    "howItWorksLink": "/nl/#how-it-works",
+    "faqTitle": "FAQ",
+    "faqs": [
+      {
+        "q": "Kan de bezetting meeschalen met bestelvolume of seizoensgebonden vraag?",
+        "a": "Ja dat is een veelvoorkomende toepassing van Payrolling, dezelfde logica als bij retail- of reispieken."
+      },
+      {
+        "q": "Plaatsen jullie mensen met ervaring in een specifiek ERP- of WMS-systeem (SAP e.d.)?",
+        "a": "Geef uw systeem aan en we matchen daarop. [placeholder bevestig welke systemen we screenen]"
+      },
+      {
+        "q": "Is een Procurement Specialist hetzelfde als een inkoper?",
+        "a": "Grotendeels, maar een Procurement Specialist beheert doorgaans ook leverancierskeuze en contractvoorwaarden, niet alleen het plaatsen van bestellingen geef aan welke van de twee u precies nodig heeft."
+      },
+      {
+        "q": "Doen jullie ook import/export of douane-gerelateerde administratie?",
+        "a": "[placeholder bevestig of dit binnen scope valt, aangezien dit gangbaar is in de Nederlandse logistiek]"
+      }
+    ],
+    "finalCta": {
+      "headline": "Dagelijkse coördinatie nodig, of een strategische supply chain-hire? Vertel ons de rol.",
+      "primaryCtaText": "Plan een gesprek →",
+      "primaryCtaLink": "/nl/contact-us",
+      "secondaryCtaText": "Neem contact op →",
+      "secondaryCtaLink": "/nl/contact-us"
+    }
+  }
+},
 
 
   "itDevelopment": {

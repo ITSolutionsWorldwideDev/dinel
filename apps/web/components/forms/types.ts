@@ -12,6 +12,8 @@ export interface HiringFormState {
   phone: string;
   category: string;
   positions: string;
+  jobPosition: string; // 👈 NEW FIELD
+
   jobDescription: string;
   budget: string;
   jobDescriptionFile: File | null;
@@ -38,6 +40,7 @@ export const initialHiringState: HiringFormState = {
   jobDescription: "",
   budget: "",
   jobDescriptionFile: null,
+  jobPosition: "",
 };
 
 export const initialJobSeekerState: JobSeekerFormState = {

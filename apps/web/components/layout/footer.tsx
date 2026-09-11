@@ -146,7 +146,7 @@ export default async function Footer() {
           {/* SERVICES */}
           <div className="lg:col-span-2">
             <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3 sm:mb-4 pb-2 border-b border-white/10 sm:border-none sm:pb-0">
-              How We Hire
+              Roles We Place
             </h3>
             <ul className="space-y-2.5">
               {services.map((service) => (
@@ -162,7 +162,7 @@ export default async function Footer() {
           {/* CATEGORIES */}
           <div className="lg:col-span-3">
             <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3 sm:mb-4 pb-2 border-b border-white/10 sm:border-none sm:pb-0">
-              Roles We Place
+              How we Hire
             </h3>
             <ul className="space-y-2.5">
               {categories.map((category) => (

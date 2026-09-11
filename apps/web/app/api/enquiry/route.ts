@@ -120,247 +120,173 @@ export async function POST(req: NextRequest) {
     // HIRING ENQUIRY
     // ==================================================
 
-    if (mode === "hiring") {
-      const companyName = String(
-        formData.get("companyName") || ""
-      ).trim();
+if (mode === "hiring") {
+  const companyName = String(formData.get("companyName") || "").trim();
+  const contactPerson = String(formData.get("contactPerson") || "").trim();
+  const email = String(formData.get("email") || "").trim();
+  const phone = String(formData.get("phone") || "").trim();
+  const category = String(formData.get("category") || "").trim();
+  const jobPosition = String(formData.get("jobPosition") || "").trim(); // 👈 NEW
+  const positions = String(formData.get("positions") || "").trim();
+  const jobDescription = String(formData.get("jobDescription") || "").trim();
+  const budget = String(formData.get("budget") || "").trim();
 
-      const contactPerson = String(
-        formData.get("contactPerson") || ""
-      ).trim();
+  const jobDescriptionFile = formData.get("jobDescriptionFile");
 
-      const email = String(
-        formData.get("email") || ""
-      ).trim();
+  // --------------------------------------------------
+  // VALIDATION
+  // --------------------------------------------------
 
-      const phone = String(
-        formData.get("phone") || ""
-      ).trim();
+  if (
+    !companyName ||
+    !contactPerson ||
+    !email ||
+    !category ||
+    !jobPosition ||       // 👈 NEW required check
+    !jobDescription
+  ) {
+    return NextResponse.json(
+      { error: "Please fill in all required hiring enquiry fields." },
+      { status: 400 }
+    );
+  }
 
-      const category = String(
-        formData.get("category") || ""
-      ).trim();
+  // --------------------------------------------------
+  // ATTACHMENT
+  // --------------------------------------------------
 
-      const positions = String(
-        formData.get("positions") || ""
-      ).trim();
+  const attachments: {
+    filename: string;
+    content: Buffer;
+    contentType?: string;
+  }[] = [];
 
-      const jobDescription = String(
-        formData.get("jobDescription") || ""
-      ).trim();
+  if (
+    jobDescriptionFile &&
+    jobDescriptionFile instanceof File &&
+    jobDescriptionFile.size > 0
+  ) {
+    if (jobDescriptionFile.size > 10 * 1024 * 1024) {
+      return NextResponse.json(
+        { error: "Job description document must be smaller than 10 MB." },
+        { status: 400 }
+      );
+    }
 
-      const budget = String(
-        formData.get("budget") || ""
-      ).trim();
+    const buffer = Buffer.from(await jobDescriptionFile.arrayBuffer());
 
-      const jobDescriptionFile =
-        formData.get("jobDescriptionFile");
+    attachments.push({
+      filename: jobDescriptionFile.name,
+      content: buffer,
+      contentType: jobDescriptionFile.type || "application/octet-stream",
+    });
+  }
 
-      // --------------------------------------------------
-      // VALIDATION
-      // --------------------------------------------------
+  // --------------------------------------------------
+  // EMAIL HTML
+  // --------------------------------------------------
 
-      if (
-        !companyName ||
-        !contactPerson ||
-        !email ||
-        !category ||
-        !jobDescription
-      ) {
-        return NextResponse.json(
-          {
-            error:
-              "Please fill in all required hiring enquiry fields.",
-          },
-          { status: 400 }
-        );
-      }
+  const html = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8" />
+        <title>New Hiring Enquiry</title>
+      </head>
 
-      // --------------------------------------------------
-      // ATTACHMENT
-      // --------------------------------------------------
+      <body style="font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #222;">
 
-      const attachments: {
-        filename: string;
-        content: Buffer;
-        contentType?: string;
-      }[] = [];
+        <h2 style="color: #164E59;">
+          New Hiring Enquiry — Staff Outsourcing
+        </h2>
 
-      if (
-        jobDescriptionFile &&
-        jobDescriptionFile instanceof File &&
-        jobDescriptionFile.size > 0
-      ) {
-        // 10 MB limit
-        if (jobDescriptionFile.size > 10 * 1024 * 1024) {
-          return NextResponse.json(
-            {
-              error:
-                "Job description document must be smaller than 10 MB.",
-            },
-            { status: 400 }
-          );
+        <table
+          cellpadding="8"
+          cellspacing="0"
+          style="border-collapse: collapse; width: 100%; max-width: 700px;"
+        >
+
+          <tr>
+            <td style="border: 1px solid #ddd;"><strong>Company</strong></td>
+            <td style="border: 1px solid #ddd;">${escapeHtml(companyName)}</td>
+          </tr>
+
+          <tr>
+            <td style="border: 1px solid #ddd;"><strong>Contact Person</strong></td>
+            <td style="border: 1px solid #ddd;">${escapeHtml(contactPerson)}</td>
+          </tr>
+
+          <tr>
+            <td style="border: 1px solid #ddd;"><strong>Email</strong></td>
+            <td style="border: 1px solid #ddd;">${escapeHtml(email)}</td>
+          </tr>
+
+          <tr>
+            <td style="border: 1px solid #ddd;"><strong>Phone</strong></td>
+            <td style="border: 1px solid #ddd;">${escapeHtml(phone || "-")}</td>
+          </tr>
+
+          <tr>
+            <td style="border: 1px solid #ddd;"><strong>Category</strong></td>
+            <td style="border: 1px solid #ddd;">${escapeHtml(category)}</td>
+          </tr>
+
+          <tr>
+            <td style="border: 1px solid #ddd;"><strong>Job Position</strong></td>
+            <td style="border: 1px solid #ddd;">${escapeHtml(jobPosition)}</td>
+          </tr>
+
+          <tr>
+            <td style="border: 1px solid #ddd;"><strong>Number of Positions</strong></td>
+            <td style="border: 1px solid #ddd;">${escapeHtml(positions || "-")}</td>
+          </tr>
+
+          <tr>
+            <td style="border: 1px solid #ddd;"><strong>KVK Number</strong></td>
+            <td style="border: 1px solid #ddd;">${escapeHtml(budget || "-")}</td>
+          </tr>
+
+        </table>
+
+        <h3>Job Description</h3>
+
+        <div style="background: #f7f7f7; padding: 15px; border-radius: 6px; white-space: pre-wrap;">
+          ${escapeHtml(jobDescription)}
+        </div>
+
+        ${
+          attachments.length
+            ? `<p><strong>Attachment:</strong> The job description document is attached to this email.</p>`
+            : ""
         }
 
-        const buffer = Buffer.from(
-          await jobDescriptionFile.arrayBuffer()
-        );
+      </body>
+    </html>
+  `;
 
-        attachments.push({
-          filename: jobDescriptionFile.name,
-          content: buffer,
-          contentType:
-            jobDescriptionFile.type ||
-            "application/octet-stream",
-        });
-      }
+  // --------------------------------------------------
+  // SEND HIRING EMAIL
+  // --------------------------------------------------
 
-      // --------------------------------------------------
-      // EMAIL HTML
-      // --------------------------------------------------
+  const info = await transporter.sendMail({
+    from: `"Staff Outsourcing" <${SMTP_USER}>`,
+    to: mailTo,
+    replyTo: email,
+    subject: `New Hiring Enquiry — ${companyName} (${jobPosition})`,
+    html,
+    attachments,
+  });
 
-      const html = `
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <meta charset="UTF-8" />
-            <title>New Hiring Enquiry</title>
-          </head>
+  console.log("Hiring email sent successfully:", {
+    messageId: info.messageId,
+    response: info.response,
+  });
 
-          <body style="font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #222;">
-
-            <h2 style="color: #164E59;">
-              New Hiring Enquiry — Staff Outsourcing
-            </h2>
-
-            <table
-              cellpadding="8"
-              cellspacing="0"
-              style="border-collapse: collapse; width: 100%; max-width: 700px;"
-            >
-
-              <tr>
-                <td style="border: 1px solid #ddd;">
-                  <strong>Company</strong>
-                </td>
-                <td style="border: 1px solid #ddd;">
-                  ${escapeHtml(companyName)}
-                </td>
-              </tr>
-
-              <tr>
-                <td style="border: 1px solid #ddd;">
-                  <strong>Contact Person</strong>
-                </td>
-                <td style="border: 1px solid #ddd;">
-                  ${escapeHtml(contactPerson)}
-                </td>
-              </tr>
-
-              <tr>
-                <td style="border: 1px solid #ddd;">
-                  <strong>Email</strong>
-                </td>
-                <td style="border: 1px solid #ddd;">
-                  ${escapeHtml(email)}
-                </td>
-              </tr>
-
-              <tr>
-                <td style="border: 1px solid #ddd;">
-                  <strong>Phone</strong>
-                </td>
-                <td style="border: 1px solid #ddd;">
-                  ${escapeHtml(phone || "-")}
-                </td>
-              </tr>
-
-              <tr>
-                <td style="border: 1px solid #ddd;">
-                  <strong>Category</strong>
-                </td>
-                <td style="border: 1px solid #ddd;">
-                  ${escapeHtml(category)}
-                </td>
-              </tr>
-
-              <tr>
-                <td style="border: 1px solid #ddd;">
-                  <strong>KVK Number</strong>
-                </td>
-                <td style="border: 1px solid #ddd;">
-                  ${escapeHtml(positions || "-")}
-                </td>
-              </tr>
-
-              <tr>
-                <td style="border: 1px solid #ddd;">
-                  <strong>KVK Number</strong>
-                </td>
-                <td style="border: 1px solid #ddd;">
-                  ${escapeHtml(budget || "-")}
-                </td>
-              </tr>
-
-            </table>
-
-            <h3>Job Description</h3>
-
-            <div
-              style="
-                background: #f7f7f7;
-                padding: 15px;
-                border-radius: 6px;
-                white-space: pre-wrap;
-              "
-            >
-              ${escapeHtml(jobDescription)}
-            </div>
-
-            ${
-              attachments.length
-                ? `
-                  <p>
-                    <strong>Attachment:</strong>
-                    The job description document is attached to this email.
-                  </p>
-                `
-                : ""
-            }
-
-          </body>
-        </html>
-      `;
-
-      // --------------------------------------------------
-      // SEND HIRING EMAIL
-      // --------------------------------------------------
-
-      const info = await transporter.sendMail({
-        from: `"Staff Outsourcing" <${SMTP_USER}>`,
-        to: mailTo,
-
-        // When you click Reply in Outlook,
-        // it will reply to the person who submitted the form.
-        replyTo: email,
-
-        subject: `New Hiring Enquiry — ${companyName}`,
-
-        html,
-
-        attachments,
-      });
-
-      console.log("Hiring email sent successfully:", {
-        messageId: info.messageId,
-        response: info.response,
-      });
-
-      return NextResponse.json({
-        success: true,
-        message: "Hiring enquiry submitted successfully.",
-      });
-    }
+  return NextResponse.json({
+    success: true,
+    message: "Hiring enquiry submitted successfully.",
+  });
+}
 
     // ==================================================
     // JOB SEEKER

@@ -69,23 +69,24 @@ export default function EnquiryForm({
     e.preventDefault();
     setStatus("submitting");
     setErrorMessage("");
-
-    try {
-      if (mode === "hiring") {
-        const formData = new FormData();
-        formData.append("mode", "hiring");
-        formData.append("companyName", hiringData.companyName);
-        formData.append("contactPerson", hiringData.contactPerson);
-        formData.append("email", hiringData.email);
-        formData.append("phone", hiringData.phone);
-        formData.append("category", hiringData.category);
-        formData.append("positions", hiringData.positions);
-        formData.append("jobDescription", hiringData.jobDescription);
-        formData.append("budget", hiringData.budget);
-        formData.append("hearAboutUs", (hiringData as any).hearAboutUs || "");
-        if (hiringData.jobDescriptionFile) {
-          formData.append("jobDescriptionFile", hiringData.jobDescriptionFile);
-        }
+try {
+  if (mode === "hiring") {
+    const formData = new FormData();
+    formData.append("mode", "hiring");
+    formData.append("companyName", hiringData.companyName);
+    formData.append("contactPerson", hiringData.contactPerson);
+    formData.append("email", hiringData.email);
+    formData.append("phone", hiringData.phone);
+    formData.append("category", hiringData.category);
+    formData.append("jobPosition", hiringData.jobPosition); // 👈 NEW LINE
+    formData.append("positions", hiringData.positions);
+    formData.append("jobDescription", hiringData.jobDescription);
+    formData.append("budget", hiringData.budget);
+    formData.append("hearAboutUs", (hiringData as any).hearAboutUs || "");
+    
+    if (hiringData.jobDescriptionFile) {
+      formData.append("jobDescriptionFile", hiringData.jobDescriptionFile);
+    }
 
         const res = await fetch("/api/enquiry", {
           method: "POST",

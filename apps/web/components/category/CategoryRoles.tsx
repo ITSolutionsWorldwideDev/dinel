@@ -1,7 +1,14 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
+import Link from "next/link";
 
-export default function CategoryRoles({ title, roles }: { title: string; roles: string[] }) {
+interface Role {
+  title: string;
+  description: string;
+  link: string;
+}
+
+export default function CategoryRoles({ title, roles }: { title: string; roles: Role[] }) {
   return (
     <section className="w-full bg-gradient-to-b from-white via-[#f7fafa] to-white py-20 overflow-hidden">
       {/* Header */}
@@ -24,8 +31,9 @@ export default function CategoryRoles({ title, roles }: { title: string; roles: 
 
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {roles?.map((roleName: string, index: number) => (
-          <div
+        {roles?.map((role: Role, index: number) => (
+          <Link
+            href={role.link || "#"}
             key={index}
             className="relative bg-white rounded-2xl p-7 flex flex-col justify-between border-2 border-[#1a4550]/20 shadow-lg shadow-[#1a4550]/5 hover:shadow-xl hover:border-[#1a4550] transition-all duration-300 group overflow-hidden w-full"
           >
@@ -40,9 +48,12 @@ export default function CategoryRoles({ title, roles }: { title: string; roles: 
                 <span className="w-2 h-2 rounded-full bg-[#f2c40d] group-hover:scale-150 transition-transform duration-300" />
               </div>
 
-              <h3 className="text-lg font-bold text-[#0d2b33] leading-snug group-hover:text-[#1a4550] transition-colors">
-                {roleName}
+              <h3 className="text-lg font-bold text-[#0d2b33] leading-snug group-hover:text-[#1a4550] transition-colors mb-2">
+                {role.title}
               </h3>
+              <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed">
+                {role.description}
+              </p>
             </div>
 
             <div className="mt-8 pt-4 border-t border-gray-100 flex items-center justify-between">
@@ -51,7 +62,7 @@ export default function CategoryRoles({ title, roles }: { title: string; roles: 
                 Ready <FaArrowRight className="w-3 h-3 text-[#f2c40d]" />
               </span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
