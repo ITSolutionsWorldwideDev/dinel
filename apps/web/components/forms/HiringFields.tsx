@@ -149,11 +149,11 @@ export default function HiringFields({
             className={`${inputClass} disabled:bg-gray-100 disabled:text-gray-600`}
           >
             <option value="">Select a category</option>
-            {categories.map((cat) => (
-              <option key={cat.value} value={cat.value}>
-                {cat.label}
-              </option>
-            ))}
+            {categories?.map((cat) => (
+  <option key={cat.value} value={cat.value}>
+    {cat.label}
+  </option>
+))}
           </select>
         </div>
       </div>

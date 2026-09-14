@@ -100,7 +100,13 @@ export default async function CategoryPage({ params }: PageProps) {
 
       <div className="w-full px-4 sm:px-8 lg:px-16 max-w-[1500px] mx-auto py-12 space-y-16">
         <CategoryCoverage title={pageSections?.coverageTitle} body={pageSections?.coverageBody} />
-        <CategoryRoles title={pageSections?.rolesTitle} roles={rolesList} />
+        
+        {/* 👇 Pass categories prop down here so the modal can access it */}
+        <CategoryRoles 
+          title={pageSections?.rolesTitle} 
+          roles={rolesList} 
+          categories={allCategories} 
+        />
 
         {pageSections?.modelTitle && (
           <CategoryModel title={pageSections?.modelTitle} body={pageSections?.modelBody} />
@@ -122,7 +128,8 @@ export default async function CategoryPage({ params }: PageProps) {
             categories={allCategories}
             defaultMode="hiring"
             lockMode={true}
-            defaultCategory={categoryKey}
+            // Use the URL parameter directly or map it so it matches an item in allCategories.value
+            defaultCategory={category} 
           />
         </section>
 

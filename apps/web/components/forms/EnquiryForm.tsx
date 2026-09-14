@@ -38,22 +38,40 @@ export default function EnquiryForm({
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Resolves whether defaultCategory is a matching slug or a label
+  const resolveCategoryValue = (catInput: string) => {
+    if (!catInput || !categories) return "";
+    const found = categories.find(
+      (c) =>
+        c.value.toLowerCase() === catInput.toLowerCase() ||
+        c.label.toLowerCase() === catInput.toLowerCase()
+    );
+    return found ? found.value : catInput;
+  };
+
+  const initialMatchedCategory = resolveCategoryValue(defaultCategory);
+
   const [hiringData, setHiringData] = useState<HiringFormState>({
     ...initialHiringState,
-    category: defaultCategory,
+    category: initialMatchedCategory,
+    jobPosition: defaultJobTitle,
   });
 
   const [jobSeekerData, setJobSeekerData] = useState<JobSeekerFormState>({
     ...initialJobSeekerState,
-    category: defaultCategory,
+    category: initialMatchedCategory,
     jobTitle: defaultJobTitle,
   });
 
   const resetForms = () => {
-    setHiringData({ ...initialHiringState, category: defaultCategory });
+    setHiringData({ 
+      ...initialHiringState, 
+      category: initialMatchedCategory, 
+      jobPosition: defaultJobTitle 
+    });
     setJobSeekerData({
       ...initialJobSeekerState,
-      category: defaultCategory,
+      category: initialMatchedCategory,
       jobTitle: defaultJobTitle,
     });
   };
@@ -69,24 +87,24 @@ export default function EnquiryForm({
     e.preventDefault();
     setStatus("submitting");
     setErrorMessage("");
-try {
-  if (mode === "hiring") {
-    const formData = new FormData();
-    formData.append("mode", "hiring");
-    formData.append("companyName", hiringData.companyName);
-    formData.append("contactPerson", hiringData.contactPerson);
-    formData.append("email", hiringData.email);
-    formData.append("phone", hiringData.phone);
-    formData.append("category", hiringData.category);
-    formData.append("jobPosition", hiringData.jobPosition); // 👈 NEW LINE
-    formData.append("positions", hiringData.positions);
-    formData.append("jobDescription", hiringData.jobDescription);
-    formData.append("budget", hiringData.budget);
-    formData.append("hearAboutUs", (hiringData as any).hearAboutUs || "");
-    
-    if (hiringData.jobDescriptionFile) {
-      formData.append("jobDescriptionFile", hiringData.jobDescriptionFile);
-    }
+    try {
+      if (mode === "hiring") {
+        const formData = new FormData();
+        formData.append("mode", "hiring");
+        formData.append("companyName", hiringData.companyName);
+        formData.append("contactPerson", hiringData.contactPerson);
+        formData.append("email", hiringData.email);
+        formData.append("phone", hiringData.phone);
+        formData.append("category", hiringData.category);
+        formData.append("jobPosition", hiringData.jobPosition);
+        formData.append("positions", hiringData.positions);
+        formData.append("jobDescription", hiringData.jobDescription);
+        formData.append("budget", hiringData.budget);
+        formData.append("hearAboutUs", (hiringData as any).hearAboutUs || "");
+        
+        if (hiringData.jobDescriptionFile) {
+          formData.append("jobDescriptionFile", hiringData.jobDescriptionFile);
+        }
 
         const res = await fetch("/api/enquiry", {
           method: "POST",
