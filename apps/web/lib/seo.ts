@@ -1,7 +1,7 @@
 // lib/seo.ts
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = "https://staffoutsourcing.nl";
+const BASE_URL = "https://www.staffoutsourcing.nl";
 
 /**
  * Builds a canonical URL automatically based on actual locale + route segments.

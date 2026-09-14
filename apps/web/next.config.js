@@ -16,7 +16,21 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "staffoutsourcing.nl",
+          },
+        ],
+        destination: "https://www.staffoutsourcing.nl/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);
-
