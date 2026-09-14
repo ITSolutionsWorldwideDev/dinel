@@ -30,7 +30,7 @@ export default function CategoryRoles({ title, roles, categories }: CategoryRole
   return (
     <section className="w-full bg-gradient-to-b from-white via-[#f7fafa] to-white py-20 overflow-hidden">
       {/* Header */}
-      <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 w-full">
         <div>
           <div className="flex items-center gap-3 mb-3">
             <span className="w-10 h-[3px] bg-[#f2c40d] rounded-full" />
@@ -48,7 +48,7 @@ export default function CategoryRoles({ title, roles, categories }: CategoryRole
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
         {roles?.map((role: Role, index: number) => (
           <button
             type="button"
@@ -84,30 +84,33 @@ export default function CategoryRoles({ title, roles, categories }: CategoryRole
           </button>
         ))}
       </div>
-{/* Popup Modal */}
-{isModalOpen && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-    <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto">
-      <button
-        onClick={() => setIsModalOpen(false)}
-        className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white/80 hover:bg-white text-gray-700 shadow-md transition-colors cursor-pointer"
-        aria-label="Close modal"
-      >
-        <X className="w-5 h-5" />
-      </button>
 
-      <EnquiryForm
-        categories={categories}
-        defaultMode="jobseeker"
-        lockMode={false}
-        defaultCategory={title}
-        lockCategory={false}
-        defaultJobTitle={selectedRole}
-        lockJobTitle={true}
-      />
-    </div>
-  </div>
-)}
+      {/* Popup Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm animate-fade-in overflow-y-auto">
+          <div className="relative w-full max-w-4xl my-auto bg-white rounded-3xl shadow-2xl overflow-hidden max-h-[90vh]">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 z-30 p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 shadow-md transition-colors cursor-pointer"
+              aria-label="Close modal"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="overflow-y-auto max-h-[90vh] p-2 sm:p-4">
+              <EnquiryForm
+                categories={categories}
+                defaultMode="jobseeker"
+                lockMode={false}
+                defaultCategory={title}
+                lockCategory={false}
+                defaultJobTitle={selectedRole}
+                lockJobTitle={true}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
