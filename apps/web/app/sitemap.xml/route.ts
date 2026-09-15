@@ -1,9 +1,8 @@
 import { routing } from "@/i18n/routing";
 import { allJobs } from "@/app/data/jobs";
+import { getCanonicalUrl } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
-
-const baseUrl = "https://www.staffoutsourcing.nl";
 
 const staticRoutes = [
   "",
@@ -31,7 +30,8 @@ export async function GET() {
   // Static routes
   for (const locale of routing.locales) {
     for (const route of staticRoutes) {
-      const url = `${baseUrl}/${locale}${route}`;
+      const segments = route ? route.split("/").filter(Boolean) : [];
+      const url = getCanonicalUrl(locale, segments);
 
       const priority = route === "" ? "1.0" : "0.8";
       const changefreq = route === "" ? "daily" : "weekly";
@@ -42,7 +42,8 @@ export async function GET() {
       xml += `    <priority>${priority}</priority>\n`;
 
       for (const l of routing.locales) {
-        xml += `    <xhtml:link rel="alternate" hreflang="${l}" href="${baseUrl}/${l}${route}" />\n`;
+        const altUrl = getCanonicalUrl(l, segments);
+        xml += `    <xhtml:link rel="alternate" hreflang="${l}" href="${altUrl}" />\n`;
       }
 
       xml += `  </url>\n`;
@@ -52,12 +53,19 @@ export async function GET() {
   // Dynamic job routes
   for (const locale of routing.locales) {
     for (const job of allJobs) {
-      const url = `${baseUrl}/${locale}/jobs/${job.slug}`;
+      const jobSegments = ["jobs", job.slug];
+      const url = getCanonicalUrl(locale, jobSegments);
 
       xml += `  <url>\n`;
       xml += `    <loc>${url}</loc>\n`;
       xml += `    <changefreq>weekly</changefreq>\n`;
       xml += `    <priority>0.6</priority>\n`;
+
+      for (const l of routing.locales) {
+        const altUrl = getCanonicalUrl(l, jobSegments);
+        xml += `    <xhtml:link rel="alternate" hreflang="${l}" href="${altUrl}" />\n`;
+      }
+
       xml += `  </url>\n`;
     }
   }
