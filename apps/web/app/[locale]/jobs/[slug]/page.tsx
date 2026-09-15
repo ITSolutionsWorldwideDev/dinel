@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { MapPin, ArrowLeft, Clock3, CheckCircle2 } from "lucide-react";
 import { getJobBySlug, localizeJob, allJobs } from "../../../data/jobs";
 import EnquiryForm from "@/components/forms/EnquiryForm";
+import { getCanonicalUrl } from "@/lib/seo";
 
 // Pre-render a static page for every job slug at build time
 export function generateStaticParams() {
@@ -31,6 +32,9 @@ export async function generateMetadata({
   return {
     title: `${job.title} | Careers`,
     description: job.description,
+    alternates: {
+      canonical: getCanonicalUrl(locale, ["jobs", slug]),
+    },
   };
 }
 
