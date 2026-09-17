@@ -16,10 +16,10 @@ const staticRoutes = [
   "/admin-business-support",
   "/finance-accounting",
   "/travel-reservations",
-  "/service/recruitment-placement",
-  "/service/recruitment-process-outsourcing",
-  "/service/temporary-staffing",
-  "/service/payrolling",
+  "/recruitment-outsourcing",
+  "/recruitment-process-outsourcing",
+  "/temporary-staffing",
+  "/payrolling",
 ];
 
 export async function GET() {

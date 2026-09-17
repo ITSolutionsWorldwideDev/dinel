@@ -84,8 +84,8 @@ const WhoWeHelp = async () => {
 
   // Relative paths only — the localized Link component from @/i18n/navigation
   // automatically adds the correct locale prefix (none for nl, /en for en).
-  const linksA = ["/service/recruitment-placement", "/service/recruitment-process-outsourcing"];
-  const linksB = ["/service/temporary-staffing", "/service/payrolling"];
+const linksA = ["/recruitment-outsourcing", "/recruitment-process-outsourcing"];
+  const linksB = ["/temporary-staffing", "/payrolling"];
 
   return (
     <section className="relative bg-gradient-to-b from-white via-[#f7fafa] to-white pt-16 sm:pt-20 md:pt-24 pb-24 overflow-hidden">

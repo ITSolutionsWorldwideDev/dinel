@@ -4,7 +4,7 @@ import React from "react";
 import EnquiryForm from "@/components/forms/EnquiryForm";
 import { Link } from "../../../i18n/navigation";
 import { ArrowRight } from "lucide-react";
-import { getCanonicalUrl } from "@/lib/seo";
+import { getCanonicalUrl, getHreflangAlternates } from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: t("description"),
     alternates: {
       canonical: getCanonicalUrl(locale, ["about"]),
+      languages: getHreflangAlternates(["about"]),
     },
   };
 }

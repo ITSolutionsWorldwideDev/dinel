@@ -2,9 +2,9 @@
 
 import { Link, useRouter } from "../../../i18n/navigation";
 import React, { useMemo, useState } from "react";
-import { FaSearch, FaChevronDown } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { useLocale } from "next-intl";
-import { allJobs, jobCategories, localizeJob } from "../../../app/data/jobs";
+import { allJobs, localizeJob } from "../../../app/data/jobs";
 
 interface VacanciesSearchBarProps {
   onSearch?: (value: string) => void;
@@ -12,50 +12,30 @@ interface VacanciesSearchBarProps {
 
 export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string>("");
-  const [categoryOpen, setCategoryOpen] = useState(false);
 
   const router = useRouter();
   const locale = useLocale() as "en" | "nl";
 
-  // Categories list for the dropdown filter
-  const categories = useMemo(() => {
-    const seen = new Set<string>();
-    const list: { label: string; value: string }[] = [];
-    jobCategories.forEach((group: any) => {
-      const label = group.category[locale];
-      if (!seen.has(label)) {
-        seen.add(label);
-        list.push({ label, value: label });
-      }
-    });
-    return list;
-  }, [locale]);
-
   // Live filtered jobs for auto-suggestion dropdown
   const filteredJobs = useMemo(() => {
-    if (!searchQuery.trim() && !selectedCategory) return [];
+    if (!searchQuery.trim()) return [];
     
     return allJobs.filter((job) => {
       const localized = localizeJob(job, locale);
-      const matchesQuery = searchQuery.trim() === "" || 
+      return (
         localized.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        localized.description.toLowerCase().includes(searchQuery.toLowerCase());
-      
-      const matchesCategory = !selectedCategory || localized.category === selectedCategory;
-      
-      return matchesQuery && matchesCategory;
+        localized.description.toLowerCase().includes(searchQuery.toLowerCase())
+      );
     }).slice(0, 5); // Limit to top 5 results for clean dropdown
-  }, [searchQuery, selectedCategory, locale]);
+  }, [searchQuery, locale]);
 
-const handleSearch = () => {
+  const handleSearch = () => {
     const results = filteredJobs ?? [];
     if (results.length === 1 && results[0]) {
       router.push(`/jobs/${results[0]?.slug}`);
     } else {
       const params = new URLSearchParams();
       if (searchQuery.trim()) params.set("search", searchQuery.trim());
-      if (selectedCategory) params.set("category", selectedCategory);
       const qs = params.toString();
       router.push(`/careers${qs ? `?${qs}` : ""}`);
     }
@@ -63,17 +43,11 @@ const handleSearch = () => {
 
   const handleAllVacancies = () => {
     setSearchQuery("");
-    setSelectedCategory("");
     if (onSearch) {
       onSearch("");
       return;
     }
     router.push("/careers");
-  };
-
-  const handleCategorySelect = (value: string) => {
-    setSelectedCategory((prev) => (prev === value ? "" : value));
-    setCategoryOpen(false);
   };
 
   return (
@@ -93,53 +67,6 @@ const handleSearch = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 items-stretch justify-center max-w-3xl mx-auto relative">
-          {/* Category Filter Dropdown */}
-          <div className="relative shrink-0">
-            <button
-              type="button"
-              onClick={() => setCategoryOpen(!categoryOpen)}
-              className="h-11 px-4 rounded-xl border-2 border-[#0d2b33]/10 bg-[#f7fafa] hover:bg-white hover:border-[#1a4550] transition-all text-xs md:text-sm font-bold text-[#0d2b33] flex items-center gap-2 min-w-[150px] justify-between cursor-pointer"
-            >
-              <span className="truncate">
-                {selectedCategory || "All Categories"}
-              </span>
-              <FaChevronDown
-                className={`w-3 h-3 shrink-0 text-[#1a4550] transition-transform duration-200 ${
-                  categoryOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-
-            {/* FIXED DROPDOWN (Added proper z-index and absolute positioning) */}
-            {categoryOpen && (
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white shadow-2xl shadow-[#1a4550]/20 rounded-xl border-2 border-[#1a4550]/10 py-2 z-50 max-h-72 overflow-y-auto">
-                <button
-                  type="button"
-                  onClick={() => handleCategorySelect("")}
-                  className={`w-full text-left px-4 py-2 text-xs md:text-sm hover:bg-[#1a4550]/5 transition-colors ${
-                    !selectedCategory ? "font-black text-[#1a4550]" : "text-gray-700 font-medium"
-                  }`}
-                >
-                  All Categories
-                </button>
-                {categories.map((cat) => (
-                  <button
-                    key={cat.value}
-                    type="button"
-                    onClick={() => handleCategorySelect(cat.value)}
-                    className={`w-full text-left px-4 py-2 text-xs md:text-sm hover:bg-[#1a4550]/5 transition-colors ${
-                      selectedCategory === cat.value
-                        ? "font-black text-[#1a4550]"
-                        : "text-gray-700 font-medium"
-                    }`}
-                  >
-                    {cat.label}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
           {/* Search Input Container with Live Suggestions Dropdown */}
           <div className="flex-1 relative shadow-inner rounded-xl">
             <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1a4550]/50">

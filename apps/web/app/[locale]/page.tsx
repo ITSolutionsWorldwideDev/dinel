@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import fs from "fs";
 import path from "path";
 import Homei from "@/components/layout/home/Home";
-import { getCanonicalUrl } from "@/lib/seo";
-
+import { getCanonicalUrl, getHreflangAlternates } from "@/lib/seo";
 interface PageProps {
   params: Promise<{ locale: string }>;
 }
@@ -19,6 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: "Recruit and outsource staff in the Netherlands.",
       alternates: {
         canonical: getCanonicalUrl(locale),
+        languages: getHreflangAlternates(),
       },
     };
   }
@@ -31,6 +31,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: seo?.metaDescription ?? "Recruit and outsource staff in the Netherlands.",
     alternates: {
       canonical: getCanonicalUrl(locale), // no segments — homepage root
+      languages: getHreflangAlternates(), // no segments — homepage root
+
     },
   };
 }

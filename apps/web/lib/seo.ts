@@ -18,3 +18,15 @@ export function getCanonicalUrl(locale: string, segments: string[] = []) {
 
   return `${BASE_URL}${localePart}${pathPart}` || BASE_URL;
 }
+
+export function getHreflangAlternates(segments: string[] = []) {
+  const languages: Record<string, string> = {};
+ 
+  for (const locale of routing.locales) {
+    languages[locale] = getCanonicalUrl(locale, segments);
+  }
+ 
+  languages["x-default"] = getCanonicalUrl(routing.defaultLocale, segments);
+ 
+  return languages;
+}

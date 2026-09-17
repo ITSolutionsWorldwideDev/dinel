@@ -7,8 +7,7 @@ import ContactChannels from "@/components/contact/ContactChannels";
 import ContactDetailsAndReassurance from "@/components/contact/ContactDetailsAndReassurance";
 import EnquiryForm from "@/components/forms/EnquiryForm";
 import React from "react";
-import { getCanonicalUrl } from "@/lib/seo";
-
+import { getCanonicalUrl, getHreflangAlternates } from "@/lib/seo";
 interface PageProps {
   params: Promise<{ locale: string }>;
 }
@@ -24,6 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: "Get in touch with our team to discuss your hiring needs in the Netherlands.",
       alternates: {
         canonical: getCanonicalUrl(locale, ["contact-us"]),
+        languages: getHreflangAlternates(["contact-us"]),
       },
     };
   }
@@ -36,6 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: meta?.description ?? "Get in touch with our team to discuss your hiring needs in the Netherlands.",
     alternates: {
       canonical: getCanonicalUrl(locale, ["contact-us"]),
+       languages: getHreflangAlternates(["contact-us"]),
     },
   };
 }

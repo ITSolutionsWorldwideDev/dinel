@@ -17,10 +17,10 @@ export default async function Footer() {
   ];
 
   const categories = [
-    { label: "Recruitment / Placement", href: "/service/recruitment-placement" },
-    { label: "Recruitment Process Outsourcing", href: "/service/recruitment-process-outsourcing" },
-    { label: "Temporary Staffing", href: "/service/temporary-staffing" },
-    { label: "Payrolling", href: "/service/payrolling" },
+    { label: "Recruitment Outsourcing", href: "/recruitment-outsourcing" },
+    { label: "Recruitment Process Outsourcing", href: "/recruitment-process-outsourcing" },
+    { label: "Temporary Staffing", href: "/temporary-staffing" },
+    { label: "Payrolling", href: "/payrolling" },
   ];
 
   const mainLinks = [

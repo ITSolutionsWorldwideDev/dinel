@@ -49,19 +49,19 @@ export default async function DeskstopNavigationMenu() {
   const categories = [
     {
       name: commonT("whoWeHelp.cardsA.0.title"),
-      href: "/service/recruitment-placement",
+      href: "/recruitment-outsourcing",
     },
     {
       name: commonT("whoWeHelp.cardsA.1.title"),
-      href: "/service/recruitment-process-outsourcing",
+      href: "/recruitment-process-outsourcing",
     },
     {
       name: commonT("whoWeHelp.cardsB.0.title"),
-      href: "/service/temporary-staffing",
+      href: "/temporary-staffing",
     },
     {
       name: commonT("whoWeHelp.cardsB.1.title"),
-      href: "/service/payrolling",
+      href: "/payrolling",
     },
   ];
 

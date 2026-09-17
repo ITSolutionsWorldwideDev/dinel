@@ -8,8 +8,7 @@ import OurApproachThinking from "@/components/layout/our-approach/OurApproachThi
 import OurApproachWork from "@/components/layout/our-approach/OurApproachWork";
 import OurApproachLines from "@/components/layout/our-approach/OurApproachLines";
 import OurApproachCTA from "@/components/layout/our-approach/OurApproachCTA";
-import { getCanonicalUrl } from "@/lib/seo";
-
+import { getCanonicalUrl, getHreflangAlternates } from "@/lib/seo";
 interface PageProps {
   params: Promise<{ locale: string }>;
 }
@@ -37,6 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: meta?.description ?? "Recruit and outsource staff in the Netherlands.",
     alternates: {
       canonical: getCanonicalUrl(locale, ["our-approach"]),
+      languages: getHreflangAlternates(["our-approach"]),
     },
   };
 }

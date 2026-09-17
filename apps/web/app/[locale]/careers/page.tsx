@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import CareerHero from "../../../components/careers/CareerHero";
 import CareerIntro from "../../../components/careers/CareerIntro";
 import JobList from "../../../components/careers/JobList";
-import { getCanonicalUrl } from "@/lib/seo";
+import { getCanonicalUrl, getHreflangAlternates } from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: "Recruit and outsource staff in the Netherlands.",
       alternates: {
         canonical: getCanonicalUrl(locale, ["careers"]),
+        languages: getHreflangAlternates(["careers"]),
       },
     };
   }
@@ -34,6 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: meta?.description ?? "Recruit and outsource staff in the Netherlands.",
     alternates: {
       canonical: getCanonicalUrl(locale, ["careers"]),
+      languages: getHreflangAlternates(["careers"]),
     },
   };
 }
