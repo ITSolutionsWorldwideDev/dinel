@@ -14,7 +14,7 @@ export default async function ContactDetailsAndReassurance() {
           </div>
           <div>
             <span className="font-bold text-[#1a4550] block text-xs uppercase tracking-wider">{t("phoneField")}</span>
-            <span className="text-gray-600">+31 (0) 00 000 0000</span>
+            <span className="text-gray-600"></span>
           </div>
           <div>
             <span className="font-bold text-[#1a4550] block text-xs uppercase tracking-wider">{t("kvkField")}</span>

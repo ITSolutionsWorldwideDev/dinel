@@ -50,7 +50,7 @@ export default async function Footer() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4 md:gap-6 bg-white/5 rounded-2xl p-4 sm:p-6 border border-white/10">
             <div className="max-w-xl text-center lg:text-left">
               <h3 className="text-sm sm:text-base font-bold tracking-tight text-white">
-                Stay Updated with Our Newsletter
+                Stay Updated with Our Latest Jobs
               </h3>
               <p className="mt-1 text-xs text-white/70">
                 Subscribe to get the latest staffing insights, industry trends, and exclusive updates directly to your inbox.
@@ -186,7 +186,7 @@ export default async function Footer() {
           <div className="flex items-center gap-3 bg-white/5 px-5 py-4 rounded-xl border border-white/10 h-full w-full">
             <FaPhoneAlt className="w-4 h-4 text-[#f2c40d] shrink-0" />
             <a href="tel:+31000000000" className="hover:text-[#f2c40d] transition-colors">
-              +00 000 0000000
+             
             </a>
           </div>
           <div className="flex items-center gap-3 bg-white/5 px-5 py-4 rounded-xl border border-white/10 h-full w-full">
