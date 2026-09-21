@@ -660,9 +660,9 @@
       "finalCta": {
         "headline": "Need day-to-day support handled, without building a department for it? Tell us the role.",
         "primaryCtaText": "Book a call →",
-        "primaryCtaLink": "/en/contact",
+        "primaryCtaLink": "/en/contact-us",
         "secondaryCtaText": "Contact Us →",
-        "secondaryCtaLink": "/en/contact"
+        "secondaryCtaLink": "/en/contact-us"
       }
     }
   },
