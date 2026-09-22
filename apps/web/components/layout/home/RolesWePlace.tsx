@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import { Link } from "../../../i18n/navigation";
+import type { Pathnames } from "../../../i18n/routing"; // 👈 adjust relative depth to match your project structure
 import {
   FaCode,
   FaPaintbrush,
@@ -9,19 +10,28 @@ import {
   FaHeadset,
   FaCalculator,
   FaPlane,
-  FaTruckFast, // 👈 Supply Chain ke liye icon
+  FaTruckFast, 
   FaArrowRight,
 } from "react-icons/fa6"; // Note: fa6 imports use kiye hain icons ke liye
 import { useTranslations } from "next-intl";
 
-const categories = [
+type StaticPathnames = Exclude<Pathnames, `${string}[${string}]${string}`>;
+
+
+type CategoryLink = {
+  name: string;
+  href: StaticPathnames; // 👈 was Pathnames
+  icon: React.ComponentType<{ className?: string }>;
+};
+
+const categories: CategoryLink[] = [
   { name: "IT & Development", href: "/it-development", icon: FaCode },
   { name: "Design Services", href: "/design-services", icon: FaPaintbrush },
   { name: "Marketing & Analytics", href: "/marketing-analytics", icon: FaChartLine },
   { name: "Administration & Business Support", href: "/admin-business-support", icon: FaHeadset },
   { name: "Finance & Accounting", href: "/finance-accounting", icon: FaCalculator },
   { name: "Travel & Reservations", href: "/travel-reservations", icon: FaPlane },
-  { name: "Supply Chain", href: "/supply-chain", icon: FaTruckFast }, // 👈 Added Supply Chain
+  { name: "Supply Chain", href: "/supply-chain", icon: FaTruckFast }, 
 ];
 
 type CategoryRoles = {
@@ -82,7 +92,7 @@ export default function RolesWePlace() {
             <div className="flex flex-col gap-6 h-full max-h-[600px] overflow-y-auto pr-3 scroll-smooth [scrollbar-width:thin] [scrollbar-color:#1a4550_transparent]">
               {roleCategories.map((category, index) => {
                 const Icon = categories[index]?.icon;
-
+                const href: StaticPathnames = categories[index]?.href ?? "/"; // 👈 was Pathnames
                 return (
                   <div
                     key={index}
@@ -117,7 +127,7 @@ export default function RolesWePlace() {
                     <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                       <span className="text-[11px] font-semibold text-gray-400">Verified Expertise</span>
                       <Link
-                        href={categories[index]?.href || "#"}
+                        href={href}
                         className="inline-flex items-center gap-1.5 text-xs md:text-sm font-black text-[#1a4550] group-hover:text-[#0d2b33] transition-colors"
                       >
                         Read more

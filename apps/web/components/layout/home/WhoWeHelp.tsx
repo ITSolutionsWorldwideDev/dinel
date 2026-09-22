@@ -2,7 +2,13 @@
 import React from "react";
 import { Search, Users, Clock3, FileSignature, ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import type { Pathnames } from "@/i18n/routing"; // 👈 adjust import path to match your project structure
 import { getTranslations, getLocale } from "next-intl/server";
+
+// 👇 Excludes dynamic-segment routes (e.g. "/jobs/[slug]") since next-intl's
+// typed Link only accepts those as an object ({ pathname, params }), not as
+// a plain string. Use this type anywhere you're only ever passing static links.
+type StaticPathnames = Exclude<Pathnames, `${string}[${string}]${string}`>;
 
 const iconsA = [Search, Users];
 const iconsB = [Clock3, FileSignature];
@@ -28,7 +34,7 @@ const HelpCard = ({
   fit,
   fitsLabel,
   cta,
-  href = "#",
+  href = "/", // 👈 "#" removed — "/" is a valid typed fallback
 }: {
   icon: any;
   title: string;
@@ -36,7 +42,7 @@ const HelpCard = ({
   fit: string;
   fitsLabel: string;
   cta: string;
-  href?: string;
+  href?: StaticPathnames; // 👈 was `string`, then `Pathnames` — now excludes dynamic routes
 }) => (
   <div className="group relative rounded-3xl bg-white border-2 border-[#1a4550]/15 shadow-xl shadow-[#1a4550]/5 hover:shadow-2xl hover:border-[#1a4550] transition-all duration-300 p-6 md:p-8 flex flex-col justify-between overflow-hidden">
     <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#1a4550] to-[#f2c40d] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -84,8 +90,8 @@ const WhoWeHelp = async () => {
 
   // Relative paths only — the localized Link component from @/i18n/navigation
   // automatically adds the correct locale prefix (none for nl, /en for en).
-const linksA = ["/recruitment-outsourcing", "/recruitment-process-outsourcing"];
-  const linksB = ["/temporary-staffing", "/payrolling"];
+  const linksA: StaticPathnames[] = ["/recruitment-outsourcing", "/recruitment-process-outsourcing"];
+  const linksB: StaticPathnames[] = ["/temporary-staffing", "/payrolling"];
 
   return (
     <section className="relative bg-gradient-to-b from-white via-[#f7fafa] to-white pt-16 sm:pt-20 md:pt-24 pb-24 overflow-hidden">

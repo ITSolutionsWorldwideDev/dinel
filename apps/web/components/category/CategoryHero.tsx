@@ -1,5 +1,5 @@
 import { FaArrowRight } from "react-icons/fa6";
-import Link from "next/link";
+import { Link } from "../../i18n/navigation"; // 👈 adjust relative depth to match your actual file location
 
 export default function CategoryHero({ data }: { data: any }) {
   return (
@@ -24,19 +24,33 @@ export default function CategoryHero({ data }: { data: any }) {
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
-            href="/contact-us"
+            href="/contact-us" // 👈 static internal route — becomes locale-aware automatically
             className="inline-flex items-center gap-2.5 bg-[#f2c40d] hover:bg-white text-[#0d2b33] px-8 py-4 rounded-full font-extrabold shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 text-sm tracking-wide"
           >
             {data?.primaryCtaText || "Get Started"}
             <FaArrowRight className="w-4 h-4 text-[#0d2b33]" />
           </Link>
 
-          <Link
-            href="/contact-us"
-            className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white px-8 py-4 rounded-full font-bold shadow-sm transition-all duration-300 text-sm tracking-wide backdrop-blur-sm"
-          >
-            {data?.secondaryCtaText || "Explore Vacancies"}
-          </Link>
+          {/* secondaryCtaLink in your JSON sometimes points to an external WhatsApp URL
+              (https://wa.me/...) — external links must NOT go through next-intl's Link,
+              since it will try to treat them as internal routes. We detect that here. */}
+          {data?.secondaryCtaLink?.startsWith("http") ? (
+            <a
+              href={data.secondaryCtaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white px-8 py-4 rounded-full font-bold shadow-sm transition-all duration-300 text-sm tracking-wide backdrop-blur-sm"
+            >
+              {data?.secondaryCtaText || "Explore Vacancies"}
+            </a>
+          ) : (
+            <Link
+              href="/contact-us"
+              className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white px-8 py-4 rounded-full font-bold shadow-sm transition-all duration-300 text-sm tracking-wide backdrop-blur-sm"
+            >
+              {data?.secondaryCtaText || "Explore Vacancies"}
+            </Link>
+          )}
         </div>
       </div>
     </section>

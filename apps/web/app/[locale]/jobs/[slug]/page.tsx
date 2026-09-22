@@ -206,14 +206,14 @@ export default async function JobDetailPage({
 
               <div className="w-full">
                 <EnquiryForm
-  categories={allCategories}
-  defaultMode="jobseeker"
-  lockMode={true}
-  defaultCategory={job.category}
-  lockCategory={true}
-  defaultJobTitle={job.title}
-  lockJobTitle={true}
-/>
+                  categories={allCategories}
+                  defaultMode="jobseeker"
+                  lockMode={true}
+                  defaultCategory={job.category}
+                  lockCategory={true}
+                  defaultJobTitle={job.title}
+                  lockJobTitle={true}
+                />
               </div>
             </div>
           </div>
@@ -246,12 +246,15 @@ export default async function JobDetailPage({
                 </div>
               </dl>
 
-              <Link
+              {/* 👇 Plain <a>, NOT next-intl's typed <Link> — "#apply-form" is an in-page
+                  fragment anchor, not a routed path, so it isn't (and shouldn't be) part
+                  of the Pathnames union. Using typed Link here caused the TS error. */}
+              <a
                 href="#apply-form"
                 className="mt-6 block w-full text-center px-6 py-3 rounded-xl bg-[#0d2b33] text-white text-sm font-bold hover:bg-[#153e49] transition-colors"
               >
                 Apply for this role
-              </Link>
+              </a>
             </div>
           </aside>
         </div>

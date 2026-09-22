@@ -19,7 +19,7 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
   // Live filtered jobs for auto-suggestion dropdown
   const filteredJobs = useMemo(() => {
     if (!searchQuery.trim()) return [];
-    
+
     return allJobs.filter((job) => {
       const localized = localizeJob(job, locale);
       return (
@@ -32,12 +32,14 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
   const handleSearch = () => {
     const results = filteredJobs ?? [];
     if (results.length === 1 && results[0]) {
-      router.push(`/jobs/${results[0]?.slug}`);
+      // 👇 dynamic route → object syntax with pathname + params
+      router.push({ pathname: "/jobs/[slug]", params: { slug: results[0].slug } });
     } else {
-      const params = new URLSearchParams();
-      if (searchQuery.trim()) params.set("search", searchQuery.trim());
-      const qs = params.toString();
-      router.push(`/careers${qs ? `?${qs}` : ""}`);
+      // 👇 was a template string (`/careers?search=...`) — typed router needs
+      // the query passed as its own object, not baked into the path string
+      const query: Record<string, string> = {};
+      if (searchQuery.trim()) query.search = searchQuery.trim();
+      router.push({ pathname: "/careers", query });
     }
   };
 
@@ -95,7 +97,7 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
                   return (
                     <Link
                       key={job.slug}
-                      href={`/jobs/${job.slug}`}
+                      href={{ pathname: "/jobs/[slug]", params: { slug: job.slug } }}
                       className="block px-4 py-3 hover:bg-[#1a4550]/5 transition-colors border-b border-gray-100 last:border-none"
                       onClick={() => setSearchQuery("")}
                     >

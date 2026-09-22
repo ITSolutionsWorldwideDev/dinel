@@ -3,8 +3,13 @@ import MobileMenuBtn from "./MobileMenuBtn";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "../../../i18n/navigation";
+import type { Pathnames } from "../../../i18n/routing"; // 👈 adjust relative depth to match your project structure
 import LanguageSwitcher from "../../common/LanguageSwitcher";
 import { ChevronDown } from "lucide-react";
+
+type StaticPathnames = Exclude<Pathnames, `${string}[${string}]${string}`>;
+
+type NavItem = { name: string; href: StaticPathnames }; 
 
 export default async function DeskstopNavigationMenu() {
   // Navigation translations
@@ -14,7 +19,7 @@ export default async function DeskstopNavigationMenu() {
   const commonT = await getTranslations();
 
   // Existing Services (Localized)
-  const services = [
+  const services: NavItem[] = [
     {
       name: navT("servicesList.itDevelopment"),
       href: "/it-development",
@@ -46,7 +51,7 @@ export default async function DeskstopNavigationMenu() {
   ];
 
   // Categories
-  const categories = [
+  const categories: NavItem[] = [
     {
       name: commonT("whoWeHelp.cardsA.0.title"),
       href: "/recruitment-outsourcing",
@@ -65,8 +70,8 @@ export default async function DeskstopNavigationMenu() {
     },
   ];
 
- // Mobile & Desktop navigation links
-  const navLinks = [
+  // Mobile & Desktop navigation links
+  const navLinks: NavItem[] = [
     {
       name: navT("home"),
       href: "/",
@@ -88,6 +93,7 @@ export default async function DeskstopNavigationMenu() {
       href: "/contact-us",
     },
   ];
+
 
   return (
     <header className="w-full bg-white/95 backdrop-blur-md shadow-md shadow-[#0d2b33]/5 sticky top-0 z-50 border-b border-[#0d2b33]/10">

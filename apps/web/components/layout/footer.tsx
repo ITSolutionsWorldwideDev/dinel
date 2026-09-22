@@ -1,4 +1,5 @@
 import { Link } from "../../i18n/navigation";
+import type { Pathnames } from "../../i18n/routing"; // 👈 adjust relative depth to match your project structure
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -6,8 +7,13 @@ import {
 } from "react-icons/fa6";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaPaperPlane } from "react-icons/fa";
 
+type StaticPathnames = Exclude<Pathnames, `${string}[${string}]${string}`>;
+
+
+
+type FooterLink = { label: string; href: StaticPathnames }; // 👈 was `Pathnames`, now `StaticPathnames`
 export default async function Footer() {
-  const services = [
+  const services: FooterLink[] = [
     { label: "IT & Development", href: "/it-development" },
     { label: "Design Services", href: "/design-services" },
     { label: "Marketing & Analytics", href: "/marketing-analytics" },
@@ -16,21 +22,21 @@ export default async function Footer() {
     { label: "Travel & Reservations", href: "/travel-reservations" },
   ];
 
-  const categories = [
+  const categories: FooterLink[] = [
     { label: "Recruitment Outsourcing", href: "/recruitment-outsourcing" },
     { label: "Recruitment Process Outsourcing", href: "/recruitment-process-outsourcing" },
     { label: "Temporary Staffing", href: "/temporary-staffing" },
     { label: "Payrolling", href: "/payrolling" },
   ];
 
-  const mainLinks = [
+  const mainLinks: FooterLink[] = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Our Approach", href: "/our-approach" },
     { label: "Contact Us", href: "/contact-us" },
   ];
 
-  const companyLinks = [
+  const companyLinks: FooterLink[] = [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms & Conditions", href: "/terms-and-conditions" },
     { label: "Contact", href: "/contact-us" },
@@ -84,7 +90,7 @@ export default async function Footer() {
       {/* ================= MAIN FOOTER ================= */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-10 md:py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-y-8 gap-x-6 lg:gap-6">
-          
+
           {/* BRAND */}
           <div className="sm:col-span-2 lg:col-span-3 text-center sm:text-left flex flex-col items-center sm:items-start">
             <Link href="/" className="inline-block">
@@ -177,7 +183,7 @@ export default async function Footer() {
 
         </div>
 
-        {/* ================= CONTACT BAR (PERFECTLY ALIGNED WITH CONTENT EDGES) ================= */}
+        {/* ================= CONTACT BAR ================= */}
         <div className="mt-12 pt-8 border-t border-white/15 grid grid-cols-1 md:grid-cols-3 gap-6 text-white/80">
           <div className="flex items-center gap-3 bg-white/5 px-5 py-4 rounded-xl border border-white/10 h-full w-full">
             <FaMapMarkerAlt className="w-4 h-4 text-[#f2c40d] shrink-0" />
@@ -186,7 +192,7 @@ export default async function Footer() {
           <div className="flex items-center gap-3 bg-white/5 px-5 py-4 rounded-xl border border-white/10 h-full w-full">
             <FaPhoneAlt className="w-4 h-4 text-[#f2c40d] shrink-0" />
             <a href="tel:+31000000000" className="hover:text-[#f2c40d] transition-colors">
-             
+
             </a>
           </div>
           <div className="flex items-center gap-3 bg-white/5 px-5 py-4 rounded-xl border border-white/10 h-full w-full">

@@ -12,26 +12,29 @@ type JobFilters = {
 export default function IndustryWeWork() {
   const t = useTranslations("industryWeWork");
 
+  // 👇 href is now an object: { pathname, query } — required because next-intl's
+  // typed Link doesn't accept query strings appended directly to a plain string
+  // href (e.g. "/careers?category=X" isn't a valid Pathnames entry).
   const industries = [
     {
       id: 1,
       name: t("infrastructure"),
-      icon: PackageOpen, // Truck ki jagah PackageOpen icon laga diya hai jo supply chain/infrastructure ke sath match kare
-      href: "/careers?category=Supply+Chain",
+      icon: PackageOpen,
+      href: { pathname: "/careers" as const, query: { category: "Supply Chain" } },
       description: "Optimizing global logistics, warehouse operations, and inventory management for seamless flow and operational efficiency.",
     },
     {
       id: 2,
       name: t("energy"),
       icon: HardHat,
-      href: "/careers?category=Engineering",
+      href: { pathname: "/careers" as const, query: { category: "Engineering" } },
       description: "Driving innovation and technical excellence across complex structural, mechanical, and industrial engineering projects.",
     },
     {
       id: 3,
       name: t("oilGas"),
       icon: Monitor,
-      href: "/careers?category=IT",
+      href: { pathname: "/careers" as const, query: { category: "IT" } },
       description: "Empowering digital transformation through robust software solutions, cloud infrastructure, and advanced technical support.",
     },
   ];

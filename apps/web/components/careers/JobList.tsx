@@ -46,7 +46,9 @@ export default async function JobList() {
                         </span>
                       </div>
 
-                      <Link href={`/jobs/${job.slug}`}>
+                      {/* 👇 dynamic route: object syntax with pathname + params,
+                          not a template string — required for typed routing */}
+                      <Link href={{ pathname: "/jobs/[slug]", params: { slug: job.slug } }}>
                         <h4 className="font-extrabold text-[#0d2b33] text-lg sm:text-xl hover:underline cursor-pointer">
                           {job.title}
                         </h4>
@@ -60,7 +62,7 @@ export default async function JobList() {
 
                     <div className="w-full sm:w-auto flex items-center justify-end">
                       <Link
-                        href={`/jobs/${job.slug}`}
+                        href={{ pathname: "/jobs/[slug]", params: { slug: job.slug } }}
                         className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#0d2b33] text-white text-sm font-bold hover:bg-[#153e49] transition-colors text-center shadow-sm"
                       >
                         View details
