@@ -191,8 +191,8 @@ export default async function Footer() {
           </div>
           <div className="flex items-center gap-3 bg-white/5 px-5 py-4 rounded-xl border border-white/10 h-full w-full">
             <FaPhoneAlt className="w-4 h-4 text-[#f2c40d] shrink-0" />
-            <a href="tel:+31000000000" className="hover:text-[#f2c40d] transition-colors">
-
+            <a href="tel:+31 85 800 2385" className="hover:text-[#f2c40d] transition-colors">
+              +31 85 800 2385
             </a>
           </div>
           <div className="flex items-center gap-3 bg-white/5 px-5 py-4 rounded-xl border border-white/10 h-full w-full">

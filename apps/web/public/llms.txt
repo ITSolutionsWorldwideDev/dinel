@@ -1,0 +1,41 @@
+# Staff Outsourcing
+
+> Dutch staffing and recruitment company helping Netherlands-based businesses hire EU talent through two employer models: Payrolling (Staff Outsourcing is the legal employer, client leases the staff member) and RPO/Recruitment (Staff Outsourcing sources and screens candidates who join the client's own payroll directly). Focused on IT, digital, admin, finance, and travel roles across the Netherlands and EU.
+
+## Company
+
+- [Home](https://www.staffoutsourcing.nl/): Overview of the two hiring models (Payrolling and RPO), how the process works, and industries served
+- [About Us](https://www.staffoutsourcing.nl/over-ons): Company background and approach
+- [Our Approach](https://www.staffoutsourcing.nl/onze-aanpak): How Staff Outsourcing works with clients
+- [Contact](https://www.staffoutsourcing.nl/neem-contact-op): Enquiry form for hiring companies and job seekers, contact details
+
+## Hiring Models
+
+- [Recruitment / Werving & Selectie](https://www.staffoutsourcing.nl/werving-selectie): One-off direct hire recruitment — candidate joins client's own payroll from day one
+- [Recruitment Process Outsourcing (RPO)](https://www.staffoutsourcing.nl/rpo-wervingsproces-uitbesteding): Ongoing recruitment for multiple roles, embedded in the client's hiring calendar
+- [Temporary Staffing / Uitzendwerk](https://www.staffoutsourcing.nl/uitzendwerk): Staff Outsourcing acts as legal employer (contracts, salary, tax, Dutch labor law) for short- to medium-term needs
+- [Payrolling](https://www.staffoutsourcing.nl/payrolling): Client has already found a candidate; Staff Outsourcing becomes the legal employer on paper while the person works exclusively for the client
+
+## Roles We Place
+
+- [IT & Development](https://www.staffoutsourcing.nl/it-ontwikkeling): Full Stack, Front-End, Back-End, App (iOS/Android), Data Engineer, AI/ML Engineer, QA Tester, Remote IT Support, Electrical Engineer
+- [Design Services](https://www.staffoutsourcing.nl/ontwerpdiensten): Web Designer/Developer, Graphic Designer
+- [Marketing & Analytics](https://www.staffoutsourcing.nl/marketing-analyse): Social Media Manager, Content Creator/Copywriter, Online Marketer, Google Analytics Specialist, Power BI Specialist, Data Analyst
+- [Admin & Business Support](https://www.staffoutsourcing.nl/administratie-bedrijfsondersteuning): Virtual Assistant, Ecommerce Webshop Assistant, Remote Customer Service, Data Entry Specialist, Remote HR Assistant, Client Relationship Manager
+- [Finance & Accounting](https://www.staffoutsourcing.nl/financien-boekhouding): Accountant/Financial Assistant, Administrative Bookkeeping Assistant, Excel Specialist
+- [Travel & Reservations](https://www.staffoutsourcing.nl/reizen-reserveringen): Online Travel Advisor, Reservations Employee, Travel Agency Customer Service, Travel Marketer
+
+## Vacancies
+
+- [All Vacancies](https://www.staffoutsourcing.nl/vacatures): Open job listings, filterable by category (IT, Engineering, Supply Chain, etc.)
+
+## Legal
+
+- [Privacy Policy](https://www.staffoutsourcing.nl/privacybeleid)
+- [Terms & Conditions](https://www.staffoutsourcing.nl/algemene-voorwaarden)
+
+## Optional
+
+- Site is a bilingual (EN/NL) Next.js application; NL is the default locale shown above, EN versions exist via a language switcher
+- Company location: Mandenmakerstraat 100C, 3194 DG Hoogvliet Rotterdam, Netherlands
+- Contact email: info@staffoutsourcing.nl
