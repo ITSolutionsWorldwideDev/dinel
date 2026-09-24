@@ -25,16 +25,20 @@ export default function LanguageSwitcher() {
     );
   };
 
+  const flagTitle = locale === "nl" ? "English flag" : "Nederlands flag";
+
   return (
     <button
       onClick={handleSwitch}
       className="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium border border-gray-300 hover:bg-[#0d2b33]/5 transition-colors"
+      aria-label={`Switch language to ${locale === "nl" ? "English" : "Nederlands"}`}
     >
       <ReactCountryFlag
         countryCode={locale === "nl" ? "US" : "NL"}
         svg
         style={{ width: "1.1em", height: "1.1em", borderRadius: "2px" }}
-        title={locale === "nl" ? "English" : "Nederlands"}
+        title={flagTitle}
+        aria-label={flagTitle}
       />
       <span>{locale === "nl" ? "EN" : "NL"}</span>
     </button>

@@ -18,19 +18,17 @@ export default async function Header() {
 
       {/* <NavBar /> <- Yeh line yahan se delete kardi hai */}
 
-      <h1 className="absolute inset-0 font-extrabold text-white/5 text-[clamp(2rem,22vw,22rem)] flex items-center justify-center pointer-events-none select-none container mx-auto z-[2] tracking-tighter">
-        {t("bigText")}
-      </h1>
+     
 
       <div className="relative z-10 w-full px-4 sm:px-6 md:px-12 lg:px-16 container mx-auto my-auto">
         <div className="w-full max-w-5xl mx-auto text-center">
           
-          <h2 className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight drop-shadow-xl">
+          <h1 className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight drop-shadow-xl">
             {t("titleLine1")}{" "}
             <span className="italic font-serif font-light text-[#f2c40d] tracking-normal drop-shadow-lg">
               {t("titleLine2")}
             </span>
-          </h2>
+          </h1>
 
           <p className="mt-6 max-w-3xl mx-auto text-gray-200 text-base md:text-lg lg:text-xl leading-relaxed font-light tracking-wide drop-shadow-md">
             {t.rich("description", {

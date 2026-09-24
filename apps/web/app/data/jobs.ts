@@ -345,8 +345,8 @@ export const jobCategories: JobCategoryGroup[] = [
       {
         slug: "master-data-specialist",
         title: {
-          en: "Master Data Specialist â€“ SAP S/4HANA",
-          nl: "Master Data Specialist â€“ SAP S/4HANA",
+          en: "Master Data Specialist  SAP S/4HANA",
+          nl: "Master Data Specialist  SAP S/4HANA",
         },
         category: { en: "Supply Chain", nl: "Supply Chain" },
         type: { en: "Full-Time", nl: "Fulltime" },
