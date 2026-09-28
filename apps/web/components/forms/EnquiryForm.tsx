@@ -21,6 +21,7 @@ interface EnquiryFormProps {
   lockCategory?: boolean;
   defaultJobTitle?: string;
   lockJobTitle?: boolean;
+  vacancyId?: number | string;
 }
 
 type SubmitStatus = "idle" | "submitting" | "success" | "error";
@@ -33,6 +34,7 @@ export default function EnquiryForm({
   lockCategory = false,
   defaultJobTitle = "",
   lockJobTitle = false,
+  vacancyId,
 }: EnquiryFormProps) {
   const [mode, setMode] = useState<FormMode>(defaultMode);
   const [status, setStatus] = useState<SubmitStatus>("idle");
@@ -128,6 +130,9 @@ export default function EnquiryForm({
         formData.append("linkedin", jobSeekerData.linkedin);
         formData.append("hearAboutUs", (jobSeekerData as any).hearAboutUs || "");
         formData.append("cv", jobSeekerData.cv);
+        if (vacancyId) {
+          formData.append("vacancyId", String(vacancyId));
+        }
 
         const res = await fetch("/api/enquiry", {
           method: "POST",

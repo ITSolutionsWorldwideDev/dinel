@@ -6,6 +6,7 @@ import { pool } from "@acme/db";
 import crypto from "crypto";
 import { Buffer } from "buffer";
 import { carerixGraphQL } from "@/lib/carerix/carerix-client";
+import { forwardCvToTalentGenie } from "@/lib/talentgenie/client";
 
 export async function POST(request: NextRequest) {
   const client = await pool.connect();
@@ -296,6 +297,24 @@ export async function POST(request: NextRequest) {
     } */
 
     await client.query("COMMIT");
+
+    // ──────────────────────────────────────────────────────────────────
+    // 9️⃣ FORWARD CV TO TALENT GENIE (fire-and-forget, non-blocking)
+    // ──────────────────────────────────────────────────────────────────
+    // vacancyId from Carerix may differ from TalentGenie vacancy_id.
+    // We attempt to forward using the same vacancyId as an int.
+    // If the vacancy doesn't exist in TalentGenie it will fail silently.
+    const talentGenieVacancyId = parseInt(vacancyId, 10);
+    if (!isNaN(talentGenieVacancyId)) {
+      forwardCvToTalentGenie({
+        fileBuffer,
+        fileName: resumeFile.name || "resume.pdf",
+        vacancyId: talentGenieVacancyId,
+        candidateEmail: email,
+      }).catch((err) =>
+        console.error("[TalentGenie] CV forward error (non-fatal):", err)
+      );
+    }
 
     const responsePayload = {
       success: true,

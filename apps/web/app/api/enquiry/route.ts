@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { forwardCvToTalentGenie } from "@/lib/talentgenie/client";
 
 // Nodemailer requires the Node.js runtime.
 export const runtime = "nodejs";
@@ -360,6 +361,18 @@ if (mode === "hiring") {
 
       const buffer = Buffer.from(
         await cv.arrayBuffer()
+      );
+
+      // Forward CV to Talent Genie (HR app) asynchronously
+      const vacancyIdRaw = formData.get("vacancyId");
+      const parsedVacancyId = vacancyIdRaw ? parseInt(String(vacancyIdRaw), 10) : null;
+      forwardCvToTalentGenie({
+        fileBuffer: buffer,
+        fileName: cv.name || "resume.pdf",
+        vacancyId: parsedVacancyId && !isNaN(parsedVacancyId) ? parsedVacancyId : null,
+        candidateEmail: email,
+      }).catch((err) =>
+        console.error("[TalentGenie] CV forward from enquiry error (non-fatal):", err)
       );
 
       const attachments = [
