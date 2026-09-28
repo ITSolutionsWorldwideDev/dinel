@@ -29,7 +29,7 @@ export type TalentGenieJob = {
 export async function getTalentGenieJobs(): Promise<TalentGenieJob[]> {
   try {
     const res = await fetch(`${TALENT_GENIE_API_URL}/website/jobs`, {
-      next: { revalidate: 300 },
+      next: { revalidate: 15 },
     });
     if (!res.ok) {
       console.error(`[TalentGenie] Failed to fetch jobs: ${res.status}`);
@@ -49,7 +49,7 @@ export async function getTalentGenieJobById(
   try {
     const res = await fetch(
       `${TALENT_GENIE_API_URL}/website/jobs/${vacancyId}`,
-      { next: { revalidate: 300 } }
+      { next: { revalidate: 15 } }
     );
     if (!res.ok) return null;
     return (await res.json()) as TalentGenieJob;

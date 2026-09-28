@@ -39,11 +39,19 @@ export default async function JobList() {
   const groupsMap = new Map<string, UnifiedJobItem[]>();
   const seenJobTitles = new Set<string>();
 
-  // Add all primary Staff Outsourcing jobs first
+  // Check which jobs are currently active in Talent Genie
+  const activeTgTitles = new Set(tgJobs.map((j) => normalizeTitle(j.title)));
+  const useTgFilter = tgJobs.length > 0;
+
+  // Add primary Staff Outsourcing jobs (only if still active in Talent Genie, or fallback if TG offline)
   for (const group of hardcodedCategories) {
     const list: UnifiedJobItem[] = [];
     for (const j of group.jobs) {
       const norm = normalizeTitle(j.title);
+      // If Talent Genie is connected, only display jobs that exist in Talent Genie!
+      if (useTgFilter && !activeTgTitles.has(norm)) {
+        continue;
+      }
       if (!seenJobTitles.has(norm)) {
         seenJobTitles.add(norm);
         list.push({

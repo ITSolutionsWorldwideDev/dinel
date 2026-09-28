@@ -31,6 +31,10 @@ function parseVacancyIdFromSlug(slug: string): number | null {
   return null;
 }
 
+function normalizeTitle(t: string): string {
+  return t.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
 // Unified Job Interface for rendering in original design
 interface UnifiedJobDetail {
   slug: string;
@@ -61,14 +65,17 @@ async function resolveUnifiedJob(
   // 2. Check hardcoded jobs in jobs.ts
   const rawJob = getJobBySlug(slug);
   if (rawJob) {
-    const localized = localizeJob(rawJob, locale);
-    // Find matching Talent Genie vacancy_id so applications link to Talent Genie
     const allTgJobs = await getTalentGenieJobs();
     const matchedTg = allTgJobs.find(
-      (j) =>
-        j.title.toLowerCase().trim() === rawJob.title.en.toLowerCase().trim(),
+      (j) => normalizeTitle(j.title) === normalizeTitle(rawJob.title.en),
     );
 
+    // If Talent Genie is connected, and this job is NOT in Talent Genie (deleted/unpublished), return null
+    if (allTgJobs.length > 0 && !matchedTg) {
+      return null;
+    }
+
+    const localized = localizeJob(rawJob, locale);
     return {
       slug: localized.slug,
       title: localized.title,
