@@ -81,6 +81,11 @@ export async function forwardCvToTalentGenie(
       form.append("vacancy_id", String(submission.vacancyId));
     }
 
+    if (submission.candidateEmail) {
+      form.append("candidate_email", submission.candidateEmail);
+      form.append("email", submission.candidateEmail);
+    }
+
     const res = await fetch(`${TALENT_GENIE_API_URL}/candidates/parse-cv`, {
       method: "POST",
       body: form,
