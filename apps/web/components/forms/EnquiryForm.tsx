@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale } from "next-intl";
 import { Briefcase, UserSearch, Clock, ShieldCheck, Award, Coffee, Zap, Users, Target } from "lucide-react";
 import HiringFields from "./HiringFields";
 import JobSeekerFields from "./JobSeekerFields";
@@ -36,6 +37,9 @@ export default function EnquiryForm({
   lockJobTitle = false,
   vacancyId,
 }: EnquiryFormProps) {
+  const locale = useLocale();
+  const isNl = locale === "nl";
+
   const [mode, setMode] = useState<FormMode>(defaultMode);
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -113,10 +117,10 @@ export default function EnquiryForm({
           body: formData,
         });
 
-        if (!res.ok) throw new Error("Failed to submit hiring enquiry.");
+        if (!res.ok) throw new Error(isNl ? "Het verzenden van de aanvraag is mislukt." : "Failed to submit hiring enquiry.");
       } else {
         if (!jobSeekerData.cv) {
-          throw new Error("Please attach your CV before submitting.");
+          throw new Error(isNl ? "Voeg uw cv toe voordat u verzendt." : "Please attach your CV before submitting.");
         }
 
         const formData = new FormData();
@@ -139,7 +143,7 @@ export default function EnquiryForm({
           body: formData,
         });
 
-        if (!res.ok) throw new Error("Failed to submit application.");
+        if (!res.ok) throw new Error(isNl ? "Het verzenden van de sollicitatie is mislukt." : "Failed to submit application.");
       }
 
       setStatus("success");
@@ -147,7 +151,11 @@ export default function EnquiryForm({
     } catch (err) {
       setStatus("error");
       setErrorMessage(
-        err instanceof Error ? err.message : "Something went wrong. Please try again."
+        err instanceof Error
+          ? err.message
+          : isNl
+          ? "Er is iets misgegaan. Probeer het opnieuw."
+          : "Something went wrong. Please try again."
       );
     }
   };
@@ -163,33 +171,55 @@ export default function EnquiryForm({
           <div className="relative z-10">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-semibold tracking-wider uppercase mb-6 text-white/90 backdrop-blur-sm border border-white/10">
               <span className="h-1.5 w-1.5 rounded-full bg-[#f2c40d]"></span>
-              {mode === "hiring" ? "Hiring Partners" : "Open Application"}
+              {mode === "hiring"
+                ? isNl
+                  ? "Wervingspartners"
+                  : "Hiring Partners"
+                : isNl
+                ? "Open Sollicitatie"
+                : "Open Application"}
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 text-white leading-tight">
               {mode === "hiring"
-                ? "Looking to hire top-tier talent?"
+                ? isNl
+                  ? "Op zoek naar toptalent?"
+                  : "Looking to hire top-tier talent?"
                 : lockJobTitle && defaultJobTitle
-                ? `Apply for ${defaultJobTitle}`
+                ? isNl
+                  ? `Solliciteer op ${defaultJobTitle}`
+                  : `Apply for ${defaultJobTitle}`
+                : isNl
+                ? "Zie je jouw ideale functie niet?"
                 : "Don't see your perfect role?"}
             </h2>
             <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-8">
               {mode === "hiring"
-                ? "Submit your requirements or job description and let us connect you with vetted professionals tailored to your culture."
+                ? isNl
+                  ? "Stuur uw wensen of functieomschrijving in en laat ons u verbinden met gescreende professionals die passen bij uw bedrijfscultuur."
+                  : "Submit your requirements or job description and let us connect you with vetted professionals tailored to your culture."
+                : isNl
+                ? "Wij werven op puur talent, niet alleen op openstaande vacatures. Stuur ons je profiel en vertel ons wat je wilt bereiken."
                 : "We hire for raw talent, not just open headcount. Send us your profile and let us know what you want to build."}
             </p>
 
             <div className="grid grid-cols-3 gap-3 py-6 border-y border-white/10">
               <div className="flex flex-col items-center text-center p-2 rounded-xl bg-white/5 border border-white/5">
                 <Zap className="h-5 w-5 text-[#f2c40d] mb-1.5" />
-                <span className="text-xs font-semibold text-white">Fast Vetting</span>
+                <span className="text-xs font-semibold text-white">
+                  {isNl ? "Snelle Screening" : "Fast Vetting"}
+                </span>
               </div>
               <div className="flex flex-col items-center text-center p-2 rounded-xl bg-white/5 border border-white/5">
                 <Users className="h-5 w-5 text-[#f2c40d] mb-1.5" />
-                <span className="text-xs font-semibold text-white">Top Talent</span>
+                <span className="text-xs font-semibold text-white">
+                  {isNl ? "Toptalent" : "Top Talent"}
+                </span>
               </div>
               <div className="flex flex-col items-center text-center p-2 rounded-xl bg-white/5 border border-white/5">
                 <Target className="h-5 w-5 text-[#f2c40d] mb-1.5" />
-                <span className="text-xs font-semibold text-white">Direct Fit</span>
+                <span className="text-xs font-semibold text-white">
+                  {isNl ? "Directe Match" : "Direct Fit"}
+                </span>
               </div>
             </div>
           </div>
@@ -199,25 +229,41 @@ export default function EnquiryForm({
               <div className="p-1.5 rounded-lg bg-white/10 text-[#f2c40d]">
                 <Clock className="h-4 w-4 shrink-0" />
               </div>
-              <span className="font-medium">Quick response within 1-2 business days</span>
+              <span className="font-medium">
+                {isNl
+                  ? "Snelle reactie binnen 1-2 werkdagen"
+                  : "Quick response within 1-2 business days"}
+              </span>
             </div>
             <div className="flex items-center gap-3">
               <div className="p-1.5 rounded-lg bg-white/10 text-[#f2c40d]">
                 <ShieldCheck className="h-4 w-4 shrink-0" />
               </div>
-              <span className="font-medium">Secure and confidential data handling</span>
+              <span className="font-medium">
+                {isNl
+                  ? "Veilige en vertrouwelijke gegevensverwerking"
+                  : "Secure and confidential data handling"}
+              </span>
             </div>
             <div className="flex items-center gap-3">
               <div className="p-1.5 rounded-lg bg-white/10 text-[#f2c40d]">
                 <Award className="h-4 w-4 shrink-0" />
               </div>
-              <span className="font-medium">Dedicated support for teams & specialists</span>
+              <span className="font-medium">
+                {isNl
+                  ? "Toegewijde ondersteuning voor teams & specialisten"
+                  : "Dedicated support for teams & specialists"}
+              </span>
             </div>
             <div className="flex items-center gap-3">
               <div className="p-1.5 rounded-lg bg-white/10 text-[#f2c40d]">
                 <Coffee className="h-4 w-4 shrink-0" />
               </div>
-              <span className="font-medium">Transparent and straightforward communication</span>
+              <span className="font-medium">
+                {isNl
+                  ? "Transparante en heldere communicatie"
+                  : "Transparent and straightforward communication"}
+              </span>
             </div>
           </div>
         </div>
@@ -236,7 +282,7 @@ export default function EnquiryForm({
                 }`}
               >
                 <Briefcase className="h-4 w-4" />
-                I&apos;m Hiring
+                {isNl ? "Ik zoek personeel" : "I'm Hiring"}
               </button>
               <button
                 type="button"
@@ -248,7 +294,7 @@ export default function EnquiryForm({
                 }`}
               >
                 <UserSearch className="h-4 w-4" />
-                I&apos;m Looking for a Job
+                {isNl ? "Ik zoek een baan" : "I'm Looking for a Job"}
               </button>
             </div>
           )}
@@ -280,7 +326,11 @@ export default function EnquiryForm({
             {status === "success" && (
               <div className="rounded-xl bg-green-50 p-4 border border-green-100 text-sm text-green-700 font-medium">
                 {mode === "hiring"
-                  ? "Thanks! Your enquiry has been received — we'll be in touch shortly."
+                  ? isNl
+                    ? "Bedankt! Uw aanvraag is ontvangen — we nemen spoedig contact met u op."
+                    : "Thanks! Your enquiry has been received — we'll be in touch shortly."
+                  : isNl
+                  ? "Bedankt! Uw sollicitatie is succesvol verzonden."
                   : "Thanks! Your application has been submitted successfully."}
               </div>
             )}
@@ -291,14 +341,22 @@ export default function EnquiryForm({
               className="mt-6 w-full rounded-xl bg-[#1a4550] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#1a4550]/20 transition-all duration-200 hover:bg-[#123540] hover:shadow-xl hover:shadow-[#1a4550]/30 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {status === "submitting"
-                ? "Submitting details..."
+                ? isNl
+                  ? "Gegevens verzenden..."
+                  : "Submitting details..."
                 : mode === "hiring"
-                ? "Submit Enquiry"
+                ? isNl
+                  ? "Aanvraag Verzenden"
+                  : "Submit Enquiry"
+                : isNl
+                ? "Sollicitatie Versturen"
                 : "Submit Application"}
             </button>
             
             <p className="mt-4 text-center text-xs text-gray-400 font-medium">
-              We respect your privacy. Your info is never sold or shared.
+              {isNl
+                ? "Wij respecteren uw privacy. Uw gegevens worden nooit verkocht of gedeeld."
+                : "We respect your privacy. Your info is never sold or shared."}
             </p>
           </form>
         </div>

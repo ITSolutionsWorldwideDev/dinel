@@ -8,6 +8,8 @@ import ContactDetailsAndReassurance from "@/components/contact/ContactDetailsAnd
 import EnquiryForm from "@/components/forms/EnquiryForm";
 import React from "react";
 import { getCanonicalUrl, getHreflangAlternates } from "@/lib/seo";
+import { getTranslations } from "next-intl/server";
+
 interface PageProps {
   params: Promise<{ locale: string }>;
 }
@@ -50,7 +52,9 @@ const allCategories = [
   { value: "travel-reservations", label: "Travel & Reservations" },
 ];
 
-const ContactPage = () => {
+const ContactPage = async () => {
+  const t = await getTranslations("enquiryForm.section");
+
   return (
     <div className="min-h-screen bg-gray-50">
       <ContactHero />
@@ -63,13 +67,13 @@ const ContactPage = () => {
         <div className="w-full px-6 md:px-12 lg:px-16 max-w-[1500px] mx-auto relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="inline-block text-xs font-bold tracking-widest uppercase text-[#0d2b33] bg-[#0d2b33]/5 px-3 py-1.5 rounded-full mb-3">
-              Get In Touch
+              {t("badge")}
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0d2b33] tracking-tight mb-4">
-              Start Your Journey With Us
+              {t("title")}
             </h2>
             <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-              Connect with our team or visit our office location to explore seamless collaboration opportunities.
+              {t("subtitle")}
             </p>
           </div>
 

@@ -10,6 +10,8 @@ import Impact from "./Impact";
 import EnquiryForm from "@/components/forms/EnquiryForm";
 import ClientLogos from "./ClientLogos";
 
+import { getTranslations } from "next-intl/server";
+
 const allCategories = [
   { value: "it-development", label: "IT & Development" },
   { value: "design-services", label: "Design Services" },
@@ -19,7 +21,9 @@ const allCategories = [
   { value: "travel-reservations", label: "Travel & Reservations" },
 ];
 
-const Home = () => {
+const Home = async () => {
+  const t = await getTranslations("enquiryForm.section");
+
   return (
     <div className="bg-gray-50 overflow-x-hidden">
       <Header />
@@ -47,10 +51,10 @@ const Home = () => {
           <div className="text-center max-w-2xl mx-auto mb-16 pt-8">
            
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0d2b33] tracking-tight mb-4">
-              Start Your Journey With Us
+              {t("title")}
             </h2>
             <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-              Connect with our team or visit our office location to explore seamless collaboration opportunities.
+              {t("subtitle")}
             </p>
           </div>
 

@@ -1391,6 +1391,114 @@
         "body": "Als u vragen heeft over onze voorwaarden, kunt u contact met ons opnemen via:"
       }
     }
+  },
+  "enquiryForm": {
+    "section": {
+      "badge": "Neem Contact Op",
+      "title": "Start uw samenwerking met ons",
+      "subtitle": "Neem contact op met ons team of bezoek ons kantoor om de mogelijkheden voor samenwerking te ontdekken."
+    },
+    "sidebar": {
+      "hiringBadge": "Hiring Partners",
+      "jobSeekerBadge": "Open Sollicitatie",
+      "hiringTitle": "Op zoek naar toptalent?",
+      "jobSeekerTitle": "Staat uw ideale functie er niet tussen?",
+      "applyForTitle": "Solliciteer op {title}",
+      "hiringDesc": "Dien uw wensen of functieomschrijving in en wij verbinden u met gescreende professionals die passen bij uw bedrijfscultuur.",
+      "jobSeekerDesc": "Wij werven op puur talent, niet alleen op openstaande vacatures. Stuur ons uw profiel en laat weten wat u wilt bouwen.",
+      "pillFastVetting": "Snelle Screening",
+      "pillTopTalent": "Toptalent",
+      "pillDirectFit": "Directe Match",
+      "bulletResponse": "Snelle reactie binnen 1-2 werkdagen",
+      "bulletSecurity": "Veilige en vertrouwelijke gegevensverwerking",
+      "bulletSupport": "Toegewijde ondersteuning voor teams & specialisten",
+      "bulletCommunication": "Transparante en duidelijke communicatie"
+    },
+    "tabs": {
+      "hiring": "Ik zoek personeel",
+      "jobSeeker": "Ik zoek een baan"
+    },
+    "hiringFields": {
+      "companyName": "Bedrijfsnaam *",
+      "companyNamePlaceholder": "Uw bedrijfsnaam",
+      "contactPerson": "Contactpersoon *",
+      "contactPersonPlaceholder": "Volledige naam",
+      "email": "E-mailadres *",
+      "emailPlaceholder": "u@bedrijf.nl",
+      "phone": "Telefoonnummer",
+      "phonePlaceholder": "+31 6 12345678",
+      "category": "Categorie *",
+      "selectCategory": "Selecteer een categorie",
+      "jobPosition": "Functie *",
+      "jobPositionPlaceholder": "bijv. Frontend Developer",
+      "numberOfPositions": "Aantal posities",
+      "numberOfPositionsPlaceholder": "bijv. 2",
+      "writeMessage": "Schrijf een bericht *",
+      "writeMessagePlaceholder": "Beschrijf de rol, vereiste vaardigheden en verantwoordelijkheden...",
+      "jobDoc": "Functieomschrijving document",
+      "optional": "(optioneel)",
+      "attachDoc": "Voeg een JD, specificatie of briefing toe (PDF of Word)",
+      "remove": "Verwijderen",
+      "docHelp": "Max 10MB. Toevoegen in plaats van of als aanvulling op de beschrijving hierboven.",
+      "kvk": "KVK-nummer",
+      "hearAboutUs": "Hoe heeft u over ons gehoord?",
+      "selectOption": "Selecteer een optie"
+    },
+    "jobSeekerFields": {
+      "applyingFor": "Solliciteren voor",
+      "fullName": "Volledige Naam *",
+      "fullNamePlaceholder": "Uw volledige naam",
+      "email": "E-mailadres *",
+      "emailPlaceholder": "u@voorbeeld.nl",
+      "phone": "Telefoonnummer",
+      "phonePlaceholder": "+31 300 1234567",
+      "category": "Categorie / Vakgebied *",
+      "selectCategory": "Selecteer een categorie",
+      "linkedin": "LinkedIn / Portfolio (optioneel)",
+      "linkedinPlaceholder": "https://linkedin.com/in/uw-naam",
+      "hearAboutUs": "Hoe heeft u over ons gehoord?",
+      "selectOption": "Selecteer een optie",
+      "writeMessage": "Schrijf een bericht",
+      "writeMessagePlaceholder": "Stel uzelf kort voor en vertel wat u zoekt...",
+      "uploadCv": "Upload CV *",
+      "attachCv": "Voeg uw cv toe (PDF of Word)",
+      "remove": "Verwijderen",
+      "cvHelp": "PDF of Word, max 5MB."
+    },
+    "sources": {
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "google": "Google Zoeken",
+      "instagram": "Instagram",
+      "friend": "Vriend / Collega",
+      "other": "Anders"
+    },
+    "categories": {
+      "it-development": "IT en Ontwikkeling",
+      "design-services": "Ontwerpdiensten",
+      "marketing-analytics": "Marketing en Analytics",
+      "admin-business-support": "Administratie en Bedrijfsondersteuning",
+      "finance-accounting": "Financiën en Boekhouding",
+      "travel-reservations": "Reizen en Reserveringen",
+      "supply-chain": "Logistiek en Supply Chain"
+    },
+    "actions": {
+      "submitting": "Gegevens verzenden...",
+      "submitEnquiry": "Aanvraag Verzenden",
+      "submitApplication": "Sollicitatie Versturen",
+      "privacy": "Wij respecteren uw privacy. Uw gegevens worden nooit verkocht of gedeeld."
+    },
+    "messages": {
+      "successHiring": "Bedankt! Uw aanvraag is ontvangen — we nemen spoedig contact met u op.",
+      "successJobSeeker": "Bedankt! Uw sollicitatie is succesvol verzonden.",
+      "errorDefault": "Er is iets misgegaan. Probeer het opnieuw.",
+      "errorNoCv": "Voeg uw cv toe voordat u verzendt.",
+      "errorHiringFailed": "Het verzenden van de aanvraag is mislukt.",
+      "errorApplicationFailed": "Het verzenden van de sollicitatie is mislukt.",
+      "alertDocType": "Upload een PDF- of Word-document.",
+      "alertDocSize": "Bestand is te groot. Maximale grootte is 10MB.",
+      "alertCvSize": "Bestand is te groot. Maximale grootte is 5MB."
+    }
   }
 }
 

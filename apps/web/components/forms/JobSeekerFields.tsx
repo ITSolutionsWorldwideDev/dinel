@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useLocale } from "next-intl";
 import { User, Mail, Phone, Layers, Link2, MessageSquare, FileUp, HelpCircle, Briefcase } from "lucide-react";
 import { Category, JobSeekerFormState } from "./types";
 
@@ -19,6 +20,16 @@ const ACCEPTED_TYPES = [
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 ];
 
+const categoryLabelsNl: Record<string, string> = {
+  "it-development": "IT en Ontwikkeling",
+  "design-services": "Ontwerpdiensten",
+  "marketing-analytics": "Marketing en Analytics",
+  "admin-business-support": "Administratie en Bedrijfsondersteuning",
+  "finance-accounting": "Financiën en Boekhouding",
+  "travel-reservations": "Reizen en Reserveringen",
+  "supply-chain": "Logistiek en Supply Chain",
+};
+
 const inputClass =
   "w-full rounded-lg border border-gray-300 py-2 pl-9 pr-3 text-sm focus:border-[#1a4550] focus:outline-none focus:ring-1 focus:ring-[#1a4550]";
 const labelClass = "mb-1 block text-sm font-medium text-gray-700";
@@ -32,6 +43,8 @@ export default function JobSeekerFields({
   categoryLocked = false,
   jobTitleLocked = false,
 }: JobSeekerFieldsProps) {
+  const locale = useLocale();
+  const isNl = locale === "nl";
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const update = (field: keyof JobSeekerFormState, value: string) => {
@@ -47,13 +60,17 @@ export default function JobSeekerFields({
     }
 
     if (!ACCEPTED_TYPES.includes(file.type)) {
-      alert("Please upload a PDF or Word document.");
+      alert(isNl ? "Upload een PDF- of Word-document." : "Please upload a PDF or Word document.");
       if (fileInputRef.current) fileInputRef.current.value = "";
       return;
     }
 
     if (file.size > MAX_CV_SIZE_MB * 1024 * 1024) {
-      alert(`File is too large. Max size is ${MAX_CV_SIZE_MB}MB.`);
+      alert(
+        isNl
+          ? `Bestand is te groot. Maximale grootte is ${MAX_CV_SIZE_MB}MB.`
+          : `File is too large. Max size is ${MAX_CV_SIZE_MB}MB.`
+      );
       if (fileInputRef.current) fileInputRef.current.value = "";
       return;
     }
@@ -71,7 +88,7 @@ export default function JobSeekerFields({
       {/* Job Title - only shows when applying from a job page */}
       {jobTitleLocked && data.jobTitle && (
         <div className="sm:col-span-2">
-          <label className={labelClass}>Applying for</label>
+          <label className={labelClass}>{isNl ? "Solliciteren voor" : "Applying for"}</label>
           <div className="relative">
             <Briefcase className={`h-4 w-4 ${iconWrapClass}`} />
             <input
@@ -85,7 +102,7 @@ export default function JobSeekerFields({
       )}
 
       <div>
-        <label className={labelClass}>Full Name *</label>
+        <label className={labelClass}>{isNl ? "Volledige Naam *" : "Full Name *"}</label>
         <div className="relative">
           <User className={`h-4 w-4 ${iconWrapClass}`} />
           <input
@@ -94,13 +111,13 @@ export default function JobSeekerFields({
             value={data.fullName}
             onChange={(e) => update("fullName", e.target.value)}
             className={inputClass}
-            placeholder="Your full name"
+            placeholder={isNl ? "Uw volledige naam" : "Your full name"}
           />
         </div>
       </div>
 
       <div>
-        <label className={labelClass}>Email *</label>
+        <label className={labelClass}>{isNl ? "E-mailadres *" : "Email *"}</label>
         <div className="relative">
           <Mail className={`h-4 w-4 ${iconWrapClass}`} />
           <input
@@ -109,13 +126,13 @@ export default function JobSeekerFields({
             value={data.email}
             onChange={(e) => update("email", e.target.value)}
             className={inputClass}
-            placeholder="you@example.com"
+            placeholder={isNl ? "u@voorbeeld.nl" : "you@example.com"}
           />
         </div>
       </div>
 
       <div>
-        <label className={labelClass}>Phone</label>
+        <label className={labelClass}>{isNl ? "Telefoonnummer" : "Phone"}</label>
         <div className="relative">
           <Phone className={`h-4 w-4 ${iconWrapClass}`} />
           <input
@@ -129,7 +146,7 @@ export default function JobSeekerFields({
       </div>
 
       <div>
-        <label className={labelClass}>Category / Field *</label>
+        <label className={labelClass}>{isNl ? "Categorie / Vakgebied *" : "Category / Field *"}</label>
         <div className="relative">
           <Layers className={`h-4 w-4 ${iconWrapClass}`} />
           <select
@@ -139,73 +156,85 @@ export default function JobSeekerFields({
             disabled={categoryLocked}
             className={`${inputClass} disabled:bg-gray-100 disabled:text-gray-600`}
           >
-            <option value="">Select a category</option>
+            <option value="">{isNl ? "Selecteer een categorie" : "Select a category"}</option>
             {categories?.map((cat) => (
-  <option key={cat.value} value={cat.value}>
-    {cat.label}
-  </option>
-))}
+              <option key={cat.value} value={cat.value}>
+                {isNl ? (categoryLabelsNl[cat.value] || cat.label) : cat.label}
+              </option>
+            ))}
           </select>
         </div>
       </div>
 
- <div>
-  <label className={labelClass}>LinkedIn / Portfolio (optional)</label>
-  <div className="relative">
-    <Link2 className={`h-4 w-4 ${iconWrapClass}`} />
-    <input
-      type="url"
-      value={data.linkedin}
-      onChange={(e) => update("linkedin", e.target.value)}
-      className={inputClass}
-      placeholder="https://linkedin.com/in/yourname"
-    />
-  </div>
-</div>
+      <div>
+        <label className={labelClass}>
+          {isNl ? "LinkedIn / Portfolio (optioneel)" : "LinkedIn / Portfolio (optional)"}
+        </label>
+        <div className="relative">
+          <Link2 className={`h-4 w-4 ${iconWrapClass}`} />
+          <input
+            type="url"
+            value={data.linkedin}
+            onChange={(e) => update("linkedin", e.target.value)}
+            className={inputClass}
+            placeholder={isNl ? "https://linkedin.com/in/uw-naam" : "https://linkedin.com/in/yourname"}
+          />
+        </div>
+      </div>
 
-<div>
-  <label className={labelClass}>Where did you hear about us?</label>
-  <div className="relative">
-    <HelpCircle className={`h-4 w-4 ${iconWrapClass}`} />
-    <select
-      value={(data as any).hearAboutUs || ""}
-      onChange={(e) => update("hearAboutUs" as any, e.target.value)}
-      className={inputClass}
-    >
-      <option value="">Select an option</option>
-      <option value="facebook">Facebook</option>
-      <option value="linkedin">LinkedIn</option>
-      <option value="google">Google Search</option>
-      <option value="instagram">Instagram</option>
-      <option value="friend">Friend / Colleague</option>
-      <option value="other">Other</option>
-    </select>
-  </div>
-</div>
-
-   <div className="sm:col-span-2">
-  <label className={labelClass}>Write a Message</label>
-  <div className="relative">
-    <MessageSquare className="pointer-events-none absolute left-3 top-3 h-4 w-4 text-gray-400" />
-    <textarea
-      rows={3}
-      value={data.coverMessage}
-      onChange={(e) => update("coverMessage", e.target.value)}
-      className="w-full rounded-lg border border-gray-300 py-2 pl-9 pr-3 text-sm focus:border-[#1a4550] focus:outline-none focus:ring-1 focus:ring-[#1a4550]"
-      placeholder="Briefly introduce yourself and what you're looking for..."
-    />
-  </div>
-</div>
+      <div>
+        <label className={labelClass}>
+          {isNl ? "Hoe heeft u over ons gehoord?" : "Where did you hear about us?"}
+        </label>
+        <div className="relative">
+          <HelpCircle className={`h-4 w-4 ${iconWrapClass}`} />
+          <select
+            value={(data as any).hearAboutUs || ""}
+            onChange={(e) => update("hearAboutUs" as any, e.target.value)}
+            className={inputClass}
+          >
+            <option value="">{isNl ? "Selecteer een optie" : "Select an option"}</option>
+            <option value="facebook">Facebook</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="google">{isNl ? "Google Zoeken" : "Google Search"}</option>
+            <option value="instagram">Instagram</option>
+            <option value="friend">{isNl ? "Vriend / Collega" : "Friend / Colleague"}</option>
+            <option value="other">{isNl ? "Anders" : "Other"}</option>
+          </select>
+        </div>
+      </div>
 
       <div className="sm:col-span-2">
-        <label className={labelClass}>Upload CV *</label>
+        <label className={labelClass}>{isNl ? "Schrijf een bericht" : "Write a Message"}</label>
+        <div className="relative">
+          <MessageSquare className="pointer-events-none absolute left-3 top-3 h-4 w-4 text-gray-400" />
+          <textarea
+            rows={3}
+            value={data.coverMessage}
+            onChange={(e) => update("coverMessage", e.target.value)}
+            className="w-full rounded-lg border border-gray-300 py-2 pl-9 pr-3 text-sm focus:border-[#1a4550] focus:outline-none focus:ring-1 focus:ring-[#1a4550]"
+            placeholder={
+              isNl
+                ? "Stel uzelf kort voor en vertel wat u zoekt..."
+                : "Briefly introduce yourself and what you're looking for..."
+            }
+          />
+        </div>
+      </div>
+
+      <div className="sm:col-span-2">
+        <label className={labelClass}>{isNl ? "Upload CV *" : "Upload CV *"}</label>
         <label
           htmlFor="cvUpload"
           className="flex cursor-pointer items-center gap-3 rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 px-4 py-3 text-sm text-gray-600 transition-colors hover:border-[#1a4550]/50 hover:bg-[#1a4550]/5"
         >
           <FileUp className="h-4 w-4 shrink-0 text-[#1a4550]" />
           <span className="flex-1 truncate">
-            {data.cv ? data.cv.name : "Attach your CV (PDF or Word)"}
+            {data.cv
+              ? data.cv.name
+              : isNl
+              ? "Voeg uw cv toe (PDF of Word)"
+              : "Attach your CV (PDF or Word)"}
           </span>
           {data.cv && (
             <button
@@ -216,7 +245,7 @@ export default function JobSeekerFields({
               }}
               className="shrink-0 text-xs font-medium text-red-600 hover:underline"
             >
-              Remove
+              {isNl ? "Verwijderen" : "Remove"}
             </button>
           )}
         </label>
@@ -230,7 +259,9 @@ export default function JobSeekerFields({
           className="hidden"
         />
         <p className="mt-1 text-xs text-gray-500">
-          PDF or Word, max {MAX_CV_SIZE_MB}MB.
+          {isNl
+            ? `PDF of Word, max ${MAX_CV_SIZE_MB}MB.`
+            : `PDF or Word, max ${MAX_CV_SIZE_MB}MB.`}
         </p>
       </div>
     </div>

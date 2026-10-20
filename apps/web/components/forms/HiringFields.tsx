@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useLocale } from "next-intl";
 import {
   Building2,
   User,
@@ -30,6 +31,16 @@ const ACCEPTED_TYPES = [
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 ];
 
+const categoryLabelsNl: Record<string, string> = {
+  "it-development": "IT en Ontwikkeling",
+  "design-services": "Ontwerpdiensten",
+  "marketing-analytics": "Marketing en Analytics",
+  "admin-business-support": "Administratie en Bedrijfsondersteuning",
+  "finance-accounting": "Financiën en Boekhouding",
+  "travel-reservations": "Reizen en Reserveringen",
+  "supply-chain": "Logistiek en Supply Chain",
+};
+
 const inputClass =
   "w-full rounded-lg border border-gray-300 py-2 pl-9 pr-3 text-sm focus:border-[#1a4550] focus:outline-none focus:ring-1 focus:ring-[#1a4550]";
 const labelClass = "mb-1 block text-sm font-medium text-gray-700";
@@ -42,6 +53,8 @@ export default function HiringFields({
   categories,
   categoryLocked = false,
 }: HiringFieldsProps) {
+  const locale = useLocale();
+  const isNl = locale === "nl";
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const update = (field: keyof HiringFormState, value: string) => {
@@ -57,13 +70,17 @@ export default function HiringFields({
     }
 
     if (!ACCEPTED_TYPES.includes(file.type)) {
-      alert("Please upload a PDF or Word document.");
+      alert(isNl ? "Upload een PDF- of Word-document." : "Please upload a PDF or Word document.");
       if (fileInputRef.current) fileInputRef.current.value = "";
       return;
     }
 
     if (file.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
-      alert(`File is too large. Max size is ${MAX_FILE_SIZE_MB}MB.`);
+      alert(
+        isNl
+          ? `Bestand is te groot. Maximale grootte is ${MAX_FILE_SIZE_MB}MB.`
+          : `File is too large. Max size is ${MAX_FILE_SIZE_MB}MB.`
+      );
       if (fileInputRef.current) fileInputRef.current.value = "";
       return;
     }
@@ -79,7 +96,7 @@ export default function HiringFields({
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <div>
-        <label className={labelClass}>Company Name *</label>
+        <label className={labelClass}>{isNl ? "Bedrijfsnaam *" : "Company Name *"}</label>
         <div className="relative">
           <Building2 className={`h-4 w-4 ${iconWrapClass}`} />
           <input
@@ -88,13 +105,13 @@ export default function HiringFields({
             value={data.companyName}
             onChange={(e) => update("companyName", e.target.value)}
             className={inputClass}
-            placeholder="Your company name"
+            placeholder={isNl ? "Uw bedrijfsnaam" : "Your company name"}
           />
         </div>
       </div>
 
       <div>
-        <label className={labelClass}>Contact Person *</label>
+        <label className={labelClass}>{isNl ? "Contactpersoon *" : "Contact Person *"}</label>
         <div className="relative">
           <User className={`h-4 w-4 ${iconWrapClass}`} />
           <input
@@ -103,13 +120,13 @@ export default function HiringFields({
             value={data.contactPerson}
             onChange={(e) => update("contactPerson", e.target.value)}
             className={inputClass}
-            placeholder="Full name"
+            placeholder={isNl ? "Volledige naam" : "Full name"}
           />
         </div>
       </div>
 
       <div>
-        <label className={labelClass}>Email *</label>
+        <label className={labelClass}>{isNl ? "E-mailadres *" : "Email *"}</label>
         <div className="relative">
           <Mail className={`h-4 w-4 ${iconWrapClass}`} />
           <input
@@ -118,13 +135,13 @@ export default function HiringFields({
             value={data.email}
             onChange={(e) => update("email", e.target.value)}
             className={inputClass}
-            placeholder="you@company.com"
+            placeholder={isNl ? "u@bedrijf.nl" : "you@company.com"}
           />
         </div>
       </div>
 
       <div>
-        <label className={labelClass}>Phone</label>
+        <label className={labelClass}>{isNl ? "Telefoonnummer" : "Phone"}</label>
         <div className="relative">
           <Phone className={`h-4 w-4 ${iconWrapClass}`} />
           <input
@@ -138,7 +155,7 @@ export default function HiringFields({
       </div>
 
       <div>
-        <label className={labelClass}>Category *</label>
+        <label className={labelClass}>{isNl ? "Categorie *" : "Category *"}</label>
         <div className="relative">
           <Layers className={`h-4 w-4 ${iconWrapClass}`} />
           <select
@@ -148,19 +165,19 @@ export default function HiringFields({
             disabled={categoryLocked}
             className={`${inputClass} disabled:bg-gray-100 disabled:text-gray-600`}
           >
-            <option value="">Select a category</option>
+            <option value="">{isNl ? "Selecteer een categorie" : "Select a category"}</option>
             {categories?.map((cat) => (
-  <option key={cat.value} value={cat.value}>
-    {cat.label}
-  </option>
-))}
+              <option key={cat.value} value={cat.value}>
+                {isNl ? (categoryLabelsNl[cat.value] || cat.label) : cat.label}
+              </option>
+            ))}
           </select>
         </div>
       </div>
 
       {/* 👇 NEW FIELD: Job Position */}
       <div>
-        <label className={labelClass}>Job Position *</label>
+        <label className={labelClass}>{isNl ? "Functie *" : "Job Position *"}</label>
         <div className="relative">
           <Briefcase className={`h-4 w-4 ${iconWrapClass}`} />
           <input
@@ -169,13 +186,13 @@ export default function HiringFields({
             value={data.jobPosition}
             onChange={(e) => update("jobPosition", e.target.value)}
             className={inputClass}
-            placeholder="e.g. Frontend Developer"
+            placeholder={isNl ? "bijv. Frontend Developer" : "e.g. Frontend Developer"}
           />
         </div>
       </div>
 
       <div>
-        <label className={labelClass}>Number of Positions</label>
+        <label className={labelClass}>{isNl ? "Aantal posities" : "Number of Positions"}</label>
         <div className="relative">
           <Users className={`h-4 w-4 ${iconWrapClass}`} />
           <input
@@ -184,13 +201,13 @@ export default function HiringFields({
             value={data.positions}
             onChange={(e) => update("positions", e.target.value)}
             className={inputClass}
-            placeholder="e.g. 2"
+            placeholder={isNl ? "bijv. 2" : "e.g. 2"}
           />
         </div>
       </div>
 
       <div className="sm:col-span-2">
-        <label className={labelClass}>Write a Message *</label>
+        <label className={labelClass}>{isNl ? "Schrijf een bericht *" : "Write a Message *"}</label>
         <div className="relative">
           <FileText className="pointer-events-none absolute left-3 top-3 h-4 w-4 text-gray-400" />
           <textarea
@@ -199,14 +216,19 @@ export default function HiringFields({
             value={data.jobDescription}
             onChange={(e) => update("jobDescription", e.target.value)}
             className="w-full rounded-lg border border-gray-300 py-2 pl-9 pr-3 text-sm focus:border-[#1a4550] focus:outline-none focus:ring-1 focus:ring-[#1a4550]"
-            placeholder="Describe the role, required skills, and responsibilities..."
+            placeholder={
+              isNl
+                ? "Beschrijf de rol, vereiste vaardigheden en verantwoordelijkheden..."
+                : "Describe the role, required skills, and responsibilities..."
+            }
           />
         </div>
       </div>
 
       <div className="sm:col-span-2">
         <label className={labelClass}>
-          Job Description Document <span className="font-normal text-gray-400">(optional)</span>
+          {isNl ? "Functieomschrijving document" : "Job Description Document"}{" "}
+          <span className="font-normal text-gray-400">{isNl ? "(optioneel)" : "(optional)"}</span>
         </label>
         <label
           htmlFor="jobDescriptionFile"
@@ -216,6 +238,8 @@ export default function HiringFields({
           <span className="flex-1 truncate">
             {data.jobDescriptionFile
               ? data.jobDescriptionFile.name
+              : isNl
+              ? "Voeg een JD, specificatie of briefing toe (PDF of Word)"
               : "Attach a JD, spec sheet, or brief (PDF or Word)"}
           </span>
           {data.jobDescriptionFile && (
@@ -227,7 +251,7 @@ export default function HiringFields({
               }}
               className="shrink-0 text-xs font-medium text-red-600 hover:underline"
             >
-              Remove
+              {isNl ? "Verwijderen" : "Remove"}
             </button>
           )}
         </label>
@@ -240,12 +264,14 @@ export default function HiringFields({
           className="hidden"
         />
         <p className="mt-1 text-xs text-gray-500">
-          Max {MAX_FILE_SIZE_MB}MB. Attach instead of, or in addition to, the description above.
+          {isNl
+            ? `Max ${MAX_FILE_SIZE_MB}MB. Toevoegen in plaats van of als aanvulling op de beschrijving hierboven.`
+            : `Max ${MAX_FILE_SIZE_MB}MB. Attach instead of, or in addition to, the description above.`}
         </p>
       </div>
 
       <div>
-        <label className={labelClass}>KVK Number</label>
+        <label className={labelClass}>{isNl ? "KVK-nummer" : "KVK Number"}</label>
         <div className="relative">
           <Wallet className={`h-4 w-4 ${iconWrapClass}`} />
           <input
@@ -259,7 +285,9 @@ export default function HiringFields({
       </div>
 
       <div>
-        <label className={labelClass}>Where did you hear about us?</label>
+        <label className={labelClass}>
+          {isNl ? "Hoe heeft u over ons gehoord?" : "Where did you hear about us?"}
+        </label>
         <div className="relative">
           <HelpCircle className={`h-4 w-4 ${iconWrapClass}`} />
           <select
@@ -267,13 +295,13 @@ export default function HiringFields({
             onChange={(e) => update("hearAboutUs" as any, e.target.value)}
             className={inputClass}
           >
-            <option value="">Select an option</option>
+            <option value="">{isNl ? "Selecteer een optie" : "Select an option"}</option>
             <option value="facebook">Facebook</option>
             <option value="linkedin">LinkedIn</option>
-            <option value="google">Google Search</option>
+            <option value="google">{isNl ? "Google Zoeken" : "Google Search"}</option>
             <option value="instagram">Instagram</option>
-            <option value="friend">Friend / Colleague</option>
-            <option value="other">Other</option>
+            <option value="friend">{isNl ? "Vriend / Collega" : "Friend / Colleague"}</option>
+            <option value="other">{isNl ? "Anders" : "Other"}</option>
           </select>
         </div>
       </div>
