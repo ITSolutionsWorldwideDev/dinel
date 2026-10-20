@@ -36,19 +36,30 @@
   },
 
 "vacanciesSearch": {
-  "heading": "Vind de baan die bij jou past",
-  "subtext": "Wij bieden meerdere vacatures in ons portfolio. Doorzoek onze online vacatures.",
-  "placeholder": "Zoek vacatures op trefwoord",
+  "heading": "Doorzoek Openstaande Vacatures",
+  "subtext": "Vind uw volgende carrièrestap binnen ons team.",
+  "placeholder": "Zoek op functietitel of trefwoord...",
   "searchButton": "Zoeken",
-  "allVacancies": "Careers"
+  "allVacancies": "Alle Vacatures"
 },
 
 
 "industryWeWork": {
   "heading": "De sectoren waarin wij werken",
+  "badge": "~ Onze Sectoren ~",
+  "title": "Sectoren waarin <highlight>wij werken</highlight> en uitblinken!",
   "infrastructure": "Engineering",
   "energy": "Supply Chain",
-  "oilGas": "IT-diensten"
+  "oilGas": "IT-diensten",
+  "desc1": "Optimalisatie van wereldwijde logistiek, magazijnbeheer en voorraadbeheer voor soepele processen en operationele efficiëntie.",
+  "desc2": "Het stimuleren van innovatie en technische uitmuntendheid binnen complexe bouw-, mechanische en industriële projecten.",
+  "desc3": "Het versterken van digitale transformatie door robuuste softwareoplossingen, cloudinfrastructuur en technische ondersteuning.",
+  "exploreVacancies": "Bekijk Vacatures"
+},
+
+"clientLogos": {
+  "badge": "Vertrouwd Door",
+  "title": "Bedrijven waarmee wij samenwerken"
 },
 
 

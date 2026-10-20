@@ -37,20 +37,31 @@
 
 
   "vacanciesSearch": {
-  "heading": "Find the job that suits you",
-  "subtext": "We offer multiple vacancies in our portfolio. Search our online vacancies.",
-  "placeholder": "Search vacancies by keyword",
-  "searchButton": "To Search",
-  "allVacancies": "Careers"
-},
+    "heading": "Search Open Vacancies",
+    "subtext": "Find your next career opportunity with our team.",
+    "placeholder": "Search by job title or keyword...",
+    "searchButton": "Search",
+    "allVacancies": "All Vacancies"
+  },
 
 
 
 "industryWeWork": {
   "heading": "The Industries we work in",
+  "badge": "~ Our Industries ~",
+  "title": "Industries <highlight>We Work</highlight> in The Finest!",
   "infrastructure": "Engineering",
   "energy": "Supply Chain",
-  "oilGas": "IT Services"
+  "oilGas": "IT Services",
+  "desc1": "Optimizing global logistics, warehouse operations, and inventory management for seamless flow and operational efficiency.",
+  "desc2": "Driving innovation and technical excellence across complex structural, mechanical, and industrial engineering projects.",
+  "desc3": "Empowering digital transformation through robust software solutions, cloud infrastructure, and advanced technical support.",
+  "exploreVacancies": "Explore Vacancies"
+},
+
+"clientLogos": {
+  "badge": "Trusted By",
+  "title": "Companies We Work With"
 },
 
 

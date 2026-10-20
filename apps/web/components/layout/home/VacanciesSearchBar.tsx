@@ -15,6 +15,7 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
 
   const router = useRouter();
   const locale = useLocale() as "en" | "nl";
+  const isNl = locale === "nl";
 
   // Live filtered jobs for auto-suggestion dropdown
   const filteredJobs = useMemo(() => {
@@ -61,10 +62,12 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
       <div className="w-full relative z-10">
         <div className="text-center mb-6">
           <h2 className="text-xl md:text-2xl font-black text-[#0d2b33] tracking-tight mb-2">
-            Search Open Vacancies
+            {isNl ? "Doorzoek Openstaande Vacatures" : "Search Open Vacancies"}
           </h2>
           <p className="text-xs md:text-sm text-gray-600 font-medium max-w-md mx-auto leading-relaxed">
-            Find your next career opportunity with our team.
+            {isNl
+              ? "Vind uw volgende carrièrestap binnen ons team."
+              : "Find your next career opportunity with our team."}
           </p>
         </div>
 
@@ -77,7 +80,11 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
 
             <input
               type="text"
-              placeholder="Search by job title or keyword..."
+              placeholder={
+                isNl
+                  ? "Zoek op functietitel of trefwoord..."
+                  : "Search by job title or keyword..."
+              }
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value);
@@ -119,7 +126,7 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
             onClick={handleSearch}
             className="h-11 px-6 rounded-xl bg-[#f2c40d] text-[#0d2b33] text-xs md:text-sm font-black shadow-lg shadow-[#f2c40d]/20 hover:bg-[#0d2b33] hover:text-white transition-all duration-300 cursor-pointer shrink-0 active:scale-95"
           >
-            Search
+            {isNl ? "Zoeken" : "Search"}
           </button>
 
           <Link
@@ -127,7 +134,7 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
             onClick={handleAllVacancies}
             className="h-11 px-6 rounded-xl border-2 border-[#1a4550]/20 bg-transparent text-[#1a4550] text-xs md:text-sm font-black hover:bg-[#1a4550] hover:text-white hover:border-[#1a4550] transition-all duration-300 cursor-pointer flex items-center justify-center shrink-0 active:scale-95 shadow-sm"
           >
-            All Vacancies
+            {isNl ? "Alle Vacatures" : "All Vacancies"}
           </Link>
         </div>
       </div>

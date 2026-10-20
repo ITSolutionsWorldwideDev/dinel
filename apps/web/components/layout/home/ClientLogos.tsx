@@ -1,5 +1,6 @@
 // components/home/ClientLogos.tsx
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
 const logos = [
   { src: "/assets/logo/albelli.webp", alt: "Albelli" },
@@ -12,7 +13,8 @@ const logos = [
   { src: "/assets/logo/SSL-Electrotechneik_temp.webp", alt: "SSL Electrotechniek" },
 ];
 
-export default function ClientLogos() {
+export default async function ClientLogos() {
+  const t = await getTranslations("clientLogos");
   const track = [...logos, ...logos];
 
   return (
@@ -22,12 +24,12 @@ export default function ClientLogos() {
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="w-8 h-[3px] bg-[#f2c40d] rounded-full" />
             <span className="text-xs font-black tracking-[0.2em] uppercase text-[#1a4550]">
-              Trusted By
+              {t("badge")}
             </span>
             <span className="w-8 h-[3px] bg-[#f2c40d] rounded-full" />
           </div>
           <h2 className="text-3xl md:text-4xl font-black text-[#0d2b33] tracking-tight">
-            Companies We Work With
+            {t("title")}
           </h2>
         </div>
       </div>

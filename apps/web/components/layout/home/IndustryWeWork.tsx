@@ -21,21 +21,21 @@ export default function IndustryWeWork() {
       name: t("infrastructure"),
       icon: PackageOpen,
       href: { pathname: "/careers" as const, query: { category: "Supply Chain" } },
-      description: "Optimizing global logistics, warehouse operations, and inventory management for seamless flow and operational efficiency.",
+      description: t("desc1"),
     },
     {
       id: 2,
       name: t("energy"),
       icon: HardHat,
       href: { pathname: "/careers" as const, query: { category: "Engineering" } },
-      description: "Driving innovation and technical excellence across complex structural, mechanical, and industrial engineering projects.",
+      description: t("desc2"),
     },
     {
       id: 3,
       name: t("oilGas"),
       icon: Monitor,
       href: { pathname: "/careers" as const, query: { category: "IT" } },
-      description: "Empowering digital transformation through robust software solutions, cloud infrastructure, and advanced technical support.",
+      description: t("desc3"),
     },
   ];
 
@@ -59,10 +59,12 @@ export default function IndustryWeWork() {
           
           <div className="text-center mb-16">
             <span className="inline-block py-1.5 px-4 rounded-full bg-[#1a4550]/10 text-[#1a4550] text-xs font-bold tracking-wider uppercase mb-3">
-              ~ Our Industries ~
+              {t("badge")}
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#0d2b33] tracking-tight">
-              Industries <span className="text-[#1a4550]">We Work</span> in The Finest!
+              {t.rich("title", {
+                highlight: (chunks) => <span className="text-[#1a4550]">{chunks}</span>,
+              })}
             </h2>
           </div>
 
@@ -93,7 +95,7 @@ export default function IndustryWeWork() {
 
                   <Link href={item.href} className="w-full">
                     <div className="w-full bg-[#1a4550] text-white rounded-xl py-3 px-4 font-semibold flex items-center justify-between text-xs hover:bg-[#0d2b33] transition-all duration-300 shadow-md shadow-[#1a4550]/20">
-                      <span>Explore Vacancies</span>
+                      <span>{t("exploreVacancies")}</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
