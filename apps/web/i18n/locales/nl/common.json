@@ -826,9 +826,48 @@
     }
   },
 
+  "footer": {
+    "newsletterTitle": "Blijf op de hoogte van onze nieuwste vacatures",
+    "newsletterDesc": "Meld u aan voor de nieuwste staffing-inzichten, markttrends en exclusieve updates direct in uw inbox.",
+    "emailPlaceholder": "Vul uw e-mailadres in",
+    "subscribeBtn": "Aanmelden",
+    "brandName": "Staff Outsourcing",
+    "brandDesc": "Hoogwaardige personeels-, wervings- en outsourcingoplossingen om uw organisatie efficiënt te laten schalen.",
+    "headings": {
+      "navigation": "Navigatie",
+      "company": "Bedrijf",
+      "rolesWePlace": "Functies waarin we plaatsen",
+      "howWeHire": "Hoe we werven"
+    },
+    "mainLinks": {
+      "home": "Home",
+      "about": "Over ons",
+      "ourApproach": "Onze aanpak",
+      "contactUs": "Contact"
+    },
+    "companyLinks": {
+      "privacyPolicy": "Privacybeleid",
+      "termsConditions": "Algemene voorwaarden",
+      "contact": "Contact"
+    },
+    "services": {
+      "itDevelopment": "IT & Ontwikkeling",
+      "designServices": "Ontwerpdiensten",
+      "marketingAnalytics": "Marketing & Analytics",
+      "adminBusinessSupport": "Administratie & Bedrijfsondersteuning",
+      "financeAccounting": "Financiën & Boekhouding",
+      "travelReservations": "Reizen & Reserveringen"
+    },
+    "categories": {
+      "recruitmentOutsourcing": "Werving & Selectie",
+      "recruitmentProcessOutsourcing": "Recruitment Process Outsourcing",
+      "temporaryStaffing": "Tijdelijke Staffing",
+      "payrolling": "Payrolling"
+    },
+    "address": "Mandenmakerstraat 100C, 3194 DG Hoogvliet Rotterdam, Nederland",
+    "copyright": "© {year} Staff Outsourcing. Alle rechten voorbehouden."
+  },
 
-
-  
   "recruitmentOutsourcing": {
     "meta": {
       "title": "Werving & Selectie (Recruitment Outsourcing) | Staff Outsourcing",

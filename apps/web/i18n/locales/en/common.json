@@ -831,26 +831,46 @@
 
 
   "footer": {
-  "brandName": "Staff Outsourcing ",
-  "brandDescription": "Your staffing partner in the Netherlands, connecting Dutch companies with EU-based talent.",
-  "headings": { "company": "Company", "jobSeekers": "Job seekers", "contact": "Contact" },
-  "links": {
-    "about": "About us",
-    "howItWorks": "How it works",
-    "industries": "Industries",
-    "faq": "FAQ",
-    "contact": "Contact us",
-    "vacancies": "Vacancies",
-    "allVacancies": "All vacancies",
-    "howToApply": "How to apply",
-    "privacy": "Privacy policy",
-    "terms": "Terms & conditions"
+    "newsletterTitle": "Stay Updated with Our Latest Jobs",
+    "newsletterDesc": "Subscribe to get the latest staffing insights, industry trends, and exclusive updates directly to your inbox.",
+    "emailPlaceholder": "Enter your email address",
+    "subscribeBtn": "Subscribe",
+    "brandName": "Staff Outsourcing",
+    "brandDesc": "Providing top-tier staffing, recruitment, and outsourcing solutions to scale your business globally with efficiency.",
+    "headings": {
+      "navigation": "Navigation",
+      "company": "Company",
+      "rolesWePlace": "Roles We Place",
+      "howWeHire": "How We Hire"
+    },
+    "mainLinks": {
+      "home": "Home",
+      "about": "About",
+      "ourApproach": "Our Approach",
+      "contactUs": "Contact Us"
+    },
+    "companyLinks": {
+      "privacyPolicy": "Privacy Policy",
+      "termsConditions": "Terms & Conditions",
+      "contact": "Contact"
+    },
+    "services": {
+      "itDevelopment": "IT & Development",
+      "designServices": "Design Services",
+      "marketingAnalytics": "Marketing & Analytics",
+      "adminBusinessSupport": "Administration & Business Support",
+      "financeAccounting": "Finance & Accounting",
+      "travelReservations": "Travel & Reservations"
+    },
+    "categories": {
+      "recruitmentOutsourcing": "Recruitment Outsourcing",
+      "recruitmentProcessOutsourcing": "Recruitment Process Outsourcing",
+      "temporaryStaffing": "Temporary Staffing",
+      "payrolling": "Payrolling"
+    },
+    "address": "Mandenmakerstraat 100C, 3194 DG Hoogvliet Rotterdam, Netherlands",
+    "copyright": "© {year} Staff Outsourcing. All rights reserved."
   },
-  "address": "Netherlands",
-  "phone": "+31 00 000 0000",
-  "email": "info@example.com",
-  "copyright": "© {year} . All rights reserved."
-},
 
 
 
