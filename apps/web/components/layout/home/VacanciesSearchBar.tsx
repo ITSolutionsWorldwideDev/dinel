@@ -62,7 +62,7 @@ export default function VacanciesSearchBar({ onSearch }: VacanciesSearchBarProps
       <div className="w-full relative z-10">
         <div className="text-center mb-6">
           <h2 className="text-xl md:text-2xl font-black text-[#0d2b33] tracking-tight mb-2">
-            {isNl ? "Doorzoek Openstaande Vacatures" : "Search Open Vacancies"}
+            {isNl ? "Zoek Binnen Openstaande Vacatures" : "Search Open Vacancies"}
           </h2>
           <p className="text-xs md:text-sm text-gray-600 font-medium max-w-md mx-auto leading-relaxed">
             {isNl
