@@ -23,12 +23,16 @@ export type TalentGenieJob = {
   location: string | null;
   employment_type: string | null;
   pdf_url: string | null;
+  target_portal?: string | null;
+  role_overview?: string | null;
+  responsibilities?: string[];
+  requirements?: string[];
 };
 
-// Fetch all published jobs from Talent Genie
+// Fetch published jobs for Staff Outsourcing from Talent Genie API
 export async function getTalentGenieJobs(): Promise<TalentGenieJob[]> {
   try {
-    const res = await fetch(`${TALENT_GENIE_API_URL}/website/jobs`, {
+    const res = await fetch(`${TALENT_GENIE_API_URL}/website/jobs?portal=staff_outsourcing`, {
       next: { revalidate: 15 },
     });
     if (!res.ok) {

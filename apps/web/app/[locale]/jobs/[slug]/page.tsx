@@ -102,31 +102,108 @@ async function resolveUnifiedJob(
   return null;
 }
 
+function cleanJobDescription(rawDesc: string): string {
+  if (!rawDesc) return "";
+  const lines = rawDesc.split("\n");
+  const introLines: string[] = [];
+  const stopHeaders = [
+    "responsibilit",
+    "requirement",
+    "what you will do",
+    "qualifications",
+    "what we offer",
+    "tasks",
+    "duties",
+  ];
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    const lower = trimmed.toLowerCase();
+    if (
+      stopHeaders.some(
+        (h) =>
+          lower.includes(h) &&
+          (lower.endsWith(":") || trimmed.startsWith("#") || trimmed.startsWith("*")),
+      )
+    ) {
+      break;
+    }
+    if (trimmed.startsWith("-") || trimmed.startsWith("•") || trimmed.startsWith("* ")) {
+      break;
+    }
+    introLines.push(trimmed);
+  }
+
+  const result = introLines.filter(Boolean).join("\n\n").trim();
+  return result || rawDesc.split("\n\n")[0].trim() || rawDesc;
+}
+
 function transformTalentGenieJob(
   tgJob: TalentGenieJob,
   slug: string,
   locale: "en" | "nl",
 ): UnifiedJobDetail {
-  // Extract bullet points or sentences from description for responsibilities
-  const descLines = tgJob.description
-    ? tgJob.description
-        .split("\n")
-        .map((l) => l.trim())
-        .filter(Boolean)
-    : [];
-
-  const respItems = descLines
-    .filter((l) => l.startsWith("-") || l.startsWith("•") || l.startsWith("*"))
-    .map((l) => l.replace(/^[-•*]\s*/, "").trim());
-
-  // Category
+  // Category mapping
   let category =
     locale === "nl" ? "Informatie Technologie" : "Information Technology";
+  const lowerTitle = tgJob.title.toLowerCase();
   if (
-    tgJob.title.toLowerCase().includes("power bi") ||
-    tgJob.title.toLowerCase().includes("data")
+    lowerTitle.includes("power bi") ||
+    lowerTitle.includes("data") ||
+    lowerTitle.includes("analytics")
   ) {
     category = "Data & Analytics";
+  } else if (
+    lowerTitle.includes("engineer") ||
+    lowerTitle.includes("mechanical") ||
+    lowerTitle.includes("structural")
+  ) {
+    category = "Engineering";
+  } else if (
+    lowerTitle.includes("supply") ||
+    lowerTitle.includes("warehouse") ||
+    lowerTitle.includes("logistics")
+  ) {
+    category = "Supply Chain";
+  }
+
+  // 1. Structured responsibilities
+  let responsibilities: string[] = [];
+  if (tgJob.responsibilities && tgJob.responsibilities.length > 0) {
+    responsibilities = tgJob.responsibilities;
+  } else {
+    const descLines = tgJob.description
+      ? tgJob.description
+          .split("\n")
+          .map((l) => l.trim())
+          .filter(Boolean)
+      : [];
+    const bulletItems = descLines
+      .filter((l) => l.startsWith("-") || l.startsWith("•") || l.startsWith("*"))
+      .map((l) => l.replace(/^[-•*]\s*/, "").trim());
+    responsibilities =
+      bulletItems.length > 0
+        ? bulletItems
+        : descLines.slice(1, Math.min(descLines.length, 6));
+  }
+
+  // 2. Structured requirements
+  let requirements: string[] = [];
+  if (tgJob.requirements && tgJob.requirements.length > 0) {
+    requirements = tgJob.requirements;
+  } else if (tgJob.required_skills && tgJob.required_skills.length > 0) {
+    requirements = tgJob.required_skills;
+  } else {
+    requirements =
+      locale === "nl"
+        ? ["Relevante werkervaring", "Goede communicatieve vaardigheden"]
+        : ["Relevant professional experience", "Strong communication skills"];
+  }
+
+  // 3. Clean description (About the role intro, avoiding mixed-in section headers)
+  let description = tgJob.role_overview || tgJob.ai_summary;
+  if (!description) {
+    description = cleanJobDescription(tgJob.description);
   }
 
   return {
@@ -138,15 +215,9 @@ function transformTalentGenieJob(
     location:
       tgJob.location ||
       (locale === "nl" ? "Rotterdam, Nederland" : "Rotterdam, Netherlands"),
-    description: tgJob.ai_summary || descLines[0] || tgJob.description,
-    responsibilities:
-      respItems.length > 0
-        ? respItems
-        : descLines.slice(1, Math.min(descLines.length, 6)),
-    requirements:
-      tgJob.required_skills && tgJob.required_skills.length > 0
-        ? tgJob.required_skills
-        : ["Relevant professional experience", "Strong communication skills"],
+    description: description || tgJob.title,
+    responsibilities,
+    requirements,
     vacancyId: tgJob.vacancy_id,
   };
 }
