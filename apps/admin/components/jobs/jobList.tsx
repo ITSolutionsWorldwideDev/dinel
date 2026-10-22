@@ -233,32 +233,46 @@ export default function JobsPage() {
 
   return (
     <>
-      <div className="page-wrapper">
-        <div className="content">
-          <div className="page-header flex justify-between items-center mb-4">
+      <div className="page-wrapper bg-[#f8fafc]">
+        <div className="content p-6 max-w-7xl mx-auto space-y-6">
+          <div className="page-header flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4 border-b border-slate-200">
             <div>
-              <h4 className="text-lg font-semibold">Jobs List</h4>
-              <h6 className="text-gray-500">Manage Jobs</h6>
+              <h1 className="text-3xl font-black text-slate-900 tracking-tight">Jobs List</h1>
+              <p className="text-sm font-semibold text-slate-500 mt-1">Manage, edit, and publish job vacancies</p>
             </div>
 
-            <div className="flex gap-2">
-              <SyncButton
-                label="Jobs"
-                endpoint="/api/jobs/syncCarerix"
-                onDone={fetchJobs}
-              />
+            <div className="flex items-center gap-3">
+              <button
+                onClick={async () => {
+                  if (confirm("Are you sure you want to delete ALL old jobs?")) {
+                    try {
+                      setLoading(true);
+                      await fetch("/api/jobs/clear-all", { method: "POST" });
+                      fetchJobs();
+                    } catch (e) {
+                      console.error(e);
+                    } finally {
+                      setLoading(false);
+                    }
+                  }
+                }}
+                className="px-4 py-2.5 rounded-xl border border-red-200 bg-red-50 text-red-600 hover:bg-red-100 text-xs font-bold flex items-center gap-1.5 transition"
+              >
+                <TbTrash size={15} />
+                Delete All Old Jobs
+              </button>
               <button
                 onClick={() => router.push(`/jobs/create`)}
-                className="btn btn-info flex flex-row gap-2"
+                className="px-5 py-2.5 rounded-xl bg-[#0d2b33] hover:bg-[#153e49] text-white text-xs font-bold flex items-center gap-2 shadow-sm transition"
               >
-                <TbCirclePlus size={18} />
+                <TbCirclePlus size={16} />
                 Add Job
               </button>
             </div>
           </div>
 
-          <div className="card table-list-card">
-            <div className="card-header flex justify-between items-center">
+          <div className="card table-list-card bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+            <div className="card-header bg-white border-b border-slate-100 px-6 py-4 flex justify-between items-center">
               <FilterBar
                 filters={filters}
                 onChange={handleFilterChange}
@@ -266,7 +280,7 @@ export default function JobsPage() {
               />
             </div>
 
-            <div className="card-body overflow-auto">
+            <div className="card-body bg-white p-4 overflow-auto">
               {loading ? (
                 <p className="text-center py-6">Loading...</p>
               ) : (

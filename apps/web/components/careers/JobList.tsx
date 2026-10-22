@@ -1,12 +1,7 @@
 import { getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { MapPin } from "lucide-react";
-import { localizeJobCategories, allJobs } from "@/app/data/jobs";
-import {
-  getTalentGenieJobs,
-  talentGenieJobSlug,
-  type TalentGenieJob,
-} from "@/lib/talentgenie/client";
+import { getDbPublishedJobs } from "@/lib/jobs/dbJobs";
 
 interface UnifiedJobItem {
   slug: string;
@@ -29,78 +24,41 @@ function normalizeTitle(t: string): string {
 export default async function JobList() {
   const locale = (await getLocale()) as "en" | "nl";
 
-  // 1. Load primary Staff Outsourcing jobs from jobs.ts (with full Dutch & English translations)
-  const hardcodedCategories = localizeJobCategories(locale);
+  // Load published jobs from Staff Outsourcing admin database
+  const dbJobs = await getDbPublishedJobs();
 
-  // 2. Load live published jobs from Talent Genie API
-  const tgJobs: TalentGenieJob[] = await getTalentGenieJobs();
-
-  // Combine into unified groups with strict deduplication
+  // Combine into unified groups by category
   const groupsMap = new Map<string, UnifiedJobItem[]>();
-  const seenJobTitles = new Set<string>();
 
-  // Check which jobs are currently active in Talent Genie
-  const activeTgTitles = new Set(tgJobs.map((j) => normalizeTitle(j.title)));
-  const useTgFilter = tgJobs.length > 0;
-
-  // Add primary Staff Outsourcing jobs (only if still active in Talent Genie, or fallback if TG offline)
-  for (const group of hardcodedCategories) {
-    const list: UnifiedJobItem[] = [];
-    for (const j of group.jobs) {
-      const norm = normalizeTitle(j.title);
-      // If Talent Genie is connected, only display jobs that exist in Talent Genie!
-      if (useTgFilter && !activeTgTitles.has(norm)) {
-        continue;
-      }
-      if (!seenJobTitles.has(norm)) {
-        seenJobTitles.add(norm);
-        list.push({
-          slug: j.slug,
-          title: j.title,
-          category: group.category,
-          type: j.type,
-          status: j.status,
-          location: j.location,
-        });
+  for (const job of dbJobs) {
+    let categoryName = job.sector_name || job.department;
+    if (!categoryName) {
+      const lower = job.title.toLowerCase();
+      if (lower.includes("data") || lower.includes("power bi") || lower.includes("analytics")) {
+        categoryName = "Data & Analytics";
+      } else if (lower.includes("engineer") || lower.includes("structural") || lower.includes("mechanical")) {
+        categoryName = locale === "nl" ? "Engineering" : "Engineering";
+      } else if (lower.includes("supply") || lower.includes("logistics") || lower.includes("warehouse")) {
+        categoryName = locale === "nl" ? "Supply Chain" : "Supply Chain";
+      } else {
+        categoryName = locale === "nl" ? "Informatie Technologie" : "Information Technology";
       }
     }
-    if (list.length > 0) {
-      groupsMap.set(group.category, list);
-    }
-  }
 
-  // Add any additional unique jobs created directly in Talent Genie
-  for (const tg of tgJobs) {
-    const norm = normalizeTitle(tg.title);
-    if (seenJobTitles.has(norm)) {
-      // Already displayed via primary Staff Outsourcing list — skip duplicate!
-      continue;
-    }
-    seenJobTitles.add(norm);
-
-    const slug = talentGenieJobSlug(tg);
-
-    // Map TG department or title to category
-    let categoryName =
-      locale === "nl" ? "Informatie Technologie" : "Information Technology";
-    const lowerTitle = tg.title.toLowerCase();
-    if (lowerTitle.includes("data") || lowerTitle.includes("power bi") || lowerTitle.includes("analytics")) {
-      categoryName = locale === "nl" ? "Data & Analytics" : "Data & Analytics";
-    } else if (lowerTitle.includes("engineer") || lowerTitle.includes("structural") || lowerTitle.includes("mechanical")) {
-      categoryName = locale === "nl" ? "Engineering" : "Engineering";
-    } else if (lowerTitle.includes("supply") || lowerTitle.includes("logistics") || lowerTitle.includes("warehouse") || lowerTitle.includes("procurement")) {
-      categoryName = locale === "nl" ? "Supply Chain" : "Supply Chain";
-    }
+    const typeDisplay =
+      job.employment_type === "FULL_TIME"
+        ? locale === "nl" ? "Fulltime" : "Full-Time"
+        : job.employment_type === "PART_TIME"
+        ? locale === "nl" ? "Parttime" : "Part-Time"
+        : job.employment_type || (locale === "nl" ? "Fulltime" : "Full-Time");
 
     const item: UnifiedJobItem = {
-      slug,
-      title: tg.title,
+      slug: job.slug || String(job.id),
+      title: job.title,
       category: categoryName,
-      type: tg.employment_type || (locale === "nl" ? "Fulltime" : "Full-Time"),
+      type: typeDisplay,
       status: locale === "nl" ? "Actief" : "Active",
-      location:
-        tg.location ||
-        (locale === "nl" ? "Rotterdam, Nederland" : "Rotterdam, Netherlands"),
+      location: job.location || (locale === "nl" ? "Rotterdam, Nederland" : "Rotterdam, Netherlands"),
     };
 
     if (!groupsMap.has(categoryName)) {

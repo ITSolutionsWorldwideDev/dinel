@@ -1,4 +1,3 @@
-// apps/admin/app/layout.tsx
 import type { Metadata } from "next";
 import SessionProviderWrapper from "@/components/SessionProviderWrapper";
 

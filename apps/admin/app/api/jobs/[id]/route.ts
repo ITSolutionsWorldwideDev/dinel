@@ -99,6 +99,8 @@ export async function PUT(
           value = value ? new Date(value) : null;
         } else if (uuidFields.includes(key)) {
           value = value || null;
+        } else if (key === "country_node") {
+          value = value && !isNaN(Number(value)) ? Number(value) : null;
         }
 
         values.push(value);

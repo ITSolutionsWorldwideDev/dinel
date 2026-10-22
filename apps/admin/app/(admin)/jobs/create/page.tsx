@@ -7,7 +7,7 @@ export default function CreateJobPage() {
     <>
       <div className="page-wrapper">
         <div className="content">
-          <CreateJobClient />;
+          <CreateJobClient />
         </div>
       </div>
     </>

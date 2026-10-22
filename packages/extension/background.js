@@ -1,5 +1,5 @@
 // packages/extension/background.js
-const API_URL = "http://localhost:3002/api/linkedin/import";
+const API_URL = "http://localhost:3000/api/linkedin/import";
 
 async function sendToApi(payload) {
   try {

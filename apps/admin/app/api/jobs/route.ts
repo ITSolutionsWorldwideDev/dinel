@@ -133,9 +133,11 @@ export async function POST(req: Request) {
       closed_at,
     } = body;
 
-    if (!title || !description || !employment_type || !workplace_type) {
+    const effectiveDescription = description || intro_information || title;
+
+    if (!title || !effectiveDescription || !employment_type || !workplace_type) {
       return NextResponse.json(
-        { error: "Missing required fields" },
+        { error: "Missing required fields (Title, Description/Overview, Employment Type, Workplace Type)" },
         { status: 400 },
       );
     }
@@ -188,7 +190,7 @@ export async function POST(req: Request) {
       [
         title,
         slug,
-        description,
+        effectiveDescription,
         location || null,
         employment_type,
         workplace_type,
@@ -204,7 +206,7 @@ export async function POST(req: Request) {
         work_full_address || null,
         work_postal_code || null,
         work_street || null,
-        country_node || null,
+        country_node && !isNaN(Number(country_node)) ? Number(country_node) : null,
         vacancy_information || null,
         intro_information || null,
         company_information || null,
@@ -219,52 +221,10 @@ export async function POST(req: Request) {
     );
 
     // ──────────────────────────────────────────────────────────────────
-    // Sync with Talent Genie (HR App)
+    // Talent Genie Sync (Temporarily unlinked as requested - CVs remain active)
     // ──────────────────────────────────────────────────────────────────
-    const TALENT_GENIE_API_URL =
-      process.env.TALENT_GENIE_API_URL ||
-      "https://it-solution-code-hr-app-backend.vercel.app/api";
-
-    (async () => {
-      try {
-        const skillsList = requirements
-          ? String(requirements)
-              .split(",")
-              .map((s: string) => s.trim())
-              .filter(Boolean)
-          : [];
-
-        const tgRes = await fetch(`${TALENT_GENIE_API_URL}/vacancies/`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            title,
-            description,
-            department_id: 8, // IT & Software Development default
-            required_skills: skillsList,
-            experience_level: experience_level || "MID",
-            status: "open",
-          }),
-        });
-
-        if (tgRes.ok) {
-          const tgData = await tgRes.json();
-          const tgVacancyId = tgData.id || tgData.vacancy_id;
-          if (tgVacancyId) {
-            await fetch(`${TALENT_GENIE_API_URL}/integrations/website/publish`, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ vacancy_id: tgVacancyId }),
-            });
-            console.log(
-              `[TalentGenie] Job "${title}" synced and published as vacancy ${tgVacancyId}`,
-            );
-          }
-        }
-      } catch (tgErr) {
-        console.error("[TalentGenie] Admin job sync error (non-fatal):", tgErr);
-      }
-    })();
+    // const TALENT_GENIE_API_URL = process.env.TALENT_GENIE_API_URL || "https://it-solution-code-hr-app-backend.vercel.app/api";
+    // Sync to Talent Genie is paused so jobs posted here stay dedicated to Staff Outsourcing without mixing into ITWW.
 
     return NextResponse.json(result.rows[0], { status: 201 });
   } catch (err) {

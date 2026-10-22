@@ -35,10 +35,10 @@ export default function FilterBar({ filters, onChange, onClear }: Props) {
       {/* SEARCH */}
       <input
         type="text"
-        placeholder="Search job title / location"
+        placeholder="Search job title or location..."
         value={filters.search || ""}
         onChange={(e) => onChange("search", e.target.value)}
-        className="px-3 py-2 border rounded text-sm w-64"
+        className="px-3.5 py-2 bg-white border border-slate-300 text-slate-900 rounded-lg text-sm font-medium placeholder-slate-400 w-64 focus:border-[#0d2b33] focus:ring-1 focus:ring-[#0d2b33] outline-none transition"
       />
 
       {Object.entries(OPTIONS).map(([key, items]) => (
@@ -48,9 +48,9 @@ export default function FilterBar({ filters, onChange, onClear }: Props) {
           onChange={(e) =>
             onChange(key as keyof Filters, e.target.value)
           }
-          className="px-3 py-2 border rounded text-sm"
+          className="px-3 py-2 bg-white border border-slate-300 text-slate-800 rounded-lg text-sm font-medium focus:border-[#0d2b33] outline-none capitalize transition"
         >
-          <option value="">{key.replace("_", " ")}</option>
+          <option value="">All {key.replace("_", " ")}</option>
           {items.map((item) => (
             <option key={item} value={item}>
               {item.replace("_", " ")}
@@ -61,7 +61,7 @@ export default function FilterBar({ filters, onChange, onClear }: Props) {
 
       <button
         onClick={onClear}
-        className="px-3 py-2 text-sm border rounded bg-gray-100 hover:bg-gray-200"
+        className="px-4 py-2 text-sm font-bold border border-slate-300 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition"
       >
         Clear
       </button>

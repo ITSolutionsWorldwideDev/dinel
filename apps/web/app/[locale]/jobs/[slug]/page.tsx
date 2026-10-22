@@ -6,6 +6,11 @@ import { getJobBySlug, localizeJob, allJobs } from "@/app/data/jobs";
 import EnquiryForm from "@/components/forms/EnquiryForm";
 import { getCanonicalUrl } from "@/lib/seo";
 import {
+  getDbJobBySlug,
+  getDbPublishedJobs,
+  parseListItems,
+} from "@/lib/jobs/dbJobs";
+import {
   getTalentGenieJobs,
   getTalentGenieJobById,
   talentGenieJobSlug,
@@ -53,50 +58,62 @@ async function resolveUnifiedJob(
   slug: string,
   locale: "en" | "nl",
 ): Promise<UnifiedJobDetail | null> {
-  // 1. Check if it's a Talent Genie slug (tg-{vacancy_id}-...)
+  // 1. Resolve from Staff Outsourcing Admin database
+  const dbJob = await getDbJobBySlug(slug);
+  if (dbJob) {
+    let categoryName = dbJob.sector_name || dbJob.department;
+    if (!categoryName) {
+      const lower = dbJob.title.toLowerCase();
+      if (lower.includes("data") || lower.includes("power bi") || lower.includes("analytics")) {
+        categoryName = "Data & Analytics";
+      } else if (lower.includes("engineer") || lower.includes("structural") || lower.includes("mechanical")) {
+        categoryName = locale === "nl" ? "Engineering" : "Engineering";
+      } else if (lower.includes("supply") || lower.includes("logistics") || lower.includes("warehouse")) {
+        categoryName = locale === "nl" ? "Supply Chain" : "Supply Chain";
+      } else {
+        categoryName = locale === "nl" ? "Informatie Technologie" : "Information Technology";
+      }
+    }
+
+    const typeDisplay =
+      dbJob.employment_type === "FULL_TIME"
+        ? locale === "nl" ? "Fulltime" : "Full-Time"
+        : dbJob.employment_type === "PART_TIME"
+        ? locale === "nl" ? "Parttime" : "Part-Time"
+        : dbJob.employment_type || (locale === "nl" ? "Fulltime" : "Full-Time");
+
+    const responsibilities = parseListItems(dbJob.vacancy_information);
+    const requirements = parseListItems(dbJob.requirements);
+    const description = dbJob.intro_information || dbJob.description || dbJob.title;
+
+    return {
+      slug: dbJob.slug || String(dbJob.id),
+      title: dbJob.title,
+      category: categoryName,
+      type: typeDisplay,
+      status: locale === "nl" ? "Actief" : "Active",
+      location: dbJob.location || (locale === "nl" ? "Rotterdam, Nederland" : "Rotterdam, Netherlands"),
+      description,
+      responsibilities: responsibilities.length > 0 ? responsibilities : [
+        locale === "nl"
+          ? "Uitvoeren van werkzaamheden conform de functieomschrijving."
+          : "Execute core responsibilities as outlined for the role.",
+      ],
+      requirements: requirements.length > 0 ? requirements : [
+        locale === "nl"
+          ? "Relevante werkervaring en sterke communicatieve vaardigheden."
+          : "Relevant professional experience and strong communication skills.",
+      ],
+    };
+  }
+
+  // 2. Fallback check if it's a legacy Talent Genie slug
   const tgVacancyId = parseVacancyIdFromSlug(slug);
   if (tgVacancyId) {
     const tgJob = await getTalentGenieJobById(tgVacancyId);
     if (tgJob) {
       return transformTalentGenieJob(tgJob, slug, locale);
     }
-  }
-
-  // 2. Check hardcoded jobs in jobs.ts
-  const rawJob = getJobBySlug(slug);
-  if (rawJob) {
-    const allTgJobs = await getTalentGenieJobs();
-    const matchedTg = allTgJobs.find(
-      (j) => normalizeTitle(j.title) === normalizeTitle(rawJob.title.en),
-    );
-
-    // If Talent Genie is connected, and this job is NOT in Talent Genie (deleted/unpublished), return null
-    if (allTgJobs.length > 0 && !matchedTg) {
-      return null;
-    }
-
-    const localized = localizeJob(rawJob, locale);
-    return {
-      slug: localized.slug,
-      title: localized.title,
-      category: localized.category,
-      type: localized.type,
-      status: localized.status,
-      location: localized.location,
-      description: localized.description,
-      responsibilities: localized.responsibilities || [],
-      requirements: localized.requirements || [],
-      vacancyId: matchedTg?.vacancy_id,
-    };
-  }
-
-  // 3. Fallback: Check if any Talent Genie job matches the title slug
-  const allTgJobs = await getTalentGenieJobs();
-  const matchedTg = allTgJobs.find(
-    (j) => talentGenieJobSlug(j) === slug || String(j.vacancy_id) === slug,
-  );
-  if (matchedTg) {
-    return transformTalentGenieJob(matchedTg, slug, locale);
   }
 
   return null;
@@ -135,7 +152,7 @@ function cleanJobDescription(rawDesc: string): string {
   }
 
   const result = introLines.filter(Boolean).join("\n\n").trim();
-  return result || rawDesc.split("\n\n")[0].trim() || rawDesc;
+  return result || rawDesc.split("\n\n")[0]?.trim() || rawDesc;
 }
 
 function transformTalentGenieJob(
@@ -224,10 +241,8 @@ function transformTalentGenieJob(
 
 // Pre-render static pages for build time
 export async function generateStaticParams() {
-  const hardcodedSlugs = allJobs.map((j) => ({ slug: j.slug }));
-  const tgJobs = await getTalentGenieJobs();
-  const tgSlugs = tgJobs.map((j) => ({ slug: talentGenieJobSlug(j) }));
-  return [...hardcodedSlugs, ...tgSlugs];
+  const dbJobs = await getDbPublishedJobs();
+  return dbJobs.map((j) => ({ slug: j.slug || String(j.id) }));
 }
 
 // Dynamic <title> / meta description per job

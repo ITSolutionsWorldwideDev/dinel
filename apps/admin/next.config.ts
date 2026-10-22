@@ -14,7 +14,7 @@ const nextConfig = {
   sassOptions: {
     includePaths: [join(__dirname, "styles")],
   },
-  transpilePackages: ["@acme/matching"],
+  transpilePackages: ["@acme/matching", "@repo/ui", "@acme/ui"],
 };
 
 export default nextConfig;
