@@ -51,6 +51,8 @@ interface UnifiedJobDetail {
   description: string;
   responsibilities: string[];
   requirements: string[];
+  whatWeOffer?: string[];
+  additionalInformation?: string;
   vacancyId?: number;
 }
 
@@ -84,6 +86,8 @@ async function resolveUnifiedJob(
 
     const responsibilities = parseListItems(dbJob.vacancy_information);
     const requirements = parseListItems(dbJob.requirements);
+    const whatWeOffer = parseListItems(dbJob.offer_information);
+    const additionalInformation = dbJob.additional_information?.trim() || "";
     const description = dbJob.intro_information || dbJob.description || dbJob.title;
 
     return {
@@ -94,16 +98,10 @@ async function resolveUnifiedJob(
       status: locale === "nl" ? "Actief" : "Active",
       location: dbJob.location || (locale === "nl" ? "Rotterdam, Nederland" : "Rotterdam, Netherlands"),
       description,
-      responsibilities: responsibilities.length > 0 ? responsibilities : [
-        locale === "nl"
-          ? "Uitvoeren van werkzaamheden conform de functieomschrijving."
-          : "Execute core responsibilities as outlined for the role.",
-      ],
-      requirements: requirements.length > 0 ? requirements : [
-        locale === "nl"
-          ? "Relevante werkervaring en sterke communicatieve vaardigheden."
-          : "Relevant professional experience and strong communication skills.",
-      ],
+      responsibilities,
+      requirements,
+      whatWeOffer,
+      additionalInformation,
     };
   }
 
@@ -402,7 +400,7 @@ export default async function JobDetailPage({
             {job.requirements && job.requirements.length > 0 && (
               <div className="mb-14 pt-10 border-t border-slate-200">
                 <h2 className="text-xl font-bold text-[#0d2b33] mb-5">
-                  Requirements
+                  {locale === "nl" ? "Vereisten" : "Requirements"}
                 </h2>
                 <ul className="space-y-3">
                   {job.requirements.map((item: string, i: number) => (
@@ -415,6 +413,36 @@ export default async function JobDetailPage({
                     </li>
                   ))}
                 </ul>
+              </div>
+            )}
+
+            {job.whatWeOffer && job.whatWeOffer.length > 0 && (
+              <div className="mb-14 pt-10 border-t border-slate-200">
+                <h2 className="text-xl font-bold text-[#0d2b33] mb-5">
+                  {locale === "nl" ? "Wat wij bieden" : "What we offer"}
+                </h2>
+                <ul className="space-y-3">
+                  {job.whatWeOffer.map((item: string, i: number) => (
+                    <li
+                      key={i}
+                      className="flex gap-3 text-[15px] text-slate-600 leading-relaxed"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#c9a15a] mt-2.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {job.additionalInformation && (
+              <div className="mb-14 pt-10 border-t border-slate-200">
+                <h2 className="text-xl font-bold text-[#0d2b33] mb-5">
+                  {locale === "nl" ? "Aanvullende informatie" : "Additional Information"}
+                </h2>
+                <div className="text-slate-600 leading-relaxed text-[15px] max-w-none whitespace-pre-line">
+                  {job.additionalInformation}
+                </div>
               </div>
             )}
 

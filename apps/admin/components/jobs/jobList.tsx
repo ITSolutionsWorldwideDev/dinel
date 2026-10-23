@@ -134,6 +134,34 @@ export default function JobsPage() {
   };
 
   /* ------------------------------------
+       Publish / Unpublish Status Update
+    ------------------------------------ */
+  const [updatingStatusId, setUpdatingStatusId] = useState<string | null>(null);
+
+  const handleUpdateStatus = async (
+    jobId: string,
+    newStatus: "PUBLISHED" | "DRAFT",
+  ) => {
+    try {
+      setUpdatingStatusId(jobId);
+      const res = await fetch(`/api/jobs/${jobId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: newStatus }),
+      });
+      if (!res.ok) {
+        throw new Error("Failed to update status");
+      }
+      await fetchJobs();
+    } catch (err) {
+      console.error("Failed to update status", err);
+      alert("Failed to update status. Please try again.");
+    } finally {
+      setUpdatingStatusId(null);
+    }
+  };
+
+  /* ------------------------------------
          Table Columns
       ------------------------------------ */
 
@@ -157,7 +185,7 @@ export default function JobsPage() {
       render: (_: any, record: Job) => (
         <button
           onClick={() => router.push(`/jobs/${record.job_id}/view`)}
-          className="text-blue-600 hover:underline font-medium"
+          className="text-blue-600 hover:underline font-medium text-left"
         >
           {record.title}
         </button>
@@ -203,15 +231,52 @@ export default function JobsPage() {
     },
     {
       title: "Status",
-      render: (_: any, r: Job) => <StatusBadge status={r.status} />,
+      render: (_: any, r: Job) => (
+        <div className="flex items-center gap-2">
+          <StatusBadge status={r.status} />
+          {r.status === "DRAFT" && (
+            <button
+              type="button"
+              disabled={updatingStatusId === r.job_id}
+              onClick={() => handleUpdateStatus(r.job_id, "PUBLISHED")}
+              className="px-2.5 py-1 rounded text-xs font-bold bg-[#0d2b33] hover:bg-[#153e49] text-white transition disabled:opacity-50 cursor-pointer shadow-xs whitespace-nowrap"
+              title="Publish this draft vacancy to live website"
+            >
+              {updatingStatusId === r.job_id ? "Publishing..." : "Publish"}
+            </button>
+          )}
+        </div>
+      ),
     },
     {
       title: "Action",
       render: (_: any, record: Job) => (
-        <div className="flex gap-2">
+        <div className="flex items-center gap-1.5">
+          {record.status === "DRAFT" ? (
+            <button
+              type="button"
+              disabled={updatingStatusId === record.job_id}
+              onClick={() => handleUpdateStatus(record.job_id, "PUBLISHED")}
+              className="px-2.5 py-1 text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-md transition disabled:opacity-50 whitespace-nowrap"
+              title="Publish Job"
+            >
+              {updatingStatusId === record.job_id ? "..." : "Publish"}
+            </button>
+          ) : (
+            <button
+              type="button"
+              disabled={updatingStatusId === record.job_id}
+              onClick={() => handleUpdateStatus(record.job_id, "DRAFT")}
+              className="px-2 py-1 text-xs font-medium text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-md transition disabled:opacity-50 whitespace-nowrap"
+              title="Unpublish (Revert to Draft)"
+            >
+              {updatingStatusId === record.job_id ? "..." : "Unpublish"}
+            </button>
+          )}
           <button
             onClick={() => router.push(`/jobs/${record.job_id}/edit`)}
-            className="p-2 text-blue-600"
+            className="p-1.5 text-blue-600 hover:bg-blue-50 rounded transition"
+            title="Edit"
           >
             <Edit size={16} />
           </button>
@@ -220,7 +285,8 @@ export default function JobsPage() {
               setSelectedId(record.job_id);
               setShowDeleteModal(true);
             }}
-            className="p-2 text-red-600"
+            className="p-1.5 text-red-600 hover:bg-red-50 rounded transition"
+            title="Delete"
           >
             <Trash2 size={16} />
           </button>
