@@ -22,6 +22,7 @@ export type DbJob = {
   intro_information?: string | null;
   company_information?: string | null;
   additional_information?: string | null;
+  offer_information?: string | null;
   requirements?: string | null;
   hours_per_week?: number | null;
   deadline?: string | null;

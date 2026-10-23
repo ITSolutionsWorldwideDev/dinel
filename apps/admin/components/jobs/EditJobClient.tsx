@@ -35,12 +35,13 @@ export default function EditJobClient({ jobId }: { jobId: number }) {
     intro_information: "",
     company_information: "",
     additional_information: "",
+    offer_information: "",
     requirements: "",
     hours_per_week: 0,
     deadline: "",
     closed_at: "",
   });
-
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchJob = async () => {
@@ -74,6 +75,7 @@ export default function EditJobClient({ jobId }: { jobId: number }) {
           intro_information: job.intro_information || "",
           company_information: job.company_information || "",
           additional_information: job.additional_information || "",
+          offer_information: job.offer_information || "",
           requirements: job.requirements || "",
           hours_per_week: job.hours_per_week || 0,
           deadline: job.deadline ? job.deadline.split("T")[0] : "",
@@ -82,6 +84,8 @@ export default function EditJobClient({ jobId }: { jobId: number }) {
       } catch (err) {
         console.error(err);
         showToast("error", "Failed to load job");
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -110,8 +114,8 @@ export default function EditJobClient({ jobId }: { jobId: number }) {
     }
   };
 
-  // Show loading while jobData is empty
-  if (!jobData.title) return <p>Loading...</p>;
+  // Show loading while fetching
+  if (loading) return <p className="p-8 text-slate-500 font-medium">Loading...</p>;
 
   return (
     <JobForm

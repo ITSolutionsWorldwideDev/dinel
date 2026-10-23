@@ -41,6 +41,7 @@ export default function JobForm({
     intro_information: "",
     company_information: "",
     additional_information: "",
+    offer_information: "",
     requirements: "",
     hours_per_week: 40,
     deadline: "",
@@ -57,6 +58,8 @@ export default function JobForm({
       setForm((prev: any) => ({
         ...prev,
         ...initialData,
+        offer_information: initialData.offer_information || "",
+        additional_information: initialData.additional_information || "",
         intro_information:
           initialData.intro_information || initialData.description || "",
         description:
@@ -98,9 +101,11 @@ export default function JobForm({
     setError(null);
     try {
       setLoading(true);
+      const safeTitle = form.title?.trim() || "Untitled Vacancy";
       const payload = {
         ...form,
-        description: form.intro_information || form.description || form.title,
+        title: safeTitle,
+        description: form.intro_information || form.description || safeTitle,
         hours_per_week: Number(form.hours_per_week) || 40,
       };
       await onSubmit(payload);
@@ -165,7 +170,7 @@ export default function JobForm({
             {/* Job Title */}
             <div>
               <label className="block text-sm font-bold text-slate-900 mb-2">
-                Job Title <span className="text-red-600">*</span>
+                Job Title
               </label>
               <input
                 type="text"
@@ -173,42 +178,21 @@ export default function JobForm({
                 className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm text-slate-900 font-medium placeholder-slate-400 focus:border-[#0d2b33] focus:ring-1 focus:ring-[#0d2b33] outline-none transition"
                 value={form.title}
                 onChange={(e) => update("title", e.target.value)}
-                required
               />
             </div>
 
-            {/* 2 Cols: Sector & Location */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label className="block text-sm font-bold text-slate-900 mb-2">
-                  Category / Sector
-                </label>
-                <select
-                  className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm text-slate-900 font-medium focus:border-[#0d2b33] focus:ring-1 focus:ring-[#0d2b33] outline-none transition"
-                  value={form?.sector_id ?? ""}
-                  onChange={(e) => update("sector_id", e.target.value || null)}
-                >
-                  <option value="">Select Category</option>
-                  {sectors.map((s) => (
-                    <option key={s.sector_id} value={s.sector_id}>
-                      {s.sector}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-bold text-slate-900 mb-2">
-                  Location
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. Rotterdam, Netherlands"
-                  className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm text-slate-900 font-medium placeholder-slate-400 focus:border-[#0d2b33] focus:ring-1 focus:ring-[#0d2b33] outline-none transition"
-                  value={form.location}
-                  onChange={(e) => update("location", e.target.value)}
-                />
-              </div>
+            {/* Location */}
+            <div>
+              <label className="block text-sm font-bold text-slate-900 mb-2">
+                Location
+              </label>
+              <input
+                type="text"
+                placeholder="e.g. Rotterdam, Netherlands"
+                className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm text-slate-900 font-medium placeholder-slate-400 focus:border-[#0d2b33] focus:ring-1 focus:ring-[#0d2b33] outline-none transition"
+                value={form.location}
+                onChange={(e) => update("location", e.target.value)}
+              />
             </div>
 
             {/* 3 Cols: Employment Type, Workplace Type, Hours */}
@@ -270,7 +254,7 @@ export default function JobForm({
             {/* Overview */}
             <div>
               <label className="block text-sm font-bold text-slate-900 mb-1">
-                Role Overview <span className="text-red-600">*</span>
+                Role Overview
               </label>
               <p className="text-xs text-slate-500 mb-2">
                 Main summary paragraph shown under the job title on the website.
@@ -281,7 +265,6 @@ export default function JobForm({
                 className="w-full bg-white border border-slate-300 rounded-lg p-3 text-sm text-slate-900 font-medium placeholder-slate-400 focus:border-[#0d2b33] focus:ring-1 focus:ring-[#0d2b33] outline-none transition"
                 value={form.intro_information}
                 onChange={(e) => update("intro_information", e.target.value)}
-                required
               />
             </div>
 
@@ -316,6 +299,40 @@ export default function JobForm({
                 className="w-full bg-white border border-slate-300 rounded-lg p-3 text-sm text-slate-900 font-medium placeholder-slate-400 focus:border-[#0d2b33] focus:ring-1 focus:ring-[#0d2b33] outline-none transition"
                 value={form.requirements}
                 onChange={(e) => update("requirements", e.target.value)}
+              />
+            </div>
+
+            {/* What We Offer */}
+            <div>
+              <label className="block text-sm font-bold text-slate-900 mb-1">
+                What We Offer
+              </label>
+              <p className="text-xs text-slate-500 mb-2">
+                Enter benefits, perks, and compensation details (shows under What We Offer on the website).
+              </p>
+              <textarea
+                rows={5}
+                placeholder={"Competitive salary package\nHybrid and flexible work schedule\nHealth insurance, holiday allowances, and growth opportunities"}
+                className="w-full bg-white border border-slate-300 rounded-lg p-3 text-sm text-slate-900 font-medium placeholder-slate-400 focus:border-[#0d2b33] focus:ring-1 focus:ring-[#0d2b33] outline-none transition"
+                value={form.offer_information}
+                onChange={(e) => update("offer_information", e.target.value)}
+              />
+            </div>
+
+            {/* Additional Information / Option */}
+            <div>
+              <label className="block text-sm font-bold text-slate-900 mb-1">
+                Additional Information / Option
+              </label>
+              <p className="text-xs text-slate-500 mb-2">
+                Any additional notes, options, or extra information for candidates.
+              </p>
+              <textarea
+                rows={4}
+                placeholder="Any additional details, notes, or contact instructions..."
+                className="w-full bg-white border border-slate-300 rounded-lg p-3 text-sm text-slate-900 font-medium placeholder-slate-400 focus:border-[#0d2b33] focus:ring-1 focus:ring-[#0d2b33] outline-none transition"
+                value={form.additional_information}
+                onChange={(e) => update("additional_information", e.target.value)}
               />
             </div>
           </div>

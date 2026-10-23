@@ -40,6 +40,8 @@ export default function CreateJobClient() {
         education: "",
         visibility: "PUBLIC",
         status: "DRAFT",
+        offer_information: "",
+        additional_information: "",
       }}
       onSubmit={submit}
     />

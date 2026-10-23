@@ -108,28 +108,31 @@ const JobDescription = ({ jobData }: any) => {
               </div> */}
             </div>
 
-            {/* Benefits */}
-            <div className=" bg-linear-to-r from-[#FFF7ED] to-[#FFEDD480] rounded-2xl shadow-sm border border-[#FFD6A7] p-8">
-              <h2 className="text-2xl font-bold text-slate-800 mb-6 border-b border-b-[#FFD6A7] py-5">
-                What we offer
-              </h2>
-              <div
-                className="whitespace-pre-wrap text-slate-600 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: jobData.offer_information || "" }}
-              />
-              {/* <div className="space-y-3">
-                {jobData.benefits?.map((item: any, index: number) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="mt-1.5 shrink-0">
-                      <div className="w-5 h-5 rounded-full  flex items-center justify-center">
-                        <CircleCheck className="text-[#FF6B35]" />
-                      </div>
-                    </div>
-                    <p className="text-slate-700">{item}</p>
-                  </div>
-                ))}
-              </div> */}
-            </div>
+            {/* Benefits / What we offer */}
+            {jobData.offer_information && (
+              <div className=" bg-linear-to-r from-[#FFF7ED] to-[#FFEDD480] rounded-2xl shadow-sm border border-[#FFD6A7] p-8">
+                <h2 className="text-2xl font-bold text-slate-800 mb-6 border-b border-b-[#FFD6A7] py-5">
+                  What we offer
+                </h2>
+                <div
+                  className="whitespace-pre-wrap text-slate-600 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: jobData.offer_information || "" }}
+                />
+              </div>
+            )}
+
+            {/* Additional Information */}
+            {jobData.additional_information && (
+              <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
+                <h2 className="text-2xl font-bold text-slate-800 mb-6">
+                  Additional Information
+                </h2>
+                <div
+                  className="whitespace-pre-wrap text-slate-600 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: jobData.additional_information || "" }}
+                />
+              </div>
+            )}
           </div>
 
           {/* Sidebar - Job Details */}

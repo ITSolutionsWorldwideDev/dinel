@@ -79,6 +79,7 @@ export async function PUT(
       "intro_information",
       "company_information",
       "additional_information",
+      "offer_information",
       "requirements",
       "hours_per_week",
       "deadline",

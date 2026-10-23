@@ -127,22 +127,21 @@ export async function POST(req: Request) {
       intro_information,
       company_information,
       additional_information,
+      offer_information,
       requirements,
       hours_per_week,
       deadline,
       closed_at,
     } = body;
 
-    const effectiveDescription = description || intro_information || title;
+    const finalTitle = (title && typeof title === "string" ? title.trim() : "") || "Untitled Vacancy";
+    const effectiveDescription = description || intro_information || finalTitle;
+    const finalEmploymentType = employment_type || "FULL_TIME";
+    const finalWorkplaceType = workplace_type || "ONSITE";
+    const finalVisibility = visibility || "PUBLIC";
+    const finalStatus = status || "DRAFT";
 
-    if (!title || !effectiveDescription || !employment_type || !workplace_type) {
-      return NextResponse.json(
-        { error: "Missing required fields (Title, Description/Overview, Employment Type, Workplace Type)" },
-        { status: 400 },
-      );
-    }
-
-    const slug = slugify(title, { lower: true });
+    const slug = (finalTitle ? slugify(finalTitle, { lower: true }) : "") || `job-${Date.now()}`;
 
     const companyId = 1;
     const createdBy = 1;
@@ -173,6 +172,7 @@ export async function POST(req: Request) {
         intro_information,
         company_information,
         additional_information,
+        offer_information,
         requirements,
         hours_per_week,
         deadline,
@@ -183,23 +183,23 @@ export async function POST(req: Request) {
       VALUES (
         $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,
         $11,$12,$13,$14,$15,$16,$17,$18,
-        $19,$20,$21,$22,$23,$24,$25,$26,$27,$28,$29
+        $19,$20,$21,$22,$23,$24,$25,$26,$27,$28,$29,$30
       )
       RETURNING *
       `,
       [
-        title,
+        finalTitle,
         slug,
         effectiveDescription,
         location || null,
-        employment_type,
-        workplace_type,
+        finalEmploymentType,
+        finalWorkplaceType,
         department || null,
         experience_level || null,
         experience || null,
         education || null,
-        visibility,
-        status,
+        finalVisibility,
+        finalStatus,
         sector_id || null,
         discipline_id || null,
         work_city || null,
@@ -211,8 +211,9 @@ export async function POST(req: Request) {
         intro_information || null,
         company_information || null,
         additional_information || null,
+        offer_information || null,
         requirements || null,
-        hours_per_week || 0,
+        hours_per_week ? Number(hours_per_week) : 0,
         deadline ? new Date(deadline) : null,
         closed_at ? new Date(closed_at) : null,
         companyId,
