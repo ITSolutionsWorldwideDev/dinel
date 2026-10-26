@@ -18,7 +18,10 @@ export default async function ContactDetailsAndReassurance() {
           </div>
           <div>
             <span className="font-bold text-[#1a4550] block text-xs uppercase tracking-wider">{t("kvkField")}</span>
-            <span className="text-gray-600">12345678</span>
+            <div className="text-gray-600 flex flex-col">
+              <span><strong className="font-bold text-[#0d2b33]">KVK</strong> 59178310</span>
+              <span><strong className="font-bold text-[#0d2b33]">VAT</strong> 8533.53.621.B01</span>
+            </div>
           </div>
           <div>
             <span className="font-bold text-[#1a4550] block text-xs uppercase tracking-wider">{t("responseField")}</span>
