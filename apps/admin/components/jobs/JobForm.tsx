@@ -1,7 +1,7 @@
 // apps/admin/components/jobs/JobForm.tsx
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 
@@ -52,9 +52,11 @@ export default function JobForm({
   const [error, setError] = useState<string | null>(null);
   const [sectors, setSectors] = useState<any[]>([]);
   const [disciplines, setDisciplines] = useState<any[]>([]);
+  const isInitializedRef = useRef(false);
 
   useEffect(() => {
-    if (initialData) {
+    if (initialData && !isInitializedRef.current) {
+      isInitializedRef.current = true;
       setForm((prev: any) => ({
         ...prev,
         ...initialData,
@@ -71,7 +73,7 @@ export default function JobForm({
   const update = (key: string, value: any) => {
     setForm((prev: any) => {
       const next = { ...prev, [key]: value };
-      if (key === "intro_information" && !prev.description) {
+      if (key === "intro_information") {
         next.description = value;
       }
       return next;
@@ -105,6 +107,7 @@ export default function JobForm({
       const payload = {
         ...form,
         title: safeTitle,
+        intro_information: form.intro_information ?? "",
         description: form.intro_information || form.description || safeTitle,
         hours_per_week: Number(form.hours_per_week) || 40,
       };

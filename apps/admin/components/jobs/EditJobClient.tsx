@@ -7,7 +7,7 @@ import JobForm from "./JobForm";
 import { useEffect, useState } from "react";
 import { useToast } from "@repo/ui";
 
-export default function EditJobClient({ jobId }: { jobId: number }) {
+export default function EditJobClient({ jobId }: { jobId: string | number }) {
   const router = useRouter();
   const { showToast } = useToast();
 
@@ -90,7 +90,7 @@ export default function EditJobClient({ jobId }: { jobId: number }) {
     };
 
     fetchJob();
-  }, [jobId, showToast]);
+  }, [jobId]);
 
   const submit = async (data: any) => {
     try {

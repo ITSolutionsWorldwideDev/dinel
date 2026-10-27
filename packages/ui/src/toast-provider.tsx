@@ -11,10 +11,16 @@ interface ToastContextValue {
 
 const ToastContext = React.createContext<ToastContextValue | null>(null);
 
+const fallbackToastContext: ToastContextValue = {
+  showToast: (_type: any, message: string) => {
+    console.log(`[Toast] ${_type}: ${message}`);
+  },
+};
+
 export function ToastProvider({ children }: { children: React.ReactNode }) {
   const [toasts, setToasts] = React.useState<ToastPayload[]>([]);
 
-  const showToast = (type: ToastType, message: string) => {
+  const showToast = React.useCallback((type: ToastType, message: string) => {
     const id = Date.now();
 
     setToasts((prev) => [...prev, { id, type, message }]);
@@ -22,10 +28,12 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
     setTimeout(() => {
       setToasts((prev) => prev.filter((t) => t.id !== id));
     }, 9000);
-  };
+  }, []);
+
+  const value = React.useMemo(() => ({ showToast }), [showToast]);
 
   return (
-    <ToastContext.Provider value={{ showToast }}>
+    <ToastContext.Provider value={value}>
       {children}
       <ToastContainer toasts={toasts} />
     </ToastContext.Provider>
@@ -34,12 +42,5 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
 
 export function useToast() {
   const ctx = React.useContext(ToastContext);
-  if (!ctx) {
-    return {
-      showToast: (_type: any, message: string) => {
-        console.log(`[Toast] ${_type}: ${message}`);
-      },
-    };
-  }
-  return ctx;
+  return ctx || fallbackToastContext;
 }

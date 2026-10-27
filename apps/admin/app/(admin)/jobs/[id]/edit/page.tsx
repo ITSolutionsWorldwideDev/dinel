@@ -3,7 +3,7 @@
 import EditJobClient from "@/components/jobs/EditJobClient";
 
 interface PageProps {
-  params: Promise<{ id: number }>;
+  params: Promise<{ id: string }>;
 }
 
 export default async function EditJobPage({ params }: PageProps) {

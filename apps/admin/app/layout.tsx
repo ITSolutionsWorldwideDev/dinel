@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SessionProviderWrapper from "@/components/SessionProviderWrapper";
+import { ToastProvider } from "@repo/ui";
 
 import "./globals.css";
 
@@ -12,7 +13,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SessionProviderWrapper>
-          {children}
+          <ToastProvider>{children}</ToastProvider>
         </SessionProviderWrapper>
       </body>
     </html>
