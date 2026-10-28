@@ -9,6 +9,7 @@ import { getCanonicalUrl, getHreflangAlternates } from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
+  searchParams?: Promise<{ category?: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -40,12 +41,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function CareersPage() {
+export default async function CareersPage({ params, searchParams }: PageProps) {
+  const resolvedSearchParams = searchParams ? await searchParams : undefined;
   return (
     <main className="min-h-screen bg-white">
       <CareerHero />
       <CareerIntro />
-      <JobList />
+      <JobList initialCategory={resolvedSearchParams?.category} />
       <div className="max-w-7xl mx-auto px-6 py-12"></div>
     </main>
   );

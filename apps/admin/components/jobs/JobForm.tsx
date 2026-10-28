@@ -244,6 +244,58 @@ export default function JobForm({
                 />
               </div>
             </div>
+
+            {/* 3 Cols: Sector / Category, Discipline, Department */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+              <div>
+                <label className="block text-sm font-bold text-slate-900 mb-2">
+                  Sector / Category
+                </label>
+                <select
+                  className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm text-slate-900 font-medium focus:border-[#0d2b33] focus:ring-1 focus:ring-[#0d2b33] outline-none transition"
+                  value={form.sector_id || ""}
+                  onChange={(e) => update("sector_id", e.target.value)}
+                >
+                  <option value="">Select Sector / Category</option>
+                  {sectors.map((s: any) => (
+                    <option key={s.sector_id} value={s.sector_id}>
+                      {s.sector}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-slate-900 mb-2">
+                  Discipline
+                </label>
+                <select
+                  className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm text-slate-900 font-medium focus:border-[#0d2b33] focus:ring-1 focus:ring-[#0d2b33] outline-none transition"
+                  value={form.discipline_id || ""}
+                  onChange={(e) => update("discipline_id", e.target.value)}
+                >
+                  <option value="">Select Discipline</option>
+                  {disciplines.map((d: any) => (
+                    <option key={d.discipline_id} value={d.discipline_id}>
+                      {d.discipline}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-slate-900 mb-2">
+                  Department (Optional)
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. Supply Chain, Engineering, IT"
+                  className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm text-slate-900 font-medium placeholder-slate-400 focus:border-[#0d2b33] focus:ring-1 focus:ring-[#0d2b33] outline-none transition"
+                  value={form.department || ""}
+                  onChange={(e) => update("department", e.target.value)}
+                />
+              </div>
+            </div>
           </div>
         </div>
 

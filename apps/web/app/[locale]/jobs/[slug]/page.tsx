@@ -9,6 +9,7 @@ import {
   getDbJobBySlug,
   getDbPublishedJobs,
   parseListItems,
+  resolveJobCategory,
 } from "@/lib/jobs/dbJobs";
 import {
   getTalentGenieJobs,
@@ -63,19 +64,7 @@ async function resolveUnifiedJob(
   // 1. Resolve from Staff Outsourcing Admin database
   const dbJob = await getDbJobBySlug(slug);
   if (dbJob) {
-    let categoryName = dbJob.sector_name || dbJob.department;
-    if (!categoryName) {
-      const lower = dbJob.title.toLowerCase();
-      if (lower.includes("data") || lower.includes("power bi") || lower.includes("analytics")) {
-        categoryName = "Data & Analytics";
-      } else if (lower.includes("engineer") || lower.includes("structural") || lower.includes("mechanical")) {
-        categoryName = locale === "nl" ? "Engineering" : "Engineering";
-      } else if (lower.includes("supply") || lower.includes("logistics") || lower.includes("warehouse")) {
-        categoryName = locale === "nl" ? "Supply Chain" : "Supply Chain";
-      } else {
-        categoryName = locale === "nl" ? "Informatie Technologie" : "Information Technology";
-      }
-    }
+    const categoryName = resolveJobCategory(dbJob, locale);
 
     const typeDisplay =
       dbJob.employment_type === "FULL_TIME"
@@ -159,28 +148,7 @@ function transformTalentGenieJob(
   locale: "en" | "nl",
 ): UnifiedJobDetail {
   // Category mapping
-  let category =
-    locale === "nl" ? "Informatie Technologie" : "Information Technology";
-  const lowerTitle = tgJob.title.toLowerCase();
-  if (
-    lowerTitle.includes("power bi") ||
-    lowerTitle.includes("data") ||
-    lowerTitle.includes("analytics")
-  ) {
-    category = "Data & Analytics";
-  } else if (
-    lowerTitle.includes("engineer") ||
-    lowerTitle.includes("mechanical") ||
-    lowerTitle.includes("structural")
-  ) {
-    category = "Engineering";
-  } else if (
-    lowerTitle.includes("supply") ||
-    lowerTitle.includes("warehouse") ||
-    lowerTitle.includes("logistics")
-  ) {
-    category = "Supply Chain";
-  }
+  const category = resolveJobCategory({ title: tgJob.title }, locale);
 
   // 1. Structured responsibilities
   let responsibilities: string[] = [];

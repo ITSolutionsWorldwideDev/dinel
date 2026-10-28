@@ -2,11 +2,18 @@
   "name": "dinel",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "build": "npm run build --workspace=web && npm run build --workspace=admin",
+    "build:web": "npm run build --workspace=web",
+    "build:admin": "npm run build --workspace=admin",
+    "build:turbo": "turbo run build",
+    "dev": "npm run dev --workspace=web",
+    "dev:all": "npm run dev --workspaces --if-present",
+    "dev:web": "npm run dev --workspace=web",
+    "dev:admin": "npm run dev --workspace=admin",
+    "dev:turbo": "turbo run dev",
+    "lint": "npm run lint --workspaces --if-present",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types",
+    "check-types": "npm run check-types --workspace=web",
     "create:super-admin": "tsx scripts/create-super-admin.ts"
   },
   "devDependencies": {
@@ -16,7 +23,7 @@
     "dotenv": "^17.2.3",
     "prettier": "^3.7.4",
     "tsx": "^4.21.0",
-    "turbo": "^2.7.2",
+    "turbo": "^2.11.10",
     "typescript": "5.9.2"
   },
   "engines": {

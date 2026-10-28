@@ -18,7 +18,7 @@ export async function GET(
         ) AS integrations
       FROM jobs j
       LEFT JOIN job_integrations ji ON ji.job_id = j.id
-      WHERE j.job_id = $1
+      WHERE j.job_id = $1 OR CAST(j.id AS TEXT) = $1
       GROUP BY j.id
     `;
 
@@ -46,7 +46,7 @@ export async function PUT(
     const body = await req.json();
 
     const existing = await pool.query(
-      `SELECT status FROM jobs WHERE job_id = $1`,
+      `SELECT status FROM jobs WHERE job_id = $1 OR CAST(id AS TEXT) = $1`,
       [jobId],
     );
 
@@ -124,7 +124,7 @@ export async function PUT(
     const query = `
       UPDATE jobs
       SET ${fields.join(", ")}, updated_at = NOW()
-      WHERE job_id = $${values.length + 1}
+      WHERE (job_id = $${values.length + 1} OR CAST(id AS TEXT) = $${values.length + 1})
       RETURNING *
     `;
 
